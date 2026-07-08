@@ -1,0 +1,23 @@
+.conda/
+.env.local
+workflow/
+__pycache__/
+*.pyc
+
+.cache/
+.matplotlib/
+.paddlex/
+
+# Local model weights and exported inference artifacts.
+*.pth
+*.pt
+*.ckpt
+*.onnx
+*.pdiparams
+*.pdmodel
+*.safetensors
+
+# Runtime / editor noise.
+*.log
+.DS_Store
+Thumbs.db
