@@ -1,7 +1,8 @@
 param(
-    [string]$ImageDir = ".\workflow\images",
-    [string]$RfdetrOut = ".\workflow\stage1_rfdetr",
-    [string]$DoclayoutOut = ".\workflow\stage1_doclayout",
+    [Parameter(Mandatory = $true)]
+    [string]$Image,
+    [string]$RfdetrOut = ".\workflow\code_outputs\rfdetr",
+    [string]$DoclayoutOut = ".\workflow\code_outputs\doclayout",
     [string]$Checkpoint = ".\checkpoint_best_total.pth",
     [string]$DoclayoutDevice = "cpu",
     [string]$DoclayoutModelDir = "",
@@ -23,7 +24,9 @@ New-Item -ItemType Directory -Force -Path $env:HF_HOME, $env:MODELSCOPE_CACHE, $
 $python = Join-Path $root ".conda\messtoclean\python.exe"
 Set-Location $root
 
-New-Item -ItemType Directory -Force -Path $ImageDir | Out-Null
+if (-not (Test-Path -LiteralPath $Image -PathType Leaf)) {
+    throw "Image not found: $Image"
+}
 
 if (Test-Path $RfdetrOut) {
     Remove-Item -LiteralPath $RfdetrOut -Recurse -Force
@@ -34,8 +37,8 @@ if (Test-Path $DoclayoutOut) {
 New-Item -ItemType Directory -Force -Path $RfdetrOut, $DoclayoutOut | Out-Null
 
 $rfdetrArgs = @(
-  "rfdetr_infer.py",
-  "--image-dir", $ImageDir,
+  "-m", "match.rfdetr_infer",
+  "--image-path", $Image,
   "--checkpoint", $Checkpoint,
   "--output-dir", $RfdetrOut,
   "--overwrite-jsonl",
@@ -50,8 +53,8 @@ if ($OptimizeRfdetr) {
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
 $doclayoutArgs = @(
-  "doclayout_infer.py",
-  "--image-dir", $ImageDir,
+  "-m", "match.doclayout_infer",
+  "--image-path", $Image,
   "--output-dir", $DoclayoutOut,
   "--model-name", "PP-DocLayout_plus-L",
   "--device", $DoclayoutDevice

@@ -1,8 +1,8 @@
 param(
-    [string]$ImageDir = ".\workflow\images",
-    [string]$RfdetrJsonl = ".\workflow\stage1_rfdetr\rfdetr_infer_results.jsonl",
-    [string]$DoclayoutJsonDir = ".\workflow\stage1_doclayout\json",
-    [string]$OutDir = ".\workflow\stage2_match"
+    [string]$ImageDir = ".\workflow\preprocessed",
+    [string]$RfdetrJsonl = ".\workflow\code_outputs\rfdetr\rfdetr_infer_results.jsonl",
+    [string]$DoclayoutJsonDir = ".\workflow\code_outputs\doclayout\json",
+    [string]$OutDir = ".\workflow\code_outputs\match"
 )
 $ErrorActionPreference = "Stop"
 $root = Split-Path -Parent $PSScriptRoot

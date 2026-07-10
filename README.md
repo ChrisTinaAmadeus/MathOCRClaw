@@ -1,201 +1,149 @@
 # MathOCRClaw
 
-MathOCRClaw is a minimal exam-OCR agent built on top of the MessToClean-style reconstruction pipeline. It is designed for real-world exam page photos where printed questions and student handwriting appear together.
+[简体中文](#简体中文) · [English](#english)
 
-The current goal is not to be a perfect handwriting OCR system yet. The first working version provides a complete, auditable workflow:
+## 简体中文
 
-```text
-exam image
-  -> whole-page VLM baseline
-  -> question-region and layout evidence collection
-  -> printed-question verification
-  -> handwritten-answer evidence extraction
-  -> verified JSON / Markdown result
-```
-
-## What It Does
-
-- Calls a multimodal API on the whole page to produce a baseline structured OCR result.
-- Reuses local RF-DETR question detection to locate question regions.
-- Reuses PP-DocLayout and the existing matching logic to recover reading order and question crops.
-- Verifies printed question text against cropped image evidence before keeping it.
-- Extracts visible student handwriting from each question crop.
-- Verifies the extracted handwriting against image evidence.
-- Writes final auditable outputs for downstream grading, review, or dataset building.
-
-## Current Status
-
-This repository currently contains the minimal working agent loop:
+MathOCRClaw 是一个面向真实试卷照片的数学 OCR 智能体。它识别印刷题干与学生手写答案，通过裁图证据复核识别结果，并在证据不足时主动输出 `U`，而不是猜测。
 
 ```text
-agent/simple_agent.py
-scripts/run_agent.ps1
+试卷照片
+  → 去阴影、去红笔
+  → API 生成整页题干 Markdown
+  → 本地题目检测、版面分析与题号对齐
+  → 逐题提取并验证手写答案
+  → 题干和答案一一对应的最终结果
 ```
 
-The answer-recognition branch is intentionally simple: it uses the multimodal API on each question crop, then asks the model to verify whether the extracted handwritten answer is visually supported. Future versions can replace this branch with a dedicated handwriting OCR model or a trained answer-area detector.
+### 快速开始
 
-## Repository Layout
-
-```text
-MathOCRClaw/
-├─ agent/
-│  └─ simple_agent.py          # Minimal end-to-end agent workflow
-├─ proofread/                  # Evidence-grounded question verification pipeline
-├─ match/                      # Reading order and question/figure matching
-├─ scripts/
-│  ├─ run_agent.ps1            # One-command agent entrypoint
-│  ├─ run_stage1.ps1           # RF-DETR + DocLayout inference
-│  ├─ run_stage2.ps1           # Matching and crop generation
-│  └─ run_stage3.ps1           # Question proofread / verification
-├─ rfdetr_infer.py             # Local question detector inference
-├─ doclayout_infer.py          # Local layout detector inference
-├─ proofread_page_v6_6.py      # Existing proofread CLI wrapper
-├─ environment.yml             # Conda environment definition
-└─ requirements-local.txt      # Local Python dependency snapshot
-```
-
-Generated files are written under `workflow/` and are ignored by git.
-
-## Setup
-
-Create the Conda environment:
+需要 Windows PowerShell、Conda、可用的 DashScope/OpenAI 兼容多模态 API，以及放在仓库根目录的 `checkpoint_best_total.pth`。
 
 ```powershell
-conda env create -f environment.yml
+conda env create --prefix .\.conda\messtoclean -f environment.yml
 ```
 
-Or use the existing local environment if it has already been created:
+创建不会被 Git 跟踪的 `.env.local`：
 
-```powershell
-.\.conda\messtoclean\python.exe -m agent.simple_agent --help
-```
-
-Configure your multimodal API key in `.env.local` or in the shell environment:
-
-```text
+```dotenv
 DASHSCOPE_API_KEY=your_api_key
 MTC_VLM_MODEL=qwen3.7-plus
 ```
 
-The default API base is DashScope OpenAI-compatible mode:
-
-```text
-https://dashscope.aliyuncs.com/compatible-mode/v1
-```
-
-You can override it with `--api-base` and `--model`.
-
-## Model Weights
-
-The local question detector expects an RF-DETR checkpoint such as:
-
-```text
-checkpoint_best_total.pth
-```
-
-This file is intentionally ignored by git because it is larger than GitHub's normal 100MB file limit. Keep it locally, download it separately, or manage it with Git LFS / release assets.
-
-## Quick Start
-
-Run the complete minimal agent on one page image:
+图片可以位于任意本地路径；推荐放在同样不会被 Git 跟踪的 `input/` 中。运行完整工作流：
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\run_agent.ps1 -Image .\workflow\images\page_0001.jpg
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\run_agent.ps1 -Image .\input\page_0001.jpg -Full
 ```
 
-If Stage 1 and Stage 2 outputs already exist and you want to reuse them:
+复用已有本地检测和匹配结果时加 `-SkipLayout`。不加 `-Full` 时会关闭题号读取、文本修复和题图关系检查，以减少 API 请求。
 
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\run_agent.ps1 -Image .\workflow\images\page_0001.jpg -SkipLayout
-```
+### 输出结构
 
-For a slower but more complete verification pass:
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\run_agent.ps1 -Image .\workflow\images\page_0001.jpg -Full
-```
-
-## Outputs
-
-By default, agent outputs are saved under:
+所有用户可见的运行产物只分为四类（内部缓存位于 `.cache/`）：
 
 ```text
-workflow/agent_out/<page_name>/
+workflow/
+├─ preprocessed/                  # 扫描化图片及预处理统计 JSON
+├─ api_markdown/                  # API 原始题干 Markdown 与响应 JSON
+├─ code_outputs/                  # 纯代码/本地模型阶段
+│  ├─ rfdetr/                     # 检测 JSONL、裁图和可视化
+│  ├─ doclayout/                  # 版面 JSON 和可视化
+│  └─ match/                      # 阅读顺序、匹配 JSON 和题目裁图
+└─ agent_outputs/<page_name>/     # 智能体最终结果
+   ├─ result.md                   # 每道题后紧跟其手写答案
+   ├─ result.json                 # 同结构的机器可读结果
+   └─ verification.json           # 题干对齐与证据校验详情
 ```
 
-Important files:
+`result.md` 不再先列全部题目、再列全部答案，而是按照“题目 16 → 手写答案 16 → 题目 17 → 手写答案 17”的顺序输出。只对成功对齐到题干的主问题裁图提取答案，避免把页面边缘或其他试卷的手写内容混入最终结果。
+
+### 代码结构与检查
 
 ```text
-baseline.json          # Whole-page VLM baseline
-baseline.md            # Baseline converted to Markdown for question verification
-answer_evidence.json   # Handwritten-answer extraction and verification records
-final_result.json      # Combined machine-readable result
-final_result.md        # Human-readable summary
+agent/workflow.py       唯一端到端入口与四类输出管理
+match/                  本地检测、版面分析、阅读顺序和题图匹配
+proofread/              题干修复、证据验证和主动拒绝
+scripts/run_agent.ps1   用户入口
 ```
-
-The existing proofread outputs are written under:
-
-```text
-workflow/stage3_out/<page_name>/
-```
-
-## Minimal Agent Contract
-
-The final JSON currently contains:
-
-```json
-{
-  "page": "page_0001",
-  "image": "workflow/images/page_0001.jpg",
-  "baseline": {},
-  "verified_question_markdown": "...",
-  "question_verification_report": {},
-  "answer_evidence": [],
-  "outputs": {}
-}
-```
-
-Each `answer_evidence` item records the crop path, extracted handwriting, extraction status, visual evidence note, and a verification verdict:
-
-```text
-Y = supported by visible handwriting
-N = not supported or contradicted by the crop
-U = uncertain / unclear
-```
-
-## Development Checks
-
-Compile-check the Python files:
 
 ```powershell
-$files = rg --files -g "*.py" -g "!.conda/**" -g "!.cache/**" -g "!workflow/**" -g "!__pycache__/**"
-.\.conda\messtoclean\python.exe -m py_compile $files
+.\.conda\messtoclean\python.exe -m unittest discover -s tests -v
+.\.conda\messtoclean\python.exe -m agent.workflow --help
 ```
 
-Check the agent CLI:
+`workflow/`、`input/`、本地环境、API 密钥、模型权重和 `Reference/` 均被 Git 忽略；`Reference/` 只用于本地研究，不上传 GitHub。
+
+---
+
+## English
+
+MathOCRClaw is a math-OCR agent for real-world exam photos. It recognizes printed questions and student handwriting, verifies predictions against aligned crops, and returns `U` instead of guessing when evidence is insufficient.
+
+```text
+exam photo
+  → shadow normalization and red-ink removal
+  → API-generated whole-page question Markdown
+  → local detection, layout analysis, and question alignment
+  → per-question handwriting extraction and verification
+  → paired question-and-answer results
+```
+
+### Quick start
+
+Requirements: Windows PowerShell, Conda, a DashScope/OpenAI-compatible multimodal API, and `checkpoint_best_total.pth` in the repository root.
 
 ```powershell
-.\.conda\messtoclean\python.exe -m agent.simple_agent --help
+conda env create --prefix .\.conda\messtoclean -f environment.yml
 ```
 
-## GitHub Notes
+Create a Git-ignored `.env.local`:
 
-Do not commit:
+```dotenv
+DASHSCOPE_API_KEY=your_api_key
+MTC_VLM_MODEL=qwen3.7-plus
+```
 
-- `.env.local`
-- `.conda/`
-- `.cache/`
-- `.paddlex/`
-- `workflow/`
-- `checkpoint_best_total.pth`
-- other `*.pth`, `*.pdiparams`, `*.onnx`, or large model artifacts
+The input image may be anywhere locally; `input/` is a convenient Git-ignored location. Run the full workflow with:
 
-Use Git LFS or GitHub Releases if model artifacts need to be distributed with the project.
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\run_agent.ps1 -Image .\input\page_0001.jpg -Full
+```
 
-## Roadmap
+Add `-SkipLayout` to reuse local detection and matching outputs. Without `-Full`, question-number reading, text patching, and question/figure checks are disabled to reduce API calls.
 
-- Add a dedicated student-answer area detector.
-- Add handwriting-specific OCR and math-expression recognition.
-- Bind handwritten answers to question numbers more robustly.
-- Add confidence calibration and human-review queues.
-- Add batch processing and evaluation scripts.
+### Output layout
+
+User-facing runtime artifacts are grouped into exactly four categories (internal caches live under `.cache/`):
+
+```text
+workflow/
+├─ preprocessed/                  # normalized scans and preprocessing JSON
+├─ api_markdown/                  # raw API question Markdown and response JSON
+├─ code_outputs/                  # local code/model stages
+│  ├─ rfdetr/                     # detection JSONL, crops, and visualizations
+│  ├─ doclayout/                  # layout JSON and visualizations
+│  └─ match/                      # reading order, matching JSON, and question crops
+└─ agent_outputs/<page_name>/     # final agent output
+   ├─ result.md                   # each question followed by its handwriting
+   ├─ result.json                 # machine-readable paired structure
+   └─ verification.json           # alignment and evidence details
+```
+
+`result.md` now follows “question 16 → answer 16 → question 17 → answer 17,” rather than listing every question before every answer. Handwriting extraction only runs on main crops aligned to verified questions, preventing marginal or neighboring-page handwriting from entering the final result.
+
+### Code layout and checks
+
+```text
+agent/workflow.py       single end-to-end entrypoint and output manager
+match/                  local detection, layout, reading order, and matching
+proofread/              question repair, evidence verification, and abstention
+scripts/run_agent.ps1   user entrypoint
+```
+
+```powershell
+.\.conda\messtoclean\python.exe -m unittest discover -s tests -v
+.\.conda\messtoclean\python.exe -m agent.workflow --help
+```
+
+`workflow/`, `input/`, local environments, API secrets, model weights, and `Reference/` are Git-ignored. `Reference/` is local research material and is never uploaded to GitHub.

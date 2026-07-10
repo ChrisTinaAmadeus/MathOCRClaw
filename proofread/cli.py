@@ -24,7 +24,7 @@ def _find_page_dirs(pages_root: Path, find_pattern: str) -> List[Path]:
 
 
 def build_argparser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser("proofread_page_v6_6")
+    p = argparse.ArgumentParser("mathocr_proofread")
 
     # input
     g = p.add_argument_group("Input")

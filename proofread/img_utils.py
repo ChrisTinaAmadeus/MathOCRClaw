@@ -3,8 +3,10 @@ from __future__ import annotations
 import base64
 import io
 from dataclasses import dataclass
-from typing import Optional, Tuple
+from typing import Any, Dict, Optional, Tuple
 
+import cv2
+import numpy as np
 from PIL import Image, ImageEnhance, ImageOps
 
 from .common import sha1_bytes
@@ -36,6 +38,60 @@ def blank_frac(img: Image.Image, *, white_thr: int = 248) -> float:
     white = sum(hist[white_thr:])  # >= thr
     return float(white) / float(total)
 
+
+def scan_document_for_ocr(img: Image.Image) -> Tuple[Image.Image, Dict[str, Any]]:
+    """Normalize page illumination and erase red ink before OCR/VLM calls.
+
+    Background division removes slow illumination changes while preserving dark
+    strokes. Red pixels are detected from both HSV hue and channel dominance;
+    the mask is slightly expanded so JPEG-colored edges are removed as well.
+    """
+    rgb = np.asarray(img.convert("RGB"), dtype=np.uint8)
+    height, width = rgb.shape[:2]
+    bgr = cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR)
+    hsv = cv2.cvtColor(bgr, cv2.COLOR_BGR2HSV)
+
+    red_low = cv2.inRange(hsv, (0, 55, 40), (12, 255, 255))
+    red_high = cv2.inRange(hsv, (168, 55, 40), (179, 255, 255))
+    red_hue = (red_low > 0) | (red_high > 0)
+
+    red = rgb[:, :, 0].astype(np.int16)
+    green = rgb[:, :, 1].astype(np.int16)
+    blue = rgb[:, :, 2].astype(np.int16)
+    red_dominant = (red >= green + 18) & (red >= blue + 18)
+    red_mask = (red_hue & red_dominant).astype(np.uint8) * 255
+    red_mask = cv2.dilate(red_mask, np.ones((3, 3), np.uint8), iterations=1)
+
+    cleaned = rgb.copy()
+    cleaned[red_mask > 0] = 255
+
+    blur_sigma = max(8.0, min(50.0, min(width, height) * 0.02))
+    background = cv2.GaussianBlur(
+        cleaned,
+        (0, 0),
+        sigmaX=blur_sigma,
+        sigmaY=blur_sigma,
+        borderType=cv2.BORDER_REPLICATE,
+    ).astype(np.float32)
+    corrected_float = cleaned.astype(np.float32) * 255.0 / np.maximum(background, 1.0)
+    # Restore stroke contrast after flattening the background illumination.
+    corrected_float = 255.0 - (255.0 - corrected_float) * 1.35
+    corrected = np.clip(corrected_float, 0, 255).astype(np.uint8)
+    corrected[red_mask > 0] = 255
+
+    red_pixels = int(np.count_nonzero(red_mask))
+    total_pixels = max(1, width * height)
+    metadata: Dict[str, Any] = {
+        "method": "background_division_and_red_mask",
+        "width": width,
+        "height": height,
+        "shadow_blur_sigma": round(blur_sigma, 2),
+        "ink_contrast_gain": 1.35,
+        "red_pixels_removed": red_pixels,
+        "red_pixel_fraction": round(red_pixels / total_pixels, 8),
+    }
+    return Image.fromarray(corrected), metadata
+
 @dataclass
 class EnhanceCfg:
     max_edge: int
@@ -62,4 +118,3 @@ def enhance_for_vlm(img: Image.Image, cfg: EnhanceCfg) -> Image.Image:
     if cfg.sharpness != 1.0:
         img = ImageEnhance.Sharpness(img).enhance(cfg.sharpness)
     return img
-

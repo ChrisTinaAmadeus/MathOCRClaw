@@ -1,2 +1,1 @@
-"""Minimal agent workflow for MessToClean."""
-
+"""MathOCRClaw end-to-end workflow."""

@@ -1,12 +1,14 @@
 .conda/
 .env.local
 workflow/
+input/
 __pycache__/
 *.pyc
 
 .cache/
 .matplotlib/
 .paddlex/
+Reference/
 
 # Local model weights and exported inference artifacts.
 *.pth

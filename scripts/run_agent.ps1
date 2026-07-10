@@ -3,7 +3,7 @@ param(
     [string]$Image,
     [switch]$SkipLayout,
     [switch]$Full,
-    [string]$OutRoot = ".\workflow\agent_out",
+    [string]$WorkRoot = ".\workflow",
     [string]$DoclayoutDevice = "cpu"
 )
 $ErrorActionPreference = "Stop"
@@ -12,9 +12,9 @@ $python = Join-Path $root ".conda\messtoclean\python.exe"
 Set-Location $root
 
 $argsList = @(
-  "-m", "agent.simple_agent",
+  "-m", "agent.workflow",
   "--image", $Image,
-  "--out-root", $OutRoot,
+  "--work-root", $WorkRoot,
   "--doclayout-device", $DoclayoutDevice
 )
 
