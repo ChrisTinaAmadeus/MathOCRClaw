@@ -1,0 +1,120 @@
+{
+  "total_count": 270,
+  "total_count_from_gt_files": 270,
+  "processed_count": 280,
+  "rejected_count": 23,
+  "valid_count": 247,
+  "unclassified_count": 0,
+  "alignment_stats": {
+    "total_aligned": 282,
+    "exact_match_count": 277,
+    "fuzzy_match_count": 1,
+    "fallback_next_question_count": 4,
+    "fallback_text_end_count": 0,
+    "failed_alignment_count": 0,
+    "total_questions": 282
+  },
+  "confusion_matrix": {
+    "tp": 1.0,
+    "fp": 6.0,
+    "tn": 241.0,
+    "fn": 22.0
+  },
+  "confusion_matrix_by_type": {
+    "Choice": {
+      "tp": 0.0,
+      "fp": 2.0,
+      "tn": 190.0,
+      "fn": 14.0
+    },
+    "Fill": {
+      "tp": 0.0,
+      "fp": 1.0,
+      "tn": 33.0,
+      "fn": 5.0
+    },
+    "Subjective": {
+      "tp": 1.0,
+      "fp": 3.0,
+      "tn": 18.0,
+      "fn": 3.0
+    }
+  },
+  "precision_by_type": {
+    "Choice": 0.0,
+    "Fill": 0.0,
+    "Subjective": 0.25
+  },
+  "recall_by_type": {
+    "Choice": 0.0,
+    "Fill": 0.0,
+    "Subjective": 0.25
+  },
+  "f1_by_type": {
+    "Choice": 0.0,
+    "Fill": 0.0,
+    "Subjective": 0.25
+  },
+  "overall": {
+    "avg_stem_sim": 0.7717492198917447,
+    "avg_img_sim": 0.0,
+    "avg_ans_acc": 0.6525821596244131,
+    "avg_answer_extraction_acc": 0.6332008006058633
+  },
+  "by_type": {
+    "Choice": {
+      "count": 207,
+      "valid_count": 192,
+      "avg_stem_sim": 0.8049077208727954,
+      "avg_img_sim": 0.0,
+      "avg_ans_acc": 0.7010869565217391,
+      "avg_answer_extraction_acc": 0.6761781043031044,
+      "confusion_matrix": {
+        "tp": 0.0,
+        "fp": 2.0,
+        "tn": 190.0,
+        "fn": 14.0
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Fill": {
+      "count": 39,
+      "valid_count": 34,
+      "avg_stem_sim": 0.7836149198646621,
+      "avg_img_sim": 0.0,
+      "avg_ans_acc": 0.3448275862068966,
+      "avg_answer_extraction_acc": 0.6064290410444257,
+      "confusion_matrix": {
+        "tp": 0.0,
+        "fp": 1.0,
+        "tn": 33.0,
+        "fn": 5.0
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Subjective": {
+      "count": 25,
+      "valid_count": 21,
+      "avg_stem_sim": 0.4493746490612304,
+      "avg_img_sim": 0.0,
+      "avg_ans_acc": -1.0,
+      "avg_answer_extraction_acc": -1.0,
+      "confusion_matrix": {
+        "tp": 1.0,
+        "fp": 3.0,
+        "tn": 18.0,
+        "fn": 3.0
+      },
+      "precision": 0.25,
+      "recall": 0.25,
+      "f1": 0.25
+    }
+  },
+  "precision": 0.14285714285714285,
+  "recall": 0.043478260869565216,
+  "f1": 0.06666666666666667
+}

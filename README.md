@@ -38,6 +38,10 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\run_agent.ps1 -Ima
 
 复用已有本地检测和匹配结果时加 `-SkipLayout`。不加 `-Full` 时会关闭题号读取、文本修复和题图关系检查，以减少 API 请求。
 
+### 小基准 Bench30
+
+初版智能体评测用的 **30 张高质量试卷图 + 千问 3-VL baseline Markdown** 见 [`benchmark/bench30/`](benchmark/bench30/README.md)（含 `manifest.tsv`、官方 GT 拷贝与评测摘要）。全量 MathDoc 数据不进本仓库。
+
 ### 输出结构
 
 所有用户可见的运行产物只分为四类（内部缓存位于 `.cache/`）：
