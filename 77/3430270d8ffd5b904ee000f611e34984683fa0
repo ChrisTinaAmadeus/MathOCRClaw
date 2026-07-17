@@ -1,0 +1,157 @@
+benchmark/bench30/README.md
+  s_448ff4ec30600f::t_5f0e6f3b343ef5 1-55
+README.md
+  s_448ff4ec30600f::t_1b820799374d39 41-44
+benchmark/bench30/BASELINE_30_GUIDE.md
+  s_448ff4ec30600f::t_d128db64209b14 1-374
+benchmark/bench30/baseline/01_row_120_3251408678_ea5hhci7_2.md
+  s_448ff4ec30600f::t_2c277cb8b5a064 1-54
+benchmark/bench30/baseline/02_row_315_3250968464_zzlqrw9z_1.md
+  s_448ff4ec30600f::t_7efe72864adcc5 1-49
+benchmark/bench30/baseline/03_row_376_3250975030_0n66kaie_3.md
+  s_448ff4ec30600f::t_5b70b138a515ad 1-41
+benchmark/bench30/baseline/04_row_747_3249896148_05nkmd85.md
+  s_448ff4ec30600f::t_676ae057a2c977 1-45
+benchmark/bench30/baseline/05_row_1753_3247480542_wroug3rx_1.md
+  s_448ff4ec30600f::t_5212e57a8f5c8c 1-133
+benchmark/bench30/baseline/06_row_759_3250032532_2jqf79lu_1.md
+  s_448ff4ec30600f::t_45142d1fc9cc2d 1-40
+benchmark/bench30/baseline/07_row_859_3249972215_xa8pwdk9_1.md
+  s_448ff4ec30600f::t_f0861e2e41bc11 1-44
+benchmark/bench30/baseline/08_row_1122_3249250874_y8d5tm7i.md
+  s_448ff4ec30600f::t_25777293cf785a 1-81
+benchmark/bench30/baseline/09_row_5674_2917551425_y26kcmp4.md
+  s_448ff4ec30600f::t_d7099b3a7a24b0 1-57
+benchmark/bench30/baseline/10_row_5752_2914781474_zbspj78y_2.md
+  s_448ff4ec30600f::t_080a0487f464d3 1-123
+benchmark/bench30/baseline/11_row_319_3250855574_pcq9hcp8.md
+  s_448ff4ec30600f::t_6fe5c946f33700 1-48
+benchmark/bench30/baseline/12_row_1850_3246146290_r8b7t6kf_1.md
+  s_448ff4ec30600f::t_3fc73b13dece12 1-29
+benchmark/bench30/baseline/13_row_655_3250371220_ocexm4ed.md
+  s_448ff4ec30600f::t_1dedb3e84e13dc 1-55
+benchmark/bench30/baseline/14_row_867_3249980821_m6fjw99z.md
+  s_448ff4ec30600f::t_5c58eb81f3639f 1-42
+benchmark/bench30/baseline/15_row_2652_3240503017_tg4m6g9o_1.md
+  s_448ff4ec30600f::t_ed12f30b2aa435 1-90
+benchmark/bench30/baseline/16_row_1540_3247838654_jzq30zk8_2.md
+  s_448ff4ec30600f::t_39fe027e7e616d 1-44
+benchmark/bench30/baseline/17_row_2576_3242082203_z4igzbaa_2.md
+  s_448ff4ec30600f::t_ad40ac78dfe127 1-127
+benchmark/bench30/baseline/18_row_2611_3241687205_1pks665f.md
+  s_448ff4ec30600f::t_0fb86bdf566e00 1-99
+benchmark/bench30/baseline/19_row_3307_3220236301_kr1pqdmo.md
+  s_448ff4ec30600f::t_b43726fd3a90f8 1-58
+benchmark/bench30/baseline/20_row_3469_3214580583_cb7eqeqm_3.md
+  s_448ff4ec30600f::t_cbd0cf826f3dd3 1-116
+benchmark/bench30/baseline/21_row_4292_3084157783_scagk3z6.md
+  s_448ff4ec30600f::t_c055cf953e9dd7 1-122
+benchmark/bench30/baseline/22_row_863_3249978576_rwqtjwxi.md
+  s_448ff4ec30600f::t_a9afdb4811e95f 1-121
+benchmark/bench30/baseline/23_row_2406_3243625377_79x6uzy9.md
+  s_448ff4ec30600f::t_ffeb9fb7e880ca 1-160
+benchmark/bench30/baseline/24_row_3019_3223766069_uffjzcpn.md
+  s_448ff4ec30600f::t_788f051cd2e9f0 1-125
+benchmark/bench30/baseline/25_row_1185_3248808381_icl142vk.md
+  s_448ff4ec30600f::t_49210d394615cf 1-52
+benchmark/bench30/baseline/26_row_2406_3243625432_6ne8pwpw_1.md
+  s_448ff4ec30600f::t_4bc9d6e3d4d4c6 1-39
+benchmark/bench30/baseline/27_row_2732_3238503015_6a8f6k83_1.md
+  s_448ff4ec30600f::t_51798582171b87 1-192
+benchmark/bench30/baseline/28_row_6401_2920728866_lti94db9_3.md
+  s_448ff4ec30600f::t_64432063ef5224 1-100
+benchmark/bench30/baseline/29_row_2528_3243614072_tm1q5teu_4.md
+  s_448ff4ec30600f::t_2e859554082f09 1-130
+benchmark/bench30/baseline/30_row_3473_3214585897_3bewf1ij.md
+  s_448ff4ec30600f::t_07f7a4ca5da4b3 1-108
+benchmark/bench30/gt/01_row_120_3251408678_ea5hhci7_2.md
+  s_448ff4ec30600f::t_44e065017a4a44 1-41
+benchmark/bench30/gt/02_row_315_3250968464_zzlqrw9z_1.md
+  s_448ff4ec30600f::t_4308308ad5dcaf 1-71
+benchmark/bench30/gt/03_row_376_3250975030_0n66kaie_3.md
+  s_448ff4ec30600f::t_1a4337e1ca7076 1-41
+benchmark/bench30/gt/04_row_747_3249896148_05nkmd85.md
+  s_448ff4ec30600f::t_602f5330023306 1-39
+benchmark/bench30/gt/05_row_1753_3247480542_wroug3rx_1.md
+  s_448ff4ec30600f::t_6de343198d66cf 1-58
+benchmark/bench30/gt/06_row_759_3250032532_2jqf79lu_1.md
+  s_448ff4ec30600f::t_50fed629d327c4 1-21
+benchmark/bench30/gt/07_row_859_3249972215_xa8pwdk9_1.md
+  s_448ff4ec30600f::t_714e242d33443d 1-47
+benchmark/bench30/gt/08_row_1122_3249250874_y8d5tm7i.md
+  s_448ff4ec30600f::t_c4b9580c8af19b 1-15
+benchmark/bench30/gt/09_row_5674_2917551425_y26kcmp4.md
+  s_448ff4ec30600f::t_e4a825d5afb42a 1-46
+benchmark/bench30/gt/10_row_5752_2914781474_zbspj78y_2.md
+  s_448ff4ec30600f::t_fa46a6401ce953 1-47
+benchmark/bench30/gt/11_row_319_3250855574_pcq9hcp8.md
+  s_448ff4ec30600f::t_51855d81028ea8 1-35
+benchmark/bench30/gt/12_row_1850_3246146290_r8b7t6kf_1.md
+  s_448ff4ec30600f::t_4a421326367a7d 1-22
+benchmark/bench30/gt/13_row_655_3250371220_ocexm4ed.md
+  s_448ff4ec30600f::t_94812c520f1271 1-26
+benchmark/bench30/gt/14_row_867_3249980821_m6fjw99z.md
+  s_448ff4ec30600f::t_e44c033e6fa909 1-19
+benchmark/bench30/gt/15_row_2652_3240503017_tg4m6g9o_1.md
+  s_448ff4ec30600f::t_dc53d89b563520 1-50
+benchmark/bench30/gt/16_row_1540_3247838654_jzq30zk8_2.md
+  s_448ff4ec30600f::t_442f2067d68626 1-38
+benchmark/bench30/gt/17_row_2576_3242082203_z4igzbaa_2.md
+  s_448ff4ec30600f::t_a126772d67c987 1-65
+benchmark/bench30/gt/18_row_2611_3241687205_1pks665f.md
+  s_448ff4ec30600f::t_85860ff362e5fa 1-48
+benchmark/bench30/gt/19_row_3307_3220236301_kr1pqdmo.md
+  s_448ff4ec30600f::t_d7b55f663f6834 1-32
+benchmark/bench30/gt/20_row_3469_3214580583_cb7eqeqm_3.md
+  s_448ff4ec30600f::t_e5920177662d0f 1-87
+benchmark/bench30/gt/21_row_4292_3084157783_scagk3z6.md
+  s_448ff4ec30600f::t_7174381ff70a08 1-63
+benchmark/bench30/gt/22_row_863_3249978576_rwqtjwxi.md
+  s_448ff4ec30600f::t_3e4f4e16889526 1-46
+benchmark/bench30/gt/23_row_2406_3243625377_79x6uzy9.md
+  s_448ff4ec30600f::t_68bcc4ac4bde6b 1-92
+benchmark/bench30/gt/24_row_3019_3223766069_uffjzcpn.md
+  s_448ff4ec30600f::t_2900b619d8a177 1-58
+benchmark/bench30/gt/25_row_1185_3248808381_icl142vk.md
+  s_448ff4ec30600f::t_bcb9163aff57be 1-20
+benchmark/bench30/gt/26_row_2406_3243625432_6ne8pwpw_1.md
+  s_448ff4ec30600f::t_d205e60151eebb 1-24
+benchmark/bench30/gt/27_row_2732_3238503015_6a8f6k83_1.md
+  s_448ff4ec30600f::t_083d26d628334e 1-89
+benchmark/bench30/gt/28_row_6401_2920728866_lti94db9_3.md
+  s_448ff4ec30600f::t_004ecd9c245acf 1-44
+benchmark/bench30/gt/29_row_2528_3243614072_tm1q5teu_4.md
+  s_448ff4ec30600f::t_f5081e3208ee44 1-71
+benchmark/bench30/gt/30_row_3473_3214585897_3bewf1ij.md
+  s_448ff4ec30600f::t_27526478a663c1 1-62
+benchmark/bench30/manifest.tsv
+  s_448ff4ec30600f::t_a11ed4e001fadc 1-31
+benchmark/bench30/prompts/README.md
+  s_448ff4ec30600f::t_8fb785c969d20e 1-23
+benchmark/bench30/prompts/extract_v1.txt
+  s_448ff4ec30600f::t_66569fc13778b7 1-146
+benchmark/bench30/reports/summary_report.json
+  s_448ff4ec30600f::t_5f3b73608f5c5e 1-120
+benchmark/bench30/reports/summary_report.txt
+  s_448ff4ec30600f::t_d1d09430e3248e 1-284
+benchmark/bench30/scripts/extract_baseline.py
+  s_448ff4ec30600f::t_6a5908990c7d1e 1-202
+benchmark/bench30/scripts/prepare_bench30_eval.py
+  s_448ff4ec30600f::t_3dea69c72385a6 1-84
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.5",
+  "base_commit_sha": "773430270d8ffd5b904ee000f611e34984683fa0",
+  "prompts": {},
+  "sessions": {
+    "s_448ff4ec30600f": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "94277355-029a-4df2-b486-6483c04cf9d4",
+        "model": "default"
+      },
+      "human_author": "puppeteer <19517600502@163.com>"
+    }
+  }
+}
