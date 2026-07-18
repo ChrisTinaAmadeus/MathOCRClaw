@@ -43,7 +43,7 @@ $rfdetrArgs = @(
   "--output-dir", $RfdetrOut,
   "--overwrite-jsonl",
   "--clean-output",
-  "--num-classes", "3"
+  "--num-classes", "4"
 )
 if ($OptimizeRfdetr) {
     $rfdetrArgs += "--optimize-for-inference"

@@ -6,14 +6,14 @@ from agent.workflow import WorkflowPaths, _build_question_results, _render_resul
 
 
 class WorkflowOutputTests(unittest.TestCase):
-    def test_workflow_has_four_user_facing_output_groups(self):
+    def test_workflow_preserves_original_image_group(self):
         with tempfile.TemporaryDirectory() as tmp:
             paths = WorkflowPaths(Path(tmp))
             paths.ensure()
             visible = {path.name for path in Path(tmp).iterdir()}
             self.assertEqual(
                 visible,
-                {"preprocessed", "api_markdown", "code_outputs", "agent_outputs"},
+                {"image", "preprocessed", "api_markdown", "code_outputs", "agent_outputs"},
             )
 
     def test_questions_and_answers_are_paired_in_question_order(self):
@@ -36,6 +36,9 @@ class WorkflowOutputTests(unittest.TestCase):
         self.assertEqual(questions[0]["handwritten_answer"]["text"], "answer 16")
         self.assertLess(rendered.index("answer 16"), rendered.index("## 题目 17"))
         self.assertGreater(rendered.index("answer 17"), rendered.index("## 题目 17"))
+        self.assertNotIn("题干校验", rendered)
+        self.assertNotIn("答案证据", rendered)
+        self.assertNotIn("证据说明", rendered)
 
 
 if __name__ == "__main__":

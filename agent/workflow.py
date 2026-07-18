@@ -4,6 +4,7 @@ import argparse
 import json
 import os
 import re
+import shutil
 import subprocess
 from dataclasses import dataclass
 from pathlib import Path
@@ -11,6 +12,11 @@ from typing import Any, Dict, List, Optional
 
 from PIL import Image
 
+from agent.handwriting_regions import (
+    draw_handwriting_overlay,
+    save_handwriting_views,
+    score_and_divide_question_frame,
+)
 from proofread.cache import JsonCache
 from proofread.figures import FigureFilterCfg
 from proofread.img_utils import (
@@ -20,7 +26,7 @@ from proofread.img_utils import (
     safe_open_image,
     scan_document_for_ocr,
 )
-from proofread.match_utils import load_crop_image, load_match_questions
+from proofread.match_utils import load_match_questions
 from proofread.md_utils import split_page_into_blocks
 from proofread.pipeline import process_one_page
 from proofread.vlm_client import VLMClient
@@ -31,9 +37,13 @@ DEFAULT_VLM_MODEL = os.environ.get("MTC_VLM_MODEL", "qwen3.7-plus")
 
 @dataclass(frozen=True)
 class WorkflowPaths:
-    """The four user-facing output groups and their internal subdirectories."""
+    """The user-facing output groups and their internal subdirectories."""
 
     root: Path
+
+    @property
+    def image(self) -> Path:
+        return self.root / "image"
 
     @property
     def preprocessed(self) -> Path:
@@ -68,7 +78,14 @@ class WorkflowPaths:
         return _repo_root() / ".cache" / "mathocrclaw"
 
     def ensure(self) -> None:
-        for path in (self.preprocessed, self.api_markdown, self.code_outputs, self.agent_outputs, self.cache):
+        for path in (
+            self.image,
+            self.preprocessed,
+            self.api_markdown,
+            self.code_outputs,
+            self.agent_outputs,
+            self.cache,
+        ):
             path.mkdir(parents=True, exist_ok=True)
 
 
@@ -96,18 +113,19 @@ Rules:
 - Output valid JSON only, without markdown fences.
 """
 
-ANSWER_PROMPT = """You are extracting student handwriting from one cropped exam-question image.
-Look for handwritten student work, marks, selected options, filled blanks, calculations, or final answers.
+ANSWER_PROMPT = """You are extracting student handwriting from one exam-question region.
+The first image is the complete scored question frame. If more images follow, they are overlapping magnified detail slices.
+Look across all supplied images for handwritten student work, marks, selected options, filled blanks, calculations, or final answers.
 Ignore the printed question text except when needed for context.
 
 Return JSON only:
 {
-  "student_answer": "transcribed handwriting only; empty if none",
+  "student_answer": "complete transcription of all handwriting in reading order; empty if none",
   "status": "ok|no_answer|uncertain|unreadable",
   "evidence_note": "brief visual evidence, e.g. where the handwriting appears"
 }
 
-Do not solve the problem and do not invent missing handwriting.
+Do not solve, summarize, or silently omit intermediate handwritten work. Do not invent missing handwriting.
 """
 
 ANSWER_VERIFY_PROMPT = """You are a handwriting evidence verifier.
@@ -197,6 +215,52 @@ def _invoke_image_json(
     return obj
 
 
+def _invoke_handwriting_json(
+    vlm: VLMClient,
+    views: List[Dict[str, Any]],
+    *,
+    cache: Optional[JsonCache],
+    cache_prefix: str,
+    max_tokens: int,
+    detail_views: int = 0,
+) -> Dict[str, Any]:
+    messages: List[Dict[str, Any]] = [{"type": "text", "text": ANSWER_PROMPT}]
+    hashes: List[str] = []
+    selected_views = views[: 1 + max(0, detail_views)]
+    for view in selected_views:
+        img = safe_open_image(view.get("path"))
+        if img is None:
+            continue
+        img2 = enhance_for_vlm(img, STRONG_ENHANCE)
+        data_url, img_hash = img_to_data_url(img2)
+        hashes.append(img_hash)
+        messages.extend(
+            [
+                {"type": "text", "text": f"View: {view.get('kind') or 'detail'}"},
+                {"type": "image_url", "image_url": {"url": data_url}},
+            ]
+        )
+    if not hashes:
+        return {
+            "student_answer": "",
+            "status": "unreadable",
+            "evidence_note": "No region view could be opened.",
+        }
+
+    ck = f"{vlm.cache_tag}::{cache_prefix}::{'::'.join(hashes)}"
+    if cache:
+        hit = cache.get("answer_extract_regions", ck)
+        if isinstance(hit, dict):
+            return hit
+
+    raw = vlm.invoke(messages, temperature=0.0, top_p=0.7, max_tokens=max_tokens)
+    obj = _extract_json_obj(raw)
+    obj["_raw"] = raw
+    if cache:
+        cache.set("answer_extract_regions", ck, obj)
+    return obj
+
+
 def _verify_answer(
     vlm: VLMClient,
     img: Image.Image,
@@ -258,10 +322,14 @@ def _baseline_to_markdown(baseline: Dict[str, Any]) -> str:
 
 def _collect_answer_evidence(
     page_dir: Path,
+    page_img: Image.Image,
     vlm: VLMClient,
     verification_items: List[Dict[str, Any]],
     *,
     cache: Optional[JsonCache],
+    max_tokens: int = 1200,
+    detail_views: int = 0,
+    question_text_by_qno: Optional[Dict[Any, str]] = None,
 ) -> List[Dict[str, Any]]:
     _, questions = load_match_questions(page_dir / "match.json")
     items: List[Dict[str, Any]] = []
@@ -284,8 +352,17 @@ def _collect_answer_evidence(
             )
             continue
 
-        img = load_crop_image(page_dir, qrec)
-        if img is None:
+        try:
+            question_text = (question_text_by_qno or {}).get(target.get("qno"), "")
+            region = score_and_divide_question_frame(
+                page_img.size,
+                questions,
+                match_qi,
+                question_text=question_text,
+            )
+            question_crop = page_dir / str(qrec.get("crop_path") or "").replace("\\", "/")
+            views = save_handwriting_views(page_img, region, question_crop.parent / "handwriting")
+        except (IndexError, TypeError, ValueError, OSError) as exc:
             items.append(
                 {
                     "qno": target.get("qno"),
@@ -293,37 +370,94 @@ def _collect_answer_evidence(
                     "text": "",
                     "status": "crop_open_fail",
                     "verdict": "U",
-                    "evidence_note": "The aligned question crop could not be opened.",
+                    "evidence_note": f"The handwriting frame could not be built: {exc}",
                     "crop_path": str(qrec.get("crop_path") or ""),
                 }
             )
             continue
 
-        ans = _invoke_image_json(
-            vlm,
-            img,
-            ANSWER_PROMPT,
-            cache=cache,
-            cache_ns="answer_extract",
-            cache_prefix="answer_extract",
-            max_tokens=700,
-        )
+        for view_index, view in enumerate(views):
+            view["sent_to_api"] = view_index <= detail_views
+        recognition_mode = "expanded_frame"
+        expanded_api_error = ""
+        verification_img = safe_open_image(views[0]["path"])
+        try:
+            ans = _invoke_handwriting_json(
+                vlm,
+                views,
+                cache=cache,
+                cache_prefix=f"answer_extract_regions::{target.get('qno')}",
+                max_tokens=max_tokens,
+                detail_views=detail_views,
+            )
+        except RuntimeError as exc:
+            expanded_api_error = str(exc)
+            tight_img = safe_open_image(question_crop)
+            try:
+                if tight_img is None:
+                    raise RuntimeError("the legacy tight question crop could not be opened")
+                ans = _invoke_image_json(
+                    vlm,
+                    tight_img,
+                    ANSWER_PROMPT,
+                    cache=cache,
+                    cache_ns="answer_extract",
+                    cache_prefix="answer_extract",
+                    max_tokens=min(max_tokens, 700),
+                )
+                recognition_mode = "tight_crop_fallback"
+                verification_img = tight_img
+            except RuntimeError as fallback_exc:
+                items.append(
+                    {
+                        "qno": target.get("qno"),
+                        "question_index": idx,
+                        "read_index": qrec.get("read_index"),
+                        "det_index": qrec.get("det_index"),
+                        "crop_path": views[0]["path"],
+                        "region": {**region, "views": views},
+                        "text": "",
+                        "status": "api_error",
+                        "verdict": "U",
+                        "evidence_note": str(fallback_exc),
+                        "recognition": {
+                            "raw": "",
+                            "status": "api_error",
+                            "mode": "failed",
+                            "expanded_api_error": expanded_api_error,
+                            "fallback_api_error": str(fallback_exc),
+                        },
+                        "verification": {"verdict": "U", "reason": "extract_api_error"},
+                    }
+                )
+                continue
         student_answer = str(ans.get("student_answer") or "").strip()
-        verify = _verify_answer(vlm, img, student_answer, cache=cache) if student_answer else {
-            "verdict": "U",
-            "reason": "empty_candidate",
-        }
+        try:
+            verify = _verify_answer(vlm, verification_img, student_answer, cache=cache) if student_answer and verification_img else {
+                "verdict": "U",
+                "reason": "empty_candidate",
+            }
+        except RuntimeError as exc:
+            verify = {"verdict": "U", "reason": "verify_api_error", "raw": str(exc)}
         items.append(
             {
                 "qno": target.get("qno"),
                 "question_index": idx,
                 "read_index": qrec.get("read_index"),
                 "det_index": qrec.get("det_index"),
-                "crop_path": str(page_dir / str(qrec.get("crop_path") or "")),
+                "crop_path": views[0]["path"],
+                "region": {**region, "views": views},
                 "text": student_answer,
                 "status": ans.get("status") or ("ok" if student_answer else "no_answer"),
                 "verdict": verify.get("verdict") or "U",
                 "evidence_note": ans.get("evidence_note") or "",
+                "recognition": {
+                    "raw": ans.get("_raw") or ans.get("raw") or "",
+                    "status": ans.get("status") or ("ok" if student_answer else "no_answer"),
+                    "mode": recognition_mode,
+                    "expanded_api_error": expanded_api_error,
+                },
+                "verification": verify,
             }
         )
     return items
@@ -374,6 +508,9 @@ def _build_question_results(
                     "verdict": answer.get("verdict") or "U",
                     "evidence_note": answer.get("evidence_note") or "",
                     "crop_path": answer.get("crop_path") or "",
+                    "region": answer.get("region") or {},
+                    "recognition": answer.get("recognition") or {},
+                    "verification": answer.get("verification") or {},
                 },
             }
         )
@@ -395,7 +532,6 @@ def _render_result_markdown(page_name: str, questions: List[Dict[str, Any]]) -> 
     for index, question in enumerate(questions, start=1):
         qno = question.get("qno")
         label = str(qno) if qno is not None else str(index)
-        verification = question.get("question_verification") or {}
         answer = question.get("handwritten_answer") or {}
         lines.extend(
             [
@@ -409,18 +545,7 @@ def _render_result_markdown(page_name: str, questions: List[Dict[str, Any]]) -> 
             ]
         )
         answer_text = str(answer.get("text") or "").strip()
-        lines.append(answer_text if answer_text else "_未识别到可验证的手写答案。_")
-        lines.extend(
-            [
-                "",
-                f"- 题干校验：`{verification.get('verdict') or 'U'}`",
-                f"- 答案状态：`{answer.get('status') or 'uncertain'}`",
-                f"- 答案证据：`{answer.get('verdict') or 'U'}`",
-            ]
-        )
-        evidence_note = str(answer.get("evidence_note") or "").strip()
-        if evidence_note:
-            lines.append(f"- 证据说明：{evidence_note}")
+        lines.append(answer_text if answer_text else "_未识别到手写答案。_")
     return "\n".join(lines).strip() + "\n"
 
 
@@ -436,6 +561,9 @@ def run_agent(args: argparse.Namespace) -> Dict[str, Any]:
     paths = WorkflowPaths(Path(args.work_root))
     paths.ensure()
     page_name = image.stem
+    original_image = paths.image / image.name
+    if image != original_image.resolve():
+        shutil.copy2(image, original_image)
     page_dir = paths.match / page_name
     page_agent_out = paths.agent_outputs / page_name
     page_agent_out.mkdir(parents=True, exist_ok=True)
@@ -447,6 +575,15 @@ def run_agent(args: argparse.Namespace) -> Dict[str, Any]:
         api_base=args.api_base,
         api_key=args.api_key,
         model=args.model,
+        temperature=0.0,
+        top_p=0.7,
+    )
+    answer_vlm = VLMClient(
+        api_base=args.api_base,
+        api_key=args.api_key,
+        model=args.model,
+        timeout_s=args.answer_timeout,
+        max_retries=args.answer_retries,
         temperature=0.0,
         top_p=0.7,
     )
@@ -482,30 +619,34 @@ def run_agent(args: argparse.Namespace) -> Dict[str, Any]:
         cache.save()
 
     if not args.skip_layout:
+        rfdetr_page_out = paths.rfdetr / page_name
+        doclayout_page_out = paths.doclayout / page_name
         _run_stage_script(
             "run_stage1.ps1",
             [
                 "-Image",
                 str(preprocessed_image),
                 "-RfdetrOut",
-                str(paths.rfdetr),
+                str(rfdetr_page_out),
                 "-DoclayoutOut",
-                str(paths.doclayout),
+                str(doclayout_page_out),
                 "-Checkpoint",
                 str(args.checkpoint),
                 "-DoclayoutDevice",
                 str(args.doclayout_device),
             ],
         )
+        if page_dir.exists():
+            shutil.rmtree(page_dir)
         _run_stage_script(
             "run_stage2.ps1",
             [
                 "-ImageDir",
                 str(paths.preprocessed),
                 "-RfdetrJsonl",
-                str(paths.rfdetr / "rfdetr_infer_results.jsonl"),
+                str(rfdetr_page_out / "rfdetr_infer_results.jsonl"),
                 "-DoclayoutJsonDir",
-                str(paths.doclayout / "json"),
+                str(doclayout_page_out / "json"),
                 "-OutDir",
                 str(paths.match),
             ],
@@ -549,25 +690,64 @@ def run_agent(args: argparse.Namespace) -> Dict[str, Any]:
 
     answer_items = _collect_answer_evidence(
         page_dir,
-        vlm,
+        preprocessed_img,
+        answer_vlm,
         proofread_report.get("items") or [],
         cache=cache,
+        max_tokens=args.answer_max_tokens,
+        detail_views=args.answer_detail_views,
+        question_text_by_qno={
+            block.qno: block.text
+            for block in split_page_into_blocks(proofread_md)
+            if block.kind == "q" and block.qno is not None
+        },
     )
+    handwriting_regions = [
+        {
+            "qno": item.get("qno"),
+            "question_index": item.get("question_index"),
+            "read_index": item.get("read_index"),
+            "det_index": item.get("det_index"),
+            "region": item.get("region"),
+        }
+        for item in answer_items
+        if isinstance(item.get("region"), dict) and item.get("region")
+    ]
+    handwriting_regions_path = page_dir / "handwriting_regions.json"
+    handwriting_overlay_path = page_dir / "viz" / f"{page_name}_handwriting_overlay.png"
+    handwriting_regions_path.write_text(
+        json.dumps(
+            {
+                "page": page_name,
+                "source_image": str(preprocessed_image),
+                "legend": {"stem_box": "green", "handwriting_region": "magenta"},
+                "questions": handwriting_regions,
+            },
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
+    draw_handwriting_overlay(preprocessed_img, handwriting_regions, handwriting_overlay_path)
     questions = _build_question_results(proofread_md, proofread_report, answer_items)
     if not questions:
         raise RuntimeError("no aligned question-answer results were produced")
 
     final = {
         "page": page_name,
-        "source_image": str(image),
+        "source_image": str(original_image),
+        "input_image": str(image),
         "preprocessed_image": str(preprocessed_image),
         "summary": _result_summary(questions),
         "questions": questions,
         "artifacts": {
+            "original_image": str(original_image),
             "preprocessing_report": str(preprocess_report_path),
             "api_markdown": str(page_md_path),
             "api_response": str(baseline_json_path),
             "code_outputs": str(paths.code_outputs),
+            "handwriting_regions": str(handwriting_regions_path),
+            "handwriting_overlay": str(handwriting_overlay_path),
             "verification_report": str(page_agent_out / "verification.json"),
         },
     }
@@ -584,6 +764,8 @@ def run_agent(args: argparse.Namespace) -> Dict[str, Any]:
         "result_json": str(result_json_path),
         "result_markdown": str(result_md_path),
         "verification_report": str(verification_path),
+        "handwriting_regions": str(handwriting_regions_path),
+        "handwriting_overlay": str(handwriting_overlay_path),
     }
     return final
 
@@ -591,7 +773,7 @@ def run_agent(args: argparse.Namespace) -> Dict[str, Any]:
 def build_argparser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser("mathocr_workflow")
     p.add_argument("--image", required=True, help="input exam page image")
-    p.add_argument("--work-root", default="workflow", help="root containing the four output groups")
+    p.add_argument("--work-root", default="workflow", help="root containing workflow output groups")
     p.add_argument("--checkpoint", default="checkpoint_best_total.pth")
     p.add_argument("--doclayout-device", default="cpu")
     p.add_argument("--skip-layout", action="store_true", help="reuse existing Stage 1/2 outputs")
@@ -599,6 +781,16 @@ def build_argparser() -> argparse.ArgumentParser:
     p.add_argument("--api-key", default="")
     p.add_argument("--model", default=DEFAULT_VLM_MODEL)
     p.add_argument("--baseline-max-tokens", type=int, default=3000)
+    p.add_argument("--answer-max-tokens", type=int, default=1200)
+    p.add_argument("--answer-timeout", type=int, default=120)
+    p.add_argument("--answer-retries", type=int, default=1)
+    p.add_argument(
+        "--answer-detail-views",
+        type=int,
+        choices=(0, 1, 2),
+        default=0,
+        help="number of overlapping detail crops sent with the full handwriting frame",
+    )
     p.add_argument("--use-crop-qno", action="store_true")
     p.add_argument("--no-patcher", action="store_true", default=True)
     p.add_argument("--with-patcher", dest="no_patcher", action="store_false")

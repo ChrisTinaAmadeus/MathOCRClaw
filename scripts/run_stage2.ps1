@@ -11,11 +11,6 @@ Set-Location $root
 
 New-Item -ItemType Directory -Force -Path $OutDir | Out-Null
 
-if (Test-Path $OutDir) {
-    Remove-Item -LiteralPath $OutDir -Recurse -Force
-}
-New-Item -ItemType Directory -Force -Path $OutDir | Out-Null
-
 & $python -m match.match `
   --rfdetr-jsonl $RfdetrJsonl `
   --doclayout-json-dir $DoclayoutJsonDir `

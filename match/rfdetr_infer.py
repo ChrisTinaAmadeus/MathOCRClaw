@@ -84,6 +84,8 @@ from rfdetr import RFDETRMedium
 
 
 DEFAULT_CLASS_NAMES: Dict[int, str] = {
+    0: "multiple_choice_question",
+    1: "fill_blank_question",
     2: "problem_solving_question",
     3: "partial_question",
 }
@@ -162,6 +164,9 @@ def get_class_name(
     if class_name_map is not None and cid in class_name_map:
         return class_name_map[cid]
 
+    if cid in DEFAULT_CLASS_NAMES:
+        return DEFAULT_CLASS_NAMES[cid]
+
     if hasattr(rf_model, "class_names") and isinstance(rf_model.class_names, dict):
         # Compatible with both 1-based and 0-based indexing
         name = rf_model.class_names.get(int(cid) + 1)
@@ -169,9 +174,6 @@ def get_class_name(
             name = rf_model.class_names.get(int(cid))
         if name is not None:
             return str(name)
-
-    if cid in DEFAULT_CLASS_NAMES:
-        return DEFAULT_CLASS_NAMES[cid]
 
     return str(cid)
 
