@@ -26,3 +26,12 @@ Reference/
 *.log
 .DS_Store
 Thumbs.db
+
+# Windows artifacts are outside the Linux-only runtime.
+*.exe
+*.dll
+*.msi
+*.pdb
+*.ps1
+*.bat
+*.cmd
