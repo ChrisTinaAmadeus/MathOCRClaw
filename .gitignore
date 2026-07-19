@@ -4,6 +4,9 @@ workflow/
 input/
 __pycache__/
 *.pyc
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
 
 .cache/
 .matplotlib/
@@ -23,3 +26,12 @@ Reference/
 *.log
 .DS_Store
 Thumbs.db
+
+# Windows artifacts are outside the Linux-only runtime.
+*.exe
+*.dll
+*.msi
+*.pdb
+*.ps1
+*.bat
+*.cmd

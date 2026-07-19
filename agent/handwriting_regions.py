@@ -334,9 +334,9 @@ def save_handwriting_views(
 
 def _overlay_font(size: int) -> ImageFont.ImageFont:
     for path in (
-        "C:/Windows/Fonts/consola.ttf",
-        "C:/Windows/Fonts/arial.ttf",
         "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf",
+        "/usr/share/fonts/truetype/liberation2/LiberationMono-Regular.ttf",
+        "/usr/share/fonts/opentype/noto/NotoSansMono-Regular.ttf",
     ):
         try:
             return ImageFont.truetype(path, size=size)

@@ -69,7 +69,7 @@ def parse_args() -> argparse.Namespace:
     ap.add_argument(
         "--enable-mkldnn",
         action="store_true",
-        help="Enable MKLDNN/oneDNN CPU acceleration. Disabled by default for Windows stability.",
+        help="Enable MKLDNN/oneDNN CPU acceleration after validating the local backend.",
     )
     return ap.parse_args()
 

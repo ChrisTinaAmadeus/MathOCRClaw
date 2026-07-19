@@ -145,11 +145,7 @@ def _repo_root() -> Path:
 def _run_stage_script(script_name: str, args: List[str]) -> None:
     root = _repo_root()
     cmd = [
-        "powershell",
-        "-NoProfile",
-        "-ExecutionPolicy",
-        "Bypass",
-        "-File",
+        "bash",
         str(root / "scripts" / script_name),
         *args,
     ]
@@ -622,32 +618,32 @@ def run_agent(args: argparse.Namespace) -> Dict[str, Any]:
         rfdetr_page_out = paths.rfdetr / page_name
         doclayout_page_out = paths.doclayout / page_name
         _run_stage_script(
-            "run_stage1.ps1",
+            "run_stage1.sh",
             [
-                "-Image",
+                "--image",
                 str(preprocessed_image),
-                "-RfdetrOut",
+                "--rfdetr-out",
                 str(rfdetr_page_out),
-                "-DoclayoutOut",
+                "--doclayout-out",
                 str(doclayout_page_out),
-                "-Checkpoint",
+                "--checkpoint",
                 str(args.checkpoint),
-                "-DoclayoutDevice",
+                "--doclayout-device",
                 str(args.doclayout_device),
             ],
         )
         if page_dir.exists():
             shutil.rmtree(page_dir)
         _run_stage_script(
-            "run_stage2.ps1",
+            "run_stage2.sh",
             [
-                "-ImageDir",
+                "--image-dir",
                 str(paths.preprocessed),
-                "-RfdetrJsonl",
+                "--rfdetr-jsonl",
                 str(rfdetr_page_out / "rfdetr_infer_results.jsonl"),
-                "-DoclayoutJsonDir",
+                "--doclayout-json-dir",
                 str(doclayout_page_out / "json"),
-                "-OutDir",
+                "--out-dir",
                 str(paths.match),
             ],
         )

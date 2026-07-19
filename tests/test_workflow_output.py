@@ -1,11 +1,27 @@
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
-from agent.workflow import WorkflowPaths, _build_question_results, _render_result_markdown
+from agent.workflow import (
+    WorkflowPaths,
+    _build_question_results,
+    _render_result_markdown,
+    _run_stage_script,
+)
 
 
 class WorkflowOutputTests(unittest.TestCase):
+    @patch("agent.workflow.subprocess.run")
+    def test_stage_scripts_run_through_bash(self, run_mock):
+        _run_stage_script("run_stage1.sh", ["--image", "page.png"])
+
+        command = run_mock.call_args.args[0]
+        self.assertEqual(command[0], "bash")
+        self.assertTrue(command[1].endswith("scripts/run_stage1.sh"))
+        self.assertEqual(command[2:], ["--image", "page.png"])
+        self.assertTrue(run_mock.call_args.kwargs["check"])
+
     def test_workflow_preserves_original_image_group(self):
         with tempfile.TemporaryDirectory() as tmp:
             paths = WorkflowPaths(Path(tmp))

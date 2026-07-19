@@ -15,26 +15,27 @@ MathOCRClaw 是一个面向真实试卷照片的数学 OCR 智能体。它识别
 
 ### 快速开始
 
-需要 Windows PowerShell、Conda、可用的 DashScope/OpenAI 兼容多模态 API，以及放在仓库根目录的 `checkpoint_best_total.pth`。
+需要 Linux、Bash、Conda、可用的 DashScope/OpenAI 兼容多模态 API，以及放在仓库根目录的 `checkpoint_best_total.pth`。GPU 为可选项，版面检测默认使用 CPU。
 
-```powershell
-conda env create --prefix .\.conda\messtoclean -f environment.yml
+创建独立的 Linux 环境。安装脚本固定使用 `.conda/mathocrclaw`，不会复用从其他操作系统复制来的环境。
+
+```bash
+bash scripts/setup_env.sh
 ```
 
-创建不会被 Git 跟踪的 `.env.local`：
+创建不会被 Git 跟踪的 `.env.local`，然后填入 API 密钥：
 
-```dotenv
-DASHSCOPE_API_KEY=your_api_key
-MTC_VLM_MODEL=qwen3.7-plus
+```bash
+cp --no-clobber .env.example .env.local
 ```
 
 图片可以位于任意本地路径；推荐放在同样不会被 Git 跟踪的 `input/` 中。运行完整工作流：
 
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\run_agent.ps1 -Image .\input\page_0001.jpg -Full
+```bash
+bash scripts/run_agent.sh --image input/page_0001.jpg --full
 ```
 
-复用已有本地检测和匹配结果时加 `-SkipLayout`。不加 `-Full` 时会关闭题号读取、文本修复和题图关系检查，以减少 API 请求。
+复用已有本地检测和匹配结果时加 `--skip-layout`。不加 `--full` 时会关闭题号读取、文本修复和题图关系检查，以减少 API 请求。需要在当前终端中交互使用该环境时，执行 `source scripts/activate_env.sh`。
 
 ### 小基准 Bench30
 
@@ -67,12 +68,14 @@ workflow/
 agent/workflow.py       唯一端到端入口与输出管理
 match/                  本地检测、版面分析、阅读顺序和题图匹配
 proofread/              题干修复、证据验证和主动拒绝
-scripts/run_agent.ps1   用户入口
+scripts/setup_env.sh    创建或更新 Linux Conda 环境
+scripts/run_agent.sh    用户入口
 ```
 
-```powershell
-.\.conda\messtoclean\python.exe -m unittest discover -s tests -v
-.\.conda\messtoclean\python.exe -m agent.workflow --help
+```bash
+bash scripts/check_env.sh
+.conda/mathocrclaw/bin/python -m unittest discover -s tests -v
+.conda/mathocrclaw/bin/python -m agent.workflow --help
 ```
 
-`workflow/`、`input/`、本地环境、API 密钥、模型权重和 `Reference/` 均被 Git 忽略；`Reference/` 只用于本地研究，不上传 GitHub。
+仓库通过 `.gitattributes` 将所有文本文件固定为 LF，避免 CRLF 转换导致 Git 把整份文件误判为改动。`workflow/`、`input/`、本地环境、API 密钥、模型权重和 `Reference/` 均被 Git 忽略；`Reference/` 只用于本地研究，不上传 GitHub。
