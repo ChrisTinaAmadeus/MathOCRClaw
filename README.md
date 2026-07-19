@@ -15,26 +15,27 @@ exam photo
 
 ### Quick start
 
-Requirements: Windows PowerShell, Conda, a DashScope/OpenAI-compatible multimodal API, and `checkpoint_best_total.pth` in the repository root.
+Requirements: Linux, Bash, Conda, a DashScope/OpenAI-compatible multimodal API, and `checkpoint_best_total.pth` in the repository root. A CUDA-capable GPU is optional; CPU is the default for layout detection.
 
-```powershell
-conda env create --prefix .\.conda\messtoclean -f environment.yml
+Create the isolated Linux environment. The setup script always uses `.conda/mathocrclaw`, so an environment copied from another operating system is never reused.
+
+```bash
+bash scripts/setup_env.sh
 ```
 
-Create a Git-ignored `.env.local`:
+Create a Git-ignored `.env.local` and add your API key:
 
-```dotenv
-DASHSCOPE_API_KEY=your_api_key
-MTC_VLM_MODEL=qwen3.7-plus
+```bash
+cp --no-clobber .env.example .env.local
 ```
 
 The input image may be anywhere locally; `input/` is a convenient Git-ignored location. Run the full workflow with:
 
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\run_agent.ps1 -Image .\input\page_0001.jpg -Full
+```bash
+bash scripts/run_agent.sh --image input/page_0001.jpg --full
 ```
 
-Add `-SkipLayout` to reuse local detection and matching outputs. Without `-Full`, question-number reading, text patching, and question/figure checks are disabled to reduce API calls.
+Add `--skip-layout` to reuse local detection and matching outputs. Without `--full`, question-number reading, text patching, and question/figure checks are disabled to reduce API calls. For an interactive shell in the same environment, run `source scripts/activate_env.sh`.
 
 ### Bench30 benchmark
 
@@ -67,12 +68,14 @@ workflow/
 agent/workflow.py       single end-to-end entrypoint and output manager
 match/                  local detection, layout, reading order, and matching
 proofread/              question repair, evidence verification, and abstention
-scripts/run_agent.ps1   user entrypoint
+scripts/setup_env.sh    create or update the Linux Conda environment
+scripts/run_agent.sh    user entrypoint
 ```
 
-```powershell
-.\.conda\messtoclean\python.exe -m unittest discover -s tests -v
-.\.conda\messtoclean\python.exe -m agent.workflow --help
+```bash
+bash scripts/check_env.sh
+.conda/mathocrclaw/bin/python -m unittest discover -s tests -v
+.conda/mathocrclaw/bin/python -m agent.workflow --help
 ```
 
-`workflow/`, `input/`, local environments, API secrets, model weights, and `Reference/` are Git-ignored. `Reference/` is local research material and is never uploaded to GitHub.
+All repository text files are pinned to LF through `.gitattributes`, preventing CRLF conversions from appearing as full-file Git changes. `workflow/`, `input/`, local environments, API secrets, model weights, and `Reference/` are Git-ignored. `Reference/` is local research material and is never uploaded to GitHub.

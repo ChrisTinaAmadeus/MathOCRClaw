@@ -4,6 +4,9 @@ workflow/
 input/
 __pycache__/
 *.pyc
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
 
 .cache/
 .matplotlib/
