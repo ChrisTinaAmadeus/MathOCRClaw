@@ -1302,31 +1302,6 @@ def process_one_page(
                     }
                 )
                 continue
-                out_blocks.append(kept_text)
-                report["items"].append(
-                    {
-                        "block": bi,
-                        "kind": "q",
-                        "qno": md_qno,
-                        "status": "mark_only_mask_no_fig",
-                        "mapped_match_qi": int(q_idx),
-                        "crop_path": str(cp) if cp else None,
-                        "crop_qno": crop_qno,
-                        "is_unknown": bool(is_unknown),
-                        "merge_suspect": bool(merge_suspect),
-                        "weak_crop": True,
-                        "weak_reasons": weak_reasons,
-                        "no_crop_qno_weak": bool(no_crop_qno_weak),
-                        "mismatch_soft": bool(mismatch_soft),
-                        "mark_only": True,
-                        "v_strict": getattr(v1, "verdict", None),
-                        "v_lenient": getattr(v2, "verdict", None),
-                        "v_after_repair": v_after,
-                        "v_after_raw": v_raw,
-                    "mask_confirm": mask_confirm,
-                    }
-                )
-                continue
 
             kept_text = normalize_ws(b.text)
 

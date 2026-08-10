@@ -12,73 +12,12 @@ from typing import List, Dict, Any, Optional
 import numpy as np
 from PIL import Image
 
-import time
 os.environ.setdefault("LOG_LEVEL", "ERROR")
 warnings.filterwarnings("ignore", message=r".*target=True is deprecated.*")
 logging.getLogger("rf-detr").setLevel(logging.ERROR)
 logging.getLogger("rfdetr").setLevel(logging.ERROR)
-try:
-    with open('/home/tangcheng/an/.cursor/debug.log', 'a', encoding='utf-8') as f:
-        f.write(json.dumps({
-            "sessionId": "debug-session",
-            "runId": "run1",
-            "hypothesisId": "A",
-            "location": "match/rfdetr_infer.py:15",
-            "message": "Before supervision import - checking Python env",
-            "data": {
-                "python_executable": sys.executable,
-                "python_version": sys.version,
-                "sys_path": sys.path[:5]  # First 5 entries
-            },
-            "timestamp": int(time.time() * 1000)
-        }, ensure_ascii=False) + "\n")
-except Exception:
-    pass
 
-
-try:
-    import supervision as sv
-
-    try:
-        with open('/home/tangcheng/an/.cursor/debug.log', 'a', encoding='utf-8') as f:
-            f.write(json.dumps({
-                "sessionId": "debug-session",
-                "runId": "run1",
-                "hypothesisId": "A",
-                "location": "match/rfdetr_infer.py:15",
-                "message": "supervision import SUCCESS",
-                "data": {"supervision_version": getattr(sv, '__version__', 'unknown')},
-                "timestamp": int(time.time() * 1000)
-            }, ensure_ascii=False) + "\n")
-    except Exception:
-        pass
-
-except ImportError as e:
-    try:
-        import subprocess
-        import shutil
-        with open('/home/tangcheng/an/.cursor/debug.log', 'a', encoding='utf-8') as f:
-            pip_check = shutil.which('pip')
-            pip3_check = shutil.which('pip3')
-            python_check = sys.executable
-            f.write(json.dumps({
-                "sessionId": "debug-session",
-                "runId": "run1",
-                "hypothesisId": "A,B,C,D,E",
-                "location": "match/rfdetr_infer.py:15",
-                "message": "supervision import FAILED",
-                "data": {
-                    "error": str(e),
-                    "python_executable": python_check,
-                    "pip_path": pip_check,
-                    "pip3_path": pip3_check,
-                    "sys_path": sys.path
-                },
-                "timestamp": int(time.time() * 1000)
-            }, ensure_ascii=False) + "\n")
-    except Exception:
-        pass
-    raise
+import supervision as sv
 
 from rfdetr import RFDETRMedium
 
