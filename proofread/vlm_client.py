@@ -48,6 +48,7 @@ class VLMClient:
     top_p: float = 0.8
 
     _session: requests.Session = field(default_factory=requests.Session, init=False, repr=False)
+    request_log: List[Dict[str, Any]] = field(default_factory=list, init=False)
 
     def __post_init__(self):
         self.api_base = (self.api_base or "").rstrip("/")
@@ -131,16 +132,48 @@ class VLMClient:
 
                 obj = r.json()
                 content = obj["choices"][0]["message"]["content"]
+                usage = obj.get("usage") if isinstance(obj, dict) else {}
+                usage = usage if isinstance(usage, dict) else {}
+                elapsed_s = time.perf_counter() - t0
+                self.request_log.append(
+                    {
+                        "success": True,
+                        "model": str(obj.get("model") or self.model),
+                        "attempt": attempt,
+                        "elapsed_s": round(elapsed_s, 6),
+                        "prompt_tokens": usage.get("prompt_tokens", usage.get("input_tokens")),
+                        "completion_tokens": usage.get(
+                            "completion_tokens", usage.get("output_tokens")
+                        ),
+                        "total_tokens": usage.get("total_tokens"),
+                        "request_id": obj.get("id"),
+                    }
+                )
                 if debug:
-                    dt = time.perf_counter() - t0
-                    print(f"[VLM] ok model={self.model} attempt={attempt} elapsed={dt:.1f}s", flush=True)
+                    print(
+                        f"[VLM] ok model={self.model} attempt={attempt} elapsed={elapsed_s:.1f}s",
+                        flush=True,
+                    )
                 return str(content) if content is not None else ""
 
             except Exception as e:
                 last_err = e
+                elapsed_s = time.perf_counter() - t0
+                self.request_log.append(
+                    {
+                        "success": False,
+                        "model": self.model,
+                        "attempt": attempt,
+                        "elapsed_s": round(elapsed_s, 6),
+                        "error": str(e)[:500],
+                    }
+                )
                 if debug:
-                    dt = time.perf_counter() - t0
-                    print(f"[VLM] fail model={self.model} attempt={attempt} elapsed={dt:.1f}s err={e}", flush=True)
+                    print(
+                        f"[VLM] fail model={self.model} attempt={attempt} "
+                        f"elapsed={elapsed_s:.1f}s err={e}",
+                        flush=True,
+                    )
 
                 backoff = min(self._backoff_cap_s, 0.6 * (2 ** (attempt - 1)))
                 backoff += random.random() * 0.2
@@ -151,4 +184,3 @@ class VLMClient:
             f"VLM invoke failed after {self.max_retries} retries "
             f"(timeout_s={self.timeout_s}, connect_timeout_s={self._connect_timeout_s}): {last_err}"
         )
-

@@ -10,6 +10,7 @@ Options:
   --rfdetr-jsonl PATH
   --doclayout-json-dir PATH
   --out-dir PATH
+  --flat-output             Single-page layout without an image-name subdirectory.
 EOF
 }
 
@@ -18,6 +19,7 @@ image_dir="workflow/preprocessed"
 rfdetr_jsonl="workflow/code_outputs/rfdetr/rfdetr_infer_results.jsonl"
 doclayout_json_dir="workflow/code_outputs/doclayout/json"
 out_dir="workflow/code_outputs/match"
+flat_output=0
 
 while (($#)); do
   case "$1" in
@@ -25,6 +27,7 @@ while (($#)); do
     --rfdetr-jsonl) rfdetr_jsonl="${2:?--rfdetr-jsonl requires a value}"; shift 2 ;;
     --doclayout-json-dir) doclayout_json_dir="${2:?--doclayout-json-dir requires a value}"; shift 2 ;;
     --out-dir) out_dir="${2:?--out-dir requires a value}"; shift 2 ;;
+    --flat-output) flat_output=1; shift ;;
     -h|--help) usage; exit 0 ;;
     *) echo "Unknown option: $1" >&2; usage >&2; exit 2 ;;
   esac
@@ -34,17 +37,21 @@ source "${SCRIPT_DIR}/runtime_env.sh"
 cd -- "${MTC_ROOT}"
 
 mkdir -p -- "${out_dir}"
-exec "${MTC_PYTHON}" -m match.match \
-  --rfdetr-jsonl "${rfdetr_jsonl}" \
-  --doclayout-json-dir "${doclayout_json_dir}" \
-  --pages-root "${image_dir}" \
-  --output-dir "${out_dir}" \
-  --match-algo v2 \
-  --match-backend flow \
-  --ro-overlap-mode keep_large \
-  --match-overlap-mode keep_large \
-  --save-viz \
-  --draw-edges \
-  --max-edges-per-question 2 \
-  --max-fig-per-question 2 \
+match_args=(
+  -m match.match
+  --rfdetr-jsonl "${rfdetr_jsonl}"
+  --doclayout-json-dir "${doclayout_json_dir}"
+  --pages-root "${image_dir}"
+  --output-dir "${out_dir}"
+  --match-algo v2
+  --match-backend flow
+  --ro-overlap-mode keep_large
+  --match-overlap-mode keep_large
+  --save-viz
+  --draw-edges
+  --max-edges-per-question 2
+  --max-fig-per-question 2
   --q-pad-ratio 0.02
+)
+((flat_output == 0)) || match_args+=(--flat-output)
+exec "${MTC_PYTHON}" "${match_args[@]}"

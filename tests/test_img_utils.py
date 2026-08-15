@@ -7,7 +7,7 @@ from proofread.img_utils import scan_document_for_ocr
 
 
 class DocumentPreprocessTests(unittest.TestCase):
-    def test_removes_shadow_and_red_ink_without_erasing_black_strokes(self):
+    def test_removes_shadow_without_erasing_black_or_red_strokes(self):
         pixels = np.full((180, 320, 3), 238, dtype=np.uint8)
         pixels[:, :160] = 180
         image = Image.fromarray(pixels)
@@ -18,15 +18,17 @@ class DocumentPreprocessTests(unittest.TestCase):
         cleaned, report = scan_document_for_ocr(image)
         output = np.asarray(cleaned)
 
-        self.assertGreater(report["red_pixels_removed"], 0)
-        self.assertGreaterEqual(int(output[90, 160].min()), 250)
+        self.assertEqual(report["method"], "background_division")
+        self.assertTrue(report["colored_ink_preserved"])
+        red_pixel = output[90, 160].astype(np.int16)
+        self.assertGreater(int(red_pixel[0] - max(red_pixel[1], red_pixel[2])), 80)
         self.assertLessEqual(int(output[40, 160].max()), 80)
         self.assertLessEqual(
             abs(float(output[140, 40].mean()) - float(output[140, 280].mean())),
             5.0,
         )
 
-    def test_removes_dark_and_faded_red_without_leaving_colored_edges(self):
+    def test_preserves_dark_and_faded_red_ink(self):
         image = Image.new("RGB", (360, 200), (225, 225, 220))
         draw = ImageDraw.Draw(image)
         draw.line((20, 40, 340, 40), fill=(20, 20, 20), width=4)
@@ -36,13 +38,12 @@ class DocumentPreprocessTests(unittest.TestCase):
         cleaned, report = scan_document_for_ocr(image)
         output = np.asarray(cleaned)
 
-        self.assertGreater(report["red_core_pixels"], 0)
-        self.assertGreater(report["red_edge_pixels_added"], 0)
+        self.assertTrue(report["colored_ink_preserved"])
         self.assertLessEqual(int(output[40, 180].max()), 80)
         for y in (90, 140):
             pixel = output[y, 180].astype(np.int16)
-            self.assertGreaterEqual(int(pixel.mean()), 235)
-            self.assertLessEqual(int(pixel.max() - pixel.min()), 8)
+            self.assertGreater(int(pixel[0] - max(pixel[1], pixel[2])), 30)
+            self.assertLess(int(pixel.mean()), 220)
 
 
 if __name__ == "__main__":

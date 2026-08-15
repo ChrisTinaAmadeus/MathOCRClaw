@@ -6,7 +6,7 @@ usage() {
 Usage: bash scripts/run_agent.sh --image PATH [options]
 
 Options:
-  --full                    Enable question-number reading, patching, and figure checks.
+  --full                    Add one magnified answer detail per question to the second API call.
   --skip-layout             Reuse existing local detection and matching output.
   --work-root PATH          Workflow output root (default: workflow).
   --doclayout-device DEVICE Paddle layout device (default: cpu).
@@ -75,7 +75,7 @@ args=(
   --doclayout-device "${doclayout_device}"
 )
 ((skip_layout == 0)) || args+=(--skip-layout)
-((full == 0)) || args+=(--with-patcher --with-fig --use-crop-qno)
+((full == 0)) || args+=(--answer-detail-views 1)
 args+=("${passthrough[@]}")
 
 exec "${MTC_PYTHON}" "${args[@]}"

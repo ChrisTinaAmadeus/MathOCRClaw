@@ -12,6 +12,7 @@ Options:
   --doclayout-device DEVICE
   --doclayout-model-dir PATH
   --optimize-rfdetr
+  --flat-output             Single-page layout without image-name subdirectories.
 EOF
 }
 
@@ -23,6 +24,7 @@ checkpoint="checkpoint_best_total.pth"
 doclayout_device="cpu"
 doclayout_model_dir="${MTC_DOCLAYOUT_MODEL_DIR:-}"
 optimize_rfdetr=0
+flat_output=0
 
 while (($#)); do
   case "$1" in
@@ -33,6 +35,7 @@ while (($#)); do
     --doclayout-device) doclayout_device="${2:?--doclayout-device requires a value}"; shift 2 ;;
     --doclayout-model-dir) doclayout_model_dir="${2:?--doclayout-model-dir requires a value}"; shift 2 ;;
     --optimize-rfdetr) optimize_rfdetr=1; shift ;;
+    --flat-output) flat_output=1; shift ;;
     -h|--help) usage; exit 0 ;;
     *) echo "Unknown option: $1" >&2; usage >&2; exit 2 ;;
   esac
@@ -64,6 +67,7 @@ rfdetr_args=(
   --num-classes 4
 )
 ((optimize_rfdetr == 0)) || rfdetr_args+=(--optimize-for-inference)
+((flat_output == 0)) || rfdetr_args+=(--flat-output)
 "${MTC_PYTHON}" "${rfdetr_args[@]}"
 
 doclayout_args=(

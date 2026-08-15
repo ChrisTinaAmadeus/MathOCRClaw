@@ -882,6 +882,11 @@ def parse_args() -> argparse.Namespace:
     ap.add_argument("--rfdetr-jsonl", type=str, required=True)
     ap.add_argument("--doclayout-json-dir", type=str, required=True)
     ap.add_argument("--output-dir", type=str, required=True)
+    ap.add_argument(
+        "--flat-output",
+        action="store_true",
+        help="单页模式：直接写入 output-dir，不再创建图片名子目录。",
+    )
 
     # NEW
     ap.add_argument(
@@ -1013,6 +1018,8 @@ def main() -> None:
             json_files = sorted(json_subdir.glob("*.json"))
     if not json_files:
         raise FileNotFoundError(f"在 {doc_dir} 及其 json/ 子目录下都没有找到任何 .json")
+    if args.flat_output and len(json_files) != 1:
+        raise ValueError("--flat-output 要求 DocLayout 目录中恰好只有一页 JSON")
 
     for jpath in json_files:
         # latency profile (per page)
@@ -1163,7 +1170,7 @@ def main() -> None:
                 _lat['num_matches'] = 0
 
         _t0 = time.perf_counter() if do_latency else 0.0
-        page_dir = out_dir / img_stem
+        page_dir = out_dir if args.flat_output else out_dir / img_stem
         if page_dir.exists():
             shutil.rmtree(page_dir)
         page_dir.mkdir(parents=True, exist_ok=True)

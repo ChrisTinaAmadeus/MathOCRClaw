@@ -134,7 +134,7 @@ class HandwritingRegionTests(unittest.TestCase):
             short_region["adaptive_details"]["vertical_margin_px"],
         )
 
-    def test_saved_views_include_full_frame_and_details(self):
+    def test_saved_views_link_stem_answer_and_details(self):
         region = score_and_divide_question_frame((1600, 1200), self.questions, 0)
         with tempfile.TemporaryDirectory() as tmp:
             views = save_handwriting_views(
@@ -142,8 +142,18 @@ class HandwritingRegionTests(unittest.TestCase):
                 region,
                 Path(tmp),
             )
-            self.assertEqual(views[0]["kind"], "full")
-            self.assertGreaterEqual(len(views), 3)
+            kinds = [view["kind"] for view in views]
+            self.assertEqual(views[0]["kind"], "context")
+            self.assertIn("stem", kinds)
+            self.assertIn("answer", kinds)
+            self.assertTrue(any(kind.startswith("answer_detail_") for kind in kinds))
+            context_box = views[0]["bbox_xyxy"]
+            stem_box = region["source_bbox_xyxy"]
+            answer_box = region["frame_bbox_xyxy"]
+            self.assertLessEqual(context_box[0], min(stem_box[0], answer_box[0]))
+            self.assertLessEqual(context_box[1], min(stem_box[1], answer_box[1]))
+            self.assertGreaterEqual(context_box[2], max(stem_box[2], answer_box[2]))
+            self.assertGreaterEqual(context_box[3], max(stem_box[3], answer_box[3]))
             self.assertTrue(all(Path(view["path"]).is_file() for view in views))
 
     def test_overlay_contains_stem_and_handwriting_frames(self):

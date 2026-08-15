@@ -315,20 +315,42 @@ def save_handwriting_views(
     region: Dict[str, Any],
     output_dir: Path,
 ) -> List[Dict[str, Any]]:
-    """Save a full question frame plus overlapping detail views for the VLM."""
+    """Save linked stem/answer context and overlapping answer details for the VLM."""
     output_dir.mkdir(parents=True, exist_ok=True)
-    frame = tuple(int(value) for value in region["frame_bbox_xyxy"])
-    view_boxes = [("full", frame)]
+    stem = tuple(int(value) for value in region["source_bbox_xyxy"])
+    answer = tuple(int(value) for value in region["frame_bbox_xyxy"])
+    context = (
+        min(stem[0], answer[0]),
+        min(stem[1], answer[1]),
+        max(stem[2], answer[2]),
+        max(stem[3], answer[3]),
+    )
+    view_boxes = [("context", context), ("stem", stem), ("answer", answer)]
     view_boxes.extend(
-        (f"detail_{index:02d}", tile)
-        for index, tile in enumerate(_vertical_tiles(frame), start=1)
+        (f"answer_detail_{index:02d}", tile)
+        for index, tile in enumerate(_vertical_tiles(answer), start=1)
     )
 
     views: List[Dict[str, Any]] = []
+    seen_boxes = set()
     for kind, bbox in view_boxes:
+        if bbox in seen_boxes:
+            continue
+        seen_boxes.add(bbox)
         path = output_dir / f"{kind}.png"
         page_image.crop(bbox).save(path, format="PNG", optimize=True)
-        views.append({"kind": kind, "bbox_xyxy": list(bbox), "path": str(path)})
+        views.append(
+            {
+                "kind": kind,
+                "bbox_xyxy": list(bbox),
+                "path": str(path),
+                "purpose": {
+                    "context": "printed stem and its linked handwriting area",
+                    "stem": "printed question and local marks",
+                    "answer": "handwriting area assigned to this question",
+                }.get(kind, "magnified overlapping handwriting detail"),
+            }
+        )
     return views
 
 

@@ -2,15 +2,15 @@
 
 简体中文 · [English](README.md)
 
-MathOCRClaw 是一个面向真实试卷照片的数学 OCR 智能体。它识别印刷题干与学生手写答案，通过裁图证据复核识别结果，并在证据不足时主动输出 `U`，而不是猜测。
+MathOCRClaw 是一个面向真实试卷照片的数学 OCR 智能体。它通过两次全局 API 调用识别印刷题干与学生手写答案：第一次生成整页初稿，第二次结合本地检测与裁图上下文进行统一校对并直接产生最终结果。
 
 ```text
 试卷照片
-  → 去阴影、去红笔
-  → API 生成整页题干 Markdown
-  → 本地题目检测、版面分析与题号对齐
-  → 逐题提取并验证手写答案
-  → 题干和答案一一对应的最终结果
+  → 去阴影并保留彩色笔迹
+  → API #1 生成整页题干与手写初稿 Markdown
+  → 本地题目检测、版面分析与上下文包构建
+  → API #2 综合初稿、整页图、题目裁图和版面信息全局校对
+  → 直接生成题干和答案一一对应的最终结果
 ```
 
 ### 快速开始
@@ -35,7 +35,7 @@ cp --no-clobber .env.example .env.local
 bash scripts/run_agent.sh --image input/page_0001.jpg --full
 ```
 
-复用已有本地检测和匹配结果时加 `--skip-layout`。不加 `--full` 时会关闭题号读取、文本修复和题图关系检查，以减少 API 请求。需要在当前终端中交互使用该环境时，执行 `source scripts/activate_env.sh`。
+复用已有本地检测和匹配结果时加 `--skip-layout`。未命中缓存时，工作流固定进行两次 API 调用；`--full` 只会在第二次请求中为每题增加一张手写细节图，不会增加调用次数。需要在当前终端中交互使用该环境时，执行 `source scripts/activate_env.sh`。
 
 ### 基准数据
 
@@ -47,27 +47,28 @@ bash scripts/run_agent.sh --image input/page_0001.jpg --full
 
 ```text
 workflow/
-├─ image/                         # 未经处理的原始输入图片（按原格式保留）
-├─ preprocessed/                  # 扫描化图片及预处理统计 JSON
-├─ api_markdown/                  # API 原始题干 Markdown 与响应 JSON
-├─ code_outputs/                  # 纯代码/本地模型阶段
-│  ├─ rfdetr/<page_name>/         # 按页保存检测 JSONL、裁图和可视化
-│  ├─ doclayout/<page_name>/      # 按页保存版面 JSON 和可视化
-│  └─ match/                      # 阅读顺序、匹配 JSON 和题目裁图
-└─ agent_outputs/<page_name>/     # 智能体最终结果
-   ├─ result.md                   # 每道题后紧跟其手写答案
-   ├─ result.json                 # 同结构的机器可读结果
-   └─ verification.json           # 题干对齐与证据校验详情
+└─ <page_name>/                   # 每张图片只有这一层页名目录
+   ├─ image/                      # 未经处理的原始输入图片（按原格式保留）
+   ├─ preprocessed/               # 扫描化图片及预处理统计 JSON
+   ├─ api_markdown/               # 第一次 API 的整页初稿 Markdown 与响应 JSON
+   ├─ code_outputs/               # 纯代码/本地模型阶段
+   │  ├─ rfdetr/                  # 检测 JSONL、裁图和可视化
+   │  ├─ doclayout/               # 版面 JSON 和可视化
+   │  └─ match/                   # 阅读顺序、题目上下文包和裁图
+   └─ agent_outputs/              # 不再重复创建 <page_name>/
+      ├─ result.md                # 每道题后紧跟其手写答案
+      ├─ result.json              # 同结构的机器可读结果
+      └─ verification.json        # 第二次全局校对的原始响应
 ```
 
-`result.md` 只呈现题目与手写识别结果，不包含校验状态或证据；题框坐标、选框评分、裁图路径、识别原始响应和证据校验详情全部保存在 `result.json`。手写阶段会综合检测类别和题干结构区分选择题、填空题、简答题：选择题根据题干字符数、行数、选项数和邻题边界自适应扩大，以覆盖圈选外溢与涂改；填空题保留适度填空边距；简答题答案框从题干框底边开始并延伸到同栏下一题，保证不包含题干。预处理使用 HSV、Lab 色彩和通道差联合检测，并通过邻域传播与图像修复清除暗淡红笔及抗锯齿残迹。`code_outputs/match/<page>/viz/*_handwriting_overlay.png` 会在同一页以绿色显示题干框、洋红色显示手写答案框，对应坐标及题型判定保存在 `handwriting_regions.json`。
+`<page_name>/api_markdown/<page>.md` 是第一次 API 直接按照 `benchmark/prompts/extract_v2.txt` 生成的整页初稿；Python 代码不维护另一份提示词副本。随后的本地阶段解析该 Markdown 并生成 `<page_name>/code_outputs/match/question_contexts.json` 及题干/作答区/细节视图，不调用 API。第二次 API 在同一个请求中读取初稿 Markdown、整页图、所有题目上下文图与版面摘要，直接返回最终题干、分问答案和来源上下文 ID。`result.md` 严格采用与金标准一致的逐题格式；被划去的作废内容不会进入初稿、终稿或不确定片段。预处理只校正阴影和不均匀光照，保留红笔在内的彩色标注；框线叠加图仅作为几何诊断产物。
 
 ### 代码结构与检查
 
 ```text
 agent/workflow.py       唯一端到端入口与输出管理
 match/                  本地检测、版面分析、阅读顺序和题图匹配
-proofread/              题干修复、证据验证和主动拒绝
+proofread/              图像、缓存与历史校验工具
 scripts/setup_env.sh    创建或更新 Linux Conda 环境
 scripts/run_agent.sh    用户入口
 ```

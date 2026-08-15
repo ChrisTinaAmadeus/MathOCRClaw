@@ -40,72 +40,34 @@ def blank_frac(img: Image.Image, *, white_thr: int = 248) -> float:
 
 
 def scan_document_for_ocr(img: Image.Image) -> Tuple[Image.Image, Dict[str, Any]]:
-    """Normalize page illumination and erase red ink before OCR/VLM calls.
+    """Normalize page illumination while preserving all ink colors.
 
-    Background division removes slow illumination changes while preserving dark
-    strokes. A combined HSV/Lab/channel-excess detector catches saturated, dark,
-    and faded red ink. The mask grows through weak neighboring chroma and is
-    inpainted from the surrounding paper so anti-aliased pigment does not remain.
+    Background division removes slow illumination changes while retaining both
+    printed content and colored annotations for downstream OCR/VLM calls.
     """
     rgb = np.asarray(img.convert("RGB"), dtype=np.uint8)
     height, width = rgb.shape[:2]
-    bgr = cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR)
-    hsv = cv2.cvtColor(bgr, cv2.COLOR_BGR2HSV)
-    lab = cv2.cvtColor(rgb, cv2.COLOR_RGB2LAB)
-
-    red = rgb[:, :, 0].astype(np.int16)
-    green = rgb[:, :, 1].astype(np.int16)
-    blue = rgb[:, :, 2].astype(np.int16)
-    hue = hsv[:, :, 0]
-    saturation = hsv[:, :, 1].astype(np.int16)
-    value = hsv[:, :, 2].astype(np.int16)
-    lab_a = lab[:, :, 1].astype(np.int16)
-    red_excess = red - np.maximum(green, blue)
-    broad_red_hue = (hue <= 18) | (hue >= 164)
-
-    saturated_core = broad_red_hue & (saturation >= 28) & (value >= 24) & (red_excess >= 7)
-    dark_muted_core = (lab_a >= 138) & (red_excess >= 5) & (red >= 28)
-    faint_confident = (lab_a >= 135) & (red_excess >= 4) & (red >= 42)
-    weak_red_edge = broad_red_hue & (saturation >= 10) & (red_excess >= 2) & (red >= 30)
-    very_weak_red_halo = (lab_a >= 130) & (red_excess >= 1) & (red >= 24)
-
-    core_mask = (saturated_core | dark_muted_core | faint_confident).astype(np.uint8) * 255
-    core_neighborhood = cv2.dilate(core_mask, np.ones((13, 13), np.uint8), iterations=1) > 0
-    red_mask_bool = (core_mask > 0) | ((weak_red_edge | very_weak_red_halo) & core_neighborhood)
-    red_mask = red_mask_bool.astype(np.uint8) * 255
-    red_mask = cv2.morphologyEx(red_mask, cv2.MORPH_CLOSE, np.ones((3, 3), np.uint8))
-    red_mask = cv2.dilate(red_mask, np.ones((5, 5), np.uint8), iterations=1)
-
-    cleaned_bgr = cv2.inpaint(bgr, red_mask, 4.0, cv2.INPAINT_TELEA)
-    cleaned = cv2.cvtColor(cleaned_bgr, cv2.COLOR_BGR2RGB)
 
     blur_sigma = max(8.0, min(50.0, min(width, height) * 0.02))
     background = cv2.GaussianBlur(
-        cleaned,
+        rgb,
         (0, 0),
         sigmaX=blur_sigma,
         sigmaY=blur_sigma,
         borderType=cv2.BORDER_REPLICATE,
     ).astype(np.float32)
-    corrected_float = cleaned.astype(np.float32) * 255.0 / np.maximum(background, 1.0)
+    corrected_float = rgb.astype(np.float32) * 255.0 / np.maximum(background, 1.0)
     # Restore stroke contrast after flattening the background illumination.
     corrected_float = 255.0 - (255.0 - corrected_float) * 1.35
     corrected = np.clip(corrected_float, 0, 255).astype(np.uint8)
 
-    red_pixels = int(np.count_nonzero(red_mask))
-    core_pixels = int(np.count_nonzero(core_mask))
-    total_pixels = max(1, width * height)
     metadata: Dict[str, Any] = {
-        "method": "background_division_and_adaptive_red_inpaint",
+        "method": "background_division",
         "width": width,
         "height": height,
         "shadow_blur_sigma": round(blur_sigma, 2),
         "ink_contrast_gain": 1.35,
-        "red_pixels_removed": red_pixels,
-        "red_pixel_fraction": round(red_pixels / total_pixels, 8),
-        "red_core_pixels": core_pixels,
-        "red_edge_pixels_added": max(0, red_pixels - core_pixels),
-        "red_detection": "HSV hue + Lab a-channel + weak-edge propagation",
+        "colored_ink_preserved": True,
     }
     return Image.fromarray(corrected), metadata
 

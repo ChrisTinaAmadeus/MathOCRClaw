@@ -8,7 +8,7 @@ import shutil
 import subprocess
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Sequence
 
 from PIL import Image
 
@@ -18,7 +18,7 @@ from agent.handwriting_regions import (
     score_and_divide_question_frame,
 )
 from proofread.cache import JsonCache
-from proofread.figures import FigureFilterCfg
+from proofread.common import sha1_bytes
 from proofread.img_utils import (
     STRONG_ENHANCE,
     enhance_for_vlm,
@@ -27,8 +27,6 @@ from proofread.img_utils import (
     scan_document_for_ocr,
 )
 from proofread.match_utils import load_match_questions
-from proofread.md_utils import split_page_into_blocks
-from proofread.pipeline import process_one_page
 from proofread.vlm_client import VLMClient
 
 
@@ -89,52 +87,72 @@ class WorkflowPaths:
             path.mkdir(parents=True, exist_ok=True)
 
 
-BASELINE_PROMPT = """You are an OCR agent for real-world exam images.
-Read the whole page and return JSON only.
+BASELINE_PROMPT_PATH = (
+    Path(__file__).resolve().parents[1] / "benchmark" / "prompts" / "extract_v2.txt"
+)
+BASELINE_PROMPT = BASELINE_PROMPT_PATH.read_text(encoding="utf-8").strip()
 
-Schema:
-{
-  "questions": [
-    {
-      "qno": "question number if visible, otherwise empty",
-      "question_text": "printed question stem/options/formulas only; ignore handwritten notes",
-      "student_answer": "student handwritten answer if visible, otherwise empty",
-      "answer_status": "ok|no_answer|uncertain|unreadable"
-    }
-  ],
-  "page_notes": "short note about image quality or occlusion"
-}
 
-Rules:
-- Do not solve the problem.
-- Preserve math symbols and line breaks where useful.
-- Keep printed question text separate from handwritten student answers.
-- If a field is not directly visible, leave it empty or mark uncertain/unreadable.
-- Output valid JSON only, without markdown fences.
-"""
-
-ANSWER_PROMPT = """You are extracting student handwriting from one exam-question region.
-The first image is the complete scored question frame. If more images follow, they are overlapping magnified detail slices.
-Look across all supplied images for handwritten student work, marks, selected options, filled blanks, calculations, or final answers.
-Ignore the printed question text except when needed for context.
+FINAL_REVIEW_PROMPT = """You are the second and final OCR pass for an exam page.
+You receive the first-pass whole-page Markdown, the original normalized page image, locally detected layout metadata, and labeled per-question context images. Review the draft globally and return the final question/handwriting result.
 
 Return JSON only:
 {
-  "student_answer": "complete transcription of all handwriting in reading order; empty if none",
-  "status": "ok|no_answer|uncertain|unreadable",
-  "evidence_note": "brief visual evidence, e.g. where the handwriting appears"
+  "page_notes": "brief final note about unresolved page-level ambiguity",
+  "questions": [
+    {
+      "qno": "visible question number, otherwise stable reading-order number",
+      "question_markdown": "corrected printed question stem/options/formulas only",
+      "handwritten_answer": {
+        "text": "complete faithful Markdown/LaTeX transcription of visible handwriting in reading order; empty if none",
+        "answer_parts": [
+          {
+            "label": "subquestion label such as (1), or overall",
+            "transcription": "all visible work belonging to this part",
+            "final_answer": "visible final answer if identifiable, otherwise empty",
+            "status": "ok|partial|uncertain|unreadable"
+          }
+        ],
+        "uncertain_fragments": [
+          {
+            "text": "best-effort visible fragment",
+            "alternatives": ["other plausible readings"],
+            "location": "where it appears"
+          }
+        ],
+        "status": "ok|partial|no_answer|uncertain|unreadable",
+        "evidence_note": "brief visual account of handwriting, corrections, or ambiguity"
+      },
+      "source_context_ids": ["IDs of local context images used for this question"]
+    }
+  ]
 }
 
-Do not solve, summarize, or silently omit intermediate handwritten work. Do not invent missing handwriting.
-"""
-
-ANSWER_VERIFY_PROMPT = """You are a handwriting evidence verifier.
-Given a cropped exam-question image and a candidate student_answer, judge whether the candidate can be directly supported by visible handwritten content in the image.
-
-Output one letter only:
-Y = the candidate answer is visibly supported by handwriting in the image.
-N = the candidate answer is not visible or contradicts the handwriting.
-U = the image/handwriting is unclear or the candidate is too ambiguous to verify.
+Rules:
+- Produce exactly one record per real visible question, in page reading order.
+- Correct omissions, hallucinations, question boundaries, formulas, and handwriting assignment in the first draft.
+- Treat detector boxes, scores, classes, and ordinal pairing as routing hints, not truth.
+- Use the full-page image to resolve cross-question ownership and the labeled context images for detail.
+- Do not solve, grade, or replace the student's work with a mathematically correct solution.
+- Preserve non-deleted intermediate work. If writing is clearly crossed out, erased,
+  overwritten, struck through, or otherwise cancelled, omit it completely and keep
+  only the final retained version.
+- Never reproduce cancelled content in text, answer_parts, uncertain_fragments, or
+  evidence_note. Never emit `划去`, `已划掉`, `crossed out`, `deleted`, or `~~...~~`.
+- Keep genuine visual ambiguity as uncertain_fragments, but do not treat crossed-out
+  content as an ambiguity candidate.
+- Printed question_markdown must not absorb handwriting; handwritten_answer must not silently summarize printed text.
+- question_markdown must begin at line start with `N. ` using the visible question
+  number. Exclude section titles, page headers, score summaries, and neighboring text.
+- Every mathematical expression in question_markdown, handwritten_answer.text,
+  transcriptions, and final answers must use standard LaTeX inside `$...$` or
+  `$$...$$`; never replace LaTeX with Unicode/plain-text pseudo-formulas.
+- Transcribe `∵`/`∴` faithfully as `\because`/`\therefore` or the visible symbols,
+  preserve one logical handwritten step per line, and insert `<插图>` wherever the
+  printed question has a diagram.
+- The Markdown content must follow benchmark/prompts/extract_v2.txt: no `[模糊]`,
+  no alternate guesses in the main transcription, and no editorial annotations.
+- Output valid JSON only, without markdown fences.
 """
 
 
@@ -142,13 +160,15 @@ def _repo_root() -> Path:
     return Path(__file__).resolve().parents[1]
 
 
+def _page_work_root(work_root: Path, page_name: str) -> Path:
+    """Return the page-owned root while avoiding accidental page/page nesting."""
+    root = work_root.expanduser().resolve()
+    return root if root.name == page_name else root / page_name
+
+
 def _run_stage_script(script_name: str, args: List[str]) -> None:
     root = _repo_root()
-    cmd = [
-        "bash",
-        str(root / "scripts" / script_name),
-        *args,
-    ]
+    cmd = ["bash", str(root / "scripts" / script_name), *args]
     subprocess.run(cmd, cwd=root, check=True)
 
 
@@ -173,11 +193,14 @@ def _extract_json_obj(text: str) -> Dict[str, Any]:
     return {"raw": raw}
 
 
-def _json_cache_key(prefix: str, model: str, img_hash: str) -> str:
-    return f"{model}::{img_hash}::{prefix}"
+def _strip_markdown_fence(text: str) -> str:
+    raw = (text or "").strip()
+    raw = re.sub(r"^```(?:markdown|md)?\s*", "", raw, flags=re.I)
+    raw = re.sub(r"\s*```$", "", raw)
+    return raw.strip()
 
 
-def _invoke_image_json(
+def _invoke_image_markdown(
     vlm: VLMClient,
     img: Image.Image,
     prompt: str,
@@ -186,14 +209,15 @@ def _invoke_image_json(
     cache_ns: str,
     cache_prefix: str,
     max_tokens: int,
-) -> Dict[str, Any]:
+) -> str:
     img2 = enhance_for_vlm(img, STRONG_ENHANCE)
     data_url, img_hash = img_to_data_url(img2)
-    ck = _json_cache_key(cache_prefix, vlm.cache_tag, img_hash)
+    prompt_hash = sha1_bytes(prompt.encode("utf-8"))
+    cache_key = f"{vlm.cache_tag}::{img_hash}::{cache_prefix}::{prompt_hash}"
     if cache:
-        hit = cache.get(cache_ns, ck)
-        if isinstance(hit, dict):
-            return hit
+        hit = cache.get(cache_ns, cache_key)
+        if isinstance(hit, dict) and isinstance(hit.get("markdown"), str):
+            return str(hit["markdown"])
 
     raw = vlm.invoke(
         [
@@ -204,349 +228,500 @@ def _invoke_image_json(
         top_p=0.7,
         max_tokens=max_tokens,
     )
-    obj = _extract_json_obj(raw)
-    obj["_raw"] = raw
+    markdown = _strip_markdown_fence(raw)
     if cache:
-        cache.set(cache_ns, ck, obj)
-    return obj
+        cache.set(cache_ns, cache_key, {"markdown": markdown})
+    return markdown
 
 
-def _invoke_handwriting_json(
+def _question_key(value: Any) -> str:
+    text = str(value or "").strip()
+    if re.fullmatch(r"\d+", text):
+        return str(int(text))
+    return text
+
+
+def _normalize_qno(value: Any, fallback: int) -> Any:
+    key = _question_key(value)
+    return int(key) if key.isdigit() else (key or fallback)
+
+
+def _draft_questions(baseline: Dict[str, Any]) -> List[Dict[str, str]]:
+    questions: List[Dict[str, str]] = []
+    for question in baseline.get("questions") or []:
+        if not isinstance(question, dict):
+            continue
+        questions.append(
+            {
+                "qno": str(question.get("qno") or "").strip(),
+                "question_text": str(question.get("question_text") or "").strip(),
+                "student_answer": str(question.get("student_answer") or "").strip(),
+                "answer_status": str(question.get("answer_status") or "uncertain").strip(),
+            }
+        )
+    if questions:
+        return questions
+    return _draft_questions_from_markdown(str(baseline.get("page_markdown") or ""))
+
+
+_DRAFT_QUESTION_RE = re.compile(r"(?m)^\s*(\d{1,3})[.．、]\s*")
+_DRAFT_ANSWER_RE = re.compile(r"(?im)^\s*#{1,6}\s*手写答案\s*$")
+
+
+def _draft_questions_from_markdown(markdown: str) -> List[Dict[str, str]]:
+    starts = list(_DRAFT_QUESTION_RE.finditer(markdown or ""))
+    questions: List[Dict[str, str]] = []
+    for index, start in enumerate(starts):
+        end = starts[index + 1].start() if index + 1 < len(starts) else len(markdown)
+        block = markdown[start.start() : end].strip()
+        answer_heading = _DRAFT_ANSWER_RE.search(block)
+        if answer_heading:
+            question_text = block[: answer_heading.start()].strip()
+            student_answer = block[answer_heading.end() :].strip()
+        else:
+            question_text = block
+            student_answer = ""
+        no_answer = not student_answer or "未识别到手写答案" in student_answer
+        questions.append(
+            {
+                "qno": str(int(start.group(1))),
+                "question_text": question_text,
+                "student_answer": student_answer,
+                "answer_status": "no_answer" if no_answer else "ok",
+            }
+        )
+    return questions
+
+
+def _is_main_question(question: Dict[str, Any]) -> bool:
+    class_name = str(question.get("class_name") or "").strip().lower()
+    return class_name != "partial_question" and question.get("read_index") is not None
+
+
+def _prepare_question_contexts(
+    page_dir: Path,
+    page_img: Image.Image,
+    baseline: Dict[str, Any],
+) -> List[Dict[str, Any]]:
+    _, all_questions = load_match_questions(page_dir / "match.json")
+    draft_questions = _draft_questions(baseline)
+    main_indices = [index for index, question in enumerate(all_questions) if _is_main_question(question)]
+    contexts: List[Dict[str, Any]] = []
+
+    for ordinal, match_index in enumerate(main_indices, start=1):
+        question = all_questions[match_index]
+        draft = draft_questions[ordinal - 1] if ordinal <= len(draft_questions) else {
+            "qno": "",
+            "question_text": "",
+            "student_answer": "",
+            "answer_status": "not_available",
+        }
+        context_id = f"C{ordinal:03d}"
+        views: List[Dict[str, Any]] = []
+        region: Dict[str, Any] = {}
+        context_error = ""
+        try:
+            region = score_and_divide_question_frame(
+                page_img.size,
+                all_questions,
+                match_index,
+                question_text=draft["question_text"],
+            )
+            crop_path = str(question.get("crop_path") or "").replace("\\", "/")
+            output_dir = (
+                (page_dir / crop_path).parent / "handwriting"
+                if crop_path
+                else page_dir / "contexts" / context_id
+            )
+            views = save_handwriting_views(page_img, region, output_dir)
+        except (IndexError, TypeError, ValueError, OSError) as exc:
+            context_error = str(exc)
+
+        contexts.append(
+            {
+                "context_id": context_id,
+                "draft": draft,
+                "alignment": {
+                    "paired_by": "reading_order_ordinal",
+                    "match_index": match_index,
+                    "read_index": question.get("read_index"),
+                    "det_index": question.get("det_index"),
+                    "class_name": question.get("class_name") or "",
+                    "detector_score": question.get("score"),
+                    "source_bbox_xyxy": region.get("source_bbox_xyxy") or [],
+                    "answer_bbox_xyxy": region.get("frame_bbox_xyxy") or [],
+                    "question_type": region.get("question_type") or {},
+                    "strategy": region.get("strategy") or "",
+                    "boundary_kind": region.get("boundary_kind") or "",
+                    "context_error": context_error,
+                },
+                "visual_context": {"views": views},
+            }
+        )
+
+    for ordinal in range(len(main_indices) + 1, len(draft_questions) + 1):
+        contexts.append(
+            {
+                "context_id": f"C{ordinal:03d}",
+                "draft": draft_questions[ordinal - 1],
+                "alignment": {
+                    "paired_by": "unmatched_first_pass_question",
+                    "match_index": None,
+                    "read_index": None,
+                    "det_index": None,
+                    "class_name": "",
+                    "detector_score": None,
+                    "source_bbox_xyxy": [],
+                    "answer_bbox_xyxy": [],
+                    "question_type": {},
+                    "strategy": "",
+                    "boundary_kind": "",
+                    "context_error": "No local question detection was paired.",
+                },
+                "visual_context": {"views": []},
+            }
+        )
+    return contexts
+
+
+def _review_context_digest(contexts: Sequence[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    digest: List[Dict[str, Any]] = []
+    for context in contexts:
+        digest.append(
+            {
+                "context_id": context.get("context_id"),
+                "draft": context.get("draft") or {},
+                "alignment": context.get("alignment") or {},
+                "available_views": [
+                    {
+                        "kind": view.get("kind"),
+                        "bbox_xyxy": view.get("bbox_xyxy") or [],
+                        "purpose": view.get("purpose") or "",
+                    }
+                    for view in (context.get("visual_context") or {}).get("views") or []
+                ],
+            }
+        )
+    return digest
+
+
+def _selected_review_views(
+    context: Dict[str, Any],
+    detail_views: int,
+) -> List[Dict[str, Any]]:
+    views = (context.get("visual_context") or {}).get("views") or []
+    primary = [view for view in views if view.get("kind") == "context"][:1]
+    details = [
+        view
+        for view in views
+        if str(view.get("kind") or "").startswith("answer_detail_")
+    ][: max(0, detail_views)]
+    selected = primary + details
+    selected_ids = {id(view) for view in selected}
+    for view in views:
+        view["sent_to_second_api"] = id(view) in selected_ids
+    return selected
+
+
+def _invoke_final_review(
     vlm: VLMClient,
-    views: List[Dict[str, Any]],
+    page_img: Image.Image,
+    draft_markdown: str,
+    baseline: Dict[str, Any],
+    contexts: List[Dict[str, Any]],
     *,
     cache: Optional[JsonCache],
-    cache_prefix: str,
     max_tokens: int,
     detail_views: int = 0,
 ) -> Dict[str, Any]:
-    messages: List[Dict[str, Any]] = [{"type": "text", "text": ANSWER_PROMPT}]
-    hashes: List[str] = []
-    selected_views = views[: 1 + max(0, detail_views)]
-    for view in selected_views:
-        img = safe_open_image(view.get("path"))
-        if img is None:
-            continue
-        img2 = enhance_for_vlm(img, STRONG_ENHANCE)
-        data_url, img_hash = img_to_data_url(img2)
-        hashes.append(img_hash)
-        messages.extend(
-            [
-                {"type": "text", "text": f"View: {view.get('kind') or 'detail'}"},
-                {"type": "image_url", "image_url": {"url": data_url}},
-            ]
-        )
-    if not hashes:
-        return {
-            "student_answer": "",
-            "status": "unreadable",
-            "evidence_note": "No region view could be opened.",
-        }
+    review_payload = {
+        "first_pass_markdown": draft_markdown,
+        "first_pass_page_notes": baseline.get("page_notes") or "",
+        "local_question_contexts": _review_context_digest(contexts),
+    }
+    prompt = FINAL_REVIEW_PROMPT + "\nReview payload:\n" + json.dumps(
+        review_payload,
+        ensure_ascii=False,
+        indent=2,
+    )
+    messages: List[Dict[str, Any]] = [{"type": "text", "text": prompt}]
+    image_hashes: List[str] = []
 
-    ck = f"{vlm.cache_tag}::{cache_prefix}::{'::'.join(hashes)}"
+    page_for_api = enhance_for_vlm(page_img, STRONG_ENHANCE)
+    page_url, page_hash = img_to_data_url(page_for_api)
+    image_hashes.append(page_hash)
+    messages.extend(
+        [
+            {"type": "text", "text": "Image: full normalized page"},
+            {"type": "image_url", "image_url": {"url": page_url}},
+        ]
+    )
+
+    for context in contexts:
+        context_id = str(context.get("context_id") or "")
+        for view in _selected_review_views(context, detail_views):
+            image = safe_open_image(view.get("path"))
+            if image is None:
+                continue
+            image_for_api = enhance_for_vlm(image, STRONG_ENHANCE)
+            data_url, image_hash = img_to_data_url(image_for_api)
+            image_hashes.append(image_hash)
+            messages.extend(
+                [
+                    {
+                        "type": "text",
+                        "text": f"Image: {context_id} / {view.get('kind') or 'context'}",
+                    },
+                    {"type": "image_url", "image_url": {"url": data_url}},
+                ]
+            )
+
+    prompt_hash = sha1_bytes(prompt.encode("utf-8"))
+    cache_key = f"{vlm.cache_tag}::global_review_v1::{prompt_hash}::{'::'.join(image_hashes)}"
     if cache:
-        hit = cache.get("answer_extract_regions", ck)
-        if isinstance(hit, dict):
-            return hit
-
-    raw = vlm.invoke(messages, temperature=0.0, top_p=0.7, max_tokens=max_tokens)
-    obj = _extract_json_obj(raw)
-    obj["_raw"] = raw
-    if cache:
-        cache.set("answer_extract_regions", ck, obj)
-    return obj
-
-
-def _verify_answer(
-    vlm: VLMClient,
-    img: Image.Image,
-    candidate: str,
-    *,
-    cache: Optional[JsonCache],
-) -> Dict[str, Any]:
-    candidate = (candidate or "").strip()
-    if not candidate:
-        return {"verdict": "U", "raw": "", "reason": "empty_candidate"}
-
-    img2 = enhance_for_vlm(img, STRONG_ENHANCE)
-    data_url, img_hash = img_to_data_url(img2)
-    ck = f"{vlm.cache_tag}::{img_hash}::answer_verify::{candidate[:240]}"
-    if cache:
-        hit = cache.get("answer_verify", ck)
+        hit = cache.get("global_final_review", cache_key)
         if isinstance(hit, dict):
             return hit
 
     raw = vlm.invoke(
-        [
-            {"type": "text", "text": ANSWER_VERIFY_PROMPT},
-            {"type": "image_url", "image_url": {"url": data_url}},
-            {"type": "text", "text": "candidate student_answer:\n" + candidate[:900]},
-        ],
+        messages,
         temperature=0.0,
         top_p=0.7,
-        max_tokens=8,
+        max_tokens=max_tokens,
     )
-    m = re.search(r"[YNU]", raw.upper())
-    verdict = m.group(0) if m else "U"
-    out = {"verdict": verdict, "raw": raw}
+    review = _extract_json_obj(raw)
+    review["_raw"] = raw
     if cache:
-        cache.set("answer_verify", ck, out)
-    return out
+        cache.set("global_final_review", cache_key, review)
+    return review
 
 
-def _baseline_to_markdown(baseline: Dict[str, Any]) -> str:
-    qs = baseline.get("questions")
-    if not isinstance(qs, list) or not qs:
-        raw = baseline.get("raw") or baseline.get("_raw") or ""
-        return str(raw).strip()
-
-    blocks: List[str] = []
-    for i, q in enumerate(qs, start=1):
-        if not isinstance(q, dict):
+def _normalize_answer_parts(value: Any) -> List[Dict[str, Any]]:
+    normalized: List[Dict[str, Any]] = []
+    for part in value if isinstance(value, list) else []:
+        if not isinstance(part, dict):
             continue
-        qno = str(q.get("qno") or "").strip()
-        text = str(q.get("question_text") or "").strip()
-        if not text:
-            continue
-        if qno and not re.match(rf"^\s*{re.escape(qno)}\b", text):
-            text = f"{qno}. {text}"
-        elif not qno and not re.match(r"^\s*\d{1,3}\b", text):
-            text = f"{i}. {text}"
-        blocks.append(text)
-    return "\n\n".join(blocks).strip()
-
-
-def _collect_answer_evidence(
-    page_dir: Path,
-    page_img: Image.Image,
-    vlm: VLMClient,
-    verification_items: List[Dict[str, Any]],
-    *,
-    cache: Optional[JsonCache],
-    max_tokens: int = 1200,
-    detail_views: int = 0,
-    question_text_by_qno: Optional[Dict[Any, str]] = None,
-) -> List[Dict[str, Any]]:
-    _, questions = load_match_questions(page_dir / "match.json")
-    items: List[Dict[str, Any]] = []
-    targets = [item for item in verification_items if isinstance(item, dict) and item.get("kind") == "q"]
-    for idx, target in enumerate(targets, start=1):
-        try:
-            match_qi = int(target.get("mapped_match_qi"))
-            qrec = questions[match_qi]
-        except (TypeError, ValueError, IndexError):
-            items.append(
-                {
-                    "qno": target.get("qno"),
-                    "question_index": idx,
-                    "text": "",
-                    "status": "crop_missing",
-                    "verdict": "U",
-                    "evidence_note": "No aligned question crop was available.",
-                    "crop_path": "",
-                }
-            )
-            continue
-
-        try:
-            question_text = (question_text_by_qno or {}).get(target.get("qno"), "")
-            region = score_and_divide_question_frame(
-                page_img.size,
-                questions,
-                match_qi,
-                question_text=question_text,
-            )
-            question_crop = page_dir / str(qrec.get("crop_path") or "").replace("\\", "/")
-            views = save_handwriting_views(page_img, region, question_crop.parent / "handwriting")
-        except (IndexError, TypeError, ValueError, OSError) as exc:
-            items.append(
-                {
-                    "qno": target.get("qno"),
-                    "question_index": idx,
-                    "text": "",
-                    "status": "crop_open_fail",
-                    "verdict": "U",
-                    "evidence_note": f"The handwriting frame could not be built: {exc}",
-                    "crop_path": str(qrec.get("crop_path") or ""),
-                }
-            )
-            continue
-
-        for view_index, view in enumerate(views):
-            view["sent_to_api"] = view_index <= detail_views
-        recognition_mode = "expanded_frame"
-        expanded_api_error = ""
-        verification_img = safe_open_image(views[0]["path"])
-        try:
-            ans = _invoke_handwriting_json(
-                vlm,
-                views,
-                cache=cache,
-                cache_prefix=f"answer_extract_regions::{target.get('qno')}",
-                max_tokens=max_tokens,
-                detail_views=detail_views,
-            )
-        except RuntimeError as exc:
-            expanded_api_error = str(exc)
-            tight_img = safe_open_image(question_crop)
-            try:
-                if tight_img is None:
-                    raise RuntimeError("the legacy tight question crop could not be opened")
-                ans = _invoke_image_json(
-                    vlm,
-                    tight_img,
-                    ANSWER_PROMPT,
-                    cache=cache,
-                    cache_ns="answer_extract",
-                    cache_prefix="answer_extract",
-                    max_tokens=min(max_tokens, 700),
-                )
-                recognition_mode = "tight_crop_fallback"
-                verification_img = tight_img
-            except RuntimeError as fallback_exc:
-                items.append(
-                    {
-                        "qno": target.get("qno"),
-                        "question_index": idx,
-                        "read_index": qrec.get("read_index"),
-                        "det_index": qrec.get("det_index"),
-                        "crop_path": views[0]["path"],
-                        "region": {**region, "views": views},
-                        "text": "",
-                        "status": "api_error",
-                        "verdict": "U",
-                        "evidence_note": str(fallback_exc),
-                        "recognition": {
-                            "raw": "",
-                            "status": "api_error",
-                            "mode": "failed",
-                            "expanded_api_error": expanded_api_error,
-                            "fallback_api_error": str(fallback_exc),
-                        },
-                        "verification": {"verdict": "U", "reason": "extract_api_error"},
-                    }
-                )
-                continue
-        student_answer = str(ans.get("student_answer") or "").strip()
-        try:
-            verify = _verify_answer(vlm, verification_img, student_answer, cache=cache) if student_answer and verification_img else {
-                "verdict": "U",
-                "reason": "empty_candidate",
-            }
-        except RuntimeError as exc:
-            verify = {"verdict": "U", "reason": "verify_api_error", "raw": str(exc)}
-        items.append(
+        normalized.append(
             {
-                "qno": target.get("qno"),
-                "question_index": idx,
-                "read_index": qrec.get("read_index"),
-                "det_index": qrec.get("det_index"),
-                "crop_path": views[0]["path"],
-                "region": {**region, "views": views},
-                "text": student_answer,
-                "status": ans.get("status") or ("ok" if student_answer else "no_answer"),
-                "verdict": verify.get("verdict") or "U",
-                "evidence_note": ans.get("evidence_note") or "",
-                "recognition": {
-                    "raw": ans.get("_raw") or ans.get("raw") or "",
-                    "status": ans.get("status") or ("ok" if student_answer else "no_answer"),
-                    "mode": recognition_mode,
-                    "expanded_api_error": expanded_api_error,
-                },
-                "verification": verify,
+                "label": str(part.get("label") or "overall").strip(),
+                "transcription": str(part.get("transcription") or "").strip(),
+                "final_answer": str(part.get("final_answer") or "").strip(),
+                "status": str(part.get("status") or "uncertain").strip(),
             }
         )
-    return items
+    return normalized
 
 
-def _build_question_results(
-    verified_markdown: str,
-    verification_report: Dict[str, Any],
-    answer_items: List[Dict[str, Any]],
-) -> List[Dict[str, Any]]:
-    blocks_by_qno = {
-        int(block.qno): block.text
-        for block in split_page_into_blocks(verified_markdown)
-        if block.kind == "q" and block.qno is not None
-    }
-    answers_by_qno = {item.get("qno"): item for item in answer_items}
-    results: List[Dict[str, Any]] = []
-    for item in verification_report.get("items") or []:
-        if not isinstance(item, dict) or item.get("kind") != "q":
+def _normalize_uncertain_fragments(value: Any) -> List[Dict[str, Any]]:
+    normalized: List[Dict[str, Any]] = []
+    for fragment in value if isinstance(value, list) else []:
+        if isinstance(fragment, str):
+            normalized.append({"text": fragment.strip(), "alternatives": [], "location": ""})
             continue
-        qno = item.get("qno")
-        try:
-            question_markdown = blocks_by_qno.get(int(qno), "")
-        except (TypeError, ValueError):
-            question_markdown = ""
-        answer = answers_by_qno.get(qno) or {
-            "qno": qno,
-            "text": "",
-            "status": "uncertain",
-            "verdict": "U",
-            "evidence_note": "No answer evidence record was produced.",
-            "crop_path": "",
-        }
-        repair = item.get("repair") if isinstance(item.get("repair"), dict) else {}
-        results.append(
+        if not isinstance(fragment, dict):
+            continue
+        alternatives = fragment.get("alternatives")
+        normalized.append(
             {
-                "qno": qno,
+                "text": str(fragment.get("text") or "").strip(),
+                "alternatives": [
+                    str(alternative).strip()
+                    for alternative in alternatives
+                    if str(alternative).strip()
+                ]
+                if isinstance(alternatives, list)
+                else [],
+                "location": str(fragment.get("location") or "").strip(),
+            }
+        )
+    return normalized
+
+
+def _normalize_final_questions(
+    review: Dict[str, Any],
+    contexts: Sequence[Dict[str, Any]],
+) -> List[Dict[str, Any]]:
+    raw_questions = review.get("questions")
+    if not isinstance(raw_questions, list):
+        return []
+
+    context_ids = [str(context.get("context_id") or "") for context in contexts]
+    questions: List[Dict[str, Any]] = []
+    for index, raw_question in enumerate(raw_questions, start=1):
+        if not isinstance(raw_question, dict):
+            continue
+        fallback_context = contexts[index - 1] if index <= len(contexts) else {}
+        draft = (
+            fallback_context.get("draft")
+            if isinstance(fallback_context.get("draft"), dict)
+            else {}
+        )
+        raw_answer = raw_question.get("handwritten_answer")
+        answer = raw_answer if isinstance(raw_answer, dict) else {}
+        parts = _normalize_answer_parts(answer.get("answer_parts"))
+        uncertain = _normalize_uncertain_fragments(answer.get("uncertain_fragments"))
+        text = str(answer.get("text") or raw_question.get("student_answer") or "").strip()
+        if not text and parts:
+            rendered_parts = []
+            for part in parts:
+                content = part["transcription"] or part["final_answer"]
+                if content:
+                    rendered_parts.append(
+                        f"{part['label']} {content}"
+                        if part["label"] != "overall"
+                        else content
+                    )
+            text = "\n".join(rendered_parts)
+
+        source_ids = raw_question.get("source_context_ids")
+        normalized_source_ids = (
+            [
+                str(context_id).strip()
+                for context_id in source_ids
+                if str(context_id).strip() in context_ids
+            ]
+            if isinstance(source_ids, list)
+            else []
+        )
+        if not normalized_source_ids and fallback_context:
+            normalized_source_ids = [str(fallback_context.get("context_id") or "")]
+
+        question_markdown = str(raw_question.get("question_markdown") or "").strip()
+        if not question_markdown:
+            question_markdown = str(draft.get("question_text") or "").strip()
+        status = str(answer.get("status") or ("ok" if text else "no_answer")).strip()
+        questions.append(
+            {
+                "qno": _normalize_qno(
+                    raw_question.get("qno") or draft.get("qno"),
+                    index,
+                ),
                 "question_markdown": question_markdown,
-                "question_verification": {
-                    "status": item.get("status") or "unknown",
-                    "verdict": item.get("v_after_repair") or repair.get("v_strict") or "U",
-                    "crop_qno": item.get("crop_qno"),
-                    "weak_crop": bool(item.get("weak_crop")),
+                "question_review": {
+                    "status": "reviewed_in_global_second_pass",
+                    "source_context_ids": normalized_source_ids,
                 },
                 "handwritten_answer": {
-                    "text": answer.get("text") or "",
-                    "status": answer.get("status") or "uncertain",
-                    "verdict": answer.get("verdict") or "U",
-                    "evidence_note": answer.get("evidence_note") or "",
-                    "crop_path": answer.get("crop_path") or "",
-                    "region": answer.get("region") or {},
-                    "recognition": answer.get("recognition") or {},
-                    "verification": answer.get("verification") or {},
+                    "text": text,
+                    "answer_parts": parts,
+                    "uncertain_fragments": uncertain,
+                    "status": status,
+                    "evidence_note": str(answer.get("evidence_note") or "").strip(),
+                    "source_context_ids": normalized_source_ids,
                 },
             }
         )
-    return results
+    return questions
 
 
-def _result_summary(questions: List[Dict[str, Any]]) -> Dict[str, int]:
-    answers = [q.get("handwritten_answer") or {} for q in questions]
+def _build_question_context_manifest(
+    page_name: str,
+    source_image: Path,
+    draft_markdown_path: Path,
+    contexts: List[Dict[str, Any]],
+    final_questions: Sequence[Dict[str, Any]],
+) -> Dict[str, Any]:
+    final_by_context: Dict[str, List[Dict[str, Any]]] = {}
+    for question in final_questions:
+        source_ids = (question.get("question_review") or {}).get("source_context_ids") or []
+        for context_id in source_ids:
+            final_by_context.setdefault(str(context_id), []).append(
+                {
+                    "qno": question.get("qno"),
+                    "question_markdown": question.get("question_markdown") or "",
+                    "handwritten_answer": question.get("handwritten_answer") or {},
+                }
+            )
+
+    manifest_contexts: List[Dict[str, Any]] = []
+    for context in contexts:
+        context_id = str(context.get("context_id") or "")
+        manifest_contexts.append(
+            {
+                **context,
+                "consumed_by_second_api": any(
+                    bool(view.get("sent_to_second_api"))
+                    for view in (context.get("visual_context") or {}).get("views") or []
+                ),
+                "final_records": final_by_context.get(context_id, []),
+            }
+        )
     return {
-        "question_count": len(questions),
-        "answers_supported": sum(1 for answer in answers if answer.get("verdict") == "Y"),
-        "answers_rejected": sum(1 for answer in answers if answer.get("verdict") == "N"),
-        "answers_uncertain_or_empty": sum(1 for answer in answers if answer.get("verdict") == "U"),
+        "schema_version": 3,
+        "page": page_name,
+        "source_image": str(source_image),
+        "first_pass_markdown": str(draft_markdown_path),
+        "api_strategy": {
+            "call_1": "whole-page draft OCR",
+            "between_calls": "local detection, layout, context construction",
+            "call_2": "single global correction producing final result",
+        },
+        "contexts": manifest_contexts,
     }
 
 
-def _render_result_markdown(page_name: str, questions: List[Dict[str, Any]]) -> str:
-    lines = [f"# {page_name}"]
+def _result_summary(questions: Sequence[Dict[str, Any]]) -> Dict[str, int]:
+    answers = [question.get("handwritten_answer") or {} for question in questions]
+    return {
+        "question_count": len(questions),
+        "answers_with_transcription": sum(1 for answer in answers if answer.get("text")),
+        "answers_partial_or_uncertain": sum(
+            1
+            for answer in answers
+            if answer.get("status") in {"partial", "uncertain", "unreadable"}
+        ),
+        "answers_empty": sum(1 for answer in answers if not answer.get("text")),
+    }
+
+
+def _api_metrics(
+    first_pass_vlm: VLMClient,
+    second_pass_vlm: VLMClient,
+) -> Dict[str, Any]:
+    passes = {
+        "call_1": list(first_pass_vlm.request_log),
+        "call_2": list(second_pass_vlm.request_log),
+    }
+    requests = [request for values in passes.values() for request in values]
+
+    def _token_sum(name: str) -> Optional[int]:
+        values = [request.get(name) for request in requests if request.get(name) is not None]
+        return sum(int(value) for value in values) if values else None
+
+    return {
+        "logical_call_count": 2,
+        "network_request_count": len(requests),
+        "successful_request_count": sum(bool(request.get("success")) for request in requests),
+        "failed_request_count": sum(not bool(request.get("success")) for request in requests),
+        "prompt_tokens": _token_sum("prompt_tokens"),
+        "completion_tokens": _token_sum("completion_tokens"),
+        "total_tokens": _token_sum("total_tokens"),
+        "latency_s": round(sum(float(request.get("elapsed_s") or 0.0) for request in requests), 6),
+        "passes": passes,
+    }
+
+
+def _render_result_markdown(page_name: str, questions: Sequence[Dict[str, Any]]) -> str:
+    del page_name
+    lines: List[str] = []
     for index, question in enumerate(questions, start=1):
         qno = question.get("qno")
         label = str(qno) if qno is not None else str(index)
         answer = question.get("handwritten_answer") or {}
-        lines.extend(
-            [
-                "",
-                f"## 题目 {label}",
-                "",
-                str(question.get("question_markdown") or "[UNREADABLE]").strip(),
-                "",
-                "### 手写答案",
-                "",
-            ]
-        )
+        question_markdown = str(question.get("question_markdown") or "[无法识别]").strip()
+        if not re.match(rf"^\s*{re.escape(label)}[.．、]\s*", question_markdown):
+            question_markdown = f"{label}. {question_markdown}"
+        if lines:
+            lines.append("")
+        lines.extend([question_markdown, "", "### 手写答案", ""])
         answer_text = str(answer.get("text") or "").strip()
-        lines.append(answer_text if answer_text else "_未识别到手写答案。_")
+        if answer_text:
+            lines.append(answer_text)
+        elif str(answer.get("status") or "").strip() in {"uncertain", "unreadable"}:
+            lines.append("[无法识别]")
+        else:
+            lines.append("_未识别到手写答案。_")
     return "\n".join(lines).strip() + "\n"
-
-
-def _read_text_if_exists(path: Path) -> str:
-    return path.read_text(encoding="utf-8", errors="ignore") if path.exists() else ""
 
 
 def run_agent(args: argparse.Namespace) -> Dict[str, Any]:
@@ -554,32 +729,32 @@ def run_agent(args: argparse.Namespace) -> Dict[str, Any]:
     if not image.is_file():
         raise FileNotFoundError(image)
 
-    paths = WorkflowPaths(Path(args.work_root))
-    paths.ensure()
     page_name = image.stem
+    paths = WorkflowPaths(_page_work_root(Path(args.work_root), page_name))
+    paths.ensure()
     original_image = paths.image / image.name
     if image != original_image.resolve():
         shutil.copy2(image, original_image)
-    page_dir = paths.match / page_name
-    page_agent_out = paths.agent_outputs / page_name
+    page_dir = paths.match
+    page_agent_out = paths.agent_outputs
     page_agent_out.mkdir(parents=True, exist_ok=True)
 
     cache_path = Path(args.cache_path) if args.cache_path else paths.cache / f"{page_name}.json"
     cache = JsonCache(cache_path) if args.cache else None
-
-    vlm = VLMClient(
+    first_pass_vlm = VLMClient(
         api_base=args.api_base,
         api_key=args.api_key,
         model=args.model,
+        max_retries=1,
         temperature=0.0,
         top_p=0.7,
     )
-    answer_vlm = VLMClient(
+    second_pass_vlm = VLMClient(
         api_base=args.api_base,
         api_key=args.api_key,
         model=args.model,
-        timeout_s=args.answer_timeout,
-        max_retries=args.answer_retries,
+        timeout_s=args.review_timeout,
+        max_retries=1,
         temperature=0.0,
         top_p=0.7,
     )
@@ -587,7 +762,6 @@ def run_agent(args: argparse.Namespace) -> Dict[str, Any]:
     page_img = safe_open_image(image)
     if page_img is None:
         raise RuntimeError(f"cannot open image: {image}")
-
     preprocessed_img, preprocess_meta = scan_document_for_ocr(page_img)
     preprocessed_image = paths.preprocessed / f"{page_name}.png"
     preprocess_report_path = paths.preprocessed / f"{page_name}.json"
@@ -597,26 +771,44 @@ def run_agent(args: argparse.Namespace) -> Dict[str, Any]:
         encoding="utf-8",
     )
 
-    baseline = _invoke_image_json(
-        vlm,
+    # API call 1: the canonical benchmark prompt returns Markdown directly.
+    draft_markdown = _invoke_image_markdown(
+        first_pass_vlm,
         preprocessed_img,
         BASELINE_PROMPT,
         cache=cache,
-        cache_ns="baseline",
-        cache_prefix="whole_page_baseline",
+        cache_ns="baseline_markdown_v3",
+        cache_prefix="benchmark_extract_v2",
         max_tokens=args.baseline_max_tokens,
     )
-    baseline_md = _baseline_to_markdown(baseline)
-    page_md_path = paths.api_markdown / f"{page_name}.md"
+    if not draft_markdown:
+        raise RuntimeError("first-pass whole-page Markdown is empty")
+    baseline = {
+        "schema_version": 3,
+        "response_format": "benchmark_markdown",
+        "prompt": {
+            "version": "extract_v2",
+            "path": str(BASELINE_PROMPT_PATH.relative_to(_repo_root())),
+            "sha1": sha1_bytes(BASELINE_PROMPT.encode("utf-8")),
+        },
+        "page_markdown": draft_markdown,
+        "questions": _draft_questions_from_markdown(draft_markdown),
+        "page_notes": "",
+    }
+    draft_markdown_path = paths.api_markdown / f"{page_name}.md"
     baseline_json_path = paths.api_markdown / f"{page_name}.json"
-    page_md_path.write_text(baseline_md, encoding="utf-8")
-    baseline_json_path.write_text(json.dumps(baseline, ensure_ascii=False, indent=2), encoding="utf-8")
+    draft_markdown_path.write_text(draft_markdown, encoding="utf-8")
+    baseline_json_path.write_text(
+        json.dumps(baseline, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
     if cache:
         cache.save()
 
+    # Local-only stages between the two API calls.
     if not args.skip_layout:
-        rfdetr_page_out = paths.rfdetr / page_name
-        doclayout_page_out = paths.doclayout / page_name
+        rfdetr_page_out = paths.rfdetr
+        doclayout_page_out = paths.doclayout
         _run_stage_script(
             "run_stage1.sh",
             [
@@ -630,6 +822,7 @@ def run_agent(args: argparse.Namespace) -> Dict[str, Any]:
                 str(args.checkpoint),
                 "--doclayout-device",
                 str(args.doclayout_device),
+                "--flat-output",
             ],
         )
         if page_dir.exists():
@@ -645,69 +838,67 @@ def run_agent(args: argparse.Namespace) -> Dict[str, Any]:
                 str(doclayout_page_out / "json"),
                 "--out-dir",
                 str(paths.match),
+                "--flat-output",
             ],
         )
-
     if not (page_dir / "match.json").exists():
         raise RuntimeError(f"match.json not found: {page_dir / 'match.json'}")
 
-    proofread_out = paths.cache / "verification" / page_name
-    fig_cfg = FigureFilterCfg(
-        min_edge=28,
-        max_aspect=8.0,
-        max_blank_frac=0.97,
-        do_vlm_cls=False if args.no_fig else True,
-        do_vlm_rel=False if args.no_fig else True,
-    )
-    proofread_report = process_one_page(
-        page_dir,
-        page_md_path,
-        out_dir=proofread_out,
-        ver_vlm=vlm,
-        gen_vlm=None if args.no_patcher else vlm,
-        fig_vlm=None if args.no_fig else vlm,
-        cache=cache,
-        skip_partial=True,
-        partial_main_min_hfrac=0.12,
-        use_offset_search=True,
-        use_crop_qno=bool(args.use_crop_qno),
-        qno_vlm=vlm if args.use_crop_qno else None,
-        mask_u_token="[UNREADABLE]",
-        mask_n_token="[HALLUCINATION]",
-        fig_cfg=fig_cfg,
-        ablation_no_patcher=bool(args.no_patcher),
-        verdict_comment=bool(args.verdict_comment),
-    )
+    contexts = _prepare_question_contexts(page_dir, preprocessed_img, baseline)
 
-    proofread_md_path = proofread_out / f"{page_name}_proofread.md"
-    proofread_md = _read_text_if_exists(proofread_md_path)
-    if not proofread_md.strip():
-        raise RuntimeError(f"verified question Markdown is empty: {proofread_md_path}")
-
-    answer_items = _collect_answer_evidence(
-        page_dir,
+    # API call 2: one global review over the draft and every local context.
+    review = _invoke_final_review(
+        second_pass_vlm,
         preprocessed_img,
-        answer_vlm,
-        proofread_report.get("items") or [],
+        draft_markdown,
+        baseline,
+        contexts,
         cache=cache,
-        max_tokens=args.answer_max_tokens,
+        max_tokens=args.review_max_tokens,
         detail_views=args.answer_detail_views,
-        question_text_by_qno={
-            block.qno: block.text
-            for block in split_page_into_blocks(proofread_md)
-            if block.kind == "q" and block.qno is not None
-        },
     )
+    questions = _normalize_final_questions(review, contexts)
+    if not questions:
+        raise RuntimeError("second-pass global review produced no final questions")
+
+    question_contexts_path = page_dir / "question_contexts.json"
+    for question in questions:
+        question_review = question.get("question_review") or {}
+        question_review["context_manifest"] = str(question_contexts_path)
+        question["question_review"] = question_review
+        handwritten_answer = question.get("handwritten_answer") or {}
+        handwritten_answer["context_manifest"] = str(question_contexts_path)
+        question["handwritten_answer"] = handwritten_answer
+    question_contexts_path.write_text(
+        json.dumps(
+            _build_question_context_manifest(
+                page_name,
+                preprocessed_image,
+                draft_markdown_path,
+                contexts,
+                questions,
+            ),
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
+
     handwriting_regions = [
         {
-            "qno": item.get("qno"),
-            "question_index": item.get("question_index"),
-            "read_index": item.get("read_index"),
-            "det_index": item.get("det_index"),
-            "region": item.get("region"),
+            "context_id": context.get("context_id"),
+            "qno": (context.get("draft") or {}).get("qno"),
+            "region": {
+                "source_bbox_xyxy": (context.get("alignment") or {}).get("source_bbox_xyxy") or [],
+                "frame_bbox_xyxy": (context.get("alignment") or {}).get("answer_bbox_xyxy") or [],
+                "question_type": (context.get("alignment") or {}).get("question_type") or {},
+                "strategy": (context.get("alignment") or {}).get("strategy") or "",
+                "score": (context.get("alignment") or {}).get("detector_score") or 0.0,
+            },
         }
-        for item in answer_items
-        if isinstance(item.get("region"), dict) and item.get("region")
+        for context in contexts
+        if (context.get("alignment") or {}).get("source_bbox_xyxy")
+        and (context.get("alignment") or {}).get("answer_bbox_xyxy")
     ]
     handwriting_regions_path = page_dir / "handwriting_regions.json"
     handwriting_overlay_path = page_dir / "viz" / f"{page_name}_handwriting_overlay.png"
@@ -725,78 +916,108 @@ def run_agent(args: argparse.Namespace) -> Dict[str, Any]:
         encoding="utf-8",
     )
     draw_handwriting_overlay(preprocessed_img, handwriting_regions, handwriting_overlay_path)
-    questions = _build_question_results(proofread_md, proofread_report, answer_items)
-    if not questions:
-        raise RuntimeError("no aligned question-answer results were produced")
 
+    result_json_path = page_agent_out / "result.json"
+    result_md_path = page_agent_out / "result.md"
+    verification_path = page_agent_out / "verification.json"
+    outputs = {
+        "result_json": str(result_json_path),
+        "result_markdown": str(result_md_path),
+        "verification_report": str(verification_path),
+        "question_contexts": str(question_contexts_path),
+        "handwriting_regions": str(handwriting_regions_path),
+        "handwriting_overlay": str(handwriting_overlay_path),
+    }
     final = {
         "page": page_name,
         "source_image": str(original_image),
         "input_image": str(image),
         "preprocessed_image": str(preprocessed_image),
+        "api_strategy": {
+            "call_count": 2,
+            "call_1": "whole-page draft Markdown",
+            "call_2": "global context-aware correction and final result",
+        },
+        "api_metrics": _api_metrics(first_pass_vlm, second_pass_vlm),
         "summary": _result_summary(questions),
         "questions": questions,
+        "page_notes": review.get("page_notes") or "",
         "artifacts": {
             "original_image": str(original_image),
             "preprocessing_report": str(preprocess_report_path),
-            "api_markdown": str(page_md_path),
-            "api_response": str(baseline_json_path),
+            "first_pass_markdown": str(draft_markdown_path),
+            "first_pass_response": str(baseline_json_path),
             "code_outputs": str(paths.code_outputs),
+            "question_contexts": str(question_contexts_path),
             "handwriting_regions": str(handwriting_regions_path),
             "handwriting_overlay": str(handwriting_overlay_path),
-            "verification_report": str(page_agent_out / "verification.json"),
+            "second_pass_report": str(verification_path),
         },
+        "outputs": outputs,
     }
-    result_json_path = page_agent_out / "result.json"
-    result_md_path = page_agent_out / "result.md"
-    verification_path = page_agent_out / "verification.json"
-    result_json_path.write_text(json.dumps(final, ensure_ascii=False, indent=2), encoding="utf-8")
-    result_md_path.write_text(_render_result_markdown(page_name, questions), encoding="utf-8")
-    verification_path.write_text(json.dumps(proofread_report, ensure_ascii=False, indent=2), encoding="utf-8")
-
+    result_json_path.write_text(
+        json.dumps(final, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    result_md_path.write_text(
+        _render_result_markdown(page_name, questions),
+        encoding="utf-8",
+    )
+    verification_path.write_text(
+        json.dumps(
+            {
+                "mode": "single_global_second_pass",
+                "first_pass_markdown": str(draft_markdown_path),
+                "context_manifest": str(question_contexts_path),
+                "page_notes": review.get("page_notes") or "",
+                "api_metrics": final["api_metrics"],
+                "raw": review.get("_raw") or review.get("raw") or "",
+            },
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
     if cache:
         cache.save()
-    final["outputs"] = {
-        "result_json": str(result_json_path),
-        "result_markdown": str(result_md_path),
-        "verification_report": str(verification_path),
-        "handwriting_regions": str(handwriting_regions_path),
-        "handwriting_overlay": str(handwriting_overlay_path),
-    }
     return final
 
 
 def build_argparser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser("mathocr_workflow")
-    p.add_argument("--image", required=True, help="input exam page image")
-    p.add_argument("--work-root", default="workflow", help="root containing workflow output groups")
-    p.add_argument("--checkpoint", default="checkpoint_best_total.pth")
-    p.add_argument("--doclayout-device", default="cpu")
-    p.add_argument("--skip-layout", action="store_true", help="reuse existing Stage 1/2 outputs")
-    p.add_argument("--api-base", default="https://dashscope.aliyuncs.com/compatible-mode/v1")
-    p.add_argument("--api-key", default="")
-    p.add_argument("--model", default=DEFAULT_VLM_MODEL)
-    p.add_argument("--baseline-max-tokens", type=int, default=3000)
-    p.add_argument("--answer-max-tokens", type=int, default=1200)
-    p.add_argument("--answer-timeout", type=int, default=120)
-    p.add_argument("--answer-retries", type=int, default=1)
-    p.add_argument(
+    parser = argparse.ArgumentParser("mathocr_workflow")
+    parser.add_argument("--image", required=True, help="input exam page image")
+    parser.add_argument(
+        "--work-root",
+        default="workflow",
+        help="root containing workflow output groups",
+    )
+    parser.add_argument("--checkpoint", default="checkpoint_best_total.pth")
+    parser.add_argument("--doclayout-device", default="cpu")
+    parser.add_argument(
+        "--skip-layout",
+        action="store_true",
+        help="reuse existing local detection and matching output",
+    )
+    parser.add_argument(
+        "--api-base",
+        default="https://dashscope.aliyuncs.com/compatible-mode/v1",
+    )
+    parser.add_argument("--api-key", default="")
+    parser.add_argument("--model", default=DEFAULT_VLM_MODEL)
+    parser.add_argument("--baseline-max-tokens", type=int, default=5000)
+    parser.add_argument("--review-max-tokens", type=int, default=7000)
+    parser.add_argument("--review-timeout", type=int, default=240)
+    parser.add_argument(
         "--answer-detail-views",
         type=int,
         choices=(0, 1, 2),
         default=0,
-        help="number of overlapping detail crops sent with the full handwriting frame",
+        help="magnified answer details per question added to the single second API request",
     )
-    p.add_argument("--use-crop-qno", action="store_true")
-    p.add_argument("--no-patcher", action="store_true", default=True)
-    p.add_argument("--with-patcher", dest="no_patcher", action="store_false")
-    p.add_argument("--no-fig", action="store_true", default=True)
-    p.add_argument("--with-fig", dest="no_fig", action="store_false")
-    p.add_argument("--verdict-comment", action="store_true")
-    p.add_argument("--cache", action="store_true", default=True)
-    p.add_argument("--no-cache", dest="cache", action="store_false")
-    p.add_argument("--cache-path", default=None)
-    return p
+    parser.add_argument("--cache", action="store_true", default=True)
+    parser.add_argument("--no-cache", dest="cache", action="store_false")
+    parser.add_argument("--cache-path", default=None)
+    return parser
 
 
 def main(argv: Optional[List[str]] = None) -> int:

@@ -129,6 +129,7 @@ def run_inference(
     clean_output: bool = False,
     num_classes: Optional[int] = 3,
     optimize_for_inference: bool = False,
+    flat_output: bool = False,
 ) -> None:
     output_root = Path(output_dir)
     overlay_dir = output_root / "overlay"
@@ -192,6 +193,9 @@ def run_inference(
     except Exception:
         iterator = image_paths
 
+    if flat_output and len(image_paths) != 1:
+        raise ValueError("--flat-output requires exactly one input image")
+
     with jsonl_path.open(json_mode, encoding="utf-8") as f_jsonl:
         for img_path in iterator:
             img_path = Path(img_path)
@@ -236,7 +240,7 @@ def run_inference(
 
             overlay_path = overlay_dir / f"{stem}_overlay.jpg"
             Image.fromarray(canvas).save(overlay_path)
-            img_crop_dir = crops_dir / stem
+            img_crop_dir = crops_dir if flat_output else crops_dir / stem
             img_crop_dir.mkdir(parents=True, exist_ok=True)
 
             det_list: List[Dict[str, Any]] = []
@@ -340,6 +344,11 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Run RF-DETR tracing optimization. Useful for large batches, slow/noisy for quick single-image runs.",
     )
+    parser.add_argument(
+        "--flat-output",
+        action="store_true",
+        help="For one image, write crops directly under crops/ without a stem subdirectory.",
+    )
     return parser.parse_args()
 
 
@@ -363,6 +372,7 @@ def main():
         clean_output=args.clean_output,
         num_classes=args.num_classes,
         optimize_for_inference=args.optimize_for_inference,
+        flat_output=args.flat_output,
     )
 
 
