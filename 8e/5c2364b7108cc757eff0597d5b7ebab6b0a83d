@@ -1,0 +1,26 @@
+benchmark/bench30/baseline_part2/11.md
+  h_20fd666db1d46f 48,62,90
+benchmark/bench30/baseline_part2/13.md
+  h_20fd666db1d46f 14
+benchmark/bench30/baseline_part2/10.md
+  h_20fd666db1d46f 62,104-105,130
+benchmark/bench30/baseline_part2/3.md
+  h_20fd666db1d46f 67,85,87
+benchmark/bench30/baseline_part2/8.md
+  h_20fd666db1d46f 66,73
+benchmark/bench30/baseline_part2/4.md
+  h_20fd666db1d46f 7,30,41
+benchmark/bench30/baseline_part2/2.md
+  h_20fd666db1d46f 11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "8e5c2364b7108cc757eff0597d5b7ebab6b0a83d",
+  "prompts": {},
+  "humans": {
+    "h_20fd666db1d46f": {
+      "author": "puppeteer <19517600502@163.com>"
+    }
+  }
+}
