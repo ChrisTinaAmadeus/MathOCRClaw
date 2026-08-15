@@ -37,9 +37,9 @@ bash scripts/run_agent.sh --image input/page_0001.jpg --full
 
 Add `--skip-layout` to reuse local detection and matching outputs. Without `--full`, question-number reading, text patching, and question/figure checks are disabled to reduce API calls. For an interactive shell in the same environment, run `source scripts/activate_env.sh`.
 
-### Bench30 benchmark
+### Benchmark
 
-The initial agent evaluation set contains **30 high-quality exam images plus Qwen3-VL baseline Markdown**. See [`benchmark/bench30/`](benchmark/bench30/README.md) for the manifest, official GT copies, baseline outputs, and evaluation summary. The full MathDoc dataset is not included in this repository.
+The agent evaluation set contains **32 high-quality exam images plus Qwen3.7-plus baseline Markdown**. Images and their corresponding baseline outputs use matching names from `page01` through `page32` under [`benchmark/images/`](benchmark/images/) and [`benchmark/baseline/`](benchmark/baseline/). The full MathDoc dataset is not included in this repository.
 
 ### Output layout
 

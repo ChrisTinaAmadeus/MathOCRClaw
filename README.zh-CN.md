@@ -37,9 +37,9 @@ bash scripts/run_agent.sh --image input/page_0001.jpg --full
 
 复用已有本地检测和匹配结果时加 `--skip-layout`。不加 `--full` 时会关闭题号读取、文本修复和题图关系检查，以减少 API 请求。需要在当前终端中交互使用该环境时，执行 `source scripts/activate_env.sh`。
 
-### 小基准 Bench30
+### 基准数据
 
-初版智能体评测使用 **30 张高质量试卷图片和千问 3-VL baseline Markdown**。详见 [`benchmark/bench30/`](benchmark/bench30/README.md)，其中包含 `manifest.tsv`、官方 GT 副本、baseline 输出和评测摘要。全量 MathDoc 数据不纳入本仓库。
+智能体评测集包含 **32 张高质量试卷图片和Qwen3.7-plus baseline Markdown**。图片及其对应的 baseline 输出在 [`benchmark/images/`](benchmark/images/) 和 [`benchmark/baseline/`](benchmark/baseline/) 中统一使用 `page01` 至 `page32` 的配对名称。全量 MathDoc 数据不纳入本仓库。
 
 ### 输出结构
 
