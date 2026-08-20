@@ -1,0 +1,76 @@
+benchmark/test_runs/20260820-162708/pages/page01.json
+  h_20fd666db1d46f 1-126
+benchmark/test_runs/20260820-162708/pages/page02.json
+  h_20fd666db1d46f 1-272
+benchmark/test_runs/20260820-162708/pages/page03.json
+  h_20fd666db1d46f 1-206
+benchmark/test_runs/20260820-162708/pages/page04.json
+  h_20fd666db1d46f 1-238
+benchmark/test_runs/20260820-162708/pages/page05.json
+  h_20fd666db1d46f 1-142
+benchmark/test_runs/20260820-162708/pages/page06.json
+  h_20fd666db1d46f 1-238
+benchmark/test_runs/20260820-162708/pages/page07.json
+  h_20fd666db1d46f 1-254
+benchmark/test_runs/20260820-162708/pages/page08.json
+  h_20fd666db1d46f 1-142
+benchmark/test_runs/20260820-162708/pages/page09.json
+  h_20fd666db1d46f 1-142
+benchmark/test_runs/20260820-162708/pages/page10.json
+  h_20fd666db1d46f 1-142
+benchmark/test_runs/20260820-162708/pages/page11.json
+  h_20fd666db1d46f 1-126
+benchmark/test_runs/20260820-162708/pages/page12.json
+  h_20fd666db1d46f 1-126
+benchmark/test_runs/20260820-162708/pages/page13.json
+  h_20fd666db1d46f 1-142
+benchmark/test_runs/20260820-162708/pages/page14.json
+  h_20fd666db1d46f 1-158
+benchmark/test_runs/20260820-162708/pages/page15.json
+  h_20fd666db1d46f 1-126
+benchmark/test_runs/20260820-162708/pages/page16.json
+  h_20fd666db1d46f 1-334
+benchmark/test_runs/20260820-162708/pages/page17.json
+  h_20fd666db1d46f 1-158
+benchmark/test_runs/20260820-162708/pages/page18.json
+  h_20fd666db1d46f 1-222
+benchmark/test_runs/20260820-162708/pages/page19.json
+  h_20fd666db1d46f 1-190
+benchmark/test_runs/20260820-162708/pages/page20.json
+  h_20fd666db1d46f 1-179
+benchmark/test_runs/20260820-162708/pages/page21.json
+  h_20fd666db1d46f 1-174
+benchmark/test_runs/20260820-162708/pages/page22.json
+  h_20fd666db1d46f 1-254
+benchmark/test_runs/20260820-162708/pages/page23.json
+  h_20fd666db1d46f 1-206
+benchmark/test_runs/20260820-162708/pages/page24.json
+  h_20fd666db1d46f 1-158
+benchmark/test_runs/20260820-162708/pages/page25.json
+  h_20fd666db1d46f 1-158
+benchmark/test_runs/20260820-162708/pages/page26.json
+  h_20fd666db1d46f 1-206
+benchmark/test_runs/20260820-162708/pages/page27.json
+  h_20fd666db1d46f 1-334
+benchmark/test_runs/20260820-162708/pages/page28.json
+  h_20fd666db1d46f 1-190
+benchmark/test_runs/20260820-162708/pages/page29.json
+  h_20fd666db1d46f 1-126
+benchmark/test_runs/20260820-162708/pages/page30.json
+  h_20fd666db1d46f 1-115
+benchmark/test_runs/20260820-162708/pages/page31.json
+  h_20fd666db1d46f 1-126
+benchmark/test_runs/20260820-162708/pages/page32.json
+  h_20fd666db1d46f 1-126
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "66f00d78e547b37838bdc2becba48e4a690880ac",
+  "prompts": {},
+  "humans": {
+    "h_20fd666db1d46f": {
+      "author": "puppeteer <19517600502@163.com>"
+    }
+  }
+}
