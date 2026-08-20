@@ -1,0 +1,249 @@
+{
+  "page": "page03",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/image/page03.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page03.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/preprocessed/page03.png",
+  "api_strategy": {
+    "call_count": 2,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "global context-aware correction and final result"
+  },
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 12372,
+    "completion_tokens": 12536,
+    "total_tokens": 24908,
+    "latency_s": 230.960105,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 139.812316,
+          "prompt_tokens": 2770,
+          "completion_tokens": 7646,
+          "total_tokens": 10416,
+          "request_id": "chatcmpl-34bbd9fe-467d-947f-8dd9-503bcdc31388"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 91.147789,
+          "prompt_tokens": 9602,
+          "completion_tokens": 4890,
+          "total_tokens": 14492,
+          "request_id": "chatcmpl-ac5eb7aa-bde6-9f5c-b228-65853bd0c216"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 6,
+    "answers_with_transcription": 6,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 5,
+      "question_markdown": "5. 已知函数 $f(x)=\\begin{cases} x-3, x \\ge 10 \\\\ f[f(x+5)], x < 10 \\end{cases}$，其中 $x \\in N$，则 $f(9)=(\\quad)$。\nA. 5\nB. 6\nC. 7\nD. 8",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "f[f(14)]\nD",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "f[f(14)]\nD",
+            "final_answer": "D",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "D written in parenthesis. f[f(14)] written at top.",
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 6,
+      "question_markdown": "6. 已知命题 $P: \\forall x > 0, x+\\frac{4}{x} \\ge a$，命题 $Q: \\exists x \\in R, x^2+2ax+a+2=0$，若命题 $P, Q$ 都是真命题，实数 $a$ 的取值范围是 $(\\quad)$。\nA. $(-\\infty, -1]$\nB. $[-1, 2]$\nC. $[2, 4]$\nD. $(-\\infty, -1] \\cup [2, 4]$",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "4a^2-4a-8=0\nB\na \\le 4",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "4a^2-4a-8=0\nB\na \\le 4",
+            "final_answer": "B",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "B written in parenthesis. Working out written nearby.",
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 7,
+      "question_markdown": "7. 定义：称 $|b-a|$ 为区间 $[a, b]$ 的长度，若函数 $f(x)=\\sqrt{ax^2+bx+c}(a<0)$ 的定义域与值域区间长度相等，则 $a$ 的值为 $(\\quad)$。\nA. $-4$\nB. $-2$\nC. 4 或 $-2$\nD. 与 $b, c$ 的取值有关",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "B",
+            "final_answer": "B",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "B written in parenthesis. 'a' and 'a<0' circled in question text.",
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 8,
+      "question_markdown": "8. 设 $y=(x-a)\\cdot \\frac{a}{x-b-1}$，若 $y>0$ 恒成立，则 $a^2+b^2$ 的最小值是 $(\\quad)$。\nA. 0\nB. $\\frac{1}{2}$\nC. 1\nD. 2",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "A",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "A",
+            "final_answer": "A",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "A written in parenthesis.",
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 9,
+      "question_markdown": "9. 下列说法中错误的有 $(\\quad)$。\nA. 命题 $P: \\exists x \\in R, x^2+3x+4<0$，则命题 $P$ 的否定是 $\\forall x \\in R, x^2+3x+4>0$\nB. “$m<0$”是“关于 $x$ 的方程 $x^2-2x+m=0$ 有一正一负根”的充要条件\nC. 命题“$\\forall x \\in Z, x^2>0$”是真命题\nD. “$|x|>|y|$”是“$x>y$”的必要不充分条件",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C005"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "ABC",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "ABC",
+            "final_answer": "ABC",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "ABC written in parenthesis. '错误的' circled. X marks next to options A and C.",
+        "source_context_ids": [
+          "C005"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 10,
+      "question_markdown": "10. 下列说法正确的是 $(\\quad)$。\nA. $y=\\sqrt{1+x}\\cdot \\sqrt{1-x}$ 与 $y=\\sqrt{1-x^2}$ 表示同一个函数\nB. 函数 $f(2x-1)$ 的定义域为 $(-1, 2)$，则函数 $f(x)$ 的定义域为 $(-2, 4)$\nC. 关于 $x$ 的不等式 $2kx^2+kx-\\frac{3}{8}<0$，使该不等式恒成立的实数 $k$ 的取值范围是 $(-3, 0)$\nD. 满足条件 $\\{1, 2\\} \\subseteq C \\subsetneq \\{1, 2, 3, 4\\}$ 的集合 $C$ 的个数为 2",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C006"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "ACD\n4-4m<0\n4m>4\nm>1\n\\{1, 2, 3\\}\nk<0\nk^2+3k<0\n(k+\\frac{3}{2})^2<\\frac{9}{4}",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "ACD\n4-4m<0\n4m>4\nm>1\n\\{1, 2, 3\\}\nk<0\nk^2+3k<0\n(k+\\frac{3}{2})^2<\\frac{9}{4}",
+            "final_answer": "ACD",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "ACD written in parenthesis. Option B text crossed out. Checkmark next to D. Working out written on the right and bottom.",
+        "source_context_ids": [
+          "C006"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "Page contains questions 5-10. Handwriting includes answer choices and some working out. Crossed out text in Q10 option B is omitted.",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/image/page03.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/preprocessed/page03.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/api_markdown/page03.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/api_markdown/page03.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/code_outputs/match/viz/page03_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/agent_outputs/result.json",
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page03/code_outputs/match/viz/page03_handwriting_overlay.png"
+  }
+}

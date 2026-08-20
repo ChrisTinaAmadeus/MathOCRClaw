@@ -1,0 +1,125 @@
+{
+  "page": "page12",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page12/image/page12.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page12.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page12/preprocessed/page12.png",
+  "api_strategy": {
+    "call_count": 2,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "global context-aware correction and final result"
+  },
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 10615,
+    "completion_tokens": 25891,
+    "total_tokens": 36506,
+    "latency_s": 471.852281,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 234.964031,
+          "prompt_tokens": 2858,
+          "completion_tokens": 12910,
+          "total_tokens": 15768,
+          "request_id": "chatcmpl-a1aeffa5-aaf0-9949-b768-cfbe82fd1d8f"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 236.88825,
+          "prompt_tokens": 7757,
+          "completion_tokens": 12981,
+          "total_tokens": 20738,
+          "request_id": "chatcmpl-42e5885d-f557-9e49-9288-52c70155213a"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 1,
+    "answers_with_transcription": 1,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 17,
+      "question_markdown": "17. 如图，在三棱柱 $ABC-A_1B_1C_1$ 中，$B_1B \\perp$ 平面 $A_1B_1C_1$，$AC=CB=CC_1=2$，$\\angle ACB=90^\\circ$，$D, E$ 分别是 $A_1B_1, CC_1$ 的中点。\n(1)求证：$C_1D // $ 平面 $A_1BE$；\n(2)求平面 $ABC$ 与平面 $A_1BE$ 所成角的正弦值。\n<插图>",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page12/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "解：(1)：在三棱柱 $ABC-A_1B_1C_1$ 中，\n$B_1B \\perp$ 平面 $A_1B_1C_1$\n$\\therefore$ 平面 $ABC // $ 平面 $A_1B_1C_1$\n$B_1B // C_1C$\n$\\therefore C_1C \\perp$ 平面 $ABC$\n如图，建立空间直角坐标系\n$\\therefore C_1(0,0,2), D(1,1,2), A_1(2,0,2)$\n$B(0,2,0), E(0,0,1)$\n$\\therefore \\overrightarrow{C_1D}=(1,1,0), \\overrightarrow{A_1B}=(-2,2,-2)$\n$\\overrightarrow{A_1E}=(-2,0,-1)$\n设平面 $A_1BE$ 一个法向量 $\\vec{n}=(x,y,z)$\n则 $\\begin{cases} \\vec{n} \\cdot \\overrightarrow{A_1B}=0 \\\\ \\vec{n} \\cdot \\overrightarrow{A_1E}=0 \\end{cases} \\Rightarrow \\begin{cases} -2x+2y-2z=0 \\\\ -2x-z=0 \\end{cases}$\n令 $x=-1$，则 $y=1, z=2$\n$\\therefore \\vec{n}=(-1,1,2)$\n$\\therefore \\overrightarrow{C_1D} \\cdot \\vec{n} = 1\\times(-1)+1\\times1+0\\times2=0$\n$\\therefore \\overrightarrow{C_1D} \\perp \\vec{n}$ $\\therefore C_1D // $ 平面 $A_1BE$\n(2) 由(1)得平面 $A_1BE$ 的法向量 $\\vec{n}=(-1,1,2)$\n$A(2,0,0), B(0,2,0), C(0,0,0)$\n$\\therefore \\overrightarrow{CA}=(2,0,0), \\overrightarrow{CB}=(0,2,0)$\n设平面 $ABC$ 一个法向量为 $\\vec{m}=(a,b,c)$\n$\\begin{cases} \\vec{m} \\cdot \\overrightarrow{CA}=0 \\\\ \\vec{m} \\cdot \\overrightarrow{CB}=0 \\end{cases} \\Rightarrow \\begin{cases} 2a=0 \\\\ 2b=0 \\end{cases}$\n令 $a=0$，则 $b=0, c=1$\n$\\therefore \\vec{m}=(0,0,1)$\n$\\therefore \\vec{n} \\cdot \\vec{m} = -1\\times0+1\\times0+2\\times1=2$\n$|\\vec{n}|=\\sqrt{(-1)^2+1^2+2^2}=\\sqrt{6}, |\\vec{m}|=1$\n$\\therefore \\cos\\langle\\vec{m},\\vec{n}\\rangle = \\frac{\\vec{m} \\cdot \\vec{n}}{|\\vec{m}| \\cdot |\\vec{n}|} = \\frac{2}{\\sqrt{6}\\times 1} = \\frac{\\sqrt{6}}{3}$\n设平面 $ABC$ 与平面 $A_1BE$ 所成角为 $\\theta$\n$\\therefore \\cos\\theta = |\\cos\\langle\\vec{m},\\vec{n}\\rangle| = \\frac{\\sqrt{6}}{3}$\n$\\therefore \\sin\\theta = \\sqrt{1-\\cos^2\\theta} = \\frac{\\sqrt{3}}{3}$\n答：正弦值为 $\\frac{\\sqrt{3}}{3}$",
+        "answer_parts": [
+          {
+            "label": "(1)",
+            "transcription": "解：(1)：在三棱柱 $ABC-A_1B_1C_1$ 中，\n$B_1B \\perp$ 平面 $A_1B_1C_1$\n$\\therefore$ 平面 $ABC // $ 平面 $A_1B_1C_1$\n$B_1B // C_1C$\n$\\therefore C_1C \\perp$ 平面 $ABC$\n如图，建立空间直角坐标系\n$\\therefore C_1(0,0,2), D(1,1,2), A_1(2,0,2)$\n$B(0,2,0), E(0,0,1)$\n$\\therefore \\overrightarrow{C_1D}=(1,1,0), \\overrightarrow{A_1B}=(-2,2,-2)$\n$\\overrightarrow{A_1E}=(-2,0,-1)$\n设平面 $A_1BE$ 一个法向量 $\\vec{n}=(x,y,z)$\n则 $\\begin{cases} \\vec{n} \\cdot \\overrightarrow{A_1B}=0 \\\\ \\vec{n} \\cdot \\overrightarrow{A_1E}=0 \\end{cases} \\Rightarrow \\begin{cases} -2x+2y-2z=0 \\\\ -2x-z=0 \\end{cases}$\n令 $x=-1$，则 $y=1, z=2$\n$\\therefore \\vec{n}=(-1,1,2)$\n$\\therefore \\overrightarrow{C_1D} \\cdot \\vec{n} = 1\\times(-1)+1\\times1+0\\times2=0$\n$\\therefore \\overrightarrow{C_1D} \\perp \\vec{n}$ $\\therefore C_1D // $ 平面 $A_1BE$",
+            "final_answer": "C_1D // $ 平面 $A_1BE$",
+            "status": "ok"
+          },
+          {
+            "label": "(2)",
+            "transcription": "由(1)得平面 $A_1BE$ 的法向量 $\\vec{n}=(-1,1,2)$\n$A(2,0,0), B(0,2,0), C(0,0,0)$\n$\\therefore \\overrightarrow{CA}=(2,0,0), \\overrightarrow{CB}=(0,2,0)$\n设平面 $ABC$ 一个法向量为 $\\vec{m}=(a,b,c)$\n$\\begin{cases} \\vec{m} \\cdot \\overrightarrow{CA}=0 \\\\ \\vec{m} \\cdot \\overrightarrow{CB}=0 \\end{cases} \\Rightarrow \\begin{cases} 2a=0 \\\\ 2b=0 \\end{cases}$\n令 $a=0$，则 $b=0, c=1$\n$\\therefore \\vec{m}=(0,0,1)$\n$\\therefore \\vec{n} \\cdot \\vec{m} = -1\\times0+1\\times0+2\\times1=2$\n$|\\vec{n}|=\\sqrt{(-1)^2+1^2+2^2}=\\sqrt{6}, |\\vec{m}|=1$\n$\\therefore \\cos\\langle\\vec{m},\\vec{n}\\rangle = \\frac{\\vec{m} \\cdot \\vec{n}}{|\\vec{m}| \\cdot |\\vec{n}|} = \\frac{2}{\\sqrt{6}\\times 1} = \\frac{\\sqrt{6}}{3}$\n设平面 $ABC$ 与平面 $A_1BE$ 所成角为 $\\theta$\n$\\therefore \\cos\\theta = |\\cos\\langle\\vec{m},\\vec{n}\\rangle| = \\frac{\\sqrt{6}}{3}$\n$\\therefore \\sin\\theta = \\sqrt{1-\\cos^2\\theta} = \\frac{\\sqrt{3}}{3}$\n答：正弦值为 $\\frac{\\sqrt{3}}{3}$",
+            "final_answer": "\\frac{\\sqrt{3}}{3}",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [
+          {
+            "text": "\\overrightarrow{A_1E}=(-2,0,-1)",
+            "alternatives": [
+              "\\overrightarrow{BE}=(-2,0,-1)"
+            ],
+            "location": "Part (1) vector definition"
+          },
+          {
+            "text": "A(2,0,0)",
+            "alternatives": [
+              "B(2,0,0)"
+            ],
+            "location": "Part (2) coordinate definition"
+          }
+        ],
+        "status": "ok",
+        "evidence_note": "Student uses coordinate geometry. Red ink text '由题意可知...' is excluded as grader note. Vector labels in part (1) and point labels in part (2) are slightly ambiguous but transcribed to match the mathematical consistency of the student's work (e.g., using A1E for vector (-2,0,-1)).",
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page12/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "Question 17 is the only complete question on this page. Previous question (12) handwriting is visible at the top but not part of this task. Red ink annotations (likely grader notes) are excluded from the student transcription.",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page12/image/page12.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page12/preprocessed/page12.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page12/api_markdown/page12.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page12/api_markdown/page12.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page12/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page12/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page12/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page12/code_outputs/match/viz/page12_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page12/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page12/agent_outputs/result.json",
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page12/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page12/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page12/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page12/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page12/code_outputs/match/viz/page12_handwriting_overlay.png"
+  }
+}

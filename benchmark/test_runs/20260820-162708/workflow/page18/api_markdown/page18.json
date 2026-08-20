@@ -1,0 +1,55 @@
+{
+  "schema_version": 3,
+  "response_format": "benchmark_markdown",
+  "prompt": {
+    "version": "extract_v2",
+    "path": "benchmark/prompts/extract_v2.txt",
+    "sha1": "3262af1c467eaec9306252fad78aaa2bca395617"
+  },
+  "page_markdown": "1. 过 $A(-1,\\sqrt{3})$，$B(2,0)$ 两点的直线倾斜角为 ( )\nA. $\\frac{\\pi}{3}$\nB. $\\frac{3\\pi}{4}$\nC. $\\frac{2\\pi}{3}$\nD. $\\frac{5\\pi}{6}$\n\n### 手写答案\n\nD\n\n2. 在空间直角坐标系 $Oxyz$ 中，已知点 $A(1,1,1), B(2,-1,0)$，若点 $P$ 与点 $A$ 关于 $Oyz$ 平面对称，则 $\\overrightarrow{BP}=$ ( )\nA. $(-3,2,1)$\nB. $(-1,0,1)$\nC. $(-1,0,-1)$\nD. $(3,-2,-1)$\n\n### 手写答案\n\nA\n\n3. 已知 $\\vec{a}=(1,1,0), \\vec{b}=(0,1,1), \\vec{c}=(1,0,1), \\vec{p}=\\vec{a}-\\vec{b}, \\vec{q}=\\vec{a}+2\\vec{b}-\\vec{c}$，则 $\\vec{p}\\cdot\\vec{q}=$ ( )\nA. -1\nB. 1\nC. 0\nD. -2\n\n### 手写答案\n\nA\n\n4. 已知空间向量 $\\vec{a}=(\\sqrt{3},0,1), \\vec{b}=(\\frac{1}{2},0,\\frac{\\sqrt{3}}{2})$，则 $\\vec{a}$ 在 $\\vec{b}$ 上的投影的模为 ( )\nA. $\\sqrt{3}$\nB. 1\nC. 2\nD. $\\frac{1}{2}$\n\n### 手写答案\n\nA\n\n5. 在平行六面体 $ABCD-A_1B_1C_1D_1$ 中，点 $E$ 为棱 $AA_1$ 的中点，点 $F$ 为棱 $CC_1$ 上靠近 $C$ 的三等分点。若 $\\overrightarrow{EF}=x\\overrightarrow{AB}+y\\overrightarrow{AD}+z\\overrightarrow{AA_1}$，$x,y,z\\in R$，则 $x+y+z$ 的值为 ( )\nA. $\\frac{1}{6}$\nB. $\\frac{11}{6}$\nC. $\\frac{17}{6}$\nD. $-\\frac{1}{6}$\n\n### 手写答案\n\nB\n\n6. 过点 $P(0,-1)$ 作直线 $l$，若直线 $l$ 与连接 $A(-2,1)$，$B(2\\sqrt{3},1)$ 两点的线段总有公共点，则直线 $l$ 的倾斜角范围为 ( )\nA. $[\\frac{\\pi}{6}, \\frac{\\pi}{4}]$\nB. $[\\frac{\\pi}{6}, \\frac{3\\pi}{4}]$\nC. $[0, \\frac{\\pi}{6}] \\cup [\\frac{3\\pi}{4}, \\pi)$\nD. $[\\frac{\\pi}{6}, \\frac{\\pi}{2}] \\cup [\\frac{3\\pi}{4}, \\pi)$\n\n### 手写答案\n\nB\n\n7. 已知直线 $l_1: y=ax-b, l_2: y=bx+a$，当 $a,b$ 满足一定条件时，它们的图形可能是图中的 ( )\nA. <插图>\nB. <插图>\nC. <插图>\nD. <插图>\n\n### 手写答案\n\nB",
+  "questions": [
+    {
+      "qno": "1",
+      "question_text": "1. 过 $A(-1,\\sqrt{3})$，$B(2,0)$ 两点的直线倾斜角为 ( )\nA. $\\frac{\\pi}{3}$\nB. $\\frac{3\\pi}{4}$\nC. $\\frac{2\\pi}{3}$\nD. $\\frac{5\\pi}{6}$",
+      "student_answer": "D",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "2",
+      "question_text": "2. 在空间直角坐标系 $Oxyz$ 中，已知点 $A(1,1,1), B(2,-1,0)$，若点 $P$ 与点 $A$ 关于 $Oyz$ 平面对称，则 $\\overrightarrow{BP}=$ ( )\nA. $(-3,2,1)$\nB. $(-1,0,1)$\nC. $(-1,0,-1)$\nD. $(3,-2,-1)$",
+      "student_answer": "A",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "3",
+      "question_text": "3. 已知 $\\vec{a}=(1,1,0), \\vec{b}=(0,1,1), \\vec{c}=(1,0,1), \\vec{p}=\\vec{a}-\\vec{b}, \\vec{q}=\\vec{a}+2\\vec{b}-\\vec{c}$，则 $\\vec{p}\\cdot\\vec{q}=$ ( )\nA. -1\nB. 1\nC. 0\nD. -2",
+      "student_answer": "A",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "4",
+      "question_text": "4. 已知空间向量 $\\vec{a}=(\\sqrt{3},0,1), \\vec{b}=(\\frac{1}{2},0,\\frac{\\sqrt{3}}{2})$，则 $\\vec{a}$ 在 $\\vec{b}$ 上的投影的模为 ( )\nA. $\\sqrt{3}$\nB. 1\nC. 2\nD. $\\frac{1}{2}$",
+      "student_answer": "A",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "5",
+      "question_text": "5. 在平行六面体 $ABCD-A_1B_1C_1D_1$ 中，点 $E$ 为棱 $AA_1$ 的中点，点 $F$ 为棱 $CC_1$ 上靠近 $C$ 的三等分点。若 $\\overrightarrow{EF}=x\\overrightarrow{AB}+y\\overrightarrow{AD}+z\\overrightarrow{AA_1}$，$x,y,z\\in R$，则 $x+y+z$ 的值为 ( )\nA. $\\frac{1}{6}$\nB. $\\frac{11}{6}$\nC. $\\frac{17}{6}$\nD. $-\\frac{1}{6}$",
+      "student_answer": "B",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "6",
+      "question_text": "6. 过点 $P(0,-1)$ 作直线 $l$，若直线 $l$ 与连接 $A(-2,1)$，$B(2\\sqrt{3},1)$ 两点的线段总有公共点，则直线 $l$ 的倾斜角范围为 ( )\nA. $[\\frac{\\pi}{6}, \\frac{\\pi}{4}]$\nB. $[\\frac{\\pi}{6}, \\frac{3\\pi}{4}]$\nC. $[0, \\frac{\\pi}{6}] \\cup [\\frac{3\\pi}{4}, \\pi)$\nD. $[\\frac{\\pi}{6}, \\frac{\\pi}{2}] \\cup [\\frac{3\\pi}{4}, \\pi)$",
+      "student_answer": "B",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "7",
+      "question_text": "7. 已知直线 $l_1: y=ax-b, l_2: y=bx+a$，当 $a,b$ 满足一定条件时，它们的图形可能是图中的 ( )\nA. <插图>\nB. <插图>\nC. <插图>\nD. <插图>",
+      "student_answer": "B",
+      "answer_status": "ok"
+    }
+  ],
+  "page_notes": ""
+}

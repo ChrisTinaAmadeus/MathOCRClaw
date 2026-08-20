@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_second_pass",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page29/api_markdown/page29.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page29/code_outputs/match/question_contexts.json",
+  "page_notes": "The page contains question 18 with handwritten solutions in black and red ink. The red ink indicates corrections and a re-derivation for part (3), along with a note about a calculation error. The student's black ink solution for part (2) misses the solution set for a=0 (crossed out) and adds the a>0 case in red. Part (3) has a flawed black ink solution and a correct red ink solution on the right.",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 9600,
+    "completion_tokens": 18190,
+    "total_tokens": 27790,
+    "latency_s": 334.998331,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 151.295093,
+          "prompt_tokens": 2858,
+          "completion_tokens": 8141,
+          "total_tokens": 10999,
+          "request_id": "chatcmpl-03d6a473-eb1b-9288-9dbb-ba8f4530dcf3"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 183.703238,
+          "prompt_tokens": 6742,
+          "completion_tokens": 10049,
+          "total_tokens": 16791,
+          "request_id": "chatcmpl-5bedab73-81da-99a6-bfe5-b74944cd6016"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"page_notes\": \"The page contains question 18 with handwritten solutions in black and red ink. The red ink indicates corrections and a re-derivation for part (3), along with a note about a calculation error. The student's black ink solution for part (2) misses the solution set for a=0 (crossed out) and adds the a>0 case in red. Part (3) has a flawed black ink solution and a correct red ink solution on the right.\",\n  \"questions\": [\n    {\n      \"qno\": \"18\",\n      \"question_markdown\": \"18. (17分) 已知关于 $x$ 的不等式 $(ax-1)(x+1)>0$.\\n(1)若此不等式的解集为 $\\\\left\\\\{x\\\\mid -1<x<-\\\\frac{1}{2}\\\\right\\\\}$，求实数 $a$ 的值；\\n(2)若 $a\\\\in \\\\mathbf{R}$，解这个关于 $x$ 的不等式；\\n(3)已知 $y_1=4x_1^2+3$，$y_2=ax_2+5-a(a>0)$，若对任意的 $x_1\\\\in \\\\{x\\\\mid 1\\\\le x\\\\le 2\\\\}$，总存在 $x_2\\\\in \\\\{x\\\\mid -1\\\\le x\\\\le 2\\\\}$，使得 $y_1=y_2$ 成立，求实数 $a$ 的取值范围.\",\n      \"handwritten_answer\": {\n        \"text\": \"解 (1) 由题可知 $-1,-\\\\frac{1}{2}$ 为方程的两根\\n可得 $\\\\frac{1}{a}=-\\\\frac{1}{2}$，即 $a=-2$.\\n2) 当 $a=0$ 时，$-x-1>0$\\n答案 $\\\\Rightarrow$ 当 $a>0$ 时，$\\\\{x \\\\mid x>\\\\frac{1}{a} \\\\text{ 或 } x<-1\\\\}$.\\n当 $a<0$ 时. ① $a=-1$. $\\\\phi$\\n② $a<-1,\\\\frac{1}{a}>-1$. $\\\\{x\\\\mid -1<x<\\\\frac{1}{a}\\\\}$\\n $-1<a<0,\\\\frac{1}{a}<-1$. $\\\\{x\\\\mid \\\\frac{1}{a}<x<-1\\\\}$.\\n3) 当 $x_1\\\\in \\\\{x\\\\mid 1\\\\le x\\\\le 2\\\\}$ 时，则 $y_1$ 值 $y_1\\\\in [19]$.\\n$\\\\because y_1=y_2$.\\n$\\\\therefore y_{2\\\\max}=19, y_{2\\\\min}=7$.\\n$\\\\because x_2\\\\in \\\\{x\\\\mid -1\\\\le x\\\\le 2\\\\}$.\\n$\\\\therefore y_{2\\\\max}=2a+5-a=a+5$.\\n$y_{1\\\\min}=-a+5-a=-2a+5$.\\n$\\\\therefore \\\\begin{cases} a+5\\\\ge 19, & a\\\\ge 14 \\\\\\\\ -2a+5\\\\le 7, & a\\\\ge -1 \\\\end{cases}$\\n综上，$a$ 的取值范围为 $\\\\{a\\\\mid a\\\\ge 14\\\\}$.\\n\\n3). $\\\\because x_1\\\\in [1,2] \\\\therefore y_1\\\\in [7,19]$.\\n$\\\\because a>0, x_2\\\\in [-1,2]$.\\n$\\\\therefore y_2\\\\in [5-2a,5+a]$.\\n$\\\\because$ 对任意的 $x_1\\\\in [1,2]$, 总存在 $x_2\\\\in [1,2]$ 使得 $y_1=y_2$ 成立\\n$\\\\therefore [7,19]\\\\subseteq [5-2a,5+a]$\\n$\\\\therefore \\\\begin{cases} 5-2a\\\\le 7 \\\\\\\\ 5+a\\\\ge 19 \\\\end{cases}$ 解得 $a\\\\ge 14$.\\n$a>0$.\\n即实数 $a$ 的取值范围 $[14,+\\\\infty)$.\\n\\nREASON: 马虎算错数. $4\\\\times 4=16$!!!\",\n        \"answer_parts\": [\n          {\n            \"label\": \"(1)\",\n            \"transcription\": \"由题可知 $-1,-\\\\frac{1}{2}$ 为方程的两根\\n可得 $\\\\frac{1}{a}=-\\\\frac{1}{2}$，即 $a=-2$.\",\n            \"final_answer\": \"a=-2\",\n            \"status\": \"ok\"\n          },\n          {\n            \"label\": \"(2)\",\n            \"transcription\": \"当 $a=0$ 时，$-x-1>0$\\n答案 $\\\\Rightarrow$ 当 $a>0$ 时，$\\\\{x \\\\mid x>\\\\frac{1}{a} \\\\text{ 或 } x<-1\\\\}$.\\n当 $a<0$ 时. ① $a=-1$. $\\\\phi$\\n② $a<-1,\\\\frac{1}{a}>-1$. $\\\\{x\\\\mid -1<x<\\\\frac{1}{a}\\\\}$\\n③ $-1<a<0,\\\\frac{1}{a}<-1$. $\\\\{x\\\\mid \\\\frac{1}{a}<x<-1\\\\}$.\",\n            \"final_answer\": \"\",\n            \"status\": \"partial\"\n          },\n          {\n            \"label\": \"(3)\",\n            \"transcription\": \"3) 当 $x_1\\\\in \\\\{x\\\\mid 1\\\\le x\\\\le 2\\\\}$ 时，则 $y_1$ 值 $y_1\\\\in [19]$.\\n$\\\\because y_1=y_2$.\\n$\\\\therefore y_{2\\\\max}=19, y_{2\\\\min}=7$.\\n$\\\\because x_2\\\\in \\\\{x\\\\mid -1\\\\le x\\\\le 2\\\\}$.\\n$\\\\therefore y_{2\\\\max}=2a+5-a=a+5$.\\n$y_{1\\\\min}=-a+5-a=-2a+5$.\\n$\\\\therefore \\\\begin{cases} a+5\\\\ge 19, & a\\\\ge 14 \\\\\\\\ -2a+5\\\\le 7, & a\\\\ge -1 \\\\end{cases}$\\n综上，$a$ 的取值范围为 $\\\\{a\\\\mid a\\\\ge 14\\\\}$.\\n3). $\\\\because x_1\\\\in [1,2] \\\\therefore y_1\\\\in [7,19]$.\\n$\\\\because a>0, x_2\\\\in [-1,2]$.\\n$\\\\therefore y_2\\\\in [5-2a,5+a]$.\\n$\\\\because$ 对任意的 $x_1\\\\in [1,2]$, 总存在 $x_2\\\\in [1,2]$ 使得 $y_1=y_2$ 成立\\n$\\\\therefore [7,19]\\\\subseteq [5-2a,5+a]$\\n$\\\\therefore \\\\begin{cases} 5-2a\\\\le 7 \\\\\\\\ 5+a\\\\ge 19 \\\\end{cases}$ 解得 $a\\\\ge 14$.\\n$a>0$.\\n即实数 $a$ 的取值范围 $[14,+\\\\infty)$.\\nREASON: 马虎算错数. $4\\\\times 4=16$!!!\",\n            \"final_answer\": \"[14, +\\\\infty)\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Black ink solution contains errors in part (3) range calculation ($y_1 \\\\in [19]$) and notation ($y_{1\\\\min}$). Red ink provides corrections: adds $a>0$ case in part (2), and a full correct derivation for part (3) on the right side. Bottom note indicates a calculation error realization.\"\n      },\n      \"source_context_ids\": [\n        \"C001\"\n      ]\n    }\n  ]\n}\n```"
+}

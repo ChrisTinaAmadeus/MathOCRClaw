@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_second_pass",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page01/api_markdown/page01.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page01/code_outputs/match/question_contexts.json",
+  "page_notes": "Question 19 is fully visible with printed stem and handwritten solution. Crossed-out intermediate steps in handwriting have been omitted.",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 10014,
+    "completion_tokens": 15106,
+    "total_tokens": 25120,
+    "latency_s": 275.395352,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 96.562721,
+          "prompt_tokens": 3166,
+          "completion_tokens": 5285,
+          "total_tokens": 8451,
+          "request_id": "chatcmpl-3a9246b9-ed07-933a-936b-1121a05cbb2d"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 178.832631,
+          "prompt_tokens": 6848,
+          "completion_tokens": 9821,
+          "total_tokens": 16669,
+          "request_id": "chatcmpl-e9256fe2-4086-98a0-a024-9733dbc08a1f"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"page_notes\": \"Question 19 is fully visible with printed stem and handwritten solution. Crossed-out intermediate steps in handwriting have been omitted.\",\n  \"questions\": [\n    {\n      \"qno\": \"19\",\n      \"question_markdown\": \"19. (12分)\\n如图，$PA \\\\perp$ 平面 $ABCD$，四边形 $ABCD$ 为矩形，$PA=AB=2$，$AD=4$，点 $F$ 是 $PB$ 的中点，点 $E$ 在边 $BC$ 上移动。\\n<插图>\\n(1) 求三棱锥 $E-PAD$ 的体积；\\n(2) 证明：$AF \\\\perp PE$。\",\n      \"handwritten_answer\": {\n        \"text\": \"(1) 解：$\\\\because PA=AB=2, AD=4$\\n$\\\\therefore S_{\\\\triangle PAD}=2\\\\times 4\\\\div 2=4$\\n$\\\\therefore h=2$\\n$\\\\therefore V_{E-PAD}=\\\\frac{1}{3}Sh=\\\\frac{1}{3}\\\\times 4\\\\times 2=\\\\frac{8}{3}$\\n\\n(2) 证明：$\\\\because PA\\\\perp$ 平面 $ABCD$\\n又 $\\\\because AB,CB\\\\subset$ 平面 $ABCD$\\n$\\\\therefore PA\\\\perp BC$\\n$\\\\because PA=AB=2$\\n$\\\\therefore \\\\triangle PAB$ 为等腰三角形\\n$\\\\because F$ 为 $PB$ 中点\\n$\\\\therefore AF\\\\perp BP$\\n如图所示建空间直角坐标系，$A$ 为原点\\n$\\\\because PA=AB=2, AD=4$\\n$\\\\therefore P(0,0,2), C(4,2,0), A(0,0,0), F(0,1,1)$\\n$\\\\therefore \\\\overrightarrow{PC}=(4,2,-2), \\\\overrightarrow{AF}=(0,1,1)$\\n$\\\\therefore \\\\cos\\\\theta=\\\\frac{|\\\\overrightarrow{PC}\\\\cdot\\\\overrightarrow{AF}|}{|\\\\overrightarrow{PC}||\\\\overrightarrow{AF}|}=0$\\n$\\\\therefore PC\\\\perp AF$\\n$\\\\because PB,PC\\\\subset$ 平面 $PBC, PB\\\\cap PC=P$\\n$\\\\therefore AF\\\\perp$ 平面 $PBC$\\n$\\\\because PE\\\\subset$ 平面 $PBC \\\\quad \\\\therefore PE\\\\perp AF$\",\n        \"answer_parts\": [\n          {\n            \"label\": \"(1)\",\n            \"transcription\": \"解：$\\\\because PA=AB=2, AD=4$\\n$\\\\therefore S_{\\\\triangle PAD}=2\\\\times 4\\\\div 2=4$\\n$\\\\therefore h=2$\\n$\\\\therefore V_{E-PAD}=\\\\frac{1}{3}Sh=\\\\frac{1}{3}\\\\times 4\\\\times 2=\\\\frac{8}{3}$\",\n            \"final_answer\": \"\\\\frac{8}{3}\",\n            \"status\": \"ok\"\n          },\n          {\n            \"label\": \"(2)\",\n            \"transcription\": \"证明：$\\\\because PA\\\\perp$ 平面 $ABCD$\\n又 $\\\\because AB,CB\\\\subset$ 平面 $ABCD$\\n$\\\\therefore PA\\\\perp BC$\\n$\\\\because PA=AB=2$\\n$\\\\therefore \\\\triangle PAB$ 为等腰三角形\\n$\\\\because F$ 为 $PB$ 中点\\n$\\\\therefore AF\\\\perp BP$\\n如图所示建空间直角坐标系，$A$ 为原点\\n$\\\\because PA=AB=2, AD=4$\\n$\\\\therefore P(0,0,2), C(4,2,0), A(0,0,0), F(0,1,1)$\\n$\\\\therefore \\\\overrightarrow{PC}=(4,2,-2), \\\\overrightarrow{AF}=(0,1,1)$\\n$\\\\therefore \\\\cos\\\\theta=\\\\frac{|\\\\overrightarrow{PC}\\\\cdot\\\\overrightarrow{AF}|}{|\\\\overrightarrow{PC}||\\\\overrightarrow{AF}|}=0$\\n$\\\\therefore PC\\\\perp AF$\\n$\\\\because PB,PC\\\\subset$ 平面 $PBC, PB\\\\cap PC=P$\\n$\\\\therefore AF\\\\perp$ 平面 $PBC$\\n$\\\\because PE\\\\subset$ 平面 $PBC \\\\quad \\\\therefore PE\\\\perp AF$\",\n            \"final_answer\": \"PE \\\\perp AF\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Handwriting is clear. Crossed-out lines (e.g., initial area calculation in part 1, angle statement in part 2) are omitted. Coordinates and vectors are transcribed as written.\"\n      },\n      \"source_context_ids\": [\n        \"C001\"\n      ]\n    }\n  ]\n}\n```"
+}

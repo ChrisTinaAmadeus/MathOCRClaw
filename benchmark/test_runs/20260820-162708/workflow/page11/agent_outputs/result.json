@@ -1,0 +1,116 @@
+{
+  "page": "page11",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page11/image/page11.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page11.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page11/preprocessed/page11.png",
+  "api_strategy": {
+    "call_count": 2,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "global context-aware correction and final result"
+  },
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 9182,
+    "completion_tokens": 17650,
+    "total_tokens": 26832,
+    "latency_s": 322.249385,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 142.792428,
+          "prompt_tokens": 2418,
+          "completion_tokens": 7829,
+          "total_tokens": 10247,
+          "request_id": "chatcmpl-de9e6796-29ae-95e0-bb5e-742222e852a2"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 179.456957,
+          "prompt_tokens": 6764,
+          "completion_tokens": 9821,
+          "total_tokens": 16585,
+          "request_id": "chatcmpl-68b25eda-5f1e-9fa0-b5ce-8e4d744eb211"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 1,
+    "answers_with_transcription": 1,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 18,
+      "question_markdown": "18. (本小题满分 17 分)\n<插图>",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page11/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 证明：\n$\\because$ 三棱台 $ABC-A_1B_1C_1$\n且 $A_1A \\perp$ 平面 $ABC$.\n$\\therefore A_1C_1 // AC$.\n$\\because A_1C_1 = \\frac{1}{2} AC$\n$\\therefore A_1C_1 \\underline{\\underline{\\parallel}} \\frac{1}{2} AC$.\n$\\because M, N$ 分别为 $BC, AB$ 中点，$\\therefore MN$ 为三角形 $ABC$ 中位线\n$\\therefore MN \\underline{\\underline{\\parallel}} \\frac{1}{2} AC$\n$\\therefore MN \\underline{\\underline{\\parallel}} A_1C_1$\n$\\therefore$ 四边形 $A_1C_1MN$ 是平行四边形\n$\\therefore A_1N // C_1M$\n$\\because A_1N \\not\\subset$ 平面 $C_1MA, C_1M \\subset$ 平面 $C_1MA$.\n$\\therefore A_1N //$ 平面 $C_1MA$.\n\n(2) $\\because A_1A \\perp$ 平面 $ABC, AB \\perp AC. AB=AC=AA_1=2, A_1C_1=1$\n$\\therefore$ 以 $A$ 为原点，以 $AB, AC, AA_1$ 所在直线为 $x, y, z$ 轴建系.\n$\\therefore C_1(0, 1, 2) \\quad M(1, 1, 0) \\quad A(0, 0, 0)$\n$\\therefore \\overrightarrow{AC_1} = (0, 1, 2) \\quad \\overrightarrow{AM} = (1, 1, 0)$\n设平面 $C_1MA$ 的一个法向量为 $\\vec{n} = (x, y, z)$，则有 $\\begin{cases} \\vec{n} \\cdot \\overrightarrow{AC_1} = 0 \\\\ \\vec{n} \\cdot \\overrightarrow{AM} = 0 \\end{cases}$\n$\\therefore \\vec{n} = (2, -2, 1)$ 是平面 $C_1MA$ 的一个法向量.\n$\\because AB \\perp$ 平面 $ACC_1A_1$ $\\therefore \\overrightarrow{AB} = (1, 0, 0)$ 是平面 $ACC_1A_1$ 的一个法向量\n记平面 $C_1MA$ 与平面 $ACC_1A_1$ 所成角为 $\\theta$.\n则：$\\cos\\theta = |\\cos<\\vec{n}, \\overrightarrow{AB}>| = \\frac{2}{3}$.\n$\\therefore$ 平面 $C_1MA$ 与平面 $ACC_1A_1$ 所成角的余弦值为 $\\frac{2}{3}$.\n\n(3) 由 (2) 知：$\\vec{n} = (2, -2, 1)$ 是平面 $C_1MA$ 的一个法向量.\n$C(0, 2, 0) \\quad A(0, 0, 0) \\quad \\overrightarrow{AC} = (0, 2, 0)$\n设点 $C$ 到平面 $C_1MA$ 的距离为 $d$. 则：\n$d = \\frac{|\\overrightarrow{AC} \\cdot \\vec{n}|}{|\\vec{n}|} = \\frac{4}{3}$.",
+        "answer_parts": [
+          {
+            "label": "(1)",
+            "transcription": "证明：\n$\\because$ 三棱台 $ABC-A_1B_1C_1$\n且 $A_1A \\perp$ 平面 $ABC$.\n$\\therefore A_1C_1 // AC$.\n$\\because A_1C_1 = \\frac{1}{2} AC$\n$\\therefore A_1C_1 \\underline{\\underline{\\parallel}} \\frac{1}{2} AC$.\n$\\because M, N$ 分别为 $BC, AB$ 中点，$\\therefore MN$ 为三角形 $ABC$ 中位线\n$\\therefore MN \\underline{\\underline{\\parallel}} \\frac{1}{2} AC$\n$\\therefore MN \\underline{\\underline{\\parallel}} A_1C_1$\n$\\therefore$ 四边形 $A_1C_1MN$ 是平行四边形\n$\\therefore A_1N // C_1M$\n$\\because A_1N \\not\\subset$ 平面 $C_1MA, C_1M \\subset$ 平面 $C_1MA$.\n$\\therefore A_1N //$ 平面 $C_1MA$.",
+            "final_answer": "A_1N // 平面 C_1MA",
+            "status": "ok"
+          },
+          {
+            "label": "(2)",
+            "transcription": "$\\because A_1A \\perp$ 平面 $ABC, AB \\perp AC. AB=AC=AA_1=2, A_1C_1=1$\n$\\therefore$ 以 $A$ 为原点，以 $AB, AC, AA_1$ 所在直线为 $x, y, z$ 轴建系.\n$\\therefore C_1(0, 1, 2) \\quad M(1, 1, 0) \\quad A(0, 0, 0)$\n$\\therefore \\overrightarrow{AC_1} = (0, 1, 2) \\quad \\overrightarrow{AM} = (1, 1, 0)$\n设平面 $C_1MA$ 的一个法向量为 $\\vec{n} = (x, y, z)$，则有 $\\begin{cases} \\vec{n} \\cdot \\overrightarrow{AC_1} = 0 \\\\ \\vec{n} \\cdot \\overrightarrow{AM} = 0 \\end{cases}$\n$\\therefore \\vec{n} = (2, -2, 1)$ 是平面 $C_1MA$ 的一个法向量.\n$\\because AB \\perp$ 平面 $ACC_1A_1$ $\\therefore \\overrightarrow{AB} = (1, 0, 0)$ 是平面 $ACC_1A_1$ 的一个法向量\n记平面 $C_1MA$ 与平面 $ACC_1A_1$ 所成角为 $\\theta$.\n则：$\\cos\\theta = |\\cos<\\vec{n}, \\overrightarrow{AB}>| = \\frac{2}{3}$.\n$\\therefore$ 平面 $C_1MA$ 与平面 $ACC_1A_1$ 所成角的余弦值为 $\\frac{2}{3}$.",
+            "final_answer": "\\frac{2}{3}",
+            "status": "ok"
+          },
+          {
+            "label": "(3)",
+            "transcription": "由 (2) 知：$\\vec{n} = (2, -2, 1)$ 是平面 $C_1MA$ 的一个法向量.\n$C(0, 2, 0) \\quad A(0, 0, 0) \\quad \\overrightarrow{AC} = (0, 2, 0)$\n设点 $C$ 到平面 $C_1MA$ 的距离为 $d$. 则：\n$d = \\frac{|\\overrightarrow{AC} \\cdot \\vec{n}|}{|\\vec{n}|} = \\frac{4}{3}$.",
+            "final_answer": "\\frac{4}{3}",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwriting is clear. In part (1), the final conclusion line regarding the line parallel to the plane was added below the parallelogram proof. In part (2), there are minor scribbles correcting the normal vector components, final reading is (1,0,0).",
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page11/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "Printed question text is limited to the header and diagram; the student restates the problem conditions in the solution. Handwriting is legible with minor scribbles corrected by the student.",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page11/image/page11.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page11/preprocessed/page11.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page11/api_markdown/page11.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page11/api_markdown/page11.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page11/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page11/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page11/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page11/code_outputs/match/viz/page11_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page11/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page11/agent_outputs/result.json",
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page11/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page11/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page11/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page11/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page11/code_outputs/match/viz/page11_handwriting_overlay.png"
+  }
+}

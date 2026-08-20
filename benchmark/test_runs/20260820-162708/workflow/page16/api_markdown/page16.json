@@ -1,0 +1,97 @@
+{
+  "schema_version": 3,
+  "response_format": "benchmark_markdown",
+  "prompt": {
+    "version": "extract_v2",
+    "path": "benchmark/prompts/extract_v2.txt",
+    "sha1": "3262af1c467eaec9306252fad78aaa2bca395617"
+  },
+  "page_markdown": "一、选择题：本题共 8 小题，每小题 5 分，共 40 分。在每小题给出的四个选项中，只有一项是符合题目要求的。\n\n1. 已知命题 $P: \\forall x>1, x^2+2x-3>0$，则 $\\neg P$ 为 ( )\nA. $\\exists x\\le 1, x^2+2x-3\\le 0$\nB. $\\exists x>1, x^2+2x-3\\le 0$\nC. $\\forall x>1, x^2+2x-3<0$\nD. $\\exists x>1, x^2+2x-3>0$\n\n### 手写答案\n\nB\n\n2. 设集合 $A=\\left\\{x\\mid \\frac{2-x}{x}\\ge 0\\right\\}$，$B=\\left\\{x\\mid \\frac{4x^2+3}{x^2+3}\\le 0\\right\\}$，则 $A\\cap (\\complement_R B)$ ( )\nA. $\\{x\\mid -1<x<2\\}$\nB. $\\{x\\mid 0<x<1\\}$\nC. $\\{x\\mid 0<x\\le 2\\}$\nD. $\\{x\\mid 1\\le x\\le 2\\}$\n\n### 手写答案\n\nD\n\n3. 下列两个函数是相同函数的有 ( )\nA. $f(x)=x-1$ 与 $g(x)=\\frac{x^2-1}{x+1}$\nB. $f(x)=\\frac{(\\sqrt{x})^2}{x}$ 与 $g(x)=1$\nC. $f(x)=x^0$ 与 $g(x)=1$\nD. $f(x)=|x|$ 与 $g(x)=\\sqrt{x^2}$\n\n### 手写答案\n\nD\n\n4. 已知集合 $A=\\{x\\mid x^2-3x+2=0, x\\in \\mathbf{R}\\}$，$B=\\{1, 2, 3, 4, 5\\}$，则满足条件 $A\\subseteq C$ 且 $C\\subseteq B$ 的集合 $C$ 的个数为 ( )\nA. 3\nB. 4\nC. 7\nD. 8\n\n### 手写答案\n\nA\n\n5. 下列不等式中正确的是 ( )\nA. $x+\\frac{1}{x}\\ge 2$\nB. $\\frac{x^2+3}{\\sqrt{x^2+2}}\\ge 2$\nC. $\\frac{b}{a}+\\frac{a}{b}\\ge 2$\nD. $x^2+\\frac{1}{x^2+1}\\ge 1$\n\n### 手写答案\n\nBD\n\n6. 已知集合 $A=\\{x\\mid a+1<x<2a-3\\}$，$B=\\{x\\mid -x^2+5x+14\\le 0\\}$，则 $A\\cap B=\\varnothing$ 的一个必要不充分条件是 ( )\nA. $a\\le 5$\nB. $a>5$\nC. $a\\ge 7$\nD. $a<7$\n\n### 手写答案\n\nA\n\n7. 若函数 $f(x)$ 的值域为 $(1, 10)$，则函数 $g(x)=f(x)-4\\sqrt{f(x)-1}$ 的值域为 ( )\nA. $[-3, 1)$\nB. $(-3, 1)$\nC. $[-3, -2)$\nD. $(-3, -2)$\n\n### 手写答案\n\nB\n\n8. 已知两个正数 $x, y$，满足 $x+2y=2$，则下列选项错误的是 ( )\nA. $xy$ 的最大值为 $\\frac{1}{2}$\nB. $\\frac{2y}{x}+\\frac{1}{y}$ 的最小值 3\nC. $x^2+4y^2$ 的最小值为\nD. $\\left(x^2+\\frac{1}{5}\\right)\\left(4y^2+\\frac{1}{5}\\right)$ 的最小值为 $\\frac{21}{25}$\n\n### 手写答案\n\nC\n\n二、选择题：本题共 3 小题，每小题 6 分，共 18 分。在每小题给出的选项中，有多项符合题目要求。全部选对的得 6 分，部分选对的得部分分，有选错的得 0 分。\n\n9. 下列说法正确的是 ( )\nA. 若 $a>b$，则 $\\frac{b}{a}<\\frac{b+1}{a+1}$\nB. 若 $a>b>0>c$，则 $\\frac{c-b}{a}<\\frac{c-b}{a-c}$\nC. 若 $a>b>c>d$，则 $a-c>d-b$\nD. 若 $a<b<0$，则 $\\frac{1}{a}>\\frac{1}{b}$\n\n### 手写答案\n\nABC\n\n10. 关于 $x$ 的一元二次不等式 $ax^2+bx+c\\ge 0$ 的解集为 $\\{x\\mid x\\le -2 \\text{ 或 } x\\ge 1\\}$，则 ( )\nA. $b>0$ 且 $c<0$\nB. 不等式 $ax^2-bx+a<0$ 的解集为 $\\left\\{x\\mid -1<x<\\frac{1}{2}\\right\\}$\nC. $4a+2b+c=0$\nD. 不等式 $bx+c>0$ 的解集为 $\\{x\\mid x>2\\}$\n\n### 手写答案\n\nAD\n\n11. 对 $\\forall x\\in \\mathbf{R}, [x]$ 表示不超过 $x$ 的最大整数，如 $[3.14]=3, [0.618]=0, [-2.71828]=-3$，我们把 $y=[x], x\\in \\mathbf{R}$ 叫做取整函数，也称之为高斯 (Gaussian) 函数，也有数学爱好者形象的称其为“地板函数”。在现实生活中，这种“截尾取整”的高斯函数有着广泛的应用，如停车收费、EXCEL 电子表格。在数学分析中它出现在求导、极限、定积分、级数等等各种问题之中。以下关于“高斯函数”的命题，其中是真命题有 ( )\nA. $\\forall x\\in \\mathbf{R}, [[x]]=[x]$\nB. $\\exists x, y\\in \\mathbf{R}, [x-y]<[x]-[y]$\nC. $\\forall x, y\\in \\mathbf{R}$，若 $[x]=[y]$，则 $x-y<1$\nD. $2[x]^2-[x]-3\\ge 0$ 的解集为 $(-\\infty, 0)\\cup [2, +\\infty)$\n\n### 手写答案\n\nBCD\n\n三、填空题：本题共 3 小题，每小题 5 分，共 15 分。\n\n12. 若函数 $f(x)$ 的定义域为 $[1, 3]$，则函数 $g(x)=\\frac{f(2x-1)}{\\sqrt{x-1}}$ 的定义域是 \\_\\_\\_\\_\\_\\_。\n\n### 手写答案\n\n$\\left[\\frac{1}{2}, 2\\right]$\n\n13. 已知 $a>0, b>0$，且 $2a+\\frac{1}{b}=3$，则 $\\frac{2a^2}{a+1}+\\frac{b^2+1}{b}$ 的最小值为 \\_\\_\\_\\_\\_\\_。\n\n### 手写答案\n\n$\\frac{7}{3}$\n\n14. 已知集合 $A=\\{x\\mid m<x<3m-1\\}$ 中的元素恰有 2 个整数，则实数 $m$ 的取值范围是 \\_\\_\\_\\_\\_\\_。\n\n### 手写答案\n\n$\\left(\\frac{3}{2}, \\frac{7}{4}\\right)$",
+  "questions": [
+    {
+      "qno": "1",
+      "question_text": "1. 已知命题 $P: \\forall x>1, x^2+2x-3>0$，则 $\\neg P$ 为 ( )\nA. $\\exists x\\le 1, x^2+2x-3\\le 0$\nB. $\\exists x>1, x^2+2x-3\\le 0$\nC. $\\forall x>1, x^2+2x-3<0$\nD. $\\exists x>1, x^2+2x-3>0$",
+      "student_answer": "B",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "2",
+      "question_text": "2. 设集合 $A=\\left\\{x\\mid \\frac{2-x}{x}\\ge 0\\right\\}$，$B=\\left\\{x\\mid \\frac{4x^2+3}{x^2+3}\\le 0\\right\\}$，则 $A\\cap (\\complement_R B)$ ( )\nA. $\\{x\\mid -1<x<2\\}$\nB. $\\{x\\mid 0<x<1\\}$\nC. $\\{x\\mid 0<x\\le 2\\}$\nD. $\\{x\\mid 1\\le x\\le 2\\}$",
+      "student_answer": "D",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "3",
+      "question_text": "3. 下列两个函数是相同函数的有 ( )\nA. $f(x)=x-1$ 与 $g(x)=\\frac{x^2-1}{x+1}$\nB. $f(x)=\\frac{(\\sqrt{x})^2}{x}$ 与 $g(x)=1$\nC. $f(x)=x^0$ 与 $g(x)=1$\nD. $f(x)=|x|$ 与 $g(x)=\\sqrt{x^2}$",
+      "student_answer": "D",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "4",
+      "question_text": "4. 已知集合 $A=\\{x\\mid x^2-3x+2=0, x\\in \\mathbf{R}\\}$，$B=\\{1, 2, 3, 4, 5\\}$，则满足条件 $A\\subseteq C$ 且 $C\\subseteq B$ 的集合 $C$ 的个数为 ( )\nA. 3\nB. 4\nC. 7\nD. 8",
+      "student_answer": "A",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "5",
+      "question_text": "5. 下列不等式中正确的是 ( )\nA. $x+\\frac{1}{x}\\ge 2$\nB. $\\frac{x^2+3}{\\sqrt{x^2+2}}\\ge 2$\nC. $\\frac{b}{a}+\\frac{a}{b}\\ge 2$\nD. $x^2+\\frac{1}{x^2+1}\\ge 1$",
+      "student_answer": "BD",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "6",
+      "question_text": "6. 已知集合 $A=\\{x\\mid a+1<x<2a-3\\}$，$B=\\{x\\mid -x^2+5x+14\\le 0\\}$，则 $A\\cap B=\\varnothing$ 的一个必要不充分条件是 ( )\nA. $a\\le 5$\nB. $a>5$\nC. $a\\ge 7$\nD. $a<7$",
+      "student_answer": "A",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "7",
+      "question_text": "7. 若函数 $f(x)$ 的值域为 $(1, 10)$，则函数 $g(x)=f(x)-4\\sqrt{f(x)-1}$ 的值域为 ( )\nA. $[-3, 1)$\nB. $(-3, 1)$\nC. $[-3, -2)$\nD. $(-3, -2)$",
+      "student_answer": "B",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "8",
+      "question_text": "8. 已知两个正数 $x, y$，满足 $x+2y=2$，则下列选项错误的是 ( )\nA. $xy$ 的最大值为 $\\frac{1}{2}$\nB. $\\frac{2y}{x}+\\frac{1}{y}$ 的最小值 3\nC. $x^2+4y^2$ 的最小值为\nD. $\\left(x^2+\\frac{1}{5}\\right)\\left(4y^2+\\frac{1}{5}\\right)$ 的最小值为 $\\frac{21}{25}$",
+      "student_answer": "C\n\n二、选择题：本题共 3 小题，每小题 6 分，共 18 分。在每小题给出的选项中，有多项符合题目要求。全部选对的得 6 分，部分选对的得部分分，有选错的得 0 分。",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "9",
+      "question_text": "9. 下列说法正确的是 ( )\nA. 若 $a>b$，则 $\\frac{b}{a}<\\frac{b+1}{a+1}$\nB. 若 $a>b>0>c$，则 $\\frac{c-b}{a}<\\frac{c-b}{a-c}$\nC. 若 $a>b>c>d$，则 $a-c>d-b$\nD. 若 $a<b<0$，则 $\\frac{1}{a}>\\frac{1}{b}$",
+      "student_answer": "ABC",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "10",
+      "question_text": "10. 关于 $x$ 的一元二次不等式 $ax^2+bx+c\\ge 0$ 的解集为 $\\{x\\mid x\\le -2 \\text{ 或 } x\\ge 1\\}$，则 ( )\nA. $b>0$ 且 $c<0$\nB. 不等式 $ax^2-bx+a<0$ 的解集为 $\\left\\{x\\mid -1<x<\\frac{1}{2}\\right\\}$\nC. $4a+2b+c=0$\nD. 不等式 $bx+c>0$ 的解集为 $\\{x\\mid x>2\\}$",
+      "student_answer": "AD",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "11",
+      "question_text": "11. 对 $\\forall x\\in \\mathbf{R}, [x]$ 表示不超过 $x$ 的最大整数，如 $[3.14]=3, [0.618]=0, [-2.71828]=-3$，我们把 $y=[x], x\\in \\mathbf{R}$ 叫做取整函数，也称之为高斯 (Gaussian) 函数，也有数学爱好者形象的称其为“地板函数”。在现实生活中，这种“截尾取整”的高斯函数有着广泛的应用，如停车收费、EXCEL 电子表格。在数学分析中它出现在求导、极限、定积分、级数等等各种问题之中。以下关于“高斯函数”的命题，其中是真命题有 ( )\nA. $\\forall x\\in \\mathbf{R}, [[x]]=[x]$\nB. $\\exists x, y\\in \\mathbf{R}, [x-y]<[x]-[y]$\nC. $\\forall x, y\\in \\mathbf{R}$，若 $[x]=[y]$，则 $x-y<1$\nD. $2[x]^2-[x]-3\\ge 0$ 的解集为 $(-\\infty, 0)\\cup [2, +\\infty)$",
+      "student_answer": "BCD\n\n三、填空题：本题共 3 小题，每小题 5 分，共 15 分。",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "12",
+      "question_text": "12. 若函数 $f(x)$ 的定义域为 $[1, 3]$，则函数 $g(x)=\\frac{f(2x-1)}{\\sqrt{x-1}}$ 的定义域是 \\_\\_\\_\\_\\_\\_。",
+      "student_answer": "$\\left[\\frac{1}{2}, 2\\right]$",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "13",
+      "question_text": "13. 已知 $a>0, b>0$，且 $2a+\\frac{1}{b}=3$，则 $\\frac{2a^2}{a+1}+\\frac{b^2+1}{b}$ 的最小值为 \\_\\_\\_\\_\\_\\_。",
+      "student_answer": "$\\frac{7}{3}$",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "14",
+      "question_text": "14. 已知集合 $A=\\{x\\mid m<x<3m-1\\}$ 中的元素恰有 2 个整数，则实数 $m$ 的取值范围是 \\_\\_\\_\\_\\_\\_。",
+      "student_answer": "$\\left(\\frac{3}{2}, \\frac{7}{4}\\right)$",
+      "answer_status": "ok"
+    }
+  ],
+  "page_notes": ""
+}

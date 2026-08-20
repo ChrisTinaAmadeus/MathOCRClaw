@@ -1,0 +1,237 @@
+{
+  "page": "page19",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page19/image/page19.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page19.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page19/preprocessed/page19.png",
+  "api_strategy": {
+    "call_count": 2,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "global context-aware correction and final result"
+  },
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 13249,
+    "completion_tokens": 16152,
+    "total_tokens": 29401,
+    "latency_s": 296.493117,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 177.872628,
+          "prompt_tokens": 3254,
+          "completion_tokens": 9739,
+          "total_tokens": 12993,
+          "request_id": "chatcmpl-8719a637-7853-96da-a648-919356aa179e"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 118.620489,
+          "prompt_tokens": 9995,
+          "completion_tokens": 6413,
+          "total_tokens": 16408,
+          "request_id": "chatcmpl-e88a77d9-2b44-9c10-9df4-cb829d8695c5"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 5,
+    "answers_with_transcription": 2,
+    "answers_partial_or_uncertain": 1,
+    "answers_empty": 3
+  },
+  "questions": [
+    {
+      "qno": 12,
+      "question_markdown": "12. 若事件 $A$ 与事件 $B$ 互斥，$P(A)=0.3, P(A \\cup B)=0.7$，则 $P(B)=$ \\_\\_\\_\\_\\_\\_。",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page19/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$0.6$",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "$0.6$",
+            "final_answer": "$0.6$",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Clear handwriting '0.6' on the blank line.",
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page19/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 13,
+      "question_markdown": "13. 过 $P(-1, -\\sqrt{3})$ 的直线 $l$ 与 $y$ 轴的正半轴没有公共点，则直线 $l$ 的倾斜角范围是 \\_\\_\\_\\_\\_\\_。",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page19/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "",
+        "answer_parts": [],
+        "uncertain_fragments": [
+          {
+            "text": "[0, 60^\\circ]",
+            "alternatives": [
+              "[0, \\frac{\\pi}{3}]"
+            ],
+            "location": "top right corner of page, possibly associated with this question but detached and messy"
+          }
+        ],
+        "status": "no_answer",
+        "evidence_note": "The blank line has a crossed-out scribble. There are detached scribbles in the top right corner resembling '[0, 60°]' and '[90°, 180°]' but they are not clearly placed as the answer.",
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page19/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 14,
+      "question_markdown": "14. 如图所示，将棱长为 2 的正方体 $ABCD-A_1B_1C_1D_1$ 截去一个三棱锥得到多面体 $ABCD-B_1C_1D_1$，在该多面体内放入一个球，则球的半径的最大值为 \\_\\_\\_\\_\\_\\_。\n<插图>",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page19/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "no_answer",
+        "evidence_note": "The blank line contains a crossed-out scribble.",
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page19/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 15,
+      "question_markdown": "15. (13分) 抛掷一红一绿两颗质地均匀的六面体子，记下骰子朝上面的点数，若用 $x$ 表示红色骰子的点数，用 $y$ 表示绿色骰子的点数，设 $A=$“两个点数之和等于 8”，$B=$“至少有一颗骰子的点数为 5”。\n(1) 分别求事件 $A, B$ 的概率；\n(2) 求 $A \\cap B$ 事件的概率。",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page19/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "no_answer",
+        "evidence_note": "No handwriting found in the area associated with Q15. The handwriting below belongs to Q16.",
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page19/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 16,
+      "question_markdown": "16. (15分) 如图，在平行六面体 $ABCD-A_1B_1C_1D_1$ 中，$E, F$ 分别为棱 $A_1D_1, CD$ 的中点，满足 $\\angle B_1BC = \\angle B_1BA = \\frac{\\pi}{3}, \\angle CBA = \\frac{\\pi}{2}, |AB|=|BC|=2, |BB_1|=3$。\n(1) 求证：$EF // 平面 BDA_1$；\n(2) 求 $BD_1$ 的长度；\n(3) 求 $AC$ 与 $EF$ 夹角的余弦值。\n<插图>",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C004",
+          "C005"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page19/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "如图连接 $A_1B$ (scribble), 取 $BC$ 中点为 $G$, 连接 $A_1G, GF$。\n这是一个平行六面体。\n$A_1D_1 // BC$, $G, F$ 分别是 $BC, CD$ 的中点。\n$GF // \\frac{1}{2}BD$。\n$E$ 是 $A_1D_1$ 的中点, $A_1E // \\frac{1}{2}B...$ (scribble) $A_1E // GF$。\n四边形 $A_1EGF$ 为平行四边形, $A_1G // EF$。\n$EF \\not\\subset 平面 BDA_1, A_1G \\subset 平面 BDA_1 \\Rightarrow EF // 平面 BDA_1$。\n\n$\\overrightarrow{BD_1} = \\overrightarrow{BA} + \\overrightarrow{BC} + \\overrightarrow{BB_1}$\n$\\overrightarrow{BD_1}^2 = \\overrightarrow{BA}^2 + \\overrightarrow{BC}^2 + \\overrightarrow{BB_1}^2 + 2\\overrightarrow{BA}\\cdot\\overrightarrow{BC} + 2\\overrightarrow{BA}\\cdot\\overrightarrow{BB_1} + 2\\overrightarrow{BC}\\cdot\\overrightarrow{BB_1}$\n$= 4+4+9+0+2 \\times 2 \\times 3 \\times \\frac{1}{2} \\times 2 = 29$\n(3) $\\overrightarrow{AC} = \\overrightarrow{BC} - \\overrightarrow{BA}$\n$\\overrightarrow{EF} = \\frac{1}{2}\\overrightarrow{BA} + \\frac{\\overrightarrow{BC}}{2} - \\overrightarrow{BB_1}$ (uncertain)\n$|\\overrightarrow{AC}| = 2\\sqrt{2}$ (or $\\sqrt{8}$)\n$|\\overrightarrow{EF}| = \\sqrt{11}$\n$|\\overrightarrow{AC} \\cdot \\overrightarrow{EF}| = 4$\n(crossed out part)\n$\\frac{\\sqrt{2}}{11}$ (large handwriting at bottom right)",
+        "answer_parts": [
+          {
+            "label": "(1)",
+            "transcription": "如图连接 $A_1B$ (scribble), 取 $BC$ 中点为 $G$, 连接 $A_1G, GF$。这是一个平行六面体。$A_1D_1 // BC$, $G, F$ 分别是 $BC, CD$ 的中点。$GF // \\frac{1}{2}BD$。$E$ 是 $A_1D_1$ 的中点, $A_1E // \\frac{1}{2}B...$ (scribble) $A_1E // GF$。四边形 $A_1EGF$ 为平行四边形, $A_1G // EF$。$EF \\not\\subset 平面 BDA_1, A_1G \\subset 平面 BDA_1 \\Rightarrow EF // 平面 BDA_1$。",
+            "final_answer": "",
+            "status": "partial"
+          },
+          {
+            "label": "(2)",
+            "transcription": "$\\overrightarrow{BD_1} = \\overrightarrow{BA} + \\overrightarrow{BC} + \\overrightarrow{BB_1}$\n$\\overrightarrow{BD_1}^2 = \\overrightarrow{BA}^2 + \\overrightarrow{BC}^2 + \\overrightarrow{BB_1}^2 + 2\\overrightarrow{BA}\\cdot\\overrightarrow{BC} + 2\\overrightarrow{BA}\\cdot\\overrightarrow{BB_1} + 2\\overrightarrow{BC}\\cdot\\overrightarrow{BB_1} = 4+4+9+0+2 \\times 2 \\times 3 \\times \\frac{1}{2} \\times 2 = 29$",
+            "final_answer": "$29$ (Note: likely meant $\\sqrt{29}$ for length, but wrote 29 for squared length)",
+            "status": "partial"
+          },
+          {
+            "label": "(3)",
+            "transcription": "$\\overrightarrow{AC} = \\overrightarrow{BC} - \\overrightarrow{BA}$\n$\\overrightarrow{EF} = \\frac{1}{2}\\overrightarrow{BA} + \\frac{\\overrightarrow{BC}}{2} - \\overrightarrow{BB_1}$\n$|\\overrightarrow{AC}| = 2\\sqrt{2}$\n$|\\overrightarrow{EF}| = \\sqrt{11}$\n$|\\overrightarrow{AC} \\cdot \\overrightarrow{EF}| = 4$\n$\\frac{\\sqrt{2}}{11}$",
+            "final_answer": "$\\frac{\\sqrt{2}}{11}$",
+            "status": "uncertain"
+          }
+        ],
+        "uncertain_fragments": [
+          {
+            "text": "$\\overrightarrow{EF} = \\frac{1}{2}\\overrightarrow{BA} + \\frac{\\overrightarrow{BC}}{2} - \\overrightarrow{BB_1}$",
+            "alternatives": [
+              "$\\overrightarrow{EF} = ...$"
+            ],
+            "location": "part (3) working"
+          },
+          {
+            "text": "$\\frac{\\sqrt{2}}{11}$",
+            "alternatives": [
+              "$\\frac{3}{16}$",
+              "$\\frac{2}{11}$"
+            ],
+            "location": "large handwriting at bottom right of the answer block"
+          }
+        ],
+        "status": "partial",
+        "evidence_note": "Handwriting is messy and overlaps Q15 area. Part (1) proof logic is garbled. Part (2) computes squared length as 29. Part (3) has intermediate steps and a final large fraction that is hard to read definitively.",
+        "source_context_ids": [
+          "C004",
+          "C005"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page19/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "Handwriting for Q16 is written in the space between Q15 and Q16 text. Q13 and Q14 have crossed-out scribbles. Q15 has no visible answer.",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page19/image/page19.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page19/preprocessed/page19.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page19/api_markdown/page19.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page19/api_markdown/page19.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page19/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page19/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page19/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page19/code_outputs/match/viz/page19_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page19/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page19/agent_outputs/result.json",
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page19/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page19/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page19/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page19/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page19/code_outputs/match/viz/page19_handwriting_overlay.png"
+  }
+}

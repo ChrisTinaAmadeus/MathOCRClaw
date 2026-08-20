@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_second_pass",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page09/api_markdown/page09.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page09/code_outputs/match/question_contexts.json",
+  "page_notes": "Question 12 printed text appears cut off at '取值', handwriting continues with '范围为'. Question 17 diagram shows a 2x2 grid of rectangles against a wall.",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 10019,
+    "completion_tokens": 18999,
+    "total_tokens": 29018,
+    "latency_s": 347.591326,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 180.176117,
+          "prompt_tokens": 2858,
+          "completion_tokens": 9893,
+          "total_tokens": 12751,
+          "request_id": "chatcmpl-666df8c0-5023-9e7b-b7db-b5abd83f7d25"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 167.415209,
+          "prompt_tokens": 7161,
+          "completion_tokens": 9106,
+          "total_tokens": 16267,
+          "request_id": "chatcmpl-01136f0e-fc3d-9312-86ae-2bf6ce4bed58"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"page_notes\": \"Question 12 printed text appears cut off at '取值', handwriting continues with '范围为'. Question 17 diagram shows a 2x2 grid of rectangles against a wall.\",\n  \"questions\": [\n    {\n      \"qno\": \"12\",\n      \"question_markdown\": \"12. 若命题“$\\\\exists x \\\\in \\\\{x \\\\mid -1 \\\\le x \\\\le 3\\\\}, x^2 - 2x - a \\\\le 0$”为真命题，则实数 $a$ 的取值\",\n      \"handwritten_answer\": {\n        \"text\": \"范围为 $a \\\\ge -1$ 存在。所以用小值。\\n$x^2 - 2x \\\\le a$. 即 $x^2 - 2x$ 的 $min = -1$.\\n<插图>\\n$\\\\therefore -1 \\\\le a$.\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"范围为 $a \\\\ge -1$ 存在。所以用小值。\\n$x^2 - 2x \\\\le a$. 即 $x^2 - 2x$ 的 $min = -1$.\\n<插图>\\n$\\\\therefore -1 \\\\le a$.\",\n            \"final_answer\": \"$a \\\\ge -1$\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [\n          {\n            \"text\": \"用小值\",\n            \"alternatives\": [\"用最小值\"],\n            \"location\": \"first line of handwriting\"\n          }\n        ],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Handwriting includes a small sketch of a parabola. The phrase '用小值' likely implies '用最小值'.\"\n      },\n      \"source_context_ids\": [\n        \"C001\"\n      ]\n    },\n    {\n      \"qno\": \"17\",\n      \"question_markdown\": \"17. (15分) 某学校引入种植类劳动教育课程，打算围成如图所示的四块全等的长方形田地种植不同种类的蔬菜，其中一面可以利用原有的墙（足够长），其他各面需要用篱笆围成，设其中一块田地为矩形 $ABCD$。\\n<插图>\\n(1) 若每块田地的面积为 $24\\\\text{m}^2$，要使围成四块田地的篱笆总长最小，应该设计田地的长 $AB$ 和宽 $AD$ 各为多少？\\n(2) 现用 $40\\\\text{m}$ 长的篱笆，要使每块田地的面积最大，应该设计田地的长 $AB$ 和宽 $AD$ 各为多少？\",\n      \"handwritten_answer\": {\n        \"text\": \"1). 设 $AB$ 为 $x\\\\text{m}$，$AD$ 为 $y\\\\text{m}$。则 $xy=24$。\\n$\\\\therefore$ 求 $6y+4x$ 的 min。\\n$\\\\because 6y+4x \\\\ge 2\\\\sqrt{6y \\\\cdot 4x}$\\n$\\\\ge 2\\\\sqrt{24 \\\\cdot 24}$\\n$\\\\ge 48$\\n$\\\\therefore 6y+4x$ 的 min 为 48\\n当且仅当 $6y=4x=24$ 时，即 $y=4, x=6$ 时，取最小值。\\n$\\\\therefore AB$ 为 $6\\\\text{m}$ $AD$ 为 $4\\\\text{m}$\\n\\n2). 设 $AB$ 为 $a\\\\text{m}$，$AD$ 为 $b\\\\text{m}$。\\n$\\\\therefore 6a+4b=40$. 求 $ab$ 的 max 即 $ab$ 的 max。\\n$\\\\because 6a+4b=40 \\\\therefore 3a+2b=20$.\\n$\\\\therefore b = \\\\frac{20-3a}{2}$.\\n$\\\\therefore ab = a(\\\\frac{20-3a}{2}) = \\\\frac{-3a^2+20a}{2}$.\\n$\\\\because -\\\\frac{20}{2(-3)} = \\\\frac{10}{3}$.\\n当且仅当 $a=\\\\frac{10}{3}, b=5$ 时 取得最大值\\n$\\\\therefore AB$ 的长为 $\\\\frac{10}{3}\\\\text{m}$，$AD$ 的长为 $5\\\\text{m}$\\n$\\\\therefore ab \\\\max = \\\\frac{100}{3}$.\",\n        \"answer_parts\": [\n          {\n            \"label\": \"(1)\",\n            \"transcription\": \"1). 设 $AB$ 为 $x\\\\text{m}$，$AD$ 为 $y\\\\text{m}$。则 $xy=24$。\\n$\\\\therefore$ 求 $6y+4x$ 的 min。\\n$\\\\because 6y+4x \\\\ge 2\\\\sqrt{6y \\\\cdot 4x}$\\n$\\\\ge 2\\\\sqrt{24 \\\\cdot 24}$\\n$\\\\ge 48$\\n$\\\\therefore 6y+4x$ 的 min 为 48\\n当且仅当 $6y=4x=24$ 时，即 $y=4, x=6$ 时，取最小值。\\n$\\\\therefore AB$ 为 $6\\\\text{m}$ $AD$ 为 $4\\\\text{m}$\",\n            \"final_answer\": \"$AB$ 为 $6\\\\text{m}$，$AD$ 为 $4\\\\text{m}$\",\n            \"status\": \"ok\"\n          },\n          {\n            \"label\": \"(2)\",\n            \"transcription\": \"2). 设 $AB$ 为 $a\\\\text{m}$，$AD$ 为 $b\\\\text{m}$。\\n$\\\\therefore 6a+4b=40$. 求 $ab$ 的 max 即 $ab$ 的 max。\\n$\\\\because 6a+4b=40 \\\\therefore 3a+2b=20$.\\n$\\\\therefore b = \\\\frac{20-3a}{2}$.\\n$\\\\therefore ab = a(\\\\frac{20-3a}{2}) = \\\\frac{-3a^2+20a}{2}$.\\n$\\\\because -\\\\frac{20}{2(-3)} = \\\\frac{10}{3}$.\\n当且仅当 $a=\\\\frac{10}{3}, b=5$ 时 取得最大值\\n$\\\\therefore AB$ 的长为 $\\\\frac{10}{3}\\\\text{m}$，$AD$ 的长为 $5\\\\text{m}$\\n$\\\\therefore ab \\\\max = \\\\frac{100}{3}$.\",\n            \"final_answer\": \"$AB$ 的长为 $\\\\frac{10}{3}\\\\text{m}$，$AD$ 的长为 $5\\\\text{m}$\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Student uses AM-GM for part 1 and quadratic vertex for part 2. In part 2, the fence equation $6a+4b=40$ swaps coefficients compared to part 1 ($6y+4x$), but transcription follows visible text.\"\n      },\n      \"source_context_ids\": [\n        \"C001\",\n        \"C002\"\n      ]\n    }\n  ]\n}\n```"
+}

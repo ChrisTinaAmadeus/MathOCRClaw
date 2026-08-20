@@ -1,0 +1,97 @@
+{
+  "schema_version": 3,
+  "response_format": "benchmark_markdown",
+  "prompt": {
+    "version": "extract_v2",
+    "path": "benchmark/prompts/extract_v2.txt",
+    "sha1": "3262af1c467eaec9306252fad78aaa2bca395617"
+  },
+  "page_markdown": "一、单选题\n\n1. 命题“$\\exists x \\in \\mathbf{R}, x^2+1>0$”的否定是（ ）\nA. $\\forall x \\in \\mathbf{R}, x^2+1>0$\nB. $\\exists x \\in \\mathbf{R}, x^2+1 \\le 0$\nC. $\\forall x \\in \\mathbf{R}, x^2+1 \\le 0$\nD. $\\exists x \\in \\mathbf{R}, x^2+1<0$\n\n### 手写答案\n\nC\n\n2. 已知 $x<0, 0<y<1$，则（ ）\nA. $\\frac{x}{y^2} < \\frac{x}{y} < x$\nB. $\\frac{x}{y} < x < \\frac{x}{y^2}$\nC. $x < \\frac{x}{y} < \\frac{x}{y^2}$\nD. $xy^2 < x < xy$\n\n### 手写答案\n\nC\n\n3. 已知函数 $f(x)=\\begin{cases} x+1, x \\le 2 \\\\ 2f(x-1), x > 2 \\end{cases}$，则 $f(3)=$（ ）\nA. 3\nB. 4\nC. 6\nD. 8\n\n### 手写答案\n\nC\n\n4. 函数 $f(x)=\\ln(x^2-2ax+16)$ 在区间 $(-\\infty, 2)$ 单调递减，则 $a$ 的取值范围（ ）\nA. $(-\\infty, 2]$\nB. $[2, +\\infty)$\nC. $[2, 5]$\nD. $[2, 5)$\n\n### 手写答案\n\nD\n\n5. 在数学上称函数 $y=[x]$ 为高斯函数，其中 $[x]$ 表示不大于 $x$ 的最大整数，如 $[1.5]=1, [-2.3]=-3$。那么使不等式 $4[x]^2-12[x]+5 \\le 0$ 成立的充分不必要条件是（ ）\nA. $x \\in \\{x \\mid \\frac{1}{2} \\le x \\le \\frac{5}{2}\\}$\nB. $x \\in \\{x \\mid 1 \\le x \\le 2\\}$\nC. $x \\in \\{x \\mid 1 \\le x < 3\\}$\nD. $x \\in \\{x \\mid 1 \\le x \\le 3\\}$\n\n### 手写答案\n\nD\n\n6. 若 $x>y>1$，且满足 $x+y=4$，则 $\\frac{1}{x-y}+\\frac{4}{y-1}$ 的最小值是（ ）\nA. 6\nB. $\\frac{18}{5}$\nC. $\\frac{9}{2}$\nD. 9\n\n### 手写答案\n\nC\n\n7. 实数 $x, y, z$ 满足 $2x+y+z=-1$，则 $x^2+y^2+2z^2$ 的最小值为（ ）\nA. 2\nB. 0\nC. 3\nD. -3\n\n### 手写答案\n\nA\n\n8. 已知函数 $f(x)=\\begin{cases} \\frac{1}{2}x-\\ln(e^x+1), x \\le 0 \\\\ |e^{x-2}-1|, x > 0 \\end{cases}$，若方程 $3-m^2+2mf(x)=[f(x)]^2$ 有且仅有5个不同实数根，则实数 $m$ 的取值范围是（ ）\nA. $(-\\sqrt{3}, 1-\\sqrt{3})$\nB. $(1-\\sqrt{3}, \\sqrt{3})$\nC. $(1-\\sqrt{3}, 1+\\sqrt{3})$\nD. $(\\sqrt{3}, 1+\\sqrt{3})$\n\n### 手写答案\n\nD\n\n二、多选题\n\n9. 在生产生活中，人们常用十进制计数，而本福特定律说明在 $b$ 进制中，以数字 $n(n \\le b-1)$ 起头的数出现的概率为 $\\log_b \\frac{n+1}{n}$，此定律可用于检查数据造假等问题。现定义 10-本福特函数 $B(x)=\\lg \\frac{x+1}{x}$，则（ ）\nA. $B(2)$ 表示十进制中以数字 2 起头的数出现的概率\nB. 曲线 $y=B(x)$ 关于点 $(-\\frac{1}{2}, 0)$ 对称\nC. $B(n)<\\frac{1}{2} (n=1, 2, \\cdots, 9)$\nD. $B(2) \\ge 2B(4)$\n\n### 手写答案\n\nAC\n\n10. 已知 $f(x), g(x)$ 分别是定义在 $\\mathbf{R}$ 上的偶函数和奇函数，且 $f(x)-g(x)=e^x$，则下列说法正确的是（ ）\nA. $[g(x)]^2-[f(x)]^2=1$\nB. $g(2x)=2f(x)g(x)$\nC. 若 $g(t-2)+g(2t)>0$，则 $t>1$\nD. 方程 $f(x)=m$ 有两个不相等的实数根，则 $m>1$\n\n### 手写答案\n\nB\n\n11. 已知函数 $F(x)=\\frac{9}{x-1}-2^x$ 的零点为 $x_1, x_2 (x_1<x_2)$，函数 $G(x)=\\frac{x}{x-1}-\\log_2 x$ 的零点为 $x_3, x_4 (x_3<x_4)$，则（ ）\nA. $\\frac{1}{x_1}+\\frac{1}{x_2}=1$\nB. $x_1<x_3<x_2<x_4$\nC. $\\frac{1}{x_3}+\\frac{1}{x_4}=1$\nD. $x_1 x_2 x_3 x_4 = x_1 x_2 + x_2 x_3 + x_3 x_4 + x_4 x_1$\n\n### 手写答案\n\nBD\n\n三、填空题\n\n12. $\\log_3 \\sqrt{27}-\\log_3 2 \\log_2 3-6^{\\log_6 4}-\\lg \\sqrt{2}-\\lg \\sqrt{5}=$ ______\n\n### 手写答案\n\n$-3$\n\n13. 已知函数 $f(x)=\\log_2(kx^2+kx+1)$，若 $f(x)$ 的值域为 $\\mathbf{R}$，则实数 $k$ 的取值范围是 ______\n\n### 手写答案\n\n$[0, 4]$\n\n14. 直角坐标平面内两点 $P, Q$ 满足条件：\n(1) $P, Q$ 都在函数 $f(x)$ 的图象上；\n(2) $P, Q$ 关于原点对称，则称点对 $(P, Q)$ 是函数 $f(x)$ 的一个“友好点对”（点对 $(P, Q)$ 与点对 $(Q, P)$ 看作同一个“友好点对”）。\n已知函数 $f(x)=\\begin{cases} \\frac{1}{2}x-\\ln(e^x+1), x \\le 0 \\\\ -ax^2+(2a-\\frac{1}{2})x+e-a, x > 0 \\end{cases} (a>0)$ 存在两个“友好点对”，则 $a$ 的取值范围为 ______\n\n### 手写答案\n\n$(e, e^2)$",
+  "questions": [
+    {
+      "qno": "1",
+      "question_text": "1. 命题“$\\exists x \\in \\mathbf{R}, x^2+1>0$”的否定是（ ）\nA. $\\forall x \\in \\mathbf{R}, x^2+1>0$\nB. $\\exists x \\in \\mathbf{R}, x^2+1 \\le 0$\nC. $\\forall x \\in \\mathbf{R}, x^2+1 \\le 0$\nD. $\\exists x \\in \\mathbf{R}, x^2+1<0$",
+      "student_answer": "C",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "2",
+      "question_text": "2. 已知 $x<0, 0<y<1$，则（ ）\nA. $\\frac{x}{y^2} < \\frac{x}{y} < x$\nB. $\\frac{x}{y} < x < \\frac{x}{y^2}$\nC. $x < \\frac{x}{y} < \\frac{x}{y^2}$\nD. $xy^2 < x < xy$",
+      "student_answer": "C",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "3",
+      "question_text": "3. 已知函数 $f(x)=\\begin{cases} x+1, x \\le 2 \\\\ 2f(x-1), x > 2 \\end{cases}$，则 $f(3)=$（ ）\nA. 3\nB. 4\nC. 6\nD. 8",
+      "student_answer": "C",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "4",
+      "question_text": "4. 函数 $f(x)=\\ln(x^2-2ax+16)$ 在区间 $(-\\infty, 2)$ 单调递减，则 $a$ 的取值范围（ ）\nA. $(-\\infty, 2]$\nB. $[2, +\\infty)$\nC. $[2, 5]$\nD. $[2, 5)$",
+      "student_answer": "D",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "5",
+      "question_text": "5. 在数学上称函数 $y=[x]$ 为高斯函数，其中 $[x]$ 表示不大于 $x$ 的最大整数，如 $[1.5]=1, [-2.3]=-3$。那么使不等式 $4[x]^2-12[x]+5 \\le 0$ 成立的充分不必要条件是（ ）\nA. $x \\in \\{x \\mid \\frac{1}{2} \\le x \\le \\frac{5}{2}\\}$\nB. $x \\in \\{x \\mid 1 \\le x \\le 2\\}$\nC. $x \\in \\{x \\mid 1 \\le x < 3\\}$\nD. $x \\in \\{x \\mid 1 \\le x \\le 3\\}$",
+      "student_answer": "D",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "6",
+      "question_text": "6. 若 $x>y>1$，且满足 $x+y=4$，则 $\\frac{1}{x-y}+\\frac{4}{y-1}$ 的最小值是（ ）\nA. 6\nB. $\\frac{18}{5}$\nC. $\\frac{9}{2}$\nD. 9",
+      "student_answer": "C",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "7",
+      "question_text": "7. 实数 $x, y, z$ 满足 $2x+y+z=-1$，则 $x^2+y^2+2z^2$ 的最小值为（ ）\nA. 2\nB. 0\nC. 3\nD. -3",
+      "student_answer": "A",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "8",
+      "question_text": "8. 已知函数 $f(x)=\\begin{cases} \\frac{1}{2}x-\\ln(e^x+1), x \\le 0 \\\\ |e^{x-2}-1|, x > 0 \\end{cases}$，若方程 $3-m^2+2mf(x)=[f(x)]^2$ 有且仅有5个不同实数根，则实数 $m$ 的取值范围是（ ）\nA. $(-\\sqrt{3}, 1-\\sqrt{3})$\nB. $(1-\\sqrt{3}, \\sqrt{3})$\nC. $(1-\\sqrt{3}, 1+\\sqrt{3})$\nD. $(\\sqrt{3}, 1+\\sqrt{3})$",
+      "student_answer": "D\n\n二、多选题",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "9",
+      "question_text": "9. 在生产生活中，人们常用十进制计数，而本福特定律说明在 $b$ 进制中，以数字 $n(n \\le b-1)$ 起头的数出现的概率为 $\\log_b \\frac{n+1}{n}$，此定律可用于检查数据造假等问题。现定义 10-本福特函数 $B(x)=\\lg \\frac{x+1}{x}$，则（ ）\nA. $B(2)$ 表示十进制中以数字 2 起头的数出现的概率\nB. 曲线 $y=B(x)$ 关于点 $(-\\frac{1}{2}, 0)$ 对称\nC. $B(n)<\\frac{1}{2} (n=1, 2, \\cdots, 9)$\nD. $B(2) \\ge 2B(4)$",
+      "student_answer": "AC",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "10",
+      "question_text": "10. 已知 $f(x), g(x)$ 分别是定义在 $\\mathbf{R}$ 上的偶函数和奇函数，且 $f(x)-g(x)=e^x$，则下列说法正确的是（ ）\nA. $[g(x)]^2-[f(x)]^2=1$\nB. $g(2x)=2f(x)g(x)$\nC. 若 $g(t-2)+g(2t)>0$，则 $t>1$\nD. 方程 $f(x)=m$ 有两个不相等的实数根，则 $m>1$",
+      "student_answer": "B",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "11",
+      "question_text": "11. 已知函数 $F(x)=\\frac{9}{x-1}-2^x$ 的零点为 $x_1, x_2 (x_1<x_2)$，函数 $G(x)=\\frac{x}{x-1}-\\log_2 x$ 的零点为 $x_3, x_4 (x_3<x_4)$，则（ ）\nA. $\\frac{1}{x_1}+\\frac{1}{x_2}=1$\nB. $x_1<x_3<x_2<x_4$\nC. $\\frac{1}{x_3}+\\frac{1}{x_4}=1$\nD. $x_1 x_2 x_3 x_4 = x_1 x_2 + x_2 x_3 + x_3 x_4 + x_4 x_1$",
+      "student_answer": "BD\n\n三、填空题",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "12",
+      "question_text": "12. $\\log_3 \\sqrt{27}-\\log_3 2 \\log_2 3-6^{\\log_6 4}-\\lg \\sqrt{2}-\\lg \\sqrt{5}=$ ______",
+      "student_answer": "$-3$",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "13",
+      "question_text": "13. 已知函数 $f(x)=\\log_2(kx^2+kx+1)$，若 $f(x)$ 的值域为 $\\mathbf{R}$，则实数 $k$ 的取值范围是 ______",
+      "student_answer": "$[0, 4]$",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "14",
+      "question_text": "14. 直角坐标平面内两点 $P, Q$ 满足条件：\n(1) $P, Q$ 都在函数 $f(x)$ 的图象上；\n(2) $P, Q$ 关于原点对称，则称点对 $(P, Q)$ 是函数 $f(x)$ 的一个“友好点对”（点对 $(P, Q)$ 与点对 $(Q, P)$ 看作同一个“友好点对”）。\n已知函数 $f(x)=\\begin{cases} \\frac{1}{2}x-\\ln(e^x+1), x \\le 0 \\\\ -ax^2+(2a-\\frac{1}{2})x+e-a, x > 0 \\end{cases} (a>0)$ 存在两个“友好点对”，则 $a$ 的取值范围为 ______",
+      "student_answer": "$(e, e^2)$",
+      "answer_status": "ok"
+    }
+  ],
+  "page_notes": ""
+}

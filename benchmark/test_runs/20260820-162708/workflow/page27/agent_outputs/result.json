@@ -1,0 +1,489 @@
+{
+  "page": "page27",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/image/page27.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page27.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/preprocessed/page27.png",
+  "api_strategy": {
+    "call_count": 2,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "global context-aware correction and final result"
+  },
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 25234,
+    "completion_tokens": 25276,
+    "total_tokens": 50510,
+    "latency_s": 462.708034,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 198.071706,
+          "prompt_tokens": 2770,
+          "completion_tokens": 10884,
+          "total_tokens": 13654,
+          "request_id": "chatcmpl-78fd4aa1-c403-9c7a-8914-bc41bb5cdc5d"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 264.636328,
+          "prompt_tokens": 22464,
+          "completion_tokens": 14392,
+          "total_tokens": 36856,
+          "request_id": "chatcmpl-b14d8308-0e88-9f54-835e-6da6264fb89a"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 14,
+    "answers_with_transcription": 14,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 1,
+      "question_markdown": "1. 命题“$\\exists x \\in \\mathbf{R}, x^2+1>0$”的否定是（ ）\nA. $\\forall x \\in \\mathbf{R}, x^2+1>0$\nB. $\\exists x \\in \\mathbf{R}, x^2+1 \\le 0$\nC. $\\forall x \\in \\mathbf{R}, x^2+1 \\le 0$\nD. $\\exists x \\in \\mathbf{R}, x^2+1<0$",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "C",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "C",
+            "final_answer": "C",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Large 'C' written to the left of the question number. Options A, B, D are crossed out.",
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 2,
+      "question_markdown": "2. 已知 $x<0, 0<y<1$，则（ ）\nA. $\\frac{x}{y^2} < \\frac{x}{y} < x$\nB. $\\frac{x}{y} < x < \\frac{x}{y^2}$\nC. $x < \\frac{x}{y} < \\frac{x}{y^2}$\nD. $xy^2 < x < xy$",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "C",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "C",
+            "final_answer": "C",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [
+          {
+            "text": "-1/4, -1/2, -1/2, -1, -1, -1/2, -1/4, -1/8",
+            "alternatives": [
+              "test values written above options"
+            ],
+            "location": "above options A, B, C, D"
+          }
+        ],
+        "status": "ok",
+        "evidence_note": "Large 'C' written to the left. Option A is crossed out. Test values written above options.",
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 3,
+      "question_markdown": "3. 已知函数 $f(x)=\\begin{cases} x+1, x \\le 2 \\\\ 2f(x-1), x > 2 \\end{cases}$，则 $f(3)=$（ ）\nA. 3\nB. 4\nC. 6\nD. 8",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "C\n2f(3-1)=2f(2)\n2 \\times (2+1)=6",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "C\n2f(3-1)=2f(2)\n2 \\times (2+1)=6",
+            "final_answer": "C",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Large 'C' written to the left. Calculation steps shown to the right of the stem.",
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 4,
+      "question_markdown": "4. 函数 $f(x)=\\ln(x^2-2ax+16)$ 在区间 $(-\\infty, 2)$ 单调递减，则 $a$ 的取值范围（ ）\nA. $(-\\infty, 2]$\nB. $[2, +\\infty)$\nC. $[2, 5]$\nD. $[2, 5)$",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "D\nf(4)=\\ln 4^2",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "D\nf(4)=\\ln 4^2",
+            "final_answer": "D",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Black 'D' written (with a cross, possibly by student or teacher). Red 'C' written nearby (likely teacher correction). A parabola sketch is visible. Transcribing student's black ink choice D.",
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 5,
+      "question_markdown": "5. 在数学上称函数 $y=[x]$ 为高斯函数，其中 $[x]$ 表示不大于 $x$ 的最大整数，如 $[1.5]=1, [-2.3]=-3$。那么使不等式 $4[x]^2-12[x]+5 \\le 0$ 成立的充分不必要条件是（ ）\nA. $x \\in \\{x \\mid \\frac{1}{2} \\le x \\le \\frac{5}{2}\\}$\nB. $x \\in \\{x \\mid 1 \\le x \\le 2\\}$\nC. $x \\in \\{x \\mid 1 \\le x < 3\\}$\nD. $x \\in \\{x \\mid 1 \\le x \\le 3\\}$",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C005"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "D\n\\frac{1}{2} \\le [x] \\le \\frac{5}{2}\n1 \\le x < 3",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "D\n\\frac{1}{2} \\le [x] \\le \\frac{5}{2}\n1 \\le x < 3",
+            "final_answer": "D",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "'B' and 'D' written on the left. 'B' appears crossed out or initial. Work shows solving the inequality for [x] and then x. Number line sketch visible.",
+        "source_context_ids": [
+          "C005"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 6,
+      "question_markdown": "6. 若 $x>y>1$，且满足 $x+y=4$，则 $\\frac{1}{x-y}+\\frac{4}{y-1}$ 的最小值是（ ）\nA. 6\nB. $\\frac{18}{5}$\nC. $\\frac{9}{2}$\nD. 9",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C006"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "C\n\\frac{1}{x-y}+\\frac{2}{2y-2}\n\\ge \\frac{(1+2)^2}{x-y+2y-2} = \\frac{9}{2}",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "C\n\\frac{1}{x-y}+\\frac{2}{2y-2}\n\\ge \\frac{(1+2)^2}{x-y+2y-2} = \\frac{9}{2}",
+            "final_answer": "C",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Large 'C' written. Red ink shows application of Cauchy-Schwarz (Titu's lemma) with denominator manipulation $x-y+2y-2 = x+y-2=2$.",
+        "source_context_ids": [
+          "C006"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 7,
+      "question_markdown": "7. 实数 $x, y, z$ 满足 $xy+yz+zx=-1$，则 $x^2+y^2+2z^2$ 的最小值为（ ）\nA. 2\nB. 0\nC. 3\nD. -3",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C007"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "A\nx^2+z^2+z^2+y^2\n\\ge 2xz+2zy",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "A\nx^2+z^2+z^2+y^2\n\\ge 2xz+2zy",
+            "final_answer": "A",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Large 'A' written. Work shows AM-GM inequality application $x^2+z^2 \\ge 2xz$ etc. Note: printed condition corrected to $xy+yz+zx=-1$.",
+        "source_context_ids": [
+          "C007"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 8,
+      "question_markdown": "8. 已知函数 $f(x)=\\begin{cases} \\frac{1}{2}x-\\ln(e^x+1), x \\le 0 \\\\ |e^{x-2}-1|, x > 0 \\end{cases}$，若方程 $3-m^2+2mf(x)=[f(x)]^2$ 有且仅有5个不同实数根，则实数 $m$ 的取值范围是（ ）\nA. $(-\\sqrt{3}, 1-\\sqrt{3})$\nB. $(1-\\sqrt{3}, \\sqrt{3})$\nC. $(1-\\sqrt{3}, 1+\\sqrt{3})$\nD. $(\\sqrt{3}, 1+\\sqrt{3})$",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C008"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "D\n3-m^2+2mf(x)=[f(x)]^2\nf(x)=\\frac{2m \\pm 2\\sqrt{3}}{2} = m \\pm \\sqrt{3}",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "D\n3-m^2+2mf(x)=[f(x)]^2\nf(x)=\\frac{2m \\pm 2\\sqrt{3}}{2} = m \\pm \\sqrt{3}",
+            "final_answer": "D",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "'D' and 'C' written. 'D' is prominent. Work shows solving quadratic for f(x). Graph sketch visible.",
+        "source_context_ids": [
+          "C008"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 9,
+      "question_markdown": "9. 在生产生活中，人们常用十进制计数，而本福特定律说明在 $b$ 进制中，以数字 $n(n \\le b-1)$ 起头的数出现的概率为 $\\log_b \\frac{n+1}{n}$，此定律可用于检查数据造假等问题。现定义 10-本福特函数 $B(x)=\\lg \\frac{x+1}{x}$，则（ ）\nA. $B(2)$ 表示十进制中以数字 2 起头的数出现的概率\nB. 曲线 $y=B(x)$ 关于点 $(-\\frac{1}{2}, 0)$ 对称\nC. $B(n)<\\frac{1}{2} (n=1, 2, \\cdots, 9)$\nD. $B(2) \\ge 2B(4)$",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C009"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "AC\nB(n) = \\lg \\frac{n+1}{n} = \\lg(1+\\frac{1}{n})\nB(n)_{max}=B(1)=\\lg 2 < \\lg \\sqrt{10}",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "AC\nB(n) = \\lg \\frac{n+1}{n} = \\lg(1+\\frac{1}{n})\nB(n)_{max}=B(1)=\\lg 2 < \\lg \\sqrt{10}",
+            "final_answer": "AC",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "'AC' written on the left. Work verifies C by checking max value. D is analyzed with $B(2)$ and $2B(4)$.",
+        "source_context_ids": [
+          "C009"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 10,
+      "question_markdown": "10. 已知 $f(x), g(x)$ 分别是定义在 $\\mathbf{R}$ 上的偶函数和奇函数，且 $f(x)-g(x)=e^x$，则下列说法正确的是（ ）\nA. $[g(x)]^2-[f(x)]^2=1$\nB. $g(2x)=2f(x)g(x)$\nC. 若 $g(t-2)+g(2t)>0$，则 $t>1$\nD. 方程 $f(x)=m$ 有两个不相等的实数根，则 $m>1$",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C010"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "AB\nf(x)+g(x)=e^{-x}\nf(x)=\\frac{e^x+e^{-x}}{2}\ng(x)=\\frac{e^{-x}-e^x}{2}",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "AB\nf(x)+g(x)=e^{-x}\nf(x)=\\frac{e^x+e^{-x}}{2}\ng(x)=\\frac{e^{-x}-e^x}{2}",
+            "final_answer": "AB",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "'AB' written next to question number. 'BD' written above (likely for Q11). Work derives f(x) and g(x) as cosh and -sinh. A is crossed out in red (teacher mark), B has checkmark. Student selected AB.",
+        "source_context_ids": [
+          "C010"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 11,
+      "question_markdown": "11. 已知函数 $F(x)=\\frac{9}{x-1}-2^x$ 的零点为 $x_1, x_2 (x_1<x_2)$，函数 $G(x)=\\frac{x}{x-1}-\\log_2 x$ 的零点为 $x_3, x_4 (x_3<x_4)$，则（ ）\nA. $\\frac{1}{x_1}+\\frac{1}{x_2}=1$\nB. $x_1<x_3<x_2<x_4$\nC. $\\frac{1}{x_3}+\\frac{1}{x_4}=1$\nD. $x_1 x_2 x_3 x_4 = x_1 x_2 + x_2 x_3 + x_3 x_4 + x_4 x_1$",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C011"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "BD\n\\frac{9}{x-1}-2^x=0 \\Rightarrow h(x)=\\frac{9}{x-1}-1+1\nx_2 = \\log_2 x_4",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "BD\n\\frac{9}{x-1}-2^x=0 \\Rightarrow h(x)=\\frac{9}{x-1}-1+1\nx_2 = \\log_2 x_4",
+            "final_answer": "BD",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "'BD' written on the left. Graphs drawn showing intersections. Work relates zeros of F and G.",
+        "source_context_ids": [
+          "C011"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 12,
+      "question_markdown": "12. $\\log_3 \\sqrt{27}-\\log_3 2 \\log_2 3-6^{\\log_6 3}-\\lg \\sqrt{2}-\\lg \\sqrt{5}=$ ______",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C012"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "-3",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "-3",
+            "final_answer": "-3",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Answer '-3' written on the line. Work above shows $3/2 - 1 - 3 - 1/2 = -3$. Note: printed term corrected to $6^{\\log_6 3}$.",
+        "source_context_ids": [
+          "C012"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 13,
+      "question_markdown": "13. 已知函数 $f(x)=\\log_2(kx^2+kx+1)$，若 $f(x)$ 的值域为 $\\mathbf{R}$，则实数 $k$ 的取值范围是 ______",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C013"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "[0, 4]",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "[0, 4]",
+            "final_answer": "[0, 4]",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Answer '[0, 4]' written on the line. This is the condition for domain being R ($\\Delta \\le 0$), though question asks for range being R.",
+        "source_context_ids": [
+          "C013"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 14,
+      "question_markdown": "14. 直角坐标平面内两点 $P, Q$ 满足条件：\n(1) $P, Q$ 都在函数 $f(x)$ 的图象上；\n(2) $P, Q$ 关于原点对称，则称点对 $(P, Q)$ 是函数 $f(x)$ 的一个“友好点对”（点对 $(P, Q)$ 与点对 $(Q, P)$ 看作同一个“友好点对”）。\n已知函数 $f(x)=\\begin{cases} \\frac{1}{2}x-\\ln(e^x+1), x \\le 0 \\\\ -ax^2+(2a-\\frac{1}{2})x+e-a, x > 0 \\end{cases} (a>0)$ 存在两个“友好点对”，则 $a$ 的取值范围为 ______",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C014"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(e, e^2)\n\\text{设 } x<0, -x>0\nf(-x) = -ax^2-(2a-\\frac{1}{2})x+e-a = -f(x)",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "(e, e^2)\n\\text{设 } x<0, -x>0\nf(-x) = -ax^2-(2a-\\frac{1}{2})x+e-a = -f(x)",
+            "final_answer": "(e, e^2)",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Answer '(e, e^2)' written on the line (in red/black mix). Work sets up symmetry condition $f(-x)=-f(x)$.",
+        "source_context_ids": [
+          "C014"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "Corrected printed text for Q7 (condition is $xy+yz+zx=-1$ not $2x+y+z=-1$) and Q12 (term is $6^{\\log_6 3}$ not $6^{\\log_6 4}$) based on visual evidence. Handwritten answers reflect student's visible choices; red ink marks (crosses/checks/letters) are treated as teacher grading and excluded from student answer transcription unless clearly the student's final correction.",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/image/page27.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/preprocessed/page27.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/api_markdown/page27.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/api_markdown/page27.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/viz/page27_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/agent_outputs/result.json",
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page27/code_outputs/match/viz/page27_handwriting_overlay.png"
+  }
+}

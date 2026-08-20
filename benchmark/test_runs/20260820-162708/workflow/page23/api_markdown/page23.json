@@ -1,0 +1,49 @@
+{
+  "schema_version": 3,
+  "response_format": "benchmark_markdown",
+  "prompt": {
+    "version": "extract_v2",
+    "path": "benchmark/prompts/extract_v2.txt",
+    "sha1": "3262af1c467eaec9306252fad78aaa2bca395617"
+  },
+  "page_markdown": "6. 已知 $E,F$ 分别为正方体 $ABCD-A'B'C'D'$ 的上底面 $A'B'C'D'$ 和侧面 $CC'D'D$ 的中心，若 $\\overrightarrow{AE} + \\overrightarrow{AF} = x\\overrightarrow{AB} + y\\overrightarrow{AD} + z\\overrightarrow{AA'}$，则\nA. $x+y=z$\nB. $x-y=z$\nC. $x+y+z=3$\nD. $x+y+z=4$\n\n### 手写答案\n\nD\n\n7. 如图，在正三棱柱 $ABC-A_1B_1C_1$ 中 $AB=2$，若 $AB_1 \\perp BC_1$，则直线 $AB_1$ 与平面 $BCC_1B_1$ 所成角的正弦值为\n<插图>\nA. $\\frac{\\sqrt{3}}{3}$\nB. $\\frac{\\sqrt{2}}{2}$\nC. $\\frac{\\sqrt{21}}{7}$\nD. $\\frac{\\sqrt{6}}{3}$\n\n### 手写答案\n\nB\n$A(0,-1,0)$\n$B_1(\\sqrt{3},0,a)$\n$B(\\sqrt{3},0,0)$\n$C_1(0,1,a)$\n$\\overrightarrow{AB_1}=(\\sqrt{3},1,a)$\n$\\overrightarrow{BC_1}=(-\\sqrt{3},1,a)$\n$-3+1+a^2=0$\n$a^2=2$\n$a=\\sqrt{2}$\n\n8. 已知直线 $Ax+By+C=0$ 与 $x+\\sqrt{3}y-3=0$ 平行，则 $A^2+B+C^2$ 的最小值为\nA. $-\\frac{3}{4}$\nB. $-\\frac{1}{2}$\nC. 0\nD. 1\n\n### 手写答案\n\nA\n$B=\\sqrt{3}A$\n$A^2+B+C^2$\n$A^2+\\sqrt{3}A=(A+\\frac{\\sqrt{3}}{2})^2-\\frac{3}{4}$\n\n二、多项选择题：本题共3小题，每小题6分，共18分。在每小题给出的选项中，有多项符合题目要求，全部选对的得6分，部分选对的得部分分，有选错的得0分。\n\n9. 已知直线 $l_1: ax+y+2a=0, l_2: x-ay-2=0, a \\in \\mathbf{R}, O$ 为坐标原点，则下列说法正确的是\nA. $l_1 \\perp l_2$\nB. $l_1$ 与 $l_2$ 过同一个定点\nC. 若 $a=1$，则 $l_1$ 与 $l_2$ 关于 $y$ 轴对称\nD. 若 $l_1$ 与 $l_2$ 交于点 $M$，则 $|OM|$ 为定值\n\n### 手写答案\n\nACD\n$(-2,0)$\n$(2,0)$\n\n10. 在 $\\triangle ABC$ 中，内角 $A,B,C$ 的对边分别为 $a,b,c$，已知 $\\cos C = \\frac{13}{14}$，且 $7\\sin C + 3\\sqrt{3}\\cos A = 0, a+c=10$，则\nA. $\\sin C = \\frac{3\\sqrt{3}}{14}$\nB. $A = \\frac{5\\pi}{6}$\nC. $b=6$\nD. $\\triangle ABC$ 的面积为 $\\frac{15\\sqrt{3}}{4}$\n\n### 手写答案\n\nAD\n$A=\\frac{2\\pi}{3}$\n\n11. 对于两个向量 $\\boldsymbol{a}=(x_1,y_1,z_1), \\boldsymbol{b}=(x_2,y_2,z_2)$，定义 $\\boldsymbol{a} \\times \\boldsymbol{b}$ 为 $\\boldsymbol{a}, \\boldsymbol{b}$ 的“向向量积”，该运算的结果是一个向量：$\\boldsymbol{a} \\times \\boldsymbol{b} = (y_1z_2-y_2z_1, z_1x_2-z_2x_1, x_1y_2-x_2y_1)$，则下列说法正确的是\nA. 若 $\\boldsymbol{a}=(1,2,-4), \\boldsymbol{b}=(3,1,1)$，则 $\\boldsymbol{a} \\times \\boldsymbol{b} = (6,-13,-5)$\nB. 若 $\\boldsymbol{a}, \\boldsymbol{b}$ 是非零向量，且 $\\boldsymbol{a} \\times \\boldsymbol{b}$ 为零向量，则一定有 $\\boldsymbol{a} // \\boldsymbol{b}$\nC. 若 $\\boldsymbol{a}, \\boldsymbol{b}$ 是平面 $\\alpha$ 内的两个不共线的向量，则平面 $\\alpha$ 的法向量可以是 $\\boldsymbol{a} \\times \\boldsymbol{b}$\nD. 若 $\\boldsymbol{a}, \\boldsymbol{b}$ 是非零向量，且 $|\\boldsymbol{a} \\times \\boldsymbol{b}| = |\\boldsymbol{a} \\cdot \\boldsymbol{b}|$，则 $\\boldsymbol{a}, \\boldsymbol{b}$ 的夹角为 $\\frac{\\pi}{4}$\n\n### 手写答案\n\nACB",
+  "questions": [
+    {
+      "qno": "6",
+      "question_text": "6. 已知 $E,F$ 分别为正方体 $ABCD-A'B'C'D'$ 的上底面 $A'B'C'D'$ 和侧面 $CC'D'D$ 的中心，若 $\\overrightarrow{AE} + \\overrightarrow{AF} = x\\overrightarrow{AB} + y\\overrightarrow{AD} + z\\overrightarrow{AA'}$，则\nA. $x+y=z$\nB. $x-y=z$\nC. $x+y+z=3$\nD. $x+y+z=4$",
+      "student_answer": "D",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "7",
+      "question_text": "7. 如图，在正三棱柱 $ABC-A_1B_1C_1$ 中 $AB=2$，若 $AB_1 \\perp BC_1$，则直线 $AB_1$ 与平面 $BCC_1B_1$ 所成角的正弦值为\n<插图>\nA. $\\frac{\\sqrt{3}}{3}$\nB. $\\frac{\\sqrt{2}}{2}$\nC. $\\frac{\\sqrt{21}}{7}$\nD. $\\frac{\\sqrt{6}}{3}$",
+      "student_answer": "B\n$A(0,-1,0)$\n$B_1(\\sqrt{3},0,a)$\n$B(\\sqrt{3},0,0)$\n$C_1(0,1,a)$\n$\\overrightarrow{AB_1}=(\\sqrt{3},1,a)$\n$\\overrightarrow{BC_1}=(-\\sqrt{3},1,a)$\n$-3+1+a^2=0$\n$a^2=2$\n$a=\\sqrt{2}$",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "8",
+      "question_text": "8. 已知直线 $Ax+By+C=0$ 与 $x+\\sqrt{3}y-3=0$ 平行，则 $A^2+B+C^2$ 的最小值为\nA. $-\\frac{3}{4}$\nB. $-\\frac{1}{2}$\nC. 0\nD. 1",
+      "student_answer": "A\n$B=\\sqrt{3}A$\n$A^2+B+C^2$\n$A^2+\\sqrt{3}A=(A+\\frac{\\sqrt{3}}{2})^2-\\frac{3}{4}$\n\n二、多项选择题：本题共3小题，每小题6分，共18分。在每小题给出的选项中，有多项符合题目要求，全部选对的得6分，部分选对的得部分分，有选错的得0分。",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "9",
+      "question_text": "9. 已知直线 $l_1: ax+y+2a=0, l_2: x-ay-2=0, a \\in \\mathbf{R}, O$ 为坐标原点，则下列说法正确的是\nA. $l_1 \\perp l_2$\nB. $l_1$ 与 $l_2$ 过同一个定点\nC. 若 $a=1$，则 $l_1$ 与 $l_2$ 关于 $y$ 轴对称\nD. 若 $l_1$ 与 $l_2$ 交于点 $M$，则 $|OM|$ 为定值",
+      "student_answer": "ACD\n$(-2,0)$\n$(2,0)$",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "10",
+      "question_text": "10. 在 $\\triangle ABC$ 中，内角 $A,B,C$ 的对边分别为 $a,b,c$，已知 $\\cos C = \\frac{13}{14}$，且 $7\\sin C + 3\\sqrt{3}\\cos A = 0, a+c=10$，则\nA. $\\sin C = \\frac{3\\sqrt{3}}{14}$\nB. $A = \\frac{5\\pi}{6}$\nC. $b=6$\nD. $\\triangle ABC$ 的面积为 $\\frac{15\\sqrt{3}}{4}$",
+      "student_answer": "AD\n$A=\\frac{2\\pi}{3}$",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "11",
+      "question_text": "11. 对于两个向量 $\\boldsymbol{a}=(x_1,y_1,z_1), \\boldsymbol{b}=(x_2,y_2,z_2)$，定义 $\\boldsymbol{a} \\times \\boldsymbol{b}$ 为 $\\boldsymbol{a}, \\boldsymbol{b}$ 的“向向量积”，该运算的结果是一个向量：$\\boldsymbol{a} \\times \\boldsymbol{b} = (y_1z_2-y_2z_1, z_1x_2-z_2x_1, x_1y_2-x_2y_1)$，则下列说法正确的是\nA. 若 $\\boldsymbol{a}=(1,2,-4), \\boldsymbol{b}=(3,1,1)$，则 $\\boldsymbol{a} \\times \\boldsymbol{b} = (6,-13,-5)$\nB. 若 $\\boldsymbol{a}, \\boldsymbol{b}$ 是非零向量，且 $\\boldsymbol{a} \\times \\boldsymbol{b}$ 为零向量，则一定有 $\\boldsymbol{a} // \\boldsymbol{b}$\nC. 若 $\\boldsymbol{a}, \\boldsymbol{b}$ 是平面 $\\alpha$ 内的两个不共线的向量，则平面 $\\alpha$ 的法向量可以是 $\\boldsymbol{a} \\times \\boldsymbol{b}$\nD. 若 $\\boldsymbol{a}, \\boldsymbol{b}$ 是非零向量，且 $|\\boldsymbol{a} \\times \\boldsymbol{b}| = |\\boldsymbol{a} \\cdot \\boldsymbol{b}|$，则 $\\boldsymbol{a}, \\boldsymbol{b}$ 的夹角为 $\\frac{\\pi}{4}$",
+      "student_answer": "ACB",
+      "answer_status": "ok"
+    }
+  ],
+  "page_notes": ""
+}

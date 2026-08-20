@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_second_pass",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page05/api_markdown/page05.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page05/code_outputs/match/question_contexts.json",
+  "page_notes": "Question 18(1) has a checkmark likely indicating a grade, no solution text visible. Question 18(3) is circled but has no answer. Question 19(2) has crossed-out work which is omitted.",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 9314,
+    "completion_tokens": 11082,
+    "total_tokens": 20396,
+    "latency_s": 202.491649,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 85.313563,
+          "prompt_tokens": 2858,
+          "completion_tokens": 4665,
+          "total_tokens": 7523,
+          "request_id": "chatcmpl-7f57d19d-a777-9f7a-b51e-df58f19b3e9b"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 117.178086,
+          "prompt_tokens": 6456,
+          "completion_tokens": 6417,
+          "total_tokens": 12873,
+          "request_id": "chatcmpl-17a847cb-80d3-988a-a9d4-e6f790d6daa5"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"page_notes\": \"Question 18(1) has a checkmark likely indicating a grade, no solution text visible. Question 18(3) is circled but has no answer. Question 19(2) has crossed-out work which is omitted.\",\n  \"questions\": [\n    {\n      \"qno\": \"18\",\n      \"question_markdown\": \"18. 已知 $a>0$，$b>0$。\\n(1) 若 $a-b=2$，求证：$a+\\\\frac{4}{b+1}\\\\ge 5$；\\n(2) 若 $a+b=2$，不等式 $\\\\frac{4}{a+2}+\\\\frac{m}{b}\\\\ge 4(m>0)$ 恒成立，求 $m$ 的取值范围；\\n(3) 若 $c>0$，求 $\\\\frac{\\\\sqrt{ab}+2\\\\sqrt{ac}-2a}{4a+b+2c}$ 的最大值。\",\n      \"handwritten_answer\": {\n        \"text\": \"(2) $0<m\\\\le 4$\",\n        \"answer_parts\": [\n          {\n            \"label\": \"(1)\",\n            \"transcription\": \"\",\n            \"final_answer\": \"\",\n            \"status\": \"no_answer\"\n          },\n          {\n            \"label\": \"(2)\",\n            \"transcription\": \"$0<m\\\\le 4$\",\n            \"final_answer\": \"$0<m\\\\le 4$\",\n            \"status\": \"ok\"\n          },\n          {\n            \"label\": \"(3)\",\n            \"transcription\": \"\",\n            \"final_answer\": \"\",\n            \"status\": \"no_answer\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"partial\",\n        \"evidence_note\": \"Only part (2) has a visible answer. Part (1) has a checkmark. Part (3) is circled but empty.\"\n      },\n      \"source_context_ids\": [\n        \"C001\"\n      ]\n    },\n    {\n      \"qno\": \"19\",\n      \"question_markdown\": \"19. 已知二次函数 $y=ax^2-bx+3$。\\n(1) 若不等式 $y>0$ 的解集为 $\\\\left\\\\{x\\\\mid -\\\\frac{1}{3}<x<1\\\\right\\\\}$，求 $a$ 和 $b$ 的值；\\n(2) 若 $a>0,b=3a+1$。\\n(i) 解关于 $x$ 的不等式 $y\\\\le 0$；\\n(ii) 若对任意的 $a\\\\in[1,2]$，$y>0$ 恒成立，求 $x$ 的取值范围。\",\n      \"handwritten_answer\": {\n        \"text\": \"(1) $-9,-6$\\n(i) $0<a\\\\le \\\\frac{1}{3}$，$3\\\\le x\\\\le \\\\frac{1}{a}$；$a\\\\ge \\\\frac{1}{3}$，$\\\\frac{1}{a}\\\\le x\\\\le 3$\\n(ii) $(-\\\\infty,\\\\frac{1}{6})\\\\cup(3,+\\\\infty)$\",\n        \"answer_parts\": [\n          {\n            \"label\": \"(1)\",\n            \"transcription\": \"$-9,-6$\",\n            \"final_answer\": \"$-9,-6$\",\n            \"status\": \"ok\"\n          },\n          {\n            \"label\": \"(i)\",\n            \"transcription\": \"$0<a\\\\le \\\\frac{1}{3}$，$3\\\\le x\\\\le \\\\frac{1}{a}$；$a\\\\ge \\\\frac{1}{3}$，$\\\\frac{1}{a}\\\\le x\\\\le 3$\",\n            \"final_answer\": \"$0<a\\\\le \\\\frac{1}{3}$，$3\\\\le x\\\\le \\\\frac{1}{a}$；$a\\\\ge \\\\frac{1}{3}$，$\\\\frac{1}{a}\\\\le x\\\\le 3$\",\n            \"status\": \"ok\"\n          },\n          {\n            \"label\": \"(ii)\",\n            \"transcription\": \"$(-\\\\infty,\\\\frac{1}{6})\\\\cup(3,+\\\\infty)$\",\n            \"final_answer\": \"$(-\\\\infty,\\\\frac{1}{6})\\\\cup(3,+\\\\infty)$\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [\n          {\n            \"text\": \"$\\\\frac{1}{6}$\",\n            \"alternatives\": [\n              \"$\\\\frac{1}{2}$\"\n            ],\n            \"location\": \"Question 19(ii) answer interval\"\n          }\n        ],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Crossed out work near (2) is omitted. The denominator in (ii) looks like 6 but could be a poorly written 2.\"\n      },\n      \"source_context_ids\": [\n        \"C002\"\n      ]\n    }\n  ]\n}\n```"
+}

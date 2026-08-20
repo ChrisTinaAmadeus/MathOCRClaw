@@ -1,0 +1,31 @@
+{
+  "schema_version": 3,
+  "response_format": "benchmark_markdown",
+  "prompt": {
+    "version": "extract_v2",
+    "path": "benchmark/prompts/extract_v2.txt",
+    "sha1": "3262af1c467eaec9306252fad78aaa2bca395617"
+  },
+  "page_markdown": "15. (本小题满分 13 分) 已知集合 $A=\\left\\{x\\mid \\frac{2-x}{x+2}>0\\right\\}$，$B=\\{x\\mid |x-1|>2\\}$，$C=\\{x\\mid m-1<x<2m+1\\}$。\n(1) 求 $A\\cap B$，$(\\complement_R B)\\cup A$；\n(2) 若 $A\\cap C=C$，求实数 $m$ 的取值范围。\n\n### 手写答案\n\n解：$A=\\left\\{x\\mid \\frac{2-x}{x+2}>0\\right\\}$\n$\\therefore A=\\{x\\mid -2<x<2\\}$\n$B=\\{x\\mid |x-1|>2\\}$\n$\\therefore B=\\{x\\mid x<-1 \\text{或} x>3\\}$\n$\\therefore A\\cap B=\\{x\\mid -2<x<-1\\}$\n$\\complement_R B=\\{x\\mid -1\\le x\\le 3\\}$\n$(\\complement_R B)\\cup A=\\{x\\mid -2<x\\le 3\\}$\n\n(2) $\\because A\\cap C=C$\n$\\therefore C\\subseteq A$\n当 $C$ 为空集时，$m-1\\ge 2m+1 \\Rightarrow m\\le -2$。\n若 $C$ 不为空集时 $\\begin{cases} m-1<2m+1 \\\\ m-1\\ge -2 \\\\ 2m+1\\le 2 \\end{cases} \\Rightarrow \\begin{cases} m>-2 \\\\ m\\ge -1 \\\\ m\\le \\frac{1}{2} \\end{cases}$\n即 $-1\\le m<\\frac{1}{2}$\n综上，$m$ 的取值范围为 $m\\le -2$ 或 $-1\\le m<\\frac{1}{2}$。\n\n16. (本小题满分 15 分) 已知 $a\\in \\mathbf{R}$，$p: \\forall x\\in \\{x\\mid 0\\le x\\le 1\\}, a\\le x^2+1$；$q: \\exists x_0\\in \\mathbf{R}, x_0^2+2ax_0-(2a-3)=0$。\n(1) 若 $p$ 是真命题，求 $a$ 的最大值；\n(2) 若 $p$ 为假命题且 $q$ 为真命题，求 $a$ 的取值范围。\n\n### 手写答案\n\n解：(1) $\\because p$ 为真命题\n$\\therefore$ 当 $x=1$ 时 $x^2+1$ 最大，此时 $x^2+1=2$\n$\\therefore$ 有 $a\\le 2$\n即 $a_{\\max}=2$\n\n(2) $\\because p$ 为假命题\n$\\therefore \\exists x\\in \\{x\\mid 0\\le x\\le 1\\}, a>x^2+1$\n$\\therefore a>(x^2+1)_{\\max}$\n$\\therefore a>2$\n$\\because q$ 为真命题\n$\\therefore$ 存在 $x_0$ 使 $x_0^2+2ax_0-(2a-3)=0$\n$\\Delta = 4a^2+4(2a-3)\\ge 0$\n即 $4a^2+8a-12\\ge 0$\n解得 $a<-3$ 或 $a>1$\n综上 $a$ 的取值范围为 $a\\le -3$ 或 $a>2$\n\n17. (本小题满分 15 分) (1) 已知 $0<x<2$，$0<y<3$，求 $2x-y$ 的取值范围；\n(2) 已知 $x>3$，求 $y=2x+\\frac{4}{2x-6}$ 的最小值；\n(3) 若 $0<x<4$，求 $y=x(8-2x)$ 的最大值。\n\n### 手写答案\n\n解：(1) $\\because 0<x<2$\n$\\therefore 0<2x<4$\n$\\because 0<y<3$\n$\\therefore -3<-y<0$\n$\\therefore -3<2x-y<4$\n\n(2) $\\because x>3$\n$\\therefore x-3>0$\n$\\therefore 2x-6>0$\n$2x+\\frac{4}{2x-6} = 2x-6+\\frac{4}{2x-6}+6$\n$\\ge 2\\sqrt{(2x-6)\\cdot \\frac{4}{2x-6}}+6 = 10$\n当且仅当 $2x-6=\\frac{4}{2x-6}$ 时，等号可取\n$\\therefore \\left(2x+\\frac{4}{2x-6}\\right)_{\\min}=10$\n\n(3) $0<x<4$\n$\\therefore 4-x>0$\n$\\therefore 8-2x>0$\n$x(8-2x) = \\frac{1}{2}\\cdot 2x(8-2x) \\le \\frac{1}{2}\\left(\\frac{2x+8-2x}{2}\\right)^2 = 8$\n$\\therefore x(8-2x)\\le 8$\n$\\therefore x(8-2x)_{\\max}=8$",
+  "questions": [
+    {
+      "qno": "15",
+      "question_text": "15. (本小题满分 13 分) 已知集合 $A=\\left\\{x\\mid \\frac{2-x}{x+2}>0\\right\\}$，$B=\\{x\\mid |x-1|>2\\}$，$C=\\{x\\mid m-1<x<2m+1\\}$。\n(1) 求 $A\\cap B$，$(\\complement_R B)\\cup A$；\n(2) 若 $A\\cap C=C$，求实数 $m$ 的取值范围。",
+      "student_answer": "解：$A=\\left\\{x\\mid \\frac{2-x}{x+2}>0\\right\\}$\n$\\therefore A=\\{x\\mid -2<x<2\\}$\n$B=\\{x\\mid |x-1|>2\\}$\n$\\therefore B=\\{x\\mid x<-1 \\text{或} x>3\\}$\n$\\therefore A\\cap B=\\{x\\mid -2<x<-1\\}$\n$\\complement_R B=\\{x\\mid -1\\le x\\le 3\\}$\n$(\\complement_R B)\\cup A=\\{x\\mid -2<x\\le 3\\}$\n\n(2) $\\because A\\cap C=C$\n$\\therefore C\\subseteq A$\n当 $C$ 为空集时，$m-1\\ge 2m+1 \\Rightarrow m\\le -2$。\n若 $C$ 不为空集时 $\\begin{cases} m-1<2m+1 \\\\ m-1\\ge -2 \\\\ 2m+1\\le 2 \\end{cases} \\Rightarrow \\begin{cases} m>-2 \\\\ m\\ge -1 \\\\ m\\le \\frac{1}{2} \\end{cases}$\n即 $-1\\le m<\\frac{1}{2}$\n综上，$m$ 的取值范围为 $m\\le -2$ 或 $-1\\le m<\\frac{1}{2}$。",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "16",
+      "question_text": "16. (本小题满分 15 分) 已知 $a\\in \\mathbf{R}$，$p: \\forall x\\in \\{x\\mid 0\\le x\\le 1\\}, a\\le x^2+1$；$q: \\exists x_0\\in \\mathbf{R}, x_0^2+2ax_0-(2a-3)=0$。\n(1) 若 $p$ 是真命题，求 $a$ 的最大值；\n(2) 若 $p$ 为假命题且 $q$ 为真命题，求 $a$ 的取值范围。",
+      "student_answer": "解：(1) $\\because p$ 为真命题\n$\\therefore$ 当 $x=1$ 时 $x^2+1$ 最大，此时 $x^2+1=2$\n$\\therefore$ 有 $a\\le 2$\n即 $a_{\\max}=2$\n\n(2) $\\because p$ 为假命题\n$\\therefore \\exists x\\in \\{x\\mid 0\\le x\\le 1\\}, a>x^2+1$\n$\\therefore a>(x^2+1)_{\\max}$\n$\\therefore a>2$\n$\\because q$ 为真命题\n$\\therefore$ 存在 $x_0$ 使 $x_0^2+2ax_0-(2a-3)=0$\n$\\Delta = 4a^2+4(2a-3)\\ge 0$\n即 $4a^2+8a-12\\ge 0$\n解得 $a<-3$ 或 $a>1$\n综上 $a$ 的取值范围为 $a\\le -3$ 或 $a>2$",
+      "answer_status": "ok"
+    },
+    {
+      "qno": "17",
+      "question_text": "17. (本小题满分 15 分) (1) 已知 $0<x<2$，$0<y<3$，求 $2x-y$ 的取值范围；\n(2) 已知 $x>3$，求 $y=2x+\\frac{4}{2x-6}$ 的最小值；\n(3) 若 $0<x<4$，求 $y=x(8-2x)$ 的最大值。",
+      "student_answer": "解：(1) $\\because 0<x<2$\n$\\therefore 0<2x<4$\n$\\because 0<y<3$\n$\\therefore -3<-y<0$\n$\\therefore -3<2x-y<4$\n\n(2) $\\because x>3$\n$\\therefore x-3>0$\n$\\therefore 2x-6>0$\n$2x+\\frac{4}{2x-6} = 2x-6+\\frac{4}{2x-6}+6$\n$\\ge 2\\sqrt{(2x-6)\\cdot \\frac{4}{2x-6}}+6 = 10$\n当且仅当 $2x-6=\\frac{4}{2x-6}$ 时，等号可取\n$\\therefore \\left(2x+\\frac{4}{2x-6}\\right)_{\\min}=10$\n\n(3) $0<x<4$\n$\\therefore 4-x>0$\n$\\therefore 8-2x>0$\n$x(8-2x) = \\frac{1}{2}\\cdot 2x(8-2x) \\le \\frac{1}{2}\\left(\\frac{2x+8-2x}{2}\\right)^2 = 8$\n$\\therefore x(8-2x)\\le 8$\n$\\therefore x(8-2x)_{\\max}=8$",
+      "answer_status": "ok"
+    }
+  ],
+  "page_notes": ""
+}

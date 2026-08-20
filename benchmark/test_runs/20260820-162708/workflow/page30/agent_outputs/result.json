@@ -1,0 +1,93 @@
+{
+  "page": "page30",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page30/image/page30.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page30.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page30/preprocessed/page30.png",
+  "api_strategy": {
+    "call_count": 2,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "global context-aware correction and final result"
+  },
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 1,
+    "successful_request_count": 1,
+    "failed_request_count": 0,
+    "prompt_tokens": 6958,
+    "completion_tokens": 3514,
+    "total_tokens": 10472,
+    "latency_s": 65.776523,
+    "passes": {
+      "call_1": [],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 65.776523,
+          "prompt_tokens": 6958,
+          "completion_tokens": 3514,
+          "total_tokens": 10472,
+          "request_id": "chatcmpl-69f61806-fcab-9215-ad22-bce665237474"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 1,
+    "answers_with_transcription": 1,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 19,
+      "question_markdown": "19. 已知圆 $O: x^2 + y^2 = 9$ 与 $x$ 轴的正半轴交于点 $P$，以 $P$ 为圆心，半径为 $r$ 的圆与圆 $O$ 相交于 $M, N$ 两点。\n(1) 过点 $A(3, 1)$ 的直线与圆 $O$ 相切，求切线方程；\n(2) $D$ 为圆 $O$ 上的动点（异于点 $P$），若线段 $PD$ 上有一点 $E$，满足 $\\overrightarrow{PE} = 2\\overrightarrow{ED}$，求点 $E$ 的轨迹方程；\n(3) 若 $Q$ 是圆 $O$ 上任意一点（不与 $M, N$ 重合），直线 $QM, QN$ 分别与 $x$ 轴交于点 $K$ 和 $T$，则 $|OK| \\cdot |OT|$ 是否为定值？若是，求出该定值；若不是，请说明理由。",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page30/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(3). 设 $M(x_0, y_0), Q(x_1, y_1), (y_1 \\neq \\pm y_0)$.\n$N(x_0, -y_0)$.\n$x_0^2 + y_0^2 = 9, x_1^2 + y_1^2 = 9$.\n$l_{QM}: y - y_1 = \\frac{y_0 - y_1}{x_0 - x_1}(x - x_1)$\n$l_{QN}: y - y_1 = \\frac{-y_0 - y_1}{x_0 - x_1}(x - x_1)$.\n分别令 $y=0$. 则 $x_K = \\frac{x_1 y_0 - x_0 y_1}{y_0 - y_1}$.\n$x_T = \\frac{-x_1 y_0 + x_0 y_1}{y_0 + y_1}$.\n$\\therefore |OK| \\cdot |OT| = |x_K \\cdot x_T|$\n$= \\left| \\frac{x_1^2 y_0^2 - x_0^2 y_1^2}{y_0^2 - y_1^2} \\right|$\n$= \\left| \\frac{(9-y_1^2)y_0^2 - (9-y_0^2)y_1^2}{y_0^2 - y_1^2} \\right|$\n$= 9$.",
+        "answer_parts": [
+          {
+            "label": "(3)",
+            "transcription": "设 $M(x_0, y_0), Q(x_1, y_1), (y_1 \\neq \\pm y_0)$.\n$N(x_0, -y_0)$.\n$x_0^2 + y_0^2 = 9, x_1^2 + y_1^2 = 9$.\n$l_{QM}: y - y_1 = \\frac{y_0 - y_1}{x_0 - x_1}(x - x_1)$\n$l_{QN}: y - y_1 = \\frac{-y_0 - y_1}{x_0 - x_1}(x - x_1)$.\n分别令 $y=0$. 则 $x_K = \\frac{x_1 y_0 - x_0 y_1}{y_0 - y_1}$.\n$x_T = \\frac{-x_1 y_0 + x_0 y_1}{y_0 + y_1}$.\n$\\therefore |OK| \\cdot |OT| = |x_K \\cdot x_T|$\n$= \\left| \\frac{x_1^2 y_0^2 - x_0^2 y_1^2}{y_0^2 - y_1^2} \\right|$\n$= \\left| \\frac{(9-y_1^2)y_0^2 - (9-y_0^2)y_1^2}{y_0^2 - y_1^2} \\right|$\n$= 9$.",
+            "final_answer": "9",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwriting is clear and legible, solving part (3) completely.",
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page30/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "Page contains question 19 with handwritten solution for part (3) only.",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page30/image/page30.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page30/preprocessed/page30.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page30/api_markdown/page30.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page30/api_markdown/page30.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page30/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page30/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page30/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page30/code_outputs/match/viz/page30_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page30/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page30/agent_outputs/result.json",
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page30/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page30/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page30/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page30/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page30/code_outputs/match/viz/page30_handwriting_overlay.png"
+  }
+}

@@ -1,6 +1,5 @@
 .conda/
 .env.local
-workflow/
 input/
 __pycache__/
 *.pyc
@@ -38,3 +37,6 @@ Thumbs.db
 
 benchwork/
 benchmark/runs/
+image/
+preprocessed/
+code_outputs/

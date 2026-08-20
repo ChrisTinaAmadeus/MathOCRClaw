@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_second_pass",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page06/api_markdown/page06.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260820-162708/workflow/page06/code_outputs/match/question_contexts.json",
+  "page_notes": "Page contains 8 multiple choice questions. Handwriting is generally clear, with some scratch work and crossed-out options.",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 12814,
+    "completion_tokens": 8437,
+    "total_tokens": 21251,
+    "latency_s": 155.623661,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 65.219587,
+          "prompt_tokens": 2858,
+          "completion_tokens": 3550,
+          "total_tokens": 6408,
+          "request_id": "chatcmpl-2e4591c4-99b2-915a-9f81-d4ad3f89c3d5"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 90.404074,
+          "prompt_tokens": 9956,
+          "completion_tokens": 4887,
+          "total_tokens": 14843,
+          "request_id": "chatcmpl-6e613451-541a-9d77-9436-bbdc64e9f64d"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"page_notes\": \"Page contains 8 multiple choice questions. Handwriting is generally clear, with some scratch work and crossed-out options.\",\n  \"questions\": [\n    {\n      \"qno\": \"1\",\n      \"question_markdown\": \"1. 下列关系：①$\\\\frac{1}{2} \\\\in \\\\mathbf{R}$；②$|-3| \\\\notin \\\\mathbf{N}$；$-\\\\sqrt{3} \\\\notin \\\\mathbf{Q}$；④$0 \\\\notin \\\\mathbf{N}$；⑤$\\\\varnothing \\\\subseteq \\\\{0\\\\}$，正确的个数为（ ）。\\nA. 5\\nB. 4\\nC. 3\\nD. 2\",\n      \"handwritten_answer\": {\n        \"text\": \"D\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"D\",\n            \"final_answer\": \"D\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Student wrote 'D' at the end of the question line. Checkmarks and crosses are marked on the items.\"\n      },\n      \"source_context_ids\": [\n        \"C001\"\n      ]\n    },\n    {\n      \"qno\": \"2\",\n      \"question_markdown\": \"2. 命题“$\\\\exists x \\\\in \\\\mathbf{R}, x^2-3x+3<0$”的否定是（ ）。\\nA. $\\\\forall x \\\\in \\\\mathbf{R}, x^2-3x+3>0$\\nB. $\\\\forall x \\\\in \\\\mathbf{R}, x^2-3x+3 \\\\ge 0$\\nC. $\\\\exists x \\\\in \\\\mathbf{R}, x^2-3x+3>0$\\nD. $\\\\exists x \\\\in \\\\mathbf{R}, x^2-3x+3 \\\\ge 0$\",\n      \"handwritten_answer\": {\n        \"text\": \"B $\\\\forall x \\\\in \\\\mathbf{R}, x^2-3x+3 \\\\ge 0$\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"B $\\\\forall x \\\\in \\\\mathbf{R}, x^2-3x+3 \\\\ge 0$\",\n            \"final_answer\": \"B\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Student wrote 'B' in the parenthesis and copied the expression next to it. A crossed-out diagram is present below.\"\n      },\n      \"source_context_ids\": [\n        \"C002\"\n      ]\n    },\n    {\n      \"qno\": \"3\",\n      \"question_markdown\": \"3. 设集合 $A=\\\\{x|x \\\\ge 2\\\\}$，$B=\\\\{x|1 \\\\le x \\\\le 4\\\\}$，则 $A \\\\cup B=$（ ）。\\nA. $[1, +\\\\infty)$\\nB. $[1, 2)$\\nC. $[2, 4]$\\nD. $(-\\\\infty, 4]$\",\n      \"handwritten_answer\": {\n        \"text\": \"A\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"A\",\n            \"final_answer\": \"A\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Student wrote 'A' in the parenthesis.\"\n      },\n      \"source_context_ids\": [\n        \"C003\"\n      ]\n    },\n    {\n      \"qno\": \"4\",\n      \"question_markdown\": \"4. 设 $a, b \\\\in \\\\mathbf{R}$，则“$|a|>b$”是“$a>b$”的（ ）。\\nA. 充分不必要条件\\nB. 必要不充分条件\\nC. 充要条件\\nD. 既不充分也不必要条件\",\n      \"handwritten_answer\": {\n        \"text\": \"B $|a|>b$ $|-2|>2$ $-2<2$ $|a|$\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"B $|a|>b$ $|-2|>2$ $-2<2$ $|a|$\",\n            \"final_answer\": \"B\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Student crossed out A, wrote B, and added scratch work testing values.\"\n      },\n      \"source_context_ids\": [\n        \"C004\"\n      ]\n    },\n    {\n      \"qno\": \"5\",\n      \"question_markdown\": \"5. 集合 $M=\\\\{2, 3, 4\\\\}$，$N=\\\\{3, 6\\\\}$，定义 $M*N=\\\\{(a, b)|a \\\\in M, b \\\\in N\\\\}$，则 $M*N$ 的非空真子集的个数为（ ）。\\nA. 63\\nB. 31\\nC. 62\\nD. 30\",\n      \"handwritten_answer\": {\n        \"text\": \"D $2^5-2$\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"D $2^5-2$\",\n            \"final_answer\": \"D\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Student wrote 'D' on the right and the calculation '$2^5-2$' below it.\"\n      },\n      \"source_context_ids\": [\n        \"C005\"\n      ]\n    },\n    {\n      \"qno\": \"6\",\n      \"question_markdown\": \"6. 已知 $x<0, 0<y<1$，则（ ）。\\nA. $xy^2 < xy < x$\\nB. $xy < x < xy^2$\\nC. $xy^2 < x < xy$\\nD. $x < xy < xy^2$\",\n      \"handwritten_answer\": {\n        \"text\": \"D\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"D\",\n            \"final_answer\": \"D\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Student wrote 'D' in the parenthesis and put a check mark next to option D. Option A is crossed out.\"\n      },\n      \"source_context_ids\": [\n        \"C006\"\n      ]\n    },\n    {\n      \"qno\": \"7\",\n      \"question_markdown\": \"7. 某校为拓展学生在音乐、体育、美术方面的能力，开设了相应的兴趣班。某班共有 34 名学生参加了兴趣班，有 17 人参加音乐班，有 20 人参加体育班，有 12 人参加美术班，同时参加音乐班与体育班的有 6 人，同时参加音乐班与美术班的有 4 人。已知没有人同时参加三个班，则仅参加一个兴趣班的人数为（ ）。\\nA. 19\\nB. 20\\nC. 21\\nD. 22\",\n      \"handwritten_answer\": {\n        \"text\": \"A\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"A\",\n            \"final_answer\": \"A\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Student wrote 'A' in the parenthesis.\"\n      },\n      \"source_context_ids\": [\n        \"C007\"\n      ]\n    },\n    {\n      \"qno\": \"8\",\n      \"question_markdown\": \"8. 已知关于 $x$ 的方程 $x^2+2(m-2)x+m^2-3m+3=0$ 有两个不相等的实数根 $x_1, x_2$，则 $\\\\frac{mx_1}{x_1-1} + \\\\frac{mx_2}{x_2-1} - \\\\frac{2}{x_1+x_2-2}$ 的最大值为（ ）。\\nA. $2\\\\sqrt{2}$\\nB. 2\\nC. $-2\\\\sqrt{2}$\\nD. -4\",\n      \"handwritten_answer\": {\n        \"text\": \"D\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"D\",\n            \"final_answer\": \"D\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Student wrote 'D' largely over the options. Options A and B appear crossed out. Key terms in the question are circled/underlined.\"\n      },\n      \"source_context_ids\": [\n        \"C008\"\n      ]\n    }\n  ]\n}\n```"
+}
