@@ -1,0 +1,16 @@
+workflow_test/report.json
+  h_20fd666db1d46f 1-5886
+workflow_test/report.md
+  h_20fd666db1d46f 1-93
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "d4ff6e44161cf1479c2b050df01a588e5b370a9b",
+  "prompts": {},
+  "humans": {
+    "h_20fd666db1d46f": {
+      "author": "puppeteer <19517600502@163.com>"
+    }
+  }
+}
