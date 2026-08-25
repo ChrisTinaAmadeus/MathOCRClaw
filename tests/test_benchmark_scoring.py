@@ -10,6 +10,10 @@ from benchmark.scoring import (
     score_files,
     score_page,
 )
+from benchmark.run_benchmark import (
+    _workflow_args,
+    build_argparser as build_benchmark_argparser,
+)
 
 
 GOLD = """1. 已知 $x=1$，求 $x+1$。
@@ -31,6 +35,16 @@ B
 
 
 class BenchmarkScoringTests(unittest.TestCase):
+    def test_benchmark_passes_extended_timeouts_to_both_api_calls(self):
+        cli = build_benchmark_argparser().parse_args(
+            ["--baseline-timeout", "480", "--review-timeout", "600"]
+        )
+
+        workflow_args = _workflow_args(cli, Path("page.png"), Path("workflow"))
+
+        self.assertEqual(workflow_args.baseline_timeout, 480)
+        self.assertEqual(workflow_args.review_timeout, 600)
+
     def test_result_json_question_number_is_not_scored_as_stem_text(self):
         candidate = candidate_from_result(
             {
@@ -74,6 +88,107 @@ class BenchmarkScoringTests(unittest.TestCase):
         self.assertEqual(candidate[0]["qno"], "1")
         self.assertIn("Markdown stem", candidate[0]["stem"])
         self.assertEqual(candidate[0]["answer"], "$x=2$")
+
+    def test_section_heading_does_not_pollute_previous_answer_or_question_type(self):
+        parsed = parse_markdown(
+            "8. 选择正确答案\nA. 1\nB. 2\nC. 3\nD. 4\n\n"
+            "### 手写答案\n\nA\n\n"
+            "二、多项选择题：本题共 1 小题。\n\n"
+            "9. 选择正确答案\nA. 甲\nB. 乙\nC. 丙\nD. 丁\n\n"
+            "### 手写答案\n\nAB"
+        )
+
+        self.assertEqual(parsed[0]["answer"], "A")
+        result = score_page(parsed, parsed)
+        self.assertEqual(result["details"][0]["answer_type"], "choice")
+        self.assertEqual(result["score"], 100.0)
+
+    def test_result_uses_structured_final_answers_instead_of_scratch(self):
+        candidate = candidate_from_result(
+            {
+                "questions": [
+                    {
+                        "qno": 3,
+                        "question_type": "choice",
+                        "question_markdown": (
+                            "3. 选择正确答案\nA. 1\nB. 2\nC. 3\nD. 4"
+                        ),
+                        "handwritten_answer": {
+                            "text": "$\\vec a\\cdot\\vec b=1$\nA",
+                            "answer_parts": [
+                                {
+                                    "label": "overall",
+                                    "transcription": "$\\vec a\\cdot\\vec b=1$\nA",
+                                    "final_answer": "A",
+                                    "status": "ok",
+                                }
+                            ],
+                            "status": "ok",
+                        },
+                    },
+                    {
+                        "qno": 12,
+                        "question_type": "fill",
+                        "question_markdown": "12. 结果为 ______",
+                        "handwritten_answer": {
+                            "text": "$a^2=4$\n4",
+                            "answer_parts": [
+                                {
+                                    "label": "overall",
+                                    "transcription": "$a^2=4$\n4",
+                                    "final_answer": "4",
+                                    "status": "ok",
+                                }
+                            ],
+                            "status": "ok",
+                        },
+                    },
+                ]
+            }
+        )
+
+        self.assertEqual(candidate[0]["answer"], "A")
+        self.assertEqual(candidate[1]["answer"], "$4$")
+
+    def test_choice_type_is_determined_from_stem_even_when_answer_has_work(self):
+        gold = parse_markdown(
+            "1. 选择正确答案\nA. 甲\nB. 乙\nC. 丙\nD. 丁\n\n"
+            "### 手写答案\n\nB"
+        )
+        candidate = [
+            {
+                **gold[0],
+                "answer": "B\n$B(n)=\\lg\\frac{n+1}{n}$",
+            }
+        ]
+
+        result = score_page(gold, candidate)
+
+        self.assertEqual(result["details"][0]["answer_type"], "choice")
+        self.assertEqual(result["details"][0]["answer_score"], 1.0)
+
+    def test_result_keeps_all_structured_fill_final_answers(self):
+        candidate = candidate_from_result(
+            {
+                "questions": [
+                    {
+                        "qno": 12,
+                        "question_type": "fill",
+                        "question_markdown": "12. 填空：(1) _____；(2) _____。",
+                        "handwritten_answer": {
+                            "text": "(1) $1+1=2$\n(2) $1+2=3$",
+                            "answer_parts": [
+                                {"label": "(1)", "final_answer": "2", "status": "ok"},
+                                {"label": "(2)", "final_answer": "3", "status": "ok"},
+                            ],
+                            "status": "ok",
+                        },
+                    }
+                ]
+            }
+        )
+
+        self.assertEqual(candidate[0]["answer"], "(1) $2$\n(2) $3$")
 
     def test_omission_and_hallucination_reduce_score(self):
         gold = parse_markdown(GOLD)

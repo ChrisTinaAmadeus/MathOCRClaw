@@ -62,6 +62,8 @@ def _workflow_args(cli: argparse.Namespace, image: Path, page_work_root: Path) -
         str(cli.baseline_max_tokens),
         "--review-max-tokens",
         str(cli.review_max_tokens),
+        "--baseline-timeout",
+        str(cli.baseline_timeout),
         "--review-timeout",
         str(cli.review_timeout),
         "--answer-detail-views",
@@ -135,6 +137,8 @@ def _render_report(report: Dict[str, Any]) -> str:
         "",
         f"- Run ID: `{report['run_id']}`",
         f"- Model: `{report['model']}`",
+        f"- API1 timeout: {report['timeouts']['baseline_s']}s",
+        f"- API2 timeout: {report['timeouts']['review_s']}s",
         f"- Pages: {summary['completed_pages']}/{summary['requested_pages']}",
         f"- Baseline (API1): **{summary['baseline']['score'] or 0:.2f}**",
         f"- Workflow (API2): **{summary['workflow']['score'] or 0:.2f}**",
@@ -264,6 +268,10 @@ def run(cli: argparse.Namespace) -> Dict[str, Any]:
         "model": cli.model,
         "dataset_root": str(dataset_root),
         "work_root": str(work_root),
+        "timeouts": {
+            "baseline_s": cli.baseline_timeout,
+            "review_s": cli.review_timeout,
+        },
         "evaluator": "mathocrclaw_deterministic_v3_local",
         "summary": {
             "requested_pages": len(pages),
@@ -307,7 +315,18 @@ def build_argparser() -> argparse.ArgumentParser:
     parser.add_argument("--model", default=default_model)
     parser.add_argument("--baseline-max-tokens", type=int, default=5000)
     parser.add_argument("--review-max-tokens", type=int, default=7000)
-    parser.add_argument("--review-timeout", type=int, default=240)
+    parser.add_argument(
+        "--baseline-timeout",
+        type=int,
+        default=360,
+        help="API1 upload/read timeout in seconds",
+    )
+    parser.add_argument(
+        "--review-timeout",
+        type=int,
+        default=360,
+        help="API2 upload/read timeout in seconds",
+    )
     parser.add_argument("--answer-detail-views", type=int, choices=(0, 1, 2), default=1)
     parser.add_argument("--input-price-per-million", type=float, default=0.0)
     parser.add_argument("--output-price-per-million", type=float, default=0.0)

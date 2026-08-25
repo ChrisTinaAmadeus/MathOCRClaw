@@ -23,6 +23,12 @@ from proofread.vlm_client import VLMClient
 
 
 class WorkflowOutputTests(unittest.TestCase):
+    def test_api_timeouts_default_to_six_minutes(self):
+        args = build_argparser().parse_args(["--image", "page.png"])
+
+        self.assertEqual(args.baseline_timeout, 360)
+        self.assertEqual(args.review_timeout, 360)
+
     def test_first_api_prompt_is_the_canonical_benchmark_prompt(self):
         self.assertEqual(
             BASELINE_PROMPT,
@@ -66,6 +72,19 @@ class WorkflowOutputTests(unittest.TestCase):
         self.assertEqual([question["qno"] for question in questions], ["1", "2"])
         self.assertEqual(questions[0]["student_answer"], "$x=2$")
         self.assertEqual(questions[1]["answer_status"], "no_answer")
+
+    def test_section_heading_is_preserved_without_polluting_previous_answer(self):
+        questions = _draft_questions_from_markdown(
+            "8. 单选题\nA. 1\nB. 2\n\n### 手写答案\n\nA\n\n"
+            "二、多项选择题：本题共 1 小题。\n\n"
+            "9. 多选题\nA. 甲\nB. 乙\n\n### 手写答案\n\nAB"
+        )
+
+        self.assertEqual(questions[0]["student_answer"], "A")
+        self.assertEqual(
+            questions[1]["section_heading_before"],
+            "二、多项选择题：本题共 1 小题。",
+        )
 
     def test_second_pass_questions_preserve_parts_and_context_links(self):
         contexts = [
@@ -112,6 +131,252 @@ class WorkflowOutputTests(unittest.TestCase):
         self.assertEqual(
             questions[0]["question_review"]["source_context_ids"],
             ["C001"],
+        )
+
+    def test_choice_and_fill_answers_drop_scratch_and_keep_only_final_answer(self):
+        contexts = [
+            {
+                "context_id": "C001",
+                "draft": {
+                    "qno": "3",
+                    "question_text": "3. 选择正确答案\nA. 1\nB. 2\nC. 3\nD. 4",
+                    "student_answer": "A",
+                    "question_type": "choice",
+                },
+            },
+            {
+                "context_id": "C002",
+                "draft": {
+                    "qno": "12",
+                    "question_text": "12. 计算结果为 ______",
+                    "student_answer": "$4$",
+                    "question_type": "fill",
+                },
+            },
+        ]
+        review = {
+            "questions": [
+                {
+                    "qno": "3",
+                    "question_type": "choice",
+                    "question_markdown": contexts[0]["draft"]["question_text"],
+                    "handwritten_answer": {
+                        "text": "$\\vec a\\cdot\\vec b=1$\nA",
+                        "answer_parts": [
+                            {
+                                "label": "overall",
+                                "transcription": "$\\vec a\\cdot\\vec b=1$\nA",
+                                "final_answer": "A",
+                                "status": "ok",
+                            }
+                        ],
+                        "status": "ok",
+                    },
+                },
+                {
+                    "qno": "12",
+                    "question_type": "fill",
+                    "question_markdown": contexts[1]["draft"]["question_text"],
+                    "handwritten_answer": {
+                        "text": "$a^2=4$\n4",
+                        "answer_parts": [
+                            {
+                                "label": "overall",
+                                "transcription": "$a^2=4$\n4",
+                                "final_answer": "4",
+                                "status": "ok",
+                            }
+                        ],
+                        "status": "ok",
+                    },
+                },
+            ]
+        }
+
+        questions = _normalize_final_questions(review, contexts)
+
+        self.assertEqual(questions[0]["handwritten_answer"]["text"], "A")
+        self.assertEqual(questions[1]["handwritten_answer"]["text"], "$4$")
+        self.assertIn(
+            "removed_choice_scratch_work",
+            questions[0]["question_review"]["lint_actions"],
+        )
+        self.assertIn(
+            "removed_fill_scratch_work",
+            questions[1]["question_review"]["lint_actions"],
+        )
+
+    def test_solution_parts_render_explicit_no_answer_markers(self):
+        contexts = [
+            {
+                "context_id": "C001",
+                "draft": {
+                    "qno": "18",
+                    "question_text": "18. (1) 证明；(2) 求值；(3) 求范围。",
+                    "student_answer": "(2) $x=1$",
+                    "question_type": "solution",
+                },
+            }
+        ]
+        review = {
+            "questions": [
+                {
+                    "qno": "18",
+                    "question_type": "solution",
+                    "question_markdown": contexts[0]["draft"]["question_text"],
+                    "handwritten_answer": {
+                        "answer_parts": [
+                            {"label": "(1)", "status": "no_answer"},
+                            {
+                                "label": "(2)",
+                                "transcription": "$x=1$",
+                                "final_answer": "$x=1$",
+                                "status": "ok",
+                            },
+                            {"label": "(3)", "status": "no_answer"},
+                        ],
+                        "status": "partial",
+                    },
+                }
+            ]
+        }
+
+        question = _normalize_final_questions(review, contexts)[0]
+        rendered = _render_result_markdown("page", [question])
+
+        self.assertIn("(1) _未识别到手写答案。_", rendered)
+        self.assertIn("(2) $x=1$", rendered)
+        self.assertIn("(3) _未识别到手写答案。_", rendered)
+
+    def test_multiple_fill_parts_keep_every_final_value(self):
+        contexts = [
+            {
+                "context_id": "C001",
+                "draft": {
+                    "qno": "12",
+                    "question_text": "12. 填空：(1) _____；(2) _____。",
+                    "student_answer": "(1) $2$\n(2) $3$",
+                    "question_type": "fill",
+                },
+            }
+        ]
+        review = {
+            "questions": [
+                {
+                    "qno": "12",
+                    "question_type": "fill",
+                    "question_markdown": contexts[0]["draft"]["question_text"],
+                    "handwritten_answer": {
+                        "text": "(1) $1+1=2$\n(2) $1+2=3$",
+                        "answer_parts": [
+                            {"label": "(1)", "final_answer": "2", "status": "ok"},
+                            {"label": "(2)", "final_answer": "3", "status": "ok"},
+                        ],
+                        "status": "ok",
+                    },
+                }
+            ]
+        }
+
+        question = _normalize_final_questions(review, contexts)[0]
+
+        self.assertEqual(question["handwritten_answer"]["text"], "(1) $2$\n(2) $3$")
+        self.assertEqual(
+            [part["final_answer"] for part in question["handwritten_answer"]["answer_parts"]],
+            ["$2$", "$3$"],
+        )
+
+    def test_missing_second_pass_question_is_restored_by_qno(self):
+        contexts = [
+            {
+                "context_id": "C001",
+                "draft": {
+                    "qno": "1",
+                    "question_text": "1. 第一题",
+                    "student_answer": "$x=1$",
+                    "answer_status": "ok",
+                    "question_type": "solution",
+                },
+            },
+            {
+                "context_id": "C002",
+                "draft": {
+                    "qno": "2",
+                    "question_text": "2. 第二题",
+                    "student_answer": "$y=2$",
+                    "answer_status": "ok",
+                    "question_type": "solution",
+                },
+            },
+        ]
+        review = {
+            "questions": [
+                {
+                    "qno": "2",
+                    "question_markdown": "2. 第二题（复核）",
+                    "handwritten_answer": {"text": "$y=2$", "status": "ok"},
+                }
+            ]
+        }
+
+        questions = _normalize_final_questions(review, contexts)
+
+        self.assertEqual([question["qno"] for question in questions], [1, 2])
+        self.assertEqual(questions[0]["handwritten_answer"]["text"], "$x=1$")
+        self.assertIn(
+            "restored_question_from_first_pass",
+            questions[0]["question_review"]["lint_actions"],
+        )
+        self.assertEqual(questions[1]["question_markdown"], "2. 第二题（复核）")
+
+    def test_question_guard_restores_unreadable_stem_and_deleted_enumerator(self):
+        contexts = [
+            {
+                "context_id": "C001",
+                "draft": {
+                    "qno": "16",
+                    "question_text": "16. [无法识别]",
+                    "student_answer": "$x=1$",
+                    "question_type": "solution",
+                },
+            },
+            {
+                "context_id": "C002",
+                "draft": {
+                    "qno": "6",
+                    "question_text": "6. 判断事件：①甲；②乙；③丙；④丁。\nA. 1\nB. 2",
+                    "student_answer": "B",
+                    "question_type": "choice",
+                },
+            },
+        ]
+        review = {
+            "questions": [
+                {
+                    "qno": "16",
+                    "question_markdown": "16.",
+                    "handwritten_answer": {"text": "$x=1$", "status": "ok"},
+                },
+                {
+                    "qno": "6",
+                    "question_markdown": "6. 判断事件：①甲；②乙；③丙；丁。\nA. 1\nB. 2",
+                    "handwritten_answer": {
+                        "answer_parts": [
+                            {"label": "overall", "final_answer": "B", "status": "ok"}
+                        ],
+                        "status": "ok",
+                    },
+                },
+            ]
+        }
+
+        questions = _normalize_final_questions(review, contexts)
+
+        self.assertEqual(questions[0]["question_markdown"], "16. [无法识别]")
+        self.assertIn("④丁", questions[1]["question_markdown"])
+        self.assertIn(
+            "rolled_back_deleted_question_structure",
+            questions[1]["question_review"]["lint_actions"],
         )
 
     def test_context_manifest_records_both_api_passes_and_final_answer(self):
@@ -273,7 +538,7 @@ class WorkflowOutputTests(unittest.TestCase):
         )
         self.assertEqual(
             result["questions"][0]["handwritten_answer"]["text"],
-            "x=2",
+            "$x=2$",
         )
         self.assertTrue(manifest["contexts"][0]["consumed_by_second_api"])
         first_messages = invoke_mock.call_args_list[0].args[0]

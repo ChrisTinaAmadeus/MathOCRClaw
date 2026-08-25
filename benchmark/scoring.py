@@ -16,6 +16,11 @@ FORMULA_RE = re.compile(r"\$\$(.+?)\$\$|(?<!\\)\$(.+?)(?<!\\)\$", re.S)
 SUBPART_RE = re.compile(r"(?:\(|（)(\d+)(?:\)|）)")
 OPTION_LINE_RE = re.compile(r"(?m)^\s*([A-D])[.．、]\s*")
 IMAGE_RE = re.compile(r"<\s*插图\s*>|!\[[^\]]*\]\([^)]*\)", re.I)
+SECTION_HEADING_RE = re.compile(
+    r"^\s*(?:[一二三四五六七八九十]+|[IVX]+)\s*[、.．]\s*"
+    r"(?:单项?选择题|多项?选择题|选择题|填空题|解答题|证明题|计算题|应用题)\b.*$",
+    re.I,
+)
 NO_ANSWER_MARKERS = {
     "",
     "[无法识别]",
@@ -106,6 +111,14 @@ def is_no_supported_answer(text: Any, status: Any = "") -> bool:
     }
 
 
+def _strip_section_headings(text: Any) -> str:
+    return "\n".join(
+        line
+        for line in str(text or "").splitlines()
+        if not SECTION_HEADING_RE.match(line.strip())
+    ).strip()
+
+
 def parse_markdown(markdown: str) -> List[Dict[str, Any]]:
     starts = list(QUESTION_START_RE.finditer(markdown or ""))
     questions: List[Dict[str, Any]] = []
@@ -115,7 +128,7 @@ def parse_markdown(markdown: str) -> List[Dict[str, Any]]:
         heading = ANSWER_HEADING_RE.search(block)
         if heading:
             stem = block[: heading.start()].strip()
-            answer = block[heading.end() :].strip()
+            answer = _strip_section_headings(block[heading.end() :])
         else:
             stem = block
             answer = ""
@@ -163,14 +176,67 @@ def candidate_from_result(payload: Dict[str, Any]) -> List[Dict[str, Any]]:
         stem = str(item.get("question_markdown") or "").strip()
         if qno:
             stem = re.sub(rf"^\s*{re.escape(qno)}[.．、]\s*", "", stem, count=1)
+        candidate = {
+            "qno": qno,
+            "order_index": index,
+            "stem": stem,
+            "answer": str(answer_obj.get("text") or "").strip(),
+            "status": str(answer_obj.get("status") or "").strip(),
+            "question_type": str(item.get("question_type") or "").strip(),
+        }
+        parts = [part for part in answer_obj.get("answer_parts") or [] if isinstance(part, dict)]
+        kind = _question_type(candidate)
+        final_answers = [
+            str(part.get("final_answer") or "").strip()
+            for part in parts
+            if str(part.get("final_answer") or "").strip()
+        ]
+        if kind == "choice" and final_answers:
+            candidate["answer"] = final_answers[-1]
+        elif kind == "fill" and parts:
+            rendered_parts: List[str] = []
+            for part in parts:
+                label = str(part.get("label") or "overall").strip()
+                part_status = str(part.get("status") or "").strip()
+                final_value = str(part.get("final_answer") or "").strip()
+                if part_status == "no_answer":
+                    final_value = "_未识别到手写答案。_"
+                elif final_value and not FORMULA_RE.fullmatch(final_value):
+                    final_value = f"${final_value.strip('$').strip()}$"
+                if not final_value:
+                    continue
+                if label != "overall":
+                    final_value = f"{label} {final_value}"
+                rendered_parts.append(final_value)
+            if rendered_parts:
+                candidate["answer"] = "\n".join(rendered_parts)
+        elif kind == "solution" and parts:
+            rendered_parts: List[str] = []
+            for part in parts:
+                label = str(part.get("label") or "overall").strip()
+                part_status = str(part.get("status") or "").strip()
+                content = str(
+                    part.get("transcription") or part.get("final_answer") or ""
+                ).strip()
+                if part_status == "no_answer":
+                    content = "_未识别到手写答案。_"
+                elif part_status == "unreadable" and not content:
+                    content = "[无法识别]"
+                if not content:
+                    continue
+                if label != "overall" and not re.match(
+                    rf"^\s*{re.escape(label)}(?:\s|$)", content
+                ):
+                    content = f"{label} {content}"
+                rendered_parts.append(content)
+            if rendered_parts:
+                candidate["answer"] = "\n".join(rendered_parts)
+            if parts and all(
+                str(part.get("status") or "") == "no_answer" for part in parts
+            ):
+                candidate["status"] = "no_answer"
         questions.append(
-            {
-                "qno": qno,
-                "order_index": index,
-                "stem": stem,
-                "answer": str(answer_obj.get("text") or "").strip(),
-                "status": str(answer_obj.get("status") or "").strip(),
-            }
+            candidate
         )
     return questions
 
@@ -331,23 +397,28 @@ def stem_score(gold: Dict[str, Any], candidate: Dict[str, Any]) -> float:
 
 def _question_type(question: Dict[str, Any]) -> str:
     stem = str(question.get("stem") or "")
-    answer = str(question.get("answer") or "")
-    if len(OPTION_LINE_RE.findall(stem)) >= 2 and re.fullmatch(
-        r"[\s,，、;；A-Da-d选答案为:：()（）]+", answer
-    ):
+    explicit = str(question.get("question_type") or "").strip().lower().replace("-", "_")
+    if len(OPTION_LINE_RE.findall(stem)) >= 2:
         return "choice"
-    if re.search(r"_{3,}|\\_\\_\\_|填空", stem):
+    if re.search(r"_{3,}|\\_\\_\\_|\\underline|填空|横线上|空白处", stem):
+        return "fill"
+    if explicit in {"choice", "multiple_choice", "multiple_choice_question"}:
+        return "choice"
+    if explicit in {"fill", "fill_blank", "fill_blank_question"}:
         return "fill"
     return "solution"
 
 
 def _option_set(text: Any) -> set[str]:
-    value = unicodedata.normalize("NFKC", str(text or "")).upper()
-    standalone = re.findall(r"(?<![A-Z])[A-D](?![A-Z])", value)
-    if standalone:
-        return set(standalone)
-    compact = re.sub(r"[^A-D]", "", value)
-    return set(compact) if len(compact) <= 4 else set()
+    value = unicodedata.normalize("NFKC", str(text or ""))
+    lines = [value.strip(), *[line.strip() for line in value.splitlines() if line.strip()]]
+    for line in lines:
+        compact = line.strip().strip("$`*_ ")
+        compact = re.sub(r"^(?:答案|选择|选|故选)\s*(?:为|是)?\s*[:：]?\s*", "", compact)
+        compact = compact.strip("()（）[]【】,，、;；:：.。 ")
+        if re.fullmatch(r"[A-Da-d](?:[\s,，、;；]*[A-Da-d])*", compact):
+            return set(re.sub(r"[^A-D]", "", compact.upper()))
+    return set()
 
 
 def _last_conclusion(text: Any) -> str:

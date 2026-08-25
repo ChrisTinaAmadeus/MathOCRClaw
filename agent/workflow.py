@@ -13,6 +13,7 @@ from typing import Any, Dict, List, Optional, Sequence
 from PIL import Image
 
 from agent.handwriting_regions import (
+    classify_question_type,
     draw_handwriting_overlay,
     save_handwriting_views,
     score_and_divide_question_frame,
@@ -96,21 +97,25 @@ BASELINE_PROMPT = BASELINE_PROMPT_PATH.read_text(encoding="utf-8").strip()
 FINAL_REVIEW_PROMPT = """You are the second and final OCR pass for an exam page.
 You receive the first-pass whole-page Markdown, the original normalized page image, locally detected layout metadata, and labeled per-question context images. Review the draft globally and return the final question/handwriting result.
 
+The first and second pass MUST follow exactly the same extraction standard in benchmark/prompts/extract_v2.txt. In particular: choice and fill-in questions contain only the final retained answer, never scratch work; solution/proof questions contain the complete retained formal solution process.
+
 Return JSON only:
 {
   "page_notes": "brief final note about unresolved page-level ambiguity",
   "questions": [
     {
       "qno": "visible question number, otherwise stable reading-order number",
+      "question_type": "choice|fill|solution",
+      "section_heading_before": "visible major section heading immediately before this question, otherwise empty",
       "question_markdown": "corrected printed question stem/options/formulas only",
       "handwritten_answer": {
-        "text": "complete faithful Markdown/LaTeX transcription of visible handwriting in reading order; empty if none",
+        "text": "choice/fill: final retained answer only; solution: complete retained formal solution; empty if none",
         "answer_parts": [
           {
             "label": "subquestion label such as (1), or overall",
-            "transcription": "all visible work belonging to this part",
+            "transcription": "choice/fill: final answer only; solution: complete retained formal work for this part",
             "final_answer": "visible final answer if identifiable, otherwise empty",
-            "status": "ok|partial|uncertain|unreadable"
+            "status": "ok|partial|no_answer|uncertain|unreadable"
           }
         ],
         "uncertain_fragments": [
@@ -134,6 +139,10 @@ Rules:
 - Treat detector boxes, scores, classes, and ordinal pairing as routing hints, not truth.
 - Use the full-page image to resolve cross-question ownership and the labeled context images for detail.
 - Do not solve, grade, or replace the student's work with a mathematically correct solution.
+- Determine question_type from the printed structure: two or more A-D option markers means choice; a printed blank/underline asking for a value means fill; proof, derivation and open response questions mean solution. Detector labels are only secondary evidence.
+- For choice questions, handwritten_answer.text, transcription and final_answer must contain only the final retained option letters. Omit all calculations, eliminations, diagram annotations and scratch work.
+- For fill questions, handwritten_answer.text, transcription and final_answer must contain only the final retained value/formula in standard LaTeX. Omit all calculations and scratch work.
+- For solution questions, preserve the complete retained formal solution and conclusion. For every printed subquestion with no supported answer, emit an answer_parts record with status=no_answer; do not silently drop that subquestion.
 - Preserve non-deleted intermediate work. If writing is clearly crossed out, erased,
   overwritten, struck through, or otherwise cancelled, omit it completely and keep
   only the final retained version.
@@ -143,7 +152,10 @@ Rules:
   content as an ambiguity candidate.
 - Printed question_markdown must not absorb handwriting; handwritten_answer must not silently summarize printed text.
 - question_markdown must begin at line start with `N. ` using the visible question
-  number. Exclude section titles, page headers, score summaries, and neighboring text.
+  number. A visible major section title must be returned only in section_heading_before,
+  never absorbed into a question or answer. Exclude page headers, score summaries, and neighboring text.
+- If the printed stem is not visible, preserve `N. [无法识别]`; never reduce it to a bare `N.`.
+- Preserve printed option labels, subquestion labels, circled enumerators such as ①-④, and `<插图>` unless the image clearly proves the first pass was wrong.
 - Every mathematical expression in question_markdown, handwritten_answer.text,
   transcriptions, and final answers must use standard LaTeX inside `$...$` or
   `$$...$$`; never replace LaTeX with Unicode/plain-text pseudo-formulas.
@@ -246,41 +258,102 @@ def _normalize_qno(value: Any, fallback: int) -> Any:
     return int(key) if key.isdigit() else (key or fallback)
 
 
-def _draft_questions(baseline: Dict[str, Any]) -> List[Dict[str, str]]:
-    questions: List[Dict[str, str]] = []
+def _draft_questions(baseline: Dict[str, Any]) -> List[Dict[str, Any]]:
+    page_markdown = str(baseline.get("page_markdown") or "")
+    if page_markdown.strip():
+        parsed = _draft_questions_from_markdown(page_markdown)
+        if parsed:
+            return parsed
+
+    questions: List[Dict[str, Any]] = []
     for question in baseline.get("questions") or []:
         if not isinstance(question, dict):
             continue
+        question_text = str(question.get("question_text") or "").strip()
         questions.append(
             {
                 "qno": str(question.get("qno") or "").strip(),
-                "question_text": str(question.get("question_text") or "").strip(),
+                "question_text": question_text,
                 "student_answer": str(question.get("student_answer") or "").strip(),
                 "answer_status": str(question.get("answer_status") or "uncertain").strip(),
+                "question_type": _canonical_question_type(
+                    "",
+                    question_text,
+                ),
+                "section_heading_before": "",
             }
         )
-    if questions:
-        return questions
-    return _draft_questions_from_markdown(str(baseline.get("page_markdown") or ""))
+    return questions
 
 
 _DRAFT_QUESTION_RE = re.compile(r"(?m)^\s*(\d{1,3})[.．、]\s*")
 _DRAFT_ANSWER_RE = re.compile(r"(?im)^\s*#{1,6}\s*手写答案\s*$")
+_SECTION_HEADING_RE = re.compile(
+    r"^\s*(?:[一二三四五六七八九十]+|[IVX]+)\s*[、.．]\s*"
+    r"(?:单项?选择题|多项?选择题|选择题|填空题|解答题|证明题|计算题|应用题)\b.*$",
+    re.I,
+)
+_OPTION_MARKER_RE = re.compile(r"(?m)^\s*([A-D])[.．、:：]\s*")
+_SUBPART_LABEL_RE = re.compile(r"(?:\(|（)(\d+)(?:\)|）)")
+_CIRCLED_ENUM_RE = re.compile(r"[①②③④⑤⑥⑦⑧⑨⑩]")
+_MATH_SPAN_RE = re.compile(r"\$\$(.+?)\$\$|(?<!\\)\$(.+?)(?<!\\)\$", re.S)
 
 
-def _draft_questions_from_markdown(markdown: str) -> List[Dict[str, str]]:
+def _canonical_question_type(value: Any, question_text: str = "") -> str:
+    raw = str(value or "").strip().lower().replace("-", "_")
+    aliases = {
+        "choice": "choice",
+        "multiple_choice": "choice",
+        "multiple_choice_question": "choice",
+        "fill": "fill",
+        "fill_blank": "fill",
+        "fill_blank_question": "fill",
+        "solution": "solution",
+        "short_answer": "solution",
+        "problem_solving_question": "solution",
+    }
+    text_type = classify_question_type({}, question_text).get("type")
+    if text_type == "choice":
+        return "choice"
+    if text_type == "fill_blank":
+        return "fill"
+    if raw in aliases:
+        return aliases[raw]
+    return "solution"
+
+
+def _split_section_headings(text: str) -> tuple[str, List[str]]:
+    content: List[str] = []
+    headings: List[str] = []
+    for line in str(text or "").splitlines():
+        stripped = line.strip()
+        if stripped and _SECTION_HEADING_RE.match(stripped):
+            headings.append(stripped)
+        else:
+            content.append(line)
+    return "\n".join(content).strip(), headings
+
+
+def _draft_questions_from_markdown(markdown: str) -> List[Dict[str, Any]]:
     starts = list(_DRAFT_QUESTION_RE.finditer(markdown or ""))
-    questions: List[Dict[str, str]] = []
+    questions: List[Dict[str, Any]] = []
+    _, prefix_headings = _split_section_headings(
+        markdown[: starts[0].start()] if starts else markdown
+    )
+    pending_section = prefix_headings[-1] if prefix_headings else ""
     for index, start in enumerate(starts):
         end = starts[index + 1].start() if index + 1 < len(starts) else len(markdown)
         block = markdown[start.start() : end].strip()
         answer_heading = _DRAFT_ANSWER_RE.search(block)
         if answer_heading:
             question_text = block[: answer_heading.start()].strip()
-            student_answer = block[answer_heading.end() :].strip()
+            student_answer, trailing_sections = _split_section_headings(
+                block[answer_heading.end() :]
+            )
         else:
             question_text = block
             student_answer = ""
+            trailing_sections = []
         no_answer = not student_answer or "未识别到手写答案" in student_answer
         questions.append(
             {
@@ -288,8 +361,11 @@ def _draft_questions_from_markdown(markdown: str) -> List[Dict[str, str]]:
                 "question_text": question_text,
                 "student_answer": student_answer,
                 "answer_status": "no_answer" if no_answer else "ok",
+                "question_type": _canonical_question_type("", question_text),
+                "section_heading_before": pending_section,
             }
         )
+        pending_section = trailing_sections[-1] if trailing_sections else ""
     return questions
 
 
@@ -315,6 +391,8 @@ def _prepare_question_contexts(
             "question_text": "",
             "student_answer": "",
             "answer_status": "not_available",
+            "question_type": "solution",
+            "section_heading_before": "",
         }
         context_id = f"C{ordinal:03d}"
         views: List[Dict[str, Any]] = []
@@ -537,20 +615,316 @@ def _normalize_uncertain_fragments(value: Any) -> List[Dict[str, Any]]:
     return normalized
 
 
+def _math_span_count(text: Any) -> int:
+    return len(_MATH_SPAN_RE.findall(str(text or "")))
+
+
+def _has_balanced_math_delimiters(text: Any) -> bool:
+    return len(re.findall(r"(?<!\\)\$", str(text or ""))) % 2 == 0
+
+
+def _question_structure(text: Any) -> Dict[str, Any]:
+    value = str(text or "")
+    return {
+        "options": set(_OPTION_MARKER_RE.findall(value)),
+        "subparts": set(_SUBPART_LABEL_RE.findall(value)),
+        "circled": set(_CIRCLED_ENUM_RE.findall(value)),
+        "images": value.count("<插图>"),
+    }
+
+
+def _normalize_question_prefix(text: str, label: str) -> str:
+    value, _ = _split_section_headings(text)
+    value = value.strip()
+    if re.match(r"^\s*\d{1,3}[.．、]\s*", value):
+        return re.sub(
+            r"^\s*\d{1,3}[.．、]\s*",
+            f"{label}. ",
+            value,
+            count=1,
+        ).strip()
+    return f"{label}. {value}".strip()
+
+
+def _guard_question_markdown(
+    candidate: str,
+    draft: str,
+    label: str,
+) -> tuple[str, List[str]]:
+    actions: List[str] = []
+    draft_value = _normalize_question_prefix(draft, label) if str(draft or "").strip() else ""
+    candidate_value = _normalize_question_prefix(candidate, label) if str(candidate or "").strip() else ""
+
+    if not candidate_value or re.fullmatch(rf"{re.escape(label)}\.\s*", candidate_value):
+        actions.append("restored_missing_question_stem")
+        candidate_value = draft_value or f"{label}. [无法识别]"
+
+    if not _has_balanced_math_delimiters(candidate_value):
+        actions.append("rolled_back_unbalanced_question_latex")
+        candidate_value = draft_value or f"{label}. [无法识别]"
+
+    if draft_value:
+        draft_structure = _question_structure(draft_value)
+        candidate_structure = _question_structure(candidate_value)
+        missing_structure = any(
+            not draft_structure[key].issubset(candidate_structure[key])
+            for key in ("options", "subparts", "circled")
+        ) or candidate_structure["images"] < draft_structure["images"]
+        if missing_structure:
+            actions.append("rolled_back_deleted_question_structure")
+            candidate_value = draft_value
+
+        if "[无法识别]" in draft_value and re.fullmatch(
+            rf"{re.escape(label)}\.\s*(?:\[无法识别\])?\s*",
+            candidate_value,
+        ):
+            candidate_value = draft_value
+            if "restored_unreadable_stem_sentinel" not in actions:
+                actions.append("restored_unreadable_stem_sentinel")
+
+    if re.fullmatch(rf"{re.escape(label)}\.\s*", candidate_value):
+        candidate_value = f"{label}. [无法识别]"
+        actions.append("inserted_unreadable_stem_sentinel")
+    return candidate_value, actions
+
+
+def _choice_letters(value: Any) -> str:
+    lines = [line.strip() for line in str(value or "").splitlines() if line.strip()]
+    for line in [str(value or "").strip(), *lines]:
+        compact = line.strip().strip("$`*_ ")
+        compact = re.sub(r"^(?:答案|选择|选|故选)\s*(?:为|是)?\s*[:：]?\s*", "", compact)
+        compact = compact.strip("()（）[]【】,，、;；:：.。 ")
+        if re.fullmatch(r"[A-Da-d](?:[\s,，、;；]*[A-Da-d])*", compact):
+            letters = re.sub(r"[^A-D]", "", compact.upper())
+            return "".join(dict.fromkeys(letters))
+    return ""
+
+
+def _ensure_math_answer(value: Any) -> str:
+    text = str(value or "").strip()
+    if not text:
+        return ""
+    if _MATH_SPAN_RE.fullmatch(text) and _has_balanced_math_delimiters(text):
+        return text
+    text = text.strip("$").strip()
+    return f"${text}$" if text else ""
+
+
+def _last_nonempty_line(value: Any) -> str:
+    lines = [line.strip() for line in str(value or "").splitlines() if line.strip()]
+    return lines[-1] if lines else ""
+
+
+def _part_final_answer(parts: Sequence[Dict[str, Any]]) -> str:
+    for part in reversed(list(parts)):
+        value = str(part.get("final_answer") or "").strip()
+        if value:
+            return value
+    return ""
+
+
+def _render_structured_parts(parts: Sequence[Dict[str, Any]]) -> str:
+    rendered: List[str] = []
+    for part in parts:
+        label = str(part.get("label") or "overall").strip()
+        status = str(part.get("status") or "uncertain").strip()
+        content = str(part.get("transcription") or part.get("final_answer") or "").strip()
+        if status == "no_answer":
+            content = "_未识别到手写答案。_"
+        elif status == "unreadable" and not content:
+            content = "[无法识别]"
+        if not content:
+            continue
+        if label != "overall" and not re.match(rf"^\s*{re.escape(label)}(?:\s|$)", content):
+            rendered.append(f"{label} {content}")
+        else:
+            rendered.append(content)
+    return "\n".join(rendered).strip()
+
+
+def _canonicalize_answer(
+    question_type: str,
+    answer: Dict[str, Any],
+    parts: List[Dict[str, Any]],
+    draft_answer: str,
+) -> tuple[str, List[Dict[str, Any]], str, List[str]]:
+    actions: List[str] = []
+    raw_text = str(answer.get("text") or "").strip()
+    raw_status = str(answer.get("status") or "").strip()
+
+    if question_type == "choice":
+        selected = _choice_letters(_part_final_answer(parts))
+        if not selected:
+            selected = _choice_letters(answer.get("final_answer"))
+        if not selected:
+            selected = _choice_letters(raw_text)
+        if not selected:
+            selected = _choice_letters(draft_answer)
+            if selected:
+                actions.append("restored_choice_from_first_pass")
+        if selected:
+            canonical_parts = [
+                {
+                    "label": "overall",
+                    "transcription": selected,
+                    "final_answer": selected,
+                    "status": "ok",
+                }
+            ]
+            if raw_text.strip() != selected:
+                actions.append("removed_choice_scratch_work")
+            return selected, canonical_parts, "ok", actions
+        status = raw_status if raw_status in {"uncertain", "unreadable"} else "no_answer"
+        return "", parts, status, actions
+
+    if question_type == "fill":
+        canonical_parts: List[Dict[str, Any]] = []
+        for part in parts:
+            label = str(part.get("label") or "overall").strip()
+            part_status = str(part.get("status") or "uncertain").strip()
+            final_value = str(part.get("final_answer") or "").strip()
+            if not final_value:
+                final_value = _last_nonempty_line(part.get("transcription"))
+            if part_status == "no_answer":
+                canonical_parts.append(
+                    {
+                        "label": label,
+                        "transcription": "",
+                        "final_answer": "",
+                        "status": "no_answer",
+                    }
+                )
+                continue
+            if final_value:
+                final_value = _ensure_math_answer(final_value)
+                canonical_parts.append(
+                    {
+                        "label": label,
+                        "transcription": final_value,
+                        "final_answer": final_value,
+                        "status": part_status if part_status in {"partial", "uncertain"} else "ok",
+                    }
+                )
+        if canonical_parts:
+            rendered = _render_structured_parts(canonical_parts)
+            populated = any(part.get("final_answer") for part in canonical_parts)
+            if populated:
+                if raw_text.strip() != rendered:
+                    actions.append("removed_fill_scratch_work")
+                status = (
+                    "partial"
+                    if any(part.get("status") == "no_answer" for part in canonical_parts)
+                    else (raw_status or "ok")
+                )
+                return rendered, canonical_parts, status, actions
+
+        final_value = str(answer.get("final_answer") or "").strip()
+        if not final_value:
+            final_value = _last_nonempty_line(raw_text)
+        if not final_value:
+            final_value = _last_nonempty_line(draft_answer)
+            if final_value:
+                actions.append("restored_fill_from_first_pass")
+        final_value = _ensure_math_answer(final_value)
+        if final_value:
+            canonical_parts = [
+                {
+                    "label": "overall",
+                    "transcription": final_value,
+                    "final_answer": final_value,
+                    "status": "ok",
+                }
+            ]
+            if raw_text.strip() != final_value:
+                actions.append("removed_fill_scratch_work")
+            return final_value, canonical_parts, "ok", actions
+        status = raw_status if raw_status in {"uncertain", "unreadable"} else "no_answer"
+        return "", parts, status, actions
+
+    text = _render_structured_parts(parts) if parts else raw_text
+    if not text:
+        text = draft_answer.strip()
+        if text:
+            actions.append("restored_solution_from_first_pass")
+
+    if (
+        text
+        and draft_answer.strip()
+        and _math_span_count(text) < _math_span_count(draft_answer)
+        and len(re.sub(r"\s+", "", text)) >= int(0.75 * len(re.sub(r"\s+", "", draft_answer)))
+    ):
+        text = draft_answer.strip()
+        parts = []
+        actions.append("rolled_back_solution_latex_span_loss")
+
+    if not _has_balanced_math_delimiters(text):
+        text = draft_answer.strip()
+        parts = []
+        actions.append("rolled_back_unbalanced_solution_latex")
+
+    status = raw_status or ("ok" if text else "no_answer")
+    if parts and all(str(part.get("status") or "") == "no_answer" for part in parts):
+        status = "no_answer"
+    return text, parts, status, actions
+
+
 def _normalize_final_questions(
     review: Dict[str, Any],
     contexts: Sequence[Dict[str, Any]],
 ) -> List[Dict[str, Any]]:
-    raw_questions = review.get("questions")
-    if not isinstance(raw_questions, list):
+    raw_value = review.get("questions")
+    if not isinstance(raw_value, list):
         return []
+
+    raw_questions = [question for question in raw_value if isinstance(question, dict)]
+    unused_raw = set(range(len(raw_questions)))
+    ordered_records: List[tuple[Dict[str, Any], Dict[str, Any], bool]] = []
+    for context_index, context in enumerate(contexts):
+        draft = context.get("draft") if isinstance(context.get("draft"), dict) else {}
+        draft_key = _question_key(draft.get("qno"))
+        raw_index = next(
+            (
+                candidate_index
+                for candidate_index in sorted(unused_raw)
+                if draft_key
+                and _question_key(raw_questions[candidate_index].get("qno")) == draft_key
+            ),
+            None,
+        )
+        if raw_index is None and context_index in unused_raw:
+            ordinal_question = raw_questions[context_index]
+            if not _question_key(ordinal_question.get("qno")):
+                raw_index = context_index
+        if raw_index is not None:
+            unused_raw.remove(raw_index)
+            ordered_records.append((raw_questions[raw_index], context, False))
+            continue
+        ordered_records.append(
+            (
+                {
+                    "qno": draft.get("qno"),
+                    "question_type": draft.get("question_type"),
+                    "section_heading_before": draft.get("section_heading_before"),
+                    "question_markdown": draft.get("question_text"),
+                    "handwritten_answer": {
+                        "text": draft.get("student_answer"),
+                        "status": draft.get("answer_status"),
+                    },
+                },
+                context,
+                True,
+            )
+        )
+
+    for raw_index in sorted(unused_raw):
+        ordered_records.append((raw_questions[raw_index], {}, False))
 
     context_ids = [str(context.get("context_id") or "") for context in contexts]
     questions: List[Dict[str, Any]] = []
-    for index, raw_question in enumerate(raw_questions, start=1):
-        if not isinstance(raw_question, dict):
-            continue
-        fallback_context = contexts[index - 1] if index <= len(contexts) else {}
+    for index, (raw_question, fallback_context, restored_question) in enumerate(
+        ordered_records,
+        start=1,
+    ):
         draft = (
             fallback_context.get("draft")
             if isinstance(fallback_context.get("draft"), dict)
@@ -558,20 +932,10 @@ def _normalize_final_questions(
         )
         raw_answer = raw_question.get("handwritten_answer")
         answer = raw_answer if isinstance(raw_answer, dict) else {}
+        if not answer and raw_question.get("student_answer") is not None:
+            answer = {"text": raw_question.get("student_answer")}
         parts = _normalize_answer_parts(answer.get("answer_parts"))
         uncertain = _normalize_uncertain_fragments(answer.get("uncertain_fragments"))
-        text = str(answer.get("text") or raw_question.get("student_answer") or "").strip()
-        if not text and parts:
-            rendered_parts = []
-            for part in parts:
-                content = part["transcription"] or part["final_answer"]
-                if content:
-                    rendered_parts.append(
-                        f"{part['label']} {content}"
-                        if part["label"] != "overall"
-                        else content
-                    )
-            text = "\n".join(rendered_parts)
 
         source_ids = raw_question.get("source_context_ids")
         normalized_source_ids = (
@@ -586,20 +950,46 @@ def _normalize_final_questions(
         if not normalized_source_ids and fallback_context:
             normalized_source_ids = [str(fallback_context.get("context_id") or "")]
 
-        question_markdown = str(raw_question.get("question_markdown") or "").strip()
-        if not question_markdown:
-            question_markdown = str(draft.get("question_text") or "").strip()
-        status = str(answer.get("status") or ("ok" if text else "no_answer")).strip()
+        qno = _normalize_qno(
+            raw_question.get("qno") or draft.get("qno"),
+            index,
+        )
+        label = str(qno)
+        question_markdown, question_actions = _guard_question_markdown(
+            str(raw_question.get("question_markdown") or ""),
+            str(draft.get("question_text") or ""),
+            label,
+        )
+        if restored_question:
+            question_actions.insert(0, "restored_question_from_first_pass")
+        detector_type = (
+            (fallback_context.get("alignment") or {}).get("question_type") or {}
+        ).get("type")
+        question_type = _canonical_question_type(
+            raw_question.get("question_type") or detector_type or draft.get("question_type"),
+            question_markdown,
+        )
+        text, parts, status, answer_actions = _canonicalize_answer(
+            question_type,
+            answer,
+            parts,
+            str(draft.get("student_answer") or ""),
+        )
+        draft_section = str(draft.get("section_heading_before") or "").strip()
+        review_section = str(raw_question.get("section_heading_before") or "").strip()
+        section_heading = draft_section or (
+            review_section if _SECTION_HEADING_RE.match(review_section) else ""
+        )
         questions.append(
             {
-                "qno": _normalize_qno(
-                    raw_question.get("qno") or draft.get("qno"),
-                    index,
-                ),
+                "qno": qno,
+                "question_type": question_type,
+                "section_heading_before": section_heading,
                 "question_markdown": question_markdown,
                 "question_review": {
                     "status": "reviewed_in_global_second_pass",
                     "source_context_ids": normalized_source_ids,
+                    "lint_actions": question_actions + answer_actions,
                 },
                 "handwritten_answer": {
                     "text": text,
@@ -711,10 +1101,25 @@ def _render_result_markdown(page_name: str, questions: Sequence[Dict[str, Any]])
         question_markdown = str(question.get("question_markdown") or "[无法识别]").strip()
         if not re.match(rf"^\s*{re.escape(label)}[.．、]\s*", question_markdown):
             question_markdown = f"{label}. {question_markdown}"
+        if re.fullmatch(rf"{re.escape(label)}[.．、]\s*", question_markdown):
+            question_markdown = f"{label}. [无法识别]"
         if lines:
             lines.append("")
+        section_heading = str(question.get("section_heading_before") or "").strip()
+        if section_heading and _SECTION_HEADING_RE.match(section_heading):
+            lines.extend([section_heading, ""])
         lines.extend([question_markdown, "", "### 手写答案", ""])
         answer_text = str(answer.get("text") or "").strip()
+        question_type = _canonical_question_type(
+            question.get("question_type"),
+            question_markdown,
+        )
+        if question_type == "choice":
+            answer_text = _choice_letters(answer_text)
+        elif question_type == "fill" and answer_text:
+            answer_text = _ensure_math_answer(answer_text)
+        elif question_type == "solution" and not answer_text:
+            answer_text = _render_structured_parts(answer.get("answer_parts") or [])
         if answer_text:
             lines.append(answer_text)
         elif str(answer.get("status") or "").strip() in {"uncertain", "unreadable"}:
@@ -745,6 +1150,7 @@ def run_agent(args: argparse.Namespace) -> Dict[str, Any]:
         api_base=args.api_base,
         api_key=args.api_key,
         model=args.model,
+        timeout_s=args.baseline_timeout,
         max_retries=1,
         temperature=0.0,
         top_p=0.7,
@@ -1006,7 +1412,18 @@ def build_argparser() -> argparse.ArgumentParser:
     parser.add_argument("--model", default=DEFAULT_VLM_MODEL)
     parser.add_argument("--baseline-max-tokens", type=int, default=5000)
     parser.add_argument("--review-max-tokens", type=int, default=7000)
-    parser.add_argument("--review-timeout", type=int, default=240)
+    parser.add_argument(
+        "--baseline-timeout",
+        type=int,
+        default=360,
+        help="API1 upload/read timeout in seconds",
+    )
+    parser.add_argument(
+        "--review-timeout",
+        type=int,
+        default=360,
+        help="API2 upload/read timeout in seconds",
+    )
     parser.add_argument(
         "--answer-detail-views",
         type=int,

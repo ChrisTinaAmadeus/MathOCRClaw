@@ -48,12 +48,25 @@ gold Markdown + candidate result.json
 优先读取 `result.json`：
 
 - `questions[].qno`；
+- `questions[].question_type`；
+- `questions[].section_heading_before`；
 - `questions[].question_markdown`；
 - `questions[].handwritten_answer.text`；
+- `questions[].handwritten_answer.answer_parts[].final_answer`；
 - `questions[].handwritten_answer.status`；
 - `questions[].handwritten_answer.verdict`。
 
 若只有 `result.md`，则使用与金标准一致的规则解析。候选的 `status` 和 `verdict` 只是模型自报信息，不能直接当作正确性标签。
+
+候选答案必须按与金标准相同的题型口径投影后再评分：
+
+- 选择题只取最终保留的选项集合，计算、排除痕迹和图上草稿不属于答案；
+- 填空题只取每个空的最终值、公式及必要单位，推算草稿不属于答案；
+- 解答、证明和开放题保留每个小问的完整正式过程与结论；
+- `answer_parts[].final_answer` 存在时，选择题和填空题优先使用该结构化字段；解答题按小问顺序组合结构化过程；
+- 大节标题只作为下一题的 `section_heading_before`，不得并入上一题答案。
+
+题型首先根据印刷题干结构判断：存在成组 `A.`--`D.` 选项的是选择题，存在待填写横线或空位的是填空题，其余需要推导、证明或作答的题目为解答题。候选自报题型和检测器标签仅作为次级证据，不能因为答案里含有计算字母就把解答题误判为选择题。
 
 ### 3.3 规范化边界
 
@@ -224,6 +237,8 @@ S_stem_question = 0.45 * TextScore
 - 解答/证明：`0.55 * OrderedFormulaSoftF1 + 0.20 * TextScore + 0.20 * FinalConclusionScore + 0.05 * SubpartStructureScore`。
 
 每个小问先独立评分，再在题目内等权平均，避免长篇小问覆盖短小问。
+
+API1 Markdown 与 API2 `result.json` 必须执行相同的章节清理、题型判断和上述答案投影，之后才进入评分；禁止为任一阶段采用更宽松或更严格的候选解析标准。
 
 ## 8. 打分模型调用协议
 
