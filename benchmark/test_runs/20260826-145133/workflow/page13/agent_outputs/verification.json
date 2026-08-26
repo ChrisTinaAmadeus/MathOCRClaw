@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_second_pass",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page13/api_markdown/page13.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page13/code_outputs/match/question_contexts.json",
+  "page_notes": "The page contains solutions for questions 17 and 18. The printed stems are minimal (just question numbers and scores), with diagrams. The student's handwriting fills the space. Crossed-out text in Q18(2) is omitted.",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 12539,
+    "completion_tokens": 18668,
+    "total_tokens": 31207,
+    "latency_s": 354.237268,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 184.26755,
+          "prompt_tokens": 3373,
+          "completion_tokens": 9727,
+          "total_tokens": 13100,
+          "request_id": "chatcmpl-11840aa9-3106-90dc-8c36-c771ab90deda"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 169.969718,
+          "prompt_tokens": 9166,
+          "completion_tokens": 8941,
+          "total_tokens": 18107,
+          "request_id": "chatcmpl-5afeae3b-dbe2-9d70-b0e0-a89e0d79e4dc"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"page_notes\": \"The page contains solutions for questions 17 and 18. The printed stems are minimal (just question numbers and scores), with diagrams. The student's handwriting fills the space. Crossed-out text in Q18(2) is omitted.\",\n  \"questions\": [\n    {\n      \"qno\": \"17\",\n      \"question_type\": \"solution\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"17. (15分) <插图>\",\n      \"handwritten_answer\": {\n        \"text\": \"(1) 证明：$\\\\because$ 在 $\\\\triangle FAD$ 中，$G, H$ 分别为 $AF, FD$ 的中点\\n$\\\\therefore GH \\\\underline{\\\\underline{\\\\parallel}} \\\\frac{1}{2} AD$\\n$\\\\because BC \\\\parallel AD, BC = \\\\frac{1}{2} AD$\\n$\\\\therefore GH \\\\underline{\\\\underline{\\\\parallel}} BC$\\n四边形 $BCHG$ 是平行四边形\\n答：是\\n$\\\\because G$ 是 $AF$ 中点，$BE \\\\parallel AF$\\n$\\\\therefore BE \\\\parallel GF, GF = \\\\frac{1}{2} AF = BE$\\n$\\\\therefore$ 四边形 $BEFG$ 为平行四边形\\n$\\\\therefore EF \\\\underline{\\\\underline{\\\\parallel}} BG$\\n又 $\\\\because$ 由 (1) 得 $BG \\\\underline{\\\\underline{\\\\parallel}} CH$\\n$\\\\therefore EF \\\\underline{\\\\underline{\\\\parallel}} CH$\\n$\\\\therefore$ 四边形 $ECHF$ 为平行四边形\\n$\\\\therefore EC \\\\parallel FH$\\n$\\\\because H$ 为 $FD$ 中点\\n$\\\\therefore EC \\\\parallel FD$\\n$\\\\therefore EC, FD$ 在同一平面上，\\n即 $C, D, F, E$ 共面。\",\n        \"answer_parts\": [\n          {\n            \"label\": \"(1)\",\n            \"transcription\": \"证明：$\\\\because$ 在 $\\\\triangle FAD$ 中，$G, H$ 分别为 $AF, FD$ 的中点\\n$\\\\therefore GH \\\\underline{\\\\underline{\\\\parallel}} \\\\frac{1}{2} AD$\\n$\\\\because BC \\\\parallel AD, BC = \\\\frac{1}{2} AD$\\n$\\\\therefore GH \\\\underline{\\\\underline{\\\\parallel}} BC$\\n四边形 $BCHG$ 是平行四边形\\n答：是\\n$\\\\because G$ 是 $AF$ 中点，$BE \\\\parallel AF$\\n$\\\\therefore BE \\\\parallel GF, GF = \\\\frac{1}{2} AF = BE$\\n$\\\\therefore$ 四边形 $BEFG$ 为平行四边形\\n$\\\\therefore EF \\\\underline{\\\\underline{\\\\parallel}} BG$\\n又 $\\\\because$ 由 (1) 得 $BG \\\\underline{\\\\underline{\\\\parallel}} CH$\\n$\\\\therefore EF \\\\underline{\\\\underline{\\\\parallel}} CH$\\n$\\\\therefore$ 四边形 $ECHF$ 为平行四边形\\n$\\\\therefore EC \\\\parallel FH$\\n$\\\\because H$ 为 $FD$ 中点\\n$\\\\therefore EC \\\\parallel FD$\\n$\\\\therefore EC, FD$ 在同一平面上，\\n即 $C, D, F, E$ 共面。\",\n            \"final_answer\": \"C, D, F, E 共面\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Handwriting is clear. '答：是' is included as written.\"\n      },\n      \"source_context_ids\": [\n        \"C001\"\n      ]\n    },\n    {\n      \"qno\": \"18\",\n      \"question_type\": \"solution\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"18. (17分) <插图>\",\n      \"handwritten_answer\": {\n        \"text\": \"(1) 证明：$\\\\because$ 在正方形 $ADEF$ 中，\\n$\\\\therefore ED \\\\perp AD$\\n又 $\\\\because DE \\\\perp CD$\\n$CD \\\\cap AD = D$\\n$CD, AD \\\\subset$ 面 $ABCD$\\n$\\\\therefore DE \\\\perp$ 面 $ABCD$\\n$\\\\because DE \\\\subset$ 面 $ADEF$\\n$\\\\therefore$ 面 $ADEF \\\\perp$ 面 $ABCD$\\n\\n(2) 解：根据题意得 $AD=AF=EF=4$,\\n$CD=2$\\n$\\\\because AF \\\\perp AD, AD =$ 面 $ADEF \\\\cap$ 面 $ABCD$\\n$AF \\\\subset$ 面 $ADEF$\\n$\\\\therefore AF \\\\perp$ 面 $ADCB$\\n$\\\\therefore AF \\\\perp AB$\\n\\n(3) 解：$\\\\because BF$ 与面 $ABCD$ 所成角为 $45^\\\\circ$\\n$\\\\because CG \\\\parallel BF$ 与面 $ABCD$ 所成角也为 $45^\\\\circ$\\n$\\\\therefore DG = CD = 2$\\n$GF^2 = EG^2 + EF^2$\\n$CB^2 = AB^2 + \\\\frac{1}{4} AB^2$\\n$\\\\because EF = AD, EG = \\\\frac{1}{2} AB$\\n$\\\\therefore$ 四边形 $CBFG$ 为等腰梯形\\n作 $GH \\\\perp BF$\\n$FH = \\\\frac{BF-CG}{2} = 1$\\n$\\\\because BF$ 与面 $ABCD$ 所成角为 $45^\\\\circ$\\n$\\\\therefore AB = \\\\tan 45^\\\\circ \\\\cdot AF = 4$\\n$\\\\because CD \\\\parallel AB, \\\\angle CDA = 90^\\\\circ$\\n$\\\\therefore$ 四边形 $ABCD$ 是直角梯形\\n$S_{\\\\text{梯} ABCD} = \\\\frac{1}{2} (CD+AB) \\\\cdot AD = 12$\\n$V_{\\\\text{四棱锥} E-ABCD} = \\\\frac{1}{3} S_{\\\\text{梯} ABCD} \\\\cdot ED = 16$\\n$GH = \\\\sqrt{FG^2 - FH^2} = \\\\sqrt{19}$\\n$\\\\therefore S_{\\\\text{四边形} CBFG} = \\\\frac{1}{2} (CG+BF) \\\\cdot GH = 3\\\\sqrt{38}$\",\n        \"answer_parts\": [\n          {\n            \"label\": \"(1)\",\n            \"transcription\": \"证明：$\\\\because$ 在正方形 $ADEF$ 中，\\n$\\\\therefore ED \\\\perp AD$\\n又 $\\\\because DE \\\\perp CD$\\n$CD \\\\cap AD = D$\\n$CD, AD \\\\subset$ 面 $ABCD$\\n$\\\\therefore DE \\\\perp$ 面 $ABCD$\\n$\\\\because DE \\\\subset$ 面 $ADEF$\\n$\\\\therefore$ 面 $ADEF \\\\perp$ 面 $ABCD$\",\n            \"final_answer\": \"面 $ADEF \\\\perp$ 面 $ABCD$\",\n            \"status\": \"ok\"\n          },\n          {\n            \"label\": \"(2)\",\n            \"transcription\": \"解：根据题意得 $AD=AF=EF=4, CD=2$\\n$\\\\because AF \\\\perp AD, AD =$ 面 $ADEF \\\\cap$ 面 $ABCD$\\n$AF \\\\subset$ 面 $ADEF$\\n$\\\\therefore AF \\\\perp$ 面 $ADCB$\\n$\\\\therefore AF \\\\perp AB$\",\n            \"final_answer\": \"AF \\\\perp AB\",\n            \"status\": \"ok\"\n          },\n          {\n            \"label\": \"(3)\",\n            \"transcription\": \"解：$\\\\because BF$ 与面 $ABCD$ 所成角为 $45^\\\\circ$\\n$\\\\because CG \\\\parallel BF$ 与面 $ABCD$ 所成角也为 $45^\\\\circ$\\n$\\\\therefore DG = CD = 2$\\n$GF^2 = EG^2 + EF^2$\\n$CB^2 = AB^2 + \\\\frac{1}{4} AB^2$\\n$\\\\because EF = AD, EG = \\\\frac{1}{2} AB$\\n$\\\\therefore$ 四边形 $CBFG$ 为等腰梯形\\n作 $GH \\\\perp BF$\\n$FH = \\\\frac{BF-CG}{2} = 1$\\n$\\\\because BF$ 与面 $ABCD$ 所成角为 $45^\\\\circ$\\n$\\\\therefore AB = \\\\tan 45^\\\\circ \\\\cdot AF = 4$\\n$\\\\because CD \\\\parallel AB, \\\\angle CDA = 90^\\\\circ$\\n$\\\\therefore$ 四边形 $ABCD$ 是直角梯形\\n$S_{\\\\text{梯} ABCD} = \\\\frac{1}{2} (CD+AB) \\\\cdot AD = 12$\\n$V_{\\\\text{四棱锥} E-ABCD} = \\\\frac{1}{3} S_{\\\\text{梯} ABCD} \\\\cdot ED = 16$\\n$GH = \\\\sqrt{FG^2 - FH^2} = \\\\sqrt{19}$\\n$\\\\therefore S_{\\\\text{四边形} CBFG} = \\\\frac{1}{2} (CG+BF) \\\\cdot GH = 3\\\\sqrt{38}$\",\n            \"final_answer\": \"3\\\\sqrt{38}\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Crossed out text 'AF \\\\perp 面' in part (2) is omitted. The solution for (3) combines text from left and right columns.\"\n      },\n      \"source_context_ids\": [\n        \"C002\"\n      ]\n    }\n  ]\n}\n```"
+}

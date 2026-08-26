@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_second_pass",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page32/api_markdown/page32.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page32/code_outputs/match/question_contexts.json",
+  "page_notes": "Question 19 is a solution problem. The student provides a detailed derivation followed by a summary ('综上') for part (2). There is a small 'a=1' written near the top which appears to be scratch work and is ignored in favor of the main solution block.",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 10290,
+    "completion_tokens": 11823,
+    "total_tokens": 22113,
+    "latency_s": 227.593196,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 106.896067,
+          "prompt_tokens": 3021,
+          "completion_tokens": 5615,
+          "total_tokens": 8636,
+          "request_id": "chatcmpl-fdf73abf-555e-9a90-8846-1862d43f9997"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 120.697129,
+          "prompt_tokens": 7269,
+          "completion_tokens": 6208,
+          "total_tokens": 13477,
+          "request_id": "chatcmpl-fc61b874-6adf-9b25-99a0-b8bd33771681"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"page_notes\": \"Question 19 is a solution problem. The student provides a detailed derivation followed by a summary ('综上') for part (2). There is a small 'a=1' written near the top which appears to be scratch work and is ignored in favor of the main solution block.\",\n  \"questions\": [\n    {\n      \"qno\": \"19\",\n      \"question_type\": \"solution\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"19. (17分) 设函数 $y=ax^2+(1-a)x+a-2(a \\\\in \\\\mathbf{R})$。\\n(1) 若关于 $x$ 的不等式 $y \\\\le 0$ 解集为 $\\\\{x|0 \\\\le x \\\\le b\\\\}$，求实数 $a, b$ 的值；\\n(2) 解关于 $x$ 的不等式：$y < a-1$。\",\n      \"handwritten_answer\": {\n        \"text\": \"(1) 0和b是方程 $ax^2+(1-a)x+a-2$ 根且 $a>0$。\\n$\\\\therefore \\\\begin{cases} 0+b=-\\\\frac{1-a}{a} \\\\\\\\ 0 \\\\times b=\\\\frac{a-2}{a} \\\\end{cases}$\\n解得 $a=2, b=\\\\frac{1}{2}$。\\n\\n(2) 由 $f(x)<a-1$ 则 $ax^2+(1-a)x-1<0$。\\n当 $a=0$ 时，不等式可化简 $x-1<0 \\\\quad x<1 \\\\quad \\\\{x|x<1\\\\}$。\\n当 $a<0$ 时，不等式化为 $(x+\\\\frac{1}{a})(x-1)>0$。\\n① 当 $a=-1$ 时，$-\\\\frac{1}{a}=1$，不等式的解集为 $\\\\{x|x \\\\ne 1\\\\}$。\\n② 当 $-1<a<0$ 时，$-\\\\frac{1}{a}>1$，不等式的解集为 $\\\\{x|x<1 \\\\text{ 或 } x>-\\\\frac{1}{a}\\\\}$。\\n 当 $a<-1$ 时，$-\\\\frac{1}{a}<1$ 不等式的解集为 $\\\\{x|x<-\\\\frac{1}{a} \\\\text{ 或 } x>1\\\\}$。\\n综上 当 $a<-1$ 时 $\\\\Rightarrow \\\\{x|x<-\\\\frac{1}{a} \\\\text{ 或 } x>1\\\\}$。\\n当 $a=-1$ 时 $\\\\Rightarrow \\\\{x|x \\\\ne 1\\\\}$。\\n当 $-1<a<0$ 时 $\\\\Rightarrow \\\\{x|x<1 \\\\text{ 或 } x>-\\\\frac{1}{a}\\\\}$。\\n当 $a=0$ 时 $\\\\Rightarrow \\\\{x|x<1\\\\}$。\\n当 $a>0$ 时 $\\\\Rightarrow \\\\{x|-\\\\frac{1}{a}<x<1\\\\}$。\",\n        \"answer_parts\": [\n          {\n            \"label\": \"(1)\",\n            \"transcription\": \"0和b是方程 $ax^2+(1-a)x+a-2$ 根且 $a>0$。$\\\\therefore \\\\begin{cases} 0+b=-\\\\frac{1-a}{a} \\\\\\\\ 0 \\\\times b=\\\\frac{a-2}{a} \\\\end{cases}$ 解得 $a=2, b=\\\\frac{1}{2}$。\",\n            \"final_answer\": \"a=2, b=\\\\frac{1}{2}\",\n            \"status\": \"ok\"\n          },\n          {\n            \"label\": \"(2)\",\n            \"transcription\": \"由 $f(x)<a-1$ 则 $ax^2+(1-a)x-1<0$。当 $a=0$ 时... $\\\\{x|x<1\\\\}$。当 $a<0$ 时... $(x+\\\\frac{1}{a})(x-1)>0$。①... $\\\\{x|x \\\\ne 1\\\\}$。②... $\\\\{x|x<1 \\\\text{ 或 } x>-\\\\frac{1}{a}\\\\}$。... $\\\\{x|x<-\\\\frac{1}{a} \\\\text{ 或 } x>1\\\\}$。综上... (see full text)\",\n            \"final_answer\": \"\\\\text{当 } a<-1 \\\\text{ 时 } \\\\{x|x<-\\\\frac{1}{a} \\\\text{ 或 } x>1\\\\}; \\\\text{ 当 } a=-1 \\\\text{ 时 } \\\\{x|x \\\\ne 1\\\\}; \\\\text{ 当 } -1<a<0 \\\\text{ 时 } \\\\{x|x<1 \\\\text{ 或 } x>-\\\\frac{1}{a}\\\\}; \\\\text{ 当 } a=0 \\\\text{ 时 } \\\\{x|x<1\\\\}; \\\\text{ 当 } a>0 \\\\text{ 时 } \\\\{x|-\\\\frac{1}{a}<x<1\\\\}\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Handwriting is clear. Part (1) solution is on the top right and repeated in the main block. Part (2) has a derivation block and a summary block ('综上'). The minus signs in the fractions in the body of ② and ③ are slightly faint but clarified in the summary block.\"\n      },\n      \"source_context_ids\": [\n        \"C001\"\n      ]\n    }\n  ]\n}\n```"
+}

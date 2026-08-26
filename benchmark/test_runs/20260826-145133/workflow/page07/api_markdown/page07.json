@@ -1,0 +1,85 @@
+{
+  "schema_version": 3,
+  "response_format": "benchmark_markdown",
+  "prompt": {
+    "version": "extract_v2",
+    "path": "benchmark/prompts/extract_v2.txt",
+    "sha1": "68e4ba040a859426177b603b9098b3e10a2d2a2e"
+  },
+  "page_markdown": "7. 已知集合 $A=\\{x\\mid -1<x<1\\}$，$B=\\{x\\mid x^2-2x<0\\}$，则 $A\\cup B=$\nA. $\\{x\\mid x<0 \\text{ 或 } x>2\\}$\nB. $\\{x\\mid 0<x<1\\}$\nC. $\\{x\\mid -1<x<2\\}$\nD. $\\{x\\mid x<-1 \\text{ 或 } x>0\\}$\n\n### 手写答案\n\nC\n\n8. 三元子集指包含恰好三个元素的子集. 设集合 $A=\\{a_1,a_2,a_3,a_4\\}$，若 $A$ 的所有三元子集的三个元素之和组成的集合为 $B=\\{-1,1,2,10\\}$，则集合 $A=$\nA. $\\{-1,1,2,10\\}$\nB. $\\{-6,2,3,5\\}$\nC. $\\{1,3,4,12\\}$\nD. $\\{2,10,11,13\\}$\n\n### 手写答案\n\nB\n\n二、选择题：本大题共 3 小题，每小题 6 分，共 18 分. 在每小题给出的选项中，有多项符合题目要求. 全部选对的得 6 分，部分选对的得部分分，有选错的得 0 分.\n\n9. 下列“若 $p$，则 $q$”形式的命题中，$p$ 是 $q$ 的充分条件的有\nA. 若 $x,y$ 是偶数，则 $x+y$ 是偶数\nB. 若方程 $x^2-2x+a=0$ 有实根，则 $a<2$\nC. 若一个四边形是矩形，则这个四边形的对角线相等\nD. 若集合 $A\\subseteq B$，则 $A\\subsetneq B$\n\n### 手写答案\n\nAC\n\n10. 已知集合 $A=\\{x\\mid a-1<x<a+1\\}$，$B=\\{x\\mid 0<x<8\\}$，则下列选项中满足 $A\\cap B=\\varnothing$ 的实数 $a$ 的取值范围有\nA. $\\{a\\mid 0\\leqslant a\\leqslant 6\\}$\nB. $\\{a\\mid 9\\leqslant a\\leqslant 10\\}$\nC. $\\{a\\mid a\\leqslant -2\\}$\nD. $\\{a\\mid a\\geqslant 12\\}$\n\n### 手写答案\n\nBC\n\n11. 设正实数 $m,n$ 满足 $m+n=2$，则\nA. $\\frac{4}{m}+\\frac{9}{n}$ 的最小值为 $\\frac{25}{2}$\nB. $\\frac{4}{m}+\\frac{9}{n}$ 的最大值为 $\\frac{25}{2}$\nC. $\\sqrt{m}+\\sqrt{n}$ 的最大值为 2\nD. $\\sqrt{m}+\\sqrt{n}$ 的最小值为 2\n\n### 手写答案\n\nAC\n\n三、填空题：本题共 3 小题，每小题 5 分，共 15 分.\n\n12. 已知集合 $A=\\{1,2,3\\}$，$B=\\{x\\mid -1<x<3 \\text{ 且 } x\\in \\mathbf{N}^*\\}$，则 $A\\cap B=$\n\n### 手写答案\n\n$\\{1,2\\}$\n\n13. 已知 $-2<x-y<2, 2<x+y<5$，则 $z=3x+y$ 的取值范围为\n\n### 手写答案\n\n$2<z<12$\n\n14. 若关于 $x$ 的不等式 $ax^2+bx+c<0$ 的解集为 $\\{x\\mid 2<x<3\\}$，则关于 $x$ 的不等式 $cx^2+bx+a>0$ 的解集是\n\n### 手写答案\n\n$\\{x\\mid -3<x<-2\\}$\n\n四、解答题：本题共 5 小题，共 77 分. 解答应写出文字说明、证明过程或演算步骤.\n\n15. (本小题满分 13 分)\n设集合 $A=\\{x\\mid x^2-x-6<0\\}$，$B=\\{x\\mid 2-a<x<3a-2\\}$.\n(1) 若 $a=3$，求 $A\\cup \\complement_{\\mathbf{R}}B$；\n(2) 若 $a=4$，集合 $C=\\{x\\mid x\\in \\complement_{\\mathbf{R}}A, \\text{且 } x\\in B, x\\in \\mathbf{Z}\\}$，求集合 $C$.\n\n### 手写答案\n\n_未识别到手写答案。_",
+  "questions": [
+    {
+      "qno": "7",
+      "question_text": "7. 已知集合 $A=\\{x\\mid -1<x<1\\}$，$B=\\{x\\mid x^2-2x<0\\}$，则 $A\\cup B=$\nA. $\\{x\\mid x<0 \\text{ 或 } x>2\\}$\nB. $\\{x\\mid 0<x<1\\}$\nC. $\\{x\\mid -1<x<2\\}$\nD. $\\{x\\mid x<-1 \\text{ 或 } x>0\\}$",
+      "student_answer": "C",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "8",
+      "question_text": "8. 三元子集指包含恰好三个元素的子集. 设集合 $A=\\{a_1,a_2,a_3,a_4\\}$，若 $A$ 的所有三元子集的三个元素之和组成的集合为 $B=\\{-1,1,2,10\\}$，则集合 $A=$\nA. $\\{-1,1,2,10\\}$\nB. $\\{-6,2,3,5\\}$\nC. $\\{1,3,4,12\\}$\nD. $\\{2,10,11,13\\}$",
+      "student_answer": "B",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "9",
+      "question_text": "9. 下列“若 $p$，则 $q$”形式的命题中，$p$ 是 $q$ 的充分条件的有\nA. 若 $x,y$ 是偶数，则 $x+y$ 是偶数\nB. 若方程 $x^2-2x+a=0$ 有实根，则 $a<2$\nC. 若一个四边形是矩形，则这个四边形的对角线相等\nD. 若集合 $A\\subseteq B$，则 $A\\subsetneq B$",
+      "student_answer": "AC",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "section_heading_before": "二、选择题：本大题共 3 小题，每小题 6 分，共 18 分. 在每小题给出的选项中，有多项符合题目要求. 全部选对的得 6 分，部分选对的得部分分，有选错的得 0 分."
+    },
+    {
+      "qno": "10",
+      "question_text": "10. 已知集合 $A=\\{x\\mid a-1<x<a+1\\}$，$B=\\{x\\mid 0<x<8\\}$，则下列选项中满足 $A\\cap B=\\varnothing$ 的实数 $a$ 的取值范围有\nA. $\\{a\\mid 0\\leqslant a\\leqslant 6\\}$\nB. $\\{a\\mid 9\\leqslant a\\leqslant 10\\}$\nC. $\\{a\\mid a\\leqslant -2\\}$\nD. $\\{a\\mid a\\geqslant 12\\}$",
+      "student_answer": "BC",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "11",
+      "question_text": "11. 设正实数 $m,n$ 满足 $m+n=2$，则\nA. $\\frac{4}{m}+\\frac{9}{n}$ 的最小值为 $\\frac{25}{2}$\nB. $\\frac{4}{m}+\\frac{9}{n}$ 的最大值为 $\\frac{25}{2}$\nC. $\\sqrt{m}+\\sqrt{n}$ 的最大值为 2\nD. $\\sqrt{m}+\\sqrt{n}$ 的最小值为 2",
+      "student_answer": "AC",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "12",
+      "question_text": "12. 已知集合 $A=\\{1,2,3\\}$，$B=\\{x\\mid -1<x<3 \\text{ 且 } x\\in \\mathbf{N}^*\\}$，则 $A\\cap B=$",
+      "student_answer": "$\\{1,2\\}$",
+      "answer_status": "ok",
+      "question_type": "solution",
+      "section_heading_before": "三、填空题：本题共 3 小题，每小题 5 分，共 15 分."
+    },
+    {
+      "qno": "13",
+      "question_text": "13. 已知 $-2<x-y<2, 2<x+y<5$，则 $z=3x+y$ 的取值范围为",
+      "student_answer": "$2<z<12$",
+      "answer_status": "ok",
+      "question_type": "solution",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "14",
+      "question_text": "14. 若关于 $x$ 的不等式 $ax^2+bx+c<0$ 的解集为 $\\{x\\mid 2<x<3\\}$，则关于 $x$ 的不等式 $cx^2+bx+a>0$ 的解集是",
+      "student_answer": "$\\{x\\mid -3<x<-2\\}$",
+      "answer_status": "ok",
+      "question_type": "solution",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "15",
+      "question_text": "15. (本小题满分 13 分)\n设集合 $A=\\{x\\mid x^2-x-6<0\\}$，$B=\\{x\\mid 2-a<x<3a-2\\}$.\n(1) 若 $a=3$，求 $A\\cup \\complement_{\\mathbf{R}}B$；\n(2) 若 $a=4$，集合 $C=\\{x\\mid x\\in \\complement_{\\mathbf{R}}A, \\text{且 } x\\in B, x\\in \\mathbf{Z}\\}$，求集合 $C$.",
+      "student_answer": "_未识别到手写答案。_",
+      "answer_status": "no_answer",
+      "question_type": "solution",
+      "section_heading_before": "四、解答题：本题共 5 小题，共 77 分. 解答应写出文字说明、证明过程或演算步骤."
+    }
+  ],
+  "page_notes": ""
+}

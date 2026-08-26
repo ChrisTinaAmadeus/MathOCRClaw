@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_second_pass",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page09/api_markdown/page09.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page09/code_outputs/match/question_contexts.json",
+  "page_notes": "Question 12 is a fill-in-the-blank question based on context. Question 17 is a solution question. Handwriting for Q17 part (1) ends with a stray mark '18' which is excluded as noise/score. Student uses variable names a, b in quadratic formula that clash with side lengths a, b in part (2), transcribed as written.",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 10571,
+    "completion_tokens": 13898,
+    "total_tokens": 24469,
+    "latency_s": 264.526849,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 112.632661,
+          "prompt_tokens": 3065,
+          "completion_tokens": 5923,
+          "total_tokens": 8988,
+          "request_id": "chatcmpl-ae98d9a1-ef15-9110-927a-4f814303a56e"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 151.894188,
+          "prompt_tokens": 7506,
+          "completion_tokens": 7975,
+          "total_tokens": 15481,
+          "request_id": "chatcmpl-c4a685ed-85ce-9768-bc80-d411050ba5ab"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"page_notes\": \"Question 12 is a fill-in-the-blank question based on context. Question 17 is a solution question. Handwriting for Q17 part (1) ends with a stray mark '18' which is excluded as noise/score. Student uses variable names a, b in quadratic formula that clash with side lengths a, b in part (2), transcribed as written.\",\n  \"questions\": [\n    {\n      \"qno\": \"12\",\n      \"question_type\": \"fill\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"12. 若命题 “$\\\\exists x \\\\in \\\\{x \\\\mid -1 \\\\le x \\\\le 3\\\\}, x^2 - 2x - a \\\\le 0$” 为真命题，则实数 $a$ 的取值范围为\",\n      \"handwritten_answer\": {\n        \"text\": \"$a \\\\ge -1$\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"$a \\\\ge -1$\",\n            \"final_answer\": \"$a \\\\ge -1$\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Final answer underlined. Scratch work present but omitted.\"\n      },\n      \"source_context_ids\": [\n        \"C001\"\n      ]\n    },\n    {\n      \"qno\": \"17\",\n      \"question_type\": \"solution\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"17. (15分) 某学校引入种植类劳动教育课程，打算围成如图所示的四块全等的长方形田地种植不同种类的蔬菜，其中一面可以利用原有的墙（足够长），其他各面需要用篱笆围成，设其中一块田地为矩形 $ABCD$。\\n<插图>\\n(1) 若每块田地的面积为 $24\\\\text{m}^2$，要使围成四块田地的篱笆总长最小，应该设计田地的长 $AB$ 和宽 $AD$ 各为多少？\\n(2) 现用 $40\\\\text{m}$ 长的篱笆，要使每块田地的面积最大，应该设计田地的长 $AB$ 和宽 $AD$ 各为多少？\",\n      \"handwritten_answer\": {\n        \"text\": \"(1) 设 $AB$ 为 $x\\\\text{m}$，$AD$ 为 $y\\\\text{m}$。则 $xy=24$。\\n$\\\\therefore$ 求 $6y+4x$ 的 $\\\\min$。\\n$\\\\because 6y+4x \\\\ge 2\\\\sqrt{6y \\\\cdot 4x}$\\n$\\\\ge 2\\\\sqrt{24 \\\\cdot 24}$\\n$\\\\ge 48$。\\n$\\\\therefore 6y+4x$ 的 $\\\\min$ 为 $48$\\n当且仅当 $6y=4x=24$ 时，即 $y=4, x=6$ 时，取最小值。\\n$\\\\therefore AB$ 为 $6\\\\text{m}$，$AD$ 为 $4\\\\text{m}$。\\n\\n(2) 设 $AB$ 为 $a\\\\text{m}$，$AD$ 为 $b\\\\text{m}$。\\n$\\\\therefore 6a+4b=40$。求 $ab$ 的 $\\\\max$，即 $ab$ 的 $\\\\max$。\\n$\\\\because 6a+4b=40 \\\\therefore 3a+2b=20$。\\n$\\\\therefore b=\\\\frac{20-3a}{2}$。\\n$\\\\therefore ab=a\\\\left(\\\\frac{20-3a}{2}\\right)$\\n$=\\\\frac{-3a^2+20a}{2}$。\\n$\\\\because -\\\\frac{b}{2a} = -\\\\frac{20}{2(-3)} = \\\\frac{10}{3}$。\\n$\\\\therefore ab_{\\\\max} = \\\\frac{100}{3}$。\\n当且仅当 $a=\\\\frac{10}{3}, b=5$ 时取得最大值。\\n$\\\\therefore AB$ 的长为 $\\\\frac{10}{3}\\\\text{m}$，$AD$ 的长为 $5\\\\text{m}$。\",\n        \"answer_parts\": [\n          {\n            \"label\": \"(1)\",\n            \"transcription\": \"设 $AB$ 为 $x\\\\text{m}$，$AD$ 为 $y\\\\text{m}$。则 $xy=24$。\\n$\\\\therefore$ 求 $6y+4x$ 的 $\\\\min$。\\n$\\\\because 6y+4x \\\\ge 2\\\\sqrt{6y \\\\cdot 4x}$\\n$\\\\ge 2\\\\sqrt{24 \\\\cdot 24}$\\n$\\\\ge 48$。\\n$\\\\therefore 6y+4x$ 的 $\\\\min$ 为 $48$\\n当且仅当 $6y=4x=24$ 时，即 $y=4, x=6$ 时，取最小值。\\n$\\\\therefore AB$ 为 $6\\\\text{m}$，$AD$ 为 $4\\\\text{m}$。\",\n            \"final_answer\": \"$AB$ 为 $6\\\\text{m}$，$AD$ 为 $4\\\\text{m}$\",\n            \"status\": \"ok\"\n          },\n          {\n            \"label\": \"(2)\",\n            \"transcription\": \"设 $AB$ 为 $a\\\\text{m}$，$AD$ 为 $b\\\\text{m}$。\\n$\\\\therefore 6a+4b=40$。求 $ab$ 的 $\\\\max$，即 $ab$ 的 $\\\\max$。\\n$\\\\because 6a+4b=40 \\\\therefore 3a+2b=20$。\\n$\\\\therefore b=\\\\frac{20-3a}{2}$。\\n$\\\\therefore ab=a\\\\left(\\\\frac{20-3a}{2}\\right)$\\n$=\\\\frac{-3a^2+20a}{2}$。\\n$\\\\because -\\\\frac{b}{2a} = -\\\\frac{20}{2(-3)} = \\\\frac{10}{3}$。\\n$\\\\therefore ab_{\\\\max} = \\\\frac{100}{3}$。\\n当且仅当 $a=\\\\frac{10}{3}, b=5$ 时取得最大值。\\n$\\\\therefore AB$ 的长为 $\\\\frac{10}{3}\\\\text{m}$，$AD$ 的长为 $5\\\\text{m}$。\",\n            \"final_answer\": \"$AB$ 的长为 $\\\\frac{10}{3}\\\\text{m}$，$AD$ 的长为 $5\\\\text{m}$\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Complete solution provided for both parts. In part (2), student uses formula notation $-b/2a$ where a,b refer to quadratic coefficients, distinct from side lengths a,b.\"\n      },\n      \"source_context_ids\": [\n        \"C001\",\n        \"C002\"\n      ]\n    }\n  ]\n}\n```"
+}

@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_second_pass",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page05/api_markdown/page05.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page05/code_outputs/match/question_contexts.json",
+  "page_notes": "",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 9938,
+    "completion_tokens": 10858,
+    "total_tokens": 20796,
+    "latency_s": 217.403784,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 149.143079,
+          "prompt_tokens": 3065,
+          "completion_tokens": 7876,
+          "total_tokens": 10941,
+          "request_id": "chatcmpl-7c1a4405-856f-91c2-9b19-d02b26b82b70"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 68.260705,
+          "prompt_tokens": 6873,
+          "completion_tokens": 2982,
+          "total_tokens": 9855,
+          "request_id": "chatcmpl-efeda107-45b9-9494-9782-b97154dbc9c0"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"page_notes\": \"\",\n  \"questions\": [\n    {\n      \"qno\": \"18\",\n      \"question_type\": \"solution\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"18. 已知 $a>0, b>0$.\\n(1) 若 $a-b=2$，求证：$a+\\\\frac{4}{b+1} \\\\ge 5$；\\n(2) 若 $a+b=2$，不等式 $\\\\frac{4}{a+2}+\\\\frac{m}{b} \\\\ge 4(m>0)$ 恒成立，求 $m$ 的取值范围；\\n(3) 若 $c>0$，求 $\\\\frac{\\\\sqrt{ab}+2\\\\sqrt{ac}-2a}{4a+b+2c}$ 的最大值.\",\n      \"handwritten_answer\": {\n        \"text\": \"(2) $0<m\\\\le 4$\",\n        \"answer_parts\": [\n          {\n            \"label\": \"(1)\",\n            \"transcription\": \"\",\n            \"final_answer\": \"\",\n            \"status\": \"no_answer\"\n          },\n          {\n            \"label\": \"(2)\",\n            \"transcription\": \"$0<m\\\\le 4$\",\n            \"final_answer\": \"$0<m\\\\le 4$\",\n            \"status\": \"ok\"\n          },\n          {\n            \"label\": \"(3)\",\n            \"transcription\": \"\",\n            \"final_answer\": \"\",\n            \"status\": \"no_answer\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"partial\",\n        \"evidence_note\": \"Only a checkmark is visible for (1). Final answer written for (2). No answer for (3).\"\n      },\n      \"source_context_ids\": [\n        \"C001\"\n      ]\n    },\n    {\n      \"qno\": \"19\",\n      \"question_type\": \"solution\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"19. 已知二次函数 $y=ax^2-bx+3$.\\n(1) 若不等式 $y>0$ 的解集为 $\\\\left\\\\{x\\\\mid -\\\\frac{1}{3}<x<1\\\\right\\\\}$，求 $a$ 和 $b$ 的值；\\n(2) 若 $a>0, b=3a+1$.\\n(i) 解关于 $x$ 的不等式 $y\\\\le 0$；\\n(ii) 若对任意的 $a\\\\in [1, 2]$，$y>0$ 恒成立，求 $x$ 的取值范围.\",\n      \"handwritten_answer\": {\n        \"text\": \"(1) $9, -6$\\n(2) (i) $0<a\\\\le \\\\frac{1}{3} \\\\quad 3\\\\le x\\\\le \\\\frac{1}{a} \\\\quad a\\\\ge \\\\frac{1}{3} \\\\quad \\\\frac{1}{a}\\\\le x\\\\le 3$\\n(ii) $\\\\left(-\\\\infty, \\\\frac{1}{2}\\\\right)\\\\cup (3, +\\\\infty)$\",\n        \"answer_parts\": [\n          {\n            \"label\": \"(1)\",\n            \"transcription\": \"$9, -6$\",\n            \"final_answer\": \"$a=9, b=-6$\",\n            \"status\": \"ok\"\n          },\n          {\n            \"label\": \"(2)(i)\",\n            \"transcription\": \"$0<a\\\\le \\\\frac{1}{3} \\\\quad 3\\\\le x\\\\le \\\\frac{1}{a} \\\\quad a\\\\ge \\\\frac{1}{3} \\\\quad \\\\frac{1}{a}\\\\le x\\\\le 3$\",\n            \"final_answer\": \"$0<a\\\\le \\\\frac{1}{3} \\\\quad 3\\\\le x\\\\le \\\\frac{1}{a} \\\\quad a\\\\ge \\\\frac{1}{3} \\\\quad \\\\frac{1}{a}\\\\le x\\\\le 3$\",\n            \"status\": \"ok\"\n          },\n          {\n            \"label\": \"(2)(ii)\",\n            \"transcription\": \"$\\\\left(-\\\\infty, \\\\frac{1}{2}\\\\right)\\\\cup (3, +\\\\infty)$\",\n            \"final_answer\": \"$\\\\left(-\\\\infty, \\\\frac{1}{2}\\\\right)\\\\cup (3, +\\\\infty)$\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Crossed out text near (2) stem is ignored. Answers are written concisely.\"\n      },\n      \"source_context_ids\": [\n        \"C002\"\n      ]\n    }\n  ]\n}\n```"
+}

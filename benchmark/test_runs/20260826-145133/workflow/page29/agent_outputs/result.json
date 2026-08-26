@@ -1,0 +1,119 @@
+{
+  "page": "page29",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page29/image/page29.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page29.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page29/preprocessed/page29.png",
+  "api_strategy": {
+    "call_count": 2,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "global context-aware correction and final result"
+  },
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 10350,
+    "completion_tokens": 17461,
+    "total_tokens": 27811,
+    "latency_s": 332.714012,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 156.024116,
+          "prompt_tokens": 3065,
+          "completion_tokens": 8235,
+          "total_tokens": 11300,
+          "request_id": "chatcmpl-f1aeb052-82ce-979d-9616-a26daa5da062"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 176.689896,
+          "prompt_tokens": 7285,
+          "completion_tokens": 9226,
+          "total_tokens": 16511,
+          "request_id": "chatcmpl-322fffa8-72d4-980e-9977-75cef0992b3e"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 1,
+    "answers_with_transcription": 1,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 18,
+      "question_type": "solution",
+      "section_heading_before": "",
+      "question_markdown": "18. (17分) 已知关于的 $x$ 不等式 $(ax-1)(x+1)>0$.\n(1) 若此不等式的解集为 $\\left\\{x \\mid -1 < x < -\\frac{1}{2}\\right\\}$，求实数 $a$ 的值；\n(2) 若 $a \\in \\mathbf{R}$，解这个关于 $x$ 的不等式；\n(3) 已知 $y_1 = 4x_1^2 + 3$，$y_2 = ax_2 + 5 - a (a>0)$，若对任意的 $x_1 \\in \\{x \\mid 1 \\le x \\le 2\\}$，总存在 $x_2 \\in \\{x \\mid -1 \\le x \\le 2\\}$，使得 $y_1 = y_2$ 成立，求实数 $a$ 的取值范围.",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C001"
+        ],
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page29/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 解：由题可知 $-1, -\\frac{1}{2}$ 为方程的两根. 可得 $\\frac{1}{a} = -\\frac{1}{2}$，即 $a=-2$.\n(2) 当 $a=0$ 时，$-x-1>0 \\Rightarrow x<-1$. 答案 $\\Rightarrow$ 当 $a>0$ 时，$\\{x \\mid x > \\frac{1}{a} \\text{ 或 } x < -1\\}$. 当 $a<0$ 时. ① $a=-1$. $\\emptyset$ ② $a<-1, \\frac{1}{a} > -1$. $\\{x \\mid -1 < x < \\frac{1}{a}\\}$ ③ $-1 < a < 0, \\frac{1}{a} < -1$. $\\{x \\mid \\frac{1}{a} < x < -1\\}$.\n(3) 当 $x_1 \\in \\{x \\mid 1 \\le x \\le 2\\}$ 时，则 $\\{y_1\\}$ 值 $y_1 \\in [7, 19]$. $\\because y_1 = y_2$. $\\therefore y_{2\\max} = 19, y_{2\\min} = 7$. $\\because x_2 \\in \\{x \\mid -1 \\le x \\le 2\\}$. $\\therefore y_{2\\max} = 2a + 5 - a = a + 5$. $y_{2\\min} = -a + 5 - a = -2a + 5$. $\\therefore \\begin{cases} a+5 \\ge 19 & a \\ge 14 \\\\ -2a+5 \\le 7 & a \\ge -1 \\end{cases}$ 综上，$a$ 的取值范围为 $\\{a \\mid a \\ge 14\\}$.",
+        "answer_parts": [
+          {
+            "label": "(1)",
+            "transcription": "解：由题可知 $-1, -\\frac{1}{2}$ 为方程的两根. 可得 $\\frac{1}{a} = -\\frac{1}{2}$，即 $a=-2$.",
+            "final_answer": "a=-2",
+            "status": "ok"
+          },
+          {
+            "label": "(2)",
+            "transcription": "当 $a=0$ 时，$-x-1>0 \\Rightarrow x<-1$. 答案 $\\Rightarrow$ 当 $a>0$ 时，$\\{x \\mid x > \\frac{1}{a} \\text{ 或 } x < -1\\}$. 当 $a<0$ 时. ① $a=-1$. $\\emptyset$ ② $a<-1, \\frac{1}{a} > -1$. $\\{x \\mid -1 < x < \\frac{1}{a}\\}$ ③ $-1 < a < 0, \\frac{1}{a} < -1$. $\\{x \\mid \\frac{1}{a} < x < -1\\}$.",
+            "final_answer": "\\text{See transcription for cases}",
+            "status": "ok"
+          },
+          {
+            "label": "(3)",
+            "transcription": "当 $x_1 \\in \\{x \\mid 1 \\le x \\le 2\\}$ 时，则 $\\{y_1\\}$ 值 $y_1 \\in [7, 19]$. $\\because y_1 = y_2$. $\\therefore y_{2\\max} = 19, y_{2\\min} = 7$. $\\because x_2 \\in \\{x \\mid -1 \\le x \\le 2\\}$. $\\therefore y_{2\\max} = 2a + 5 - a = a + 5$. $y_{2\\min} = -a + 5 - a = -2a + 5$. $\\therefore \\begin{cases} a+5 \\ge 19 & a \\ge 14 \\\\ -2a+5 \\le 7 & a \\ge -1 \\end{cases}$ 综上，$a$ 的取值范围为 $\\{a \\mid a \\ge 14\\}$.",
+            "final_answer": "\\{a \\mid a \\ge 14\\}",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Black ink provides the main solution. Red ink annotations include a circle around '19' in part (3), a re-derivation on the right side leading to $[14, +\\infty)$, and a note 'REASON: 马虎算错数. 4x4=16!!!' at the bottom, suggesting a calculation check. The transcription follows the main black ink body.",
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page29/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "Question 18 is a solution-type problem. The student provided a complete solution in black ink, with red ink annotations indicating corrections (specifically a calculation note '4x4=16' and a re-derivation on the right side). The main transcription follows the black ink body as the primary student work, which arrives at the final answer $a \\ge 14$.",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page29/image/page29.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page29/preprocessed/page29.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page29/api_markdown/page29.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page29/api_markdown/page29.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page29/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page29/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page29/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page29/code_outputs/match/viz/page29_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page29/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page29/agent_outputs/result.json",
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page29/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page29/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page29/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page29/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page29/code_outputs/match/viz/page29_handwriting_overlay.png"
+  }
+}

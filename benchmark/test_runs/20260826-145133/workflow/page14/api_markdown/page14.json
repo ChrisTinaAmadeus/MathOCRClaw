@@ -1,0 +1,37 @@
+{
+  "schema_version": 3,
+  "response_format": "benchmark_markdown",
+  "prompt": {
+    "version": "extract_v2",
+    "path": "benchmark/prompts/extract_v2.txt",
+    "sha1": "68e4ba040a859426177b603b9098b3e10a2d2a2e"
+  },
+  "page_markdown": "四、解答题：本题共5小题，共77分.解答应写出文字说明、证明过程或演算步骤.\n\n15. （本小题满分13分）已知集合 $A=\\{1,3,a^2\\}, B=\\{1,a+2\\}$.\n(1) 若 $A \\cap B=\\{1,4\\}$，求集合 $A \\cup B$；\n(2) 设 $U=A$，若 $\\complement_U B=\\{3\\}$，求实数 $a$ 的值.\n\n### 手写答案\n\n(1) 由题意得：\n$a^2=4$ ② $a=2$ $A \\cap B=\\{1,4\\}$\n$\\therefore A \\cup B=\\{1,3,4\\}$\n(2) 由题意得：\n$a^2=a+2$\n解得：$a_1=2, a_2=-1$ 当 $a=-1, a^2=1$\n$\\therefore a_2=-1$ 舍去. 综上，$a=2$.\n\n16. （本小题满分15分）已知集合 $A=\\{x|a-1 \\le x \\le 3-2a\\}, B=\\{x|-2 < x < 4\\}$\n(1) 若 $A \\cap B=A$，求实数 $a$ 的取值范围；\n(2) 设命题 $p: x \\in A$，命题 $q: x \\in B$，若 $p$ 是 $q$ 成立的必要不充分条件，求实数 $a$ 的取值范围.\n\n### 手写答案\n\n(1) $A \\cap B=A \\Rightarrow A \\subseteq B$\n① $A=\\emptyset$ 即 $a-1 > 3-2a$\n此时 $a > \\frac{4}{3}$\n② $A \\neq \\emptyset$ $a \\le \\frac{4}{3}$\n令 $\\begin{cases} a-1 > -2 \\\\ 3-2a < 4 \\end{cases}$ 得：$-\\frac{1}{2} < a \\le \\frac{4}{3}$ 综上，$a \\in (-\\frac{1}{2}, +\\infty)$\n(2) 由题意得：$B \\subsetneq A$\n令 $\\begin{cases} a-1 \\le -2 \\\\ 3-2a \\ge 4 \\end{cases}$ 得：$a \\le -1$\n$\\therefore a \\in (-\\infty, -1]$\n\n17. （本小题满分15分）已知 $a>0, b>0$，且 $2a+b=1$.\n(1) 求 $ab$ 的最大值；\n(2) 求 $\\frac{1}{a}+\\frac{2}{b}$ 的最小值；\n(3) 求 $\\frac{b^2+2a+1}{2ab}$ 的最小值.\n\n### 手写答案\n\n(1) $ab=\\frac{1}{2} \\cdot 2ab \\le \\frac{1}{2} \\cdot (\\frac{2a+b}{2})^2$\n$\\because 2a+b=1$\n$\\therefore \\frac{1}{2} \\cdot (\\frac{2a+b}{2})^2 = \\frac{1}{8}$\n$\\therefore ab \\le \\frac{1}{8}$，当且仅当 $2a=b$\n即 $\\begin{cases} a=\\frac{1}{4} \\\\ b=\\frac{1}{2} \\end{cases}$ 时，等号成立.\n(2) $\\frac{1}{a}+\\frac{2}{b}=(\\frac{1}{a}+\\frac{2}{b})(2a+b)=4+\\frac{b}{a}+\\frac{4a}{b}$\n$\\frac{b}{a}+\\frac{4a}{b} \\ge 2\\sqrt{\\frac{b}{a} \\cdot \\frac{4a}{b}}=4$\n$\\therefore \\frac{1}{a}+\\frac{2}{b}=4+\\frac{b}{a}+\\frac{4a}{b} \\ge 8$，当且仅当 $\\frac{b}{a}=\\frac{4a}{b}$，即 $\\begin{cases} a=\\frac{1}{4} \\\\ b=\\frac{1}{2} \\end{cases}$\n时，等号成立.\n(3) $\\because 2a+b=1$\n$\\therefore a=\\frac{1-b}{2}$\n$\\therefore \\frac{b^2+2a+1}{2ab}=\\frac{b^2+1-b+1}{(1-b)b}=-\\frac{b^2-b+2}{b^2-b}=-1-\\frac{2}{b^2-b}$\n$\\because b^2-b \\ge -\\frac{1}{4}$ $\\therefore \\frac{1}{b^2-b} \\le -4$ $\\therefore -\\frac{2}{b^2-b} \\ge 8$ 当且仅当 $\\begin{cases} b=\\frac{1}{2} \\\\ a=\\frac{1}{4} \\end{cases}$ 时，\n$\\therefore \\frac{b^2+2a+1}{2ab}=-1-\\frac{2}{b^2-b} \\ge 7$ 等号成立.",
+  "questions": [
+    {
+      "qno": "15",
+      "question_text": "15. （本小题满分13分）已知集合 $A=\\{1,3,a^2\\}, B=\\{1,a+2\\}$.\n(1) 若 $A \\cap B=\\{1,4\\}$，求集合 $A \\cup B$；\n(2) 设 $U=A$，若 $\\complement_U B=\\{3\\}$，求实数 $a$ 的值.",
+      "student_answer": "(1) 由题意得：\n$a^2=4$ ② $a=2$ $A \\cap B=\\{1,4\\}$\n$\\therefore A \\cup B=\\{1,3,4\\}$\n(2) 由题意得：\n$a^2=a+2$\n解得：$a_1=2, a_2=-1$ 当 $a=-1, a^2=1$\n$\\therefore a_2=-1$ 舍去. 综上，$a=2$.",
+      "answer_status": "ok",
+      "question_type": "solution",
+      "section_heading_before": "四、解答题：本题共5小题，共77分.解答应写出文字说明、证明过程或演算步骤."
+    },
+    {
+      "qno": "16",
+      "question_text": "16. （本小题满分15分）已知集合 $A=\\{x|a-1 \\le x \\le 3-2a\\}, B=\\{x|-2 < x < 4\\}$\n(1) 若 $A \\cap B=A$，求实数 $a$ 的取值范围；\n(2) 设命题 $p: x \\in A$，命题 $q: x \\in B$，若 $p$ 是 $q$ 成立的必要不充分条件，求实数 $a$ 的取值范围.",
+      "student_answer": "(1) $A \\cap B=A \\Rightarrow A \\subseteq B$\n① $A=\\emptyset$ 即 $a-1 > 3-2a$\n此时 $a > \\frac{4}{3}$\n② $A \\neq \\emptyset$ $a \\le \\frac{4}{3}$\n令 $\\begin{cases} a-1 > -2 \\\\ 3-2a < 4 \\end{cases}$ 得：$-\\frac{1}{2} < a \\le \\frac{4}{3}$ 综上，$a \\in (-\\frac{1}{2}, +\\infty)$\n(2) 由题意得：$B \\subsetneq A$\n令 $\\begin{cases} a-1 \\le -2 \\\\ 3-2a \\ge 4 \\end{cases}$ 得：$a \\le -1$\n$\\therefore a \\in (-\\infty, -1]$",
+      "answer_status": "ok",
+      "question_type": "solution",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "17",
+      "question_text": "17. （本小题满分15分）已知 $a>0, b>0$，且 $2a+b=1$.\n(1) 求 $ab$ 的最大值；\n(2) 求 $\\frac{1}{a}+\\frac{2}{b}$ 的最小值；\n(3) 求 $\\frac{b^2+2a+1}{2ab}$ 的最小值.",
+      "student_answer": "(1) $ab=\\frac{1}{2} \\cdot 2ab \\le \\frac{1}{2} \\cdot (\\frac{2a+b}{2})^2$\n$\\because 2a+b=1$\n$\\therefore \\frac{1}{2} \\cdot (\\frac{2a+b}{2})^2 = \\frac{1}{8}$\n$\\therefore ab \\le \\frac{1}{8}$，当且仅当 $2a=b$\n即 $\\begin{cases} a=\\frac{1}{4} \\\\ b=\\frac{1}{2} \\end{cases}$ 时，等号成立.\n(2) $\\frac{1}{a}+\\frac{2}{b}=(\\frac{1}{a}+\\frac{2}{b})(2a+b)=4+\\frac{b}{a}+\\frac{4a}{b}$\n$\\frac{b}{a}+\\frac{4a}{b} \\ge 2\\sqrt{\\frac{b}{a} \\cdot \\frac{4a}{b}}=4$\n$\\therefore \\frac{1}{a}+\\frac{2}{b}=4+\\frac{b}{a}+\\frac{4a}{b} \\ge 8$，当且仅当 $\\frac{b}{a}=\\frac{4a}{b}$，即 $\\begin{cases} a=\\frac{1}{4} \\\\ b=\\frac{1}{2} \\end{cases}$\n时，等号成立.\n(3) $\\because 2a+b=1$\n$\\therefore a=\\frac{1-b}{2}$\n$\\therefore \\frac{b^2+2a+1}{2ab}=\\frac{b^2+1-b+1}{(1-b)b}=-\\frac{b^2-b+2}{b^2-b}=-1-\\frac{2}{b^2-b}$\n$\\because b^2-b \\ge -\\frac{1}{4}$ $\\therefore \\frac{1}{b^2-b} \\le -4$ $\\therefore -\\frac{2}{b^2-b} \\ge 8$ 当且仅当 $\\begin{cases} b=\\frac{1}{2} \\\\ a=\\frac{1}{4} \\end{cases}$ 时，\n$\\therefore \\frac{b^2+2a+1}{2ab}=-1-\\frac{2}{b^2-b} \\ge 7$ 等号成立.",
+      "answer_status": "ok",
+      "question_type": "solution",
+      "section_heading_before": ""
+    }
+  ],
+  "page_notes": ""
+}

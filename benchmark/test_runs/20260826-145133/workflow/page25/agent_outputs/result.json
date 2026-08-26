@@ -1,0 +1,167 @@
+{
+  "page": "page25",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page25/image/page25.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page25.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page25/preprocessed/page25.png",
+  "api_strategy": {
+    "call_count": 2,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "global context-aware correction and final result"
+  },
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 11729,
+    "completion_tokens": 16717,
+    "total_tokens": 28446,
+    "latency_s": 317.658588,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 136.195779,
+          "prompt_tokens": 2713,
+          "completion_tokens": 7165,
+          "total_tokens": 9878,
+          "request_id": "chatcmpl-1455fb33-3889-9a06-b296-b9a6cc48f406"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 181.462809,
+          "prompt_tokens": 9016,
+          "completion_tokens": 9552,
+          "total_tokens": 18568,
+          "request_id": "chatcmpl-bc1ab194-b7a6-90aa-b95e-6ed4c2117dc6"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 3,
+    "answers_with_transcription": 3,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 15,
+      "question_type": "solution",
+      "section_heading_before": "",
+      "question_markdown": "15. (本小题满分 13 分) 已知集合 $A=\\left\\{x\\mid \\frac{2-x}{x+2}>0\\right\\}$，$B=\\{x\\mid |x-1|>2\\}$，$C=\\{x\\mid m-1<x<2m+1\\}$。\n(1) 求 $A\\cap B$，$(\\complement_{\\mathbf{R}}B)\\cup A$；\n(2) 若 $A\\cap C=C$，求实数 $m$ 的取值范围。",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C001"
+        ],
+        "lint_actions": [
+          "rolled_back_solution_latex_span_loss"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page25/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "解：$A=\\{x\\mid -2<x<2\\}$\n$\\therefore A=\\{x\\mid -2<x<2\\}$\n$B=\\{x\\mid |x-1|>2\\}$\n$\\therefore B=\\{x\\mid x>3 \\text{ 或 } x<-1\\}$\n$\\therefore A\\cap B=\\{x\\mid -2<x<-1\\}$\n$(\\complement_{\\mathbf{R}}B)=\\{x\\mid -1\\le x\\le 3\\}$\n$(\\complement_{\\mathbf{R}}B)\\cup A=\\{x\\mid -2<x\\le 3\\}$\n(2) $\\because A\\cap C=C$\n$\\therefore C\\subseteq A$\n当 $C$ 为空集时，$m-1\\ge 2m+1 \\Rightarrow m\\le -2$。\n若 $C$ 不为空集时，$\\begin{cases} m-1<2m+1 \\\\ m-1\\ge -2 \\\\ 2m+1\\le 2 \\end{cases} \\Rightarrow \\begin{cases} m>-2 \\\\ m\\ge -1 \\\\ m\\le \\frac{1}{2} \\end{cases}$\n即 $-1<m<\\frac{1}{2}$\n综上，$m$ 的取值范围为 $m\\le -2$ 或 $-1<m<\\frac{1}{2}$。",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Inequalities in final range for part (2) non-empty case appear to be non-strict ($\\le$) based on derivation $m \\ge -1$ and $m \\le 1/2$.",
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page25/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 16,
+      "question_type": "solution",
+      "section_heading_before": "",
+      "question_markdown": "16. (本小题满分 15 分) 已知 $a\\in \\mathbf{R}$，$p:\\forall x\\in \\{x\\mid 0\\le x\\le 1\\}, a\\le x^2+1$；$q:\\exists x_0\\in \\mathbf{R}, x_0^2+2ax_0-(2a-3)=0$。\n(1) 若 $p$ 是真命题，求 $a$ 的最大值；\n(2) 若 $p$ 为假命题且 $q$ 为真命题，求 $a$ 的取值范围。",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C002"
+        ],
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page25/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) $\\because p$ 为真命题\n$\\therefore$ 当 $x=1$ 时 $x^2+1$ 最大，此时 $x^2+1=2$\n$\\therefore$ 有 $a\\le 2$\n即 $a_{\\max}=2$\n(2) $\\because p$ 为假命题\n$\\therefore \\exists x\\in \\{x\\mid 0\\le x\\le 1\\}, a>x^2+1$\n$\\therefore a>1$\n$\\therefore a>2$\n$\\because q$ 为真命题\n$\\therefore$ 存在 $x_0^2+2ax_0-(2a-3)=0$\n$\\Delta=4a^2+4(2a-3)\\ge 0$\n即 $4a^2+8a-12\\ge 0$\n解得 $a\\le -3$ 或 $a\\ge 1$\n综上 $a$ 的取值范围为 $a\\le -3$ 或 $a>2$",
+        "answer_parts": [
+          {
+            "label": "(1)",
+            "transcription": "$\\because p$ 为真命题\n$\\therefore$ 当 $x=1$ 时 $x^2+1$ 最大，此时 $x^2+1=2$\n$\\therefore$ 有 $a\\le 2$\n即 $a_{\\max}=2$",
+            "final_answer": "$a_{\\max}=2$",
+            "status": "ok"
+          },
+          {
+            "label": "(2)",
+            "transcription": "$\\because p$ 为假命题\n$\\therefore \\exists x\\in \\{x\\mid 0\\le x\\le 1\\}, a>x^2+1$\n$\\therefore a>1$\n$\\therefore a>2$\n$\\because q$ 为真命题\n$\\therefore$ 存在 $x_0^2+2ax_0-(2a-3)=0$\n$\\Delta=4a^2+4(2a-3)\\ge 0$\n即 $4a^2+8a-12\\ge 0$\n解得 $a\\le -3$ 或 $a\\ge 1$\n综上 $a$ 的取值范围为 $a\\le -3$ 或 $a>2$",
+            "final_answer": "$a\\le -3$ 或 $a>2$",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Student logic in (1) uses max instead of min for universal quantifier bound, but transcription follows visible text. In (2), student derives $a>1$ then $a>2$.",
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page25/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 17,
+      "question_type": "solution",
+      "section_heading_before": "",
+      "question_markdown": "17. (本小题满分 15 分) (1) 已知 $0<x<2$，$0<y<3$，求 $2x-y$ 的取值范围；\n(2) 已知 $x>3$，求 $y=2x+\\frac{4}{2x-6}$ 的最小值；\n(3) 若 $0<x<4$，求 $y=x(8-2x)$ 的最大值。",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C003"
+        ],
+        "lint_actions": [
+          "rolled_back_solution_latex_span_loss"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page25/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "解：(1) $\\because 0<x<2$\n$\\therefore 0<2x<4$\n$\\because 0<y<3$\n$\\therefore -3<-y<0$\n$\\therefore -3<2x-y<4$\n(2) $\\because x>3$\n$\\therefore x-3>0$\n$\\therefore 2x-6>0$\n$y=2x+\\frac{4}{2x-6}=2x-6+\\frac{4}{2x-6}+6$\n$\\ge 2\\sqrt{(2x-6)\\cdot \\frac{4}{2x-6}}+6=10$\n当且仅当 $2x-6=\\frac{4}{2x-6}$ 时，等号可取\n$\\therefore (2x+\\frac{4}{2x-6})_{\\min}=10$\n(3) $y: 0<x<4$\n$\\therefore 4-x>0$\n$8-2x>0$\n$x(8-2x)=\\frac{1}{2}\\cdot 2x(8-2x)$\n$\\le \\frac{1}{2}\\left(\\frac{2x+8-2x}{2}\\right)^2=8$\n$\\therefore x(8-2x)\\le 8$\n$\\therefore x(8-2x)_{\\max}=8$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Part (3) starts with 'because' symbol ($\\because$) not 'y:'. Transcription corrected.",
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page25/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "Handwriting for Q15 part (2) uses non-strict inequalities for the non-empty case intersection, corrected from first pass. Q17 part (3) starts with 'because' symbol, not 'y:'.",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page25/image/page25.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page25/preprocessed/page25.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page25/api_markdown/page25.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page25/api_markdown/page25.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page25/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page25/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page25/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page25/code_outputs/match/viz/page25_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page25/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page25/agent_outputs/result.json",
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page25/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page25/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page25/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page25/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page25/code_outputs/match/viz/page25_handwriting_overlay.png"
+  }
+}

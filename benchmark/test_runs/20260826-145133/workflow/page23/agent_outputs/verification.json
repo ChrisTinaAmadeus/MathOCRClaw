@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_second_pass",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page23/api_markdown/page23.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page23/code_outputs/match/question_contexts.json",
+  "page_notes": "",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 16304,
+    "completion_tokens": 16403,
+    "total_tokens": 32707,
+    "latency_s": 319.519262,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 173.2966,
+          "prompt_tokens": 2933,
+          "completion_tokens": 9125,
+          "total_tokens": 12058,
+          "request_id": "chatcmpl-28b1063c-e08d-97ac-9282-06a3ae1b0ecc"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 146.222662,
+          "prompt_tokens": 13371,
+          "completion_tokens": 7278,
+          "total_tokens": 20649,
+          "request_id": "chatcmpl-cfe20625-cfc7-9107-b4bf-ecb47a0dc937"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"page_notes\": \"\",\n  \"questions\": [\n    {\n      \"qno\": \"6\",\n      \"question_type\": \"choice\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"6. 已知 $E,F$ 分别为正方体 $ABCD-A'B'C'D'$ 的上底面 $A'B'C'D'$ 和侧面 $CC'D'D$ 的中心，若 $\\\\overrightarrow{AE} + \\\\overrightarrow{AF} = x\\\\overrightarrow{AB} + y\\\\overrightarrow{AD} + z\\\\overrightarrow{AA'}$，则\\nA. $x+y=z$\\nB. $x-y=z$\\nC. $x+y+z=3$\\nD. $x+y+z=4$\",\n      \"handwritten_answer\": {\n        \"text\": \"D\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"D\",\n            \"final_answer\": \"D\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"A large 'D' shape is written near the end of the question stem.\"\n      },\n      \"source_context_ids\": [\n        \"C001\"\n      ]\n    },\n    {\n      \"qno\": \"7\",\n      \"question_type\": \"choice\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"7. 如图，在正三棱柱 $ABC-A_1B_1C_1$ 中 $AB=2$，若 $AB_1 \\\\perp BC_1$，则直线 $AB_1$ 与平面 $BCC_1B_1$ 所成角的正弦值为\\n<插图>\\nA. $\\\\frac{\\\\sqrt{3}}{3}$\\nB. $\\\\frac{\\\\sqrt{2}}{2}$\\nC. $\\\\frac{\\\\sqrt{21}}{7}$\\nD. $\\\\frac{\\\\sqrt{6}}{3}$\",\n      \"handwritten_answer\": {\n        \"text\": \"B\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"B\",\n            \"final_answer\": \"B\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"A 'B' is written near the question stem.\"\n      },\n      \"source_context_ids\": [\n        \"C002\"\n      ]\n    },\n    {\n      \"qno\": \"8\",\n      \"question_type\": \"choice\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"8. 已知直线 $Ax+By+C=0$ 与 $x+\\\\sqrt{3}y-3=0$ 平行，则 $A^2+B+C^2$ 的最小值为\\nA. $-\\\\frac{3}{4}$\\nB. $-\\\\frac{1}{2}$\\nC. 0\\nD. 1\",\n      \"handwritten_answer\": {\n        \"text\": \"A\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"A\",\n            \"final_answer\": \"A\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"An 'A' is written to the right of the question stem.\"\n      },\n      \"source_context_ids\": [\n        \"C003\"\n      ]\n    },\n    {\n      \"qno\": \"9\",\n      \"question_type\": \"choice\",\n      \"section_heading_before\": \"二、多项选择题：本题共 3 小题，每小题 6 分，共 18 分。在每小题给出的选项中，有多项符合题目要求，全部选对的得 6 分，部分选对的得部分分，有选错的得 0 分。\",\n      \"question_markdown\": \"9. 已知直线 $l_1: ax+y+2a=0, l_2: x-ay-2=0, a \\\\in \\\\mathbf{R}, O$ 为坐标原点，则下列说法正确的是\\nA. $l_1 \\\\perp l_2$\\nB. $l_1$ 与 $l_2$ 过同一个定点\\nC. 若 $a=1$，则 $l_1$ 与 $l_2$ 关于 $y$ 轴对称\\nD. 若 $l_1$ 与 $l_2$ 交于点 $M$，则 $|OM|$ 为定值\",\n      \"handwritten_answer\": {\n        \"text\": \"ACD\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"ACD\",\n            \"final_answer\": \"ACD\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"'ACD' is written to the right of the question stem. Options A, C, D are checked, B is crossed out.\"\n      },\n      \"source_context_ids\": [\n        \"C004\"\n      ]\n    },\n    {\n      \"qno\": \"10\",\n      \"question_type\": \"choice\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"10. 在 $\\\\triangle ABC$ 中，内角 $A,B,C$ 的对边分别为 $a,b,c$，已知 $\\\\cos C = \\\\frac{13}{14}$，且 $7\\\\sin C + 3\\\\sqrt{3}\\\\cos A = 0$，$a+c=10$，则\\nA. $\\\\sin C = \\\\frac{3\\\\sqrt{3}}{14}$\\nB. $A = \\\\frac{5\\\\pi}{6}$\\nC. $b=6$\\nD. $\\\\triangle ABC$ 的面积为 $\\\\frac{15\\\\sqrt{3}}{4}$\",\n      \"handwritten_answer\": {\n        \"text\": \"AD\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"AD\",\n            \"final_answer\": \"AD\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"'AD' is written near the question stem. Options A, D are checked, B, C are crossed out.\"\n      },\n      \"source_context_ids\": [\n        \"C005\"\n      ]\n    },\n    {\n      \"qno\": \"11\",\n      \"question_type\": \"choice\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"11. 对于两个向量 $\\\\boldsymbol{a}=(x_1,y_1,z_1), \\\\boldsymbol{b}=(x_2,y_2,z_2)$，定义 $\\\\boldsymbol{a} \\\\times \\\\boldsymbol{b}$ 为 $\\\\boldsymbol{a}, \\\\boldsymbol{b}$ 的“向量积”，该运算的结果是一个向量：$\\\\boldsymbol{a} \\\\times \\\\boldsymbol{b} = (y_1z_2-y_2z_1, z_1x_2-z_2x_1, x_1y_2-x_2y_1)$，则下列说法正确的是\\nA. 若 $\\\\boldsymbol{a}=(1,2,-4), \\\\boldsymbol{b}=(3,1,1)$，则 $\\\\boldsymbol{a} \\\\times \\\\boldsymbol{b} = (6,-13,-5)$\\nB. 若 $\\\\boldsymbol{a}, \\\\boldsymbol{b}$ 是非零向量，且 $\\\\boldsymbol{a} \\\\times \\\\boldsymbol{b}$ 为零向量，则一定有 $\\\\boldsymbol{a} // \\\\boldsymbol{b}$\\nC. 若 $\\\\boldsymbol{a}, \\\\boldsymbol{b}$ 是平面 $\\\\alpha$ 内的两个不共线的向量，则平面 $\\\\alpha$ 的法向量可以是 $\\\\boldsymbol{a} \\\\times \\\\boldsymbol{b}$\\nD. 若 $\\\\boldsymbol{a}, \\\\boldsymbol{b}$ 是非零向量，且 $|\\\\boldsymbol{a} \\\\times \\\\boldsymbol{b}| = |\\\\boldsymbol{a} \\\\cdot \\\\boldsymbol{b}|$，则 $\\\\boldsymbol{a}, \\\\boldsymbol{b}$ 的夹角为 $\\\\frac{\\\\pi}{4}$\",\n      \"handwritten_answer\": {\n        \"text\": \"ACB\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"ACB\",\n            \"final_answer\": \"ACB\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"'ACB' is written to the right of the question stem. Options A, C are checked.\"\n      },\n      \"source_context_ids\": [\n        \"C006\"\n      ]\n    }\n  ]\n}\n```"
+}

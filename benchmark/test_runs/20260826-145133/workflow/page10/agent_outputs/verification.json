@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_second_pass",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page10/api_markdown/page10.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page10/code_outputs/match/question_contexts.json",
+  "page_notes": "Printed question stems for Q16 and Q17 are not visible; only question numbers are present. Handwritten solutions are fully transcribed.",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 7023,
+    "completion_tokens": 12586,
+    "total_tokens": 19609,
+    "latency_s": 250.524101,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 158.908632,
+          "prompt_tokens": 2933,
+          "completion_tokens": 7805,
+          "total_tokens": 10738,
+          "request_id": "chatcmpl-10993e49-e4ec-93b3-a184-2b42a9d5a37b"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 91.615469,
+          "prompt_tokens": 4090,
+          "completion_tokens": 4781,
+          "total_tokens": 8871,
+          "request_id": "chatcmpl-e357657b-4b01-943c-8095-73d484028ca8"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"page_notes\": \"Printed question stems for Q16 and Q17 are not visible; only question numbers are present. Handwritten solutions are fully transcribed.\",\n  \"questions\": [\n    {\n      \"qno\": \"16\",\n      \"question_type\": \"solution\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"16. [无法识别]\",\n      \"handwritten_answer\": {\n        \"text\": \"(1) $m=2, B=\\\\{x\\\\mid 1\\\\le x\\\\le 5, m\\\\in R\\\\}$ $C_R B=\\\\{x\\\\mid x<1\\\\text{或}x>5\\\\}$\\n$A=\\\\{x\\\\mid x^2-x\\\\le 0\\\\}=\\\\{x\\\\mid 0\\\\le x\\\\le 1\\\\}$ $C_R A=\\\\{x\\\\mid x<0\\\\text{或}x>1\\\\}$\\n$(C_R A)\\\\cap (C_R B)=\\\\{x\\\\mid x<0\\\\text{或}x>5\\\\}$\\n\\n(2) $x\\\\in A$ 是 $x\\\\in B$ 的充分不必要条件\\n$A\\\\subsetneq B$\\n$\\\\begin{cases} m-1\\\\le 2m+1 \\\\\\\\ m-1<0 \\\\\\\\ 2m+1>1 \\\\end{cases}$ 解得 $\\\\begin{cases} m\\\\ge -2 \\\\\\\\ m<1 \\\\\\\\ m>0 \\\\end{cases}$\\n综上所述，$0<m<1$\",\n        \"answer_parts\": [\n          {\n            \"label\": \"(1)\",\n            \"transcription\": \"$m=2, B=\\\\{x\\\\mid 1\\\\le x\\\\le 5, m\\\\in R\\\\}$ $C_R B=\\\\{x\\\\mid x<1\\\\text{或}x>5\\\\}$\\n$A=\\\\{x\\\\mid x^2-x\\\\le 0\\\\}=\\\\{x\\\\mid 0\\\\le x\\\\le 1\\\\}$ $C_R A=\\\\{x\\\\mid x<0\\\\text{或}x>1\\\\}$\\n$(C_R A)\\\\cap (C_R B)=\\\\{x\\\\mid x<0\\\\text{或}x>5\\\\}$\",\n            \"final_answer\": \"$(C_R A)\\\\cap (C_R B)=\\\\{x\\\\mid x<0\\\\text{或}x>5\\\\}$\",\n            \"status\": \"ok\"\n          },\n          {\n            \"label\": \"(2)\",\n            \"transcription\": \"$x\\\\in A$ 是 $x\\\\in B$ 的充分不必要条件\\n$A\\\\subsetneq B$\\n$\\\\begin{cases} m-1\\\\le 2m+1 \\\\\\\\ m-1<0 \\\\\\\\ 2m+1>1 \\\\end{cases}$ 解得 $\\\\begin{cases} m\\\\ge -2 \\\\\\\\ m<1 \\\\\\\\ m>0 \\\\end{cases}$\\n综上所述，$0<m<1$\",\n            \"final_answer\": \"$0<m<1$\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Clear handwriting. Minor scribble in $x^2-x$ but readable.\"\n      },\n      \"source_context_ids\": [\n        \"C001\"\n      ]\n    },\n    {\n      \"qno\": \"17\",\n      \"question_type\": \"solution\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"17. [无法识别]\",\n      \"handwritten_answer\": {\n        \"text\": \"(1) $S=5X+30C+30\\\\times 6+30$\\n$=5X+30C+210$\\n$=5X+30\\\\frac{k}{5X+5}+210$\\n$=5X+\\\\frac{6k}{X+1}+210$\\n\\n(2) $S=5X+\\\\frac{6k}{X+1}+210$\\n$=5X+5+\\\\frac{6k}{X+1}+210-5$\\n$=5(X+1)+\\\\frac{6k}{X+1}+205$\\n$5(X+1)+\\\\frac{6k}{X+1}\\\\ge 2\\\\sqrt{5(X+1)\\\\cdot \\\\frac{6k}{X+1}}=2\\\\sqrt{30k}$\\n$S\\\\ge 2\\\\sqrt{30k}+205$\\n当且仅当 $5(X+1)=\\\\frac{6k}{X+1}$，即 $X_1=-\\\\frac{\\\\sqrt{30k}+5}{5}$ (舍)，$X_2=\\\\frac{\\\\sqrt{30k}-5}{5}$，\\n$S$ 取“=” 其最小值为 $2\\\\sqrt{30k}+205$\",\n        \"answer_parts\": [\n          {\n            \"label\": \"(1)\",\n            \"transcription\": \"$S=5X+30C+30\\\\times 6+30$\\n$=5X+30C+210$\\n$=5X+30\\\\frac{k}{5X+5}+210$\\n$=5X+\\\\frac{6k}{X+1}+210$\",\n            \"final_answer\": \"$S=5X+\\\\frac{6k}{X+1}+210$\",\n            \"status\": \"ok\"\n          },\n          {\n            \"label\": \"(2)\",\n            \"transcription\": \"$S=5X+\\\\frac{6k}{X+1}+210$\\n$=5X+5+\\\\frac{6k}{X+1}+210-5$\\n$=5(X+1)+\\\\frac{6k}{X+1}+205$\\n$5(X+1)+\\\\frac{6k}{X+1}\\\\ge 2\\\\sqrt{5(X+1)\\\\cdot \\\\frac{6k}{X+1}}=2\\\\sqrt{30k}$\\n$S\\\\ge 2\\\\sqrt{30k}+205$\\n当且仅当 $5(X+1)=\\\\frac{6k}{X+1}$，即 $X_1=-\\\\frac{\\\\sqrt{30k}+5}{5}$ (舍)，$X_2=\\\\frac{\\\\sqrt{30k}-5}{5}$，\\n$S$ 取“=” 其最小值为 $2\\\\sqrt{30k}+205$\",\n            \"final_answer\": \"$2\\\\sqrt{30k}+205$\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Clear handwriting. Standard AM-GM inequality application.\"\n      },\n      \"source_context_ids\": [\n        \"C002\"\n      ]\n    }\n  ]\n}\n```"
+}

@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_second_pass",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page12/api_markdown/page12.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page12/code_outputs/match/question_contexts.json",
+  "page_notes": "Top of page contains handwriting from a previous question (likely Q16), ignored. Question 17 solution uses coordinate geometry. Red ink text '由题意可知...' appears to be a teacher's note or correction, but the student's black ink derivation for the normal vector of plane ABC is present on the right side and is included in the transcription.",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 10643,
+    "completion_tokens": 20966,
+    "total_tokens": 31609,
+    "latency_s": 401.188124,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 215.909164,
+          "prompt_tokens": 3065,
+          "completion_tokens": 11197,
+          "total_tokens": 14262,
+          "request_id": "chatcmpl-f1d64dbd-36b4-9f50-8206-e1da1be1d64f"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 185.27896,
+          "prompt_tokens": 7578,
+          "completion_tokens": 9769,
+          "total_tokens": 17347,
+          "request_id": "chatcmpl-6d67e974-835c-9c68-8d45-e040f0ef6b2f"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"page_notes\": \"Top of page contains handwriting from a previous question (likely Q16), ignored. Question 17 solution uses coordinate geometry. Red ink text '由题意可知...' appears to be a teacher's note or correction, but the student's black ink derivation for the normal vector of plane ABC is present on the right side and is included in the transcription.\",\n  \"questions\": [\n    {\n      \"qno\": \"17\",\n      \"question_type\": \"solution\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"17. 如图，在三棱柱 $ABC-A_1B_1C_1$ 中，$B_1B \\\\perp$ 平面 $A_1B_1C_1$，$AC=CB=CC_1=2$，$\\\\angle ACB=90^\\\\circ$，$D, E$ 分别是 $A_1B_1$，$CC_1$ 的中点。\\n(1) 求证：$C_1D // $ 平面 $A_1BE$；\\n(2) 求平面 $ABC$ 与平面 $A_1BE$ 所成角的正弦值。\\n<插图>\",\n      \"handwritten_answer\": {\n        \"text\": \"(1) 证：在三棱柱 $ABC-A_1B_1C_1$ 中，如图，建立空间直角坐标系\\n$\\\\therefore C_1(0,0,2), D(1,1,2), A_1(2,0,2)$\\n$B(0,2,0), E(0,0,1)$\\n$\\\\therefore \\\\overrightarrow{C_1D}=(1,1,0), \\\\overrightarrow{A_1B}=(-2,2,-2)$\\n$\\\\overrightarrow{A_1E}=(-2,0,-1)$\\n设平面 $A_1BE$ 一个法向量 $\\\\vec{n}=(x,y,z)$\\n则 $\\\\begin{cases} \\\\vec{n} \\\\cdot \\\\overrightarrow{A_1B} = 0 \\\\\\\\ \\\\vec{n} \\\\cdot \\\\overrightarrow{A_1E} = 0 \\\\end{cases} \\\\Rightarrow \\\\begin{cases} -2x+2y-2z=0 \\\\\\\\ -2x-z=0 \\\\end{cases}$\\n令 $x=-1$，则 $y=1, z=2$\\n$\\\\therefore \\\\vec{n}=(-1,1,2)$\\n$\\\\therefore \\\\overrightarrow{C_1D} \\\\cdot \\\\vec{n} = 1\\\\times(-1) + 1\\\\times 1 + 0 = 0$\\n$\\\\therefore \\\\overrightarrow{C_1D} \\\\perp \\\\vec{n}$\\n$\\\\therefore C_1D // $ 平面 $A_1BE$\\n\\n(2) 由(1)得平面 $A_1BE$ 的法向量 $\\\\vec{n}=(-1,1,2)$\\n$A(2,0,0), B(0,2,0), C(0,0,0)$\\n$\\\\therefore \\\\overrightarrow{CA}=(2,0,0), \\\\overrightarrow{CB}=(0,2,0)$\\n设平面 $ABC$ 一个法向量为 $\\\\vec{m}=(a,b,c)$\\n$\\\\begin{cases} \\\\vec{m} \\\\cdot \\\\overrightarrow{CA} = 0 \\\\\\\\ \\\\vec{m} \\\\cdot \\\\overrightarrow{CB} = 0 \\\\end{cases} \\\\Rightarrow \\\\begin{cases} 2a=0 \\\\\\\\ 2b=0 \\\\end{cases}$\\n令 $c=1$，则 $a=0, b=0$\\n$\\\\therefore \\\\vec{m}=(0,0,1)$\\n$\\\\vec{n} \\\\cdot \\\\vec{m} = -1\\\\times 0 + 1\\\\times 0 + 2\\\\times 1 = 2$\\n$|\\\\vec{n}| = \\\\sqrt{6}, |\\\\vec{m}| = 1$\\n$\\\\cos \\\\langle \\\\vec{m}, \\\\vec{n} \\\\rangle = \\\\frac{\\\\vec{m} \\\\cdot \\\\vec{n}}{|\\\\vec{m}| |\\\\vec{n}|} = \\\\frac{2}{\\\\sqrt{6}} = \\\\frac{\\\\sqrt{6}}{3}$\\n设平面 $ABC$ 与平面 $A_1BE$ 所成角为 $\\\\theta$\\n$\\\\therefore \\\\cos \\\\theta = |\\\\cos \\\\langle \\\\vec{m}, \\\\vec{n} \\\\rangle| = \\\\frac{\\\\sqrt{6}}{3}$\\n$\\\\therefore \\\\sin \\\\theta = \\\\sqrt{1-\\\\cos^2 \\\\theta} = \\\\frac{\\\\sqrt{3}}{3}$\\n答：正弦值为 $\\\\frac{\\\\sqrt{3}}{3}$。\",\n        \"answer_parts\": [\n          {\n            \"label\": \"(1)\",\n            \"transcription\": \"证：在三棱柱 $ABC-A_1B_1C_1$ 中，如图，建立空间直角坐标系\\n$\\\\therefore C_1(0,0,2), D(1,1,2), A_1(2,0,2)$\\n$B(0,2,0), E(0,0,1)$\\n$\\\\therefore \\\\overrightarrow{C_1D}=(1,1,0), \\\\overrightarrow{A_1B}=(-2,2,-2)$\\n$\\\\overrightarrow{A_1E}=(-2,0,-1)$\\n设平面 $A_1BE$ 一个法向量 $\\\\vec{n}=(x,y,z)$\\n则 $\\\\begin{cases} \\\\vec{n} \\\\cdot \\\\overrightarrow{A_1B} = 0 \\\\\\\\ \\\\vec{n} \\\\cdot \\\\overrightarrow{A_1E} = 0 \\\\end{cases} \\\\Rightarrow \\\\begin{cases} -2x+2y-2z=0 \\\\\\\\ -2x-z=0 \\\\end{cases}$\\n令 $x=-1$，则 $y=1, z=2$\\n$\\\\therefore \\\\vec{n}=(-1,1,2)$\\n$\\\\therefore \\\\overrightarrow{C_1D} \\\\cdot \\\\vec{n} = 1\\\\times(-1) + 1\\\\times 1 + 0 = 0$\\n$\\\\therefore \\\\overrightarrow{C_1D} \\\\perp \\\\vec{n}$\\n$\\\\therefore C_1D // $ 平面 $A_1BE$\",\n            \"final_answer\": \"C_1D // \\\\text{平面} A_1BE\",\n            \"status\": \"ok\"\n          },\n          {\n            \"label\": \"(2)\",\n            \"transcription\": \"由(1)得平面 $A_1BE$ 的法向量 $\\\\vec{n}=(-1,1,2)$\\n$A(2,0,0), B(0,2,0), C(0,0,0)$\\n$\\\\therefore \\\\overrightarrow{CA}=(2,0,0), \\\\overrightarrow{CB}=(0,2,0)$\\n设平面 $ABC$ 一个法向量为 $\\\\vec{m}=(a,b,c)$\\n$\\\\begin{cases} \\\\vec{m} \\\\cdot \\\\overrightarrow{CA} = 0 \\\\\\\\ \\\\vec{m} \\\\cdot \\\\overrightarrow{CB} = 0 \\\\end{cases} \\\\Rightarrow \\\\begin{cases} 2a=0 \\\\\\\\ 2b=0 \\\\end{cases}$\\n令 $c=1$，则 $a=0, b=0$\\n$\\\\therefore \\\\vec{m}=(0,0,1)$\\n$\\\\vec{n} \\\\cdot \\\\vec{m} = 2, |\\\\vec{n}| = \\\\sqrt{6}, |\\\\vec{m}| = 1$\\n$\\\\cos \\\\langle \\\\vec{m}, \\\\vec{n} \\\\rangle = \\\\frac{\\\\sqrt{6}}{3}$\\n$\\\\cos \\\\theta = \\\\frac{\\\\sqrt{6}}{3}$\\n$\\\\sin \\\\theta = \\\\frac{\\\\sqrt{3}}{3}$\",\n            \"final_answer\": \"\\\\frac{\\\\sqrt{3}}{3}\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Handwriting is dense. Part (1) uses coordinate geometry. Part (2) derivation of normal vector m is on the right side in black ink, red text '由题意可知' is likely a teacher note summarizing it. Final answer is clear.\"\n      },\n      \"source_context_ids\": [\n        \"C001\"\n      ]\n    }\n  ]\n}\n```"
+}

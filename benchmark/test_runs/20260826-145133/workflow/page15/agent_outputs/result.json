@@ -1,0 +1,113 @@
+{
+  "page": "page15",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page15/image/page15.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page15.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page15/preprocessed/page15.png",
+  "api_strategy": {
+    "call_count": 2,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "global context-aware correction and final result"
+  },
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 7898,
+    "completion_tokens": 13158,
+    "total_tokens": 21056,
+    "latency_s": 249.612829,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 117.225597,
+          "prompt_tokens": 2493,
+          "completion_tokens": 6479,
+          "total_tokens": 8972,
+          "request_id": "chatcmpl-07182398-e767-98a3-81d1-ad1be951e060"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 132.387232,
+          "prompt_tokens": 5405,
+          "completion_tokens": 6679,
+          "total_tokens": 12084,
+          "request_id": "chatcmpl-f18c3604-e3d0-964c-97fb-0b45e5603018"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 1,
+    "answers_with_transcription": 1,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 16,
+      "question_type": "solution",
+      "section_heading_before": "",
+      "question_markdown": "16. (15分) 设集合 $A=\\{x|(x-a+2)(x-a-2)<0\\}$，$B=\\left\\{x\\left|\\frac{2x-1}{x+2}<1\\right.\\right\\}$。\n(1) 求集合 A, B；\n(2) 若 $A\\cap(\\complement_R B)=\\varnothing$，求实数 a 的取值范围。",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C001"
+        ],
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page15/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 由题意得 $a-2, a+2$ 是方程 $(x-a+2)(x-a-2)=0$ 的两根，且 $a-2$ 一定小于 $a+2$。\n$\\therefore A=\\{x|a-2<x<a+2\\}$.\n$B$: ① $\\begin{cases} x+2>0 \\\\ 2x-1<x+2 \\end{cases}$ 解得 $-2<x<3$\n② $\\begin{cases} 2x-1>x+2 \\\\ x+2<0 \\end{cases}$ 无解.\n$\\therefore B=\\{x|-2<x<3\\}$\n(2) $\\complement_R B=\\{x|x\\le-2 \\text{ 或 } x\\ge 3\\}$.\n$\\because A\\cap(\\complement_R B)=\\varnothing$\n $A=\\varnothing \\Rightarrow a-2 \\ge a+2$ 无解.\n $\\begin{cases} a-2 \\ge -2 \\\\ a+2 < 3 \\end{cases}$ 解得 $0<a<1$\n综上所述，a 取值 $\\{a|0<a<1\\}$",
+        "answer_parts": [
+          {
+            "label": "(1)",
+            "transcription": "由题意得 $a-2, a+2$ 是方程 $(x-a+2)(x-a-2)=0$ 的两根，且 $a-2$ 一定小于 $a+2$。\n$\\therefore A=\\{x|a-2<x<a+2\\}$.\n$B$: ① $\\begin{cases} x+2>0 \\\\ 2x-1<x+2 \\end{cases}$ 解得 $-2<x<3$\n② $\\begin{cases} 2x-1>x+2 \\\\ x+2<0 \\end{cases}$ 无解.\n$\\therefore B=\\{x|-2<x<3\\}$",
+            "final_answer": "$A=\\{x|a-2<x<a+2\\}, B=\\{x|-2<x<3\\}$",
+            "status": "ok"
+          },
+          {
+            "label": "(2)",
+            "transcription": "$\\complement_R B=\\{x|x\\le-2 \\text{ 或 } x\\ge 3\\}$.\n$\\because A\\cap(\\complement_R B)=\\varnothing$\n $A=\\varnothing \\Rightarrow a-2 \\ge a+2$ 无解.\n $\\begin{cases} a-2 \\ge -2 \\\\ a+2 < 3 \\end{cases}$ 解得 $0<a<1$\n综上所述，a 取值 $\\{a|0<a<1\\}$",
+            "final_answer": "$\\{a|0<a<1\\}$",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwriting is clear. In part (2) case 2, the system inequalities appear to be $a-2 \\ge -2$ and $a+2 < 3$, leading to the student's conclusion $0<a<1$ (though mathematically $a \\ge 0$ and $a < 1$ would imply $0 \\le a < 1$, the student wrote strict inequality). Crossed out text in part (1) case 2 is omitted.",
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page15/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page15/image/page15.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page15/preprocessed/page15.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page15/api_markdown/page15.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page15/api_markdown/page15.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page15/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page15/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page15/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page15/code_outputs/match/viz/page15_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page15/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page15/agent_outputs/result.json",
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page15/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page15/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page15/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page15/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page15/code_outputs/match/viz/page15_handwriting_overlay.png"
+  }
+}

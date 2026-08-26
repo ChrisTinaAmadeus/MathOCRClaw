@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_second_pass",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page02/api_markdown/page02.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page02/code_outputs/match/question_contexts.json",
+  "page_notes": "",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 14208,
+    "completion_tokens": 14122,
+    "total_tokens": 28330,
+    "latency_s": 269.483021,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 164.139809,
+          "prompt_tokens": 3065,
+          "completion_tokens": 8646,
+          "total_tokens": 11711,
+          "request_id": "chatcmpl-08d94f49-b587-9d2b-b506-3190bcb14c6f"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 105.343212,
+          "prompt_tokens": 11143,
+          "completion_tokens": 5476,
+          "total_tokens": 16619,
+          "request_id": "chatcmpl-8f6a9e86-d719-9b2c-aeeb-b0c73ec46b21"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"page_notes\": \"\",\n  \"questions\": [\n    {\n      \"qno\": \"7\",\n      \"question_type\": \"choice\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"7. “$m < \\\\frac{1}{4}$” 是 “一元二次方程 $x^2 + x + m = 0$” 有实数解的 ( )\\nA. 充分不必要条件\\nB. 充要条件\\nC. 必要不充分条件\\nD. 既不充分也不必要条件\",\n      \"handwritten_answer\": {\n        \"text\": \"C\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"C\",\n            \"final_answer\": \"C\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Handwritten 'C' in parenthesis.\"\n      },\n      \"source_context_ids\": [\n        \"C001\"\n      ]\n    },\n    {\n      \"qno\": \"8\",\n      \"question_type\": \"choice\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"8. 下列结论正确的是 ( )\\nA. 若 $a > b$，则 $\\\\frac{1}{b} > \\\\frac{1}{a}$\\nB. 若 $a^2 < b^2$，则 $a < b$\\nC. 若 $a > b$，$c > d$ 则 $a - d > b - c$\\nD. 若 $a > b$，则 $ac^2 > bc^2$\",\n      \"handwritten_answer\": {\n        \"text\": \"C\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"C\",\n            \"final_answer\": \"C\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Handwritten 'C' in parenthesis, checkmark next to option C.\"\n      },\n      \"source_context_ids\": [\n        \"C002\"\n      ]\n    },\n    {\n      \"qno\": \"9\",\n      \"question_type\": \"choice\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"9. 设集合 $A = \\\\{0, 3\\\\}$，$B = \\\\{m + 2, m^2 + 2\\\\}$，若 $A \\\\cap B = \\\\{3\\\\}$，则集合 $A \\\\cup B$ 的子集的个数为 ( )\\nA. 3\\nB. 4\\nC. 7\\nD. 8\",\n      \"handwritten_answer\": {\n        \"text\": \"D\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"D\",\n            \"final_answer\": \"D\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Handwritten 'D' in parenthesis, checkmark next to option D.\"\n      },\n      \"source_context_ids\": [\n        \"C003\"\n      ]\n    },\n    {\n      \"qno\": \"10\",\n      \"question_type\": \"choice\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"10. 设集合 $A = \\\\{x | x^2 - 4 \\\\le 0\\\\}$，$B = \\\\{x | 2x + a \\\\le 0\\\\}$，且 $A \\\\cap B = \\\\{x | -2 < x < 1\\\\}$，则 $a = $ ( )\\nA. $-4$\\nB. $-2$\\nC. 2\\nD. 4\",\n      \"handwritten_answer\": {\n        \"text\": \"B\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"B\",\n            \"final_answer\": \"B\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Handwritten 'B' in parenthesis.\"\n      },\n      \"source_context_ids\": [\n        \"C004\"\n      ]\n    },\n    {\n      \"qno\": \"11\",\n      \"question_type\": \"choice\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"11. 若集合 $A = \\\\{x | x^2 = 1\\\\}, B = \\\\{x | mx = 1\\\\}$ 且 $B \\\\subseteq A$，则实数 $m$ 的集合为 ( )\\nA. $\\\\{-1, 0, 1\\\\}$\\nB. $\\\\{-1, 1\\\\}$\\nC. $\\\\{-1, 0\\\\}$\\nD. $\\\\{0, 1\\\\}$\",\n      \"handwritten_answer\": {\n        \"text\": \"B\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"B\",\n            \"final_answer\": \"B\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Handwritten 'B' in parenthesis.\"\n      },\n      \"source_context_ids\": [\n        \"C005\"\n      ]\n    },\n    {\n      \"qno\": \"12\",\n      \"question_type\": \"choice\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"12. 设集合 $A = \\\\{x | -1 < x - a < 1, x \\\\in R\\\\}$，$B = \\\\{x | 1 < x < 5, x \\\\in R\\\\}$，若 $A \\\\cap B = \\\\varnothing$，则实数 $a$ 的取值范围是 ( )\\nA. $0 \\\\le a \\\\le 6$\\nB. $a \\\\le 2$ 或 $a \\\\ge 4$\\nC. $a \\\\le 0$ 或 $a \\\\ge 6$\\nD. $2 \\\\le a \\\\le 4$\",\n      \"handwritten_answer\": {\n        \"text\": \"BC\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"BC\",\n            \"final_answer\": \"BC\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Handwritten 'BC' in parenthesis.\"\n      },\n      \"source_context_ids\": [\n        \"C006\"\n      ]\n    },\n    {\n      \"qno\": \"13\",\n      \"question_type\": \"fill\",\n      \"section_heading_before\": \"二、填空题：本题共 6 小题，每小题 5 分，共 30 分。\",\n      \"question_markdown\": \"13. 设集合 $A = \\\\{1, 2, 6\\\\}$，$B = \\\\{2, 4\\\\}$，$C = \\\\{1, 2, 3, 4\\\\}$ 则 $(A \\\\cup B) \\\\cap C = $ ______\",\n      \"handwritten_answer\": {\n        \"text\": \"$\\\\{1, 2, 4\\\\}$\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"$\\\\{1, 2, 4\\\\}$\",\n            \"final_answer\": \"$\\\\{1, 2, 4\\\\}$\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Handwritten '$\\\\{1, 2, 4\\\\}$' on the blank.\"\n      },\n      \"source_context_ids\": [\n        \"C007\"\n      ]\n    },\n    {\n      \"qno\": \"14\",\n      \"question_type\": \"fill\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"14. 已知集合 $A = \\\\{-1, 3, 2m - 1\\\\}$，集合 $B = \\\\{3, m^2\\\\}$，若 $B \\\\subseteq A$，则实数 $m = $ ______\",\n      \"handwritten_answer\": {\n        \"text\": \"$1$\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"$1$\",\n            \"final_answer\": \"$1$\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Handwritten '1' on the blank.\"\n      },\n      \"source_context_ids\": [\n        \"C008\"\n      ]\n    },\n    {\n      \"qno\": \"15\",\n      \"question_type\": \"fill\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"15. 已知 $m \\\\in R$，则 $2m^2 + 3m - 1$ 与 $m^2 + 4m - 2$ 的大小关系为 ______\",\n      \"handwritten_answer\": {\n        \"text\": \"$2m^2 + 3m - 1 > m^2 + 4m - 2$\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"$2m^2 + 3m - 1 > m^2 + 4m - 2$\",\n            \"final_answer\": \"$2m^2 + 3m - 1 > m^2 + 4m - 2$\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Handwritten inequality on the blank.\"\n      },\n      \"source_context_ids\": [\n        \"C009\"\n      ]\n    }\n  ]\n}\n```"
+}

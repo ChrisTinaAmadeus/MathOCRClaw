@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_second_pass",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page15/api_markdown/page15.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page15/code_outputs/match/question_contexts.json",
+  "page_notes": "",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 7898,
+    "completion_tokens": 13158,
+    "total_tokens": 21056,
+    "latency_s": 249.612829,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 117.225597,
+          "prompt_tokens": 2493,
+          "completion_tokens": 6479,
+          "total_tokens": 8972,
+          "request_id": "chatcmpl-07182398-e767-98a3-81d1-ad1be951e060"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 132.387232,
+          "prompt_tokens": 5405,
+          "completion_tokens": 6679,
+          "total_tokens": 12084,
+          "request_id": "chatcmpl-f18c3604-e3d0-964c-97fb-0b45e5603018"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"page_notes\": \"\",\n  \"questions\": [\n    {\n      \"qno\": \"16\",\n      \"question_type\": \"solution\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"16. (15分) 设集合 $A=\\\\{x|(x-a+2)(x-a-2)<0\\\\}$，$B=\\\\left\\\\{x\\\\left|\\\\frac{2x-1}{x+2}<1\\\\right.\\\\right\\\\}$。\\n(1) 求集合 A, B；\\n(2) 若 $A\\\\cap(\\\\complement_R B)=\\\\varnothing$，求实数 a 的取值范围。\",\n      \"handwritten_answer\": {\n        \"text\": \"(1) 由题意得 $a-2, a+2$ 是方程 $(x-a+2)(x-a-2)=0$ 的两根，且 $a-2$ 一定小于 $a+2$。\\n$\\\\therefore A=\\\\{x|a-2<x<a+2\\\\}$.\\n$B$: ① $\\\\begin{cases} x+2>0 \\\\\\\\ 2x-1<x+2 \\\\end{cases}$ 解得 $-2<x<3$\\n② $\\\\begin{cases} 2x-1>x+2 \\\\\\\\ x+2<0 \\\\end{cases}$ 无解.\\n$\\\\therefore B=\\\\{x|-2<x<3\\\\}$\\n(2) $\\\\complement_R B=\\\\{x|x\\\\le-2 \\\\text{ 或 } x\\\\ge 3\\\\}$.\\n$\\\\because A\\\\cap(\\\\complement_R B)=\\\\varnothing$\\n $A=\\\\varnothing \\\\Rightarrow a-2 \\\\ge a+2$ 无解.\\n $\\\\begin{cases} a-2 \\\\ge -2 \\\\\\\\ a+2 < 3 \\\\end{cases}$ 解得 $0<a<1$\\n综上所述，a 取值 $\\\\{a|0<a<1\\\\}$\",\n        \"answer_parts\": [\n          {\n            \"label\": \"(1)\",\n            \"transcription\": \"由题意得 $a-2, a+2$ 是方程 $(x-a+2)(x-a-2)=0$ 的两根，且 $a-2$ 一定小于 $a+2$。\\n$\\\\therefore A=\\\\{x|a-2<x<a+2\\\\}$.\\n$B$: ① $\\\\begin{cases} x+2>0 \\\\\\\\ 2x-1<x+2 \\\\end{cases}$ 解得 $-2<x<3$\\n② $\\\\begin{cases} 2x-1>x+2 \\\\\\\\ x+2<0 \\\\end{cases}$ 无解.\\n$\\\\therefore B=\\\\{x|-2<x<3\\\\}$\",\n            \"final_answer\": \"$A=\\\\{x|a-2<x<a+2\\\\}, B=\\\\{x|-2<x<3\\\\}$\",\n            \"status\": \"ok\"\n          },\n          {\n            \"label\": \"(2)\",\n            \"transcription\": \"$\\\\complement_R B=\\\\{x|x\\\\le-2 \\\\text{ 或 } x\\\\ge 3\\\\}$.\\n$\\\\because A\\\\cap(\\\\complement_R B)=\\\\varnothing$\\n $A=\\\\varnothing \\\\Rightarrow a-2 \\\\ge a+2$ 无解.\\n $\\\\begin{cases} a-2 \\\\ge -2 \\\\\\\\ a+2 < 3 \\\\end{cases}$ 解得 $0<a<1$\\n综上所述，a 取值 $\\\\{a|0<a<1\\\\}$\",\n            \"final_answer\": \"$\\\\{a|0<a<1\\\\}$\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Handwriting is clear. In part (2) case 2, the system inequalities appear to be $a-2 \\\\ge -2$ and $a+2 < 3$, leading to the student's conclusion $0<a<1$ (though mathematically $a \\\\ge 0$ and $a < 1$ would imply $0 \\\\le a < 1$, the student wrote strict inequality). Crossed out text in part (1) case 2 is omitted.\"\n      },\n      \"source_context_ids\": [\n        \"C001\"\n      ]\n    }\n  ]\n}\n```"
+}

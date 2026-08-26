@@ -1,0 +1,85 @@
+{
+  "schema_version": 3,
+  "response_format": "benchmark_markdown",
+  "prompt": {
+    "version": "extract_v2",
+    "path": "benchmark/prompts/extract_v2.txt",
+    "sha1": "68e4ba040a859426177b603b9098b3e10a2d2a2e"
+  },
+  "page_markdown": "7. “$m < \\frac{1}{4}$” 是 “一元二次方程 $x^2 + x + m = 0$” 有实数解的 ( C )\nA. 充分不必要条件\nB. 充要条件\nC. 必要不充分条件\nD. 既不充分也不必要条件\n\n### 手写答案\n\nC\n\n8. 下列结论正确的是 ( C )\nA. 若 $a > b$，则 $\\frac{1}{b} > \\frac{1}{a}$\nB. 若 $a^2 < b^2$，则 $a < b$\nC. 若 $a > b$，$c > d$ 则 $a - d > b - c$\nD. 若 $a > b$，则 $ac^2 > bc^2$\n\n### 手写答案\n\nC\n\n9. 设集合 $A = \\{0, 3\\}$，$B = \\{m + 2, m^2 + 2\\}$，若 $A \\cap B = \\{3\\}$，则集合 $A \\cup B$ 的子集的个数为 ( D )\nA. 3\nB. 4\nC. 7\nD. 8\n\n### 手写答案\n\nD\n\n10. 设集合 $A = \\{x | x^2 - 4 \\le 0\\}$，$B = \\{x | 2x + a \\le 0\\}$，且 $A \\cap B = \\{x | -2 < x < 1\\}$，则 $a = $ ( B )\nA. $-4$\nB. $-2$\nC. 2\nD. 4\n\n### 手写答案\n\nB\n\n11. 若集合 $A = \\{x | x^2 = 1\\}, B = \\{x | mx = 1\\}$ 且 $B \\subseteq A$，则实数 $m$ 的集合为 ( B )\nA. $\\{-1, 0, 1\\}$\nB. $\\{-1, 1\\}$\nC. $\\{-1, 0\\}$\nD. $\\{0, 1\\}$\n\n### 手写答案\n\nB\n\n12. 设集合 $A = \\{x | -1 < x - a < 1, x \\in R\\}$，$B = \\{x | 1 < x < 5, x \\in R\\}$，若 $A \\cap B = \\varnothing$，则实数 $a$ 的取值范围是 ( BC )\nA. $0 \\le a \\le 6$\nB. $a \\le 2$ 或 $a \\ge 4$\nC. $a \\le 0$ 或 $a \\ge 6$\nD. $2 \\le a \\le 4$\n\n### 手写答案\n\nBC\n\n第 II 卷（非选择题共 90 分）\n\n二、填空题：本题共 6 小题，每小题 5 分，共 30 分。\n\n13. 设集合 $A = \\{1, 2, 6\\}$，$B = \\{2, 4\\}$，$C = \\{1, 2, 3, 4\\}$ 则 $(A \\cup B) \\cap C = $ \\_\\_\\_\\_\\_\\_\n\n### 手写答案\n\n$\\{1, 2, 4\\}$\n\n14. 已知集合 $A = \\{-1, 3, 2m - 1\\}$，集合 $B = \\{3, m^2\\}$，若 $B \\subseteq A$，则实数 $m = $ \\_\\_\\_\\_\\_\\_\n\n### 手写答案\n\n$1$\n\n15. 已知 $m \\in R$，则 $2m^2 + 3m - 1$ 与 $m^2 + 4m - 2$ 的大小关系为 \\_\\_\\_\\_\\_\\_\n\n### 手写答案\n\n$2m^2 + 3m - 1 > m^2 + 4m - 2$",
+  "questions": [
+    {
+      "qno": "7",
+      "question_text": "7. “$m < \\frac{1}{4}$” 是 “一元二次方程 $x^2 + x + m = 0$” 有实数解的 ( C )\nA. 充分不必要条件\nB. 充要条件\nC. 必要不充分条件\nD. 既不充分也不必要条件",
+      "student_answer": "C",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "8",
+      "question_text": "8. 下列结论正确的是 ( C )\nA. 若 $a > b$，则 $\\frac{1}{b} > \\frac{1}{a}$\nB. 若 $a^2 < b^2$，则 $a < b$\nC. 若 $a > b$，$c > d$ 则 $a - d > b - c$\nD. 若 $a > b$，则 $ac^2 > bc^2$",
+      "student_answer": "C",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "9",
+      "question_text": "9. 设集合 $A = \\{0, 3\\}$，$B = \\{m + 2, m^2 + 2\\}$，若 $A \\cap B = \\{3\\}$，则集合 $A \\cup B$ 的子集的个数为 ( D )\nA. 3\nB. 4\nC. 7\nD. 8",
+      "student_answer": "D",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "10",
+      "question_text": "10. 设集合 $A = \\{x | x^2 - 4 \\le 0\\}$，$B = \\{x | 2x + a \\le 0\\}$，且 $A \\cap B = \\{x | -2 < x < 1\\}$，则 $a = $ ( B )\nA. $-4$\nB. $-2$\nC. 2\nD. 4",
+      "student_answer": "B",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "11",
+      "question_text": "11. 若集合 $A = \\{x | x^2 = 1\\}, B = \\{x | mx = 1\\}$ 且 $B \\subseteq A$，则实数 $m$ 的集合为 ( B )\nA. $\\{-1, 0, 1\\}$\nB. $\\{-1, 1\\}$\nC. $\\{-1, 0\\}$\nD. $\\{0, 1\\}$",
+      "student_answer": "B",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "12",
+      "question_text": "12. 设集合 $A = \\{x | -1 < x - a < 1, x \\in R\\}$，$B = \\{x | 1 < x < 5, x \\in R\\}$，若 $A \\cap B = \\varnothing$，则实数 $a$ 的取值范围是 ( BC )\nA. $0 \\le a \\le 6$\nB. $a \\le 2$ 或 $a \\ge 4$\nC. $a \\le 0$ 或 $a \\ge 6$\nD. $2 \\le a \\le 4$",
+      "student_answer": "BC\n\n第 II 卷（非选择题共 90 分）",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "13",
+      "question_text": "13. 设集合 $A = \\{1, 2, 6\\}$，$B = \\{2, 4\\}$，$C = \\{1, 2, 3, 4\\}$ 则 $(A \\cup B) \\cap C = $ \\_\\_\\_\\_\\_\\_",
+      "student_answer": "$\\{1, 2, 4\\}$",
+      "answer_status": "ok",
+      "question_type": "solution",
+      "section_heading_before": "二、填空题：本题共 6 小题，每小题 5 分，共 30 分。"
+    },
+    {
+      "qno": "14",
+      "question_text": "14. 已知集合 $A = \\{-1, 3, 2m - 1\\}$，集合 $B = \\{3, m^2\\}$，若 $B \\subseteq A$，则实数 $m = $ \\_\\_\\_\\_\\_\\_",
+      "student_answer": "$1$",
+      "answer_status": "ok",
+      "question_type": "solution",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "15",
+      "question_text": "15. 已知 $m \\in R$，则 $2m^2 + 3m - 1$ 与 $m^2 + 4m - 2$ 的大小关系为 \\_\\_\\_\\_\\_\\_",
+      "student_answer": "$2m^2 + 3m - 1 > m^2 + 4m - 2$",
+      "answer_status": "ok",
+      "question_type": "solution",
+      "section_heading_before": ""
+    }
+  ],
+  "page_notes": ""
+}

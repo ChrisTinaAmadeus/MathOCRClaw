@@ -1,0 +1,273 @@
+{
+  "page": "page20",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page20/image/page20.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page20.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page20/preprocessed/page20.png",
+  "api_strategy": {
+    "call_count": 2,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "global context-aware correction and final result"
+  },
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 18275,
+    "completion_tokens": 21392,
+    "total_tokens": 39667,
+    "latency_s": 406.28627,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 219.233439,
+          "prompt_tokens": 3021,
+          "completion_tokens": 11611,
+          "total_tokens": 14632,
+          "request_id": "chatcmpl-63a34d81-590e-9551-9282-f54928cc3dcb"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 187.052831,
+          "prompt_tokens": 15254,
+          "completion_tokens": 9781,
+          "total_tokens": 25035,
+          "request_id": "chatcmpl-6fb38b89-aef3-9e6b-9558-d7d107617fa6"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 5,
+    "answers_with_transcription": 5,
+    "answers_partial_or_uncertain": 3,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 15,
+      "question_type": "solution",
+      "section_heading_before": "四、解答题：本题共 5 小题，共 77 分．解答应写出文字说明、证明过程或演算步骤．",
+      "question_markdown": "15. (13分) 在 $\\triangle ABC$ 中，角 $A$、$B$、$C$ 所对的边为 $a$、$b$、$c$，且 $a\\cos C+c\\cos A=2b\\cos B$．\n(1)求角 $B$；\n(2)当 $AC=12$ 时，求 $\\triangle ABC$ 面积的最大值．",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C001"
+        ],
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page20/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) $\\sin A\\cos C+\\sin C\\cos A=2\\sin B\\cos B$\n$\\sin(A+C)=2\\sin B\\cos B$\n$\\sin B=2\\sin B\\cos B$\n$1=2\\cos B$\n$\\cos B=\\frac{1}{2}$\n(2) $ac=a^2+c^2-144$\n$S=\\frac{1}{2}ac\\sin B=\\frac{1}{2}(a^2+c^2-144)\\times\\frac{\\sqrt{3}}{2}$",
+        "answer_parts": [
+          {
+            "label": "(1)",
+            "transcription": "$\\sin A\\cos C+\\sin C\\cos A=2\\sin B\\cos B$\n$\\sin(A+C)=2\\sin B\\cos B$\n$\\sin B=2\\sin B\\cos B$\n$1=2\\cos B$\n$\\cos B=\\frac{1}{2}$",
+            "final_answer": "$B=\\frac{\\pi}{3}$",
+            "status": "ok"
+          },
+          {
+            "label": "(2)",
+            "transcription": "$ac=a^2+c^2-144$\n$S=\\frac{1}{2}ac\\sin B=\\frac{1}{2}(a^2+c^2-144)\\times\\frac{\\sqrt{3}}{2}$",
+            "final_answer": "",
+            "status": "partial"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "partial",
+        "evidence_note": "Part (1) is complete. Part (2) sets up the area formula but does not derive the maximum value.",
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page20/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 16,
+      "question_type": "solution",
+      "section_heading_before": "",
+      "question_markdown": "16. (15分) 为进一步弘扬中华优秀传统文化，提升诗词爱好者的素养和创作水平，形成浓厚的国学和诗词学习氛围，2024 年 9 月 19 日，首届“中华诗韵·风雅平凉”彦军杯诗词大赛决赛成功举行．为了解参赛者对此活动的满意度，某研究性学习小组用问卷调查的方式随机调查了 $n$ 名参赛者，该小组将收集到的参赛者满意度分值数据（满分 100 分）统计如下表所示：\n\n| 分数 | $[50,60)$ | $[60,70)$ | $[70,80)$ | $[80,90)$ | $[90,100]$ |\n| :--- | :---: | :---: | :---: | :---: | :---: |\n| 频数 | 5 | 10 | 20 | $b$ | 35 |\n| 频率 | 0.05 | $a$ | 0.20 | 0.30 | 0.35 |\n\n<插图>\n\n(1)分别求 $a$，$b$，$n$ 的值，并在图中画出频率分布直方图；\n(2)估计这 $n$ 名参赛者满意度分值的中位数．",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C002"
+        ],
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page20/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) $a=0.1, b=30$\n(2) $0.15, 0.35, 0.65$",
+        "answer_parts": [
+          {
+            "label": "(1)",
+            "transcription": "$a=0.1, b=30$",
+            "final_answer": "$a=0.1, b=30, n=100$",
+            "status": "partial"
+          },
+          {
+            "label": "(2)",
+            "transcription": "$0.15, 0.35, 0.65$",
+            "final_answer": "",
+            "status": "partial"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "partial",
+        "evidence_note": "Values for a and b are written in the table. Cumulative frequencies 0.15, 0.35, 0.65 are written below the table, likely for median calculation, but the final median value is not stated.",
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page20/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 17,
+      "question_type": "solution",
+      "section_heading_before": "",
+      "question_markdown": "17. (15分) 如图，在四棱锥 $P-ABCD$ 中，底面 $ABCD$ 为正方形，$AB=2\\sqrt{2}$，$PB=2\\sqrt{3}$，且 $PB\\perp$ 底面 $ABCD$，$E$，$M$，$N$ 分别为棱 $PB$，$AB$，$BC$ 的中点．\n(1)求证：平面 $MNE\\perp$ 平面 $PBD$；\n(2)求二面角 $E-MN-B$ 的大小．\n<插图>",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C003"
+        ],
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page20/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) $BD\\perp AC$\n$AC // MN$\n$BD\\perp MN$\n$PB\\perp MN \\Rightarrow MN\\perp$ 平面 $PBD$\n(2) _未识别到手写答案。_",
+        "answer_parts": [
+          {
+            "label": "(1)",
+            "transcription": "$BD\\perp AC$\n$AC // MN$\n$BD\\perp MN$\n$PB\\perp MN \\Rightarrow MN\\perp$ 平面 $PBD$",
+            "final_answer": "",
+            "status": "ok"
+          },
+          {
+            "label": "(2)",
+            "transcription": "",
+            "final_answer": "",
+            "status": "no_answer"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "partial",
+        "evidence_note": "Part (1) proof sketch is visible. Part (2) is blank.",
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page20/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 18,
+      "question_type": "solution",
+      "section_heading_before": "",
+      "question_markdown": "18. (17分) 已知线段 $AB$ 的端点 $B$ 的坐标为 $(4,3)$，端点 $A$ 在圆 $(x+1)^2+y^2=4$ 上运动．\n(1)求线段 $AB$ 的中点 $M$ 的轨迹方程，并说明轨迹是什么图形；\n(2)记 (1) 中的轨迹为 $C$，若过点 $N(1,2)$ 的直线 $l$ 被轨迹 $C$ 截得的线段长为 $\\sqrt{2}$，求直线 $l$ 的方程．",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C004"
+        ],
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page20/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 设 $M(x,y), A(x_0,y_0)$\n$M$ 是 $AB$ 中点\n$\\therefore x=\\frac{4+x_0}{2} \\Rightarrow x_0=2x-4$\n$y=\\frac{3+y_0}{2} \\Rightarrow y_0=2y-3$\n$\\because A$ 在 $(x+1)^2+y^2=4$ 上运动\n$\\therefore (2x-4+1)^2+(2y-3)^2=4$\n化简得 $(x-\\frac{3}{2})^2+(y-\\frac{3}{2})^2=1$\n轨迹是以 $(\\frac{3}{2},\\frac{3}{2})$ 为圆心，$r=1$ 的圆\n(2) ①当 $k$ 不存在时 $x=1$，此时圆心到 $l$ 的距离 $d=1$，弦长为 $0 \\ne \\sqrt{2}$，不合题意\n②当 $k$ 存在时，设 $l: y-2=k(x-1) \\Rightarrow kx-y-k+2=0$\n$(\\frac{\\sqrt{2}}{2})^2+d^2=r^2=1$\n$\\Rightarrow k=1$\n$x-y+1=0$",
+        "answer_parts": [
+          {
+            "label": "(1)",
+            "transcription": "设 $M(x,y), A(x_0,y_0)$\n$M$ 是 $AB$ 中点\n$\\therefore x=\\frac{4+x_0}{2} \\Rightarrow x_0=2x-4$\n$y=\\frac{3+y_0}{2} \\Rightarrow y_0=2y-3$\n$\\because A$ 在 $(x+1)^2+y^2=4$ 上运动\n$\\therefore (2x-4+1)^2+(2y-3)^2=4$\n化简得 $(x-\\frac{3}{2})^2+(y-\\frac{3}{2})^2=1$\n轨迹是以 $(\\frac{3}{2},\\frac{3}{2})$ 为圆心，$r=1$ 的圆",
+            "final_answer": "$(x-\\frac{3}{2})^2+(y-\\frac{3}{2})^2=1$",
+            "status": "ok"
+          },
+          {
+            "label": "(2)",
+            "transcription": "①当 $k$ 不存在时 $x=1$，此时圆心到 $l$ 的距离 $d=1$，弦长为 $0 \\ne \\sqrt{2}$，不合题意\n②当 $k$ 存在时，设 $l: y-2=k(x-1) \\Rightarrow kx-y-k+2=0$\n$(\\frac{\\sqrt{2}}{2})^2+d^2=r^2=1$\n$\\Rightarrow k=1$\n$x-y+1=0$",
+            "final_answer": "$x-y+1=0$",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [
+          {
+            "text": "(\\frac{1}{2})^2",
+            "alternatives": [
+              "(\\frac{\\sqrt{2}}{2})^2"
+            ],
+            "location": "Q18 part (2) calculation line"
+          }
+        ],
+        "status": "ok",
+        "evidence_note": "Part (1) is complete. Part (2) handwriting is split, with the case analysis for slope existence at the top right of the page.",
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page20/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 19,
+      "question_type": "solution",
+      "section_heading_before": "",
+      "question_markdown": "19. (12分) 如图，三棱柱 $ABC-A_1B_1C_1$ 所有的棱长为 2，$A_1B=A_1C=\\sqrt{2}$，$M$ 是棱 $BC$ 的中点．\n(I) 求证：$A_1M\\perp$ 平面 $ABC$；\n(II) 在线段 $B_1C$ 是否存在一点 $P$，使直线 $BP$ 与平面 $A_1BC$ 所成角的正弦值为 $\\frac{3\\sqrt{30}}{20}$？若存在，求出 $CP$ 的值；若不存在，请说明理由．\n<插图>",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C005"
+        ],
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page20/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(I) 证明：连接 $AM$\n$A_1B=A_1C=\\sqrt{2}$\n$AB=AC=2$ (所有棱长为 2)\n$A_1M\\perp BC$ ①\n$AM=1, A_1M=\\sqrt{3}, AA_1=2$\n$A_1M^2+AM^2=AA_1^2 \\Rightarrow A_1M\\perp AM$\n$BC\\cap AM=M \\Rightarrow A_1M\\perp$ 平面 $ABC$\n(II) 建系...\n$A_1(0,0,1), B(\\sqrt{3},0,0)$\n设 $P(x,y,z), \\overrightarrow{BP}=\\lambda\\overrightarrow{B_1C} (0\\le\\lambda\\le1)$\n$\\therefore (x-\\sqrt{3}, y, z)=\\lambda(-\\sqrt{3}, 1, 1)$\n...\n$\\sin\\theta=|\\cos<\\vec{n}, \\overrightarrow{BP}>| = \\frac{|\\vec{n}\\cdot\\overrightarrow{BP}|}{|\\vec{n}||\\overrightarrow{BP}|} = \\frac{3\\sqrt{30}}{20}$\n$\\therefore \\lambda=\\frac{1}{4}$\n$P(-\\frac{3\\sqrt{3}}{4}, \\frac{3}{4}, 1)$\n$|\\overrightarrow{CP}|=\\frac{3\\sqrt{2}}{2}$",
+        "answer_parts": [
+          {
+            "label": "(I)",
+            "transcription": "证明：连接 $AM$\n$A_1B=A_1C=\\sqrt{2}$\n$AB=AC=2$ (所有棱长为 2)\n$A_1M\\perp BC$ ①\n$AM=1, A_1M=\\sqrt{3}, AA_1=2$\n$A_1M^2+AM^2=AA_1^2 \\Rightarrow A_1M\\perp AM$\n$BC\\cap AM=M \\Rightarrow A_1M\\perp$ 平面 $ABC$",
+            "final_answer": "",
+            "status": "ok"
+          },
+          {
+            "label": "(II)",
+            "transcription": "建系...\n$A_1(0,0,1), B(\\sqrt{3},0,0)$\n设 $P(x,y,z), \\overrightarrow{BP}=\\lambda\\overrightarrow{B_1C} (0\\le\\lambda\\le1)$\n$\\therefore (x-\\sqrt{3}, y, z)=\\lambda(-\\sqrt{3}, 1, 1)$\n...\n$\\sin\\theta=|\\cos<\\vec{n}, \\overrightarrow{BP}>| = \\frac{|\\vec{n}\\cdot\\overrightarrow{BP}|}{|\\vec{n}||\\overrightarrow{BP}|} = \\frac{3\\sqrt{30}}{20}$\n$\\therefore \\lambda=\\frac{1}{4}$\n$P(-\\frac{3\\sqrt{3}}{4}, \\frac{3}{4}, 1)$\n$|\\overrightarrow{CP}|=\\frac{3\\sqrt{2}}{2}$",
+            "final_answer": "$|\\overrightarrow{CP}|=\\frac{3\\sqrt{2}}{2}$",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Complete solution visible. Note: Student swapped lengths of AM and A1M in text ($AM=1, A_1M=\\sqrt{3}$) but Pythagorean relation holds.",
+        "source_context_ids": [
+          "C005"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page20/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "Question 15 part (2) and Question 16 part (2) are incomplete. Question 17 part (2) has no answer. Question 18 part (2) handwriting is split between the main answer area and the top right of the page.",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page20/image/page20.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page20/preprocessed/page20.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page20/api_markdown/page20.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page20/api_markdown/page20.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page20/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page20/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page20/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page20/code_outputs/match/viz/page20_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page20/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page20/agent_outputs/result.json",
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page20/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page20/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page20/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page20/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page20/code_outputs/match/viz/page20_handwriting_overlay.png"
+  }
+}

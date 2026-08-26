@@ -1,0 +1,21 @@
+{
+  "schema_version": 3,
+  "response_format": "benchmark_markdown",
+  "prompt": {
+    "version": "extract_v2",
+    "path": "benchmark/prompts/extract_v2.txt",
+    "sha1": "68e4ba040a859426177b603b9098b3e10a2d2a2e"
+  },
+  "page_markdown": "18. (本小题满分 17 分)\n\n### 手写答案\n\n(1) 证明：\n$\\because$ 三棱台 $ABC-A_1B_1C_1$\n且 $A_1A \\perp$ 平面 $ABC$.\n$\\therefore A_1C_1 \\parallel AC$.\n$\\because A_1C_1 = \\frac{1}{2} AC$\n$\\therefore A_1C_1 \\underline{\\underline{\\parallel}} \\frac{1}{2} AC$.\n$\\because M, N$ 分别为 $BC, AB$ 中点，$\\therefore MN$ 为三角形 $ABC$ 中位线\n$\\therefore MN \\underline{\\underline{\\parallel}} \\frac{1}{2} AC$ $\\therefore MN \\underline{\\underline{\\parallel}} A_1C_1$ $\\therefore$ 四边形 $A_1C_1MN$ 是平行四边形\n$\\therefore A_1N \\parallel C_1M$ $\\because A_1N \\not\\subset$ 平面 $C_1MA$, $C_1M \\subset$ 平面 $C_1MA$.\n$\\therefore A_1N \\parallel$ 平面 $C_1MA$.\n\n(2) $\\because A_1A \\perp$ 平面 $ABC$, $AB \\perp AC$. $AB=AC=AA_1=2, A_1C_1=1$\n$\\therefore$ 以 $A$ 为原点，以 $AB, AC, AA_1$ 所在直线为 $x, y, z$ 轴建系.\n$\\therefore C_1(0, 1, 2)$ $M(1, 1, 0)$ $A(0, 0, 0)$\n$\\therefore \\overrightarrow{AC_1} = (0, 1, 2)$ $\\overrightarrow{AM} = (1, 1, 0)$\n设平面 $C_1MA$ 的一个法向量为 $\\vec{n} = (x, y, z)$，则有 $\\begin{cases} \\vec{n} \\cdot \\overrightarrow{AC_1} = 0 \\\\ \\vec{n} \\cdot \\overrightarrow{AM} = 0 \\end{cases}$\n$\\therefore \\vec{n} = (2, -2, 1)$ 是平面 $C_1MA$ 的一个法向量.\n$\\because AB \\perp$ 平面 $ACC_1A_1$ $\\therefore \\overrightarrow{AB} = (1, 0, 0)$ 是平面 $ACC_1A_1$ 的一个法向量 记平面 $C_1MA$ 与平面 $ACC_1A_1$ 所成角为 $\\theta$.\n则：$\\cos\\theta = |\\cos<\\vec{n}, \\overrightarrow{AB}>| = \\frac{2}{3}$.\n$\\therefore$ 平面 $C_1MA$ 与平面 $ACC_1A_1$ 所成角的余弦值为 $\\frac{2}{3}$.\n\n(3) 由 (2) 知：$\\vec{n} = (2, -2, 1)$ 是平面 $C_1MA$ 的一个法向量.\n$C(0, 2, 0)$ $A(0, 0, 0)$ $\\overrightarrow{AC} = (0, 2, 0)$\n设点 $C$ 到平面 $C_1MA$ 的距离为 $d$. 则：\n$d = \\frac{|\\overrightarrow{AC} \\cdot \\vec{n}|}{|\\vec{n}|} = \\frac{4}{3}$",
+  "questions": [
+    {
+      "qno": "18",
+      "question_text": "18. (本小题满分 17 分)",
+      "student_answer": "(1) 证明：\n$\\because$ 三棱台 $ABC-A_1B_1C_1$\n且 $A_1A \\perp$ 平面 $ABC$.\n$\\therefore A_1C_1 \\parallel AC$.\n$\\because A_1C_1 = \\frac{1}{2} AC$\n$\\therefore A_1C_1 \\underline{\\underline{\\parallel}} \\frac{1}{2} AC$.\n$\\because M, N$ 分别为 $BC, AB$ 中点，$\\therefore MN$ 为三角形 $ABC$ 中位线\n$\\therefore MN \\underline{\\underline{\\parallel}} \\frac{1}{2} AC$ $\\therefore MN \\underline{\\underline{\\parallel}} A_1C_1$ $\\therefore$ 四边形 $A_1C_1MN$ 是平行四边形\n$\\therefore A_1N \\parallel C_1M$ $\\because A_1N \\not\\subset$ 平面 $C_1MA$, $C_1M \\subset$ 平面 $C_1MA$.\n$\\therefore A_1N \\parallel$ 平面 $C_1MA$.\n\n(2) $\\because A_1A \\perp$ 平面 $ABC$, $AB \\perp AC$. $AB=AC=AA_1=2, A_1C_1=1$\n$\\therefore$ 以 $A$ 为原点，以 $AB, AC, AA_1$ 所在直线为 $x, y, z$ 轴建系.\n$\\therefore C_1(0, 1, 2)$ $M(1, 1, 0)$ $A(0, 0, 0)$\n$\\therefore \\overrightarrow{AC_1} = (0, 1, 2)$ $\\overrightarrow{AM} = (1, 1, 0)$\n设平面 $C_1MA$ 的一个法向量为 $\\vec{n} = (x, y, z)$，则有 $\\begin{cases} \\vec{n} \\cdot \\overrightarrow{AC_1} = 0 \\\\ \\vec{n} \\cdot \\overrightarrow{AM} = 0 \\end{cases}$\n$\\therefore \\vec{n} = (2, -2, 1)$ 是平面 $C_1MA$ 的一个法向量.\n$\\because AB \\perp$ 平面 $ACC_1A_1$ $\\therefore \\overrightarrow{AB} = (1, 0, 0)$ 是平面 $ACC_1A_1$ 的一个法向量 记平面 $C_1MA$ 与平面 $ACC_1A_1$ 所成角为 $\\theta$.\n则：$\\cos\\theta = |\\cos<\\vec{n}, \\overrightarrow{AB}>| = \\frac{2}{3}$.\n$\\therefore$ 平面 $C_1MA$ 与平面 $ACC_1A_1$ 所成角的余弦值为 $\\frac{2}{3}$.\n\n(3) 由 (2) 知：$\\vec{n} = (2, -2, 1)$ 是平面 $C_1MA$ 的一个法向量.\n$C(0, 2, 0)$ $A(0, 0, 0)$ $\\overrightarrow{AC} = (0, 2, 0)$\n设点 $C$ 到平面 $C_1MA$ 的距离为 $d$. 则：\n$d = \\frac{|\\overrightarrow{AC} \\cdot \\vec{n}|}{|\\vec{n}|} = \\frac{4}{3}$",
+      "answer_status": "ok",
+      "question_type": "solution",
+      "section_heading_before": ""
+    }
+  ],
+  "page_notes": ""
+}

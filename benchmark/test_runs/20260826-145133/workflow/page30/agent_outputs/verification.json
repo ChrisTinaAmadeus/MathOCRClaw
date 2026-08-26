@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_second_pass",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page30/api_markdown/page30.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page30/code_outputs/match/question_contexts.json",
+  "page_notes": "Page contains question 19 with three sub-parts. Handwritten answer is provided only for sub-part (3). Sub-parts (1) and (2) are unanswered.",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 10319,
+    "completion_tokens": 12477,
+    "total_tokens": 22796,
+    "latency_s": 242.901277,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 151.046757,
+          "prompt_tokens": 3065,
+          "completion_tokens": 7963,
+          "total_tokens": 11028,
+          "request_id": "chatcmpl-49953d1a-969c-97ba-87b8-800b0b06b4d7"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 91.85452,
+          "prompt_tokens": 7254,
+          "completion_tokens": 4514,
+          "total_tokens": 11768,
+          "request_id": "chatcmpl-c6f4d42c-d30b-9542-8b31-c51c260ea950"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"page_notes\": \"Page contains question 19 with three sub-parts. Handwritten answer is provided only for sub-part (3). Sub-parts (1) and (2) are unanswered.\",\n  \"questions\": [\n    {\n      \"qno\": \"19\",\n      \"question_type\": \"solution\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"19. 已知圆 $O: x^2+y^2=9$ 与 $x$ 轴的正半轴交于点 $P$，以 $P$ 为圆心，半径为 $r$ 的圆与圆 $O$ 相交于 $M, N$ 两点。\\n(1) 过点 $A(3,1)$ 的直线与圆 $O$ 相切，求切线方程；\\n(2) $D$ 为圆 $O$ 上的动点（异于点 $P$），若线段 $PD$ 上有一点 $E$，满足 $\\\\overrightarrow{PE}=2\\\\overrightarrow{ED}$，求点 $E$ 的轨迹方程；\\n(3) 若 $Q$ 是圆 $O$ 上任意一点（不与 $M, N$ 重合），直线 $QM, QN$ 分别与 $x$ 轴交于点 $K$ 和 $T$，则 $|OK|\\\\cdot|OT|$ 是否为定值？若是，求出该定值；若不是，请说明理由。\",\n      \"handwritten_answer\": {\n        \"text\": \"(3). 设 $M(x_0, y_0), Q(x_1, y_1), (y_1 \\\\neq \\\\pm y_0)$. $N(x_0, -y_0)$. $x_0^2+y_0^2=9, x_1^2+y_1^2=9$. $l_{QM}: y-y_1=\\\\frac{y_0-y_1}{x_0-x_1}(x-x_1)$ $l_{QN}: y-y_1=\\\\frac{-y_0-y_1}{x_0-x_1}(x-x_1)$. 分别令 $y=0$. 则 $x_K=\\\\frac{x_1 y_0-x_0 y_1}{y_0-y_1}$. $x_T=\\\\frac{x_1 y_0+x_0 y_1}{y_0+y_1}$. $\\\\therefore |OK|\\\\cdot|OT|=|x_K \\\\cdot x_T| =|\\\\frac{x_1^2 y_0^2-x_0^2 y_1^2}{y_0^2-y_1^2}| =|\\\\frac{(9-y_1^2)y_0^2-(9-y_0^2)y_1^2}{y_0^2-y_1^2}| =9$.\",\n        \"answer_parts\": [\n          {\n            \"label\": \"(1)\",\n            \"transcription\": \"\",\n            \"final_answer\": \"\",\n            \"status\": \"no_answer\"\n          },\n          {\n            \"label\": \"(2)\",\n            \"transcription\": \"\",\n            \"final_answer\": \"\",\n            \"status\": \"no_answer\"\n          },\n          {\n            \"label\": \"(3)\",\n            \"transcription\": \"设 $M(x_0, y_0), Q(x_1, y_1), (y_1 \\\\neq \\\\pm y_0)$. $N(x_0, -y_0)$. $x_0^2+y_0^2=9, x_1^2+y_1^2=9$. $l_{QM}: y-y_1=\\\\frac{y_0-y_1}{x_0-x_1}(x-x_1)$ $l_{QN}: y-y_1=\\\\frac{-y_0-y_1}{x_0-x_1}(x-x_1)$. 分别令 $y=0$. 则 $x_K=\\\\frac{x_1 y_0-x_0 y_1}{y_0-y_1}$. $x_T=\\\\frac{x_1 y_0+x_0 y_1}{y_0+y_1}$. $\\\\therefore |OK|\\\\cdot|OT|=|x_K \\\\cdot x_T| =|\\\\frac{x_1^2 y_0^2-x_0^2 y_1^2}{y_0^2-y_1^2}| =|\\\\frac{(9-y_1^2)y_0^2-(9-y_0^2)y_1^2}{y_0^2-y_1^2}| =9$.\",\n            \"final_answer\": \"9\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"partial\",\n        \"evidence_note\": \"Handwriting provides a complete solution for sub-part (3) only. Sub-parts (1) and (2) are blank. The transcription of $x_T$ numerator aligns with the subsequent algebraic step despite a slight visual ambiguity in the stroke.\"\n      },\n      \"source_context_ids\": [\n        \"C001\"\n      ]\n    }\n  ]\n}\n```"
+}

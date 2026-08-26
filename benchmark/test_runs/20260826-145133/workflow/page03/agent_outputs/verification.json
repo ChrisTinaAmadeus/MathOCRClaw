@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_second_pass",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page03/api_markdown/page03.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page03/code_outputs/match/question_contexts.json",
+  "page_notes": "Page contains questions 5-10. Questions 5-8 are single-choice, 9-10 are multiple-choice. Handwriting is clear for all final answers.",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 13007,
+    "completion_tokens": 7852,
+    "total_tokens": 20859,
+    "latency_s": 153.649775,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 81.754569,
+          "prompt_tokens": 2977,
+          "completion_tokens": 4205,
+          "total_tokens": 7182,
+          "request_id": "chatcmpl-ea12ae33-52dc-9196-992d-9664d295bc54"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 71.895206,
+          "prompt_tokens": 10030,
+          "completion_tokens": 3647,
+          "total_tokens": 13677,
+          "request_id": "chatcmpl-13873162-ccf8-987e-96c6-4f3335d47f0c"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"page_notes\": \"Page contains questions 5-10. Questions 5-8 are single-choice, 9-10 are multiple-choice. Handwriting is clear for all final answers.\",\n  \"questions\": [\n    {\n      \"qno\": \"5\",\n      \"question_type\": \"choice\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"5. 已知函数 $f(x)=\\\\begin{cases} x-3, x \\\\ge 10 \\\\\\\\ f[f(x+5)], x < 10 \\\\end{cases}$，其中 $x \\\\in N$，则 $f(9)=$ ( )\\nA. 5\\nB. 6\\nC. 7\\nD. 8\",\n      \"handwritten_answer\": {\n        \"text\": \"D\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"D\",\n            \"final_answer\": \"D\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"Large 'D' written in the answer parenthesis.\"\n      },\n      \"source_context_ids\": [\"C001\"]\n    },\n    {\n      \"qno\": \"6\",\n      \"question_type\": \"choice\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"6. 已知命题 $P: \\\\forall x>0, x+\\\\frac{4}{x} \\\\ge a$，命题 $Q: \\\\exists x \\\\in R, x^2+2ax+a+2=0$，若命题 $P, Q$ 都是真命题，实数 $a$ 的取值范围是 ( )\\nA. $(-\\\\infty, -1]$\\nB. $[-1, 2]$\\nC. $[2, 4]$\\nD. $(-\\\\infty, -1] \\\\cup [2, 4]$\",\n      \"handwritten_answer\": {\n        \"text\": \"B\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"B\",\n            \"final_answer\": \"B\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"'B' written in the answer parenthesis.\"\n      },\n      \"source_context_ids\": [\"C002\"]\n    },\n    {\n      \"qno\": \"7\",\n      \"question_type\": \"choice\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"7. 定义：称 $|b-a|$ 为区间 $[a, b]$ 的长度，若函数 $f(x)=\\\\sqrt{ax^2+bx+c} (a<0)$ 的定义域与值域区间长度相等，则 $a$ 的值为 ( )\\nA. -4\\nB. -2\\nC. 4 或 -2\\nD. 与 $b, c$ 的取值有关\",\n      \"handwritten_answer\": {\n        \"text\": \"B\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"B\",\n            \"final_answer\": \"B\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"'B' written in the answer parenthesis. Circles around 'a' and '(a<0)' in the stem.\"\n      },\n      \"source_context_ids\": [\"C003\"]\n    },\n    {\n      \"qno\": \"8\",\n      \"question_type\": \"choice\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"8. 设 $y=(x-a) \\\\cdot \\\\frac{a}{x-b-1}$，若 $y>0$ 恒成立，则 $a^2+b^2$ 的最小值是 ( )\\nA. 0\\nB. $\\\\frac{1}{2}$\\nC. 1\\nD. 2\",\n      \"handwritten_answer\": {\n        \"text\": \"A\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"A\",\n            \"final_answer\": \"A\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"'A' written in the answer parenthesis.\"\n      },\n      \"source_context_ids\": [\"C004\"]\n    },\n    {\n      \"qno\": \"9\",\n      \"question_type\": \"choice\",\n      \"section_heading_before\": \"二、多项选择题：本题共3小题，每小题6分，共18分。在每小题给出的选项中，有多项符合题目要求，全部选对的得6分，部分选对的得部分分，有选错的得0分。\",\n      \"question_markdown\": \"9. 下列说法中错误的有 ( )\\nA. 命题 $P: \\\\exists x \\\\in R, x^2+3x+4<0$，则命题 $P$ 的否定是 $\\\\forall x \\\\in R, x^2+3x+4>0$\\nB. “$m<0$”是“关于 $x$ 的方程 $x^2-2x+m=0$ 有一正一负根”的充要条件\\nC. 命题“$\\\\forall x \\\\in Z, x^2>0$”是真命题\\nD. “$|x|>|y|$”是“$x>y$”的必要不充分条件\",\n      \"handwritten_answer\": {\n        \"text\": \"ABC\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"ABC\",\n            \"final_answer\": \"ABC\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"'ABC' written in the answer parenthesis. '错误的' is circled. X marks next to options A and C.\"\n      },\n      \"source_context_ids\": [\"C005\"]\n    },\n    {\n      \"qno\": \"10\",\n      \"question_type\": \"choice\",\n      \"section_heading_before\": \"\",\n      \"question_markdown\": \"10. 下列说法正确的是 ( )\\nA. $y=\\\\sqrt{1+x} \\\\cdot \\\\sqrt{1-x}$ 与 $y=\\\\sqrt{1-x^2}$ 表示同一个函数\\nB. 函数 $f(2x-1)$ 的定义域为 $(-1, 2)$，则函数 $f(x)$ 的定义域为 $(-2, 4)$\\nC. 关于 $x$ 的不等式 $2kx^2+kx-\\\\frac{3}{8}<0$，使该不等式恒成立的实数 $k$ 的取值范围是 $(-3, 0)$\\nD. 满足条件 $\\\\{1, 2\\\\} \\\\subseteq C \\\\subsetneq \\\\{1, 2, 3, 4\\\\}$ 的集合 $C$ 的个数为 2\",\n      \"handwritten_answer\": {\n        \"text\": \"ACD\",\n        \"answer_parts\": [\n          {\n            \"label\": \"overall\",\n            \"transcription\": \"ACD\",\n            \"final_answer\": \"ACD\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"uncertain_fragments\": [],\n        \"status\": \"ok\",\n        \"evidence_note\": \"'ACD' written in the answer parenthesis. '正确的' is underlined. Option B text is crossed out. Checkmark next to D.\"\n      },\n      \"source_context_ids\": [\"C006\"]\n    }\n  ]\n}\n```"
+}

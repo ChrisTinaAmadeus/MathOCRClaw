@@ -1,0 +1,375 @@
+{
+  "page": "page07",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/image/page07.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page07.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/preprocessed/page07.png",
+  "api_strategy": {
+    "call_count": 2,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "global context-aware correction and final result"
+  },
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 25143,
+    "completion_tokens": 15055,
+    "total_tokens": 40198,
+    "latency_s": 288.159701,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 176.270421,
+          "prompt_tokens": 3461,
+          "completion_tokens": 9313,
+          "total_tokens": 12774,
+          "request_id": "chatcmpl-77c420d8-7e3a-92ca-b381-c6bfe9141e8f"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 111.88928,
+          "prompt_tokens": 21682,
+          "completion_tokens": 5742,
+          "total_tokens": 27424,
+          "request_id": "chatcmpl-84de0059-73f7-9f4a-bd54-702d6806cea8"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 9,
+    "answers_with_transcription": 9,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 7,
+      "question_type": "choice",
+      "section_heading_before": "",
+      "question_markdown": "7. 已知集合 $A=\\{x\\mid -1<x<1\\}$，$B=\\{x\\mid x^2-2x<0\\}$，则 $A\\cup B=$\nA. $\\{x\\mid x<0 \\text{ 或 } x>2\\}$\nB. $\\{x\\mid 0<x<1\\}$\nC. $\\{x\\mid -1<x<2\\}$\nD. $\\{x\\mid x<-1 \\text{ 或 } x>0\\}$",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C001"
+        ],
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "C",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "C",
+            "final_answer": "C",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwritten 'C' to the left of the question number.",
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 8,
+      "question_type": "choice",
+      "section_heading_before": "",
+      "question_markdown": "8. 三元子集指包含恰好三个元素的子集. 设集合 $A=\\{a_1,a_2,a_3,a_4\\}$，若 $A$ 的所有三元子集的三个元素之和组成的集合为 $B=\\{-1,1,2,10\\}$，则集合 $A=$\nA. $\\{-1,1,2,10\\}$\nB. $\\{-6,2,3,5\\}$\nC. $\\{1,3,4,12\\}$\nD. $\\{2,10,11,13\\}$",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C002"
+        ],
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "B",
+            "final_answer": "B",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwritten 'B' to the left of the question number.",
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 9,
+      "question_type": "choice",
+      "section_heading_before": "二、选择题：本大题共 3 小题，每小题 6 分，共 18 分. 在每小题给出的选项中，有多项符合题目要求. 全部选对的得 6 分，部分选对的得部分分，有选错的得 0 分.",
+      "question_markdown": "9. 下列“若 $p$，则 $q$”形式的命题中，$p$ 是 $q$ 的充分条件的有\nA. 若 $x,y$ 是偶数，则 $x+y$ 是偶数\nB. 若方程 $x^2-2x+a=0$ 有实根，则 $a<2$\nC. 若一个四边形是矩形，则这个四边形的对角线相等\nD. 若集合 $A\\subseteq B$，则 $A\\subsetneq B$",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C003"
+        ],
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "AC",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "AC",
+            "final_answer": "AC",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwritten 'AC' to the left of the question number.",
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 10,
+      "question_type": "choice",
+      "section_heading_before": "",
+      "question_markdown": "10. 已知集合 $A=\\{x\\mid a-1<x<a+1\\}$，$B=\\{x\\mid 0<x<8\\}$，则下列选项中满足 $A\\cap B=\\varnothing$ 的实数 $a$ 的取值范围有\nA. $\\{a\\mid 0\\leqslant a\\leqslant 6\\}$\nB. $\\{a\\mid 9\\leqslant a\\leqslant 10\\}$\nC. $\\{a\\mid a\\leqslant -2\\}$\nD. $\\{a\\mid a\\geqslant 12\\}$",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C004"
+        ],
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "BC",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "BC",
+            "final_answer": "BC",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwritten 'BC' to the left of the question number.",
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 11,
+      "question_type": "choice",
+      "section_heading_before": "",
+      "question_markdown": "11. 设正实数 $m,n$ 满足 $m+n=2$，则\nA. $\\frac{4}{m}+\\frac{9}{n}$ 的最小值为 $\\frac{25}{2}$\nB. $\\frac{4}{m}+\\frac{9}{n}$ 的最大值为 $\\frac{25}{2}$\nC. $\\sqrt{m}+\\sqrt{n}$ 的最大值为 2\nD. $\\sqrt{m}+\\sqrt{n}$ 的最小值为 2",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C005"
+        ],
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "AC",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "AC",
+            "final_answer": "AC",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwritten 'AC' to the left of the question number.",
+        "source_context_ids": [
+          "C005"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 12,
+      "question_type": "fill",
+      "section_heading_before": "三、填空题：本题共 3 小题，每小题 5 分，共 15 分.",
+      "question_markdown": "12. 已知集合 $A=\\{1,2,3\\}$，$B=\\{x\\mid -1<x<3 \\text{ 且 } x\\in \\mathbf{N}^*\\}$，则 $A\\cap B=$",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C006"
+        ],
+        "lint_actions": [
+          "removed_fill_scratch_work"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$\\{1,2\\}$",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "$\\{1,2\\}$",
+            "final_answer": "$\\{1,2\\}$",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwritten answer filled in the blank.",
+        "source_context_ids": [
+          "C006"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 13,
+      "question_type": "fill",
+      "section_heading_before": "",
+      "question_markdown": "13. 已知 $-2<x-y<2, 2<x+y<5$，则 $z=3x+y$ 的取值范围为",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C007"
+        ],
+        "lint_actions": [
+          "removed_fill_scratch_work"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$2<z<12$",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "$2<z<12$",
+            "final_answer": "$2<z<12$",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwritten answer filled in the blank.",
+        "source_context_ids": [
+          "C007"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 14,
+      "question_type": "fill",
+      "section_heading_before": "",
+      "question_markdown": "14. 若关于 $x$ 的不等式 $ax^2+bx+c<0$ 的解集为 $\\{x\\mid 2<x<3\\}$，则关于 $x$ 的不等式 $cx^2+bx+a>0$ 的解集是",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C008"
+        ],
+        "lint_actions": [
+          "removed_fill_scratch_work"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$\\{x\\mid -3<x<-2\\}$",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "$\\{x\\mid -3<x<-2\\}$",
+            "final_answer": "$\\{x\\mid -3<x<-2\\}$",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwritten answer filled in the blank.",
+        "source_context_ids": [
+          "C008"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 15,
+      "question_type": "solution",
+      "section_heading_before": "四、解答题：本题共 5 小题，共 77 分. 解答应写出文字说明、证明过程或演算步骤.",
+      "question_markdown": "15. (本小题满分 13 分)\n设集合 $A=\\{x\\mid x^2-x-6<0\\}$，$B=\\{x\\mid 2-a<x<3a-2\\}$.\n(1) 若 $a=3$，求 $A\\cup \\complement_{\\mathbf{R}}B$；\n(2) 若 $a=4$，集合 $C=\\{x\\mid x\\in \\complement_{\\mathbf{R}}A, \\text{且 } x\\in B, x\\in \\mathbf{Z}\\}$，求集合 $C$.",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C009"
+        ],
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) _未识别到手写答案。_\n(2) _未识别到手写答案。_",
+        "answer_parts": [
+          {
+            "label": "(1)",
+            "transcription": "",
+            "final_answer": "",
+            "status": "no_answer"
+          },
+          {
+            "label": "(2)",
+            "transcription": "",
+            "final_answer": "",
+            "status": "no_answer"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "no_answer",
+        "evidence_note": "Only scratch work visible: (x-3)(x+2)<0, x<3, x>-2 with crossed out text. No formal solution.",
+        "source_context_ids": [
+          "C009"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "Question 15 has only scratch work visible, no formal solution.",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/image/page07.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/preprocessed/page07.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/api_markdown/page07.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/api_markdown/page07.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/code_outputs/match/viz/page07_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/agent_outputs/result.json",
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page07/code_outputs/match/viz/page07_handwriting_overlay.png"
+  }
+}

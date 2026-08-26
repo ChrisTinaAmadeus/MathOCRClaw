@@ -1,0 +1,113 @@
+{
+  "page": "page32",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page32/image/page32.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page32.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page32/preprocessed/page32.png",
+  "api_strategy": {
+    "call_count": 2,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "global context-aware correction and final result"
+  },
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 10290,
+    "completion_tokens": 11823,
+    "total_tokens": 22113,
+    "latency_s": 227.593196,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 106.896067,
+          "prompt_tokens": 3021,
+          "completion_tokens": 5615,
+          "total_tokens": 8636,
+          "request_id": "chatcmpl-fdf73abf-555e-9a90-8846-1862d43f9997"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 120.697129,
+          "prompt_tokens": 7269,
+          "completion_tokens": 6208,
+          "total_tokens": 13477,
+          "request_id": "chatcmpl-fc61b874-6adf-9b25-99a0-b8bd33771681"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 1,
+    "answers_with_transcription": 1,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 19,
+      "question_type": "solution",
+      "section_heading_before": "",
+      "question_markdown": "19. (17分) 设函数 $y=ax^2+(1-a)x+a-2(a \\in \\mathbf{R})$。\n(1) 若关于 $x$ 的不等式 $y \\le 0$ 解集为 $\\{x|0 \\le x \\le b\\}$，求实数 $a, b$ 的值；\n(2) 解关于 $x$ 的不等式：$y < a-1$。",
+      "question_review": {
+        "status": "reviewed_in_global_second_pass",
+        "source_context_ids": [
+          "C001"
+        ],
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page32/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 0和b是方程 $ax^2+(1-a)x+a-2$ 根且 $a>0$。$\\therefore \\begin{cases} 0+b=-\\frac{1-a}{a} \\\\ 0 \\times b=\\frac{a-2}{a} \\end{cases}$ 解得 $a=2, b=\\frac{1}{2}$。\n(2) 由 $f(x)<a-1$ 则 $ax^2+(1-a)x-1<0$。当 $a=0$ 时... $\\{x|x<1\\}$。当 $a<0$ 时... $(x+\\frac{1}{a})(x-1)>0$。①... $\\{x|x \\ne 1\\}$。②... $\\{x|x<1 \\text{ 或 } x>-\\frac{1}{a}\\}$。... $\\{x|x<-\\frac{1}{a} \\text{ 或 } x>1\\}$。综上... (see full text)",
+        "answer_parts": [
+          {
+            "label": "(1)",
+            "transcription": "0和b是方程 $ax^2+(1-a)x+a-2$ 根且 $a>0$。$\\therefore \\begin{cases} 0+b=-\\frac{1-a}{a} \\\\ 0 \\times b=\\frac{a-2}{a} \\end{cases}$ 解得 $a=2, b=\\frac{1}{2}$。",
+            "final_answer": "a=2, b=\\frac{1}{2}",
+            "status": "ok"
+          },
+          {
+            "label": "(2)",
+            "transcription": "由 $f(x)<a-1$ 则 $ax^2+(1-a)x-1<0$。当 $a=0$ 时... $\\{x|x<1\\}$。当 $a<0$ 时... $(x+\\frac{1}{a})(x-1)>0$。①... $\\{x|x \\ne 1\\}$。②... $\\{x|x<1 \\text{ 或 } x>-\\frac{1}{a}\\}$。... $\\{x|x<-\\frac{1}{a} \\text{ 或 } x>1\\}$。综上... (see full text)",
+            "final_answer": "\\text{当 } a<-1 \\text{ 时 } \\{x|x<-\\frac{1}{a} \\text{ 或 } x>1\\}; \\text{ 当 } a=-1 \\text{ 时 } \\{x|x \\ne 1\\}; \\text{ 当 } -1<a<0 \\text{ 时 } \\{x|x<1 \\text{ 或 } x>-\\frac{1}{a}\\}; \\text{ 当 } a=0 \\text{ 时 } \\{x|x<1\\}; \\text{ 当 } a>0 \\text{ 时 } \\{x|-\\frac{1}{a}<x<1\\}",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwriting is clear. Part (1) solution is on the top right and repeated in the main block. Part (2) has a derivation block and a summary block ('综上'). The minus signs in the fractions in the body of ② and ③ are slightly faint but clarified in the summary block.",
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page32/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "Question 19 is a solution problem. The student provides a detailed derivation followed by a summary ('综上') for part (2). There is a small 'a=1' written near the top which appears to be scratch work and is ignored in favor of the main solution block.",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page32/image/page32.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page32/preprocessed/page32.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page32/api_markdown/page32.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page32/api_markdown/page32.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page32/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page32/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page32/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page32/code_outputs/match/viz/page32_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page32/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page32/agent_outputs/result.json",
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page32/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page32/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page32/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page32/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260826-145133/workflow/page32/code_outputs/match/viz/page32_handwriting_overlay.png"
+  }
+}

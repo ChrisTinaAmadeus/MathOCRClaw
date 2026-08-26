@@ -1,0 +1,85 @@
+{
+  "schema_version": 3,
+  "response_format": "benchmark_markdown",
+  "prompt": {
+    "version": "extract_v2",
+    "path": "benchmark/prompts/extract_v2.txt",
+    "sha1": "68e4ba040a859426177b603b9098b3e10a2d2a2e"
+  },
+  "page_markdown": "6. 设定义域为 $\\mathbf{R}$ 的偶函数 $f(x)$ 满足 $f(3)+f(-3)=0$，且对于任意的 $x \\neq 0$，均有 $xf'(x)>0$，则 $xf(x)>0$ 的解集为\nA. $(-\\infty, -3)$\nB. $(-3, 0) \\cup (3, +\\infty)$\nC. $(-\\infty, -3) \\cup (3, +\\infty)$\nD. $(3, +\\infty)$\n\n### 手写答案\n\nB\n\n7. 在平面直角坐标系 $xOy$ 中，$A(-1, 0)$，$P$ 为曲线 $y=2-\\ln x$ 上一动点，则 $|AP|$ 的最小值为\nA. $\\sqrt{2}$\nB. 2\nC. $\\sqrt{5}$\nD. $2\\sqrt{2}$\n\n### 手写答案\n\nD\n\n8. 设函数 $f(x)=\\frac{e^x-e^{-x}}{e^x+e^{-x}}+\\frac{1}{x^2+|x|}$，则 $\\sum_{i=-2025}^{-1} f(i) + \\sum_{i=1}^{2025} f(i) =$\nA. $\\frac{2024}{1011}$\nB. $\\frac{2025}{1013}$\nC. $\\frac{1013}{2025}$\nD. $\\frac{2026}{2025}$\n\n### 手写答案\n\nB\n\n二、选择题：本题共 3 小题，每小题 6 分，共 18 分。在每小题给出的选项中，有多项符合题目要求。全部选对的得 6 分，部分选对的得部分分，有选错的得 0 分。\n\n9. 设实数 $a, b, c$ 满足 $-4 < a < 1 < b < 3 < c$，则下列不等式一定成立的有\nA. $1 < 2b-a < 10$\nB. $\\log_{2025}(c^2-1) < \\log_{2025}(b^2-1)$\nC. $\\frac{1}{bc} > \\frac{1}{a+b}$\nD. $3e^{-a} > 1$\n\n### 手写答案\n\nAD\n\n10. 若存在函数 $g_1(x), g_2(x)$ 使得函数 $g_0(x)$ 满足 $g_1(x) \\leqslant g_0(x) \\leqslant g_2(x)$，则称 $g_0(x)$ 是“$g_1-g_2$ 变量函数”。已知函数 $f(x)=x^2+ax+b, f_1(x)=x-1, f_2(x)=2x^2-3x+1$，若 $f(x)$ 是“$f_1-f_2$ 变量函数”，则下列说法正确的是\nA. $f(1)=0$\nB. $a=1$\nC. $f(x)$ 的最小值为 $-\\frac{1}{4}$\nD. 若 $f(x)+mx+1>0$ 恒成立，则 $-1<m<3$\n\n### 手写答案\n\nAC\n\n11. 已知函数 $f(x)=x^3+ax^2+ax+1$，则下列说法正确的是\nA. 当 $a=3$ 时，$f(x)$ 有两个零点\nB. 当 $a=-3$ 时，曲线 $y=f(x)$ 关于点 $(1, -4)$ 对称\nC. 当 $a=0$ 时，若过点 $(m, n)$ 可以作曲线 $y=f(x)-x-1$ 的三条切线，则 $|m+n| < |m^3|$\nD. 存在 $a$ 使得方程 $f(x)=2x^2$ 有三个不等的实根 $x_1, x_2, x_3 (x_1 < x_2 < x_3)$，且 $x_1+x_3=x_2$\n\n### 手写答案\n\nBD\n\n三、填空题：本题共 3 小题，每小题 5 分，共 15 分。\n\n12. 已知幂函数 $f(x)=\\left(a^2-\\frac{5}{2}a+2\\right)x^a$ 的定义域为 $\\mathbf{R}$，则 $f(2)=$ \\_\\_\\_\\_\\_\\_。\n\n### 手写答案\n\n$4$\n\n13. 设 $m>0$，则 $\\frac{m^2+m+4}{m+1}$ 的最小值为 \\_\\_\\_\\_\\_\\_。\n\n### 手写答案\n\n$3$\n\n14. 方程 $(x \\ln x)^2 = 1 + 2x^2 \\ln x$ 根的个数为 \\_\\_\\_\\_\\_\\_。\n\n### 手写答案\n\n$1$",
+  "questions": [
+    {
+      "qno": "6",
+      "question_text": "6. 设定义域为 $\\mathbf{R}$ 的偶函数 $f(x)$ 满足 $f(3)+f(-3)=0$，且对于任意的 $x \\neq 0$，均有 $xf'(x)>0$，则 $xf(x)>0$ 的解集为\nA. $(-\\infty, -3)$\nB. $(-3, 0) \\cup (3, +\\infty)$\nC. $(-\\infty, -3) \\cup (3, +\\infty)$\nD. $(3, +\\infty)$",
+      "student_answer": "B",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "7",
+      "question_text": "7. 在平面直角坐标系 $xOy$ 中，$A(-1, 0)$，$P$ 为曲线 $y=2-\\ln x$ 上一动点，则 $|AP|$ 的最小值为\nA. $\\sqrt{2}$\nB. 2\nC. $\\sqrt{5}$\nD. $2\\sqrt{2}$",
+      "student_answer": "D",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "8",
+      "question_text": "8. 设函数 $f(x)=\\frac{e^x-e^{-x}}{e^x+e^{-x}}+\\frac{1}{x^2+|x|}$，则 $\\sum_{i=-2025}^{-1} f(i) + \\sum_{i=1}^{2025} f(i) =$\nA. $\\frac{2024}{1011}$\nB. $\\frac{2025}{1013}$\nC. $\\frac{1013}{2025}$\nD. $\\frac{2026}{2025}$",
+      "student_answer": "B",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "9",
+      "question_text": "9. 设实数 $a, b, c$ 满足 $-4 < a < 1 < b < 3 < c$，则下列不等式一定成立的有\nA. $1 < 2b-a < 10$\nB. $\\log_{2025}(c^2-1) < \\log_{2025}(b^2-1)$\nC. $\\frac{1}{bc} > \\frac{1}{a+b}$\nD. $3e^{-a} > 1$",
+      "student_answer": "AD",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "section_heading_before": "二、选择题：本题共 3 小题，每小题 6 分，共 18 分。在每小题给出的选项中，有多项符合题目要求。全部选对的得 6 分，部分选对的得部分分，有选错的得 0 分。"
+    },
+    {
+      "qno": "10",
+      "question_text": "10. 若存在函数 $g_1(x), g_2(x)$ 使得函数 $g_0(x)$ 满足 $g_1(x) \\leqslant g_0(x) \\leqslant g_2(x)$，则称 $g_0(x)$ 是“$g_1-g_2$ 变量函数”。已知函数 $f(x)=x^2+ax+b, f_1(x)=x-1, f_2(x)=2x^2-3x+1$，若 $f(x)$ 是“$f_1-f_2$ 变量函数”，则下列说法正确的是\nA. $f(1)=0$\nB. $a=1$\nC. $f(x)$ 的最小值为 $-\\frac{1}{4}$\nD. 若 $f(x)+mx+1>0$ 恒成立，则 $-1<m<3$",
+      "student_answer": "AC",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "11",
+      "question_text": "11. 已知函数 $f(x)=x^3+ax^2+ax+1$，则下列说法正确的是\nA. 当 $a=3$ 时，$f(x)$ 有两个零点\nB. 当 $a=-3$ 时，曲线 $y=f(x)$ 关于点 $(1, -4)$ 对称\nC. 当 $a=0$ 时，若过点 $(m, n)$ 可以作曲线 $y=f(x)-x-1$ 的三条切线，则 $|m+n| < |m^3|$\nD. 存在 $a$ 使得方程 $f(x)=2x^2$ 有三个不等的实根 $x_1, x_2, x_3 (x_1 < x_2 < x_3)$，且 $x_1+x_3=x_2$",
+      "student_answer": "BD",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "12",
+      "question_text": "12. 已知幂函数 $f(x)=\\left(a^2-\\frac{5}{2}a+2\\right)x^a$ 的定义域为 $\\mathbf{R}$，则 $f(2)=$ \\_\\_\\_\\_\\_\\_。",
+      "student_answer": "$4$",
+      "answer_status": "ok",
+      "question_type": "solution",
+      "section_heading_before": "三、填空题：本题共 3 小题，每小题 5 分，共 15 分。"
+    },
+    {
+      "qno": "13",
+      "question_text": "13. 设 $m>0$，则 $\\frac{m^2+m+4}{m+1}$ 的最小值为 \\_\\_\\_\\_\\_\\_。",
+      "student_answer": "$3$",
+      "answer_status": "ok",
+      "question_type": "solution",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "14",
+      "question_text": "14. 方程 $(x \\ln x)^2 = 1 + 2x^2 \\ln x$ 根的个数为 \\_\\_\\_\\_\\_\\_。",
+      "student_answer": "$1$",
+      "answer_status": "ok",
+      "question_type": "solution",
+      "section_heading_before": ""
+    }
+  ],
+  "page_notes": ""
+}
