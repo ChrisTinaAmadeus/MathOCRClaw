@@ -16,13 +16,56 @@ from agent.workflow import (
     _page_work_root,
     _render_result_markdown,
     _run_stage_script,
+    _same_page_symbol_groups,
+    _selected_review_views,
     build_argparser,
     run_agent,
 )
+from agent.recognition_profiles import build_recognition_profile
 from proofread.vlm_client import VLMClient
 
 
 class WorkflowOutputTests(unittest.TestCase):
+    def test_choice_detail_budget_prefers_handwriting_ink_companion(self):
+        context = {
+            "recognition_profile": {"question_type": "choice"},
+            "visual_context": {
+                "views": [
+                    {"kind": "context", "path": "context.png"},
+                    {"kind": "answer_detail_01", "path": "detail.png"},
+                    {"kind": "answer_ink", "path": "ink.png"},
+                ]
+            },
+        }
+
+        selected = _selected_review_views(context, 1)
+
+        self.assertEqual(
+            [view["kind"] for view in selected],
+            ["context", "answer_ink"],
+        )
+
+    def test_same_page_symbol_groups_are_unlabelled_writer_style_routes(self):
+        contexts = [
+            {
+                "context_id": "C001",
+                "recognition_profile": build_recognition_profile("A. 1\nB. 2", "choice", "B"),
+                "visual_context": {"views": [{"kind": "context"}]},
+            },
+            {
+                "context_id": "C002",
+                "recognition_profile": build_recognition_profile("A. 1\nB. 2", "choice", "D"),
+                "visual_context": {"views": [{"kind": "context"}]},
+            },
+        ]
+
+        groups = _same_page_symbol_groups(contexts)
+
+        self.assertEqual(groups[0]["tag"], "CHOICE_LETTER")
+        self.assertEqual(groups[0]["context_ids"], ["C001", "C002"])
+        self.assertNotIn("B", str(groups))
+        self.assertNotIn("D", str(groups))
+
     def test_api_timeouts_default_to_six_minutes(self):
         args = build_argparser().parse_args(["--image", "page.png"])
 
@@ -286,6 +329,35 @@ class WorkflowOutputTests(unittest.TestCase):
             ["$2$", "$3$"],
         )
 
+    def test_fill_no_answer_marker_is_not_wrapped_as_math(self):
+        contexts = [
+            {
+                "context_id": "C001",
+                "draft": {
+                    "qno": "14",
+                    "question_text": "14. 结果为 ______",
+                    "student_answer": "_未识别到手写答案。_",
+                    "answer_status": "no_answer",
+                    "question_type": "fill",
+                },
+            }
+        ]
+        review = {
+            "questions": [
+                {
+                    "qno": "14",
+                    "question_type": "fill",
+                    "question_markdown": contexts[0]["draft"]["question_text"],
+                    "handwritten_answer": {"status": "no_answer"},
+                }
+            ]
+        }
+
+        question = _normalize_final_questions(review, contexts)[0]
+
+        self.assertEqual(question["handwritten_answer"]["text"], "")
+        self.assertEqual(question["handwritten_answer"]["status"], "no_answer")
+
     def test_missing_second_pass_question_is_restored_by_qno(self):
         contexts = [
             {
@@ -379,6 +451,448 @@ class WorkflowOutputTests(unittest.TestCase):
             questions[1]["question_review"]["lint_actions"],
         )
 
+    def test_solution_guard_rejects_editorial_truncation(self):
+        draft_answer = "(1) $x=1$\n(2) $y=2$\n(3) $z=3$"
+        contexts = [
+            {
+                "context_id": "C001",
+                "draft": {
+                    "qno": "19",
+                    "question_text": "19. (1) 求值；(2) 求值；(3) 求值。",
+                    "student_answer": draft_answer,
+                    "answer_status": "ok",
+                    "question_type": "solution",
+                },
+            }
+        ]
+        review = {
+            "questions": [
+                {
+                    "qno": "19",
+                    "question_type": "solution",
+                    "question_markdown": contexts[0]["draft"]["question_text"],
+                    "handwritten_answer": {
+                        "text": "(1) $x=1$\n(2) ... (see full text)",
+                        "status": "ok",
+                    },
+                }
+            ]
+        }
+
+        question = _normalize_final_questions(review, contexts)[0]
+
+        self.assertEqual(question["handwritten_answer"]["text"], draft_answer)
+        self.assertIn(
+            "rolled_back_editorial_solution_truncation",
+            question["question_review"]["lint_actions"],
+        )
+
+    def test_api2_atomic_patch_applies_high_confidence_local_edit_only(self):
+        contexts = [
+            {
+                "context_id": "C001",
+                "draft": {
+                    "qno": "17",
+                    "question_text": "17. 解不等式 $x>2$。",
+                    "student_answer": "$x>2$",
+                    "answer_status": "ok",
+                    "question_type": "solution",
+                    "section_heading_before": "",
+                },
+            }
+        ]
+        review = {
+            "schema_version": "api2_patch_v2",
+            "question_reviews": [
+                {
+                    "qno": "17",
+                    "source_context_ids": ["C001"],
+                    "question_type": "solution",
+                    "stem": {
+                        "action": "edit",
+                        "edits": [
+                            {
+                                "old": "x>2",
+                                "new": "x\ge 2",
+                                "kind": "ocr_correction",
+                                "confidence": "high",
+                                "context_id": "C001",
+                                "evidence": "the relation has a visible lower bar",
+                            }
+                        ],
+                    },
+                    "answer": {
+                        "action": "edit_solution",
+                        "confidence": "high",
+                        "evidence": "the answer relation has a visible lower bar",
+                        "edits": [
+                            {
+                                "old": "x>2",
+                                "new": "x\ge 2",
+                                "kind": "ocr_correction",
+                                "confidence": "high",
+                                "context_id": "C001",
+                                "evidence": "the relation has a visible lower bar",
+                            }
+                        ],
+                    },
+                }
+            ],
+        }
+
+        question = _normalize_final_questions(review, contexts)[0]
+
+        self.assertIn(r"$x\ge 2$", question["question_markdown"])
+        self.assertEqual(question["handwritten_answer"]["text"], r"$x\ge 2$")
+        self.assertIn(
+            "applied_solution_edit_1_ocr_correction",
+            question["question_review"]["lint_actions"],
+        )
+
+    def test_api2_patch_cannot_delete_supported_answer_as_no_answer(self):
+        contexts = [
+            {
+                "context_id": "C001",
+                "draft": {
+                    "qno": "15",
+                    "question_text": "15. 求值。",
+                    "student_answer": "$x=2$",
+                    "answer_status": "ok",
+                    "question_type": "solution",
+                },
+            }
+        ]
+        review = {
+            "schema_version": "api2_patch_v2",
+            "question_reviews": [
+                {
+                    "qno": "15",
+                    "source_context_ids": ["C001"],
+                    "question_type": "solution",
+                    "stem": {"action": "keep", "edits": []},
+                    "answer": {
+                        "action": "set_no_answer",
+                        "confidence": "high",
+                        "evidence": "crop appears blank",
+                    },
+                }
+            ],
+        }
+
+        question = _normalize_final_questions(review, contexts)[0]
+
+        self.assertEqual(question["handwritten_answer"]["text"], "$x=2$")
+        self.assertIn(
+            "rejected_no_answer_over_supported_first_pass",
+            question["question_review"]["lint_actions"],
+        )
+
+    def test_api2_answer_replacement_requires_an_explicit_valid_context(self):
+        contexts = [
+            {
+                "context_id": "C001",
+                "draft": {
+                    "qno": "12",
+                    "question_text": "12. 填空：\\_\\_\\_。",
+                    "student_answer": "$2$",
+                    "answer_status": "ok",
+                    "question_type": "fill",
+                },
+            }
+        ]
+        review = {
+            "schema_version": "api2_patch_v2",
+            "question_reviews": [
+                {
+                    "qno": "12",
+                    "source_context_ids": ["C999"],
+                    "question_type": "fill",
+                    "stem": {"action": "keep", "edits": []},
+                    "answer": {
+                        "action": "replace_fill",
+                        "confidence": "high",
+                        "evidence": "the crop appears to show 3",
+                        "final_answers": [
+                            {"label": "overall", "value": "$3$", "status": "ok"}
+                        ],
+                    },
+                }
+            ],
+        }
+
+        question = _normalize_final_questions(review, contexts)[0]
+
+        self.assertEqual(question["handwritten_answer"]["text"], "$2$")
+        self.assertIn(
+            "rejected_answer_replacement_without_valid_context",
+            question["question_review"]["lint_actions"],
+        )
+
+    def test_api2_v3_choice_replacement_requires_contrastive_symbol_observation(self):
+        question_text = "1. 选择正确答案。\nA. 1\nB. 2\nC. 3\nD. 4"
+        contexts = [
+            {
+                "context_id": "C001",
+                "draft": {
+                    "qno": "1",
+                    "question_text": question_text,
+                    "student_answer": "B",
+                    "answer_status": "ok",
+                    "question_type": "choice",
+                },
+                "recognition_profile": build_recognition_profile(
+                    question_text,
+                    "choice",
+                    "B",
+                ),
+            }
+        ]
+        review = {
+            "schema_version": "api2_patch_v3",
+            "question_reviews": [
+                {
+                    "qno": "1",
+                    "source_context_ids": ["C001"],
+                    "stem": {"action": "keep", "edits": []},
+                    "answer": {
+                        "action": "replace_choice",
+                        "confidence": "high",
+                        "evidence": "the final mark has a single outer right bow",
+                        "final_answers": [
+                            {"label": "overall", "value": "D", "status": "ok"}
+                        ],
+                        "symbol_observations": [],
+                    },
+                }
+            ],
+        }
+
+        question = _normalize_final_questions(review, contexts)[0]
+
+        self.assertEqual(question["handwritten_answer"]["text"], "B")
+        self.assertIn(
+            "rejected_answer_replacement_without_symbol_observation",
+            question["question_review"]["lint_actions"],
+        )
+
+    def test_api2_v3_accepts_profile_tagged_choice_stroke_observation(self):
+        question_text = "1. 选择正确答案。\nA. 1\nB. 2\nC. 3\nD. 4"
+        contexts = [
+            {
+                "context_id": "C001",
+                "draft": {
+                    "qno": "1",
+                    "question_text": question_text,
+                    "student_answer": "B",
+                    "answer_status": "ok",
+                    "question_type": "choice",
+                },
+                "recognition_profile": build_recognition_profile(
+                    question_text,
+                    "choice",
+                    "B",
+                ),
+            }
+        ]
+        review = {
+            "schema_version": "api2_patch_v3",
+            "question_reviews": [
+                {
+                    "qno": "1",
+                    "source_context_ids": ["C001"],
+                    "stem": {"action": "keep", "edits": []},
+                    "answer": {
+                        "action": "replace_choice",
+                        "confidence": "high",
+                        "evidence": "the final mark has a straight left stem and one outer bow",
+                        "final_answers": [
+                            {"label": "overall", "value": "D", "status": "ok"}
+                        ],
+                        "symbol_observations": [
+                            {
+                                "tag": "CHOICE_LETTER",
+                                "location": "final mark inside the answer parentheses",
+                                "candidates": ["B", "D"],
+                                "selected": "D",
+                                "observed_features": (
+                                    "one continuous outer right bow rather than two separate lobes"
+                                ),
+                                "context_id": "C001",
+                            }
+                        ],
+                    },
+                }
+            ],
+        }
+
+        question = _normalize_final_questions(review, contexts)[0]
+
+        self.assertEqual(question["handwritten_answer"]["text"], "D")
+        self.assertEqual(
+            question["handwritten_answer"]["symbol_observations"][0]["tag"],
+            "CHOICE_LETTER",
+        )
+        self.assertIn(
+            "accepted_symbol_observation_1",
+            question["question_review"]["lint_actions"],
+        )
+
+    def test_api2_v3_rejects_fill_observation_unrelated_to_proposed_answer(self):
+        question_text = r"13. 解不等式并填空：\_\_\_。"
+        contexts = [
+            {
+                "context_id": "C001",
+                "draft": {
+                    "qno": "13",
+                    "question_text": question_text,
+                    "student_answer": r"$x<3$",
+                    "answer_status": "ok",
+                    "question_type": "fill",
+                },
+                "recognition_profile": build_recognition_profile(
+                    question_text,
+                    "fill",
+                    r"$x<3$",
+                ),
+            }
+        ]
+        review = {
+            "schema_version": "api2_patch_v3",
+            "question_reviews": [
+                {
+                    "qno": "13",
+                    "source_context_ids": ["C001"],
+                    "stem": {"action": "keep", "edits": []},
+                    "answer": {
+                        "action": "replace_fill",
+                        "confidence": "high",
+                        "evidence": "a lower relation bar is visible",
+                        "final_answers": [
+                            {"label": "overall", "value": r"$x\ge7$", "status": "ok"}
+                        ],
+                        "symbol_observations": [
+                            {
+                                "tag": "DIGIT",
+                                "location": "right endpoint",
+                                "candidates": ["3", "5"],
+                                "selected": "3",
+                                "observed_features": "two open right-facing curves",
+                                "context_id": "C001",
+                            }
+                        ],
+                    },
+                }
+            ],
+        }
+
+        question = _normalize_final_questions(review, contexts)[0]
+
+        self.assertEqual(question["handwritten_answer"]["text"], r"$x<3$")
+        self.assertIn(
+            "rejected_symbol_observation_answer_mismatch",
+            question["question_review"]["lint_actions"],
+        )
+
+    def test_high_confidence_atomic_patch_can_remove_student_drawn_stem_figure(self):
+        contexts = [
+            {
+                "context_id": "C001",
+                "draft": {
+                    "qno": "18",
+                    "question_text": "18. (17分)\n<插图>",
+                    "student_answer": "(1) 证明过程",
+                    "answer_status": "ok",
+                    "question_type": "solution",
+                },
+            }
+        ]
+        review = {
+            "schema_version": "api2_patch_v2",
+            "question_reviews": [
+                {
+                    "qno": "18",
+                    "source_context_ids": ["C001"],
+                    "question_type": "solution",
+                    "stem": {
+                        "action": "edit",
+                        "edits": [
+                            {
+                                "old": "<插图>",
+                                "new": "",
+                                "kind": "ocr_correction",
+                                "confidence": "high",
+                                "context_id": "C001",
+                                "evidence": "hand-drawn axes match the student's pen strokes",
+                            }
+                        ],
+                    },
+                    "answer": {"action": "keep", "edits": []},
+                }
+            ],
+        }
+
+        question = _normalize_final_questions(review, contexts)[0]
+
+        self.assertNotIn("<插图>", question["question_markdown"])
+        self.assertIn(
+            "applied_stem_edit_1_ocr_correction",
+            question["question_review"]["lint_actions"],
+        )
+        self.assertNotIn(
+            "rolled_back_deleted_question_structure",
+            question["question_review"]["lint_actions"],
+        )
+
+    def test_solution_section_prevents_api2_choice_misclassification_from_algebra(self):
+        contexts = [
+            {
+                "context_id": "C001",
+                "draft": {
+                    "qno": "15",
+                    "question_text": (
+                        r"15. 求：(1) $A\cap B$；"
+                        "\n"
+                        r"(2) $(\complement_U A)\cup B$。"
+                    ),
+                    "student_answer": r"(1) $A\cap B=\varnothing$",
+                    "answer_status": "ok",
+                    "question_type": "solution",
+                    "section_heading_before": "四、解答题",
+                },
+            }
+        ]
+        review = {
+            "schema_version": "api2_patch_v2",
+            "question_reviews": [
+                {
+                    "qno": "15",
+                    "source_context_ids": ["C001"],
+                    "question_type": "choice",
+                    "stem": {"action": "keep", "edits": []},
+                    "answer": {
+                        "action": "replace_choice",
+                        "confidence": "high",
+                        "evidence": "misleading algebraic A and B",
+                        "final_answers": [
+                            {"label": "overall", "value": "A", "status": "ok"}
+                        ],
+                    },
+                }
+            ],
+        }
+
+        question = _normalize_final_questions(review, contexts)[0]
+
+        self.assertEqual(question["question_type"], "solution")
+        self.assertEqual(
+            question["handwritten_answer"]["text"],
+            r"(1) $A\cap B=\varnothing$",
+        )
+        self.assertIn(
+            "rejected_answer_action_type_mismatch",
+            question["question_review"]["lint_actions"],
+        )
+
     def test_context_manifest_records_both_api_passes_and_final_answer(self):
         contexts = [
             {
@@ -413,7 +927,7 @@ class WorkflowOutputTests(unittest.TestCase):
             final_questions,
         )
 
-        self.assertEqual(manifest["schema_version"], 3)
+        self.assertEqual(manifest["schema_version"], 4)
         self.assertEqual(manifest["api_strategy"]["call_1"], "whole-page draft OCR")
         self.assertTrue(manifest["contexts"][0]["consumed_by_second_api"])
         self.assertEqual(manifest["contexts"][0]["final_records"][0]["qno"], 16)
@@ -549,7 +1063,9 @@ class WorkflowOutputTests(unittest.TestCase):
             for message in second_messages
             if message.get("type") == "text"
         )
-        self.assertIn("first-pass whole-page Markdown", second_text)
+        self.assertIn("authoritative API1 draft", second_text)
+        self.assertIn("api2_patch_v3", second_text)
+        self.assertIn("recognition_profile", second_text)
         self.assertIn("C001 / context", second_text)
 
 

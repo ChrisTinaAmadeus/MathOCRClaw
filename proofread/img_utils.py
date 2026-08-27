@@ -71,6 +71,38 @@ def scan_document_for_ocr(img: Image.Image) -> Tuple[Image.Image, Dict[str, Any]
     }
     return Image.fromarray(corrected), metadata
 
+
+def enhance_handwriting_ink(img: Image.Image, *, max_edge: int = 1600) -> Image.Image:
+    """Create a grayscale companion view that exposes faint local pen strokes.
+
+    This is intentionally a companion to the color context, not a replacement:
+    color remains necessary for separating student writing from teacher marks.
+    """
+    rgb = np.asarray(img.convert("RGB"), dtype=np.uint8)
+    gray = cv2.cvtColor(rgb, cv2.COLOR_RGB2GRAY)
+    clahe = cv2.createCLAHE(clipLimit=2.2, tileGridSize=(8, 8))
+    local = clahe.apply(gray)
+    blurred = cv2.GaussianBlur(local, (0, 0), sigmaX=1.0, sigmaY=1.0)
+    sharpened = cv2.addWeighted(local, 1.65, blurred, -0.65, 0)
+    output = Image.fromarray(sharpened).convert("RGB")
+
+    width, height = output.size
+    longest = max(width, height)
+    if 0 < longest < max_edge:
+        scale = min(2.0, max_edge / float(longest))
+        if scale > 1.05:
+            output = output.resize(
+                (max(1, int(round(width * scale))), max(1, int(round(height * scale)))),
+                Image.Resampling.LANCZOS,
+            )
+    elif longest > max_edge:
+        scale = max_edge / float(longest)
+        output = output.resize(
+            (max(1, int(round(width * scale))), max(1, int(round(height * scale)))),
+            Image.Resampling.LANCZOS,
+        )
+    return output
+
 @dataclass
 class EnhanceCfg:
     max_edge: int

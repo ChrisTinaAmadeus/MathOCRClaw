@@ -2,14 +2,15 @@
 
 [简体中文](README.zh-CN.md) · English
 
-MathOCRClaw is a math-OCR agent for real-world exam photos. It uses two global API calls: the first produces a whole-page draft, and the second combines that draft with local layout/context evidence to produce the final corrected result.
+MathOCRClaw is a math-OCR agent for real-world exam photos. It uses two global API calls: the first produces a whole-page draft, and the second combines that draft with local layout/context evidence to propose minimal visual corrections. A deterministic local gate applies only safe, evidenced patches to produce the final result.
 
 ```text
 exam photo
   → shadow normalization with colored ink preserved
   → API #1: whole-page question and handwriting draft Markdown
   → local detection, layout analysis, and context construction
-  → API #2: one global review using the draft, page, crops, and layout
+  → API #2: one global review returning exact, evidence-linked patches
+  → deterministic validation and merge against the API #1 draft
   → final paired question-and-answer results
 ```
 
@@ -61,7 +62,7 @@ workflow/
       └─ verification.json        # raw response from the global second pass
 ```
 
-API call 1 reads `benchmark/prompts/extract_v2.txt` directly and writes `<page_name>/api_markdown/<page>.md`; the Python workflow does not maintain a second prompt copy. The local middle stage parses that Markdown and creates `<page_name>/code_outputs/match/question_contexts.json` plus stem/answer/detail views without an API call. API call 2 receives the draft, normalized page, labeled contexts, and layout digest in one request. `result.md` uses the same per-question format as the gold Markdown. Crossed-out or otherwise cancelled work is excluded from the draft, final transcription, and ambiguity metadata. Preprocessing preserves colored annotations, including red ink; frame overlays remain geometry diagnostics only.
+API call 1 reads `benchmark/prompts/extract_v2.txt` directly and writes `<page_name>/api_markdown/<page>.md`; the Python workflow does not maintain a second prompt copy. The local middle stage parses that Markdown and creates stem/answer views, a grayscale local-contrast handwriting companion, and a per-question `symbol_profile_v1`. The profile exposes only question-conditioned candidate families and discriminating strokes (for example B/D, `<`/`\le`, interval brackets, or `\varnothing`/0/phi), never a correct answer; same-page contexts sharing a tag also form unlabelled writer-style comparison groups. API call 2 returns `api2_patch_v3` records: unchanged fields use `keep`; stem and solution corrections are exact substring patches; choice/fill corrections additionally require a context-linked contrastive symbol observation. Local validation requires high confidence, a valid context ID and profile tag, concrete visible features, balanced LaTeX, and preserved structure. `result.md` uses the same per-question format as the gold Markdown. Color context remains authoritative for separating student and marker ink; the grayscale view is only companion evidence for faint strokes.
 
 ### Code layout and checks
 

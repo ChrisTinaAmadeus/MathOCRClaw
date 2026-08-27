@@ -194,6 +194,14 @@ def candidate_from_result(payload: Dict[str, Any]) -> List[Dict[str, Any]]:
         if kind == "choice" and final_answers:
             candidate["answer"] = final_answers[-1]
         elif kind == "fill" and parts:
+            all_no_answer = all(
+                str(part.get("status") or "").strip() == "no_answer" for part in parts
+            )
+            if all_no_answer:
+                candidate["answer"] = "_未识别到手写答案。_"
+                candidate["status"] = "no_answer"
+                questions.append(candidate)
+                continue
             rendered_parts: List[str] = []
             for part in parts:
                 label = str(part.get("label") or "overall").strip()
@@ -211,6 +219,14 @@ def candidate_from_result(payload: Dict[str, Any]) -> List[Dict[str, Any]]:
             if rendered_parts:
                 candidate["answer"] = "\n".join(rendered_parts)
         elif kind == "solution" and parts:
+            all_no_answer = all(
+                str(part.get("status") or "").strip() == "no_answer" for part in parts
+            )
+            if all_no_answer:
+                candidate["answer"] = "_未识别到手写答案。_"
+                candidate["status"] = "no_answer"
+                questions.append(candidate)
+                continue
             rendered_parts: List[str] = []
             for part in parts:
                 label = str(part.get("label") or "overall").strip()
@@ -231,10 +247,6 @@ def candidate_from_result(payload: Dict[str, Any]) -> List[Dict[str, Any]]:
                 rendered_parts.append(content)
             if rendered_parts:
                 candidate["answer"] = "\n".join(rendered_parts)
-            if parts and all(
-                str(part.get("status") or "") == "no_answer" for part in parts
-            ):
-                candidate["status"] = "no_answer"
         questions.append(
             candidate
         )

@@ -88,8 +88,13 @@ class HandwritingRegionTests(unittest.TestCase):
             {"class_name": "partial_question"},
             r"2. 结果为 \underline{\qquad}",
         )
+        escaped_fill = classify_question_type(
+            {"class_name": "partial_question"},
+            r"3. 结果为 \_\_\_\_\_\_。",
+        )
         self.assertEqual(choice["type"], "choice")
         self.assertEqual(fill["type"], "fill_blank")
+        self.assertEqual(escaped_fill["type"], "fill_blank")
 
     def test_strong_text_structure_can_override_problem_solving_label(self):
         result = classify_question_type(
@@ -98,6 +103,14 @@ class HandwritingRegionTests(unittest.TestCase):
         )
         self.assertEqual(result["type"], "choice")
         self.assertEqual(result["source"], "text_override_detector")
+
+    def test_algebraic_a_b_parentheses_inside_latex_are_not_choice_options(self):
+        result = classify_question_type(
+            {},
+            r"15. 求：(1) $A\cap B$；(2) $(\complement_U A)\cup B$。",
+        )
+
+        self.assertNotEqual(result["type"], "choice")
 
     def test_choice_frame_stays_near_options_instead_of_using_all_working_space(self):
         questions = [dict(question) for question in self.questions]
@@ -146,6 +159,7 @@ class HandwritingRegionTests(unittest.TestCase):
             self.assertEqual(views[0]["kind"], "context")
             self.assertIn("stem", kinds)
             self.assertIn("answer", kinds)
+            self.assertIn("answer_ink", kinds)
             self.assertTrue(any(kind.startswith("answer_detail_") for kind in kinds))
             context_box = views[0]["bbox_xyxy"]
             stem_box = region["source_bbox_xyxy"]
@@ -155,6 +169,8 @@ class HandwritingRegionTests(unittest.TestCase):
             self.assertGreaterEqual(context_box[2], max(stem_box[2], answer_box[2]))
             self.assertGreaterEqual(context_box[3], max(stem_box[3], answer_box[3]))
             self.assertTrue(all(Path(view["path"]).is_file() for view in views))
+            ink_view = next(view for view in views if view["kind"] == "answer_ink")
+            self.assertIn("faint strokes", ink_view["purpose"])
 
     def test_overlay_contains_stem_and_handwriting_frames(self):
         region = score_and_divide_question_frame((1600, 1200), self.questions, 0)

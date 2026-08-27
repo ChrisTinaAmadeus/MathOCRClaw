@@ -3,10 +3,23 @@ import unittest
 import numpy as np
 from PIL import Image, ImageDraw
 
-from proofread.img_utils import scan_document_for_ocr
+from proofread.img_utils import enhance_handwriting_ink, scan_document_for_ocr
 
 
 class DocumentPreprocessTests(unittest.TestCase):
+    def test_handwriting_companion_upscales_and_increases_faint_stroke_contrast(self):
+        image = Image.new("RGB", (180, 80), (238, 238, 238))
+        draw = ImageDraw.Draw(image)
+        draw.line((20, 40, 160, 40), fill=(170, 170, 170), width=2)
+
+        enhanced = enhance_handwriting_ink(image, max_edge=360)
+        output = np.asarray(enhanced.convert("L"))
+
+        self.assertEqual(enhanced.size, (360, 160))
+        background = float(output[20:40, 20:300].mean())
+        stroke = float(output[78:83, 40:320].mean())
+        self.assertGreater(background - stroke, 20.0)
+
     def test_removes_shadow_without_erasing_black_or_red_strokes(self):
         pixels = np.full((180, 320, 3), 238, dtype=np.uint8)
         pixels[:, :160] = 180

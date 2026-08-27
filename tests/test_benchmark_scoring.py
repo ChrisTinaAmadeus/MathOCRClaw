@@ -190,6 +190,33 @@ class BenchmarkScoringTests(unittest.TestCase):
 
         self.assertEqual(candidate[0]["answer"], "(1) $2$\n(2) $3$")
 
+    def test_all_no_answer_parts_remain_one_unsupported_answer_state(self):
+        candidate = candidate_from_result(
+            {
+                "questions": [
+                    {
+                        "qno": 15,
+                        "question_type": "solution",
+                        "question_markdown": "15. (1) 求值；(2) 求值。",
+                        "handwritten_answer": {
+                            "text": (
+                                "(1) _未识别到手写答案。_\n"
+                                "(2) _未识别到手写答案。_"
+                            ),
+                            "answer_parts": [
+                                {"label": "(1)", "status": "no_answer"},
+                                {"label": "(2)", "status": "no_answer"},
+                            ],
+                            "status": "no_answer",
+                        },
+                    }
+                ]
+            }
+        )
+
+        self.assertEqual(candidate[0]["answer"], "_未识别到手写答案。_")
+        self.assertEqual(candidate[0]["status"], "no_answer")
+
     def test_omission_and_hallucination_reduce_score(self):
         gold = parse_markdown(GOLD)
         candidate = [

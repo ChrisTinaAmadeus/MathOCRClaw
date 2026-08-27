@@ -6,6 +6,8 @@ from typing import Any, Dict, List, Sequence, Tuple
 
 from PIL import Image, ImageDraw, ImageFont
 
+from proofread.img_utils import enhance_handwriting_ink
+
 
 BBox = Tuple[int, int, int, int]
 
@@ -47,12 +49,23 @@ def classify_question_type(
         }
 
     text = str(question_text or "")
+    # Option-like fragments inside LaTeX (for example ``(\complement_U A)``)
+    # are algebra, not printed answer labels.  Only inspect prose/line structure
+    # when looking for A--D markers.
+    structural_text = re.sub(
+        r"\$\$(?:.|\n)*?\$\$|(?<!\\)\$(?:\\.|[^$])*?(?<!\\)\$",
+        " ",
+        text,
+    )
     option_markers = re.findall(
         r"(?:^|[\s\n])(?:[A-D][\.．、:：\)]|\([A-D]\)|（[A-D]）)",
-        text,
+        structural_text,
         flags=re.I,
     )
-    fill_signal = re.search(r"_{3,}|\\underline|填空题|填在.{0,8}(?:横线|空格)|横线上|空白处", text)
+    fill_signal = re.search(
+        r"_{3,}|(?:\\_){3,}|\\underline|填空题|填在.{0,8}(?:横线|空格)|横线上|空白处",
+        text,
+    )
     if class_name == "problem_solving_question" and len(option_markers) < 2 and not fill_signal:
         return {
             "type": "short_answer",
@@ -351,6 +364,23 @@ def save_handwriting_views(
                 }.get(kind, "magnified overlapping handwriting detail"),
             }
         )
+    ink_path = output_dir / "answer_ink.png"
+    enhance_handwriting_ink(page_image.crop(answer)).save(
+        ink_path,
+        format="PNG",
+        optimize=True,
+    )
+    views.append(
+        {
+            "kind": "answer_ink",
+            "bbox_xyxy": list(answer),
+            "path": str(ink_path),
+            "purpose": (
+                "grayscale local-contrast companion for faint strokes and symbol "
+                "confusion checks; use color context to distinguish writer/marker ink"
+            ),
+        }
+    )
     return views
 
 
