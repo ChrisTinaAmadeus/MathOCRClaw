@@ -1,0 +1,348 @@
+{
+  "page": "page04",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/image/page04.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page04.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/preprocessed/page04.png",
+  "api_strategy": {
+    "call_count": 2,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "question-conditioned symbol and atomic patch review",
+    "local_merge": "deterministic validation against the first-pass draft"
+  },
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 22284,
+    "completion_tokens": 7532,
+    "total_tokens": 29816,
+    "latency_s": 147.048359,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 114.879351,
+          "prompt_tokens": 3065,
+          "completion_tokens": 6027,
+          "total_tokens": 9092,
+          "request_id": "chatcmpl-3fd2300b-7d42-9405-98ce-aa95dabc3edf"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 32.169008,
+          "prompt_tokens": 19219,
+          "completion_tokens": 1505,
+          "total_tokens": 20724,
+          "request_id": "chatcmpl-4ce96db3-def6-93be-b0c7-2729a1845877"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 8,
+    "answers_with_transcription": 8,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 7,
+      "question_type": "choice",
+      "section_heading_before": "",
+      "question_markdown": "7. 设 $t$ 为实数，$M=\\{t^2-5t+3, -3\\}$，$N=\\{t^2-3t-1, t-6\\}$。若 $M \\cap N = \\{-3\\}$，则 $t$ 的取值集合为 ( )\nA. $\\{1\\}$\nB. $\\{2\\}$\nC. $\\{3\\}$\nD. $\\{1, 2, 3\\}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "A",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "A",
+            "final_answer": "A",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 8,
+      "question_type": "choice",
+      "section_heading_before": "",
+      "question_markdown": "8. 不等式 $x^2-x-2<0$ 成立的一个充分不必要条件是 $a<x<a^2+1$，则 $a$ 的取值范围为 ( )\nA. $-1 \\le a \\le 1$\nB. $-1 \\le a < 1$\nC. $-1 < a < 1$\nD. $-1 < a \\le 1$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "D",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "D",
+            "final_answer": "D",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 9,
+      "question_type": "choice",
+      "section_heading_before": "二、选择题：本题共 3 小题，每小题 6 分，共 18 分。在每小题给出的选项中，有多项符合题目要求。全部选对的得 6 分，部分选对的得部分分，有选错的得 0 分。",
+      "question_markdown": "9. 下列表示正确的是 ( )\nA. $0 \\in N$\nB. $\\frac{2}{7} \\in Z$\nC. $-3 \\notin Z$\nD. $\\pi \\notin Q$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "AD",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "AD",
+            "final_answer": "AD",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 10,
+      "question_type": "choice",
+      "section_heading_before": "",
+      "question_markdown": "10. 下列函数最小值为 2 的是 ( )\nA. $y=x+\\frac{1}{x}$\nB. $y=\\frac{x^2+2}{\\sqrt{x^2+1}}$\nC. $y=x^2+\\frac{1}{x^2}$\nD. $y=\\sqrt{x(4-x)}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C004"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "BC",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "BC",
+            "final_answer": "BC",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 11,
+      "question_type": "choice",
+      "section_heading_before": "",
+      "question_markdown": "11. 给定数集 $M$，若对于任意 $a, b \\in M$，有 $a+b \\in M$，$a-b \\in M$，则称集合 $M$ 为闭集合。则下列说法中不正确的是 ( )\nA. 集合 $M=\\{-6, -3, 0, 3, 6\\}$ 为闭集合\nB. 集合 $M=\\{n|n=3k, k \\in Z\\}$ 为闭集合\nC. 正整数集是闭集合\nD. 若集合 $A_1$、$A_2$ 为闭集合，则 $A_1 \\cup A_2$ 为闭集合",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C005"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "ACD",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "ACD",
+            "final_answer": "ACD",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C005"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 12,
+      "question_type": "fill",
+      "section_heading_before": "三、填空题：本题共 3 小题，每小题 5 分，共 15 分",
+      "question_markdown": "12. 若 $2 \\in \\{x|x^2+mx-3=0\\}$，则 $m$ 的值为 \\_\\_\\_\\_\\_\\_ .",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C006"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$-\\frac{1}{2}$",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "$-\\frac{1}{2}$",
+            "final_answer": "$-\\frac{1}{2}$",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C006"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 13,
+      "question_type": "fill",
+      "section_heading_before": "",
+      "question_markdown": "13. 不等式 $\\frac{2x-5}{x+1}<1$ 的解是 \\_\\_\\_\\_\\_\\_",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C007"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$(-1, 6)$",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "$(-1, 6)$",
+            "final_answer": "$(-1, 6)$",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C007"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 14,
+      "question_type": "fill",
+      "section_heading_before": "",
+      "question_markdown": "14. 已知不等式 $(a-3)x^2+2(a-3)x-6<0$ 对一切 $x \\in R$ 恒成立，则实数 $a$ 的取值范围是 \\_\\_\\_\\_\\_\\_",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C008"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$-3 < a \\le 7$",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "$-3 < a \\le 7$",
+            "final_answer": "$-3 < a \\le 7$",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C008"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/image/page04.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/preprocessed/page04.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/api_markdown/page04.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/api_markdown/page04.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/code_outputs/match/viz/page04_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/agent_outputs/result.json",
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/code_outputs/match/viz/page04_handwriting_overlay.png"
+  }
+}

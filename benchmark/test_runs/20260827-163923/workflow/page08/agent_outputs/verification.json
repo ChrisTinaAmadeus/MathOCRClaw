@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_api2_symbol_guided_atomic_patch_v3",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page08/api_markdown/page08.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page08/code_outputs/match/question_contexts.json",
+  "page_notes": "",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 12218,
+    "completion_tokens": 14252,
+    "total_tokens": 26470,
+    "latency_s": 276.648444,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 167.686535,
+          "prompt_tokens": 2915,
+          "completion_tokens": 8855,
+          "total_tokens": 11770,
+          "request_id": "chatcmpl-5305aacb-7dd2-99ef-ba50-7989b8a18014"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 108.961909,
+          "prompt_tokens": 9303,
+          "completion_tokens": 5397,
+          "total_tokens": 14700,
+          "request_id": "chatcmpl-e8a03c1f-ddca-90f4-9a4a-709d50545676"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"schema_version\": \"api2_patch_v3\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"edit\",\n        \"edits\": [\n          {\n            \"old\": \"距离。\\n<插图>\",\n            \"new\": \"距离。\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"The figure in the answer area is a student-drawn sketch (handwritten axes, labels, '翻折' arrow), not a printed stem figure.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwriting matches draft transcription for parts (1) and (2). Part (3) is unanswered.\"\n      }\n    },\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\n        \"C002\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwriting matches draft transcription for part (1). Parts (2) and (3) are unanswered.\"\n      }\n    }\n  ]\n}\n```"
+}

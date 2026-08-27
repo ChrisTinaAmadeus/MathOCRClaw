@@ -1,0 +1,105 @@
+{
+  "page": "page29",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page29/image/page29.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page29.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page29/preprocessed/page29.png",
+  "api_strategy": {
+    "call_count": 2,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "question-conditioned symbol and atomic patch review",
+    "local_merge": "deterministic validation against the first-pass draft"
+  },
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 10816,
+    "completion_tokens": 17340,
+    "total_tokens": 28156,
+    "latency_s": 334.039291,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 199.078123,
+          "prompt_tokens": 3065,
+          "completion_tokens": 10253,
+          "total_tokens": 13318,
+          "request_id": "chatcmpl-61f27a99-fbda-959a-ada2-2945f3a04481"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 134.961168,
+          "prompt_tokens": 7751,
+          "completion_tokens": 7087,
+          "total_tokens": 14838,
+          "request_id": "chatcmpl-6663af44-7526-98fb-90e2-c8233eaff5e9"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 1,
+    "answers_with_transcription": 1,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 18,
+      "question_type": "solution",
+      "section_heading_before": "",
+      "question_markdown": "18. (17分) 已知关于 $x$ 的不等式 $(ax-1)(x+1)>0$.\n(1)若此不等式的解集为 $\\left\\{x \\mid -1<x<-\\frac{1}{2}\\right\\}$，求实数 $a$ 的值；\n(2)若 $a \\in \\mathbf{R}$，解这个关于 $x$ 的不等式；\n(3)已知 $y_1=4x_1^2+3$，$y_2=ax_2+5-a(a>0)$，若对任意的 $x_1 \\in \\{x \\mid 1 \\le x \\le 2\\}$，总存在 $x_2 \\in \\{x \\mid -1 \\le x \\le 2\\}$，使得 $y_1=y_2$ 成立，求实数 $a$ 的取值范围.",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [
+          "applied_stem_edit_1_ocr_correction"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page29/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 由题可知 $-1, -\\frac{1}{2}$ 为方程的两根，可得 $\\frac{1}{a}=-\\frac{1}{2}$，即 $a=-2$.\n\n2) 当 $a=0$ 时，$-x-1>0$.\n当 $a<0$ 时. ① $a=-1$. $\\varnothing$\n② $a<-1, \\frac{1}{a}>-1$. $\\{x \\mid -1<x<\\frac{1}{a}\\}$\n③ $-1<a<0, \\frac{1}{a}<-1$. $\\{x \\mid \\frac{1}{a}<x<-1\\}$.\n\n3) 当 $x_1 \\in \\{x \\mid 1 \\le x \\le 2\\}$ 时，则 $y_1 \\in [7, 19]$.\n$\\because y_1=y_2$.\n$\\therefore y_{2max}=19, y_{2min}=7$.\n$\\because x_2 \\in \\{x \\mid -1 \\le x \\le 2\\}$.\n$\\therefore y_{2max}=2a+5-a=a+5$.\n$y_{1min}=-a+5-a=-2a+5$.\n$\\therefore \\begin{cases} a+5 \\ge 19, & a \\ge 14 \\\\ -2a+5 \\le 7, & a \\ge -1 \\end{cases}$\n综上，$a$ 的取值范围为 $\\{a \\mid a \\ge 14\\}$.",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "The draft accurately transcribes the visible black ink student solution. Red ink appears to be teacher grading/corrections (e.g., 'REASON. 马虎算错数') and is excluded per standard transcription of student work.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page29/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page29/image/page29.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page29/preprocessed/page29.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page29/api_markdown/page29.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page29/api_markdown/page29.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page29/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page29/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page29/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page29/code_outputs/match/viz/page29_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page29/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page29/agent_outputs/result.json",
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page29/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page29/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page29/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page29/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page29/code_outputs/match/viz/page29_handwriting_overlay.png"
+  }
+}

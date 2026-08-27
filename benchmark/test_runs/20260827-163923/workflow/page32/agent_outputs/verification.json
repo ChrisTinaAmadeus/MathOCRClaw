@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_api2_symbol_guided_atomic_patch_v3",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page32/api_markdown/page32.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page32/code_outputs/match/question_contexts.json",
+  "page_notes": "",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 10932,
+    "completion_tokens": 9091,
+    "total_tokens": 20023,
+    "latency_s": 174.781342,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 107.409841,
+          "prompt_tokens": 3021,
+          "completion_tokens": 5632,
+          "total_tokens": 8653,
+          "request_id": "chatcmpl-15e97e54-e1ae-9571-9e61-9b39592f0b27"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 67.371501,
+          "prompt_tokens": 7911,
+          "completion_tokens": 3459,
+          "total_tokens": 11370,
+          "request_id": "chatcmpl-8d736833-1c3d-9fbb-83dd-a38f1bdb5831"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"schema_version\": \"api2_patch_v3\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten solution matches draft transcription closely; mathematical steps and set notations are preserved.\"\n      }\n    }\n  ]\n}\n```"
+}

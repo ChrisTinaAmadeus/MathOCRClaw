@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_api2_symbol_guided_atomic_patch_v3",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page11/api_markdown/page11.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page11/code_outputs/match/question_contexts.json",
+  "page_notes": "",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 9869,
+    "completion_tokens": 18906,
+    "total_tokens": 28775,
+    "latency_s": 367.929336,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 215.170889,
+          "prompt_tokens": 2625,
+          "completion_tokens": 11133,
+          "total_tokens": 13758,
+          "request_id": "chatcmpl-592bd2c5-2ab3-9cab-a0d1-bc3ea5f355ad"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 152.758447,
+          "prompt_tokens": 7244,
+          "completion_tokens": 7773,
+          "total_tokens": 15017,
+          "request_id": "chatcmpl-fcca5093-1291-9eb1-afe3-7408d3120be4"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"schema_version\": \"api2_patch_v3\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"edit\",\n        \"edits\": [\n          {\n            \"old\": \"\\n<插图>\",\n            \"new\": \"\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"The figure in the top right contains handwritten axes x, y, z and labels M, N in the same stroke style as the solution handwriting, indicating it is a student sketch/annotation for the coordinate setup rather than a printed question figure. No other printed question text is visible besides the header.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"The draft transcription accurately reflects the visible handwritten solution steps, including vector coordinates and final values.\"\n      }\n    }\n  ]\n}\n```"
+}

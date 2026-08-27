@@ -1,0 +1,190 @@
+{
+  "page": "page20",
+  "status": "ok",
+  "elapsed_s": 307.220081,
+  "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page20.md",
+  "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page20/api_markdown/page20.json",
+  "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page20/agent_outputs/result.json",
+  "baseline": {
+    "score": 66.354749,
+    "raw_score": 0.698471,
+    "structure_score": 1.0,
+    "stem_score": 0.884205,
+    "answer_score": 0.486387,
+    "state_macro_f1": 0.444444,
+    "answer_by_type": {
+      "choice": null,
+      "fill": null,
+      "solution": 0.486387
+    },
+    "gold_question_count": 5,
+    "candidate_question_count": 5,
+    "matched_question_count": 5,
+    "omission_count": 0,
+    "omission_rate": 0.0,
+    "hallucination_count": 1,
+    "hallucination_rate": 0.2,
+    "format_diagnostics": {
+      "gold_latex_formula_spans": 124,
+      "candidate_latex_formula_spans": 100,
+      "formula_span_count_ratio": 0.806452
+    },
+    "missing_gold_indices": [],
+    "extra_candidate_indices": [],
+    "details": [
+      {
+        "qno": "15",
+        "candidate_qno": "15",
+        "alignment": "matched",
+        "stem_score": 0.831667,
+        "answer_score": 0.886765,
+        "answer_type": "solution"
+      },
+      {
+        "qno": "16",
+        "candidate_qno": "16",
+        "alignment": "matched",
+        "stem_score": 0.589359,
+        "answer_score": 0.0,
+        "answer_type": "solution"
+      },
+      {
+        "qno": "17",
+        "candidate_qno": "17",
+        "alignment": "matched",
+        "stem_score": 1.0,
+        "answer_score": 0.509131,
+        "answer_type": "solution"
+      },
+      {
+        "qno": "18",
+        "candidate_qno": "18",
+        "alignment": "matched",
+        "stem_score": 1.0,
+        "answer_score": 0.671209,
+        "answer_type": "solution"
+      },
+      {
+        "qno": "19",
+        "candidate_qno": "19",
+        "alignment": "matched",
+        "stem_score": 1.0,
+        "answer_score": 0.364831,
+        "answer_type": "solution"
+      }
+    ]
+  },
+  "workflow": {
+    "score": 65.124499,
+    "raw_score": 0.685521,
+    "structure_score": 1.0,
+    "stem_score": 0.847205,
+    "answer_score": 0.486387,
+    "state_macro_f1": 0.444444,
+    "answer_by_type": {
+      "choice": null,
+      "fill": null,
+      "solution": 0.486387
+    },
+    "gold_question_count": 5,
+    "candidate_question_count": 5,
+    "matched_question_count": 5,
+    "omission_count": 0,
+    "omission_rate": 0.0,
+    "hallucination_count": 1,
+    "hallucination_rate": 0.2,
+    "format_diagnostics": {
+      "gold_latex_formula_spans": 124,
+      "candidate_latex_formula_spans": 100,
+      "formula_span_count_ratio": 0.806452
+    },
+    "missing_gold_indices": [],
+    "extra_candidate_indices": [],
+    "details": [
+      {
+        "qno": "15",
+        "candidate_qno": "15",
+        "alignment": "matched",
+        "stem_score": 1.0,
+        "answer_score": 0.886765,
+        "answer_type": "solution"
+      },
+      {
+        "qno": "16",
+        "candidate_qno": "16",
+        "alignment": "matched",
+        "stem_score": 0.589359,
+        "answer_score": 0.0,
+        "answer_type": "solution"
+      },
+      {
+        "qno": "17",
+        "candidate_qno": "17",
+        "alignment": "matched",
+        "stem_score": 0.831667,
+        "answer_score": 0.509131,
+        "answer_type": "solution"
+      },
+      {
+        "qno": "18",
+        "candidate_qno": "18",
+        "alignment": "matched",
+        "stem_score": 1.0,
+        "answer_score": 0.671209,
+        "answer_type": "solution"
+      },
+      {
+        "qno": "19",
+        "candidate_qno": "19",
+        "alignment": "matched",
+        "stem_score": 0.815,
+        "answer_score": 0.364831,
+        "answer_type": "solution"
+      }
+    ]
+  },
+  "gain": -1.23025,
+  "evaluator": {
+    "name": "mathocrclaw_deterministic_v3_local",
+    "spec": "benchmark/EVALUATION.md",
+    "judge_model_calls": 0,
+    "semantic_mode": "local_sequence_similarity",
+    "formula_mode": "normalized_latex_ordered_soft_alignment"
+  },
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 21252,
+    "completion_tokens": 14501,
+    "total_tokens": 35753,
+    "latency_s": 276.99465,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 203.174382,
+          "prompt_tokens": 3021,
+          "completion_tokens": 10753,
+          "total_tokens": 13774,
+          "request_id": "chatcmpl-2484fe79-2b92-94d7-918c-e70f7f1b6717"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 73.820268,
+          "prompt_tokens": 18231,
+          "completion_tokens": 3748,
+          "total_tokens": 21979,
+          "request_id": "chatcmpl-3b8057cb-f372-91ad-8537-4c63c3096e59"
+        }
+      ]
+    }
+  }
+}

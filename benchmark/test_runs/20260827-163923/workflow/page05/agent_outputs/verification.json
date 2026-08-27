@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_api2_symbol_guided_atomic_patch_v3",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page05/api_markdown/page05.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page05/code_outputs/match/question_contexts.json",
+  "page_notes": "",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 11624,
+    "completion_tokens": 7021,
+    "total_tokens": 18645,
+    "latency_s": 141.031981,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 92.110294,
+          "prompt_tokens": 3065,
+          "completion_tokens": 4834,
+          "total_tokens": 7899,
+          "request_id": "chatcmpl-78ba7bd9-d461-90d5-aaca-eef400184cfc"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 48.921687,
+          "prompt_tokens": 8559,
+          "completion_tokens": 2187,
+          "total_tokens": 10746,
+          "request_id": "chatcmpl-739cbee6-cca3-99d0-8326-eac43d941a66"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"schema_version\": \"api2_patch_v3\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Printed stem matches C001 context image. Handwritten '0<m≤4' visible to the right of part (2). Part (1) has only a checkmark, no solution steps. Part (3) has no visible answer. Draft student_answer accurately reflects visible content.\"\n      }\n    },\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Printed stem matches C002 context image. Handwritten answers visible: (1) '-9, -6' to the right; (2)(i) '0<a≤1/3, 3≤x≤1/a' and 'a≥1/3, 1/a≤x≤3'; (2)(ii) '(-, 1/2)∪(3, +∞)'. Draft student_answer accurately transcribes all visible retained handwriting.\"\n      }\n    }\n  ]\n}\n```"
+}

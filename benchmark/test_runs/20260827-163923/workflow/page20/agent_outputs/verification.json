@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_api2_symbol_guided_atomic_patch_v3",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page20/api_markdown/page20.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page20/code_outputs/match/question_contexts.json",
+  "page_notes": "",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 21252,
+    "completion_tokens": 14501,
+    "total_tokens": 35753,
+    "latency_s": 276.99465,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 203.174382,
+          "prompt_tokens": 3021,
+          "completion_tokens": 10753,
+          "total_tokens": 13774,
+          "request_id": "chatcmpl-2484fe79-2b92-94d7-918c-e70f7f1b6717"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 73.820268,
+          "prompt_tokens": 18231,
+          "completion_tokens": 3748,
+          "total_tokens": 21979,
+          "request_id": "chatcmpl-3b8057cb-f372-91ad-8537-4c63c3096e59"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"schema_version\": \"api2_patch_v3\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"15\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"edit\",\n        \"edits\": [\n          {\n            \"old\": \"\\n<插图>\",\n            \"new\": \"\",\n            \"kind\": \"remove_cancelled\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"The triangle figure with labels b, 12, c, a, B, C, A is drawn in the same pen stroke style as the student's solution handwriting, with hand-drawn vertices and side labels; it is not a printed figure.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"edit\",\n        \"edits\": [\n          {\n            \"old\": \"\\n<插图>\",\n            \"new\": \"\",\n            \"kind\": \"remove_cancelled\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C003\",\n            \"evidence\": \"The 3D pyramid figure with coordinate axes (x, y, z), labeled vertices A, B, C, D, P, E, M, N and dimension 2√2 is drawn in the same pen stroke style as the student's proof handwriting; it is a student-drawn construction sketch, not a printed figure.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C005\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"edit\",\n        \"edits\": [\n          {\n            \"old\": \"\\n<插图>\",\n            \"new\": \"\",\n            \"kind\": \"remove_cancelled\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C005\",\n            \"evidence\": \"The 3D prism figure with coordinate axes (x, y, z), labeled vertices A, B, C, A₁, B₁, C₁, M and dimension √2 is drawn in the same pen stroke style as the student's solution handwriting; it is a student-drawn construction sketch, not a printed figure.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    }\n  ]\n}\n```"
+}

@@ -1,0 +1,382 @@
+{
+  "page": "page22",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/image/page22.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page22.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/preprocessed/page22.png",
+  "api_strategy": {
+    "call_count": 2,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "question-conditioned symbol and atomic patch review",
+    "local_merge": "deterministic validation against the first-pass draft"
+  },
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 24446,
+    "completion_tokens": 19608,
+    "total_tokens": 44054,
+    "latency_s": 373.454817,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 314.515098,
+          "prompt_tokens": 3065,
+          "completion_tokens": 16696,
+          "total_tokens": 19761,
+          "request_id": "chatcmpl-1aa5bbab-24ac-940f-bfea-073c0d69e384"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 58.939719,
+          "prompt_tokens": 21381,
+          "completion_tokens": 2912,
+          "total_tokens": 24293,
+          "request_id": "chatcmpl-7ae53b16-6f80-9815-a309-e3cf194df1ae"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 9,
+    "answers_with_transcription": 9,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 6,
+      "question_type": "choice",
+      "section_heading_before": "",
+      "question_markdown": "6. 设定义域为 $\\mathbf{R}$ 的偶函数 $f(x)$ 满足 $f(3)+f(-3)=0$，且对于任意的 $x \\neq 0$，均有 $xf'(x)>0$，则 $xf(x)>0$ 的解集为\nA. $(-\\infty, -3)$\nB. $(-3, 0) \\cup (3, +\\infty)$\nC. $(-\\infty, -3) \\cup (3, +\\infty)$\nD. $(3, +\\infty)$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "C",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "C",
+            "final_answer": "C",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 7,
+      "question_type": "choice",
+      "section_heading_before": "",
+      "question_markdown": "7. 在平面直角坐标系 $xOy$ 中，$A(-1, 0)$，$P$ 为曲线 $y=2-\\ln x$ 上一动点，则 $|AP|$ 的最小值为\nA. $\\sqrt{2}$\nB. 2\nC. $\\sqrt{5}$\nD. $2\\sqrt{2}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "A",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "A",
+            "final_answer": "A",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 8,
+      "question_type": "choice",
+      "section_heading_before": "",
+      "question_markdown": "8. 设函数 $f(x)=\\frac{e^x-e^{-x}}{e^x+e^{-x}}+\\frac{1}{x^2+|x|}$，则 $\\sum_{i=-2025}^{-1} f(i) + \\sum_{i=1}^{2025} f(i) =$\nA. $\\frac{2024}{2025}$\nB. $\\frac{2025}{2026}$\nC. $\\frac{1013}{2025}$\nD. $\\frac{2026}{2025}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "B",
+            "final_answer": "B",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 9,
+      "question_type": "choice",
+      "section_heading_before": "二、选择题：本题共3小题，每小题6分，共18分。在每小题给出的选项中，有多项符合题目要求。全部选对的得6分，部分选对的得部分分，有选错的得0分。",
+      "question_markdown": "9. 设实数 $a, b, c$ 满足 $-4 < a < 1 < b < 3 < c$，则下列不等式一定成立的有\nA. $1 < 2b-a < 10$\nB. $\\log_{2025}(c^2-1) < \\log_{2025}(b^2-1)$\nC. $\\frac{1}{bc} > \\frac{1}{a+b}$\nD. $3e^{-a} > 1$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C004"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "AD",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "AD",
+            "final_answer": "AD",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 10,
+      "question_type": "choice",
+      "section_heading_before": "",
+      "question_markdown": "10. 若存在函数 $g_1(x), g_2(x)$ 使得函数 $g_0(x)$ 满足 $g_1(x) \\leqslant g_0(x) \\leqslant g_2(x)$，则称 $g_0(x)$ 是“$g_1-g_2$ 变量函数”。已知函数 $f(x)=x^2+ax+b, f_1(x)=x-1, f_2(x)=2x^2-3x+1$，若 $f(x)$ 是“$f_1-f_2$ 变量函数”，则下列说法正确的是\nA. $f(1)=0$\nB. $a=1$\nC. $f(x)$ 的最小值为 $-\\frac{1}{4}$\nD. 若 $f(x)+mx+1>0$ 恒成立，则 $-1<m<3$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C005"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "AC",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "AC",
+            "final_answer": "AC",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C005"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 11,
+      "question_type": "choice",
+      "section_heading_before": "",
+      "question_markdown": "11. 已知函数 $f(x)=x^3+ax^2+ax+1$，则下列说法正确的是\nA. 当 $a=3$ 时，$f(x)$ 有两个零点\nB. 当 $a=-3$ 时，曲线 $y=f(x)$ 关于点 $(1, -4)$ 对称\nC. 当 $a=0$ 时，若过点 $(m, n)$ 可以作曲线 $y=f(x)-x-1$ 的三条切线，则 $|m+n| < |m^3|$\nD. 存在 $a$ 使得方程 $f(x)=2x^2$ 有三个不等的实根 $x_1, x_2, x_3 (x_1 < x_2 < x_3)$，且 $x_1+x_3=x_2$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C006"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "B",
+            "final_answer": "B",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C006"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 12,
+      "question_type": "fill",
+      "section_heading_before": "三、填空题：本题共3小题，每小题5分，共15分。",
+      "question_markdown": "12. 已知幂函数 $f(x)=\\left(a^2-\\frac{5}{2}a+2\\right)x^a$ 的定义域为 $\\mathbf{R}$，则 $f(2)=$ \\_\\_\\_\\_\\_\\_。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C007"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$4$",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "$4$",
+            "final_answer": "$4$",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C007"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 13,
+      "question_type": "fill",
+      "section_heading_before": "",
+      "question_markdown": "13. 设 $m>0$，则 $\\frac{m^2+m+4}{m+1}$ 的最小值为 \\_\\_\\_\\_\\_\\_。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C008"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$3$",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "$3$",
+            "final_answer": "$3$",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C008"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 14,
+      "question_type": "fill",
+      "section_heading_before": "",
+      "question_markdown": "14. 方程 $(x \\ln x)^2 = 1+2x^2 \\ln x$ 根的个数为 \\_\\_\\_\\_\\_\\_。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C009"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$1$",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "$1$",
+            "final_answer": "$1$",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C009"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/image/page22.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/preprocessed/page22.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/api_markdown/page22.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/api_markdown/page22.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/code_outputs/match/viz/page22_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/agent_outputs/result.json",
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/code_outputs/match/viz/page22_handwriting_overlay.png"
+  }
+}

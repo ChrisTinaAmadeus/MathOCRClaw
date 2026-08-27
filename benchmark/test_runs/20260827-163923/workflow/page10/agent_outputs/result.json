@@ -1,0 +1,135 @@
+{
+  "page": "page10",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page10/image/page10.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page10.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page10/preprocessed/page10.png",
+  "api_strategy": {
+    "call_count": 2,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "question-conditioned symbol and atomic patch review",
+    "local_merge": "deterministic validation against the first-pass draft"
+  },
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 7691,
+    "completion_tokens": 11758,
+    "total_tokens": 19449,
+    "latency_s": 223.939154,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 122.016751,
+          "prompt_tokens": 2933,
+          "completion_tokens": 6415,
+          "total_tokens": 9348,
+          "request_id": "chatcmpl-d88d33f4-c36c-9682-8e17-9edc170aa214"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 101.922403,
+          "prompt_tokens": 4758,
+          "completion_tokens": 5343,
+          "total_tokens": 10101,
+          "request_id": "chatcmpl-1bad57a4-b709-9ec8-a78c-ecb429405ec3"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 2,
+    "answers_with_transcription": 2,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 16,
+      "question_type": "solution",
+      "section_heading_before": "",
+      "question_markdown": "16. [无法识别]",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [
+          "restored_unreadable_stem_sentinel"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page10/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) $m=2, B=\\{x|1 \\le x \\le 5, x \\in R\\}$ $C_R B=\\{x|x<1 \\text{或} x>5\\}$\n$A=\\{x|x^2-x \\le 0\\}=\\{x|0 \\le x \\le 1\\}$ $C_R A=\\{x|x<0 \\text{或} x>1\\}$\n$(C_R A) \\cap (C_R B)=\\{x|x<0 \\text{或} x>5\\}$\n\n(2) $x \\in A$ 是 $x \\in B$ 的充分不必要条件\n$A \\subsetneq B$\n$\\begin{cases} m-1 \\le 2m+1 \\\\ m-1 < 0 \\\\ 2m+1 > 1 \\end{cases}$ 解得 $\\begin{cases} m \\ge -2 \\\\ m < 1 \\\\ m > 0 \\end{cases}$\n综上所述， $0 < m < 1$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page10/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 17,
+      "question_type": "solution",
+      "section_heading_before": "",
+      "question_markdown": "17. [无法识别]",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [
+          "restored_unreadable_stem_sentinel",
+          "applied_solution_edit_1_remove_cancelled"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page10/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) $S=5X+30C+30 \\times 6+30$\n$=5X+30C+210$\n$=5X+30\\frac{k}{5X+5}+210$\n$=5X+\\frac{6k}{X+1}+210$\n\n(2) $S=5X+\\frac{6k}{X+1}+210$\n$=5X+5+\\frac{6k}{X+1}+210-5$\n$=5(X+1)+\\frac{6k}{X+1}+205$\n$5(X+1)+\\frac{6k}{X+1} \\ge 2\\sqrt{5(X+1) \\cdot \\frac{6k}{X+1}} = 2\\sqrt{30k}$\n$S \\ge 2\\sqrt{30k}+205$\n当且仅当 $5(X+1)=\\frac{6k}{X+1}$，即 $X_1=-\\frac{\\sqrt{30k}+5}{5}$ (舍), $X_2=\\frac{\\sqrt{30k}-5}{5}$，\n$S$ 取“=” 其最小值为 $2\\sqrt{30k}+205$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page10/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page10/image/page10.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page10/preprocessed/page10.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page10/api_markdown/page10.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page10/api_markdown/page10.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page10/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page10/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page10/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page10/code_outputs/match/viz/page10_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page10/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page10/agent_outputs/result.json",
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page10/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page10/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page10/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page10/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page10/code_outputs/match/viz/page10_handwriting_overlay.png"
+  }
+}

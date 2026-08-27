@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_api2_symbol_guided_atomic_patch_v3",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/api_markdown/page22.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/code_outputs/match/question_contexts.json",
+  "page_notes": "",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 24446,
+    "completion_tokens": 19608,
+    "total_tokens": 44054,
+    "latency_s": 373.454817,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 314.515098,
+          "prompt_tokens": 3065,
+          "completion_tokens": 16696,
+          "total_tokens": 19761,
+          "request_id": "chatcmpl-1aa5bbab-24ac-940f-bfea-073c0d69e384"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 58.939719,
+          "prompt_tokens": 21381,
+          "completion_tokens": 2912,
+          "total_tokens": 24293,
+          "request_id": "chatcmpl-7ae53b16-6f80-9815-a309-e3cf194df1ae"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"schema_version\": \"api2_patch_v3\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"6\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"7\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"8\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"9\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"10\",\n      \"source_context_ids\": [\"C005\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"11\",\n      \"source_context_ids\": [\"C006\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"12\",\n      \"source_context_ids\": [\"C007\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"13\",\n      \"source_context_ids\": [\"C008\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"14\",\n      \"source_context_ids\": [\"C009\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    }\n  ]\n}\n```"
+}

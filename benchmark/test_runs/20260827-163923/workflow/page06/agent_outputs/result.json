@@ -1,0 +1,350 @@
+{
+  "page": "page06",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/image/page06.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page06.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/preprocessed/page06.png",
+  "api_strategy": {
+    "call_count": 2,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "question-conditioned symbol and atomic patch review",
+    "local_merge": "deterministic validation against the first-pass draft"
+  },
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 18075,
+    "completion_tokens": 10957,
+    "total_tokens": 29032,
+    "latency_s": 210.08662,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 109.166865,
+          "prompt_tokens": 3065,
+          "completion_tokens": 5735,
+          "total_tokens": 8800,
+          "request_id": "chatcmpl-fc119223-b18b-9077-8a7d-3a2ced1438e2"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 100.919755,
+          "prompt_tokens": 15010,
+          "completion_tokens": 5222,
+          "total_tokens": 20232,
+          "request_id": "chatcmpl-eaadbfe3-59c2-91b7-a521-5ecf9de00f62"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 8,
+    "answers_with_transcription": 8,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 1,
+      "question_type": "choice",
+      "section_heading_before": "一、选择题：本题共 8 小题，每小题 5 分，共 40 分。在每小题给出的四个选项中，只有一项是符合题目要求的。",
+      "question_markdown": "1. 下列关系：①$\\frac{1}{2} \\in \\mathbf{R}$；②$|-3| \\notin \\mathbf{N}$；③$-\\sqrt{3} \\notin \\mathbf{Q}$；④$0 \\notin \\mathbf{N}$；⑤$\\varnothing \\subseteq \\{0\\}$，正确的个数为（ ）。\nA. 5\nB. 4\nC. 3\nD. 2",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [
+          "applied_stem_edit_1_insert_missing"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "B",
+            "final_answer": "B",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwritten 'B' visible to the right of the question stem in C001; two-lobed right side of vertical stem confirms B over D",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 2,
+      "question_type": "choice",
+      "section_heading_before": "",
+      "question_markdown": "2. 命题“$\\exists x \\in \\mathbf{R}, x^2-3x+3<0$”的否定是（ ）。\nA. $\\forall x \\in \\mathbf{R}, x^2-3x+3>0$\nB. $\\forall x \\in \\mathbf{R}, x^2-3x+3 \\ge 0$\nC. $\\exists x \\in \\mathbf{R}, x^2-3x+3>0$\nD. $\\exists x \\in \\mathbf{R}, x^2-3x+3 \\ge 0$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "B",
+            "final_answer": "B",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwritten 'B' circled/written after the stem in C002; two-lobed right side confirms B",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 3,
+      "question_type": "choice",
+      "section_heading_before": "",
+      "question_markdown": "3. 设集合 $A=\\{x|x \\ge 2\\}$，$B=\\{x|1 \\le x \\le 4\\}$，则 $A \\cup B=$（ ）。\nA. $[1, +\\infty)$\nB. $[1, 2)$\nC. $[2, 4]$\nD. $(-\\infty, 4]$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "A",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "A",
+            "final_answer": "A",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwritten 'A' visible after the equals sign in C003; apex with crossbar and two downward legs confirm A",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 4,
+      "question_type": "choice",
+      "section_heading_before": "",
+      "question_markdown": "4. 设 $a, b \\in \\mathbf{R}$，则“$|a|>b$”是“$a>b$”的（ ）。\nA. 充分不必要条件\nB. 必要不充分条件\nC. 充要条件\nD. 既不充分也不必要条件",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C004"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "B",
+            "final_answer": "B",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "In C004, 'A' is visibly crossed out and 'B' is written as the final retained answer; two-lobed right side of vertical stem confirms B",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 5,
+      "question_type": "choice",
+      "section_heading_before": "",
+      "question_markdown": "5. 集合 $M=\\{2, 3, 4\\}$，$N=\\{3, 6\\}$，定义 $M*N=\\{(a, b)|a \\in M, b \\in N\\}$，则 $M*N$ 的非空真子集的个数为（ ）。\nA. 63\nB. 31\nC. 62\nD. 30",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C005"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "D",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "D",
+            "final_answer": "D",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwritten 'D' visible at the end of the stem in C005; straight left stem with continuous outer bow confirms D over B",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C005"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 6,
+      "question_type": "choice",
+      "section_heading_before": "",
+      "question_markdown": "6. 已知 $x<0, 0<y<1$，则（ ）。\nA. $xy^2 < xy < x$\nB. $xy < x < xy^2$\nC. $xy^2 < x < xy$\nD. $x < xy < xy^2$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C006"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "D",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "D",
+            "final_answer": "D",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwritten 'D' written inside the parentheses in C006; straight left stem with continuous outer bow confirms D",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C006"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 7,
+      "question_type": "choice",
+      "section_heading_before": "",
+      "question_markdown": "7. 某校为拓展学生在音乐、体育、美术方面的能力，开设了相应的兴趣班。某班共有 34 名学生参加了兴趣班，有 17 人参加音乐班，有 20 人参加体育班，有 12 人参加美术班，同时参加音乐班与体育班的有 6 人，同时参加音乐班与美术班的有 4 人。已知没有人同时参加三个班，则仅参加一个兴趣班的人数为（ ）。\nA. 19\nB. 20\nC. 21\nD. 22",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C007"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "A",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "A",
+            "final_answer": "A",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwritten 'A' written inside the parentheses in C007; apex with crossbar and two downward legs confirm A",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C007"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 8,
+      "question_type": "choice",
+      "section_heading_before": "",
+      "question_markdown": "8. 已知关于 $x$ 的方程 $x^2+2(m-2)x+m^2-3m+3=0$ 有两个不相等的实数根 $x_1, x_2$，则 $\\frac{mx_1}{x_1-1} + \\frac{mx_2}{x_2-1} - \\frac{2}{x_1+x_2-2}$ 的最大值为（ ）。\nA. $2\\sqrt{2}$\nB. 2\nC. $-2\\sqrt{2}$\nD. $-4$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C008"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "D",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "D",
+            "final_answer": "D",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "In C008, 'A' and 'B' are visibly crossed out, and 'D' is written as the final retained answer; straight left stem with continuous outer bow confirms D",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C008"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/image/page06.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/preprocessed/page06.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/api_markdown/page06.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/api_markdown/page06.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/code_outputs/match/viz/page06_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/agent_outputs/result.json",
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/code_outputs/match/viz/page06_handwriting_overlay.png"
+  }
+}

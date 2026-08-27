@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_api2_symbol_guided_atomic_patch_v3",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page17/api_markdown/page17.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page17/code_outputs/match/question_contexts.json",
+  "page_notes": "",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 14029,
+    "completion_tokens": 12569,
+    "total_tokens": 26598,
+    "latency_s": 240.410737,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 108.625961,
+          "prompt_tokens": 3065,
+          "completion_tokens": 5663,
+          "total_tokens": 8728,
+          "request_id": "chatcmpl-1a28c167-4e73-9030-b3ef-248d017ea8de"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 131.784776,
+          "prompt_tokens": 10964,
+          "completion_tokens": 6906,
+          "total_tokens": 17870,
+          "request_id": "chatcmpl-f702aa57-9305-9ec7-9a27-e713a2bb8576"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"schema_version\": \"api2_patch_v3\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"15\",\n      \"source_context_ids\": [\n        \"C001\",\n        \"C002\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwriting matches draft transcription across C001 and top of C002.\"\n      }\n    },\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\n        \"C002\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwriting in C002 matches draft transcription.\"\n      }\n    },\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\n        \"C003\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"edit\",\n        \"edits\": [\n          {\n            \"old\": \"并求出最少费用。\\n<插图>\",\n            \"new\": \"并求出最少费用。\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C003\",\n            \"evidence\": \"The figure in the answer area is a hand-drawn rectangle with labels 'x m' and '2 m', not a printed figure.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \"y=28x+100(\\\\frac{200}{x}+x-2) \\\\quad (x>2)\",\n            \"new\": \"y=28x+100(\\\\frac{100}{x} \\\\cdot 2+x-2) \\\\quad (x>2)\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C003\",\n            \"evidence\": \"Handwriting clearly shows \\\\frac{100}{x} \\\\cdot 2, not \\\\frac{200}{x}.\"\n          }\n        ],\n        \"symbol_observations\": [],\n        \"evidence\": \"Student wrote \\\\frac{100}{x} \\\\cdot 2 in the equation line.\"\n      }\n    }\n  ]\n}\n```"
+}

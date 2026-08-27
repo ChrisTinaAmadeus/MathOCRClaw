@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_api2_symbol_guided_atomic_patch_v3",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page21/api_markdown/page21.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page21/code_outputs/match/question_contexts.json",
+  "page_notes": "",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 15647,
+    "completion_tokens": 25037,
+    "total_tokens": 40684,
+    "latency_s": 472.849871,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 203.534282,
+          "prompt_tokens": 3021,
+          "completion_tokens": 10783,
+          "total_tokens": 13804,
+          "request_id": "chatcmpl-fa8a61e4-02df-9fb5-a0df-14077b1f16f0"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 269.315589,
+          "prompt_tokens": 12626,
+          "completion_tokens": 14254,
+          "total_tokens": 26880,
+          "request_id": "chatcmpl-043d9f84-1e8c-9773-82d2-1d7a021b6027"
+        }
+      ]
+    }
+  },
+  "raw": "{\n  \"schema_version\": \"api2_patch_v3\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"edit\",\n        \"edits\": [\n          {\n            \"old\": \"<插图>\",\n            \"new\": \"\",\n            \"kind\": \"remove_cancelled\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C002\",\n            \"evidence\": \"The diagram in the answer area is drawn in handwriting style with student-added labels (A, E, C, P, O, D, F, B) and measurements (40, 25), matching the solution stroke style; no printed figure is visible in the stem area.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \"$-\\\\frac{1}{3}$\",\n            \"new\": \"$-\\\\frac{1}{t}$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C003\",\n            \"evidence\": \"The handwriting in C003 clearly shows '-1/t' with 't' as the denominator in the set notation, not the digit '3'.\"\n          },\n          {\n            \"old\": \"x < \\\\dots\",\n            \"new\": \"x < -\\\\frac{1}{t}\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C003\",\n            \"evidence\": \"The handwriting in C003 shows 'x < -1/t' in the t < -1 case line.\"\n          },\n          {\n            \"old\": \"x > \\\\dots\",\n            \"new\": \"x > -\\\\frac{1}{t}\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C003\",\n            \"evidence\": \"The handwriting in C003 shows 'x > -1/t' in the -1 < t < 0 case line.\"\n          }\n        ],\n        \"symbol_observations\": [],\n        \"evidence\": \"Visible handwriting in C003 context image shows the corrected expressions with 't' as denominator throughout.\"\n      }\n    },\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    }\n  ]\n}"
+}

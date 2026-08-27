@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_api2_symbol_guided_atomic_patch_v3",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page19/api_markdown/page19.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page19/code_outputs/match/question_contexts.json",
+  "page_notes": "",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 17700,
+    "completion_tokens": 13083,
+    "total_tokens": 30783,
+    "latency_s": 254.90344,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 174.476316,
+          "prompt_tokens": 3461,
+          "completion_tokens": 9190,
+          "total_tokens": 12651,
+          "request_id": "chatcmpl-eadf70a7-c684-952f-a3b0-4caca98a8a6b"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 80.427124,
+          "prompt_tokens": 14239,
+          "completion_tokens": 3893,
+          "total_tokens": 18132,
+          "request_id": "chatcmpl-fa94caf9-b381-92b3-8294-b450b5973b1e"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"schema_version\": \"api2_patch_v3\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"12\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten '0.6' clearly visible on the blank line in C001 context image.\"\n      }\n    },\n    {\n      \"qno\": \"13\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"C002 context image shows only crossed-out/scratched handwriting on the right; no retained answer visible.\"\n      }\n    },\n    {\n      \"qno\": \"14\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"C003 context image shows crossed-out/scratched handwriting on the blank; the figure on the right is a printed cube diagram, so <插图> is correct.\"\n      }\n    },\n    {\n      \"qno\": \"15\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"edit\",\n        \"edits\": [\n          {\n            \"old\": \"红色子\",\n            \"new\": \"红色骰子\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C004\",\n            \"evidence\": \"C004 context image clearly shows printed text '红色骰子' with the character 骰 visible.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"C004 answer area contains handwriting that appears to belong to Q16 (red ink solution and vector calculations); no clear retained answer for Q15's probability sub-questions is visible.\"\n      }\n    },\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\"C005\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"C005 context image shows printed stem with printed parallelepiped figure (<插图> is correct). The red handwriting on the full page and vector calculations on the right correspond to the draft's transcribed solution for parts (1), (2), (3).\"\n      }\n    }\n  ]\n}\n```"
+}

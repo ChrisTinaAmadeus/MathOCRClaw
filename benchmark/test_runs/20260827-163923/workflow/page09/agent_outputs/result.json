@@ -1,0 +1,152 @@
+{
+  "page": "page09",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page09/image/page09.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page09.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page09/preprocessed/page09.png",
+  "api_strategy": {
+    "call_count": 2,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "question-conditioned symbol and atomic patch review",
+    "local_merge": "deterministic validation against the first-pass draft"
+  },
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 11467,
+    "completion_tokens": 19251,
+    "total_tokens": 30718,
+    "latency_s": 364.701551,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 185.397341,
+          "prompt_tokens": 3065,
+          "completion_tokens": 9790,
+          "total_tokens": 12855,
+          "request_id": "chatcmpl-496dfad6-4092-9a14-ba0b-1ac6daf39c9a"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 179.30421,
+          "prompt_tokens": 8402,
+          "completion_tokens": 9461,
+          "total_tokens": 17863,
+          "request_id": "chatcmpl-cb183310-63fc-9715-b7e1-2391e826bb92"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 2,
+    "answers_with_transcription": 2,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 12,
+      "question_type": "solution",
+      "section_heading_before": "",
+      "question_markdown": "12. 若命题 “$\\exists x \\in \\{x \\mid -1 \\le x \\le 3\\}, x^2-2x-a \\le 0$” 为真命题，则实数 $a$ 的取值范围为。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [
+          "rejected_stem_edit_1_whole_field_rewrite",
+          "accepted_symbol_observation_1",
+          "rejected_answer_action_type_mismatch"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page09/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$a \\ge -1$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Student wrote 'a >= -1' (with >= symbol) as the final answer.",
+        "symbol_observations": [
+          {
+            "tag": "SIGN_RELATION",
+            "location": "top of page, after '范围为'",
+            "candidates": [
+              ">",
+              "\\ge",
+              "="
+            ],
+            "selected": "\\ge",
+            "observed_features": "Visible '>' shape with a horizontal bar underneath, indicating greater-than-or-equal.",
+            "context_id": "C001",
+            "reference_context_ids": []
+          }
+        ],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page09/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 17,
+      "question_type": "solution",
+      "section_heading_before": "",
+      "question_markdown": "17. (15分) 某学校引入种植类劳动教育课程，打算围成如图所示的四块全等的长方形田地种植不同种类的蔬菜，其中一面可以利用原有的墙（足够长），其他各面需要用篱笆围成，设其中一块田地为矩形 $ABCD$。\n<插图>\n(1) 若每块田地的面积为 $24\\text{m}^2$，要使围成四块田地的篱笆总长最小，应该设计田地的长 $AB$ 和宽 $AD$ 各为多少？\n(2) 现用 $40\\text{m}$ 长的篱笆，要使每块田地的面积最大，应该设计田地的长 $AB$ 和宽 $AD$ 各为多少？",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [
+          "rejected_solution_edit_1_invalid_context",
+          "rejected_solution_edit_2_invalid_context",
+          "rejected_solution_edit_3_invalid_context"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page09/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 设 $AB$ 为 $x$ m，$AD$ 为 $y$ m。则 $xy=24$。\n$\\therefore$ 求 $6y+4x$ 的 $\\min$。\n$\\because 6y+4x \\ge 2\\sqrt{6y \\cdot 4x} \\ge 2\\sqrt{24 \\cdot 24} \\ge 48$。\n$\\therefore 6y+4x$ 的 $\\min$ 为 48。\n当且仅当 $6y=4x=24$ 时，即 $y=4, x=6$ 时，取最小值。\n$\\therefore AB$ 为 6m, $AD$ 为 4m。\n\n(2) 设 $AB$ 为 $a$ m, $AD$ 为 $b$ m。\n$\\therefore 6a+4b=40$。求 $ab$ 的 $\\max$ 即 $ab$ 的 $\\max$。\n$\\because 6a+4b=40 \\therefore 3a+2b=20$。\n$\\therefore b = \\frac{20-3a}{2}$。\n$\\therefore ab = a\\left(\\frac{20-3a}{2}\\right) = \\frac{-3a^2+20a}{2}$。\n$\\because -\\frac{20}{2(-3)} = \\frac{10}{3}$。\n$\\therefore ab \\max = \\frac{100}{3}$。\n当且仅当 $a=\\frac{10}{3}, b=5$ 时取得最大值。\n$\\therefore AB$ 的长为 $\\frac{10}{3}$ m, $AD$ 的长为 5m。",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Transcription of handwritten solution steps.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page09/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "Q12 stem appears handwritten on a notebook page; printed stem not visible. Q17 student labels subquestions as '1).' and '2).' instead of '(1)' and '(2)'.",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page09/image/page09.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page09/preprocessed/page09.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page09/api_markdown/page09.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page09/api_markdown/page09.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page09/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page09/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page09/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page09/code_outputs/match/viz/page09_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page09/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page09/agent_outputs/result.json",
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page09/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page09/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page09/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page09/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page09/code_outputs/match/viz/page09_handwriting_overlay.png"
+  }
+}

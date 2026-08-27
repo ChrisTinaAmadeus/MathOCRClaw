@@ -1,0 +1,136 @@
+{
+  "page": "page12",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page12/image/page12.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page12.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page12/preprocessed/page12.png",
+  "api_strategy": {
+    "call_count": 2,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "question-conditioned symbol and atomic patch review",
+    "local_merge": "deterministic validation against the first-pass draft"
+  },
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 11969,
+    "completion_tokens": 24659,
+    "total_tokens": 36628,
+    "latency_s": 470.907427,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 266.279402,
+          "prompt_tokens": 3065,
+          "completion_tokens": 13868,
+          "total_tokens": 16933,
+          "request_id": "chatcmpl-c64624e7-20a3-9e4d-a290-5530364b6f46"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 204.628025,
+          "prompt_tokens": 8904,
+          "completion_tokens": 10791,
+          "total_tokens": 19695,
+          "request_id": "chatcmpl-594110d1-0362-967b-8cee-d311044246ec"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 2,
+    "answers_with_transcription": 2,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 16,
+      "question_type": "solution",
+      "section_heading_before": "",
+      "question_markdown": "16. [无法识别]",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [
+          "restored_unreadable_stem_sentinel"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page12/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "_未识别到手写答案。_",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "no_answer",
+        "evidence_note": "Printed stem not visible; handwriting is partial and cut off at top.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page12/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 17,
+      "question_type": "solution",
+      "section_heading_before": "",
+      "question_markdown": "17. 如图，在三棱柱 $ABC-A_1B_1C_1$ 中，$B_1B \\perp$ 平面 $A_1B_1C_1$，$AC=CB=CC_1=2$，$\\angle ACB=90^\\circ$，\n$D, E$ 分别是 $A_1B_1$，$CC_1$ 的中点。\n(1)求证：$C_1D //$ 平面 $A_1BE$；\n(2)求平面 $ABC$ 与平面 $A_1BE$ 所成角的正弦值。\n<插图>",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [
+          "applied_solution_edit_1_ocr_correction",
+          "applied_solution_edit_2_ocr_correction",
+          "applied_solution_edit_3_ocr_correction"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page12/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 证：在三棱柱 $ABC-A_1B_1C_1$ 中，\n$B_1B \\perp$ 平面 $A_1B_1C_1$\n$\\therefore$ 平面 $ABC //$ 平面 $A_1B_1C_1$\n$B_1B // C_1C$\n$\\therefore C_1C \\perp$ 平面 $ABC$\n如图，建立空间直角坐标系\n$\\therefore C_1(0,0,2), D(1,1,2), A_1(2,0,2)$\n$B(0,2,0), E(0,0,1)$\n$\\therefore \\overrightarrow{C_1D}=(1,1,0), \\overrightarrow{A_1B}=(-2,2,-2)$\n$\\overrightarrow{A_1E}=(-2,0,-1)$\n设平面 $A_1BE$ 一个法向量 $\\vec{n}=(x,y,z)$\n则 $\\begin{cases} \\vec{n} \\cdot \\overrightarrow{A_1B}=0 \\\\ \\vec{n} \\cdot \\overrightarrow{A_1E}=0 \\end{cases} \\Rightarrow \\begin{cases} -2x+2y-2z=0 \\\\ -2x-z=0 \\end{cases}$\n令 $x=-1$，则 $y=1, z=2$\n$\\therefore \\vec{n}=(-1,1,2)$\n$\\therefore \\overrightarrow{C_1D} \\cdot \\vec{n} = 1\\times(-1)+1\\times1+0=0$\n$\\therefore \\overrightarrow{C_1D} \\perp \\vec{n}$\n$\\therefore C_1D //$ 平面 $A_1BE$\n\n(2) 由(1)得平面 $A_1BE$ 的法向量 $\\vec{n}=(-1,1,2)$\n$A(2,0,0), B(0,2,0), C(0,0,0)$\n$\\therefore \\overrightarrow{CA}=(2,0,0), \\overrightarrow{CB}=(0,2,0)$\n设平面 $ABC$ 一个法向量为 $\\vec{m}=(a,b,c)$\n$\\begin{cases} \\vec{m} \\cdot \\overrightarrow{CA}=0 \\\\ \\vec{m} \\cdot \\overrightarrow{CB}=0 \\end{cases} \\Rightarrow \\begin{cases} 2a=0 \\\\ 2b=0 \\end{cases}$\n令 $a=0$，则 $b=0, c=1$\n$\\therefore \\vec{m}=(0,0,1)$\n$\\therefore \\vec{n} \\cdot \\vec{m} = -1\\times0+1\\times0+2\\times1=2$\n$|\\vec{n}|=\\sqrt{(-1)^2+1^2+2^2}=\\sqrt{6}, |\\vec{m}|=\\sqrt{0^2+0^2+1^2}=1$\n$\\therefore \\cos\\langle\\vec{m},\\vec{n}\\rangle = \\frac{\\vec{m} \\cdot \\vec{n}}{|\\vec{m}||\\vec{n}|} = \\frac{2}{\\sqrt{6}\\times1} = \\frac{\\sqrt{6}}{3}$\n设平面 $ABC$ 与平面 $A_1BE$ 所成角为 $\\theta$\n$\\therefore \\cos\\theta = |\\cos\\langle\\vec{m},\\vec{n}\\rangle| = \\frac{\\sqrt{6}}{3}$\n$\\therefore \\sin\\theta = \\sqrt{1-\\cos^2\\theta} = \\frac{\\sqrt{3}}{3}$\n答：正弦值为 $\\frac{\\sqrt{3}}{3}$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwriting shows A(2,0,0) not B(2,0,0) in part (2) setup.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page12/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "Q16 stem is not visible (cut off); handwriting at top is partial solution to previous question. Q17 student answer has coordinate label swaps in part (2) compared to handwriting.",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page12/image/page12.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page12/preprocessed/page12.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page12/api_markdown/page12.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page12/api_markdown/page12.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page12/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page12/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page12/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page12/code_outputs/match/viz/page12_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page12/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page12/agent_outputs/result.json",
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page12/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page12/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page12/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page12/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page12/code_outputs/match/viz/page12_handwriting_overlay.png"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_api2_symbol_guided_atomic_patch_v3",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page30/api_markdown/page30.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page30/code_outputs/match/question_contexts.json",
+  "page_notes": "",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 10831,
+    "completion_tokens": 17217,
+    "total_tokens": 28048,
+    "latency_s": 327.053263,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 189.075759,
+          "prompt_tokens": 3065,
+          "completion_tokens": 9985,
+          "total_tokens": 13050,
+          "request_id": "chatcmpl-7d6d39dd-3ac3-9b84-9a3f-7acd772f918e"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 137.977504,
+          "prompt_tokens": 7766,
+          "completion_tokens": 7232,
+          "total_tokens": 14998,
+          "request_id": "chatcmpl-a8b01cf4-6055-9ca0-85bf-9fb022d9e6c0"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"schema_version\": \"api2_patch_v3\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [\n          {\n            \"label\": \"(3)\",\n            \"value\": \"9\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"edits\": [\n          {\n            \"old\": \"(1) _未识别到手写答案。_\\n(2) _未识别到手写答案。_\\n(3). 设 $M(x_0, y_0), P(x_1, y_1), (y_1 \\\\neq \\\\pm y_0)$.\",\n            \"new\": \"(3). 设 $M(x_0, y_0), P(x_1, y_1). (y_1 \\\\neq \\\\pm y_0)$.\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"The image only contains handwriting for part (3). The placeholders for (1) and (2) are API1 artifacts. The punctuation after P(x_1, y_1) is a period in the handwriting.\"\n          }\n        ],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwriting provides a complete derivation for part (3) ending in =9. Parts (1) and (2) are blank.\"\n      }\n    }\n  ]\n}\n```"
+}

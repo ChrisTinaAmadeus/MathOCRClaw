@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_api2_symbol_guided_atomic_patch_v3",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page25/api_markdown/page25.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page25/code_outputs/match/question_contexts.json",
+  "page_notes": "",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 13319,
+    "completion_tokens": 13574,
+    "total_tokens": 26893,
+    "latency_s": 259.670675,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 98.23685,
+          "prompt_tokens": 2713,
+          "completion_tokens": 5139,
+          "total_tokens": 7852,
+          "request_id": "chatcmpl-771acd29-10f1-963e-8cdc-daef05109396"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 161.433825,
+          "prompt_tokens": 10606,
+          "completion_tokens": 8435,
+          "total_tokens": 19041,
+          "request_id": "chatcmpl-5f6a1f59-d992-9924-99e4-583cd931d7b0"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"schema_version\": \"api2_patch_v3\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"15\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten solution in C001 answer area matches draft transcription: set computations for A, B, A∩B, (∁_R B)A, and the case analysis for CA with final range m≤-2 or -1≤m<1/2 are all visibly retained.\"\n      }\n    },\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten solution in C002 answer area matches draft: part (1) derives a_max=2 from x=1 giving x²+1=2; part (2) derives a>2 from p false and a≤-3 or a≥1 from q true (Δ≥0), with final range a≤-3 or a>2 visibly written at right side of answer area.\"\n      }\n    },\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten solution in C003 answer area matches draft: (1) -3<2x-y<4 via bounding 2x and -y; (2) AM-GM on (2x-6)+4/(2x-6)+6 gives min=10 with equality condition; (3) AM-GM on 2x(8-2x) gives max=8. All steps and final values visibly retained.\"\n      }\n    }\n  ]\n}\n```"
+}

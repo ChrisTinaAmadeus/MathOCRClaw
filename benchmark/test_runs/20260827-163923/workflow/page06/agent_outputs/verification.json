@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_api2_symbol_guided_atomic_patch_v3",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/api_markdown/page06.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/code_outputs/match/question_contexts.json",
+  "page_notes": "",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 18075,
+    "completion_tokens": 10957,
+    "total_tokens": 29032,
+    "latency_s": 210.08662,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 109.166865,
+          "prompt_tokens": 3065,
+          "completion_tokens": 5735,
+          "total_tokens": 8800,
+          "request_id": "chatcmpl-fc119223-b18b-9077-8a7d-3a2ced1438e2"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 100.919755,
+          "prompt_tokens": 15010,
+          "completion_tokens": 5222,
+          "total_tokens": 20232,
+          "request_id": "chatcmpl-eaadbfe3-59c2-91b7-a521-5ecf9de00f62"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"schema_version\": \"api2_patch_v3\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"1\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"edit\",\n        \"edits\": [\n          {\n            \"old\": \"；$|-3| \\\\notin \\\\mathbf{N}$；③\",\n            \"new\": \"；②$|-3| \\\\notin \\\\mathbf{N}$；③\",\n            \"kind\": \"insert_missing\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"Printed stem in C001 clearly shows circled numeral ② before $|-3| \\\\notin \\\\mathbf{N}$, matching the sequence ①②③⑤\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten 'B' visible to the right of the question stem in C001; two-lobed right side of vertical stem confirms B over D\"\n      }\n    },\n    {\n      \"qno\": \"2\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten 'B' circled/written after the stem in C002; two-lobed right side confirms B\"\n      }\n    },\n    {\n      \"qno\": \"3\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten 'A' visible after the equals sign in C003; apex with crossbar and two downward legs confirm A\"\n      }\n    },\n    {\n      \"qno\": \"4\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"In C004, 'A' is visibly crossed out and 'B' is written as the final retained answer; two-lobed right side of vertical stem confirms B\"\n      }\n    },\n    {\n      \"qno\": \"5\",\n      \"source_context_ids\": [\"C005\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten 'D' visible at the end of the stem in C005; straight left stem with continuous outer bow confirms D over B\"\n      }\n    },\n    {\n      \"qno\": \"6\",\n      \"source_context_ids\": [\"C006\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten 'D' written inside the parentheses in C006; straight left stem with continuous outer bow confirms D\"\n      }\n    },\n    {\n      \"qno\": \"7\",\n      \"source_context_ids\": [\"C007\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten 'A' written inside the parentheses in C007; apex with crossbar and two downward legs confirm A\"\n      }\n    },\n    {\n      \"qno\": \"8\",\n      \"source_context_ids\": [\"C008\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"In C008, 'A' and 'B' are visibly crossed out, and 'D' is written as the final retained answer; straight left stem with continuous outer bow confirms D\"\n      }\n    }\n  ]\n}\n```"
+}

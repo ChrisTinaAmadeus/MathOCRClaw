@@ -1,0 +1,386 @@
+{
+  "page": "page02",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/image/page02.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page02.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/preprocessed/page02.png",
+  "api_strategy": {
+    "call_count": 2,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "question-conditioned symbol and atomic patch review",
+    "local_merge": "deterministic validation against the first-pass draft"
+  },
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 20740,
+    "completion_tokens": 11139,
+    "total_tokens": 31879,
+    "latency_s": 213.493145,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 165.91687,
+          "prompt_tokens": 3065,
+          "completion_tokens": 8766,
+          "total_tokens": 11831,
+          "request_id": "chatcmpl-8c3003e1-db14-956a-8996-5e6a3f6fe5c6"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 47.576275,
+          "prompt_tokens": 17675,
+          "completion_tokens": 2373,
+          "total_tokens": 20048,
+          "request_id": "chatcmpl-91f7d9bc-5bc4-9880-b67a-5dd2b398478b"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 9,
+    "answers_with_transcription": 9,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 7,
+      "question_type": "choice",
+      "section_heading_before": "",
+      "question_markdown": "7. “$m < \\frac{1}{4}$” 是 “一元二次方程 $x^2 + x + m = 0$” 有实数解的 ( C )\nA. 充分不必要条件\nB. 充要条件\nC. 必要不充分条件\nD. 既不充分也不必要条件",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "C",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "C",
+            "final_answer": "C",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 8,
+      "question_type": "choice",
+      "section_heading_before": "",
+      "question_markdown": "8. 下列结论正确的是 ( C )\nA. 若 $a > b$，则 $\\frac{1}{b} > \\frac{1}{a}$\nB. 若 $a^2 < b^2$，则 $a < b$\nC. 若 $a > b, c > d$ 则 $a - d > b - c$\nD. 若 $a > b$，则 $ac^2 > bc^2$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "C",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "C",
+            "final_answer": "C",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 9,
+      "question_type": "choice",
+      "section_heading_before": "",
+      "question_markdown": "9. 设集合 $A = \\{0, 3\\}$，$B = \\{m + 2, m^2 + 2\\}$，若 $A \\cap B = \\{3\\}$，则集合 $A \\cup B$ 的子集的个数为 ( D )\nA. 3\nB. 4\nC. 7\nD. 8",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "D",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "D",
+            "final_answer": "D",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 10,
+      "question_type": "choice",
+      "section_heading_before": "",
+      "question_markdown": "10. 设集合 $A = \\{x | x^2 - 4 \\le 0\\}$，$B = \\{x | 2x + a \\le 0\\}$，且 $A \\cap B = \\{x | -2 < x < 1\\}$，则 $a = $ ( B )\nA. $-4$\nB. $-2$\nC. 2\nD. 4",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C004"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "B",
+            "final_answer": "B",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 11,
+      "question_type": "choice",
+      "section_heading_before": "",
+      "question_markdown": "11. 若集合 $A = \\{x | x^2 = 1\\}, B = \\{x | mx = 1\\}$ 且 $B \\subseteq A$，则实数 $m$ 的集合为 ( B )\nA. $\\{-1, 0, 1\\}$\nB. $\\{-1, 1\\}$\nC. $\\{-1, 0\\}$\nD. $\\{0, 1\\}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C005"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "B",
+            "final_answer": "B",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C005"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 12,
+      "question_type": "choice",
+      "section_heading_before": "",
+      "question_markdown": "12. 设集合 $A = \\{x | -1 < x - a < 1, x \\in R\\}$，$B = \\{x | 1 < x < 5, x \\in R\\}$，若 $A \\cap B = \\varnothing$，则实数 $a$ 的取值范围是 ( BC )\nA. $0 \\le a \\le 6$\nB. $a \\le 2$ 或 $a \\ge 4$\nC. $a \\le 0$ 或 $a \\ge 6$\nD. $2 \\le a \\le 4$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C006"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [
+          "removed_choice_scratch_work"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "BC",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "BC",
+            "final_answer": "BC",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C006"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 13,
+      "question_type": "fill",
+      "section_heading_before": "二、填空题：本题共 6 小题，每小题 5 分，共 30 分。",
+      "question_markdown": "13. 设集合 $A = \\{1, 2, 6\\}$，$B = \\{2, 4\\}$，$C = \\{1, 2, 3, 4\\}$ 则 $(A \\cup B) \\cap C = $ \\_\\_\\_\\_\\_\\_",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C007"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$\\{1, 2, 4\\}$",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "$\\{1, 2, 4\\}$",
+            "final_answer": "$\\{1, 2, 4\\}$",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C007"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 14,
+      "question_type": "fill",
+      "section_heading_before": "",
+      "question_markdown": "14. 已知集合 $A = \\{-1, 3, 2m - 1\\}$，集合 $B = \\{3, m^2\\}$，若 $B \\subseteq A$，则实数 $m = $ \\_\\_\\_\\_\\_\\_",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C008"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [
+          "removed_fill_scratch_work"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$1$",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "$1$",
+            "final_answer": "$1$",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C008"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 15,
+      "question_type": "fill",
+      "section_heading_before": "",
+      "question_markdown": "15. 已知 $m \\in R$，则 $2m^2 + 3m - 1$ 与 $m^2 + 4m - 2$ 的大小关系为 \\_\\_\\_\\_\\_\\_",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C009"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$2m^2 + 3m - 1 > m^2 + 4m - 2$",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "$2m^2 + 3m - 1 > m^2 + 4m - 2$",
+            "final_answer": "$2m^2 + 3m - 1 > m^2 + 4m - 2$",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C009"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/image/page02.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/preprocessed/page02.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/api_markdown/page02.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/api_markdown/page02.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/code_outputs/match/viz/page02_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/agent_outputs/result.json",
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/code_outputs/match/viz/page02_handwriting_overlay.png"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_api2_symbol_guided_atomic_patch_v3",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page26/api_markdown/page26.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page26/code_outputs/match/question_contexts.json",
+  "page_notes": "",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 18937,
+    "completion_tokens": 7718,
+    "total_tokens": 26655,
+    "latency_s": 149.717842,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 98.517881,
+          "prompt_tokens": 3065,
+          "completion_tokens": 5157,
+          "total_tokens": 8222,
+          "request_id": "chatcmpl-4170fdde-b785-9100-b300-17db2f71647e"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 51.199961,
+          "prompt_tokens": 15872,
+          "completion_tokens": 2561,
+          "total_tokens": 18433,
+          "request_id": "chatcmpl-4268a79f-49af-9295-a2ab-9f75387b5ae1"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"schema_version\": \"api2_patch_v3\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"1\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"2\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"3\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"4\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"5\",\n      \"source_context_ids\": [\"C005\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"6\",\n      \"source_context_ids\": [\"C006\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    }\n  ]\n}\n```"
+}

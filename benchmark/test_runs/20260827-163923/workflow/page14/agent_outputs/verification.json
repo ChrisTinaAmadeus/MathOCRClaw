@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_api2_symbol_guided_atomic_patch_v3",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page14/api_markdown/page14.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page14/code_outputs/match/question_contexts.json",
+  "page_notes": "",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 16834,
+    "completion_tokens": 12126,
+    "total_tokens": 28960,
+    "latency_s": 231.687312,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 84.999104,
+          "prompt_tokens": 3549,
+          "completion_tokens": 4439,
+          "total_tokens": 7988,
+          "request_id": "chatcmpl-aa96b47c-3aba-9ea3-beef-c7cb7800bb6a"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 146.688208,
+          "prompt_tokens": 13285,
+          "completion_tokens": 7687,
+          "total_tokens": 20972,
+          "request_id": "chatcmpl-fca2c90b-4cc6-9e78-8f1b-b9b1f2b43960"
+        }
+      ]
+    }
+  },
+  "raw": "```json\n{\n  \"schema_version\": \"api2_patch_v3\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"15\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwriting matches draft transcription closely.\"\n      }\n    },\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\n        \"C002\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \" $A\\\\neq\\\\varnothing$ $a\\\\le\\\\frac{4}{3}$\",\n            \"new\": \"② $A\\\\neq\\\\varnothing$ $a\\\\le\\\\frac{4}{3}$\",\n            \"kind\": \"insert_missing\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C002\",\n            \"evidence\": \"Visible circled number 2 before A≠∅ in handwriting.\"\n          },\n          {\n            \"old\": \"$\\\\begin{cases} a-1>-2 \\\\\\\\ 3-2a<4 \\\\end{cases}$\",\n            \"new\": \"令 $\\\\begin{cases} a-1>-2 \\\\\\\\ 3-2a<4 \\\\end{cases}$\",\n            \"kind\": \"insert_missing\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C002\",\n            \"evidence\": \"Visible character '令' before the system of inequalities.\"\n          }\n        ],\n        \"symbol_observations\": [],\n        \"evidence\": \"Added missing enumeration and leading character visible in handwriting.\"\n      }\n    },\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\n        \"C003\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwriting matches draft transcription closely.\"\n      }\n    }\n  ]\n}\n```"
+}

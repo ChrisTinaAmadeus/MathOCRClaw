@@ -1,0 +1,105 @@
+{
+  "page": "page01",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page01/image/page01.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page01.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page01/preprocessed/page01.png",
+  "api_strategy": {
+    "call_count": 2,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "question-conditioned symbol and atomic patch review",
+    "local_merge": "deterministic validation against the first-pass draft"
+  },
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 11111,
+    "completion_tokens": 15918,
+    "total_tokens": 27029,
+    "latency_s": 302.099071,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 128.189763,
+          "prompt_tokens": 3373,
+          "completion_tokens": 6756,
+          "total_tokens": 10129,
+          "request_id": "chatcmpl-a61eda1e-d794-9487-95d6-50870b21e1a7"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 173.909308,
+          "prompt_tokens": 7738,
+          "completion_tokens": 9162,
+          "total_tokens": 16900,
+          "request_id": "chatcmpl-5a2f27ba-6a28-9ead-9c50-0c2e8b753f3e"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 1,
+    "answers_with_transcription": 1,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 19,
+      "question_type": "solution",
+      "section_heading_before": "四、解答题（19题12分，20题14分，共26分）",
+      "question_markdown": "19. (12分)\n如图，$PA \\perp$ 平面 $ABCD$，四边形 $ABCD$ 为矩形，$PA=AB=2$，$AD=4$，点 $F$ 是 $PB$ 的中点，点 $E$ 在边 $BC$ 上移动。\n<插图>\n(1) 求三棱锥 $E-PAD$ 的体积；\n(2) 证明：$AF \\perp PE$。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [
+          "applied_solution_edit_1_insert_missing"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page01/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 解：$PA=AB=2, AD=4$\n$S_{\\triangle PAD} = 2 \\times 4 \\div 2 = 4\nh=2$\n$V_{E-PAD} = \\frac{1}{3}Sh = \\frac{1}{3} \\times 4 \\times 2 = \\frac{8}{3}$\n\n(2) 证明：$\\because PA \\perp$ 平面 $ABCD$\n又 $\\because AB, CB \\subset$ 平面 $ABCD$\n$\\therefore PA \\perp BC$\n$\\therefore \\triangle PAB$ 为等腰三角形\n$\\because F$ 为 $PB$ 中点\n$\\therefore AF \\perp BP$\n如图所示建空间直角坐标系，$A$ 为原点\n$\\because PA=AB=2, AD=4$\n$\\therefore P(0,0,2), C(4,2,0), A(0,0,0), F(0,1,1)$\n$\\therefore \\vec{PC}=(4,2,-2), \\vec{AF}=(0,1,1)$\n$\\therefore \\cos\\theta = \\frac{|\\vec{PC}\\cdot\\vec{AF}|}{|\\vec{PC}||\\vec{AF}|} = 0$\n$\\therefore PC \\perp AF$\n$\\because PB, PC \\subset$ 平面 $PBC, PB \\cap PC = P$\n$\\therefore AF \\perp$ 平面 $PBC$\n$\\because PE \\subset$ 平面 $PBC \\quad \\therefore PE \\perp AF$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwriting shows calculation of base area S=4 before stating h=2 and final volume.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page01/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page01/image/page01.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page01/preprocessed/page01.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page01/api_markdown/page01.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page01/api_markdown/page01.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page01/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page01/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page01/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page01/code_outputs/match/viz/page01_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page01/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page01/agent_outputs/result.json",
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page01/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page01/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page01/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page01/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page01/code_outputs/match/viz/page01_handwriting_overlay.png"
+  }
+}

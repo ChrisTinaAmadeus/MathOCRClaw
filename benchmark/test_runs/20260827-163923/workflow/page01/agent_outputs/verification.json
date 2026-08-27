@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_api2_symbol_guided_atomic_patch_v3",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page01/api_markdown/page01.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page01/code_outputs/match/question_contexts.json",
+  "page_notes": "",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 11111,
+    "completion_tokens": 15918,
+    "total_tokens": 27029,
+    "latency_s": 302.099071,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 128.189763,
+          "prompt_tokens": 3373,
+          "completion_tokens": 6756,
+          "total_tokens": 10129,
+          "request_id": "chatcmpl-a61eda1e-d794-9487-95d6-50870b21e1a7"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 173.909308,
+          "prompt_tokens": 7738,
+          "completion_tokens": 9162,
+          "total_tokens": 16900,
+          "request_id": "chatcmpl-5a2f27ba-6a28-9ead-9c50-0c2e8b753f3e"
+        }
+      ]
+    }
+  },
+  "raw": "{\n  \"schema_version\": \"api2_patch_v3\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \"h=2\",\n            \"new\": \"S_{\\\\triangle PAD} = 2 \\\\times 4 \\\\div 2 = 4\\nh=2\",\n            \"kind\": \"insert_missing\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"Visible retained line calculating area as 4, which is used in the subsequent volume formula 1/3 x 4 x 2.\"\n          }\n        ],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwriting shows calculation of base area S=4 before stating h=2 and final volume.\"\n      }\n    }\n  ]\n}"
+}
