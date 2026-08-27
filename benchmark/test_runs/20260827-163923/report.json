@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "run_id": "20260827-163923",
-  "created_at": "2026-08-27T19:14:11.057425+08:00",
+  "created_at": "2026-08-27T22:03:56.448032+08:00",
   "model": "qwen3.7-plus",
   "dataset_root": "/home/puppeteer/MathOCRClaw/benchmark",
-  "work_root": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow",
+  "work_root": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow",
   "timeouts": {
     "baseline_s": 360,
     "review_s": 360
@@ -12,40 +12,40 @@
   "evaluator": "mathocrclaw_deterministic_v3_local",
   "summary": {
     "requested_pages": 32,
-    "completed_pages": 30,
-    "failed_pages": 2,
+    "completed_pages": 31,
+    "failed_pages": 1,
     "baseline": {
-      "score": 84.741213,
-      "raw_score": 0.856483,
-      "structure_score": 0.987135,
-      "stem_score": 0.887024,
-      "answer_score": 0.755945,
-      "state_macro_f1": 0.955767,
-      "omission_rate": 0.006667,
-      "hallucination_rate": 0.048333
+      "score": 84.870616,
+      "raw_score": 0.857485,
+      "structure_score": 0.98755,
+      "stem_score": 0.890668,
+      "answer_score": 0.754748,
+      "state_macro_f1": 0.957194,
+      "omission_rate": 0.006452,
+      "hallucination_rate": 0.046774
     },
     "workflow": {
-      "score": 84.510411,
-      "raw_score": 0.854136,
-      "structure_score": 0.987135,
-      "stem_score": 0.885922,
-      "answer_score": 0.75104,
-      "state_macro_f1": 0.955767,
-      "omission_rate": 0.006667,
-      "hallucination_rate": 0.048333
+      "score": 84.638952,
+      "raw_score": 0.85513,
+      "structure_score": 0.98755,
+      "stem_score": 0.889602,
+      "answer_score": 0.749793,
+      "state_macro_f1": 0.957194,
+      "omission_rate": 0.006452,
+      "hallucination_rate": 0.046774
     },
-    "gain": -0.230802,
-    "elapsed_s": 10215.721655
+    "gain": -0.231664,
+    "elapsed_s": 3.23219
   },
   "api": {
-    "logical_call_count": 60,
-    "network_request_count": 60,
-    "successful_request_count": 60,
+    "logical_call_count": 62,
+    "network_request_count": 62,
+    "successful_request_count": 62,
     "failed_request_count": 0,
-    "prompt_tokens": 508127,
-    "completion_tokens": 414870,
-    "total_tokens": 922997,
-    "api_latency_s": 7969.390752,
+    "prompt_tokens": 523075,
+    "completion_tokens": 423726,
+    "total_tokens": 946801,
+    "api_latency_s": 8150.25586,
     "estimated_cost": null,
     "currency": null
   },
@@ -53,10 +53,10 @@
     {
       "page": "page01",
       "status": "ok",
-      "elapsed_s": 364.62485,
+      "elapsed_s": 0.06548,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page01.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page01/api_markdown/page01.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page01/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page01/api_markdown/page01.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page01/agent_outputs/result.json",
       "baseline": {
         "score": 81.60116,
         "raw_score": 0.816012,
@@ -179,10 +179,10 @@
     {
       "page": "page02",
       "status": "ok",
-      "elapsed_s": 238.537573,
+      "elapsed_s": 0.062948,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page02.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/api_markdown/page02.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page02/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page02/api_markdown/page02.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page02/agent_outputs/result.json",
       "baseline": {
         "score": 81.292796,
         "raw_score": 0.812928,
@@ -451,10 +451,10 @@
     {
       "page": "page03",
       "status": "ok",
-      "elapsed_s": 191.718566,
+      "elapsed_s": 0.051005,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page03.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page03/api_markdown/page03.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page03/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page03/api_markdown/page03.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page03/agent_outputs/result.json",
       "baseline": {
         "score": 97.202502,
         "raw_score": 0.972025,
@@ -657,10 +657,10 @@
     {
       "page": "page04",
       "status": "ok",
-      "elapsed_s": 197.697344,
+      "elapsed_s": 0.040214,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page04.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/api_markdown/page04.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page04/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page04/api_markdown/page04.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page04/agent_outputs/result.json",
       "baseline": {
         "score": 92.912499,
         "raw_score": 0.929125,
@@ -895,10 +895,10 @@
     {
       "page": "page05",
       "status": "ok",
-      "elapsed_s": 165.160735,
+      "elapsed_s": 0.023445,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page05.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page05/api_markdown/page05.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page05/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page05/api_markdown/page05.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page05/agent_outputs/result.json",
       "baseline": {
         "score": 85.482239,
         "raw_score": 0.854822,
@@ -1037,10 +1037,10 @@
     {
       "page": "page06",
       "status": "ok",
-      "elapsed_s": 233.05176,
+      "elapsed_s": 0.053803,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page06.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/api_markdown/page06.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page06/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page06/api_markdown/page06.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page06/agent_outputs/result.json",
       "baseline": {
         "score": 85.583905,
         "raw_score": 0.855839,
@@ -1275,10 +1275,10 @@
     {
       "page": "page07",
       "status": "ok",
-      "elapsed_s": 266.044271,
+      "elapsed_s": 0.064518,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page07.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page07/api_markdown/page07.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page07/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page07/api_markdown/page07.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page07/agent_outputs/result.json",
       "baseline": {
         "score": 76.529355,
         "raw_score": 0.765294,
@@ -1529,10 +1529,10 @@
     {
       "page": "page08",
       "status": "ok",
-      "elapsed_s": 296.802123,
+      "elapsed_s": 0.147665,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page08.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page08/api_markdown/page08.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page08/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page08/api_markdown/page08.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page08/agent_outputs/result.json",
       "baseline": {
         "score": 81.783061,
         "raw_score": 0.817831,
@@ -1671,10 +1671,10 @@
     {
       "page": "page09",
       "status": "ok",
-      "elapsed_s": 415.43205,
+      "elapsed_s": 0.077647,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page09.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page09/api_markdown/page09.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page09/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page09/api_markdown/page09.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page09/agent_outputs/result.json",
       "baseline": {
         "score": 85.574988,
         "raw_score": 0.85575,
@@ -1813,10 +1813,10 @@
     {
       "page": "page10",
       "status": "ok",
-      "elapsed_s": 244.055055,
+      "elapsed_s": 0.034293,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page10.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page10/api_markdown/page10.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page10/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page10/api_markdown/page10.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page10/agent_outputs/result.json",
       "baseline": {
         "score": 85.066176,
         "raw_score": 0.850662,
@@ -1955,10 +1955,10 @@
     {
       "page": "page11",
       "status": "ok",
-      "elapsed_s": 419.863778,
+      "elapsed_s": 0.236872,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page11.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page11/api_markdown/page11.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page11/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page11/api_markdown/page11.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page11/agent_outputs/result.json",
       "baseline": {
         "score": 73.430172,
         "raw_score": 0.734302,
@@ -2081,10 +2081,10 @@
     {
       "page": "page12",
       "status": "ok",
-      "elapsed_s": 531.486975,
+      "elapsed_s": 0.248906,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page12.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page12/api_markdown/page12.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page12/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page12/api_markdown/page12.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page12/agent_outputs/result.json",
       "baseline": {
         "score": 58.29743,
         "raw_score": 0.777299,
@@ -2211,16 +2211,16 @@
     {
       "page": "page13",
       "status": "error",
-      "elapsed_s": 235.269543,
-      "error": "ValueError: height and width must be > 0"
+      "elapsed_s": 3e-05,
+      "error": "FileNotFoundError: [Errno 2] No such file or directory: '/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page13/agent_outputs/result.json'"
     },
     {
       "page": "page14",
       "status": "ok",
-      "elapsed_s": 270.192177,
+      "elapsed_s": 0.096063,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page14.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page14/api_markdown/page14.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page14/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page14/api_markdown/page14.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page14/agent_outputs/result.json",
       "baseline": {
         "score": 86.939157,
         "raw_score": 0.869392,
@@ -2375,10 +2375,10 @@
     {
       "page": "page15",
       "status": "ok",
-      "elapsed_s": 333.63332,
+      "elapsed_s": 0.028605,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page15.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page15/api_markdown/page15.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page15/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page15/api_markdown/page15.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page15/agent_outputs/result.json",
       "baseline": {
         "score": 83.893418,
         "raw_score": 0.838934,
@@ -2501,10 +2501,10 @@
     {
       "page": "page16",
       "status": "ok",
-      "elapsed_s": 310.884806,
+      "elapsed_s": 0.176437,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page16.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page16/api_markdown/page16.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page16/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page16/api_markdown/page16.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page16/agent_outputs/result.json",
       "baseline": {
         "score": 91.621083,
         "raw_score": 0.916211,
@@ -2835,10 +2835,10 @@
     {
       "page": "page17",
       "status": "ok",
-      "elapsed_s": 260.14331,
+      "elapsed_s": 0.122712,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page17.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page17/api_markdown/page17.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page17/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page17/api_markdown/page17.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page17/agent_outputs/result.json",
       "baseline": {
         "score": 92.732533,
         "raw_score": 0.927325,
@@ -2993,10 +2993,10 @@
     {
       "page": "page18",
       "status": "ok",
-      "elapsed_s": 207.836822,
+      "elapsed_s": 0.073851,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page18.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page18/api_markdown/page18.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page18/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page18/api_markdown/page18.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page18/agent_outputs/result.json",
       "baseline": {
         "score": 95.073504,
         "raw_score": 0.950735,
@@ -3215,10 +3215,10 @@
     {
       "page": "page19",
       "status": "ok",
-      "elapsed_s": 303.365423,
+      "elapsed_s": 0.097459,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page19.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page19/api_markdown/page19.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page19/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page19/api_markdown/page19.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page19/agent_outputs/result.json",
       "baseline": {
         "score": 87.822064,
         "raw_score": 0.878221,
@@ -3405,10 +3405,10 @@
     {
       "page": "page20",
       "status": "ok",
-      "elapsed_s": 307.220081,
+      "elapsed_s": 0.157357,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page20.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page20/api_markdown/page20.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page20/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page20/api_markdown/page20.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page20/agent_outputs/result.json",
       "baseline": {
         "score": 66.354749,
         "raw_score": 0.698471,
@@ -3595,10 +3595,10 @@
     {
       "page": "page21",
       "status": "ok",
-      "elapsed_s": 509.848909,
+      "elapsed_s": 0.077857,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page21.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page21/api_markdown/page21.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page21/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page21/api_markdown/page21.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page21/agent_outputs/result.json",
       "baseline": {
         "score": 64.336649,
         "raw_score": 0.686258,
@@ -3769,10 +3769,10 @@
     {
       "page": "page22",
       "status": "ok",
-      "elapsed_s": 441.522491,
+      "elapsed_s": 0.083434,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page22.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/api_markdown/page22.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page22/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page22/api_markdown/page22.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page22/agent_outputs/result.json",
       "baseline": {
         "score": 68.521011,
         "raw_score": 0.68521,
@@ -4023,10 +4023,10 @@
     {
       "page": "page23",
       "status": "ok",
-      "elapsed_s": 396.390717,
+      "elapsed_s": 0.098766,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page23.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page23/api_markdown/page23.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page23/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page23/api_markdown/page23.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page23/agent_outputs/result.json",
       "baseline": {
         "score": 99.022974,
         "raw_score": 0.99023,
@@ -4228,17 +4228,169 @@
     },
     {
       "page": "page24",
-      "status": "error",
-      "elapsed_s": 649.286929,
-      "error": "RuntimeError: VLM invoke failed after 1 retries (timeout_s=360, connect_timeout_s=10.0): HTTPSConnectionPool(host='dashscope.aliyuncs.com', port=443): Read timed out. (read timeout=360.0)"
+      "status": "ok",
+      "elapsed_s": 0.225344,
+      "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page24.md",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page24/api_markdown/page24.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page24/agent_outputs/result.json",
+      "baseline": {
+        "score": 88.752684,
+        "raw_score": 0.887527,
+        "structure_score": 1.0,
+        "stem_score": 1.0,
+        "answer_score": 0.718817,
+        "state_macro_f1": 1.0,
+        "answer_by_type": {
+          "choice": null,
+          "fill": null,
+          "solution": 0.718817
+        },
+        "gold_question_count": 3,
+        "candidate_question_count": 3,
+        "matched_question_count": 3,
+        "omission_count": 0,
+        "omission_rate": 0.0,
+        "hallucination_count": 0,
+        "hallucination_rate": 0.0,
+        "format_diagnostics": {
+          "gold_latex_formula_spans": 104,
+          "candidate_latex_formula_spans": 101,
+          "formula_span_count_ratio": 0.971154
+        },
+        "missing_gold_indices": [],
+        "extra_candidate_indices": [],
+        "details": [
+          {
+            "qno": "17",
+            "candidate_qno": "17",
+            "alignment": "matched",
+            "stem_score": 1.0,
+            "answer_score": 0.61706,
+            "answer_type": "solution"
+          },
+          {
+            "qno": "18",
+            "candidate_qno": "18",
+            "alignment": "matched",
+            "stem_score": 1.0,
+            "answer_score": 0.78801,
+            "answer_type": "solution"
+          },
+          {
+            "qno": "19",
+            "candidate_qno": "19",
+            "alignment": "matched",
+            "stem_score": 1.0,
+            "answer_score": 0.751381,
+            "answer_type": "solution"
+          }
+        ]
+      },
+      "workflow": {
+        "score": 88.495186,
+        "raw_score": 0.884952,
+        "structure_score": 1.0,
+        "stem_score": 1.0,
+        "answer_score": 0.71238,
+        "state_macro_f1": 1.0,
+        "answer_by_type": {
+          "choice": null,
+          "fill": null,
+          "solution": 0.71238
+        },
+        "gold_question_count": 3,
+        "candidate_question_count": 3,
+        "matched_question_count": 3,
+        "omission_count": 0,
+        "omission_rate": 0.0,
+        "hallucination_count": 0,
+        "hallucination_rate": 0.0,
+        "format_diagnostics": {
+          "gold_latex_formula_spans": 104,
+          "candidate_latex_formula_spans": 101,
+          "formula_span_count_ratio": 0.971154
+        },
+        "missing_gold_indices": [],
+        "extra_candidate_indices": [],
+        "details": [
+          {
+            "qno": "17",
+            "candidate_qno": "17",
+            "alignment": "matched",
+            "stem_score": 1.0,
+            "answer_score": 0.61706,
+            "answer_type": "solution"
+          },
+          {
+            "qno": "18",
+            "candidate_qno": "18",
+            "alignment": "matched",
+            "stem_score": 1.0,
+            "answer_score": 0.768698,
+            "answer_type": "solution"
+          },
+          {
+            "qno": "19",
+            "candidate_qno": "19",
+            "alignment": "matched",
+            "stem_score": 1.0,
+            "answer_score": 0.751381,
+            "answer_type": "solution"
+          }
+        ]
+      },
+      "gain": -0.257498,
+      "evaluator": {
+        "name": "mathocrclaw_deterministic_v3_local",
+        "spec": "benchmark/EVALUATION.md",
+        "judge_model_calls": 0,
+        "semantic_mode": "local_sequence_similarity",
+        "formula_mode": "normalized_latex_ordered_soft_alignment"
+      },
+      "api_metrics": {
+        "logical_call_count": 2,
+        "network_request_count": 2,
+        "successful_request_count": 2,
+        "failed_request_count": 0,
+        "prompt_tokens": 14948,
+        "completion_tokens": 8856,
+        "total_tokens": 23804,
+        "latency_s": 180.865108,
+        "passes": {
+          "call_1": [
+            {
+              "success": true,
+              "model": "qwen3.7-plus",
+              "attempt": 1,
+              "elapsed_s": 127.301056,
+              "prompt_tokens": 3109,
+              "completion_tokens": 6155,
+              "total_tokens": 9264,
+              "request_id": "chatcmpl-3bb2c242-e4b0-9ab9-b3c4-397a825cfebd"
+            }
+          ],
+          "call_2": [
+            {
+              "success": true,
+              "model": "qwen3.7-plus",
+              "attempt": 1,
+              "elapsed_s": 53.564052,
+              "prompt_tokens": 11839,
+              "completion_tokens": 2701,
+              "total_tokens": 14540,
+              "request_id": "chatcmpl-40164802-e097-948b-a37e-2641837814c4"
+            }
+          ]
+        }
+      }
     },
     {
       "page": "page25",
       "status": "ok",
-      "elapsed_s": 294.52444,
+      "elapsed_s": 0.095343,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page25.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page25/api_markdown/page25.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page25/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page25/api_markdown/page25.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page25/agent_outputs/result.json",
       "baseline": {
         "score": 93.062638,
         "raw_score": 0.930626,
@@ -4393,10 +4545,10 @@
     {
       "page": "page26",
       "status": "ok",
-      "elapsed_s": 223.416437,
+      "elapsed_s": 0.087137,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page26.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page26/api_markdown/page26.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page26/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page26/api_markdown/page26.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page26/agent_outputs/result.json",
       "baseline": {
         "score": 89.138464,
         "raw_score": 0.891385,
@@ -4599,10 +4751,10 @@
     {
       "page": "page27",
       "status": "ok",
-      "elapsed_s": 345.090217,
+      "elapsed_s": 0.176886,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page27.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page27/api_markdown/page27.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page27/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page27/api_markdown/page27.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page27/agent_outputs/result.json",
       "baseline": {
         "score": 84.778638,
         "raw_score": 0.847786,
@@ -4933,10 +5085,10 @@
     {
       "page": "page28",
       "status": "ok",
-      "elapsed_s": 283.346956,
+      "elapsed_s": 0.148236,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page28.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page28/api_markdown/page28.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page28/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page28/api_markdown/page28.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page28/agent_outputs/result.json",
       "baseline": {
         "score": 94.88432,
         "raw_score": 0.948843,
@@ -5123,10 +5275,10 @@
     {
       "page": "page29",
       "status": "ok",
-      "elapsed_s": 389.238988,
+      "elapsed_s": 0.101591,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page29.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page29/api_markdown/page29.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page29/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page29/api_markdown/page29.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page29/agent_outputs/result.json",
       "baseline": {
         "score": 83.771279,
         "raw_score": 0.837713,
@@ -5249,10 +5401,10 @@
     {
       "page": "page30",
       "status": "ok",
-      "elapsed_s": 391.168007,
+      "elapsed_s": 0.076431,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page30.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page30/api_markdown/page30.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page30/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page30/api_markdown/page30.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page30/agent_outputs/result.json",
       "baseline": {
         "score": 94.112027,
         "raw_score": 0.94112,
@@ -5375,10 +5527,10 @@
     {
       "page": "page31",
       "status": "ok",
-      "elapsed_s": 287.159389,
+      "elapsed_s": 0.065132,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page31.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page31/api_markdown/page31.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page31/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page31/api_markdown/page31.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page31/agent_outputs/result.json",
       "baseline": {
         "score": 85.26391,
         "raw_score": 0.852639,
@@ -5501,10 +5653,10 @@
     {
       "page": "page32",
       "status": "ok",
-      "elapsed_s": 211.658137,
+      "elapsed_s": 0.100555,
       "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page32.md",
-      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page32/api_markdown/page32.json",
-      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page32/agent_outputs/result.json",
+      "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page32/api_markdown/page32.json",
+      "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page32/agent_outputs/result.json",
       "baseline": {
         "score": 96.151698,
         "raw_score": 0.961517,

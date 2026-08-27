@@ -1,0 +1,43 @@
+{
+  "mode": "single_global_api2_symbol_guided_atomic_patch_v3",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page24/api_markdown/page24.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page24/code_outputs/match/question_contexts.json",
+  "page_notes": "",
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 14948,
+    "completion_tokens": 8856,
+    "total_tokens": 23804,
+    "latency_s": 180.865108,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 127.301056,
+          "prompt_tokens": 3109,
+          "completion_tokens": 6155,
+          "total_tokens": 9264,
+          "request_id": "chatcmpl-3bb2c242-e4b0-9ab9-b3c4-397a825cfebd"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 53.564052,
+          "prompt_tokens": 11839,
+          "completion_tokens": 2701,
+          "total_tokens": 14540,
+          "request_id": "chatcmpl-40164802-e097-948b-a37e-2641837814c4"
+        }
+      ]
+    }
+  },
+  "raw": "{\n  \"schema_version\": \"api2_patch_v3\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \"(2) $f(m^2+m) < f(1)$\\n$\\\\because f(x)$ 在 $(0, +\\\\infty)$ 上 $\\\\uparrow$\\n$\\\\therefore m^2+m < 2$ 且 $m^2+m > 0 \\\\Rightarrow \\\\begin{cases} -2 < m < 1 \\\\\\\\ m > 0 \\\\text{ 或 } m < -1 \\\\end{cases}$\\n$\\\\therefore m$ 范围 $(-2, -1) \\\\cup (0, 1)$\",\n            \"new\": \"(2) $f(m^2+m) < f(1)$\\n$\\\\because f(x)$ 在 $(0, +\\\\infty)$ 上 $\\\\uparrow$\\n$\\\\therefore m^2+m < 1$ 且 $m^2+m > 0 \\\\Rightarrow \\\\begin{cases} -2 < m < 1 \\\\\\\\ m > 0 \\\\text{ 或 } m < -1 \\\\end{cases}$\\n$\\\\therefore m$ 范围 $(-2, -1) \\\\cup (0, 1)$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C002\",\n            \"evidence\": \"In the handwriting for part (2), the inequality derived from monotonicity is $m^2+m < 1$. The digit '1' is a single vertical stroke, distinct from the '2' in the subsequent line '$m^2+m < 2$'. The draft incorrectly transcribed this as '2'.\"\n          }\n        ],\n        \"symbol_observations\": [\n          {\n            \"tag\": \"DIGIT\",\n            \"location\": \"Part (2), second line of derivation, right side of inequality $m^2+m <$\",\n            \"candidates\": [\"1\", \"2\"],\n            \"selected\": \"1\",\n            \"observed_features\": \"Single vertical stroke without a horizontal base or curved top, visually distinct from the adjacent '2' in the next line.\",\n            \"context_id\": \"C002\",\n            \"reference_context_ids\": []\n          }\n        ],\n        \"evidence\": \"Handwriting clearly shows '1' in the first inequality step, while '2' appears in the domain constraint step below it.\"\n      }\n    },\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    }\n  ]\n}"
+}

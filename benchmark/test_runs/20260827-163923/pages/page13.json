@@ -1,6 +1,6 @@
 {
   "page": "page13",
   "status": "error",
-  "elapsed_s": 235.269543,
-  "error": "ValueError: height and width must be > 0"
+  "elapsed_s": 3e-05,
+  "error": "FileNotFoundError: [Errno 2] No such file or directory: '/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page13/agent_outputs/result.json'"
 }

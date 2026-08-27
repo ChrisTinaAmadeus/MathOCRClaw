@@ -25,7 +25,7 @@ $\cos \langle \vec{n_1}, \vec{n_2} \rangle = \frac{|\vec{n_1} \cdot \vec{n_2}|}{
 (1) $f(x)=\log_2 x$
 (2) $f(m^2+m) < f(1)$
 $\because f(x)$ 在 $(0, +\infty)$ 上 $\uparrow$
-$\therefore m^2+m < 2$ 且 $m^2+m > 0 \Rightarrow \begin{cases} -2 < m < 1 \\ m > 0 \text{ 或 } m < -1 \end{cases}$
+$\therefore m^2+m < 1$ 且 $m^2+m > 0 \Rightarrow \begin{cases} -2 < m < 1 \\ m > 0 \text{ 或 } m < -1 \end{cases}$
 $\therefore m$ 范围 $(-2, -1) \cup (0, 1)$
 (3) $\because f(a)=-f(b) \Rightarrow \log_2 a = -\log_2 b$
 $\therefore \log_2 a = \log_2 \frac{1}{b} \Rightarrow ab=1 \quad a=\frac{1}{b} \Rightarrow ab=1$

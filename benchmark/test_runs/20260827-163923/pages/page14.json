@@ -1,10 +1,10 @@
 {
   "page": "page14",
   "status": "ok",
-  "elapsed_s": 270.192177,
+  "elapsed_s": 0.096063,
   "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page14.md",
-  "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page14/api_markdown/page14.json",
-  "final_result": "/home/puppeteer/MathOCRClaw/benchmark/runs/20260827-163923/workflow/page14/agent_outputs/result.json",
+  "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page14/api_markdown/page14.json",
+  "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page14/agent_outputs/result.json",
   "baseline": {
     "score": 86.939157,
     "raw_score": 0.869392,

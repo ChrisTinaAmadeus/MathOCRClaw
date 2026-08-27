@@ -1,0 +1,173 @@
+{
+  "page": "page24",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page24/image/page24.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page24.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page24/preprocessed/page24.png",
+  "api_strategy": {
+    "call_count": 2,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "question-conditioned symbol and atomic patch review",
+    "local_merge": "deterministic validation against the first-pass draft"
+  },
+  "api_metrics": {
+    "logical_call_count": 2,
+    "network_request_count": 2,
+    "successful_request_count": 2,
+    "failed_request_count": 0,
+    "prompt_tokens": 14948,
+    "completion_tokens": 8856,
+    "total_tokens": 23804,
+    "latency_s": 180.865108,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 127.301056,
+          "prompt_tokens": 3109,
+          "completion_tokens": 6155,
+          "total_tokens": 9264,
+          "request_id": "chatcmpl-3bb2c242-e4b0-9ab9-b3c4-397a825cfebd"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 53.564052,
+          "prompt_tokens": 11839,
+          "completion_tokens": 2701,
+          "total_tokens": 14540,
+          "request_id": "chatcmpl-40164802-e097-948b-a37e-2641837814c4"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 3,
+    "answers_with_transcription": 3,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 17,
+      "question_type": "solution",
+      "section_heading_before": "",
+      "question_markdown": "17. (本小题满分 15 分) 如图，在三棱柱 $ABC-A_1B_1C_1$ 中，$CC_1 \\perp$ 平面 $ABC$，$AC=BC=CC_1=2$，$\\angle ACB=90^\\circ$，$D, E, M$ 分别是 $A_1B_1, CC_1, A_1B$ 的中点。\n(1) 求证：$C_1D // $ 平面 $A_1BE$；\n(2) 求平面 $ABC$ 与平面 $A_1BE$ 所成角的余弦值。\n<插图>",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page24/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$C_1D // EM$\n(2) 以 $C$ 为原点，$CA, CB, CC_1$ 分别为 $x, y, z$ 轴建立空间直角坐标系\n$A(2,0,0), B(0,2,0), C(0,0,0), A_1(2,0,2), E(0,0,1)$\n$\\overrightarrow{AB}=(-2,2,0), \\overrightarrow{CB}=(0,2,0), \\overrightarrow{EA_1}=(2,0,1), \\overrightarrow{A_1B}=(-2,2,-2)$\n设平面 $ABC$ 的一个法向量为 $\\vec{n_1}$\n$\\begin{cases} \\overrightarrow{AB} \\cdot \\vec{n_1} = 0 \\\\ \\overrightarrow{CB} \\cdot \\vec{n_1} = 0 \\end{cases}$\n令 $x=0, z=0, y=4 \\Rightarrow \\vec{n_1}=(0,0,4)$\n同理得 $\\vec{n_2}=(-1,1,2)$\n$\\cos \\langle \\vec{n_1}, \\vec{n_2} \\rangle = \\frac{|\\vec{n_1} \\cdot \\vec{n_2}|}{|\\vec{n_1}| |\\vec{n_2}|} = \\frac{8}{\\sqrt{16} \\cdot \\sqrt{6}} = \\frac{8}{4\\sqrt{6}} = \\frac{2}{\\sqrt{6}} = \\frac{2\\sqrt{6}}{6} = \\frac{\\sqrt{6}}{3}$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page24/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 18,
+      "question_type": "solution",
+      "section_heading_before": "",
+      "question_markdown": "18. (本小题满分 17 分) 已知函数 $g(x)=2^x$，且函数 $f(x)$ 与 $g(x)$ 的图象关于直线 $y=x$ 对称。\n(1) 求函数 $f(x)$ 的解析式；\n(2) 若 $f(m^2+m)<1$ 成立，求实数 $m$ 的取值范围；\n(3) 若 $0<a<b$ 且 $f(a)=-f(b)$，求 $f(a+b)$ 的取值范围。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [
+          "accepted_symbol_observation_1",
+          "applied_solution_edit_1_ocr_correction"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page24/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) $f(x)=\\log_2 x$\n(2) $f(m^2+m) < f(1)$\n$\\because f(x)$ 在 $(0, +\\infty)$ 上 $\\uparrow$\n$\\therefore m^2+m < 1$ 且 $m^2+m > 0 \\Rightarrow \\begin{cases} -2 < m < 1 \\\\ m > 0 \\text{ 或 } m < -1 \\end{cases}$\n$\\therefore m$ 范围 $(-2, -1) \\cup (0, 1)$\n(3) $\\because f(a)=-f(b) \\Rightarrow \\log_2 a = -\\log_2 b$\n$\\therefore \\log_2 a = \\log_2 \\frac{1}{b} \\Rightarrow ab=1 \\quad a=\\frac{1}{b} \\Rightarrow ab=1$\n$\\because 0 < a < b$\n$\\therefore a+b > 2\\sqrt{ab} = 2$\n$\\therefore f(a+b) = \\log_2(a+b) > \\log_2 2 = 1$\n$\\therefore f(a+b)$ 范围为 $(1, +\\infty)$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwriting clearly shows '1' in the first inequality step, while '2' appears in the domain constraint step below it.",
+        "symbol_observations": [
+          {
+            "tag": "DIGIT",
+            "location": "Part (2), second line of derivation, right side of inequality $m^2+m <$",
+            "candidates": [
+              "1",
+              "2"
+            ],
+            "selected": "1",
+            "observed_features": "Single vertical stroke without a horizontal base or curved top, visually distinct from the adjacent '2' in the next line.",
+            "context_id": "C002",
+            "reference_context_ids": []
+          }
+        ],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page24/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 19,
+      "question_type": "solution",
+      "section_heading_before": "",
+      "question_markdown": "19. (本小题满分 17 分) 已知函数 $f(x)=a \\cdot 2^x - 2^{-x}$ 是定义在 $\\mathbf{R}$ 上的奇函数。\n(1) 求实数 $a$ 的值，并证明 $f(x)$ 在 $\\mathbf{R}$ 上单调递增；\n(2) 求不等式 $f(3x^2-5x)+f(x-4)>0$ 的解集；\n(3) 若 $g(x)=4^x+4^{-x}-2mf(x)$ 在区间 $[-1, +\\infty)$ 上的最小值为 -2，求实数 $m$ 的值。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v1",
+        "lint_actions": [],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page24/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) $f(x)=a \\cdot 2^x - 2^{-x}$ 是定义在 $\\mathbf{R}$ 上的奇函数 $\\therefore f(0)=0$\n即 $a \\cdot 2^0 - 2^0 = 0 \\therefore a=1$\n$\\therefore f(x)=2^x - 2^{-x}$\n[定义法] 任取 $x_1 < x_2 \\in \\mathbf{R}$，\n$f(x_1)-f(x_2) = (2^{x_1} - \\frac{1}{2^{x_1}}) - (2^{x_2} - \\frac{1}{2^{x_2}})$\n$= (2^{x_1} - 2^{x_2}) + (\\frac{1}{2^{x_2}} - \\frac{1}{2^{x_1}})$\n$= (2^{x_1} - 2^{x_2}) + \\frac{2^{x_1} - 2^{x_2}}{2^{x_1+x_2}}$\n$= (2^{x_1} - 2^{x_2})(1 + \\frac{1}{2^{x_1+x_2}})$\n$\\because x_1 < x_2 \\therefore 2^{x_1} < 2^{x_2}$ 即 $2^{x_1} - 2^{x_2} < 0, 1 + \\frac{1}{2^{x_1+x_2}} > 0$\n$\\therefore f(x_1)-f(x_2) < 0$ 即 $f(x_1) < f(x_2)$\n$\\therefore f(x)$ 在 $\\mathbf{R}$ 上 $\\uparrow$\n(2) $\\because f(x)$ 为奇函数 $\\therefore f(x-4) = -f(4-x)$\n$\\therefore f(3x^2-5x)+f(x-4)>0$ 可化为 $f(3x^2-5x) > f(4-x)$\n$f(x)$ 在 $\\mathbf{R}$ 上 $\\uparrow$\n$\\therefore 3x^2-5x > 4-x$ 即 $3x^2-4x-4 > 0$\n$x < -\\frac{2}{3}$ 或 $x > 2$\n(3) $g(x) = 4^x + 4^{-x} - 2m(2^x - 2^{-x})$\n$g(x) = (2^x)^2 + (2^{-x})^2 - 2m(2^x - 2^{-x}) + 2$\n即 $g(x) = (2^x - 2^{-x})^2 - 2m(2^x - 2^{-x}) + 2$\n设 $t = 2^x - 2^{-x}$，由 $x \\ge -1$ 则 $t \\ge -\\frac{3}{2}$\n$\\therefore y = t^2 - 2mt + 2$ 在 $[-\\frac{3}{2}, +\\infty)$ 上最小值为 -2\n对称轴 $t=m$\n① $m < -\\frac{3}{2}$ 时，$(-\\frac{3}{2})^2 - 2m(-\\frac{3}{2}) + 2 = -2 \\Rightarrow m = -\\frac{25}{12} < -\\frac{3}{2}$\n② $m \\ge -\\frac{3}{2}$ 时，$m^2 - 2m^2 + 2 = -2 \\Rightarrow m=2, m=-2$ (舍)\n$\\therefore m = -\\frac{25}{12}$ 或 $m=2$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page24/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page24/image/page24.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page24/preprocessed/page24.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page24/api_markdown/page24.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page24/api_markdown/page24.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page24/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page24/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page24/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page24/code_outputs/match/viz/page24_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page24/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page24/agent_outputs/result.json",
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page24/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page24/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page24/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page24/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page24/code_outputs/match/viz/page24_handwriting_overlay.png"
+  }
+}

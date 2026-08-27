@@ -4,9 +4,9 @@
 - Model: `qwen3.7-plus`
 - API1 timeout: 360s
 - API2 timeout: 360s
-- Pages: 30/32
-- Baseline (API1): **84.74**
-- Workflow (API2): **84.51**
+- Pages: 31/32
+- Baseline (API1): **84.87**
+- Workflow (API2): **84.64**
 - Gain: **-0.23**
 
 | Page | API1 baseline | API2 workflow | Gain | Omission Δ | Hallucination Δ |
@@ -34,7 +34,7 @@
 | page21 | 64.34 | 63.52 | -0.81 | +0.000 | +0.000 |
 | page22 | 68.52 | 68.52 | +0.00 | +0.000 | +0.000 |
 | page23 | 99.02 | 99.04 | +0.01 | +0.000 | +0.000 |
-| page24 | ERROR | ERROR | — | — | — |
+| page24 | 88.75 | 88.50 | -0.26 | +0.000 | +0.000 |
 | page25 | 93.06 | 93.06 | +0.00 | +0.000 | +0.000 |
 | page26 | 89.14 | 89.14 | +0.00 | +0.000 | +0.000 |
 | page27 | 84.78 | 82.18 | -2.59 | +0.000 | +0.000 |
@@ -70,6 +70,7 @@
 | page21 | 59 | 66 | 66 |
 | page22 | 64 | 67 | 67 |
 | page23 | 62 | 65 | 65 |
+| page24 | 104 | 101 | 101 |
 | page25 | 80 | 77 | 77 |
 | page26 | 50 | 56 | 56 |
 | page27 | 86 | 87 | 88 |
@@ -81,11 +82,11 @@
 
 ## API statistics
 
-- Logical workflow calls: 60
-- Actual network requests: 60
-- Successful / failed requests: 60 / 0
-- Prompt / completion / total tokens: 508127 / 414870 / 922997
-- API latency: 7969.39s
+- Logical workflow calls: 62
+- Actual network requests: 62
+- Successful / failed requests: 62 / 0
+- Prompt / completion / total tokens: 523075 / 423726 / 946801
+- API latency: 8150.26s
 - Estimated cost: not configured
 
 ## Evaluator
@@ -94,5 +95,4 @@ The default scorer is deterministic and local: question alignment, CER/bigram/cr
 
 ## Failures
 
-- `page13`: ValueError: height and width must be > 0
-- `page24`: RuntimeError: VLM invoke failed after 1 retries (timeout_s=360, connect_timeout_s=10.0): HTTPSConnectionPool(host='dashscope.aliyuncs.com', port=443): Read timed out. (read timeout=360.0)
+- `page13`: FileNotFoundError: [Errno 2] No such file or directory: '/home/puppeteer/MathOCRClaw/benchmark/test_runs/20260827-163923/workflow/page13/agent_outputs/result.json'
