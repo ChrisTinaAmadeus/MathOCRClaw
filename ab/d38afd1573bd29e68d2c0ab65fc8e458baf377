@@ -1,0 +1,96 @@
+benchmark/test_runs/20260827-163923-retry-page13/report.partial.json
+  h_20fd666db1d46f 1-10
+benchmark/test_runs/20260827-163923/pages/page01.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page02.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page03.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page04.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page05.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page06.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page07.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page08.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page09.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page10.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page11.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page12.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page13.json
+  h_20fd666db1d46f 4-5
+benchmark/test_runs/20260827-163923/pages/page14.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page15.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page16.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page17.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page18.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page19.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page20.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page21.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page22.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page23.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page24.json
+  h_20fd666db1d46f 3-157
+benchmark/test_runs/20260827-163923/pages/page25.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page26.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page27.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page28.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page29.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page30.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page31.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/pages/page32.json
+  h_20fd666db1d46f 4,6-7
+benchmark/test_runs/20260827-163923/report.json
+  h_20fd666db1d46f 4,7,15-16,18-25,28-35,37-38,41-43,45-48,56,58-59,182,184-185,454,456-457,660,662-663,898,900-901,1040,1042-1043,1278,1280-1281,1532,1534-1535,1674,1676-1677,1816,1818-1819,1958,1960-1961,2084,2086-2087,2214-2215,2220,2222-2223,2378,2380-2381,2504,2506-2507,2838,2840-2841,2996,2998-2999,3218,3220-3221,3408,3410-3411,3598,3600-3601,3772,3774-3775,4026,4028-4029,4231-4385,4390,4392-4393,4548,4550-4551,4754,4756-4757,5088,5090-5091,5278,5280-5281,5404,5406-5407,5530,5532-5533,5656,5658-5659
+benchmark/test_runs/20260827-163923/report.md
+  h_20fd666db1d46f 7-9,37,73,85-89,98
+benchmark/test_runs/20260827-163923/workflow/page13/api_markdown/page13.json
+  h_20fd666db1d46f 9,14,22
+benchmark/test_runs/20260827-163923/workflow/page13/api_markdown/page13.md
+  h_20fd666db1d46f 6-11,13-24,31-33,35-38,42-51,53-55,58-60,63
+benchmark/test_runs/20260827-163923/workflow/page24/agent_outputs/result.json
+  h_20fd666db1d46f 1-173
+benchmark/test_runs/20260827-163923/workflow/page24/agent_outputs/result.md
+  h_20fd666db1d46f 1-68
+benchmark/test_runs/20260827-163923/workflow/page24/agent_outputs/verification.json
+  h_20fd666db1d46f 1-43
+benchmark/test_runs/20260827-163923/workflow/page24/api_markdown/page24.json
+  h_20fd666db1d46f 9,13-14,21-22,29-30
+benchmark/test_runs/20260827-163923/workflow/page24/api_markdown/page24.md
+  h_20fd666db1d46f 1,8-16,18,25-26,30-31,37,44,46-48,53-54,56-57,63,67
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "abd38afd1573bd29e68d2c0ab65fc8e458baf377",
+  "prompts": {},
+  "humans": {
+    "h_20fd666db1d46f": {
+      "author": "puppeteer <19517600502@163.com>"
+    }
+  }
+}
