@@ -1594,20 +1594,23 @@ def _result_summary(questions: Sequence[Dict[str, Any]]) -> Dict[str, int]:
 
 def _api_metrics(
     first_pass_vlm: VLMClient,
-    second_pass_vlm: VLMClient,
+    second_pass_vlms: Sequence[VLMClient],
 ) -> Dict[str, Any]:
+    call_2_runs = [list(vlm.request_log) for vlm in second_pass_vlms]
     passes = {
         "call_1": list(first_pass_vlm.request_log),
-        "call_2": list(second_pass_vlm.request_log),
+        "call_2": [request for run in call_2_runs for request in run],
+        "call_2_runs": call_2_runs,
     }
-    requests = [request for values in passes.values() for request in values]
+    requests = passes["call_1"] + passes["call_2"]
 
     def _token_sum(name: str) -> Optional[int]:
         values = [request.get(name) for request in requests if request.get(name) is not None]
         return sum(int(value) for value in values) if values else None
 
     return {
-        "logical_call_count": 2,
+        "logical_call_count": 1 + len(second_pass_vlms),
+        "api2_run_count": len(second_pass_vlms),
         "network_request_count": len(requests),
         "successful_request_count": sum(bool(request.get("success")) for request in requests),
         "failed_request_count": sum(not bool(request.get("success")) for request in requests),
@@ -1684,15 +1687,21 @@ def run_agent(args: argparse.Namespace) -> Dict[str, Any]:
         temperature=0.0,
         top_p=0.7,
     )
-    second_pass_vlm = VLMClient(
-        api_base=args.api_base,
-        api_key=args.api_key,
-        model=args.model,
-        timeout_s=args.review_timeout,
-        max_retries=1,
-        temperature=0.0,
-        top_p=0.7,
-    )
+    review_runs = int(getattr(args, "review_runs", 1))
+    if review_runs < 1:
+        raise ValueError("review_runs must be at least 1")
+    second_pass_vlms = [
+        VLMClient(
+            api_base=args.api_base,
+            api_key=args.api_key,
+            model=args.model,
+            timeout_s=args.review_timeout,
+            max_retries=1,
+            temperature=0.0,
+            top_p=0.7,
+        )
+        for _ in range(review_runs)
+    ]
 
     page_img = safe_open_image(image)
     if page_img is None:
@@ -1781,29 +1790,42 @@ def run_agent(args: argparse.Namespace) -> Dict[str, Any]:
 
     contexts = _prepare_question_contexts(page_dir, preprocessed_img, baseline)
 
-    # API call 2: one global review over the draft and every local context.
-    review = _invoke_final_review(
-        second_pass_vlm,
-        preprocessed_img,
-        draft_markdown,
-        baseline,
-        contexts,
-        cache=cache,
-        max_tokens=args.review_max_tokens,
-        detail_views=args.answer_detail_views,
-    )
-    questions = _normalize_final_questions(review, contexts)
-    if not questions:
-        raise RuntimeError("second-pass global review produced no final questions")
+    # API call 2: independent global reviews over the same API1 draft and local context.
+    # Repeated reviews intentionally bypass the API2 cache so they remain three real samples.
+    reviews: List[Dict[str, Any]] = []
+    question_sets: List[List[Dict[str, Any]]] = []
+    review_cache = cache if review_runs == 1 else None
+    for run_index, second_pass_vlm in enumerate(second_pass_vlms, start=1):
+        review = _invoke_final_review(
+            second_pass_vlm,
+            preprocessed_img,
+            draft_markdown,
+            baseline,
+            contexts,
+            cache=review_cache,
+            max_tokens=args.review_max_tokens,
+            detail_views=args.answer_detail_views,
+        )
+        questions = _normalize_final_questions(review, contexts)
+        if not questions:
+            raise RuntimeError(
+                f"second-pass global review run {run_index} produced no final questions"
+            )
+        reviews.append(review)
+        question_sets.append(questions)
+
+    review = reviews[0]
+    questions = question_sets[0]
 
     question_contexts_path = page_dir / "question_contexts.json"
-    for question in questions:
-        question_review = question.get("question_review") or {}
-        question_review["context_manifest"] = str(question_contexts_path)
-        question["question_review"] = question_review
-        handwritten_answer = question.get("handwritten_answer") or {}
-        handwritten_answer["context_manifest"] = str(question_contexts_path)
-        question["handwritten_answer"] = handwritten_answer
+    for current_questions in question_sets:
+        for question in current_questions:
+            question_review = question.get("question_review") or {}
+            question_review["context_manifest"] = str(question_contexts_path)
+            question["question_review"] = question_review
+            handwritten_answer = question.get("handwritten_answer") or {}
+            handwritten_answer["context_manifest"] = str(question_contexts_path)
+            question["handwritten_answer"] = handwritten_answer
     question_contexts_path.write_text(
         json.dumps(
             _build_question_context_manifest(
@@ -1855,8 +1877,13 @@ def run_agent(args: argparse.Namespace) -> Dict[str, Any]:
     result_json_path = page_agent_out / "result.json"
     result_md_path = page_agent_out / "result.md"
     verification_path = page_agent_out / "verification.json"
+    api2_result_paths = [
+        page_agent_out / "api2_runs" / f"run_{run_index:02d}" / "result.json"
+        for run_index in range(1, review_runs + 1)
+    ]
     outputs = {
         "result_json": str(result_json_path),
+        "api2_results": [str(path) for path in api2_result_paths],
         "result_markdown": str(result_md_path),
         "verification_report": str(verification_path),
         "question_contexts": str(question_contexts_path),
@@ -1869,12 +1896,13 @@ def run_agent(args: argparse.Namespace) -> Dict[str, Any]:
         "input_image": str(image),
         "preprocessed_image": str(preprocessed_image),
         "api_strategy": {
-            "call_count": 2,
+            "call_count": 1 + review_runs,
             "call_1": "whole-page draft Markdown",
             "call_2": "question-conditioned symbol and atomic patch review",
+            "api2_run_count": review_runs,
             "local_merge": "deterministic validation against the first-pass draft",
         },
-        "api_metrics": _api_metrics(first_pass_vlm, second_pass_vlm),
+        "api_metrics": _api_metrics(first_pass_vlm, second_pass_vlms),
         "summary": _result_summary(questions),
         "questions": questions,
         "page_notes": review.get("page_notes") or "",
@@ -1895,23 +1923,51 @@ def run_agent(args: argparse.Namespace) -> Dict[str, Any]:
         json.dumps(final, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
+    for run_index, (path, current_review, current_questions, vlm) in enumerate(
+        zip(api2_result_paths, reviews, question_sets, second_pass_vlms),
+        start=1,
+    ):
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(
+            json.dumps(
+                {
+                    "schema_version": 1,
+                    "page": page_name,
+                    "api2_run": run_index,
+                    "questions": current_questions,
+                    "page_notes": current_review.get("page_notes") or "",
+                    "api_requests": list(vlm.request_log),
+                },
+                ensure_ascii=False,
+                indent=2,
+            ),
+            encoding="utf-8",
+        )
     result_md_path.write_text(
         _render_result_markdown(page_name, questions),
         encoding="utf-8",
     )
-    verification_path.write_text(
-        json.dumps(
-            {
-                "mode": "single_global_api2_symbol_guided_atomic_patch_v3",
-                "first_pass_markdown": str(draft_markdown_path),
-                "context_manifest": str(question_contexts_path),
-                "page_notes": review.get("page_notes") or "",
-                "api_metrics": final["api_metrics"],
-                "raw": review.get("_raw") or review.get("raw") or "",
-            },
-            ensure_ascii=False,
-            indent=2,
+    verification = {
+        "mode": (
+            "single_global_api2_symbol_guided_atomic_patch_v3"
+            if review_runs == 1
+            else "repeated_global_api2_symbol_guided_atomic_patch_v3"
         ),
+        "first_pass_markdown": str(draft_markdown_path),
+        "context_manifest": str(question_contexts_path),
+        "api2_run_count": review_runs,
+        "api_metrics": final["api_metrics"],
+    }
+    if review_runs == 1:
+        verification["page_notes"] = review.get("page_notes") or ""
+        verification["raw"] = review.get("_raw") or review.get("raw") or ""
+    else:
+        verification["page_notes"] = [current.get("page_notes") or "" for current in reviews]
+        verification["raw_runs"] = [
+            current.get("_raw") or current.get("raw") or "" for current in reviews
+        ]
+    verification_path.write_text(
+        json.dumps(verification, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
     if cache:
@@ -1943,6 +1999,12 @@ def build_argparser() -> argparse.ArgumentParser:
     parser.add_argument("--baseline-max-tokens", type=int, default=5000)
     parser.add_argument("--review-max-tokens", type=int, default=7000)
     parser.add_argument(
+        "--review-runs",
+        type=int,
+        default=1,
+        help="independent API2 reviews over the same API1 draft",
+    )
+    parser.add_argument(
         "--baseline-timeout",
         type=int,
         default=360,
@@ -1959,7 +2021,7 @@ def build_argparser() -> argparse.ArgumentParser:
         type=int,
         choices=(0, 1, 2),
         default=0,
-        help="magnified answer details per question added to the single second API request",
+        help="magnified answer details per question added to each API2 request",
     )
     parser.add_argument("--cache", action="store_true", default=True)
     parser.add_argument("--no-cache", dest="cache", action="store_false")

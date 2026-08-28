@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import json
 import os
 import sys
@@ -17,6 +18,9 @@ if str(REPO_ROOT) not in sys.path:
 from agent.workflow import build_argparser as build_workflow_argparser  # noqa: E402
 from agent.workflow import run_agent  # noqa: E402
 from benchmark.scoring import score_files  # noqa: E402
+
+
+API2_RUN_COUNT = 3
 
 
 def _json_dump(path: Path, payload: Dict[str, Any]) -> None:
@@ -68,6 +72,8 @@ def _workflow_args(cli: argparse.Namespace, image: Path, page_work_root: Path) -
         str(cli.review_timeout),
         "--answer-detail-views",
         str(cli.answer_detail_views),
+        "--review-runs",
+        str(API2_RUN_COUNT),
     ]
     if cli.api_key:
         argv.extend(["--api-key", cli.api_key])
@@ -130,6 +136,74 @@ def _score_summary(pages: Sequence[Dict[str, Any]], key: str) -> Dict[str, Any]:
     }
 
 
+def _average_score_results(scores: Sequence[Dict[str, Any]]) -> Dict[str, Any]:
+    if not scores:
+        raise ValueError("at least one API2 score is required")
+
+    averaged = copy.deepcopy(scores[0])
+    for name in (
+        "score",
+        "raw_score",
+        "structure_score",
+        "stem_score",
+        "answer_score",
+        "state_macro_f1",
+        "gold_question_count",
+        "candidate_question_count",
+        "matched_question_count",
+        "omission_count",
+        "omission_rate",
+        "hallucination_count",
+        "hallucination_rate",
+    ):
+        values = [score.get(name) for score in scores if score.get(name) is not None]
+        averaged[name] = round(sum(float(value) for value in values) / len(values), 6)
+
+    answer_types = set().union(
+        *((score.get("answer_by_type") or {}).keys() for score in scores)
+    )
+    averaged["answer_by_type"] = {
+        name: (
+            round(sum(values) / len(values), 6)
+            if (
+                values := [
+                    float((score.get("answer_by_type") or {}).get(name))
+                    for score in scores
+                    if (score.get("answer_by_type") or {}).get(name) is not None
+                ]
+            )
+            else None
+        )
+        for name in sorted(answer_types)
+    }
+
+    diagnostic_names = set().union(
+        *((score.get("format_diagnostics") or {}).keys() for score in scores)
+    )
+    averaged["format_diagnostics"] = {
+        name: round(
+            sum(float((score.get("format_diagnostics") or {}).get(name, 0)) for score in scores)
+            / len(scores),
+            6,
+        )
+        for name in sorted(diagnostic_names)
+    }
+    averaged.pop("details", None)
+    averaged.pop("missing_gold_indices", None)
+    averaged.pop("extra_candidate_indices", None)
+    averaged["aggregation"] = {
+        "method": "arithmetic_mean",
+        "api2_run_count": len(scores),
+    }
+    return averaged
+
+
+def _api2_result_paths(final_payload: Dict[str, Any], fallback: Path) -> List[Path]:
+    configured = (final_payload.get("outputs") or {}).get("api2_results") or []
+    paths = [Path(value).resolve() for value in configured]
+    return paths or [fallback]
+
+
 def _render_report(report: Dict[str, Any]) -> str:
     summary = report["summary"]
     lines = [
@@ -139,12 +213,13 @@ def _render_report(report: Dict[str, Any]) -> str:
         f"- Model: `{report['model']}`",
         f"- API1 timeout: {report['timeouts']['baseline_s']}s",
         f"- API2 timeout: {report['timeouts']['review_s']}s",
+        f"- API2 runs per page: {summary['api2_runs_per_page']}",
         f"- Pages: {summary['completed_pages']}/{summary['requested_pages']}",
         f"- Baseline (API1): **{summary['baseline']['score'] or 0:.2f}**",
-        f"- Workflow (API2): **{summary['workflow']['score'] or 0:.2f}**",
+        f"- Workflow (API2 mean): **{summary['workflow']['score'] or 0:.2f}**",
         f"- Gain: **{summary['gain'] or 0:+.2f}**",
         "",
-        "| Page | API1 baseline | API2 workflow | Gain | Omission Δ | Hallucination Δ |",
+        "| Page | API1 baseline | API2 mean | Gain | Omission Δ | Hallucination Δ |",
         "|---|---:|---:|---:|---:|---:|",
     ]
     for page in report["pages"]:
@@ -157,6 +232,25 @@ def _render_report(report: Dict[str, Any]) -> str:
             f"| {page['page']} | {baseline['score']:.2f} | {workflow['score']:.2f} | "
             f"{page['gain']:+.2f} | {workflow['omission_rate'] - baseline['omission_rate']:+.3f} | "
             f"{workflow['hallucination_rate'] - baseline['hallucination_rate']:+.3f} |"
+        )
+    lines.extend(
+        [
+            "",
+            "## API2 run scores",
+            "",
+            "| Page | Run 1 | Run 2 | Run 3 | Mean |",
+            "|---|---:|---:|---:|---:|",
+        ]
+    )
+    for page in report["pages"]:
+        if page.get("status") != "ok":
+            lines.append(f"| {page['page']} | ERROR | ERROR | ERROR | — |")
+            continue
+        run_scores = [run["score"] for run in page["api2_runs"]]
+        displayed = [f"{score:.2f}" for score in run_scores[:API2_RUN_COUNT]]
+        displayed.extend(["—"] * (API2_RUN_COUNT - len(displayed)))
+        lines.append(
+            f"| {page['page']} | {' | '.join(displayed)} | {page['workflow']['score']:.2f} |"
         )
     api = report["api"]
     lines.extend(
@@ -226,11 +320,30 @@ def run(cli: argparse.Namespace) -> Dict[str, Any]:
         page_started = time.perf_counter()
         try:
             final_payload: Dict[str, Any]
-            if cli.score_only or (cli.resume and first_pass_path.exists() and final_path.exists()):
+            if cli.score_only:
                 final_payload = json.loads(final_path.read_text(encoding="utf-8"))
+            elif cli.resume and first_pass_path.exists() and final_path.exists():
+                resumed_payload = json.loads(final_path.read_text(encoding="utf-8"))
+                resumed_paths = _api2_result_paths(resumed_payload, final_path)
+                if len(resumed_paths) == API2_RUN_COUNT and all(
+                    path.exists() for path in resumed_paths
+                ):
+                    final_payload = resumed_payload
+                else:
+                    final_payload = run_agent(_workflow_args(cli, image, work_root))
             else:
                 final_payload = run_agent(_workflow_args(cli, image, work_root))
-            scored = score_files(gold_path, first_pass_path, final_path)
+            api2_paths = _api2_result_paths(final_payload, final_path)
+            if not cli.score_only and len(api2_paths) != API2_RUN_COUNT:
+                raise RuntimeError(
+                    f"expected {API2_RUN_COUNT} API2 results for {page}, got {len(api2_paths)}"
+                )
+            scored_runs = [
+                score_files(gold_path, first_pass_path, api2_path) for api2_path in api2_paths
+            ]
+            baseline_score = scored_runs[0]["baseline"]
+            workflow_runs = [scored["workflow"] for scored in scored_runs]
+            workflow_score = _average_score_results(workflow_runs)
             page_report = {
                 "page": page,
                 "status": "ok",
@@ -238,10 +351,22 @@ def run(cli: argparse.Namespace) -> Dict[str, Any]:
                 "gold": str(gold_path),
                 "first_pass": str(first_pass_path),
                 "final_result": str(final_path),
-                "baseline": scored["baseline"],
-                "workflow": scored["workflow"],
-                "gain": scored["gain"],
-                "evaluator": scored["evaluator"],
+                "final_results": [str(path) for path in api2_paths],
+                "baseline": baseline_score,
+                "workflow": workflow_score,
+                "api2_runs": [
+                    {
+                        "run": run_index,
+                        "result": str(api2_path),
+                        "score": scored["workflow"]["score"],
+                        "metrics": scored["workflow"],
+                    }
+                    for run_index, (api2_path, scored) in enumerate(
+                        zip(api2_paths, scored_runs), start=1
+                    )
+                ],
+                "gain": round(workflow_score["score"] - baseline_score["score"], 6),
+                "evaluator": scored_runs[0]["evaluator"],
                 "api_metrics": final_payload.get("api_metrics") or {},
             }
         except Exception as exc:
@@ -261,8 +386,14 @@ def run(cli: argparse.Namespace) -> Dict[str, Any]:
     baseline = _score_summary(page_reports, "baseline")
     workflow = _score_summary(page_reports, "workflow")
     completed = sum(page.get("status") == "ok" for page in page_reports)
+    api2_run_counts = sorted(
+        {len(page["api2_runs"]) for page in page_reports if page.get("status") == "ok"}
+    )
+    api2_runs_per_page: Any = (
+        api2_run_counts[0] if len(api2_run_counts) == 1 else api2_run_counts
+    )
     report = {
-        "schema_version": 1,
+        "schema_version": 2,
         "run_id": cli.run_id,
         "created_at": datetime.now().astimezone().isoformat(),
         "model": cli.model,
@@ -277,6 +408,7 @@ def run(cli: argparse.Namespace) -> Dict[str, Any]:
             "requested_pages": len(pages),
             "completed_pages": completed,
             "failed_pages": len(pages) - completed,
+            "api2_runs_per_page": api2_runs_per_page,
             "baseline": baseline,
             "workflow": workflow,
             "gain": round(float(workflow["score"] or 0) - float(baseline["score"] or 0), 6),
@@ -340,7 +472,7 @@ def main(argv: Optional[List[str]] = None) -> int:
     summary = report["summary"]
     print(
         f"API1 baseline={summary['baseline']['score'] or 0:.2f} "
-        f"API2 workflow={summary['workflow']['score'] or 0:.2f} "
+        f"API2 workflow mean={summary['workflow']['score'] or 0:.2f} "
         f"gain={summary['gain'] or 0:+.2f}"
     )
     print(Path(cli.output_dir).resolve() / "report.md")

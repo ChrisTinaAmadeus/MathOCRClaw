@@ -11,8 +11,11 @@ from benchmark.scoring import (
     score_page,
 )
 from benchmark.run_benchmark import (
+    API2_RUN_COUNT,
+    _average_score_results,
     _workflow_args,
     build_argparser as build_benchmark_argparser,
+    run as run_benchmark,
 )
 
 
@@ -44,6 +47,111 @@ class BenchmarkScoringTests(unittest.TestCase):
 
         self.assertEqual(workflow_args.baseline_timeout, 480)
         self.assertEqual(workflow_args.review_timeout, 600)
+        self.assertEqual(workflow_args.review_runs, 3)
+        self.assertEqual(API2_RUN_COUNT, 3)
+
+    def test_api2_final_score_is_arithmetic_mean_of_three_runs(self):
+        questions = parse_markdown(GOLD)
+        scores = [score_page(questions, questions) for _ in range(3)]
+        scores[0]["score"] = 75.0
+        scores[1]["score"] = 90.0
+        scores[2]["score"] = 60.0
+        scores[0]["answer_score"] = 0.6
+        scores[1]["answer_score"] = 0.9
+        scores[2]["answer_score"] = 0.3
+
+        averaged = _average_score_results(scores)
+
+        self.assertEqual(averaged["score"], 75.0)
+        self.assertEqual(averaged["answer_score"], 0.6)
+        self.assertEqual(
+            averaged["aggregation"],
+            {"method": "arithmetic_mean", "api2_run_count": 3},
+        )
+        self.assertNotIn("details", averaged)
+
+    def test_score_only_report_averages_three_saved_api2_results(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            dataset = root / "dataset"
+            work_root = root / "workflow"
+            output_dir = root / "report"
+            page_root = work_root / "page01"
+            (dataset / "images").mkdir(parents=True)
+            (dataset / "baseline").mkdir(parents=True)
+            (page_root / "api_markdown").mkdir(parents=True)
+            (page_root / "agent_outputs").mkdir(parents=True)
+            (dataset / "images" / "page01.jpg").write_bytes(b"placeholder")
+            gold_path = dataset / "baseline" / "page01.md"
+            gold_path.write_text(GOLD, encoding="utf-8")
+            first_path = page_root / "api_markdown" / "page01.json"
+            first_path.write_text(
+                json.dumps({"page_markdown": GOLD}, ensure_ascii=False),
+                encoding="utf-8",
+            )
+
+            parsed = parse_markdown(GOLD)
+            api2_paths = []
+            for run_index, answer in enumerate(("$x+1=2$", "", "$x+1=3$"), start=1):
+                path = (
+                    page_root
+                    / "agent_outputs"
+                    / "api2_runs"
+                    / f"run_{run_index:02d}"
+                    / "result.json"
+                )
+                path.parent.mkdir(parents=True)
+                questions = []
+                for question_index, question in enumerate(parsed):
+                    current_answer = answer if question_index == 0 else question["answer"]
+                    questions.append(
+                        {
+                            "qno": question["qno"],
+                            "question_markdown": question["stem"],
+                            "handwritten_answer": {
+                                "text": current_answer,
+                                "status": "ok" if current_answer else "no_answer",
+                            },
+                        }
+                    )
+                path.write_text(
+                    json.dumps({"questions": questions}, ensure_ascii=False),
+                    encoding="utf-8",
+                )
+                api2_paths.append(path)
+
+            final_path = page_root / "agent_outputs" / "result.json"
+            final_path.write_text(
+                json.dumps(
+                    {"outputs": {"api2_results": [str(path) for path in api2_paths]}},
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+            expected_scores = [
+                score_files(gold_path, first_path, path)["workflow"]["score"]
+                for path in api2_paths
+            ]
+            cli = build_benchmark_argparser().parse_args(
+                [
+                    "--dataset-root",
+                    str(dataset),
+                    "--work-root",
+                    str(work_root),
+                    "--output-dir",
+                    str(output_dir),
+                    "--score-only",
+                ]
+            )
+
+            report = run_benchmark(cli)
+
+        self.assertEqual(len(report["pages"][0]["api2_runs"]), 3)
+        self.assertEqual(
+            report["summary"]["workflow"]["score"],
+            round(sum(expected_scores) / 3, 6),
+        )
+        self.assertEqual(report["summary"]["api2_runs_per_page"], 3)
 
     def test_result_json_question_number_is_not_scored_as_stem_text(self):
         candidate = candidate_from_result(

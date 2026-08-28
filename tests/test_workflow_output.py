@@ -1068,6 +1068,91 @@ class WorkflowOutputTests(unittest.TestCase):
         self.assertIn("recognition_profile", second_text)
         self.assertIn("C001 / context", second_text)
 
+    @patch.object(VLMClient, "invoke")
+    def test_repeated_api2_reviews_reuse_one_api1_draft(self, invoke_mock):
+        first_pass = "1. Draft question\n\n### 手写答案\n\n$x=2$"
+        second_pass = json.dumps(
+            {
+                "page_notes": "reviewed",
+                "questions": [
+                    {
+                        "qno": "1",
+                        "question_markdown": "1. Draft question",
+                        "source_context_ids": ["C001"],
+                        "handwritten_answer": {
+                            "text": "x=2",
+                            "answer_parts": [
+                                {
+                                    "label": "overall",
+                                    "transcription": "x=2",
+                                    "final_answer": "x=2",
+                                    "status": "ok",
+                                }
+                            ],
+                            "uncertain_fragments": [],
+                            "status": "ok",
+                            "evidence_note": "visible below the stem",
+                        },
+                    }
+                ],
+            },
+            ensure_ascii=False,
+        )
+        invoke_mock.side_effect = [first_pass, second_pass, second_pass, second_pass]
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            image_path = root / "page.png"
+            Image.new("RGB", (240, 200), "white").save(image_path)
+            work_root = root / "workflow"
+            page_dir = work_root / "page" / "code_outputs" / "match"
+            page_dir.mkdir(parents=True)
+            (page_dir / "match.json").write_text(
+                json.dumps(
+                    {
+                        "image_stem": "page",
+                        "width": 240,
+                        "height": 200,
+                        "questions": [
+                            {
+                                "det_index": 1,
+                                "read_index": 1,
+                                "class_name": "problem_solving_question",
+                                "score": 0.95,
+                                "bbox_xyxy_padded": [20, 20, 220, 80],
+                                "crop_path": "questions/q0001_det001/question.png",
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            args = build_argparser().parse_args(
+                [
+                    "--image",
+                    str(image_path),
+                    "--work-root",
+                    str(work_root),
+                    "--skip-layout",
+                    "--no-cache",
+                    "--review-runs",
+                    "3",
+                ]
+            )
+
+            final = run_agent(args)
+            api2_results = [Path(path) for path in final["outputs"]["api2_results"]]
+            api2_payloads = [
+                json.loads(path.read_text(encoding="utf-8")) for path in api2_results
+            ]
+
+        self.assertEqual(invoke_mock.call_count, 4)
+        self.assertEqual(final["api_strategy"]["call_count"], 4)
+        self.assertEqual(final["api_metrics"]["logical_call_count"], 4)
+        self.assertEqual(final["api_metrics"]["api2_run_count"], 3)
+        self.assertEqual([payload["api2_run"] for payload in api2_payloads], [1, 2, 3])
+        self.assertTrue(all(payload["questions"] for payload in api2_payloads))
+
 
 if __name__ == "__main__":
     unittest.main()
