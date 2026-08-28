@@ -115,10 +115,20 @@ STRONG_ENHANCE = EnhanceCfg(max_edge=1400, contrast=1.35, sharpness=1.25, autoco
 
 def enhance_for_vlm(img: Image.Image, cfg: EnhanceCfg) -> Image.Image:
     w, h = img.size
+    if w <= 0 or h <= 0:
+        raise ValueError(f"cannot enhance an empty image: {w}x{h}")
     m = max(w, h)
     if m > cfg.max_edge:
         scale = cfg.max_edge / float(m)
-        img = img.resize((int(w * scale), int(h * scale)), Image.BICUBIC)
+        # Extremely thin but valid crops can occur at noisy/overlapping layout
+        # boundaries.  Pillow rejects a zero-sized dimension, so preserve at
+        # least one pixel while the region selector supplies a better crop.
+        resized_width = max(1, int(round(w * scale)))
+        resized_height = max(1, int(round(h * scale)))
+        img = img.resize(
+            (resized_width, resized_height),
+            Image.Resampling.BICUBIC,
+        )
 
     if cfg.autocontrast:
         if blank_frac(img) < 0.92:

@@ -3,10 +3,23 @@ import unittest
 import numpy as np
 from PIL import Image, ImageDraw
 
-from proofread.img_utils import enhance_handwriting_ink, scan_document_for_ocr
+from proofread.img_utils import (
+    STRONG_ENHANCE,
+    enhance_for_vlm,
+    enhance_handwriting_ink,
+    scan_document_for_ocr,
+)
 
 
 class DocumentPreprocessTests(unittest.TestCase):
+    def test_vlm_enhancement_preserves_nonzero_thin_crop_dimension(self):
+        enhanced = enhance_for_vlm(
+            Image.new("RGB", (2069, 1), "white"),
+            STRONG_ENHANCE,
+        )
+
+        self.assertEqual(enhanced.size, (1400, 1))
+
     def test_handwriting_companion_upscales_and_increases_faint_stroke_contrast(self):
         image = Image.new("RGB", (180, 80), (238, 238, 238))
         draw = ImageDraw.Draw(image)

@@ -55,6 +55,33 @@ class HandwritingRegionTests(unittest.TestCase):
         self.assertGreaterEqual(answer[1], stem[3])
         self.assertEqual(region["answer_start_rule"], "after_stem_bottom")
 
+    def test_collapsed_short_answer_gap_uses_non_degenerate_stem_tail(self):
+        questions = [
+            {
+                "class_name": "problem_solving_question",
+                "score": 0.93,
+                "bbox_xyxy_padded": [606, 221, 2675, 731],
+            },
+            {
+                "class_name": "problem_solving_question",
+                "score": 0.91,
+                "bbox_xyxy_padded": [620, 742, 2660, 980],
+            },
+        ]
+
+        region = score_and_divide_question_frame((2747, 3000), questions, 0)
+        stem = region["source_bbox_xyxy"]
+        answer = region["frame_bbox_xyxy"]
+
+        self.assertEqual(answer[3] - answer[1], 75)
+        self.assertLess(answer[1], stem[3])
+        self.assertTrue(region["contains_stem"])
+        self.assertEqual(
+            region["answer_start_rule"],
+            "fallback_include_stem_tail_when_answer_gap_collapses",
+        )
+        self.assertIn("collapsed_gap_fallback", region["boundary_kind"])
+
     def test_last_question_extends_to_page_bottom(self):
         region = score_and_divide_question_frame((1600, 1200), self.questions, 3)
         self.assertEqual(region["frame_bbox_xyxy"][3], 1200)

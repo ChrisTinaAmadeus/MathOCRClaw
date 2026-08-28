@@ -273,6 +273,22 @@ def score_and_divide_question_frame(
     if frame_bottom <= frame_top:
         frame_bottom = min(height, frame_top + 1)
 
+    minimum_answer_height = max(32, int(round(height * 0.025)))
+    if (
+        question_type == "short_answer"
+        and frame_bottom - frame_top < minimum_answer_height
+    ):
+        # Detector boxes can overlap or leave less than the configured y-pad
+        # between adjacent questions.  Starting strictly below the stem then
+        # produces a one-pixel answer crop.  In that case, retain the trailing
+        # part of the target detection as visual evidence instead of emitting
+        # a degenerate image.
+        frame_top = max(target_box[1], frame_bottom - minimum_answer_height)
+        contains_stem = True
+        answer_start_rule = "fallback_include_stem_tail_when_answer_gap_collapses"
+        boundary_kind = f"{boundary_kind}_collapsed_gap_fallback"
+        boundary_confidence = min(boundary_confidence, 0.62)
+
     frame = (frame_left, frame_top, frame_right, frame_bottom)
     detector_score = max(0.0, min(1.0, float(target.get("score") or 0.0)))
     class_score = 1.0 if _main_question(target) else 0.55
