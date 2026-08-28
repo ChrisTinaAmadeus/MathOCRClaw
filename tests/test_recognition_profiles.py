@@ -1,6 +1,10 @@
 import unittest
 
-from agent.recognition_profiles import build_recognition_profile, profile_tags
+from agent.recognition_profiles import (
+    build_recognition_profile,
+    profile_symbols,
+    profile_tags,
+)
 
 
 class RecognitionProfileTests(unittest.TestCase):
@@ -16,8 +20,27 @@ class RecognitionProfileTests(unittest.TestCase):
             ["A", "B", "C", "D"],
         )
         self.assertEqual(profile_tags(profile), {"CHOICE_LETTER"})
+        self.assertEqual(profile["version"], "symbol_profile_v2")
+        self.assertEqual(profile["answer_grammar"]["choice_mode"], "single")
+        self.assertEqual(profile["answer_grammar"]["max_selected"], 1)
+        self.assertEqual(profile_symbols(profile, "CHOICE_LETTER"), {"A", "B", "C", "D"})
         checks = profile["symbol_families"][0]["confusion_checks"]
         self.assertTrue(any("B vs D" in check for check in checks))
+
+    def test_multiple_choice_profile_allows_more_than_one_final_letter(self):
+        profile = build_recognition_profile(
+            "9. 多选题\nA. 1\nB. 2\nC. 3\nD. 4",
+            "choice",
+            "AC",
+            choice_mode="multiple",
+        )
+
+        self.assertEqual(profile["answer_grammar"]["choice_mode"], "multiple")
+        self.assertEqual(profile["answer_grammar"]["max_selected"], 4)
+        self.assertNotIn(
+            "single_choice_answer_cardinality_violation",
+            profile["recognition_risk"]["reasons"],
+        )
 
     def test_fill_profile_marks_relevant_symbol_families_without_giving_answer(self):
         profile = build_recognition_profile(

@@ -128,6 +128,8 @@ class WorkflowOutputTests(unittest.TestCase):
             questions[1]["section_heading_before"],
             "二、多项选择题：本题共 1 小题。",
         )
+        self.assertEqual(questions[0]["choice_mode"], "single")
+        self.assertEqual(questions[1]["choice_mode"], "multiple")
 
     def test_second_pass_questions_preserve_parts_and_context_links(self):
         contexts = [
@@ -645,7 +647,24 @@ class WorkflowOutputTests(unittest.TestCase):
                     "choice",
                     "B",
                 ),
-            }
+                "visual_context": {"views": [{"kind": "context"}]},
+            },
+            {
+                "context_id": "C002",
+                "draft": {
+                    "qno": "2",
+                    "question_text": question_text,
+                    "student_answer": "D",
+                    "answer_status": "ok",
+                    "question_type": "choice",
+                },
+                "recognition_profile": build_recognition_profile(
+                    question_text,
+                    "choice",
+                    "D",
+                ),
+                "visual_context": {"views": [{"kind": "context"}]},
+            },
         ]
         review = {
             "schema_version": "api2_patch_v3",
@@ -692,7 +711,24 @@ class WorkflowOutputTests(unittest.TestCase):
                     "choice",
                     "B",
                 ),
-            }
+                "visual_context": {"views": [{"kind": "context"}]},
+            },
+            {
+                "context_id": "C002",
+                "draft": {
+                    "qno": "2",
+                    "question_text": question_text,
+                    "student_answer": "D",
+                    "answer_status": "ok",
+                    "question_type": "choice",
+                },
+                "recognition_profile": build_recognition_profile(
+                    question_text,
+                    "choice",
+                    "D",
+                ),
+                "visual_context": {"views": [{"kind": "context"}]},
+            },
         ]
         review = {
             "schema_version": "api2_patch_v3",
@@ -718,6 +754,7 @@ class WorkflowOutputTests(unittest.TestCase):
                                     "one continuous outer right bow rather than two separate lobes"
                                 ),
                                 "context_id": "C001",
+                                "reference_context_ids": ["C002"],
                             }
                         ],
                     },
@@ -734,6 +771,398 @@ class WorkflowOutputTests(unittest.TestCase):
         )
         self.assertIn(
             "accepted_symbol_observation_1",
+            question["question_review"]["lint_actions"],
+        )
+
+    def test_api2_patch_keep_preserves_plain_fill_answer_byte_exact(self):
+        question_text = "14. 实数 $m=$ ______"
+        contexts = [
+            {
+                "context_id": "C001",
+                "draft": {
+                    "qno": "14",
+                    "question_text": question_text,
+                    "student_answer": "1",
+                    "answer_status": "ok",
+                    "question_type": "fill",
+                },
+                "recognition_profile": build_recognition_profile(
+                    question_text,
+                    "fill",
+                    "1",
+                ),
+            }
+        ]
+        review = {
+            "schema_version": "api2_patch_v3",
+            "question_reviews": [
+                {
+                    "qno": "14",
+                    "source_context_ids": ["C001"],
+                    "stem": {"action": "keep", "edits": []},
+                    "answer": {
+                        "action": "keep",
+                        "confidence": "high",
+                        "final_answers": [],
+                        "edits": [],
+                        "symbol_observations": [],
+                        "evidence": "",
+                    },
+                }
+            ],
+        }
+
+        question = _normalize_final_questions(review, contexts)[0]
+
+        self.assertEqual(question["handwritten_answer"]["text"], "1")
+        self.assertEqual(question["handwritten_answer"]["answer_parts"], [])
+        self.assertIn(
+            "kept_first_pass_answer_byte_exact",
+            question["question_review"]["lint_actions"],
+        )
+
+    def test_single_choice_rejects_multi_letter_api2_answer(self):
+        question_text = "7. 单选题\nA. 1\nB. 2\nC. 3\nD. 4"
+        profile = build_recognition_profile(
+            question_text,
+            "choice",
+            "A",
+            choice_mode="single",
+        )
+        contexts = [
+            {
+                "context_id": "C001",
+                "draft": {
+                    "qno": "7",
+                    "question_text": question_text,
+                    "student_answer": "A",
+                    "answer_status": "ok",
+                    "question_type": "choice",
+                    "choice_mode": "single",
+                },
+                "recognition_profile": profile,
+                "visual_context": {"views": [{"kind": "context"}]},
+            },
+            {
+                "context_id": "C002",
+                "draft": {
+                    "qno": "10",
+                    "question_text": question_text,
+                    "student_answer": "AC",
+                    "answer_status": "ok",
+                    "question_type": "choice",
+                    "choice_mode": "multiple",
+                },
+                "recognition_profile": profile,
+                "visual_context": {"views": [{"kind": "context"}]},
+            },
+        ]
+        review = {
+            "schema_version": "api2_patch_v3",
+            "question_reviews": [
+                {
+                    "qno": "7",
+                    "source_context_ids": ["C001"],
+                    "stem": {"action": "keep", "edits": []},
+                    "answer": {
+                        "action": "replace_choice",
+                        "confidence": "high",
+                        "evidence": "two marks are claimed",
+                        "final_answers": [
+                            {"label": "overall", "value": "AC", "status": "ok"}
+                        ],
+                        "symbol_observations": [
+                            {
+                                "tag": "CHOICE_LETTER",
+                                "location": "first retained glyph",
+                                "candidates": ["A", "B"],
+                                "selected": "A",
+                                "observed_features": "apex and crossbar",
+                                "context_id": "C001",
+                                "reference_context_ids": ["C002"],
+                            },
+                            {
+                                "tag": "CHOICE_LETTER",
+                                "location": "second claimed glyph",
+                                "candidates": ["C", "D"],
+                                "selected": "C",
+                                "observed_features": "open curve",
+                                "context_id": "C001",
+                            },
+                        ],
+                    },
+                }
+            ],
+        }
+
+        question = _normalize_final_questions(review, contexts)[0]
+
+        self.assertEqual(question["handwritten_answer"]["text"], "A")
+        self.assertEqual(question["choice_mode"], "single")
+        self.assertIn(
+            "rejected_choice_answer_cardinality_or_grammar",
+            question["question_review"]["lint_actions"],
+        )
+
+    def test_multiple_choice_requires_one_valid_observation_per_final_letter(self):
+        question_text = "9. 多选题\nA. 1\nB. 2\nC. 3\nD. 4"
+        profile = build_recognition_profile(
+            question_text,
+            "choice",
+            "AD",
+            choice_mode="multiple",
+        )
+        contexts = [
+            {
+                "context_id": "C001",
+                "draft": {
+                    "qno": "9",
+                    "question_text": question_text,
+                    "student_answer": "AD",
+                    "answer_status": "ok",
+                    "question_type": "choice",
+                    "choice_mode": "multiple",
+                },
+                "recognition_profile": profile,
+                "visual_context": {"views": [{"kind": "context"}]},
+            },
+            {
+                "context_id": "C002",
+                "draft": {
+                    "qno": "10",
+                    "question_text": question_text,
+                    "student_answer": "AC",
+                    "answer_status": "ok",
+                    "question_type": "choice",
+                    "choice_mode": "multiple",
+                },
+                "recognition_profile": profile,
+                "visual_context": {"views": [{"kind": "context"}]},
+            },
+        ]
+        review = {
+            "schema_version": "api2_patch_v3",
+            "question_reviews": [
+                {
+                    "qno": "9",
+                    "source_context_ids": ["C001"],
+                    "stem": {"action": "keep", "edits": []},
+                    "answer": {
+                        "action": "replace_choice",
+                        "confidence": "high",
+                        "evidence": "two separately localized retained glyphs",
+                        "final_answers": [
+                            {"label": "overall", "value": "AC", "status": "ok"}
+                        ],
+                        "symbol_observations": [
+                            {
+                                "tag": "CHOICE_LETTER",
+                                "location": "first glyph",
+                                "candidates": ["A", "B"],
+                                "selected": "A",
+                                "observed_features": "apex and crossbar",
+                                "context_id": "C001",
+                                "reference_context_ids": ["C002"],
+                            },
+                            {
+                                "tag": "CHOICE_LETTER",
+                                "location": "second glyph",
+                                "candidates": ["C", "D"],
+                                "selected": "C",
+                                "observed_features": "open curve without a left stem",
+                                "context_id": "C001",
+                                "reference_context_ids": ["C002"],
+                            },
+                        ],
+                    },
+                }
+            ],
+        }
+
+        question = _normalize_final_questions(review, contexts)[0]
+
+        self.assertEqual(question["handwritten_answer"]["text"], "AC")
+        self.assertEqual(question["choice_mode"], "multiple")
+        self.assertIn(
+            "accepted_replace_choice",
+            question["question_review"]["lint_actions"],
+        )
+
+        review["question_reviews"][0]["answer"]["symbol_observations"] = review[
+            "question_reviews"
+        ][0]["answer"]["symbol_observations"][:1]
+        rejected = _normalize_final_questions(review, contexts)[0]
+        self.assertEqual(rejected["handwritten_answer"]["text"], "AD")
+        self.assertIn(
+            "rejected_choice_answer_without_per_glyph_observations",
+            rejected["question_review"]["lint_actions"],
+        )
+
+    def test_choice_observation_rejects_multi_letter_pseudo_glyph(self):
+        question_text = "7. 单选题\nA. 1\nB. 2\nC. 3\nD. 4"
+        profile = build_recognition_profile(question_text, "choice", "A")
+        contexts = [
+            {
+                "context_id": "C001",
+                "draft": {
+                    "qno": "7",
+                    "question_text": question_text,
+                    "student_answer": "A",
+                    "answer_status": "ok",
+                    "question_type": "choice",
+                    "choice_mode": "single",
+                },
+                "recognition_profile": profile,
+            }
+        ]
+        review = {
+            "schema_version": "api2_patch_v3",
+            "question_reviews": [
+                {
+                    "qno": "7",
+                    "source_context_ids": ["C001"],
+                    "stem": {"action": "keep", "edits": []},
+                    "answer": {
+                        "action": "replace_choice",
+                        "confidence": "high",
+                        "evidence": "claimed AC token",
+                        "final_answers": [
+                            {"label": "overall", "value": "AC", "status": "ok"}
+                        ],
+                        "symbol_observations": [
+                            {
+                                "tag": "CHOICE_LETTER",
+                                "location": "left margin",
+                                "candidates": ["A", "AC", "C"],
+                                "selected": "AC",
+                                "observed_features": "claimed two-letter token",
+                                "context_id": "C001",
+                            }
+                        ],
+                    },
+                }
+            ],
+        }
+
+        question = _normalize_final_questions(review, contexts)[0]
+
+        self.assertEqual(question["handwritten_answer"]["text"], "A")
+        self.assertIn(
+            "rejected_symbol_observation_1_outside_profile_symbols",
+            question["question_review"]["lint_actions"],
+        )
+
+    def test_symbol_guided_solution_edit_requires_independent_reference(self):
+        question_text = "18. 求函数值。"
+        profile = build_recognition_profile(question_text, "solution", "$f(1)<f(2)$")
+        contexts = [
+            {
+                "context_id": "C001",
+                "draft": {
+                    "qno": "18",
+                    "question_text": question_text,
+                    "student_answer": "$f(1)<f(2)$",
+                    "answer_status": "ok",
+                    "question_type": "solution",
+                },
+                "recognition_profile": profile,
+            }
+        ]
+        review = {
+            "schema_version": "api2_patch_v3",
+            "question_reviews": [
+                {
+                    "qno": "18",
+                    "source_context_ids": ["C001"],
+                    "stem": {"action": "keep", "edits": []},
+                    "answer": {
+                        "action": "edit_solution",
+                        "confidence": "high",
+                        "evidence": "the final digit is claimed to be 1",
+                        "edits": [
+                            {
+                                "old": "f(2)",
+                                "new": "f(1)",
+                                "kind": "ocr_correction",
+                                "confidence": "high",
+                                "context_id": "C001",
+                                "evidence": "single vertical stroke",
+                            }
+                        ],
+                        "symbol_observations": [
+                            {
+                                "tag": "DIGIT",
+                                "location": "right side of the inequality",
+                                "candidates": ["1", "2"],
+                                "selected": "1",
+                                "observed_features": "single vertical stroke",
+                                "context_id": "C001",
+                                "reference_context_ids": [],
+                            }
+                        ],
+                    },
+                }
+            ],
+        }
+
+        question = _normalize_final_questions(review, contexts)[0]
+
+        self.assertEqual(question["handwritten_answer"]["text"], "$f(1)<f(2)$")
+        self.assertIn(
+            "rejected_symbol_guided_solution_edit_without_independent_reference",
+            question["question_review"]["lint_actions"],
+        )
+
+    def test_solution_edit_cannot_insert_a_newline_inside_inline_math(self):
+        question_text = "19. 求体积。"
+        contexts = [
+            {
+                "context_id": "C001",
+                "draft": {
+                    "qno": "19",
+                    "question_text": question_text,
+                    "student_answer": "$h=2$\n$V=8/3$",
+                    "answer_status": "ok",
+                    "question_type": "solution",
+                    "section_heading_before": "三、解答题",
+                },
+                "recognition_profile": build_recognition_profile(
+                    question_text, "solution", "$h=2$\n$V=8/3$"
+                ),
+                "visual_context": {"views": [{"kind": "answer_detail"}]},
+            }
+        ]
+        review = {
+            "schema_version": "api2_patch_v3",
+            "question_reviews": [
+                {
+                    "qno": "19",
+                    "source_context_ids": ["C001"],
+                    "answer": {
+                        "action": "edit_solution",
+                        "confidence": "high",
+                        "evidence": "The missing area line is visible.",
+                        "symbol_observations": [],
+                        "edits": [
+                            {
+                                "old": "h=2",
+                                "new": "S=4\nh=2",
+                                "kind": "insert_missing",
+                                "confidence": "high",
+                                "context_id": "C001",
+                                "evidence": "The missing area line is visible.",
+                            }
+                        ],
+                    },
+                }
+            ],
+        }
+
+        question = _normalize_final_questions(review, contexts)[0]
+
+        self.assertEqual(question["handwritten_answer"]["text"], "$h=2$\n$V=8/3$")
+        self.assertIn(
+            "rejected_solution_edit_1_newline_inside_inline_latex",
             question["question_review"]["lint_actions"],
         )
 
@@ -793,7 +1222,7 @@ class WorkflowOutputTests(unittest.TestCase):
             question["question_review"]["lint_actions"],
         )
 
-    def test_high_confidence_atomic_patch_can_remove_student_drawn_stem_figure(self):
+    def test_p0_freeze_rolls_back_stem_figure_removal(self):
         contexts = [
             {
                 "context_id": "C001",
@@ -833,13 +1262,17 @@ class WorkflowOutputTests(unittest.TestCase):
 
         question = _normalize_final_questions(review, contexts)[0]
 
-        self.assertNotIn("<插图>", question["question_markdown"])
+        self.assertIn("<插图>", question["question_markdown"])
         self.assertIn(
             "applied_stem_edit_1_ocr_correction",
             question["question_review"]["lint_actions"],
         )
-        self.assertNotIn(
+        self.assertIn(
             "rolled_back_deleted_question_structure",
+            question["question_review"]["lint_actions"],
+        )
+        self.assertIn(
+            "rejected_stem_image_removal_p0",
             question["question_review"]["lint_actions"],
         )
 

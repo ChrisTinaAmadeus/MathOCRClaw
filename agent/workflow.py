@@ -18,7 +18,12 @@ from agent.handwriting_regions import (
     save_handwriting_views,
     score_and_divide_question_frame,
 )
-from agent.recognition_profiles import build_recognition_profile, profile_tags
+from agent.recognition_profiles import (
+    build_recognition_profile,
+    canonical_choice_mode,
+    profile_symbols,
+    profile_tags,
+)
 from proofread.cache import JsonCache
 from proofread.common import sha1_bytes
 from proofread.img_utils import (
@@ -160,16 +165,16 @@ Question-conditioned symbol protocol:
 - Never select a symbol because it makes the mathematics or science correct. The printed stem may narrow the symbol alphabet but cannot determine what the student wrote.
 - replace_choice and replace_fill require at least one symbol_observations record. Every observation must cite a supplied context, use a tag present in that context's recognition_profile, list competing candidates, and state a concrete visible stroke feature. If this cannot be done, use keep.
 - The payload groups contexts that share a symbol tag. For repeated closed-alphabet marks, you may compare an ambiguous glyph with independently clear same-page handwriting and cite those context IDs as reference_context_ids. Treat API1 readings as unverified: similarity of writer style is supporting evidence, but presumed mathematical correctness or repeated API1 labels are not.
+- When API1 already has a supported answer that satisfies the printed answer grammar, any symbol-level change requires at least one independently clear same-page glyph in reference_context_ids. The only exceptions are an unsupported API1 answer or an API1 answer that already violates the printed grammar/cardinality. Without independent reference evidence, use keep.
 - For answer.action=keep, symbol_observations should normally be empty. Observations are an audit trail for changes, not hidden chain-of-thought.
 
 Content contract:
 - Determine the type from printed structure, not algebraic letters inside formulas and not detector labels. Printed A.--D. options mean choice; a printed answer blank means fill; proof/derivation/open response means solution.
-- Choice: replace_choice contains only the final retained A--D letters. Exclude all scratch work and diagram annotations.
+- Choice: obey recognition_profile.answer_grammar exactly. A single-choice question must contain exactly one final A--D letter. A multiple-choice question may contain more than one. Never treat a multi-letter token such as `AC` as one glyph observation; cite each retained letter separately. Exclude all scratch work and diagram annotations.
 - Fill: replace_fill contains only ordered final values/formulas and necessary units. Exclude derivations. Put mathematical values in standard LaTeX.
 - Solution: edit_solution may only make exact local corrections to the complete API1 process. Never compress, paraphrase, reorder, or regenerate the solution. Use set_no_answer only when no student answer is visibly supported.
 - Never replace a nonempty supported API1 answer with no_answer merely because a crop is incomplete. Use the full page to resolve ownership.
-- Printed stems never absorb handwriting. `<插图>` denotes a printed question figure only; a student-drawn solution sketch is handwriting evidence and must not be inserted into the stem.
-- Before keeping any draft `<插图>`, explicitly verify that the figure is printed. A pen/pencil sketch inside an answer rectangle, drawn in the same stroke style as the solution (including student-added axes, labels, auxiliary lines, or construction marks), is not a printed figure. Remove that draft `<插图>` with one exact high-confidence stem edit when the image proves it is student-drawn.
+- P0 figure freeze: preserve every existing draft `<插图>` byte-for-byte. Do not remove or replace an existing marker in this review. Printed/student/mixed figure ownership is resolved by a separate audited representation, not by this patch call.
 - When the only visible printed material is the question number/score and all geometry appears among the student's proof or coordinate setup, treat the printed stem as unavailable; do not use the student sketch to manufacture stem content.
 - If a printed stem is not visible, keep `N. [无法识别]` or the existing minimal draft; do not invent a diagram or question text from the student's solution.
 - Preserve option labels, subquestion labels, circled enumerators, signs, inequalities, exponents, subscripts, units, and balanced `$...$`/`$$...$$` delimiters.
@@ -289,6 +294,7 @@ def _draft_questions(baseline: Dict[str, Any]) -> List[Dict[str, Any]]:
                     "",
                     question_text,
                 ),
+                "choice_mode": canonical_choice_mode(question_text=question_text),
                 "section_heading_before": "",
             }
         )
@@ -299,7 +305,7 @@ _DRAFT_QUESTION_RE = re.compile(r"(?m)^\s*(\d{1,3})[.．、]\s*")
 _DRAFT_ANSWER_RE = re.compile(r"(?im)^\s*#{1,6}\s*手写答案\s*$")
 _SECTION_HEADING_RE = re.compile(
     r"^\s*(?:[一二三四五六七八九十]+|[IVX]+)\s*[、.．]\s*"
-    r"(?:单项?选择题|多项?选择题|选择题|填空题|解答题|证明题|计算题|应用题)\b.*$",
+    r"(?:单选题|多选题|单项选择题|多项选择题|选择题|填空题|解答题|证明题|计算题|应用题).*?$",
     re.I,
 )
 _OPTION_MARKER_RE = re.compile(r"(?m)^\s*([A-D])[.．、:：]\s*")
@@ -372,6 +378,11 @@ def _draft_questions_from_markdown(markdown: str) -> List[Dict[str, Any]]:
         markdown[: starts[0].start()] if starts else markdown
     )
     pending_section = prefix_headings[-1] if prefix_headings else ""
+    active_choice_mode = (
+        canonical_choice_mode(section_heading=pending_section)
+        if re.search(r"选择题|单选|多选", pending_section)
+        else ""
+    )
     for index, start in enumerate(starts):
         end = starts[index + 1].start() if index + 1 < len(starts) else len(markdown)
         block = markdown[start.start() : end].strip()
@@ -386,21 +397,37 @@ def _draft_questions_from_markdown(markdown: str) -> List[Dict[str, Any]]:
             student_answer = ""
             trailing_sections = []
         no_answer = not student_answer or "未识别到手写答案" in student_answer
+        question_type = _canonical_question_type(
+            "",
+            question_text,
+            pending_section,
+        )
+        section_choice_mode = (
+            canonical_choice_mode(section_heading=pending_section)
+            if re.search(r"选择题|单选|多选", pending_section)
+            else ""
+        )
+        if section_choice_mode:
+            active_choice_mode = section_choice_mode
+        choice_mode = (
+            active_choice_mode or canonical_choice_mode(question_text=question_text)
+            if question_type == "choice"
+            else ""
+        )
         questions.append(
             {
                 "qno": str(int(start.group(1))),
                 "question_text": question_text,
                 "student_answer": student_answer,
                 "answer_status": "no_answer" if no_answer else "ok",
-                "question_type": _canonical_question_type(
-                    "",
-                    question_text,
-                    pending_section,
-                ),
+                "question_type": question_type,
+                "choice_mode": choice_mode,
                 "section_heading_before": pending_section,
             }
         )
         pending_section = trailing_sections[-1] if trailing_sections else ""
+        if pending_section and not re.search(r"选择题|单选|多选", pending_section):
+            active_choice_mode = ""
     return questions
 
 
@@ -427,6 +454,7 @@ def _prepare_question_contexts(
             "student_answer": "",
             "answer_status": "not_available",
             "question_type": "solution",
+            "choice_mode": "",
             "section_heading_before": "",
         }
         context_id = f"C{ordinal:03d}"
@@ -434,6 +462,8 @@ def _prepare_question_contexts(
             draft["question_text"],
             draft.get("question_type"),
             draft.get("student_answer") or "",
+            section_heading=draft.get("section_heading_before") or "",
+            choice_mode=draft.get("choice_mode") or "",
         )
         views: List[Dict[str, Any]] = []
         region: Dict[str, Any] = {}
@@ -502,6 +532,8 @@ def _prepare_question_contexts(
                     draft["question_text"],
                     draft.get("question_type"),
                     draft.get("student_answer") or "",
+                    section_heading=draft.get("section_heading_before") or "",
+                    choice_mode=draft.get("choice_mode") or "",
                 ),
                 "visual_context": {"views": []},
             }
@@ -747,6 +779,21 @@ def _normalize_symbol_observations(
         if family not in allowed_tags:
             actions.append(f"rejected_{tag}_unknown_profile_tag")
             continue
+        allowed_symbols = {
+            _canonical_profile_symbol(symbol)
+            for symbol in profile_symbols(profile, family)
+        }
+        canonical_selected = _canonical_profile_symbol(selected)
+        canonical_candidates = {
+            _canonical_profile_symbol(candidate) for candidate in candidates
+        }
+        if (
+            not allowed_symbols
+            or canonical_selected not in allowed_symbols
+            or not canonical_candidates.issubset(allowed_symbols)
+        ):
+            actions.append(f"rejected_{tag}_outside_profile_symbols")
+            continue
         if context_id not in allowed_contexts:
             actions.append(f"rejected_{tag}_invalid_context")
             continue
@@ -771,25 +818,28 @@ def _normalize_symbol_observations(
     return observations, actions
 
 
-def _visual_symbol_in_answer(symbol: Any, answer: Any) -> bool:
-    def normalize(value: Any) -> str:
-        text = re.sub(r"\s+", "", str(value or ""))
-        replacements = (
-            (r"\leqslant", r"\le"),
-            (r"\leq", r"\le"),
-            ("≤", r"\le"),
-            (r"\geqslant", r"\ge"),
-            (r"\geq", r"\ge"),
-            ("≥", r"\ge"),
-            (r"\emptyset", r"\varnothing"),
-            ("∅", r"\varnothing"),
-        )
-        for old, new in replacements:
-            text = text.replace(old, new)
-        return text.strip("$`*_ ")
+def _canonical_profile_symbol(value: Any) -> str:
+    text = re.sub(r"\s+", "", str(value or "")).strip("$`*_ ")
+    replacements = (
+        (r"\leqslant", r"\le"),
+        (r"\leq", r"\le"),
+        ("≤", r"\le"),
+        (r"\geqslant", r"\ge"),
+        (r"\geq", r"\ge"),
+        ("≥", r"\ge"),
+        (r"\neq", r"\ne"),
+        ("≠", r"\ne"),
+        (r"\emptyset", r"\varnothing"),
+        ("∅", r"\varnothing"),
+    )
+    for old, new in replacements:
+        text = text.replace(old, new)
+    return text
 
-    selected = normalize(symbol)
-    return bool(selected) and selected in normalize(answer)
+
+def _visual_symbol_in_answer(symbol: Any, answer: Any) -> bool:
+    selected = _canonical_profile_symbol(symbol)
+    return bool(selected) and selected in _canonical_profile_symbol(answer)
 
 
 def _apply_exact_edits(
@@ -841,6 +891,25 @@ def _apply_exact_edits(
             continue
         if _contains_editorial_truncation(new):
             actions.append(f"rejected_{tag}_editorial_truncation")
+            continue
+        old_start = result.index(old)
+        containing_math_span = next(
+            (
+                match
+                for match in _MATH_SPAN_RE.finditer(result)
+                if match.start() <= old_start
+                and old_start + len(old) <= match.end()
+            ),
+            None,
+        )
+        if (
+            field_name == "solution"
+            and "\n" in new
+            and "\n" not in old
+            and containing_math_span is not None
+            and not containing_math_span.group(0).startswith("$$")
+        ):
+            actions.append(f"rejected_{tag}_newline_inside_inline_latex")
             continue
         candidate = result.replace(old, new, 1)
         if not _has_balanced_math_delimiters(candidate):
@@ -966,6 +1035,42 @@ def _choice_letters(value: Any) -> str:
             letters = re.sub(r"[^A-D]", "", compact.upper())
             return "".join(dict.fromkeys(letters))
     return ""
+
+
+def _choice_answer_valid_for_profile(value: Any, profile: Dict[str, Any]) -> bool:
+    letters = _choice_letters(value)
+    if not letters:
+        return False
+    grammar = profile.get("answer_grammar") or {}
+    allowed = {
+        str(token).strip().upper()
+        for token in grammar.get("allowed_final_tokens") or []
+        if re.fullmatch(r"[A-Da-d]", str(token).strip())
+    } or {"A", "B", "C", "D"}
+    if not set(letters).issubset(allowed):
+        return False
+    minimum = max(1, int(grammar.get("min_selected") or 1))
+    maximum = max(minimum, int(grammar.get("max_selected") or len(allowed)))
+    return minimum <= len(letters) <= maximum
+
+
+def _choice_observations_cover_answer(
+    value: Any,
+    observations: Sequence[Dict[str, Any]],
+) -> bool:
+    letters = _choice_letters(value)
+    observed = {
+        _canonical_profile_symbol(observation.get("selected")).upper()
+        for observation in observations
+        if str(observation.get("tag") or "") == "CHOICE_LETTER"
+    }
+    return bool(letters) and set(letters).issubset(observed)
+
+
+def _has_independent_symbol_reference(
+    observations: Sequence[Dict[str, Any]],
+) -> bool:
+    return any(observation.get("reference_context_ids") for observation in observations)
 
 
 def _ensure_math_answer(value: Any) -> str:
@@ -1227,20 +1332,16 @@ def _normalize_patch_questions(
         elif stem_action != "keep":
             actions.append("rejected_invalid_stem_action")
 
-        allowed_image_removals = (
-            max(
-                0,
-                _question_structure(draft_question)["images"]
-                - _question_structure(question_candidate)["images"],
-            )
-            if any(action.startswith("applied_stem_edit_") for action in actions)
-            else 0
-        )
+        if (
+            _question_structure(question_candidate)["images"]
+            < _question_structure(draft_question)["images"]
+        ):
+            actions.append("rejected_stem_image_removal_p0")
         question_markdown, question_actions = _guard_question_markdown(
             question_candidate,
             draft_question,
             label,
-            allowed_image_removals=allowed_image_removals,
+            allowed_image_removals=0,
         )
         actions.extend(question_actions)
         question_type = _canonical_question_type(
@@ -1250,16 +1351,27 @@ def _normalize_patch_questions(
         )
 
         draft_answer = str(draft.get("student_answer") or "").strip()
+        profile = (
+            context.get("recognition_profile")
+            if isinstance(context.get("recognition_profile"), dict)
+            else {}
+        )
+        choice_mode = str(
+            profile.get("choice_mode")
+            or (profile.get("answer_grammar") or {}).get("choice_mode")
+            or draft.get("choice_mode")
+            or (canonical_choice_mode(question_text=question_markdown) if question_type == "choice" else "")
+        )
         answer_patch = patch_review.get("answer")
         answer_patch = answer_patch if isinstance(answer_patch, dict) else {}
+        raw_symbol_observations = answer_patch.get("symbol_observations")
+        symbol_protocol_requested = raw_symbol_observations not in (None, [])
         answer_action = str(answer_patch.get("action") or "keep").strip().lower()
         patch_evidence = str(answer_patch.get("evidence") or "").strip()
         patch_is_high = _high_confidence_patch(answer_patch.get("confidence"))
         symbol_observations, symbol_actions = _normalize_symbol_observations(
             answer_patch.get("symbol_observations"),
-            profile=context.get("recognition_profile")
-            if isinstance(context.get("recognition_profile"), dict)
-            else {},
+            profile=profile,
             valid_context_ids=cited_context_ids,
             available_context_ids=visual_context_ids,
         )
@@ -1269,6 +1381,10 @@ def _normalize_patch_questions(
             "status": str(draft.get("answer_status") or "").strip(),
         }
         parts: List[Dict[str, Any]] = []
+        answer_patch_applied = False
+        draft_requires_repair = str(
+            (profile.get("recognition_risk") or {}).get("priority") or ""
+        ) == "high" or _is_no_supported_answer_text(draft_answer)
 
         if answer_action in {"replace_choice", "replace_fill"}:
             expected_action = "replace_choice" if question_type == "choice" else (
@@ -1302,7 +1418,27 @@ def _normalize_patch_questions(
                     )
                 if not parts:
                     actions.append("rejected_empty_final_answer_replacement")
-                elif strict_symbol_protocol and not any(
+                elif question_type == "choice" and (
+                    len(parts) != 1
+                    or str(parts[0].get("label") or "overall") != "overall"
+                    or not _choice_answer_valid_for_profile(
+                        parts[0].get("final_answer"),
+                        profile,
+                    )
+                ):
+                    parts = []
+                    actions.append("rejected_choice_answer_cardinality_or_grammar")
+                elif (
+                    strict_symbol_protocol
+                    and question_type == "choice"
+                    and not _choice_observations_cover_answer(
+                        parts[0].get("final_answer"),
+                        symbol_observations,
+                    )
+                ):
+                    parts = []
+                    actions.append("rejected_choice_answer_without_per_glyph_observations")
+                elif strict_symbol_protocol and question_type == "fill" and not any(
                     _visual_symbol_in_answer(
                         observation.get("selected"),
                         "".join(str(part.get("final_answer") or "") for part in parts),
@@ -1311,6 +1447,15 @@ def _normalize_patch_questions(
                 ):
                     parts = []
                     actions.append("rejected_symbol_observation_answer_mismatch")
+                elif (
+                    strict_symbol_protocol
+                    and not draft_requires_repair
+                    and not _has_independent_symbol_reference(symbol_observations)
+                ):
+                    parts = []
+                    actions.append(
+                        "rejected_answer_replacement_without_independent_symbol_reference"
+                    )
                 elif (
                     all(part.get("status") == "no_answer" for part in parts)
                     and not _is_no_supported_answer_text(draft_answer)
@@ -1324,10 +1469,25 @@ def _normalize_patch_questions(
                         if all(part.get("status") == "no_answer" for part in parts)
                         else "ok",
                     }
+                    answer_patch_applied = True
                     actions.append(f"accepted_{answer_action}")
         elif answer_action == "edit_solution":
             if question_type != "solution":
                 actions.append("rejected_solution_edit_type_mismatch")
+            elif (
+                strict_symbol_protocol
+                and symbol_protocol_requested
+                and (
+                    not symbol_observations
+                    or (
+                        not draft_requires_repair
+                        and not _has_independent_symbol_reference(symbol_observations)
+                    )
+                )
+            ):
+                actions.append(
+                    "rejected_symbol_guided_solution_edit_without_independent_reference"
+                )
             else:
                 patched_answer, edit_actions = _apply_exact_edits(
                     draft_answer,
@@ -1337,6 +1497,9 @@ def _normalize_patch_questions(
                 )
                 answer["text"] = patched_answer
                 actions.extend(edit_actions)
+                answer_patch_applied = any(
+                    action.startswith("applied_solution_edit_") for action in edit_actions
+                )
         elif answer_action == "set_no_answer":
             if not cited_context_ids:
                 actions.append("rejected_no_answer_without_valid_context")
@@ -1345,30 +1508,38 @@ def _normalize_patch_questions(
             elif not _is_no_supported_answer_text(draft_answer):
                 actions.append("rejected_no_answer_over_supported_first_pass")
             else:
-                answer = {"text": "", "status": "no_answer"}
                 actions.append("accepted_no_answer_confirmation")
         elif answer_action != "keep":
             actions.append("rejected_invalid_answer_action")
 
-        text, parts, status, answer_actions = _canonicalize_answer(
-            question_type,
-            answer,
-            parts,
-            draft_answer,
-        )
-        actions.extend(answer_actions)
+        if answer_patch_applied:
+            text, parts, status, answer_actions = _canonicalize_answer(
+                question_type,
+                answer,
+                parts,
+                draft_answer,
+            )
+            actions.extend(answer_actions)
+        else:
+            text = draft_answer
+            parts = []
+            status = str(draft.get("answer_status") or "").strip() or (
+                "ok" if draft_answer else "no_answer"
+            )
+            actions.append("kept_first_pass_answer_byte_exact")
         draft_section = str(draft.get("section_heading_before") or "").strip()
         questions.append(
             {
                 "qno": qno,
                 "question_type": question_type,
+                "choice_mode": choice_mode,
                 "section_heading_before": draft_section,
                 "question_markdown": question_markdown,
                 "question_review": {
                     "status": "reviewed_via_api2_atomic_patch",
                     "source_context_ids": normalized_source_ids,
                     "recognition_profile_version": str(
-                        (context.get("recognition_profile") or {}).get("version") or ""
+                        profile.get("version") or ""
                     ),
                     "lint_actions": actions,
                 },
@@ -1646,11 +1817,7 @@ def _render_result_markdown(page_name: str, questions: Sequence[Dict[str, Any]])
             question_markdown,
             section_heading,
         )
-        if question_type == "choice":
-            answer_text = _choice_letters(answer_text)
-        elif question_type == "fill" and answer_text:
-            answer_text = _ensure_math_answer(answer_text)
-        elif question_type == "solution" and not answer_text:
+        if question_type == "solution" and not answer_text:
             answer_text = _render_structured_parts(answer.get("answer_parts") or [])
         if answer_text:
             lines.append(answer_text)

@@ -110,6 +110,29 @@ def _canonical_type(value: Any) -> str:
     return "solution"
 
 
+def canonical_choice_mode(
+    value: Any = "",
+    *,
+    question_text: str = "",
+    section_heading: str = "",
+) -> str:
+    """Return the printed choice cardinality without using answer semantics."""
+    raw = str(value or "").strip().lower().replace("-", "_")
+    if raw in {"single", "single_choice", "single_answer"}:
+        return "single"
+    if raw in {"multiple", "multiple_choice", "multi", "multiple_answer"}:
+        return "multiple"
+
+    printed = f"{section_heading}\n{question_text}"
+    if re.search(r"多项选择|多选题|有多项(?:符合|正确)|不止一项", printed):
+        return "multiple"
+    if re.search(r"单项选择|单选题|只有一项(?:是|符合|正确)", printed):
+        return "single"
+    # Chinese high-school papers default to the single-choice section until an
+    # explicit multiple-choice heading changes the active section.
+    return "single"
+
+
 def _append_unique(items: List[str], values: Sequence[str]) -> None:
     for value in values:
         if value not in items:
@@ -160,7 +183,11 @@ def _family_names(question_text: str, question_type: str) -> List[str]:
     return names
 
 
-def _risk(question_type: str, draft_answer: str) -> Dict[str, Any]:
+def _risk(
+    question_type: str,
+    draft_answer: str,
+    choice_mode: str = "",
+) -> Dict[str, Any]:
     answer = str(draft_answer or "").strip()
     reasons: List[str] = []
     if not answer or _NO_ANSWER_RE.search(answer):
@@ -169,10 +196,19 @@ def _risk(question_type: str, draft_answer: str) -> Dict[str, Any]:
         compact = re.sub(r"[^A-D]", "", answer.upper())
         if not compact or re.sub(r"[A-D\s$`*_，,、;；:：()（）\[\]]", "", answer.upper()):
             reasons.append("choice_answer_outside_closed_grammar")
-        reasons.append("small_single_glyph_answer")
+        if choice_mode == "single" and len(set(compact)) != 1:
+            reasons.append("single_choice_answer_cardinality_violation")
+        reasons.append("compact_choice_answer")
     elif question_type == "fill":
         reasons.append("compact_formula_answer")
-    priority = "high" if "api1_has_no_supported_reading" in reasons else (
+    priority = "high" if any(
+        reason in reasons
+        for reason in {
+            "api1_has_no_supported_reading",
+            "choice_answer_outside_closed_grammar",
+            "single_choice_answer_cardinality_violation",
+        }
+    ) else (
         "medium" if reasons else "low"
     )
     return {"priority": priority, "reasons": reasons}
@@ -182,6 +218,9 @@ def build_recognition_profile(
     question_text: str,
     question_type: Any,
     draft_answer: str = "",
+    *,
+    section_heading: str = "",
+    choice_mode: str = "",
 ) -> Dict[str, Any]:
     """Build candidate-only symbol tags that guide visual inspection without solving.
 
@@ -190,6 +229,15 @@ def build_recognition_profile(
     selected symbol must still be justified from a supplied image.
     """
     canonical_type = _canonical_type(question_type)
+    canonical_mode = (
+        canonical_choice_mode(
+            choice_mode,
+            question_text=question_text,
+            section_heading=section_heading,
+        )
+        if canonical_type == "choice"
+        else ""
+    )
     options = list(dict.fromkeys(_OPTION_RE.findall(str(question_text or "").upper())))
     if canonical_type == "choice" and not options:
         options = ["A", "B", "C", "D"]
@@ -203,8 +251,15 @@ def build_recognition_profile(
     if canonical_type == "choice":
         grammar = {
             "kind": "closed_choice_alphabet",
+            "choice_mode": canonical_mode,
             "allowed_final_tokens": options,
-            "rule": "one or more unique visibly retained option letters only",
+            "min_selected": 1,
+            "max_selected": 1 if canonical_mode == "single" else len(options),
+            "rule": (
+                "exactly one visibly retained option letter"
+                if canonical_mode == "single"
+                else "one or more unique visibly retained option letters"
+            ),
         }
     elif canonical_type == "fill":
         grammar = {
@@ -220,11 +275,12 @@ def build_recognition_profile(
         }
 
     return {
-        "version": "symbol_profile_v1",
+        "version": "symbol_profile_v2",
         "question_type": canonical_type,
+        "choice_mode": canonical_mode,
         "answer_grammar": grammar,
         "symbol_families": families,
-        "recognition_risk": _risk(canonical_type, draft_answer),
+        "recognition_risk": _risk(canonical_type, draft_answer, canonical_mode),
         "usage_rule": (
             "Candidate families are an inspection checklist, never evidence or an answer key. "
             "Select a candidate only when the cited image shows its discriminating stroke."
@@ -238,3 +294,15 @@ def profile_tags(profile: Dict[str, Any]) -> set[str]:
         for family in profile.get("symbol_families") or []
         if isinstance(family, dict) and family.get("tag")
     }
+
+
+def profile_symbols(profile: Dict[str, Any], tag: str) -> set[str]:
+    for family in profile.get("symbol_families") or []:
+        if not isinstance(family, dict) or str(family.get("tag") or "") != str(tag):
+            continue
+        return {
+            str(symbol).strip()
+            for symbol in family.get("symbols") or []
+            if str(symbol).strip()
+        }
+    return set()
