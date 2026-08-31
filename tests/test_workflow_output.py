@@ -45,6 +45,30 @@ class WorkflowOutputTests(unittest.TestCase):
             ["context", "answer_ink"],
         )
 
+    def test_solution_symbol_audit_sends_color_detail_and_ink_companion(self):
+        profile = build_recognition_profile(
+            "18. 证明直线平行。",
+            "solution",
+            r"$AB // CD$",
+        )
+        context = {
+            "recognition_profile": profile,
+            "visual_context": {
+                "views": [
+                    {"kind": "context", "path": "context.png"},
+                    {"kind": "answer_detail_01", "path": "detail.png"},
+                    {"kind": "answer_ink", "path": "ink.png"},
+                ]
+            },
+        }
+
+        selected = _selected_review_views(context, 1)
+
+        self.assertEqual(
+            [view["kind"] for view in selected],
+            ["context", "answer_detail_01", "answer_ink"],
+        )
+
     def test_same_page_symbol_groups_are_unlabelled_writer_style_routes(self):
         contexts = [
             {
@@ -1111,6 +1135,221 @@ class WorkflowOutputTests(unittest.TestCase):
         self.assertIn(
             "rejected_symbol_guided_solution_edit_without_independent_reference",
             question["question_review"]["lint_actions"],
+        )
+
+    def test_exact_geometry_audit_patch_does_not_need_cross_question_reference(self):
+        question_text = "18. 证明空间直线平行。"
+        draft_answer = r"$A_1C_1 // AC$"
+        profile = build_recognition_profile(
+            question_text,
+            "solution",
+            draft_answer,
+        )
+        target = profile["symbol_audit"]["targets"][0]
+        contexts = [
+            {
+                "context_id": "C001",
+                "draft": {
+                    "qno": "18",
+                    "question_text": question_text,
+                    "student_answer": draft_answer,
+                    "answer_status": "ok",
+                    "question_type": "solution",
+                },
+                "recognition_profile": profile,
+                "visual_context": {"views": [{"kind": "answer_detail_01"}]},
+            }
+        ]
+        review = {
+            "schema_version": "api2_patch_v3",
+            "question_reviews": [
+                {
+                    "qno": "18",
+                    "source_context_ids": ["C001"],
+                    "answer": {
+                        "action": "edit_solution",
+                        "confidence": "high",
+                        "evidence": "two retained parallel strokes without an underline",
+                        "edits": [
+                            {
+                                "old": target["draft_fragment"],
+                                "new": r"$A_1C_1 \parallel AC$",
+                                "kind": "ocr_correction",
+                                "confidence": "high",
+                                "context_id": "C001",
+                                "evidence": "two retained parallel strokes without an underline",
+                            }
+                        ],
+                        "symbol_observations": [
+                            {
+                                "audit_id": target["audit_id"],
+                                "tag": "GEOMETRY_MARK",
+                                "location": "between A_1C_1 and AC",
+                                "candidates": [
+                                    r"\parallel",
+                                    r"\mathrel{\underline{\parallel}}",
+                                    "=",
+                                ],
+                                "selected": r"\parallel",
+                                "observed_features": (
+                                    "two parallel oblique strokes and no separate lower bar"
+                                ),
+                                "context_id": "C001",
+                                "reference_context_ids": [],
+                            }
+                        ],
+                    },
+                }
+            ],
+        }
+
+        question = _normalize_final_questions(review, contexts)[0]
+
+        self.assertEqual(question["handwritten_answer"]["text"], r"$A_1C_1 \parallel AC$")
+        self.assertIn(
+            "applied_solution_edit_1_ocr_correction",
+            question["question_review"]["lint_actions"],
+        )
+        self.assertEqual(question["question_review"]["symbol_audit_target_count"], 1)
+        self.assertEqual(question["question_review"]["symbol_audit_observed_count"], 1)
+
+    def test_geometry_audit_ignores_model_edit_and_materializes_selected_candidate(self):
+        question_text = "18. 证明空间直线平行。"
+        draft_answer = r"$A_1C_1 // AC$"
+        profile = build_recognition_profile(question_text, "solution", draft_answer)
+        target = profile["symbol_audit"]["targets"][0]
+        contexts = [
+            {
+                "context_id": "C001",
+                "draft": {
+                    "qno": "18",
+                    "question_text": question_text,
+                    "student_answer": draft_answer,
+                    "answer_status": "ok",
+                    "question_type": "solution",
+                },
+                "recognition_profile": profile,
+                "visual_context": {"views": [{"kind": "answer_detail_01"}]},
+            }
+        ]
+        review = {
+            "schema_version": "api2_patch_v3",
+            "question_reviews": [
+                {
+                    "qno": "18",
+                    "source_context_ids": ["C001"],
+                    "answer": {
+                        "action": "edit_solution",
+                        "confidence": "high",
+                        "evidence": "claimed visible relation",
+                        "edits": [
+                            {
+                                "old": target["draft_fragment"],
+                                "new": r"$A_1C_1 = AC$",
+                                "kind": "ocr_correction",
+                                "confidence": "high",
+                                "context_id": "C001",
+                                "evidence": "claimed visible relation",
+                            }
+                        ],
+                        "symbol_observations": [
+                            {
+                                "audit_id": target["audit_id"],
+                                "tag": "GEOMETRY_MARK",
+                                "location": "between the two segments",
+                                "candidates": [r"\parallel", "="],
+                                "selected": r"\parallel",
+                                "observed_features": "two parallel oblique strokes",
+                                "context_id": "C001",
+                            }
+                        ],
+                    },
+                }
+            ],
+        }
+
+        question = _normalize_final_questions(review, contexts)[0]
+
+        self.assertEqual(
+            question["handwritten_answer"]["text"],
+            r"$A_1C_1 \parallel AC$",
+        )
+        self.assertIn(
+            "discarded_1_model_authored_symbol_edits",
+            question["question_review"]["lint_actions"],
+        )
+        self.assertIn(
+            "materialized_1_symbol_audit_edits",
+            question["question_review"]["lint_actions"],
+        )
+
+    def test_vector_angle_audit_normalizes_expanded_model_selection(self):
+        question_text = "18. 求两平面所成角。"
+        draft_answer = r"$\cos<\vec{n},\overrightarrow{AB}>$"
+        profile = build_recognition_profile(question_text, "solution", draft_answer)
+        target = profile["symbol_audit"]["targets"][0]
+        contexts = [
+            {
+                "context_id": "C001",
+                "draft": {
+                    "qno": "18",
+                    "question_text": question_text,
+                    "student_answer": draft_answer,
+                    "answer_status": "ok",
+                    "question_type": "solution",
+                },
+                "recognition_profile": profile,
+                "visual_context": {"views": [{"kind": "answer_detail_01"}]},
+            }
+        ]
+        review = {
+            "schema_version": "api2_patch_v3",
+            "question_reviews": [
+                {
+                    "qno": "18",
+                    "source_context_ids": ["C001"],
+                    "answer": {
+                        "action": "edit_solution",
+                        "confidence": "high",
+                        "evidence": "paired enclosing angle strokes are visible",
+                        "edits": [
+                            {
+                                "old": r"<\vec{n},\overrightarrow{AB}>",
+                                "new": r"\langle\vec{n},\overrightarrow{AB}\rangle",
+                                "kind": "ocr_correction",
+                                "confidence": "high",
+                                "context_id": "C001",
+                                "evidence": "paired enclosing angle strokes are visible",
+                            }
+                        ],
+                        "symbol_observations": [
+                            {
+                                "audit_id": target["audit_id"],
+                                "tag": "GEOMETRY_MARK",
+                                "location": "inside the cosine expression",
+                                "candidates": [
+                                    r"\langle\cdot,\cdot\rangle",
+                                    r"<\cdot,\cdot>",
+                                ],
+                                "selected": r"\langle\vec{n},\overrightarrow{AB}\rangle",
+                                "observed_features": "opening and closing angle strokes enclose both vectors",
+                                "context_id": "C001",
+                            }
+                        ],
+                    },
+                }
+            ],
+        }
+
+        question = _normalize_final_questions(review, contexts)[0]
+
+        self.assertEqual(
+            question["handwritten_answer"]["text"],
+            r"$\cos\langle\vec{n},\overrightarrow{AB}\rangle$",
+        )
+        self.assertEqual(
+            question["handwritten_answer"]["symbol_observations"][0]["selected"],
+            r"\langle\cdot,\cdot\rangle",
         )
 
     def test_solution_edit_cannot_insert_a_newline_inside_inline_math(self):

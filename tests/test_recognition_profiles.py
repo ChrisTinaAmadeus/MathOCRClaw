@@ -20,7 +20,7 @@ class RecognitionProfileTests(unittest.TestCase):
             ["A", "B", "C", "D"],
         )
         self.assertEqual(profile_tags(profile), {"CHOICE_LETTER"})
-        self.assertEqual(profile["version"], "symbol_profile_v2")
+        self.assertEqual(profile["version"], "symbol_profile_v3")
         self.assertEqual(profile["answer_grammar"]["choice_mode"], "single")
         self.assertEqual(profile["answer_grammar"]["max_selected"], 1)
         self.assertEqual(profile_symbols(profile, "CHOICE_LETTER"), {"A", "B", "C", "D"})
@@ -91,6 +91,43 @@ class RecognitionProfileTests(unittest.TestCase):
         )
         self.assertTrue(
             any("parallel and equal" in check for check in geometry["confusion_checks"])
+        )
+
+    def test_geometry_profile_builds_unique_visual_audits_for_api1_aliases(self):
+        draft = (
+            r"$A_1C_1 // AC$" "\n"
+            r"$MN \underline{\underline{//}} A_1C_1$" "\n"
+            r"$\cos\theta=|\cos<\vec{n},\overrightarrow{AB}>|$"
+        )
+        profile = build_recognition_profile(
+            "18. 空间几何证明，求平面夹角。",
+            "solution",
+            draft,
+        )
+
+        targets = profile["symbol_audit"]["targets"]
+
+        self.assertEqual([target["audit_id"] for target in targets], ["G001", "G002", "G003"])
+        self.assertEqual(
+            targets[1]["candidate_symbols"],
+            [r"\parallel", r"\mathrel{\underline{\parallel}}", "="],
+        )
+        self.assertEqual(targets[2]["kind"], "vector_angle_delimiters")
+        self.assertEqual(profile["recognition_risk"]["priority"], "medium")
+        self.assertNotIn("selected", str(targets))
+
+    def test_unreadable_solution_stem_routes_symbol_audits_from_draft_surface(self):
+        profile = build_recognition_profile(
+            "18. <插图>",
+            "solution",
+            r"$AB // CD$",
+        )
+
+        self.assertIn("GEOMETRY_MARK", profile_tags(profile))
+        self.assertEqual(len(profile["symbol_audit"]["targets"]), 1)
+        self.assertEqual(
+            profile["symbol_audit"]["targets"][0]["suspect_surface"],
+            "//",
         )
 
 

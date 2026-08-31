@@ -135,6 +135,7 @@ Return valid JSON only, without a Markdown fence, using this exact schema:
         "edits": [],
         "symbol_observations": [
           {
+            "audit_id": "required symbol_audit target ID when resolving a listed target, otherwise empty",
             "tag": "one tag from recognition_profile.symbol_families",
             "location": "precise location of the handwritten mark",
             "candidates": ["two or more visually confusable candidates"],
@@ -161,12 +162,17 @@ Patch protocol:
 
 Question-conditioned symbol protocol:
 - Each local context has a deterministic recognition_profile. Its tags contain candidate alphabets and contrastive stroke checks for the question type/topic. They are inspection checklists, never evidence and never an answer key.
+- Before deciding keep, inspect every recognition_profile.symbol_audit.targets record. These are mandatory visual questions generated only from suspicious API1 surface notation; none identifies the correct candidate. Do not claim that the draft is accurate while leaving a clearly visible target unaudited.
+- To resolve a symbol audit target, copy its unique draft_fragment byte-for-byte into edit.old, replace only suspect_surface using exactly one listed candidate_replacements value, and attach a symbol_observations record with the same audit_id. Describe stroke count, orientation, attachment, and any independent underline or arrowhead actually visible.
+- same_writer_peer_audit_ids are an unlabeled personal glyph atlas from the same answer region. Compare slant, stroke count, spacing, and underline placement across those marks, but inspect every mark independently and never assume peers share a label because the proof would be correct.
+- A geometry relation written by API1 as `//` is not canonical output. If the image clearly shows two parallel strokes, patch it to `\\parallel`; if a separate underline is also clearly visible, patch it to `\\mathrel{\\underline{\\parallel}}`. Never infer the underline from equality in the proof.
+- For a vector-angle audit, distinguish a paired opening/closing delimiter from one-sided inequalities using the visible enclosure. Use the listed canonical replacement rather than raw `<...>` when the pair is visibly an angle delimiter.
 - For a blurry mark, first locate the final retained handwriting, then compare only the relevant candidates, then inspect the listed discriminating strokes in the color context and the answer_ink companion when supplied.
 - Never select a symbol because it makes the mathematics or science correct. The printed stem may narrow the symbol alphabet but cannot determine what the student wrote.
 - replace_choice and replace_fill require at least one symbol_observations record. Every observation must cite a supplied context, use a tag present in that context's recognition_profile, list competing candidates, and state a concrete visible stroke feature. If this cannot be done, use keep.
 - The payload groups contexts that share a symbol tag. For repeated closed-alphabet marks, you may compare an ambiguous glyph with independently clear same-page handwriting and cite those context IDs as reference_context_ids. Treat API1 readings as unverified: similarity of writer style is supporting evidence, but presumed mathematical correctness or repeated API1 labels are not.
-- When API1 already has a supported answer that satisfies the printed answer grammar, any symbol-level change requires at least one independently clear same-page glyph in reference_context_ids. The only exceptions are an unsupported API1 answer or an API1 answer that already violates the printed grammar/cardinality. Without independent reference evidence, use keep.
-- For answer.action=keep, symbol_observations should normally be empty. Observations are an audit trail for changes, not hidden chain-of-thought.
+- When API1 already has a supported answer that satisfies the printed answer grammar, a choice/fill change or an unlisted symbol change requires at least one independently clear same-page glyph in reference_context_ids. A solution symbol_audit target is the narrow exception: its own visible stroke structure is sufficient only when audit_id, exact draft_fragment, selected candidate, and candidate replacement all agree. Unsupported API1 answers and printed grammar/cardinality violations remain the other exceptions. Without one of these evidence paths, use keep.
+- For answer.action=keep, symbol_observations should normally be empty. If mandatory audit targets remain genuinely unresolved, list their IDs briefly in page_notes instead of asserting that all symbols are accurate. Observations are an audit trail for changes, not hidden chain-of-thought.
 
 Content contract:
 - Determine the type from printed structure, not algebraic letters inside formulas and not detector labels. Printed A.--D. options mean choice; a printed answer blank means fill; proof/derivation/open response means solution.
@@ -583,6 +589,37 @@ def _same_page_symbol_groups(contexts: Sequence[Dict[str, Any]]) -> List[Dict[st
     ]
 
 
+def _required_symbol_audits(
+    contexts: Sequence[Dict[str, Any]],
+) -> List[Dict[str, Any]]:
+    audits: List[Dict[str, Any]] = []
+    for context in contexts:
+        context_id = str(context.get("context_id") or "")
+        profile = context.get("recognition_profile") or {}
+        symbol_audit = profile.get("symbol_audit") if isinstance(profile, dict) else {}
+        for target in (
+            symbol_audit.get("targets")
+            if isinstance(symbol_audit, dict)
+            and isinstance(symbol_audit.get("targets"), list)
+            else []
+        ):
+            if not isinstance(target, dict):
+                continue
+            audits.append({"context_id": context_id, **target})
+    grouped_ids: Dict[tuple[str, str], List[str]] = {}
+    for audit in audits:
+        key = (str(audit.get("context_id") or ""), str(audit.get("tag") or ""))
+        grouped_ids.setdefault(key, []).append(str(audit.get("audit_id") or ""))
+    for audit in audits:
+        key = (str(audit.get("context_id") or ""), str(audit.get("tag") or ""))
+        audit["same_writer_peer_audit_ids"] = [
+            audit_id
+            for audit_id in grouped_ids.get(key, [])
+            if audit_id and audit_id != str(audit.get("audit_id") or "")
+        ]
+    return audits
+
+
 def _selected_review_views(
     context: Dict[str, Any],
     detail_views: int,
@@ -598,12 +635,17 @@ def _selected_review_views(
     question_type = str(
         ((context.get("recognition_profile") or {}).get("question_type") or "solution")
     )
+    has_symbol_audits = bool(
+        (((context.get("recognition_profile") or {}).get("symbol_audit") or {}).get("targets"))
+    )
     detail_candidates = (
         ink_details + tiled_details
         if question_type in {"choice", "fill"}
         else tiled_details + ink_details
     )
     details = detail_candidates[: max(0, detail_views)]
+    if has_symbol_audits and detail_views > 0 and ink_details:
+        details = details + [view for view in ink_details if view not in details]
     selected = primary + details
     selected_ids = {id(view) for view in selected}
     for view in views:
@@ -625,6 +667,7 @@ def _invoke_final_review(
     review_payload = {
         "draft_contract": "Each local_question_contexts[].draft field is the authoritative API1 text to patch.",
         "first_pass_page_notes": baseline.get("page_notes") or "",
+        "required_symbol_audits": _required_symbol_audits(contexts),
         "same_page_symbol_groups": _same_page_symbol_groups(contexts),
         "local_question_contexts": _review_context_digest(contexts),
     }
@@ -747,6 +790,17 @@ def _normalize_symbol_observations(
         return observations, ["rejected_symbol_observations_not_list"]
 
     allowed_tags = profile_tags(profile)
+    raw_audit = profile.get("symbol_audit") if isinstance(profile, dict) else {}
+    audit_targets = {
+        str(target.get("audit_id") or ""): target
+        for target in (
+            raw_audit.get("targets")
+            if isinstance(raw_audit, dict)
+            and isinstance(raw_audit.get("targets"), list)
+            else []
+        )
+        if isinstance(target, dict) and target.get("audit_id")
+    }
     allowed_contexts = {str(item) for item in valid_context_ids if str(item)}
     available_contexts = {
         str(item) for item in available_context_ids if str(item)
@@ -757,6 +811,7 @@ def _normalize_symbol_observations(
             actions.append(f"rejected_{tag}_not_object")
             continue
         family = str(raw.get("tag") or "").strip()
+        audit_id = str(raw.get("audit_id") or "").strip()
         location = str(raw.get("location") or "").strip()
         selected = str(raw.get("selected") or "").strip()
         features = str(raw.get("observed_features") or "").strip()
@@ -779,11 +834,28 @@ def _normalize_symbol_observations(
         if family not in allowed_tags:
             actions.append(f"rejected_{tag}_unknown_profile_tag")
             continue
+        audit_target = audit_targets.get(audit_id) if audit_id else None
+        if audit_id and not audit_target:
+            actions.append(f"rejected_{tag}_unknown_audit_id")
+            continue
+        if audit_target and str(audit_target.get("tag") or "") != family:
+            actions.append(f"rejected_{tag}_audit_tag_mismatch")
+            continue
+        canonical_selected = _canonical_profile_symbol(selected)
+        if audit_target:
+            for option in audit_target.get("candidate_replacements") or []:
+                if not isinstance(option, dict):
+                    continue
+                if canonical_selected == _canonical_profile_symbol(
+                    option.get("replacement")
+                ):
+                    selected = str(option.get("symbol") or "").strip()
+                    canonical_selected = _canonical_profile_symbol(selected)
+                    break
         allowed_symbols = {
             _canonical_profile_symbol(symbol)
             for symbol in profile_symbols(profile, family)
         }
-        canonical_selected = _canonical_profile_symbol(selected)
         canonical_candidates = {
             _canonical_profile_symbol(candidate) for candidate in candidates
         }
@@ -794,17 +866,33 @@ def _normalize_symbol_observations(
         ):
             actions.append(f"rejected_{tag}_outside_profile_symbols")
             continue
+        if audit_target:
+            audit_symbols = {
+                _canonical_profile_symbol(symbol)
+                for symbol in audit_target.get("candidate_symbols") or []
+            }
+            if (
+                canonical_selected not in audit_symbols
+                or not canonical_candidates.issubset(audit_symbols)
+            ):
+                actions.append(f"rejected_{tag}_outside_audit_candidates")
+                continue
         if context_id not in allowed_contexts:
             actions.append(f"rejected_{tag}_invalid_context")
             continue
         if not location or not features:
             actions.append(f"rejected_{tag}_missing_visual_detail")
             continue
-        if not selected or len(candidates) < 2 or selected not in candidates:
+        if (
+            not selected
+            or len(candidates) < 2
+            or canonical_selected not in canonical_candidates
+        ):
             actions.append(f"rejected_{tag}_invalid_contrastive_candidates")
             continue
         observations.append(
             {
+                "audit_id": audit_id,
                 "tag": family,
                 "location": location,
                 "candidates": candidates,
@@ -840,6 +928,150 @@ def _canonical_profile_symbol(value: Any) -> str:
 def _visual_symbol_in_answer(symbol: Any, answer: Any) -> bool:
     selected = _canonical_profile_symbol(symbol)
     return bool(selected) and selected in _canonical_profile_symbol(answer)
+
+
+def _symbol_audit_targets(profile: Dict[str, Any]) -> Dict[str, Dict[str, Any]]:
+    raw_audit = profile.get("symbol_audit") if isinstance(profile, dict) else {}
+    targets = (
+        raw_audit.get("targets")
+        if isinstance(raw_audit, dict) and isinstance(raw_audit.get("targets"), list)
+        else []
+    )
+    return {
+        str(target.get("audit_id") or ""): target
+        for target in targets
+        if isinstance(target, dict) and target.get("audit_id")
+    }
+
+
+def _materialize_symbol_audit_edits(
+    observations: Sequence[Dict[str, Any]],
+    profile: Dict[str, Any],
+) -> List[Dict[str, Any]]:
+    """Turn validated visual choices into deterministic exact notation patches."""
+    targets = _symbol_audit_targets(profile)
+    edits: List[Dict[str, Any]] = []
+    seen_audits: set[str] = set()
+    for observation in observations:
+        audit_id = str(observation.get("audit_id") or "")
+        if not audit_id or audit_id in seen_audits or audit_id not in targets:
+            continue
+        target = targets[audit_id]
+        selected = _canonical_profile_symbol(observation.get("selected"))
+        replacement = next(
+            (
+                str(option.get("replacement") or "")
+                for option in target.get("candidate_replacements") or []
+                if isinstance(option, dict)
+                and _canonical_profile_symbol(option.get("symbol")) == selected
+            ),
+            "",
+        )
+        old = str(target.get("draft_fragment") or "")
+        surface = str(target.get("suspect_surface") or "")
+        if (
+            not old
+            or not surface
+            or old.count(surface) != 1
+            or not replacement
+            or replacement == surface
+        ):
+            continue
+        edits.append(
+            {
+                "old": old,
+                "new": old.replace(surface, replacement, 1),
+                "kind": "ocr_correction",
+                "confidence": "high",
+                "context_id": str(observation.get("context_id") or ""),
+                "evidence": (
+                    f"symbol_audit {audit_id}: "
+                    f"{str(observation.get('observed_features') or '').strip()}"
+                ),
+            }
+        )
+        seen_audits.add(audit_id)
+    return edits
+
+
+def _solution_edits_touch_symbol_audits(
+    edits: Any,
+    profile: Dict[str, Any],
+) -> bool:
+    if not isinstance(edits, list):
+        return False
+    targets = list(_symbol_audit_targets(profile).values())
+    for edit in edits:
+        if not isinstance(edit, dict):
+            continue
+        old = str(edit.get("old") or "")
+        if any(
+            old == str(target.get("draft_fragment") or "")
+            or (
+                str(target.get("suspect_surface") or "")
+                and str(target.get("suspect_surface") or "") in old
+            )
+            for target in targets
+        ):
+            return True
+    return False
+
+
+def _solution_edits_covered_by_symbol_audits(
+    edits: Any,
+    observations: Sequence[Dict[str, Any]],
+    profile: Dict[str, Any],
+) -> bool:
+    """Allow only candidate-listed notation patches without a cross-question glyph.
+
+    This narrow exception never authorizes digit/value changes: every edit must use
+    a system-generated unique draft anchor and must equal exactly one candidate
+    replacement selected by a validated visual observation.
+    """
+    if not isinstance(edits, list) or not edits:
+        return False
+    targets = _symbol_audit_targets(profile)
+    observations_by_audit: Dict[str, List[Dict[str, Any]]] = {}
+    for observation in observations:
+        audit_id = str(observation.get("audit_id") or "")
+        if audit_id:
+            observations_by_audit.setdefault(audit_id, []).append(observation)
+
+    for edit in edits:
+        if not isinstance(edit, dict):
+            return False
+        old = str(edit.get("old") or "")
+        new = str(edit.get("new") or "")
+        context_id = str(edit.get("context_id") or "")
+        covered = False
+        for audit_id, target in targets.items():
+            if old != str(target.get("draft_fragment") or ""):
+                continue
+            surface = str(target.get("suspect_surface") or "")
+            if not surface or old.count(surface) != 1:
+                continue
+            options = {
+                _canonical_profile_symbol(option.get("symbol")): str(
+                    option.get("replacement") or ""
+                )
+                for option in target.get("candidate_replacements") or []
+                if isinstance(option, dict) and option.get("symbol")
+            }
+            for observation in observations_by_audit.get(audit_id, []):
+                if str(observation.get("context_id") or "") != context_id:
+                    continue
+                selected = _canonical_profile_symbol(observation.get("selected"))
+                replacement = options.get(selected, "")
+                if not replacement or replacement == surface:
+                    continue
+                if new == old.replace(surface, replacement, 1):
+                    covered = True
+                    break
+            if covered:
+                break
+        if not covered:
+            return False
+    return True
 
 
 def _apply_exact_edits(
@@ -1376,6 +1608,43 @@ def _normalize_patch_questions(
             available_context_ids=visual_context_ids,
         )
         actions.extend(symbol_actions)
+        raw_solution_edits = (
+            answer_patch.get("edits")
+            if isinstance(answer_patch.get("edits"), list)
+            else []
+        )
+        materialized_audit_edits = _materialize_symbol_audit_edits(
+            symbol_observations,
+            profile,
+        )
+        non_audit_solution_edits = [
+            edit
+            for edit in raw_solution_edits
+            if not _solution_edits_touch_symbol_audits([edit], profile)
+        ]
+        discarded_model_audit_edits = len(raw_solution_edits) - len(
+            non_audit_solution_edits
+        )
+        effective_solution_edits = (
+            materialized_audit_edits + non_audit_solution_edits
+        )
+        if discarded_model_audit_edits:
+            actions.append(
+                f"discarded_{discarded_model_audit_edits}_model_authored_symbol_edits"
+            )
+        if materialized_audit_edits:
+            actions.append(
+                f"materialized_{len(materialized_audit_edits)}_symbol_audit_edits"
+            )
+        solution_edits_touch_audits = _solution_edits_touch_symbol_audits(
+            effective_solution_edits,
+            profile,
+        )
+        solution_edits_audit_covered = _solution_edits_covered_by_symbol_audits(
+            effective_solution_edits,
+            symbol_observations,
+            profile,
+        )
         answer: Dict[str, Any] = {
             "text": draft_answer,
             "status": str(draft.get("answer_status") or "").strip(),
@@ -1474,12 +1743,18 @@ def _normalize_patch_questions(
         elif answer_action == "edit_solution":
             if question_type != "solution":
                 actions.append("rejected_solution_edit_type_mismatch")
+            elif solution_edits_touch_audits and not solution_edits_audit_covered:
+                actions.append(
+                    "rejected_solution_symbol_edit_without_exact_audit_coverage"
+                )
             elif (
                 strict_symbol_protocol
                 and symbol_protocol_requested
                 and (
                     not symbol_observations
                     or (
+                        not solution_edits_audit_covered
+                        and
                         not draft_requires_repair
                         and not _has_independent_symbol_reference(symbol_observations)
                     )
@@ -1491,7 +1766,7 @@ def _normalize_patch_questions(
             else:
                 patched_answer, edit_actions = _apply_exact_edits(
                     draft_answer,
-                    answer_patch.get("edits"),
+                    effective_solution_edits,
                     valid_context_ids=cited_context_ids,
                     field_name="solution",
                 )
@@ -1511,6 +1786,17 @@ def _normalize_patch_questions(
                 actions.append("accepted_no_answer_confirmation")
         elif answer_action != "keep":
             actions.append("rejected_invalid_answer_action")
+
+        audit_target_count = len(_symbol_audit_targets(profile))
+        resolved_audit_ids = {
+            str(observation.get("audit_id") or "")
+            for observation in symbol_observations
+            if observation.get("audit_id")
+        }
+        if answer_action == "keep" and audit_target_count:
+            actions.append(
+                f"kept_with_{audit_target_count}_unresolved_symbol_audit_targets"
+            )
 
         if answer_patch_applied:
             text, parts, status, answer_actions = _canonicalize_answer(
@@ -1541,6 +1827,8 @@ def _normalize_patch_questions(
                     "recognition_profile_version": str(
                         profile.get("version") or ""
                     ),
+                    "symbol_audit_target_count": audit_target_count,
+                    "symbol_audit_observed_count": len(resolved_audit_ids),
                     "lint_actions": actions,
                 },
                 "handwritten_answer": {

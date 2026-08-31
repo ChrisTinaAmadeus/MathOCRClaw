@@ -7,6 +7,7 @@ from typing import Any, Dict, List, Sequence
 _NO_ANSWER_RE = re.compile(r"未识别到手写答案|无法识别|unreadable", re.I)
 _OPTION_RE = re.compile(r"(?m)^\s*([A-D])[.．、:：]\s*")
 _SUBPART_RE = re.compile(r"(?:\(|（)(\d+)(?:\)|）)")
+_MATH_SPAN_RE = re.compile(r"\$(?:\\.|[^$])*\$")
 
 
 _SYMBOL_FAMILIES: Dict[str, Dict[str, Any]] = {
@@ -59,15 +60,19 @@ _SYMBOL_FAMILIES: Dict[str, Dict[str, Any]] = {
         "symbols": [
             "\\parallel",
             "\\mathrel{\\underline{\\parallel}}",
+            "=",
             "\\perp",
             "\\angle",
             "\\triangle",
             "\\overrightarrow{}",
+            "\\langle\\cdot,\\cdot\\rangle",
+            "<\\cdot,\\cdot>",
         ],
         "confusion_checks": [
             "\\parallel vs = and \\perp vs T: inspect orientation and whether the strokes belong to a labeled relation",
             "\\mathrel{\\underline{\\parallel}} means parallel and equal: require two parallel strokes plus a separate visible underline; do not collapse it to plain \\parallel or =",
             "A vector arrow requires a visible arrowhead; do not infer it from the printed stem",
+            "Vector-angle delimiters require a visible opening and closing angle pair around two vector glyphs; do not confuse them with a one-sided inequality",
         ],
     },
     "GREEK_LATIN": {
@@ -160,6 +165,7 @@ def _family_names(question_text: str, question_type: str) -> List[str]:
         _append_unique(names, ["SCRIPT_POSITION"])
     if re.search(
         r"几何|三角形|四边形|棱|平面|直线|向量|法向量|垂直|平行|"
+        r"//|\\underline\{(?:\\underline\{)?(?://|\\parallel)|"
         r"\\(?:triangle|angle|perp|parallel|vec|overrightarrow)",
         text,
     ):
@@ -214,6 +220,100 @@ def _risk(
     return {"priority": priority, "reasons": reasons}
 
 
+def _geometry_symbol_audit_targets(draft_answer: str) -> List[Dict[str, Any]]:
+    """Locate noncanonical geometry notation without deciding what was written.
+
+    Each target uses a unique API1 math span as its atomic patch anchor.  Candidate
+    replacements are notation alternatives only; API2 must still select one from
+    visible strokes in the supplied handwriting views.
+    """
+    answer = str(draft_answer or "")
+    targets: List[Dict[str, Any]] = []
+
+    relation_options = [
+        {"symbol": r"\parallel", "replacement": r"\parallel"},
+        {
+            "symbol": r"\mathrel{\underline{\parallel}}",
+            "replacement": r"\mathrel{\underline{\parallel}}",
+        },
+        {"symbol": "=", "replacement": "="},
+    ]
+    relation_aliases = (
+        r"\underline{\underline{//}}",
+        r"\underline{//}",
+        r"\underline{\parallel}",
+        "//",
+    )
+
+    for match in _MATH_SPAN_RE.finditer(answer):
+        fragment = match.group(0)
+        if answer.count(fragment) != 1:
+            continue
+
+        remaining = fragment
+        relation_hits: List[str] = []
+        for alias in relation_aliases:
+            count = remaining.count(alias)
+            if count:
+                relation_hits.extend([alias] * count)
+                remaining = remaining.replace(alias, "")
+        if len(relation_hits) == 1:
+            surface = relation_hits[0]
+            targets.append(
+                {
+                    "audit_id": f"G{len(targets) + 1:03d}",
+                    "tag": "GEOMETRY_MARK",
+                    "kind": "geometry_relation_alias",
+                    "draft_fragment": fragment,
+                    "suspect_surface": surface,
+                    "candidate_symbols": [
+                        option["symbol"] for option in relation_options
+                    ],
+                    "candidate_replacements": relation_options,
+                    "visual_check": (
+                        "Count the relation strokes and inspect orientation. Select "
+                        "parallel-and-equal only when an independent underline is "
+                        "visibly present below the two parallel strokes."
+                    ),
+                }
+            )
+
+        angle_match = re.search(
+            r"<\s*(?:\\vec|\\overrightarrow)[^<>$]*,\s*"
+            r"(?:\\vec|\\overrightarrow)[^<>$]*>",
+            fragment,
+        )
+        if angle_match:
+            surface = angle_match.group(0)
+            inner = surface[1:-1]
+            angle_options = [
+                {
+                    "symbol": r"\langle\cdot,\cdot\rangle",
+                    "replacement": rf"\langle{inner}\rangle",
+                },
+                {"symbol": r"<\cdot,\cdot>", "replacement": surface},
+            ]
+            targets.append(
+                {
+                    "audit_id": f"G{len(targets) + 1:03d}",
+                    "tag": "GEOMETRY_MARK",
+                    "kind": "vector_angle_delimiters",
+                    "draft_fragment": fragment,
+                    "suspect_surface": surface,
+                    "candidate_symbols": [
+                        option["symbol"] for option in angle_options
+                    ],
+                    "candidate_replacements": angle_options,
+                    "visual_check": (
+                        "Inspect the two enclosing angle strokes around the vector "
+                        "pair. Treat them as a paired delimiter only when both sides "
+                        "are visibly retained."
+                    ),
+                }
+            )
+    return targets
+
+
 def build_recognition_profile(
     question_text: str,
     question_type: Any,
@@ -242,11 +342,23 @@ def build_recognition_profile(
     if canonical_type == "choice" and not options:
         options = ["A", "B", "C", "D"]
     subparts = list(dict.fromkeys(_SUBPART_RE.findall(str(question_text or ""))))
-    family_names = _family_names(str(question_text or ""), canonical_type)
+    family_routing_text = str(question_text or "")
+    if canonical_type == "solution":
+        # A proof page can have no visible printed stem (for example, only a
+        # diagram marker).  API1's answer is unverified, but its surface tokens
+        # are still safe routing evidence for which candidate families to audit.
+        # They never select a candidate or supply mathematical correctness.
+        family_routing_text += "\n" + str(draft_answer or "")
+    family_names = _family_names(family_routing_text, canonical_type)
     families = [
         {"tag": name, **_SYMBOL_FAMILIES[name]}
         for name in family_names
     ]
+    audit_targets = (
+        _geometry_symbol_audit_targets(draft_answer)
+        if "GEOMETRY_MARK" in family_names
+        else []
+    )
 
     if canonical_type == "choice":
         grammar = {
@@ -274,13 +386,28 @@ def build_recognition_profile(
             "rule": "preserve visible retained steps; tags guide only local glyph checks",
         }
 
+    recognition_risk = _risk(canonical_type, draft_answer, canonical_mode)
+    if audit_targets:
+        recognition_risk["reasons"].append("noncanonical_symbol_audit_targets")
+        if recognition_risk["priority"] == "low":
+            recognition_risk["priority"] = "medium"
+
     return {
-        "version": "symbol_profile_v2",
+        "version": "symbol_profile_v3",
         "question_type": canonical_type,
         "choice_mode": canonical_mode,
         "answer_grammar": grammar,
         "symbol_families": families,
-        "recognition_risk": _risk(canonical_type, draft_answer, canonical_mode),
+        "symbol_audit": {
+            "mode": "required_visual_resolution_when_targets_exist",
+            "targets": audit_targets,
+            "rule": (
+                "Inspect every target against the supplied handwriting. A patch is "
+                "allowed only through its exact unique draft_fragment and a listed "
+                "candidate replacement. Targets contain no selected answer."
+            ),
+        },
+        "recognition_risk": recognition_risk,
         "usage_rule": (
             "Candidate families are an inspection checklist, never evidence or an answer key. "
             "Select a candidate only when the cited image shows its discriminating stroke."
