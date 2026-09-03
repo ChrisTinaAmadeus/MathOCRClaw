@@ -12,6 +12,7 @@ from agent.workflow import (
     WorkflowPaths,
     _build_question_context_manifest,
     _draft_questions_from_markdown,
+    _figure_audit_targets,
     _normalize_final_questions,
     _page_work_root,
     _render_result_markdown,
@@ -67,6 +68,47 @@ class WorkflowOutputTests(unittest.TestCase):
         self.assertEqual(
             [view["kind"] for view in selected],
             ["context", "answer_detail_01", "answer_ink"],
+        )
+
+    def test_figure_audit_sends_stem_and_detector_crops_without_detail_budget(self):
+        context = {
+            "context_id": "C001",
+            "draft": {"question_text": "1. 如图\n<插图>"},
+            "recognition_profile": {"question_type": "solution"},
+            "visual_context": {
+                "views": [
+                    {"kind": "context", "path": "context.png"},
+                    {"kind": "stem", "path": "stem.png"},
+                    {
+                        "kind": "figure_candidate_01",
+                        "path": "figure.png",
+                    },
+                    {"kind": "answer_detail_01", "path": "detail.png"},
+                ]
+            },
+        }
+
+        selected = _selected_review_views(context, 0)
+
+        self.assertEqual(
+            [view["kind"] for view in selected],
+            ["context", "stem", "figure_candidate_01"],
+        )
+
+    def test_figure_audit_targets_are_stable_per_existing_marker(self):
+        context = {
+            "context_id": "C007",
+            "draft": {"question_text": "7. 如图\n<插图>\n再观察下图\n<插图>"},
+        }
+
+        targets = _figure_audit_targets(context)
+
+        self.assertEqual(
+            [target["audit_id"] for target in targets],
+            ["FIG-C007-01", "FIG-C007-02"],
+        )
+        self.assertTrue(
+            all(target["default_disposition"] == "preserve" for target in targets)
         )
 
     def test_same_page_symbol_groups_are_unlabelled_writer_style_routes(self):
@@ -1472,10 +1514,13 @@ class WorkflowOutputTests(unittest.TestCase):
                     "answer_status": "ok",
                     "question_type": "solution",
                 },
+                "visual_context": {
+                    "views": [{"kind": "context", "path": "context.png"}]
+                },
             }
         ]
         review = {
-            "schema_version": "api2_patch_v2",
+            "schema_version": "api2_patch_v4",
             "question_reviews": [
                 {
                     "qno": "18",
@@ -1483,6 +1528,24 @@ class WorkflowOutputTests(unittest.TestCase):
                     "question_type": "solution",
                     "stem": {
                         "action": "edit",
+                        "figure_observations": [
+                            {
+                                "audit_id": "FIG-C001-01",
+                                "source_type": "scratch_sketch",
+                                "content_role": "discarded_work",
+                                "confidence": "high",
+                                "context_id": "C001",
+                                "printed_anchors": [],
+                                "handwriting_features": [
+                                    "blue freehand axes and handwritten labels"
+                                ],
+                                "visible_cancellation": True,
+                                "transcribed_content": "",
+                                "observed_features": (
+                                    "the blue sketch is visibly crossed out beside the solution"
+                                ),
+                            }
+                        ],
                         "edits": [
                             {
                                 "old": "<插图>",
@@ -1512,6 +1575,231 @@ class WorkflowOutputTests(unittest.TestCase):
         )
         self.assertIn(
             "rejected_stem_image_removal_p0",
+            question["question_review"]["lint_actions"],
+        )
+        self.assertEqual(
+            question["question_review"]["figure_observations"][0]["source_type"],
+            "scratch_sketch",
+        )
+        self.assertEqual(
+            question["question_review"]["figure_observations"][0]["local_action"],
+            "preserve",
+        )
+        self.assertEqual(
+            question["question_review"]["figure_audit_observed_count"],
+            1,
+        )
+
+    def test_student_solution_diagram_is_distinct_from_discarded_scratch(self):
+        contexts = [
+            {
+                "context_id": "C028",
+                "draft": {
+                    "qno": "28",
+                    "question_text": "28. 解答如下\n<插图>",
+                    "student_answer": "作图并求解",
+                    "answer_status": "ok",
+                    "question_type": "solution",
+                },
+                "visual_context": {
+                    "views": [{"kind": "context", "path": "context.png"}]
+                },
+            }
+        ]
+        review = {
+            "schema_version": "api2_patch_v4",
+            "question_reviews": [
+                {
+                    "qno": "28",
+                    "source_context_ids": ["C028"],
+                    "stem": {
+                        "action": "keep",
+                        "edits": [],
+                        "figure_observations": [
+                            {
+                                "audit_id": "FIG-C028-01",
+                                "source_type": "student_diagram",
+                                "content_role": "retained_solution_diagram",
+                                "confidence": "high",
+                                "context_id": "C028",
+                                "printed_anchors": [],
+                                "handwriting_features": [
+                                    "blue freehand coordinate axes match the solution ink"
+                                ],
+                                "visible_cancellation": False,
+                                "transcribed_content": "",
+                                "observed_features": (
+                                    "the uncancelled diagram is integrated with the retained derivation"
+                                ),
+                            }
+                        ],
+                    },
+                    "answer": {"action": "keep", "edits": []},
+                }
+            ],
+        }
+
+        question = _normalize_final_questions(review, contexts)[0]
+        observation = question["question_review"]["figure_observations"][0]
+
+        self.assertIn("<插图>", question["question_markdown"])
+        self.assertEqual(observation["source_type"], "student_diagram")
+        self.assertEqual(observation["content_role"], "retained_solution_diagram")
+        self.assertTrue(observation["model_observation_valid"])
+        self.assertEqual(observation["local_action"], "preserve")
+
+    def test_missing_figure_audit_falls_back_to_uncertain_and_preserves(self):
+        contexts = [
+            {
+                "context_id": "C008",
+                "draft": {
+                    "qno": "8",
+                    "question_text": "8. 如图\n<插图>",
+                    "student_answer": "",
+                    "answer_status": "no_answer",
+                    "question_type": "solution",
+                },
+            }
+        ]
+        review = {
+            "schema_version": "api2_patch_v4",
+            "question_reviews": [
+                {
+                    "qno": "8",
+                    "source_context_ids": ["C008"],
+                    "stem": {"action": "keep", "edits": []},
+                    "answer": {"action": "keep", "edits": []},
+                }
+            ],
+        }
+
+        question = _normalize_final_questions(review, contexts)[0]
+        observation = question["question_review"]["figure_observations"][0]
+
+        self.assertIn("<插图>", question["question_markdown"])
+        self.assertEqual(observation["source_type"], "uncertain")
+        self.assertFalse(observation["model_observation_valid"])
+        self.assertIn(
+            "preserved_missing_figure_observation_FIG-C008-01",
+            question["question_review"]["lint_actions"],
+        )
+
+    def test_contradictory_printed_figure_audit_falls_back_to_uncertain(self):
+        contexts = [
+            {
+                "context_id": "C016",
+                "draft": {
+                    "qno": "16",
+                    "question_text": "16. 观察表格\n<插图>",
+                    "student_answer": "",
+                    "answer_status": "no_answer",
+                    "question_type": "solution",
+                },
+                "visual_context": {
+                    "views": [{"kind": "context", "path": "context.png"}]
+                },
+            }
+        ]
+        review = {
+            "schema_version": "api2_patch_v4",
+            "question_reviews": [
+                {
+                    "qno": "16",
+                    "source_context_ids": ["C016"],
+                    "stem": {
+                        "action": "keep",
+                        "edits": [],
+                        "figure_observations": [
+                            {
+                                "audit_id": "FIG-C016-01",
+                                "source_type": "printed_figure",
+                                "content_role": "printed_question_figure",
+                                "confidence": "high",
+                                "context_id": "C016",
+                                "printed_anchors": ["uniform printed table grid"],
+                                "handwriting_features": [
+                                    "blue handwritten values inside cells"
+                                ],
+                                "visible_cancellation": False,
+                                "transcribed_content": "",
+                                "observed_features": (
+                                    "the printed table contains blue handwritten values"
+                                ),
+                            }
+                        ],
+                    },
+                    "answer": {"action": "keep", "edits": []},
+                }
+            ],
+        }
+
+        question = _normalize_final_questions(review, contexts)[0]
+        observation = question["question_review"]["figure_observations"][0]
+
+        self.assertIn("<插图>", question["question_markdown"])
+        self.assertEqual(observation["source_type"], "uncertain")
+        self.assertFalse(observation["model_observation_valid"])
+        self.assertIn(
+            "rejected_figure_observation_printed_with_handwriting_FIG-C016-01",
+            question["question_review"]["lint_actions"],
+        )
+
+    def test_uncancelled_scratch_label_falls_back_to_uncertain(self):
+        contexts = [
+            {
+                "context_id": "C015",
+                "draft": {
+                    "qno": "15",
+                    "question_text": "15. 解题图\n<插图>",
+                    "student_answer": "列式求解",
+                    "answer_status": "ok",
+                    "question_type": "solution",
+                },
+                "visual_context": {
+                    "views": [{"kind": "context", "path": "context.png"}]
+                },
+            }
+        ]
+        review = {
+            "schema_version": "api2_patch_v4",
+            "question_reviews": [
+                {
+                    "qno": "15",
+                    "source_context_ids": ["C015"],
+                    "stem": {
+                        "action": "keep",
+                        "edits": [],
+                        "figure_observations": [
+                            {
+                                "audit_id": "FIG-C015-01",
+                                "source_type": "scratch_sketch",
+                                "content_role": "discarded_work",
+                                "confidence": "high",
+                                "context_id": "C015",
+                                "printed_anchors": [],
+                                "handwriting_features": [
+                                    "blue freehand triangle and handwritten labels"
+                                ],
+                                "visible_cancellation": False,
+                                "transcribed_content": "",
+                                "observed_features": (
+                                    "an uncancelled freehand triangle appears beside the derivation"
+                                ),
+                            }
+                        ],
+                    },
+                    "answer": {"action": "keep", "edits": []},
+                }
+            ],
+        }
+
+        question = _normalize_final_questions(review, contexts)[0]
+        observation = question["question_review"]["figure_observations"][0]
+
+        self.assertIn("<插图>", question["question_markdown"])
+        self.assertEqual(observation["source_type"], "uncertain")
+        self.assertIn(
+            "rejected_figure_observation_scratch_without_cancellation_FIG-C015-01",
             question["question_review"]["lint_actions"],
         )
 
@@ -1599,7 +1887,7 @@ class WorkflowOutputTests(unittest.TestCase):
             final_questions,
         )
 
-        self.assertEqual(manifest["schema_version"], 4)
+        self.assertEqual(manifest["schema_version"], 5)
         self.assertEqual(manifest["api_strategy"]["call_1"], "whole-page draft OCR")
         self.assertTrue(manifest["contexts"][0]["consumed_by_second_api"])
         self.assertEqual(manifest["contexts"][0]["final_records"][0]["qno"], 16)
@@ -1736,7 +2024,8 @@ class WorkflowOutputTests(unittest.TestCase):
             if message.get("type") == "text"
         )
         self.assertIn("authoritative API1 draft", second_text)
-        self.assertIn("api2_patch_v3", second_text)
+        self.assertIn("api2_patch_v4", second_text)
+        self.assertIn("required_figure_audits", second_text)
         self.assertIn("recognition_profile", second_text)
         self.assertIn("C001 / context", second_text)
 

@@ -33,7 +33,7 @@ from proofread.img_utils import (
     safe_open_image,
     scan_document_for_ocr,
 )
-from proofread.match_utils import load_match_questions
+from proofread.match_utils import find_figure_candidates, load_match_questions
 from proofread.vlm_client import VLMClient
 
 
@@ -105,7 +105,7 @@ You receive one authoritative API1 draft split into question fields, a normalize
 
 Return valid JSON only, without a Markdown fence, using this exact schema:
 {
-  "schema_version": "api2_patch_v3",
+  "schema_version": "api2_patch_v4",
   "page_notes": "brief unresolved page-level ambiguity, otherwise empty",
   "question_reviews": [
     {
@@ -123,6 +123,20 @@ Return valid JSON only, without a Markdown fence, using this exact schema:
             "confidence": "high|medium|low",
             "context_id": "C001|FULL_PAGE",
             "evidence": "specific visible evidence"
+          }
+        ],
+        "figure_observations": [
+          {
+            "audit_id": "required FIG-C001-01 target ID",
+            "source_type": "printed_figure|student_diagram|mixed_figure|scratch_sketch|not_a_figure|uncertain",
+            "content_role": "printed_question_figure|retained_solution_diagram|discarded_work|text_or_formula_placeholder|uncertain",
+            "confidence": "high|medium|low",
+            "context_id": "C001|FULL_PAGE",
+            "printed_anchors": ["visible typeset labels, regular dashes, grid, uniform line work, or printed caption"],
+            "handwriting_features": ["visible pen color, freehand line quality, or handwritten labels"],
+            "visible_cancellation": false,
+            "transcribed_content": "only for not_a_figure; otherwise empty",
+            "observed_features": "specific visual evidence for source and role"
           }
         ]
       },
@@ -160,6 +174,17 @@ Patch protocol:
 - Do not change punctuation, line breaks, LaTeX style, formula grouping, or wording merely for consistency. Preserve one handwritten logical step per line and preserve existing math-span boundaries.
 - A remove_cancelled edit is allowed only for text visibly crossed out, erased, overwritten, or struck through. Do not mention or restore cancelled content elsewhere.
 
+Figure ownership audit protocol:
+- Every record in required_figure_audits is mandatory. Return exactly one stem.figure_observations record with the same audit_id for every existing draft `<插图>` marker. If the image is inconclusive, classify it as uncertain; never omit the audit or guess.
+- Determine two independent properties: source_type says who produced the visible graphic, while content_role says whether it is retained exam/solution content. A student drawing is not automatically scratch work.
+- printed_figure requires a visible printed anchor such as typeset labels, regular dashed lines, a grid/table/circuit framework, a printed caption, or uniform thin line work matching the question. Record the anchors actually visible.
+- mixed_figure means a printed skeleton remains visible underneath handwriting or colored annotations. Handwritten overlays never turn a printed figure into scratch_sketch.
+- student_diagram + retained_solution_diagram is an uncancelled construction, coordinate sketch, graph, or schematic used as part of the student's retained reasoning. Preserve it even though it is handwritten.
+- scratch_sketch + discarded_work requires visible crossing-out, erasure, or overwriting and visible_cancellation=true. Mere isolation, freehand line quality, small size, or placement in the answer area is insufficient; use uncertain instead.
+- not_a_figure is only for an API1 marker covering directly visible printed text or a formula. Put the complete visible transcription in transcribed_content. Do not use this class for a blurry or partly covered figure.
+- Use uncertain whenever source or role cannot be proved. Color context is authoritative for ink ownership; grayscale answer_ink is only a stroke-visibility companion. Detector crops and routing metadata are never evidence by themselves.
+- This audit is separate from text patching. In figure_audit_v1 every existing marker is locally preserved regardless of the model's label; do not submit a stem edit that removes or replaces `<插图>`. The audit creates evidence for later policy changes without risking the final document.
+
 Question-conditioned symbol protocol:
 - Each local context has a deterministic recognition_profile. Its tags contain candidate alphabets and contrastive stroke checks for the question type/topic. They are inspection checklists, never evidence and never an answer key.
 - Before deciding keep, inspect every recognition_profile.symbol_audit.targets record. These are mandatory visual questions generated only from suspicious API1 surface notation; none identifies the correct candidate. Do not claim that the draft is accurate while leaving a clearly visible target unaudited.
@@ -180,7 +205,7 @@ Content contract:
 - Fill: replace_fill contains only ordered final values/formulas and necessary units. Exclude derivations. Put mathematical values in standard LaTeX.
 - Solution: edit_solution may only make exact local corrections to the complete API1 process. Never compress, paraphrase, reorder, or regenerate the solution. Use set_no_answer only when no student answer is visibly supported.
 - Never replace a nonempty supported API1 answer with no_answer merely because a crop is incomplete. Use the full page to resolve ownership.
-- P0 figure freeze: preserve every existing draft `<插图>` byte-for-byte. Do not remove or replace an existing marker in this review. Printed/student/mixed figure ownership is resolved by a separate audited representation, not by this patch call.
+- P0 figure freeze: preserve every existing draft `<插图>` byte-for-byte. Do not remove or replace an existing marker in this review. Classify it only through the separate figure_audit_v1 representation above.
 - When the only visible printed material is the question number/score and all geometry appears among the student's proof or coordinate setup, treat the printed stem as unavailable; do not use the student sketch to manufacture stem content.
 - If a printed stem is not visible, keep `N. [无法识别]` or the existing minimal draft; do not invent a diagram or question text from the student's solution.
 - Preserve option labels, subquestion labels, circled enumerators, signs, inequalities, exponents, subscripts, units, and balanced `$...$`/`$$...$$` delimiters.
@@ -488,6 +513,22 @@ def _prepare_question_contexts(
                 else page_dir / "contexts" / context_id
             )
             views = save_handwriting_views(page_img, region, output_dir)
+            if "<插图>" in str(draft.get("question_text") or ""):
+                for figure_index, figure_path in enumerate(
+                    find_figure_candidates(page_dir, question)[:3],
+                    start=1,
+                ):
+                    views.append(
+                        {
+                            "kind": f"figure_candidate_{figure_index:02d}",
+                            "bbox_xyxy": [],
+                            "path": str(figure_path),
+                            "purpose": (
+                                "color detector crop for figure ownership and role audit; "
+                                "routing evidence only until visually inspected"
+                            ),
+                        }
+                    )
         except (IndexError, TypeError, ValueError, OSError) as exc:
             context_error = str(exc)
 
@@ -507,6 +548,13 @@ def _prepare_question_contexts(
                     "question_type": region.get("question_type") or {},
                     "strategy": region.get("strategy") or "",
                     "boundary_kind": region.get("boundary_kind") or "",
+                    "figure_candidate_count": sum(
+                        1
+                        for view in views
+                        if str(view.get("kind") or "").startswith(
+                            "figure_candidate_"
+                        )
+                    ),
                     "context_error": context_error,
                 },
                 "recognition_profile": recognition_profile,
@@ -556,6 +604,10 @@ def _review_context_digest(contexts: Sequence[Dict[str, Any]]) -> List[Dict[str,
                 "draft": context.get("draft") or {},
                 "alignment": context.get("alignment") or {},
                 "recognition_profile": context.get("recognition_profile") or {},
+                "figure_audit": {
+                    "version": "figure_audit_v1",
+                    "targets": _figure_audit_targets(context),
+                },
                 "available_views": [
                     {
                         "kind": view.get("kind"),
@@ -620,12 +672,244 @@ def _required_symbol_audits(
     return audits
 
 
+_FIGURE_SOURCE_TYPES = {
+    "printed_figure",
+    "student_diagram",
+    "mixed_figure",
+    "scratch_sketch",
+    "not_a_figure",
+    "uncertain",
+}
+_FIGURE_CONTENT_ROLES = {
+    "printed_question_figure",
+    "retained_solution_diagram",
+    "discarded_work",
+    "text_or_formula_placeholder",
+    "uncertain",
+}
+
+
+def _figure_audit_targets(context: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """Create stable audit targets for API1 figure markers without interpreting them."""
+    context_id = str(context.get("context_id") or "")
+    draft = context.get("draft") if isinstance(context.get("draft"), dict) else {}
+    question_text = str(draft.get("question_text") or "")
+    targets: List[Dict[str, Any]] = []
+    for marker_index, match in enumerate(
+        re.finditer(re.escape("<插图>"), question_text),
+        start=1,
+    ):
+        excerpt_start = max(0, match.start() - 120)
+        excerpt_end = min(len(question_text), match.end() + 80)
+        targets.append(
+            {
+                "audit_id": f"FIG-{context_id}-{marker_index:02d}",
+                "context_id": context_id,
+                "marker_index": marker_index,
+                "nearby_draft_text": question_text[excerpt_start:excerpt_end],
+                "classification_options": {
+                    "source_type": sorted(_FIGURE_SOURCE_TYPES),
+                    "content_role": sorted(_FIGURE_CONTENT_ROLES),
+                },
+                "default_disposition": "preserve",
+            }
+        )
+    return targets
+
+
+def _required_figure_audits(
+    contexts: Sequence[Dict[str, Any]],
+) -> List[Dict[str, Any]]:
+    audits: List[Dict[str, Any]] = []
+    for context in contexts:
+        audits.extend(_figure_audit_targets(context))
+    return audits
+
+
+def _normalized_figure_string_list(value: Any) -> List[str]:
+    if not isinstance(value, list):
+        return []
+    return [str(item).strip() for item in value if str(item).strip()]
+
+
+def _fallback_figure_observation(target: Dict[str, Any]) -> Dict[str, Any]:
+    return {
+        "audit_id": str(target.get("audit_id") or ""),
+        "marker_index": int(target.get("marker_index") or 0),
+        "source_type": "uncertain",
+        "content_role": "uncertain",
+        "confidence": "low",
+        "context_id": str(target.get("context_id") or ""),
+        "printed_anchors": [],
+        "handwriting_features": [],
+        "visible_cancellation": False,
+        "transcribed_content": "",
+        "observed_features": (
+            "No valid API2 figure observation was supplied; the local gate preserved "
+            "the API1 marker."
+        ),
+        "local_action": "preserve",
+        "model_observation_valid": False,
+    }
+
+
+def _normalize_figure_observations(
+    value: Any,
+    *,
+    targets: Sequence[Dict[str, Any]],
+    valid_context_ids: Sequence[str],
+    available_context_ids: Sequence[str],
+) -> tuple[List[Dict[str, Any]], List[str], int]:
+    """Validate figure classifications while keeping marker disposition local."""
+    target_by_id = {
+        str(target.get("audit_id") or ""): target
+        for target in targets
+        if target.get("audit_id")
+    }
+    actions: List[str] = []
+    if not target_by_id:
+        if isinstance(value, list) and value:
+            actions.append("rejected_unexpected_figure_observations")
+        return [], actions, 0
+
+    raw_observations = value if isinstance(value, list) else []
+    cited = {str(context_id) for context_id in valid_context_ids if context_id}
+    available = {str(context_id) for context_id in available_context_ids if context_id}
+    accepted: Dict[str, Dict[str, Any]] = {}
+    compatible_roles = {
+        "printed_figure": {"printed_question_figure"},
+        "student_diagram": {"retained_solution_diagram"},
+        "mixed_figure": {
+            "printed_question_figure",
+            "retained_solution_diagram",
+        },
+        "scratch_sketch": {"discarded_work"},
+        "not_a_figure": {"text_or_formula_placeholder"},
+        "uncertain": {"uncertain"},
+    }
+
+    for raw in raw_observations:
+        if not isinstance(raw, dict):
+            actions.append("rejected_figure_observation_not_object")
+            continue
+        audit_id = str(raw.get("audit_id") or "").strip()
+        target = target_by_id.get(audit_id)
+        if target is None:
+            actions.append("rejected_figure_observation_unknown_audit_id")
+            continue
+        if audit_id in accepted:
+            actions.append(f"rejected_duplicate_figure_observation_{audit_id}")
+            continue
+        context_id = str(raw.get("context_id") or "").strip()
+        target_context_id = str(target.get("context_id") or "")
+        if (
+            context_id not in {target_context_id, "FULL_PAGE"}
+            or context_id not in (available | {"FULL_PAGE"})
+            or (context_id != "FULL_PAGE" and context_id not in cited)
+        ):
+            actions.append(f"rejected_figure_observation_invalid_context_{audit_id}")
+            continue
+        source_type = str(raw.get("source_type") or "").strip().lower()
+        content_role = str(raw.get("content_role") or "").strip().lower()
+        confidence = str(raw.get("confidence") or "").strip().lower()
+        observed_features = str(raw.get("observed_features") or "").strip()
+        printed_anchors = _normalized_figure_string_list(raw.get("printed_anchors"))
+        handwriting_features = _normalized_figure_string_list(
+            raw.get("handwriting_features")
+        )
+        transcribed_content = str(raw.get("transcribed_content") or "").strip()
+        visible_cancellation = raw.get("visible_cancellation") is True
+        if source_type not in _FIGURE_SOURCE_TYPES:
+            actions.append(f"rejected_figure_observation_invalid_source_{audit_id}")
+            continue
+        if content_role not in compatible_roles.get(source_type, set()):
+            actions.append(f"rejected_figure_observation_incompatible_role_{audit_id}")
+            continue
+        if confidence not in {"high", "medium", "low"} or not observed_features:
+            actions.append(f"rejected_figure_observation_weak_evidence_{audit_id}")
+            continue
+        if source_type != "uncertain" and confidence == "low":
+            actions.append(f"rejected_figure_observation_low_confidence_{audit_id}")
+            continue
+        if source_type in {"printed_figure", "mixed_figure"} and not printed_anchors:
+            actions.append(f"rejected_figure_observation_missing_print_anchor_{audit_id}")
+            continue
+        if source_type in {
+            "student_diagram",
+            "mixed_figure",
+            "scratch_sketch",
+        } and not handwriting_features:
+            actions.append(
+                f"rejected_figure_observation_missing_handwriting_features_{audit_id}"
+            )
+            continue
+        if source_type == "printed_figure" and handwriting_features:
+            actions.append(
+                f"rejected_figure_observation_printed_with_handwriting_{audit_id}"
+            )
+            continue
+        if source_type in {"student_diagram", "scratch_sketch"} and printed_anchors:
+            actions.append(
+                f"rejected_figure_observation_handwritten_with_print_anchors_{audit_id}"
+            )
+            continue
+        if source_type == "scratch_sketch" and not visible_cancellation:
+            actions.append(
+                f"rejected_figure_observation_scratch_without_cancellation_{audit_id}"
+            )
+            continue
+        if source_type == "student_diagram" and visible_cancellation:
+            actions.append(
+                f"rejected_figure_observation_retained_with_cancellation_{audit_id}"
+            )
+            continue
+        if source_type == "not_a_figure" and (
+            not transcribed_content or "<插图>" in transcribed_content
+        ):
+            actions.append(f"rejected_figure_observation_missing_transcription_{audit_id}")
+            continue
+
+        accepted[audit_id] = {
+            "audit_id": audit_id,
+            "marker_index": int(target.get("marker_index") or 0),
+            "source_type": source_type,
+            "content_role": content_role,
+            "confidence": confidence,
+            "context_id": context_id,
+            "printed_anchors": printed_anchors,
+            "handwriting_features": handwriting_features,
+            "visible_cancellation": visible_cancellation,
+            "transcribed_content": transcribed_content,
+            "observed_features": observed_features,
+            # figure_audit_v1 is intentionally observational. A model label can
+            # never authorize deletion from the final document.
+            "local_action": "preserve",
+            "model_observation_valid": True,
+        }
+        actions.append(f"recorded_figure_observation_{audit_id}_{source_type}")
+
+    normalized: List[Dict[str, Any]] = []
+    for audit_id, target in target_by_id.items():
+        observation = accepted.get(audit_id)
+        if observation is None:
+            observation = _fallback_figure_observation(target)
+            actions.append(f"preserved_missing_figure_observation_{audit_id}")
+        normalized.append(observation)
+    return normalized, actions, len(accepted)
+
+
 def _selected_review_views(
     context: Dict[str, Any],
     detail_views: int,
 ) -> List[Dict[str, Any]]:
     views = (context.get("visual_context") or {}).get("views") or []
     primary = [view for view in views if view.get("kind") == "context"][:1]
+    stem_views = [view for view in views if view.get("kind") == "stem"][:1]
+    figure_views = [
+        view
+        for view in views
+        if str(view.get("kind") or "").startswith("figure_candidate_")
+    ][:3]
     tiled_details = [
         view
         for view in views
@@ -638,6 +922,7 @@ def _selected_review_views(
     has_symbol_audits = bool(
         (((context.get("recognition_profile") or {}).get("symbol_audit") or {}).get("targets"))
     )
+    has_figure_audits = bool(_figure_audit_targets(context))
     detail_candidates = (
         ink_details + tiled_details
         if question_type in {"choice", "fill"}
@@ -646,7 +931,8 @@ def _selected_review_views(
     details = detail_candidates[: max(0, detail_views)]
     if has_symbol_audits and detail_views > 0 and ink_details:
         details = details + [view for view in ink_details if view not in details]
-    selected = primary + details
+    selected = primary + (stem_views + figure_views if has_figure_audits else []) + details
+    selected = list({id(view): view for view in selected}.values())
     selected_ids = {id(view) for view in selected}
     for view in views:
         view["sent_to_second_api"] = id(view) in selected_ids
@@ -668,6 +954,7 @@ def _invoke_final_review(
         "draft_contract": "Each local_question_contexts[].draft field is the authoritative API1 text to patch.",
         "first_pass_page_notes": baseline.get("page_notes") or "",
         "required_symbol_audits": _required_symbol_audits(contexts),
+        "required_figure_audits": _required_figure_audits(contexts),
         "same_page_symbol_groups": _same_page_symbol_groups(contexts),
         "local_question_contexts": _review_context_digest(contexts),
     }
@@ -710,9 +997,9 @@ def _invoke_final_review(
             )
 
     prompt_hash = sha1_bytes(prompt.encode("utf-8"))
-    cache_key = f"{vlm.cache_tag}::api2_patch_v3::{prompt_hash}::{'::'.join(image_hashes)}"
+    cache_key = f"{vlm.cache_tag}::api2_patch_v4::{prompt_hash}::{'::'.join(image_hashes)}"
     if cache:
-        hit = cache.get("api2_patch_review_v3", cache_key)
+        hit = cache.get("api2_patch_review_v4", cache_key)
         if isinstance(hit, dict):
             return hit
 
@@ -725,7 +1012,7 @@ def _invoke_final_review(
     review = _extract_json_obj(raw)
     review["_raw"] = raw
     if cache:
-        cache.set("api2_patch_review_v3", cache_key, review)
+        cache.set("api2_patch_review_v4", cache_key, review)
     return review
 
 
@@ -1508,7 +1795,10 @@ def _normalize_patch_questions(
         if context.get("context_id")
         and (context.get("visual_context") or {}).get("views")
     }
-    strict_symbol_protocol = str(review.get("schema_version") or "").strip() == "api2_patch_v3"
+    strict_symbol_protocol = str(review.get("schema_version") or "").strip() in {
+        "api2_patch_v3",
+        "api2_patch_v4",
+    }
     questions: List[Dict[str, Any]] = []
 
     for index, context in enumerate(contexts, start=1):
@@ -1552,6 +1842,16 @@ def _normalize_patch_questions(
         question_candidate = draft_question
         stem_patch = patch_review.get("stem")
         stem_patch = stem_patch if isinstance(stem_patch, dict) else {}
+        figure_targets = _figure_audit_targets(context)
+        figure_observations, figure_actions, figure_observed_count = (
+            _normalize_figure_observations(
+                stem_patch.get("figure_observations"),
+                targets=figure_targets,
+                valid_context_ids=cited_context_ids,
+                available_context_ids=visual_context_ids,
+            )
+        )
+        actions.extend(figure_actions)
         stem_action = str(stem_patch.get("action") or "keep").strip().lower()
         if stem_action == "edit":
             question_candidate, edit_actions = _apply_exact_edits(
@@ -1829,6 +2129,10 @@ def _normalize_patch_questions(
                     ),
                     "symbol_audit_target_count": audit_target_count,
                     "symbol_audit_observed_count": len(resolved_audit_ids),
+                    "figure_audit_version": "figure_audit_v1",
+                    "figure_audit_target_count": len(figure_targets),
+                    "figure_audit_observed_count": figure_observed_count,
+                    "figure_observations": figure_observations,
                     "lint_actions": actions,
                 },
                 "handwritten_answer": {
@@ -2023,14 +2327,17 @@ def _build_question_context_manifest(
             }
         )
     return {
-        "schema_version": 4,
+        "schema_version": 5,
         "page": page_name,
         "source_image": str(source_image),
         "first_pass_markdown": str(draft_markdown_path),
         "api_strategy": {
             "call_1": "whole-page draft OCR",
             "between_calls": "local detection, layout, context construction",
-            "call_2": "question-conditioned symbol review proposing atomic evidence-linked patches",
+            "call_2": (
+                "question-conditioned symbol and figure-ownership review proposing "
+                "atomic evidence-linked patches"
+            ),
             "local_merge": "deterministic validation against the API1 draft",
         },
         "contexts": manifest_contexts,
@@ -2353,7 +2660,7 @@ def run_agent(args: argparse.Namespace) -> Dict[str, Any]:
         "api_strategy": {
             "call_count": 1 + review_runs,
             "call_1": "whole-page draft Markdown",
-            "call_2": "question-conditioned symbol and atomic patch review",
+            "call_2": "question-conditioned symbol, figure, and atomic patch review",
             "api2_run_count": review_runs,
             "local_merge": "deterministic validation against the first-pass draft",
         },
@@ -2404,9 +2711,9 @@ def run_agent(args: argparse.Namespace) -> Dict[str, Any]:
     )
     verification = {
         "mode": (
-            "single_global_api2_symbol_guided_atomic_patch_v3"
+            "single_global_api2_symbol_figure_audited_atomic_patch_v4"
             if review_runs == 1
-            else "repeated_global_api2_symbol_guided_atomic_patch_v3"
+            else "repeated_global_api2_symbol_figure_audited_atomic_patch_v4"
         ),
         "first_pass_markdown": str(draft_markdown_path),
         "context_manifest": str(question_contexts_path),
