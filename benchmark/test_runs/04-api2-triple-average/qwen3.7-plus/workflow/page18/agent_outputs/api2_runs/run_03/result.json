@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "page": "page18",
+  "api2_run": 3,
+  "questions": [
+    {
+      "qno": 1,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "1. 过 $A(-1,\\sqrt{3})$，$B(2,0)$ 两点的直线倾斜角为\nA. $\\frac{\\pi}{3}$\nB. $\\frac{3\\pi}{4}$\nC. $\\frac{2\\pi}{3}$\nD. $\\frac{5\\pi}{6}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page18/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "D",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page18/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 2,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "2. 在空间直角坐标系 $Oxyz$ 中，已知点 $A(1,1,1), B(2,-1,0)$，若点 $P$ 与点 $A$ 关于 $Oyz$ 平面对称，则 $\\overrightarrow{BP}=$\nA. $(-3,2,1)$\nB. $(-1,0,1)$\nC. $(-1,0,-1)$\nD. $(3,-2,-1)$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page18/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "A",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page18/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 3,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "3. 已知 $\\vec{a}=(1,1,0), \\vec{b}=(0,1,1), \\vec{c}=(1,0,1), \\vec{p}=\\vec{a}-\\vec{b}, \\vec{q}=\\vec{a}+2\\vec{b}-\\vec{c}$，则 $\\vec{p}\\cdot\\vec{q}=$\nA. -1\nB. 1\nC. 0\nD. -2",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page18/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "A",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page18/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 4,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "4. 已知空间向量 $\\vec{a}=(\\sqrt{3},0,1), \\vec{b}=(\\frac{1}{2},0,\\frac{\\sqrt{3}}{2})$，则 $\\vec{a}$ 在 $\\vec{b}$ 上的投影的模为\nA. $\\sqrt{3}$\nB. 1\nC. 2\nD. $\\frac{1}{2}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C004"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page18/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "A",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page18/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 5,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "5. 在平行六面体 $ABCD-A_1B_1C_1D_1$ 中，点 $E$ 为棱 $AA_1$ 的中点，点 $F$ 为棱 $CC_1$ 上靠近 $C$ 的三等分点。若 $\\overrightarrow{EF}=x\\overrightarrow{AB}+y\\overrightarrow{AD}+z\\overrightarrow{AA_1}$，$x,y,z\\in R$，则 $x+y+z$ 的值为\nA. $\\frac{1}{6}$\nB. $\\frac{11}{6}$\nC. $\\frac{17}{6}$\nD. $-\\frac{1}{6}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C005"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page18/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C005"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page18/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 6,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "6. 过点 $P(0,-1)$ 作直线 $l$，若直线 $l$ 与连接 $A(-2,1)$，$B(2\\sqrt{3},1)$ 两点的线段总有公共点，则直线 $l$ 的倾斜角范围为\nA. $[\\frac{\\pi}{6},\\frac{\\pi}{4}]$\nB. $[\\frac{\\pi}{6},\\frac{3\\pi}{4}]$\nC. $[0,\\frac{\\pi}{6}]\\cup[\\frac{3\\pi}{4},\\pi)$\nD. $[\\frac{\\pi}{6},\\frac{\\pi}{2}]\\cup[\\frac{3\\pi}{4},\\pi)$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C006"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page18/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C006"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page18/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 7,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "7. 已知直线 $l_1: y=ax-b, l_2: y=bx+a$，当 $a,b$ 满足一定条件时，它们的图形可能是图中的\n<插图>",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C007"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 1,
+        "figure_audit_observed_count": 1,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C007-01",
+            "marker_index": 1,
+            "source_type": "mixed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "high",
+            "context_id": "C007",
+            "printed_anchors": [
+              "printed coordinate axes",
+              "printed lines labeled l1 and l2",
+              "option labels A, B, C, D"
+            ],
+            "handwriting_features": [
+              "handwritten annotations such as b>0, a<0, -b>0"
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "Printed coordinate systems with lines l1 and l2 for options A-D, overlaid with handwritten annotations analyzing slopes and intercepts.",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          }
+        ],
+        "lint_actions": [
+          "recorded_figure_observation_FIG-C007-01_mixed_figure",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page18/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C007"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page18/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.7-plus",
+      "attempt": 1,
+      "elapsed_s": 63.286273,
+      "prompt_tokens": 20162,
+      "completion_tokens": 3897,
+      "total_tokens": 24059,
+      "request_id": "chatcmpl-0997a99a-b946-99ca-b3a7-68ccb31b9f46"
+    }
+  ]
+}

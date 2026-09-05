@@ -1,0 +1,177 @@
+{
+  "page": "page32",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page32/image/page32.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page32.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page32/preprocessed/page32.png",
+  "api_strategy": {
+    "call_count": 4,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "question-conditioned symbol, figure, and atomic patch review",
+    "api2_run_count": 3,
+    "local_merge": "deterministic validation against the first-pass draft"
+  },
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 30747,
+    "completion_tokens": 33329,
+    "total_tokens": 64076,
+    "latency_s": 533.12392,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 145.531389,
+          "prompt_tokens": 3078,
+          "completion_tokens": 9137,
+          "total_tokens": 12215,
+          "request_id": "chatcmpl-5ff278d2-a2a0-99f5-b950-a2ecf5aca26f"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 156.003357,
+          "prompt_tokens": 9223,
+          "completion_tokens": 9650,
+          "total_tokens": 18873,
+          "request_id": "chatcmpl-9f603a51-53ef-9d0a-9684-bebe0a4ed838"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 80.091351,
+          "prompt_tokens": 9223,
+          "completion_tokens": 5156,
+          "total_tokens": 14379,
+          "request_id": "chatcmpl-4b47c077-12a4-95a3-a9a6-2a73a091d30c"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 151.497823,
+          "prompt_tokens": 9223,
+          "completion_tokens": 9386,
+          "total_tokens": 18609,
+          "request_id": "chatcmpl-8beb4f48-90b6-9c88-9098-3b28cd8e8205"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 156.003357,
+            "prompt_tokens": 9223,
+            "completion_tokens": 9650,
+            "total_tokens": 18873,
+            "request_id": "chatcmpl-9f603a51-53ef-9d0a-9684-bebe0a4ed838"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 80.091351,
+            "prompt_tokens": 9223,
+            "completion_tokens": 5156,
+            "total_tokens": 14379,
+            "request_id": "chatcmpl-4b47c077-12a4-95a3-a9a6-2a73a091d30c"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 151.497823,
+            "prompt_tokens": 9223,
+            "completion_tokens": 9386,
+            "total_tokens": 18609,
+            "request_id": "chatcmpl-8beb4f48-90b6-9c88-9098-3b28cd8e8205"
+          }
+        ]
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 1,
+    "answers_with_transcription": 1,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 19,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "19. (17分) 设函数 $y=ax^2+(1-a)x+a-2$ ($a\\in R$)\n(1) 若关于 $x$ 的不等式的 $y\\leq 0$ 解集为 $\\{x\\mid 0\\leq x\\leq b\\}$，求实数 $a$，$b$ 的值；\n(2) 解关于 $x$ 的不等式：$y<a-1$。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page32/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) $0$ 和 $b$ 是方程 $ax^2+(1-a)x+a-2$ 的根\n且 $a>0$\n$\\therefore 0+b=-\\frac{1-a}{a}$\n$0\\times b=\\frac{a-2}{a}$\n解得 $a=2$，$b=\\frac{1}{2}$。\n(2) 由 $f(x)<a-1$ 则 $ax^2+(1-a)x-1<0$。\n当 $a=0$ 时，不等式可化简为 $x-1<0$，$x<1$，$\\{x\\mid x<1\\}$\n当 $a<0$ 时，不等式可化为 $(x+\\frac{1}{a})(x-1)>0$。\n① 当 $a=-1$ 时，$-\\frac{1}{a}=1$，不等式的解集为 $\\{x\\mid x\\neq 1\\}$。\n② 当 $-1<a<0$ 时，$-\\frac{1}{a}>1$，不等式的解集为 $\\{x\\mid x<1 \\text{ 或 } x>-\\frac{1}{a}\\}$。\n③ 当 $a<-1$ 时，$-\\frac{1}{a}<1$，不等式的解集为 $\\{x\\mid x<-\\frac{1}{a} \\text{ 或 } x>1\\}$。\n综上 当 $a<-1$ 时 $\\Rightarrow \\{x\\mid x<-\\frac{1}{a} \\text{ 或 } x>1\\}$\n当 $a=-1$ 时 $\\Rightarrow \\{x\\mid x\\neq 1\\}$\n当 $-1<a<0$ 时 $\\Rightarrow \\{x\\mid x<1 \\text{ 或 } x>-\\frac{1}{a}\\}$\n当 $a=0$ 时 $\\Rightarrow \\{x\\mid x<1\\}$\n当 $a>0$ 时 $\\Rightarrow \\{x\\mid -\\frac{1}{a}<x<1\\}$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Full page and C001 context show the printed stem 19.(17分) with (1)/(2) subquestions matching the draft, and the retained handwriting matches line by line: right-column (1) block (0 和 b 是方程 ax²+(1-a)x+a-2, 且 a>0, 0+b=-(1-a)/a, 0×b=(a-2)/a, 解得 a=2 b=1/2) and left-column (2) case analysis with ①②③, the 综上 arrow lines, and set notations {x|...}; the only extra marks are a blotted cancelled character after 可化简 and a scribbled extra a before -1<a<0, correctly excluded as cancelled, so no patch is justified.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page32/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "Right-margin (1) block ends with a trailing glyph after '+a-2' (possibly a redundant repeat of 根) and stray marginal notes 'a=1' and 'a=2 b=1/2' are visible; treated as redundant scratch and left unresolved rather than patched.",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page32/image/page32.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page32/preprocessed/page32.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page32/api_markdown/page32.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page32/api_markdown/page32.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page32/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page32/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page32/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page32/code_outputs/match/viz/page32_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page32/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page32/agent_outputs/result.json",
+    "api2_results": [
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page32/agent_outputs/api2_runs/run_01/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page32/agent_outputs/api2_runs/run_02/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page32/agent_outputs/api2_runs/run_03/result.json"
+    ],
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page32/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page32/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page32/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page32/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page32/code_outputs/match/viz/page32_handwriting_overlay.png"
+  }
+}

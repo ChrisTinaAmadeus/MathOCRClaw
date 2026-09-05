@@ -1,0 +1,261 @@
+{
+  "schema_version": 1,
+  "page": "page26",
+  "api2_run": 2,
+  "questions": [
+    {
+      "qno": 1,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "一、单选题：本题共 8 小题，每小题 5 分，共 40 分。只有一项符合题目要求。",
+      "question_markdown": "1. 某工厂生产 $A$，$B$，$C$ 三种不同型号的产品，产量之比为 $2:3:5$，现用分层抽样的方法抽取一个容量为 $n$ 的样本，若样本中 $A$ 型号的产品有 8 件，则样本容量 $n=$ ( )\nA. 80\nB. 40\nC. 60\nD. 100",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page26/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page26/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 2,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "2. 在样本频率分布直方图中共有 9 个小矩形，若其中 1 个小矩形的面积等于其他 8 个小矩形面积和的 $\\frac{2}{5}$，且样本容量为 210，则该组的频数为 ( )\nA. 60\nB. 56\nC. 40\nD. 28",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page26/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "A",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page26/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 3,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "3. 已知事件 $A$、$B$ 相互独立，事件 $A$ 发生的概率为 $P(A)=\\frac{1}{2}$，事件 $B$ 发生的概率为 $P(B)=\\frac{1}{2}$，则“两个事件 $A$，$B$ 至少有一个发生”的概率为 ( )\nA. $\\frac{1}{4}$\nB. $\\frac{1}{2}$\nC. $\\frac{3}{4}$\nD. 1",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page26/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "C",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page26/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 4,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "4. 如图，空间四边形 $OABC$ 中，$\\overrightarrow{OA}=\\vec{a}, \\overrightarrow{OB}=\\vec{b}, \\overrightarrow{OC}=\\vec{c}$，点 $M$ 在 $OA$ 上，且 $\\overrightarrow{OM}=\\frac{2}{3}\\overrightarrow{OA}$，点 $N$ 为 $BC$ 中点，则 $\\overrightarrow{MN}$ 等于 ( )\n<插图>\nA. $\\frac{1}{2}\\vec{a}+\\frac{1}{2}\\vec{b}-\\frac{1}{2}\\vec{c}$\nB. $-\\frac{2}{3}\\vec{a}+\\frac{1}{2}\\vec{b}+\\frac{1}{2}\\vec{c}$\nC. $\\frac{2}{3}\\vec{a}+\\frac{2}{3}\\vec{b}-\\frac{1}{2}\\vec{c}$\nD. $\\frac{2}{3}\\vec{a}+\\frac{2}{3}\\vec{b}+\\frac{1}{2}\\vec{c}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C004"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 1,
+        "figure_audit_observed_count": 1,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C004-01",
+            "marker_index": 1,
+            "source_type": "printed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "high",
+            "context_id": "C004",
+            "printed_anchors": [
+              "typeset labels O, A, B, C, M, N",
+              "uniform thin line work for edges",
+              "dashed lines for hidden edges AC and MN",
+              "printed caption reference in stem"
+            ],
+            "handwriting_features": [],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "The figure shows a space quadrilateral (tetrahedron) OABC with printed typeset vertex labels O, A, B, C and points M on OA and N on BC. Edges use uniform thin printed lines with dashed lines for hidden edges. No handwriting overlays the figure skeleton.",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          }
+        ],
+        "lint_actions": [
+          "recorded_figure_observation_FIG-C004-01_printed_figure",
+          "applied_stem_edit_1_ocr_correction",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page26/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "D",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page26/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 5,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "5. 若平面 $\\alpha$ 的法向量为 $\\vec{u}=(-1, 2, 4)$，平面 $\\beta$ 的法向量为 $\\vec{v}=(m, -1, -2)$，直线 $l$ 的方向向量为 $\\vec{l}=(n, -2, -4)$，则 ( )\nA. 若 $\\alpha \\parallel \\beta$，则 $m=1$\nB. 若 $l \\perp \\alpha$，则 $n=2$\nC. 若 $n=20$，则 $l \\parallel \\alpha$\nD. 若 $m=-10$，则 $\\alpha \\perp \\beta$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C005"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "applied_stem_edit_1_ocr_correction",
+          "applied_stem_edit_2_ocr_correction",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page26/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "D",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C005"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page26/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 6,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "6. 不透明的口袋内装有红色、绿色和蓝色卡片各 2 张，一次性任意取出 2 张卡片，则下列事件，与事件“2 张卡片都为红色”互斥而不对立的个数为 ( )\n① 2 张卡片都不是红色；\n② 2 张卡片恰有 1 张是红色；\n③ 2 张卡片至少有 1 张是红色；\n④ 2 张卡片至多一张为红色。\nA. 1\nB. 2\nC. 3\nD. 4",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C006"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page26/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C006"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page26/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.7-plus",
+      "attempt": 1,
+      "elapsed_s": 77.852306,
+      "prompt_tokens": 19769,
+      "completion_tokens": 4821,
+      "total_tokens": 24590,
+      "request_id": "chatcmpl-4a0bd89a-f735-9351-865c-65a1cb79d335"
+    }
+  ]
+}

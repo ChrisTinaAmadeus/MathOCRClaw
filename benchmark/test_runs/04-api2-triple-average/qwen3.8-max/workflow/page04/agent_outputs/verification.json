@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page04/api_markdown/page04.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page04/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 67268,
+    "completion_tokens": 30121,
+    "total_tokens": 97389,
+    "latency_s": 532.041563,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 147.947234,
+          "prompt_tokens": 3065,
+          "completion_tokens": 8628,
+          "total_tokens": 11693,
+          "request_id": "chatcmpl-29c918d2-2700-9946-abe1-661370dfba35"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 160.333732,
+          "prompt_tokens": 21401,
+          "completion_tokens": 8663,
+          "total_tokens": 30064,
+          "request_id": "chatcmpl-02dfb456-f961-9a65-a334-f8fa4afda7f5"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 101.844674,
+          "prompt_tokens": 21401,
+          "completion_tokens": 5856,
+          "total_tokens": 27257,
+          "request_id": "chatcmpl-e50bcb64-42af-9b85-a264-9d34766d0fbd"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 121.915923,
+          "prompt_tokens": 21401,
+          "completion_tokens": 6974,
+          "total_tokens": 28375,
+          "request_id": "chatcmpl-5d45cde4-10b1-978c-8f8c-37e012844c57"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 160.333732,
+            "prompt_tokens": 21401,
+            "completion_tokens": 8663,
+            "total_tokens": 30064,
+            "request_id": "chatcmpl-02dfb456-f961-9a65-a334-f8fa4afda7f5"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 101.844674,
+            "prompt_tokens": 21401,
+            "completion_tokens": 5856,
+            "total_tokens": 27257,
+            "request_id": "chatcmpl-e50bcb64-42af-9b85-a264-9d34766d0fbd"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 121.915923,
+            "prompt_tokens": 21401,
+            "completion_tokens": 6974,
+            "total_tokens": 28375,
+            "request_id": "chatcmpl-5d45cde4-10b1-978c-8f8c-37e012844c57"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "",
+    "",
+    ""
+  ],
+  "raw_runs": [
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"7\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"One handwritten letter inside the printed parentheses: two slanted strokes meeting at an apex with a closed loop crossbar, matching the writer's A in C003 and C005; no right stem continuing below a crossbar (excludes 4), no two lobes (excludes B), no open right side (excludes C/D).\"\n      }\n    },\n    {\n      \"qno\": \"8\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"medium\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"One handwritten letter in the parentheses: a left downstroke closed at the right by a second stroke hooked at the top, forming one continuous narrow outer bow; no two lobes (not B), no apex/crossbar (not A), right side closed (not C). Red margin notes are grader work, not the answer.\"\n      }\n    },\n    {\n      \"qno\": \"9\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Two handwritten letters in the parentheses: first an apex stroke with loop crossbar (A, same form as C005), second a left vertical with right bow (D); printed options A and D also carry check marks, consistent with retained AD.\"\n      }\n    },\n    {\n      \"qno\": \"10\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Two handwritten letters after the stem: a B written as a vertical with two right bows, followed by a large open C bow with no left stem; both strokes are single black pen marks in the answer slot.\"\n      }\n    },\n    {\n      \"qno\": \"11\",\n      \"source_context_ids\": [\"C005\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Three handwritten letters in the parentheses: A (apex with loop crossbar), C (single open bow, no left stem), D (left vertical with right bow); option-line ticks on A and C are option marks, not answer cancellation.\"\n      }\n    },\n    {\n      \"qno\": \"12\",\n      \"source_context_ids\": [\"C006\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten fraction on the printed blank: leading minus stroke, numerator a short slanted 1, horizontal fraction bar, denominator 2 with top hook and lower bow; no additional digits or decimal point visible in color context or answer_ink.\"\n      }\n    },\n    {\n      \"qno\": \"13\",\n      \"source_context_ids\": [\"C007\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten large left parenthesis, minus stroke, vertical 1, comma, closed-loop 6, large right parenthesis; endpoint delimiters are curved parentheses with no straight closing edges (not brackets).\"\n      }\n    },\n    {\n      \"qno\": \"14\",\n      \"source_context_ids\": [\"C008\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten '-3', open angle < with no lower equality bar, 'a', then < with a separate horizontal underline stroke (le), final digit 3 with flat top and lower bow; the underline bar is visible only under the second relation, matching the draft -3<a\\\\leq 3.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"7\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Inside the printed parentheses a single handwritten letter with an apex stroke and closed loop crossbar (the writer's A, same shape as the A in C003); no other option letter retained.\"\n      }\n    },\n    {\n      \"qno\": \"8\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"The answer mark in the parentheses is one vertical stem with a single continuous outer bow joining at the bottom (no two lobes, so not B), matching the writer's D in C003; red margin notes are separate grading work, not the retained answer.\"\n      }\n    },\n    {\n      \"qno\": \"9\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Two letters retained in the parentheses: an A with apex and crossbar loop, then a D with straight left stem and right bow; separate check strokes at printed options A and D confirm the same two letters.\"\n      }\n    },\n    {\n      \"qno\": \"10\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten B (left stem with two lobes) followed by an open C curve inside the parentheses, plus a long check stroke; matches draft BC.\"\n      }\n    },\n    {\n      \"qno\": \"11\",\n      \"source_context_ids\": [\"C005\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Three letters retained in the parentheses: A (apex with loop crossbar), C (open right-facing curve), D (vertical stem with right bow); tick marks also visible at printed options A and C.\"\n      }\n    },\n    {\n      \"qno\": \"12\",\n      \"source_context_ids\": [\"C006\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"On the printed blank a handwritten fraction: leading minus stroke, numerator 1, horizontal fraction bar, closed-loop denominator 2; full page confirms the complete -1/2 fraction.\"\n      }\n    },\n    {\n      \"qno\": \"13\",\n      \"source_context_ids\": [\"C007\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten interval on the blank: open left parenthesis, minus stroke attached to a vertical 1, comma, closed-loop 6, and a large closing parenthesis visible on the full page.\"\n      }\n    },\n    {\n      \"qno\": \"14\",\n      \"source_context_ids\": [\"C008\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten -3 < a ≤ 3: first relation is a single open-left angle stroke with no lower bar; second relation shows the same angle stroke plus a distinct lower equality bar; final digit is a two-arc 3.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"7\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"One black-ink letter inside the printed parentheses shows two slanted strokes meeting at an apex with a looped lower crossbar, matching the writer's A elsewhere (compare C003); no crossing-out or overwriting.\"\n      }\n    },\n    {\n      \"qno\": \"8\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"The retained black-ink letter in the parentheses has a long left vertical stem and a right bow joining it at top and bottom, matching the writer's D (compare the D in C003/C005); red margin notes are separate scratch work and do not cancel the black answer.\"\n      }\n    },\n    {\n      \"qno\": \"9\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Parentheses retain two letters: a looped A and a stemmed bow D; a diagonal tick over printed option A and a check at option D corroborate both retained letters.\"\n      }\n    },\n    {\n      \"qno\": \"10\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Parentheses retain a B with a vertical stem and two lobes followed by a large open C with a long tail stroke; no cancellation of either letter.\"\n      }\n    },\n    {\n      \"qno\": \"11\",\n      \"source_context_ids\": [\"C005\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Parentheses retain three letters A, C, D in the writer's usual forms (looped A, open C, long-stemmed D); the strikes on printed options A and C are option annotations, not cancellations of the answer letters.\"\n      }\n    },\n    {\n      \"qno\": \"12\",\n      \"source_context_ids\": [\"C006\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"On the printed blank a handwritten fraction is written: a leading minus stroke, numerator 1, horizontal fraction bar, denominator 2, matching -1/2.\"\n      }\n    },\n    {\n      \"qno\": \"13\",\n      \"source_context_ids\": [\"C007\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten '(-1,6)' on the blank: open round parenthesis, minus stroke before a single vertical 1, comma, looped 6, closing round parenthesis; endpoints are curved parentheses, not square brackets.\"\n      }\n    },\n    {\n      \"qno\": \"14\",\n      \"source_context_ids\": [\"C008\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten '-3 < a ≤ 3' on the blank: the first relation is a single open angle with no lower equality bar; the second relation shows a distinct separate underline beneath the angle, i.e. ≤; both endpoint digits are 3.\"\n      }\n    }\n  ]\n}"
+  ]
+}

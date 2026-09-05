@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page09/api_markdown/page09.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page09/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 34268,
+    "completion_tokens": 40763,
+    "total_tokens": 75031,
+    "latency_s": 703.50804,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 201.55551,
+          "prompt_tokens": 3065,
+          "completion_tokens": 11734,
+          "total_tokens": 14799,
+          "request_id": "chatcmpl-166b4546-f05c-92ff-9691-e299f1f430ad"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 163.45458,
+          "prompt_tokens": 10401,
+          "completion_tokens": 9496,
+          "total_tokens": 19897,
+          "request_id": "chatcmpl-403d846e-e526-9a2b-8f3e-14f9fc7979a4"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 152.574894,
+          "prompt_tokens": 10401,
+          "completion_tokens": 8698,
+          "total_tokens": 19099,
+          "request_id": "chatcmpl-a8d25d71-3bae-9b5f-ad7c-12091cb56ece"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 185.923056,
+          "prompt_tokens": 10401,
+          "completion_tokens": 10835,
+          "total_tokens": 21236,
+          "request_id": "chatcmpl-b60ce58e-58ee-9323-8746-9a7e366fbc17"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 163.45458,
+            "prompt_tokens": 10401,
+            "completion_tokens": 9496,
+            "total_tokens": 19897,
+            "request_id": "chatcmpl-403d846e-e526-9a2b-8f3e-14f9fc7979a4"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 152.574894,
+            "prompt_tokens": 10401,
+            "completion_tokens": 8698,
+            "total_tokens": 19099,
+            "request_id": "chatcmpl-a8d25d71-3bae-9b5f-ad7c-12091cb56ece"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 185.923056,
+            "prompt_tokens": 10401,
+            "completion_tokens": 10835,
+            "total_tokens": 21236,
+            "request_id": "chatcmpl-b60ce58e-58ee-9323-8746-9a7e366fbc17"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "Q12 stem is handwritten by the student with red teacher annotations; no printed version of Q12 is visible on this page.",
+    "Q12 stem appears student-copied in handwriting with no printed material visible, so question_type follows the draft; stray '18.' after the 取最小值 line in (1) and faint show-through marks inside the figure cells are treated as non-content and left untranscribed.",
+    "Q12 stem is entirely student-handwritten (no printed version visible on the page); draft transcription retained unchanged."
+  ],
+  "raw_runs": [
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"Q12 stem is handwritten by the student with red teacher annotations; no printed version of Q12 is visible on this page.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"12\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"medium\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Teal handwriting at the end of the copied stem line reads 'a≥-1' with a retaining underline, and the retained working below ends with '∴ -1 ≤ a'; red ink '存在，所以用最小值' is teacher annotation and is excluded.\"\n      }\n    },\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C001\", \"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C002-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"printed_anchors\": [\"uniform hatched wall band with regular diagonal strokes along the top\", \"typeset italic vertex labels A, B, C, D\", \"uniform thin straight lines forming a 2x2 grid of four congruent rectangles\"],\n            \"handwriting_features\": [\"freehand black arrow drawn from the stem text pointing at the left edge\", \"freehand brace/bracket strokes along the left side of the grid\", \"small scribble near the bottom-right corner by C\"],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"A printed skeleton (hatched wall band, straight uniform grid lines, italic typeset labels A, B, C, D) remains clearly visible beneath the student's black-pen arrow and left brace; the diagram is the stem's '如图所示' figure and is not crossed out, so it is retained as a printed question figure with handwritten overlay.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Teal/black handwritten lines match the draft step by step: (1) '设AB为x m, AD为y m 则 xy=24', '求6y+4x的min', '6y+4x ≥ 2√(6y·4x) ≥ 2√(24·24) ≥ 48', 'min为48', '当且仅当6y=4x=24时 即 y=4 x=6 取最小值', 'AB为6m AD为4m'; (2) '6a+4b=40', struck-through duplicate before retained '3a+2b=20', 'b=(20-3a)/2', 'ab=a((20-3a)/2) = (-3a²+20a)/2', '-b/2a = -20/(2×(-3)) = 10/3' with a cancelled first attempt crossed out, 'ab max = 100/3', and right-side retained conclusion '当且仅当 a=10/3, b=5 取得最大值; AB的长为10/3 m, AD的长为5m'. Cancelled strokes are not restored. The first glyph of 'xy=24' visually resembles a 6 but is inconclusive against the writer's cursive x, so the draft is kept.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"Q12 stem appears student-copied in handwriting with no printed material visible, so question_type follows the draft; stray '18.' after the 取最小值 line in (1) and faint show-through marks inside the figure cells are treated as non-content and left untranscribed.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"12\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"medium\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Underlined handwritten 'a≥-1' in black ink immediately after 范围为 in the copied stem, and the teal working below ends with '∴ -1≤a', both matching the draft answer $a\\\\geq -1$.\"\n      }\n    },\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C002\", \"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C002-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"printed_anchors\": [\n              \"regular diagonal hatched band at top representing the wall\",\n              \"uniform thin straight lines forming a 2x2 grid of four congruent rectangles\",\n              \"typeset italic vertex labels B, C, D matching the printed stem font\"\n            ],\n            \"handwriting_features\": [\n              \"black freehand arrow from the text of (1) pointing at the left edge of the grid\",\n              \"small handwritten squiggle/check at the lower-right corner of the figure\"\n            ],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"Printed skeleton (hatched wall, uniform rectangle grid, italic typeset labels B, C, D) remains fully visible beneath a handwritten pointing arrow and a corner squiggle; the stem's '如图所示' ties the figure to the printed question, so it is retained printed question content with handwritten annotation overlay.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Teal part-(1) working ends '∴ AB为6m AD为4m' and black part-(2) working ends '∴ AB的长为10/3 m, AD的长为5m', matching the draft; visibly crossed-out tokens (e.g., the struck text before 3a+2b=20 and the cancelled fraction in the -b/2a line) are already excluded from the draft transcription.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"Q12 stem is entirely student-handwritten (no printed version visible on the page); draft transcription retained unchanged.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"12\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"medium\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Underlined handwritten 'a≥-1' directly after '范围为' in the top line; green working below ends with '∴ -1≤a', supporting the retained answer. Red marks ('存在，所以用最小值', circling of ∃ and boxing of a≤0) are teacher annotations, not student answer text.\"\n      }\n    },\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C002-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"printed_anchors\": [\n              \"regular evenly spaced diagonal hatch band (wall) along the top\",\n              \"typeset italic labels A, B, C, D matching the stem math font\",\n              \"uniform rectangle outline with interior cross dividers forming four congruent cells\"\n            ],\n            \"handwriting_features\": [\n              \"freehand black pen arrow from stem text pointing at the left edge\",\n              \"wavy freehand vertical stroke tracing the rectangle's left side\"\n            ],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"Printed skeleton (hatched wall, typeset italic vertex labels, regular grid) remains visible beneath a handwritten arrow and left-edge trace; the figure is the question figure referenced by '如图所示' and is preserved, not scratch work.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten steps match the draft line-for-line: (1) green ink shows 6y+4x ≥ 2√(6y·4x), ≥ 2√(24·24), ≥ 48, min 48, y=4, x=6, 'AB为6m AD为4m'; (2) black ink shows 6a+4b=40, 3a+2b=20, b=(20-3a)/2, ab=(-3a²+20a)/2, -b/2a = -20/(2×(-3)) = 10/3, ab max = 100/3, 'AB的长为10/3 m，AD的长为5m'. Crossed-out tokens remain cancelled and are neither restored nor mentioned elsewhere.\"\n      }\n    }\n  ]\n}"
+  ]
+}

@@ -1,0 +1,357 @@
+{
+  "page": "page03",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/image/page03.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page03.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/preprocessed/page03.png",
+  "api_strategy": {
+    "call_count": 4,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "question-conditioned symbol, figure, and atomic patch review",
+    "api2_run_count": 3,
+    "local_merge": "deterministic validation against the first-pass draft"
+  },
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 50197,
+    "completion_tokens": 20646,
+    "total_tokens": 70843,
+    "latency_s": 359.308236,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 167.912113,
+          "prompt_tokens": 2977,
+          "completion_tokens": 9824,
+          "total_tokens": 12801,
+          "request_id": "chatcmpl-3bc670c0-87e1-9fb4-8e92-ac677c2b4e4e"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 51.94437,
+          "prompt_tokens": 15740,
+          "completion_tokens": 2891,
+          "total_tokens": 18631,
+          "request_id": "chatcmpl-94166215-22c4-9694-9012-5f306c3b2f0b"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 71.553267,
+          "prompt_tokens": 15740,
+          "completion_tokens": 4034,
+          "total_tokens": 19774,
+          "request_id": "chatcmpl-c7b27c67-8354-97c9-8ce6-26eeaf844f0f"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 67.898486,
+          "prompt_tokens": 15740,
+          "completion_tokens": 3897,
+          "total_tokens": 19637,
+          "request_id": "chatcmpl-25cbe0a0-ef3e-9071-b945-1050c7bccafe"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 51.94437,
+            "prompt_tokens": 15740,
+            "completion_tokens": 2891,
+            "total_tokens": 18631,
+            "request_id": "chatcmpl-94166215-22c4-9694-9012-5f306c3b2f0b"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 71.553267,
+            "prompt_tokens": 15740,
+            "completion_tokens": 4034,
+            "total_tokens": 19774,
+            "request_id": "chatcmpl-c7b27c67-8354-97c9-8ce6-26eeaf844f0f"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 67.898486,
+            "prompt_tokens": 15740,
+            "completion_tokens": 3897,
+            "total_tokens": 19637,
+            "request_id": "chatcmpl-25cbe0a0-ef3e-9071-b945-1050c7bccafe"
+          }
+        ]
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 6,
+    "answers_with_transcription": 6,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 5,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "5. 已知函数 $f(x)=\\begin{cases} x-3, x\\geq 10 \\\\ f[f(x+5)], x<10 \\end{cases}$，其中 $x\\in N$，则 $f(9)=$（ ）\nA. 5\nB. 6\nC. 7\nD. 8",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "D",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "In the C001 color context a large handwritten D fills the printed parentheses after f(9)=: one straight left vertical stem and a single continuous right-facing bow, no two-lobe left stem (not B). Matches draft D.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 6,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "6. 已知命题 $p$：$\\forall x>0, x+\\frac{4}{x}\\geq a$，命题 $q$：$\\exists x\\in R, x^2+2ax+a+2=0$，若命题 $p,q$ 都是真命题，实数 $a$ 的取值范围是（ ）\nA. $(-\\infty,-1]$\nB. $[-1,2]$\nC. $[2,4]$\nD. $(-\\infty,-1]\\cup[2,4]$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "In the C002 color context the retained handwritten letter in the parentheses shows a vertical left stem with two closed lobes (B, not D). The nearby 'a≤4' and '4a²-4a-8=0' are scratch work and excluded.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 7,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "7. 定义：称 $|b-a|$ 为区间 $[a,b]$ 的长度，若函数 $f(x)=\\sqrt{ax^2+bx+c}$ $(a<0)$ 的定义域与值域区间长度相等，则 $a$ 的值为（ ）\nA. $-4$\nB. $-2$\nC. $4$ 或 $-2$\nD. 与 $b,c$ 的取值有关",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "In the C003 color context the handwritten letter in the parentheses after 则a的值为 has a straight left stem with two lobes, i.e. B. Circled printed 'a' and '(a<0)' are student annotations only.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 8,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "8. 设 $y=(x-a)\\cdot\\frac{a}{x-b-1}$，若 $y>0$ 恒成立，则 $a^2+b^2$ 的最小值是（ ）\nA. 0\nB. $\\frac{1}{2}$\nC. 1\nD. 2",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C004"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "A",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "In the C004 color context the retained handwritten letter in the parentheses shows an apex with a horizontal crossbar and no vertical right stem continuing below the crossbar (A, not 4).",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 9,
+      "question_type": "choice",
+      "choice_mode": "multiple",
+      "section_heading_before": "二、多项选择题：本题共3小题，每小题6分，共18分. 在每小题给出的选项中，有多项符合题目要求，全部选对的得6分，部分选对的得部分分，有选错的得0分.",
+      "question_markdown": "9. 下列说法中错误的有（ ）\nA. 命题 $p$：$\\exists x\\in R, x^2+3x+4<0$，则命题 $p$ 的否定是 $\\forall x\\in R, x^2+3x+4>0$\nB. “$m<0$”是“关于 $x$ 的方程 $x^2-2x+m=0$ 有一正一负根”的充要条件\nC. 命题“$\\forall x\\in Z, x^2>0$”是真命题\nD. “$|x|>|y|$”是“$x>y$”的必要不充分条件",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C005"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "ABC",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "In the C005 color context three retained handwritten letters A, B, C appear in the parentheses (C additionally circled); each letter inspected separately: A has apex+crossbar, B has two lobes, C is open with no closure. No D retained. Matches draft ABC.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C005"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 10,
+      "question_type": "choice",
+      "choice_mode": "multiple",
+      "section_heading_before": "",
+      "question_markdown": "10. 下列说法正确的是（ ）\nA. $y=\\sqrt{1+x}\\cdot\\sqrt{1-x}$ 与 $y=\\sqrt{1-x^2}$ 表示同一个函数\nB. 函数 $f(2x-1)$ 的定义域为 $(-1,2)$，则函数 $f(x)$ 的定义域为 $(-2,4)$\nC. 关于 $x$ 的不等式 $2kx^2+kx-\\frac{3}{8}<0$，使该不等式恒成立的实数 $k$ 的取值范围是 $(-3,0)$\nD. 满足条件 $\\{1,2\\}\\subsetneq C\\subsetneq\\{1,2,3,4\\}$ 的集合 $C$ 的个数为 2",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C006"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "ACD",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "In the C006 color context the retained handwritten letters in the parentheses are A, C, D, inspected separately (A apex+crossbar; C open bow; D straight left stem with one outer bow). No B retained. Student strike-through over printed option B text is annotation only and does not alter the stem.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C006"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/image/page03.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/preprocessed/page03.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/api_markdown/page03.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/api_markdown/page03.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/code_outputs/match/viz/page03_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/agent_outputs/result.json",
+    "api2_results": [
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/agent_outputs/api2_runs/run_01/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/agent_outputs/api2_runs/run_02/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/agent_outputs/api2_runs/run_03/result.json"
+    ],
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/code_outputs/match/viz/page03_handwriting_overlay.png"
+  }
+}

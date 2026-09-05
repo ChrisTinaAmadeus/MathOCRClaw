@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "page": "page01",
+  "api2_run": 2,
+  "questions": [
+    {
+      "qno": 19,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "四、解答题（19题12分，20题14分，共26分）",
+      "question_markdown": "19. （12分）\n如图，$PA\\perp$ 平面 $ABCD$，四边形 $ABCD$ 为矩形，$PA=AB=2$，$AD=4$，点 $F$ 是 $PB$ 的中点，点 $E$ 在边 $BC$ 上移动。\n<插图>\n(1) 求三棱锥 $E-PAD$ 的体积；\n(2) 证明：$AF\\perp PE$。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 1,
+        "figure_audit_observed_count": 1,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C001-01",
+            "marker_index": 1,
+            "source_type": "mixed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "high",
+            "context_id": "C001",
+            "printed_anchors": [
+              "typeset italic vertex labels P, A, B, C, D, E, F in the same math font as the printed stem",
+              "regular uniform dashed segments for hidden edges",
+              "uniform thin solid edges forming pyramid P-ABCD with E on BC and F on PB, matching the question text"
+            ],
+            "handwriting_features": [
+              "freehand coordinate-axis arrows with handwritten x, y, z labels",
+              "handwritten numerals 2 and 4 added beside edges",
+              "wavy freehand retracing over some printed edges"
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "A printed pyramid skeleton with typeset labels and regular dashes remains visible underneath the student's freehand x/y/z axis arrows and numeric annotations; the graphic is the question figure referenced by 如图, so source is mixed and role is printed_question_figure.",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          }
+        ],
+        "lint_actions": [
+          "recorded_figure_observation_FIG-C001-01_mixed_figure",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page01/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 解：$\\because PA=AB=2$，$AD=4$\n$\\therefore S_{\\triangle PAD}=2\\times4\\div2=4$\n$\\therefore h=2$\n$\\therefore V_{E-PAD}=\\frac{1}{3}Sh=\\frac{1}{3}\\times4\\times2=\\frac{8}{3}$\n(2) 证明：$\\because PA\\perp$ 平面 $ABCD$\n又 $\\because AB$，$CB\\subset$ 平面 $ABCD$\n$\\therefore PA\\perp BC$\n$\\because PA=AB$\n$\\therefore \\triangle PAB$ 为等腰三角形\n$\\because F$ 为 $PB$ 中点\n$\\therefore AF\\perp BP$\n如图所示建立空间直角坐标系，$A$ 为原点\n$\\because PA=AB=2$，$AD=4$\n$\\therefore P(0,0,2)$，$C(4,2,0)$，$A(0,0,0)$，$F(0,1,1)$\n$\\therefore \\overrightarrow{PC}=(4,2,-2)$，$\\overrightarrow{AF}=(0,1,1)$\n$\\therefore \\cos\\theta=\\frac{\\overrightarrow{PC}\\cdot\\overrightarrow{AF}}{|\\overrightarrow{PC}||\\overrightarrow{AF}|}=0$\n$\\therefore PC\\perp AF$\n$\\because PB$，$PC\\subset$ 平面 $PBC$，$PB\\cap PC=P$\n$\\therefore AF\\perp$ 平面 $PBC$\n$\\because PE\\subset$ 平面 $PBC$ $\\therefore PE\\perp AF$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Retained handwriting matches the draft line by line: (1) ∵PA=AB=2, AD=4; S△PAD=2×4÷2=4; h=2; V=1/3×4×2=8/3; (2) proof through PA⊥BC, isosceles △PAB, AF⊥BP, coordinate setup with P(0,0,2), C(4,2,0), A(0,0,0), F(0,1,1), vectors PC=(4,2,-2) and AF=(0,1,1) with visible arrowheads, cosθ=0, PC⊥AF, AF⊥plane PBC, ending PE⊥AF. Crossed-out lines (S=2×2÷2=2, ∠PAB=90°, stray PA⊥AB repetition, and the trailing =2 after PA=AB) are visibly struck through and are correctly excluded from the draft.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page01/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.8-max",
+      "attempt": 1,
+      "elapsed_s": 119.721656,
+      "prompt_tokens": 11400,
+      "completion_tokens": 6902,
+      "total_tokens": 18302,
+      "request_id": "chatcmpl-cdbdb0a1-db96-97ce-9a9e-686cceba9094"
+    }
+  ]
+}

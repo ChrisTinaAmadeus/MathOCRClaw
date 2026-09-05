@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/api_markdown/page03.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page03/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 50197,
+    "completion_tokens": 20646,
+    "total_tokens": 70843,
+    "latency_s": 359.308236,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 167.912113,
+          "prompt_tokens": 2977,
+          "completion_tokens": 9824,
+          "total_tokens": 12801,
+          "request_id": "chatcmpl-3bc670c0-87e1-9fb4-8e92-ac677c2b4e4e"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 51.94437,
+          "prompt_tokens": 15740,
+          "completion_tokens": 2891,
+          "total_tokens": 18631,
+          "request_id": "chatcmpl-94166215-22c4-9694-9012-5f306c3b2f0b"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 71.553267,
+          "prompt_tokens": 15740,
+          "completion_tokens": 4034,
+          "total_tokens": 19774,
+          "request_id": "chatcmpl-c7b27c67-8354-97c9-8ce6-26eeaf844f0f"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 67.898486,
+          "prompt_tokens": 15740,
+          "completion_tokens": 3897,
+          "total_tokens": 19637,
+          "request_id": "chatcmpl-25cbe0a0-ef3e-9071-b945-1050c7bccafe"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 51.94437,
+            "prompt_tokens": 15740,
+            "completion_tokens": 2891,
+            "total_tokens": 18631,
+            "request_id": "chatcmpl-94166215-22c4-9694-9012-5f306c3b2f0b"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 71.553267,
+            "prompt_tokens": 15740,
+            "completion_tokens": 4034,
+            "total_tokens": 19774,
+            "request_id": "chatcmpl-c7b27c67-8354-97c9-8ce6-26eeaf844f0f"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 67.898486,
+            "prompt_tokens": 15740,
+            "completion_tokens": 3897,
+            "total_tokens": 19637,
+            "request_id": "chatcmpl-25cbe0a0-ef3e-9071-b945-1050c7bccafe"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "",
+    "",
+    ""
+  ],
+  "raw_runs": [
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"5\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"In the C001 color context a large handwritten D fills the printed parentheses after f(9)=: one straight left vertical stem and a single continuous right-facing bow, no two-lobe left stem (not B). Matches draft D.\"\n      }\n    },\n    {\n      \"qno\": \"6\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"In the C002 color context the retained handwritten letter in the parentheses shows a vertical left stem with two closed lobes (B, not D). The nearby 'a≤4' and '4a²-4a-8=0' are scratch work and excluded.\"\n      }\n    },\n    {\n      \"qno\": \"7\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"In the C003 color context the handwritten letter in the parentheses after 则a的值为 has a straight left stem with two lobes, i.e. B. Circled printed 'a' and '(a<0)' are student annotations only.\"\n      }\n    },\n    {\n      \"qno\": \"8\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"In the C004 color context the retained handwritten letter in the parentheses shows an apex with a horizontal crossbar and no vertical right stem continuing below the crossbar (A, not 4).\"\n      }\n    },\n    {\n      \"qno\": \"9\",\n      \"source_context_ids\": [\"C005\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"In the C005 color context three retained handwritten letters A, B, C appear in the parentheses (C additionally circled); each letter inspected separately: A has apex+crossbar, B has two lobes, C is open with no closure. No D retained. Matches draft ABC.\"\n      }\n    },\n    {\n      \"qno\": \"10\",\n      \"source_context_ids\": [\"C006\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"In the C006 color context the retained handwritten letters in the parentheses are A, C, D, inspected separately (A apex+crossbar; C open bow; D straight left stem with one outer bow). No B retained. Student strike-through over printed option B text is annotation only and does not alter the stem.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"5\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"A large handwritten letter fills the answer parentheses after f(9)=: one straight left stem with a single continuous right bow (no two-lobe structure), i.e. a retained D, matching the draft.\"\n      }\n    },\n    {\n      \"qno\": \"6\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"A handwritten B with a left stem and two right lobes is written inside the answer parentheses before the scratch note a≤4; the retained single letter matches the draft B.\"\n      }\n    },\n    {\n      \"qno\": \"7\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"A handwritten B (vertical stem with two lobes) is written in the parentheses after 则a的值为(; the circles around |b-a| and (a<0) are student emphasis marks, not cancellations. Retained letter matches draft B.\"\n      }\n    },\n    {\n      \"qno\": \"8\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"A bold handwritten A with a closed apex and crossbar, and no vertical right stem continuing downward (not a 4), is written in the answer parentheses after 最小值是; matches draft A.\"\n      }\n    },\n    {\n      \"qno\": \"9\",\n      \"source_context_ids\": [\"C005\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Three handwritten letters A, B, C are written in sequence in the answer parentheses after 错误的有(, with the C circled; no D is retained. Matches draft ABC for this multiple-choice question.\"\n      }\n    },\n    {\n      \"qno\": \"10\",\n      \"source_context_ids\": [\"C006\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten letters A, C, D are written in the answer parentheses after 正确的是(; B is absent. The A shows apex plus crossbar, the C is an open bow, and the D shows a straight stem with one continuous bow. Matches draft ACD.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"5\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Color context C001 shows one handwritten letter inside the answer parentheses: a straight left vertical stem with a single continuous outer bow to the right and no second lobe, matching D; printed options A.5 B.6 C.7 D.8 match the draft.\"\n      }\n    },\n    {\n      \"qno\": \"6\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"C002 shows a handwritten letter in the parentheses with a left stem bearing two closed lobes (upper and lower), i.e. B; the nearby 'a≤4' and '4a²-4a-8=0' are separate scratch work, not part of the answer.\"\n      }\n    },\n    {\n      \"qno\": \"7\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"C003 shows a handwritten B (vertical stem with two lobes) in the answer parentheses; the pen circles around printed 'a' and '(a<0)' are student annotations without cancellation of printed text.\"\n      }\n    },\n    {\n      \"qno\": \"8\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"C004 shows a bold handwritten A in the parentheses: two diagonal strokes meeting at an apex with a horizontal crossbar and no vertical right stem continuing below the crossbar, distinguishing A from 4.\"\n      }\n    },\n    {\n      \"qno\": \"9\",\n      \"source_context_ids\": [\"C005\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"C005 shows three handwritten letters after the parentheses: an A with apex and crossbar, a B with two lobes on a left stem, and an open C (no left stem, no closure) which is circled; no D letter is retained, matching ABC.\"\n      }\n    },\n    {\n      \"qno\": \"10\",\n      \"source_context_ids\": [\"C006\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"C006 shows handwritten A (apex with crossbar), C (open bow, no straight left stem), and D (straight left stem with one continuous outer bow) after the parentheses; no B retained, matching ACD. Student strike-throughs in option B text are annotations over printed text, not stem damage.\"\n      }\n    }\n  ]\n}"
+  ]
+}

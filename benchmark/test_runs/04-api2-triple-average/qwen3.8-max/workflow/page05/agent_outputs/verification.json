@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page05/api_markdown/page05.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page05/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 33062,
+    "completion_tokens": 18005,
+    "total_tokens": 51067,
+    "latency_s": 314.608919,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 83.301556,
+          "prompt_tokens": 3065,
+          "completion_tokens": 4790,
+          "total_tokens": 7855,
+          "request_id": "chatcmpl-18b7e6da-2a44-947b-bf24-48d7627187e2"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 72.263866,
+          "prompt_tokens": 9999,
+          "completion_tokens": 4081,
+          "total_tokens": 14080,
+          "request_id": "chatcmpl-38013af9-da05-9d09-aa71-ac72c14c4077"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 75.693017,
+          "prompt_tokens": 9999,
+          "completion_tokens": 4335,
+          "total_tokens": 14334,
+          "request_id": "chatcmpl-c6b62c4e-bd2b-9bc5-9fe3-a79b3d41852b"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 83.35048,
+          "prompt_tokens": 9999,
+          "completion_tokens": 4799,
+          "total_tokens": 14798,
+          "request_id": "chatcmpl-d6632711-9949-9c8b-963a-a5c0b08b64d1"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 72.263866,
+            "prompt_tokens": 9999,
+            "completion_tokens": 4081,
+            "total_tokens": 14080,
+            "request_id": "chatcmpl-38013af9-da05-9d09-aa71-ac72c14c4077"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 75.693017,
+            "prompt_tokens": 9999,
+            "completion_tokens": 4335,
+            "total_tokens": 14334,
+            "request_id": "chatcmpl-c6b62c4e-bd2b-9bc5-9fe3-a79b3d41852b"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 83.35048,
+            "prompt_tokens": 9999,
+            "completion_tokens": 4799,
+            "total_tokens": 14798,
+            "request_id": "chatcmpl-d6632711-9949-9c8b-963a-a5c0b08b64d1"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "",
+    "",
+    ""
+  ],
+  "raw_runs": [
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Color context and full page show handwritten '0<m≤4' (open loop 0, '<' with distinct lower bar, closed-top 4) at the end of the (2) stem line; (1) bears only a grader's checkmark and (3) has no student handwriting, matching the draft placeholders.\"\n      }\n    },\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwriting visible: (1) '-9, -6' (closed-loop 9 and 6 with leading minuses); (2)(i) '0<a≤1/3, 3≤x≤1/a' then 'a>1/3, 1/a≤x≤3' with lower equality bars under the '<' signs; (ii) '(-∞,1/2)∪(3,+∞)' with upward-opening cup. The struck-through scratch mark after the (2) line is cancelled and correctly excluded from the draft.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Color context shows handwritten '0<m≤4' at the end of the printed (2) line; the mark between m and 4 has a clear lower bar under the '<' confirming ≤, and the final digit is a closed-top stroked 4. Part (1) bears only a grader's checkmark and part (3) has no handwriting, matching the draft's no-answer placeholders.\"\n      }\n    },\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Retained handwriting matches draft: (1) '-9, -6'; (2)(i) '0<a≤1/3, 3≤x≤1/a' and 'a>1/3, 1/a≤x≤3' with visible lower bars on the ≤ signs and fraction bars spanning 1 over a and 1 over 3; (ii) '(-∞,1/2)∪(3,+∞)' with open parentheses and a clear U-shaped union. The struck-through '9/t' scratch above (i) is cancelled and correctly excluded.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten '0<m≤4' (visible lower equality bar under the <) sits at the right end of the printed (2) line; (1) bears only a grader checkmark and (3) only a hand-drawn circle around the printed enumerator; the assigned answer area below the stem is blank apart from faint bleed-through, matching the draft's no-answer placeholders for (1) and (3).\"\n      }\n    },\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten finals visible inline: '-9, -6' after (1); after (i) '0<a≤1/3 3≤x≤1/a' then 'a>1/3, 1/a≤x≤3' with lower equality bars visible on the ≤ signs; after (ii) '(-∞,1/2)∪(3,+∞)' with open parentheses and a clear ∪ opening upward. The stray '9/t'-like mark after the (2) line is struck through with a horizontal stroke and is cancelled scratch, correctly excluded.\"\n      }\n    }\n  ]\n}"
+  ]
+}

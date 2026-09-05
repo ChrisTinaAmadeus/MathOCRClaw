@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "page": "page28",
+  "api2_run": 3,
+  "questions": [
+    {
+      "qno": 15,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "四、解答题：本题共5小题，共77分。解答应写出文字说明、证明过程或演算步骤。",
+      "question_markdown": "15. (本小题满分13分)\n已知全集 $U=\\{x\\mid x\\leq 4\\}$，集合 $A=\\{x\\mid -2<x<3\\}$，$B=\\{x\\mid -3\\leq x\\leq 2\\}$，求：\n(1) $A\\cap B$；\n(2) $(\\complement_U A)\\cup B$；\n(3) $A\\cap(\\complement_U B)$。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page28/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) $\\because A=\\{x\\mid -2<x<3\\}$，$B=\\{x\\mid -3\\leq x\\leq 2\\}$\n$\\therefore A\\cap B=\\{x\\mid -2<x\\leq 2\\}$\n(2) $\\because A=\\{x\\mid -2<x<3\\}$，$U=\\{x\\mid x\\leq 4\\}$\n$\\therefore \\complement_U A=\\{x\\mid x\\leq -2 \\text{ 或 } 3\\leq x\\leq 4\\}$\n$\\therefore (\\complement_U A)\\cup B=\\{x\\mid x\\leq 2 \\text{ 或 } 3\\leq x\\leq 4\\}$\n(3) $\\because B=\\{x\\mid -3\\leq x\\leq 2\\}$，$U=\\{x\\mid x\\leq 4\\}$\n$\\therefore \\complement_U B=\\{x\\mid x<-3 \\text{ 或 } 2<x\\leq 4\\}$\n$\\therefore A\\cap(\\complement_U B)=\\{x\\mid 2<x<3\\}$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "C001 context and answer_detail views show the red handwritten steps matching the draft line by line: (1) A∩B={x|-2<x≤2}; (2) ∁_U A={x|x≤-2 or 3≤x≤4} and (∁_U A)∪B={x|x≤2 or 3≤x≤4}; (3) continues at top of C002 with ∁_U B={x|x<-3 or 2<x≤4} and A∩(∁_U B)={x|2<x<3}.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page28/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 16,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "16. (本小题满分15分)\n记全集 $U=\\mathbb{R}$，集合 $A=\\{x\\mid a-2\\leq x\\leq 2a+1, a\\in\\mathbb{R}\\}$，$B=\\{x\\mid x\\leq 3 \\text{，或 } x\\geq 7\\}$。\n(1) 若 $A\\cup B=\\mathbb{R}$，求 $a$ 的取值范围；\n(2) 若 $A\\cap B=A$，求 $a$ 的取值范围。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page28/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) $\\because A\\cup B=\\mathbb{R}$\n$\\therefore \\begin{cases} a-2\\leq 3\\\\ 2a+1\\geq 7 \\end{cases}$ 得 $3\\leq a\\leq 5$\n$\\therefore a$ 取值范围 $\\{a\\mid 3\\leq a\\leq 5\\}$\n(2) $\\because A\\cap B=A$，$\\therefore A\\subseteq B$\n$a-2>2a+1 \\rightarrow a<-3$\n$A\\neq\\varnothing$ $a-2\\leq 2a+1$ $a\\geq -3$\n$A\\subseteq B$ $\\therefore a-2\\geq 7$ 或 $2a+1\\leq 3$\n$\\therefore a\\geq 9$ 或 $-3\\leq a\\leq 1$\n综上 $a\\leq 1$ 或 $a\\geq 9$，$\\therefore \\{a\\mid a\\leq 1 \\text{ 或 } a\\geq 9\\}$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "C002 context shows (1) ∵A∪B=R, case system {a-2≤3, 2a+1≥7} giving 3≤a≤5 and {a|3≤a≤5}; left-margin lines for (2) show A∩B=A ⇒ A⊆B, a-2>2a+1 → a<-3, A≠∅ a-2≤2a+1 a≥-3, A⊆B ∴a-2≥7 or 2a+1≤3, continuing at top of C003 with the combined conclusion {a|a≤1 or a≥9}; all match the draft.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page28/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 17,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "17. (本小题满分15分)\n已知 $a\\in\\mathbb{R}$，$p$: $\\forall x\\in\\{x\\mid 1<x<2\\}$，$a\\leq x$；$q$: $\\exists x\\in\\mathbb{R}$，使得 $x^2+2x-(a-1)=0$。\n(1) 若 $p$ 是真命题，求 $a$ 的最大值；\n(2) 若 $p,q$ 一个为真命题，一个为假命题，求 $a$ 的取值范围。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page28/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 使 $p$: $\\forall x\\in\\{x\\mid 1<x<2\\}$，$a\\leq x$ 为真命题，只需 $a\\leq 1$，即 $a$ 的最大值为 $1$\n(2) $q$: $\\exists x\\in\\mathbb{R}$，使得 $x^2+2x-(a-1)=0$ 为真命题\n$\\Delta=4+4(a-1)\\geq 0$，解得 $a\\geq 0$\n① $p$ 真 $q$ 假，$\\begin{cases} a\\leq 1\\\\ a<0 \\end{cases}$ $\\therefore a<0$\n② $p$ 假 $q$ 真，$\\begin{cases} a>1\\\\ a\\geq 0 \\end{cases}$ $\\therefore a>1$\n$a<0$ 或 $a>1$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "C003 context and answer_detail_01 show the retained red steps matching the draft: (1) only need a≤1, maximum value 1; (2) Δ=4+4(a-1)≥0 giving a≥0, ① p true q false {a≤1, a<0} ∴a<0, ② p false q true {a>1, a≥0} ∴a>1, final line a<0 or a>1 at left margin.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page28/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 18,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "18. (本小题满分17分)\n某公司由于业务的快速发展，计划在其仓库外，利用其一侧原有墙体，建造一间高为4米，底面积为108平方米，且背面靠墙的长方体形状的贵重物品存储室。由于此贵重物品存储室的后背靠墙，无需建造费用，某工程队给出的报价如下：存储室前面新建墙体的报价为每平方米1500元，左、右两面新建墙体的报价为每平方米1000元，屋顶和地面以及其他报价共计36000元。设存储室的左、右两面墙的长度均为 $x$ 米（$6\\leq x\\leq 18$），该工程队的总报价为 $y$ 元。\n(1) 请用 $x$ 表示 $y$；\n(2) 求该工程队的总报价的最小值，并求出此时 $x$ 的值。\n<插图>",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C004"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 1,
+        "figure_audit_observed_count": 1,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C004-01",
+            "marker_index": 1,
+            "source_type": "student_diagram",
+            "content_role": "retained_solution_diagram",
+            "confidence": "high",
+            "context_id": "C004",
+            "printed_anchors": [],
+            "handwriting_features": [
+              "blue pen ink throughout",
+              "freehand rectangle with slightly wobbling sides",
+              "hand-drawn hatch strokes along the top wall",
+              "handwritten labels x, 1000, 108/x, 1500 in the same blue ink"
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "figure_candidate_01 and the C004 stem view show a rectangle drawn entirely in blue pen with hatch marks on the top edge (existing wall); side labels x and 1000, bottom labels 108/x and 1500 are handwritten in the same blue ink; no typeset label, grid, dashed print line, or printed caption is visible, so no printed skeleton remains; the sketch is uncrossed and encodes the per-wall prices used in the retained solution of (1).",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          }
+        ],
+        "lint_actions": [
+          "recorded_figure_observation_FIG-C004-01_student_diagram",
+          "accepted_symbol_observation_1",
+          "applied_solution_edit_1_insert_missing"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page28/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 前面墙长度为 $\\frac{108}{x}$ 米\n$y=1000\\times 2x\\times 4+1500\\times\\frac{108}{x}\\times 4+36000=8000x+\\frac{648000}{x}+36000$\n$(6\\leq x\\leq 18)$ 范围\n(2) $\\because 6\\leq x\\leq 18$\n$\\therefore y=8000x+\\frac{648000}{x}+36000\\geq 2\\sqrt{8000x\\cdot\\frac{648000}{x}}+36000=180000$\n当且仅当 $8000x=\\frac{648000}{x}$，$x=9$ 取等\n$\\therefore \\min=180000$，$x=9$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "All other retained lines match the draft: front wall length 108/x meters, (6≤x≤18) range in blue, (2) ∵6≤x≤18, y≥2√(8000x·648000/x)+36000=180000, equality at 8000x=648000/x, x=9, and ∴min=180000, x=9 (also visible at top of C005); only the missing factor 2 in the first product required patching.",
+        "symbol_observations": [
+          {
+            "audit_id": "",
+            "tag": "DIGIT",
+            "location": "handwritten line of part (1), between '1000×' and 'x×4' in the C004 answer area",
+            "candidates": [
+              "2",
+              "7"
+            ],
+            "selected": "2",
+            "observed_features": "the glyph shows a curved top hook opening left plus a clearly separate horizontal base stroke in answer_detail_01; a 7 in this writer's hand (e.g. the '7' in '2a+1≥7' in C002) has only a top bar and slanted downstroke with no base bar",
+            "context_id": "C004",
+            "reference_context_ids": [
+              "C002"
+            ]
+          }
+        ],
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page28/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 19,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "19. (本小题满分17分)\n已知非空数集 $S$ 满足：对任意给定的 $x,y\\in S$（$x,y$ 可以相同），有 $x+y\\in S$ 且 $x-y\\in S$。\n(1) 哪个数一定是 $S$ 中的元素？请说明理由；\n(2) 若 $S$ 是有限集，求 $S$；\n(3) 若 $S$ 中最小的正数为5，求 $S$。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C005"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page28/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) $0$，若 $x\\in S$，\n则 $x-x\\in S$\n则 $0\\in S$\n(2) $\\because S$ 为有限集\n设 $S$ 中有非零元素 $m$\n则有形如 $mk$（$k\\in\\mathbb{N}$，$k>0$）\n的所有实数都是 $S$ 的元素\n与 $S$ 是有限集矛盾\n$\\therefore S=\\{0\\}$\n(3) $\\because S$ 中最小正数 $=5$\n$\\therefore 5$ 的正整数倍一定是 $S$ 中元素\n又 $\\because -x=0-x$，$0\\in S$，故 $x\\in S$，\n$-x\\in S$\n则所有形如 $5k$（$k\\in\\mathbb{Z}$）的数都是 $S$ 的元素\n假设 $S$ 中有形如 $5k+r$（$0<r<5$）\n那么 $5k+r-5k=r\\in S$\n这与 $S$ 中最小正数 $5$ 矛盾\n$\\therefore$ 综上 $S=\\{n\\mid n=5k, k\\in\\mathbb{Z}\\}$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "C005 context and answer_detail_01 show the retained red steps matching the draft: (1) 0, x-x∈S, 0∈S; (2) finite-set contradiction leading to S={0}; (3) multiples of 5, -x=0-x argument, 5k+r reduction, and final S={n|n=5k, k∈Z} with only a self-crossed stray character before n that the draft already omits.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C005"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page28/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.8-max",
+      "attempt": 1,
+      "elapsed_s": 204.882598,
+      "prompt_tokens": 22858,
+      "completion_tokens": 12450,
+      "total_tokens": 35308,
+      "request_id": "chatcmpl-cfd0f595-2a72-93bf-8840-48a345e25175"
+    }
+  ]
+}

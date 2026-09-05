@@ -1,0 +1,344 @@
+{
+  "schema_version": 1,
+  "page": "page22",
+  "api2_run": 1,
+  "questions": [
+    {
+      "qno": 6,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "6. 设定义域为 $\\mathbf{R}$ 的偶函数 $f(x)$ 满足 $f(3)+f(-3)=0$，且对于任意的 $x\\neq0$，均有 $xf'(x)>0$，则 $xf(x)>0$ 的解集为\nA. $(-\\infty,-3)$\nB. $(-3,0)\\cup(3,+\\infty)$\nC. $(-\\infty,-3)\\cup(3,+\\infty)$\nD. $(3,+\\infty)$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page22/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Red handwritten B written left of the circled printed number 6 in C001; the small black tick near option C is a scratch mark, and the retained red letter shows one left stem with two lobes (B, not D). Matches draft B.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page22/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 7,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "7. 在平面直角坐标系 $xOy$ 中，$A(-1,0)$，$P$ 为曲线 $y=2-\\ln x$ 上一动点，则 $|AP|$ 的最小值为\nA. $\\sqrt{2}$\nB. $2$\nC. $\\sqrt{5}$\nD. $2\\sqrt{2}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page22/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "D",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Red handwritten D left of the circled printed 7 in C002: single continuous outer bow attached to a straight left stem, no two-lobe structure. Matches draft D.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page22/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 8,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "8. 设函数 $f(x)=\\frac{e^x-e^{-x}}{e^x+e^{-x}}+\\frac{1}{x^2+|x|}$，则 $\\sum_{i=-2025}^{-1}f(i)+\\sum_{i=1}^{2025}f(i)=$\nA. $\\frac{2024}{1011}$\nB. $\\frac{2025}{1013}$\nC. $\\frac{1013}{2025}$\nD. $\\frac{2026}{2025}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page22/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Red handwritten B at upper left of question 8 in C003 with two closed lobes on a left stem; option A is struck through in black as scratch. Matches draft B.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page22/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 9,
+      "question_type": "choice",
+      "choice_mode": "multiple",
+      "section_heading_before": "二、选择题：本题共 3 小题，每小题 6 分，共 18 分. 在每小题给出的选项中，有多项符合题目要求. 全部选对的得 6 分，部分选对的得部分分，有选错的得 0 分.",
+      "question_markdown": "9. 设实数 $a,b,c$ 满足 $-4<a<1<b<3<c$，则下列不等式一定成立的有\nA. $1<2b-a<10$\nB. $\\log_{2025}(c^2-1)<\\log_{2025}(b^2-1)$\nC. $\\frac{1}{bc}>\\frac{1}{a+b}$\nD. $3e^{-a}>1$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C004"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page22/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "AD",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Red handwritten AD left of question 9 in C004; A shows apex with crossbar, D shows one continuous outer bow; checks on printed A and D, strikes on B and C are scratch marks. Matches draft AD.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page22/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 10,
+      "question_type": "choice",
+      "choice_mode": "multiple",
+      "section_heading_before": "",
+      "question_markdown": "10. 若存在函数 $g_1(x)$，$g_2(x)$ 使得函数 $g_0(x)$ 满足 $g_1(x)\\leq g_0(x)\\leq g_2(x)$，则称 $g_0(x)$ 是“$g_1$-$g_2$ 变量函数”. 已知函数 $f(x)=x^2+ax+b$，$f_1(x)=x-1$，$f_2(x)=2x^2-3x+1$，若 $f(x)$ 是“$f_1$-$f_2$ 变量函数”，则下列说法正确的是\nA. $f(1)=0$\nB. $a=1$\nC. $f(x)$ 的最小值为 $-\\frac{1}{4}$\nD. 若 $f(x)+mx+1>0$ 恒成立，则 $-1<m<3$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C005"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page22/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "ACD",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Red handwritten ACD left of question 10 in C005: A with apex/crossbar, C open on the right with no straight left stem, D with single outer bow; check on printed A is scratch. Matches draft ACD.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C005"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page22/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 11,
+      "question_type": "choice",
+      "choice_mode": "multiple",
+      "section_heading_before": "",
+      "question_markdown": "11. 已知函数 $f(x)=x^3+ax^2+ax+1$，则下列说法正确的是\nA. 当 $a=3$ 时，$f(x)$ 有两个零点\nB. 当 $a=-3$ 时，曲线 $y=f(x)$ 关于点 $(1,-4)$ 对称\nC. 当 $a=0$ 时，若过点 $(m,n)$ 可以作曲线 $y=f(x)-x-1$ 的三条切线，则 $|m+n|<|m^3|$\nD. 存在 $a$ 使得方程 $f(x)=2x^2$ 有三个不等的实根 $x_1,x_2,x_3$（$x_1<x_2<x_3$），且 $x_1+x_3=x_2$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C006"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page22/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "BCD",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Red handwritten BCD left of question 11 in C006: B with two lobes, C open bow, D single outer bow; printed A is struck through as scratch. Matches draft BCD.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C006"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page22/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 12,
+      "question_type": "fill",
+      "choice_mode": "",
+      "section_heading_before": "三、填空题：本题共 3 小题，每小题 5 分，共 15 分.",
+      "question_markdown": "12. 已知幂函数 $f(x)=\\left(a^2-\\frac{5}{2}a+2\\right)x^a$ 的定义域为 $\\mathbf{R}$，则 $f(2)=$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C007"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page22/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$4$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "On the full page and C007, a red 4 (open-top diagonal plus crossing vertical) is written after f(2)= as the retained value; the preceding black attempt is crossed out with a red strike. Matches draft 4.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C007"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page22/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 13,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "13. 设 $m>0$，则 $\\frac{m^2+m+4}{m+1}$ 的最小值为",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C008"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page22/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$3$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Printed blank after 的最小值为 in C008/full page carries a red handwritten 3 (two open right-facing lobes, no top bar so not 5); surrounding fraction work is scratch. Matches draft 3.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C008"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page22/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 14,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "14. 方程 $(x\\ln x)^2=1+2x^2\\ln x$ 根的个数为",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C009"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page22/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$1$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Printed blank after 根的个数为 in C009/full page carries a single red vertical stroke read as 1; no top crossbar or loop that would suggest 7 or another digit. Matches draft 1.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C009"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page22/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.8-max",
+      "attempt": 1,
+      "elapsed_s": 117.788296,
+      "prompt_tokens": 22897,
+      "completion_tokens": 6737,
+      "total_tokens": 29634,
+      "request_id": "chatcmpl-749acd72-a2c5-9f0a-bea2-61edf47fa072"
+    }
+  ]
+}

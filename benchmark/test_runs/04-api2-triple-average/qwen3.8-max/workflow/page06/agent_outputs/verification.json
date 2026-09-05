@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page06/api_markdown/page06.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page06/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 54647,
+    "completion_tokens": 32431,
+    "total_tokens": 87078,
+    "latency_s": 558.358431,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 170.523391,
+          "prompt_tokens": 3065,
+          "completion_tokens": 9984,
+          "total_tokens": 13049,
+          "request_id": "chatcmpl-e29fa92b-e1f4-934d-b2a9-e61927436af4"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 102.790387,
+          "prompt_tokens": 17194,
+          "completion_tokens": 5915,
+          "total_tokens": 23109,
+          "request_id": "chatcmpl-50d94a58-9dd8-9d93-a349-9234f634d606"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 104.464134,
+          "prompt_tokens": 17194,
+          "completion_tokens": 6089,
+          "total_tokens": 23283,
+          "request_id": "chatcmpl-a801602f-c7b2-97f7-b579-ec56a0e5c491"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 180.580519,
+          "prompt_tokens": 17194,
+          "completion_tokens": 10443,
+          "total_tokens": 27637,
+          "request_id": "chatcmpl-dc158a93-2b55-9490-a0b6-0643a87496b3"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 102.790387,
+            "prompt_tokens": 17194,
+            "completion_tokens": 5915,
+            "total_tokens": 23109,
+            "request_id": "chatcmpl-50d94a58-9dd8-9d93-a349-9234f634d606"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 104.464134,
+            "prompt_tokens": 17194,
+            "completion_tokens": 6089,
+            "total_tokens": 23283,
+            "request_id": "chatcmpl-a801602f-c7b2-97f7-b579-ec56a0e5c491"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 180.580519,
+            "prompt_tokens": 17194,
+            "completion_tokens": 10443,
+            "total_tokens": 27637,
+            "request_id": "chatcmpl-dc158a93-2b55-9490-a0b6-0643a87496b3"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "",
+    "Q1: handwritten ∈ overwrites and check/slash marks over the printed ∈/∉ symbols in items ①-⑤ are student annotations; printed reading retained as drafted since the typeset layer is partly covered and not disproven.",
+    ""
+  ],
+  "raw_runs": [
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"1\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Single handwritten letter after the printed parenthesis shows a vertical stem with two right lobes (upper lobe closed, lower lobe open), matching the writer's B in C002; small slashes and checkmarks over the relation symbols are student annotations, not answer changes; no cancellation of the letter.\"\n      }\n    },\n    {\n      \"qno\": \"2\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten letter after the parenthesis has a left stem with two lobes (B), not one continuous outer bow (D); adjacent handwritten note restates option B's inequality with >= 0; the hatched rectangle with numbers 1 2 4 is uncanceled scratch work beside the options, not an answer mark.\"\n      }\n    },\n    {\n      \"qno\": \"3\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten letter inside the parenthesis shows an apex with two slanted legs and a crossbar (A); no vertical right stem continuing downward that would suggest 4; no cancellation.\"\n      }\n    },\n    {\n      \"qno\": \"4\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"An initial handwritten A is visibly struck through with diagonal slashes, and an uncanceled B with two lobes is written immediately to its right; retained answer is B; surrounding |a|>b notes are scratch work.\"\n      }\n    },\n    {\n      \"qno\": \"5\",\n      \"source_context_ids\": [\"C005\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten letter after '的个数为' shows a straight left stem with one continuous closed outer bow (D), matching the writer's D in C006; no second lobe boundary as in B; nearby 2^5-2 note is scratch work.\"\n      }\n    },\n    {\n      \"qno\": \"6\",\n      \"source_context_ids\": [\"C006\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten letter inside the parenthesis is a closed bowl on a flat left stem (D); printed option A is slashed out and a checkmark sits at option D, consistent with retained D.\"\n      }\n    },\n    {\n      \"qno\": \"7\",\n      \"source_context_ids\": [\"C007\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten letter inside the parenthesis shows an apex, two slanted legs and a crossbar (A); no cancellation; matches the writer's A in C003.\"\n      }\n    },\n    {\n      \"qno\": \"8\",\n      \"source_context_ids\": [\"C008\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten letter in the answer parenthesis shows a closed bowl on a left stem (D) followed by a separate check stroke; printed options A and B are slashed out, consistent with retained D.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"Q1: handwritten ∈ overwrites and check/slash marks over the printed ∈/∉ symbols in items ①-⑤ are student annotations; printed reading retained as drafted since the typeset layer is partly covered and not disproven.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"1\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"A single handwritten letter with a straight left stem and two right lobes (B) is written just after the printed answer parenthesis at the end of the stem; no other retained option letter.\"\n      }\n    },\n    {\n      \"qno\": \"2\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Clear handwritten B (vertical stem with two lobes) written in the answer parenthesis after 的否定是; adjacent handwritten ∀x∈R... is scratch restatement, and the hatched rectangle with 1 2 4 is uncanceled scratch work with no draft figure marker.\"\n      }\n    },\n    {\n      \"qno\": \"3\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten A with visible apex and crossing stroke written inside the parenthesis after A∪B=; single retained letter.\"\n      }\n    },\n    {\n      \"qno\": \"4\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"An earlier glyph is struck through with diagonal pen strokes, and a clear retained handwritten B (straight left stem, two right lobes) stands beside it; scratch notes |a|>b etc. excluded.\"\n      }\n    },\n    {\n      \"qno\": \"5\",\n      \"source_context_ids\": [\"C005\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Bold handwritten D (straight left stem with one continuous outer bow) written at the end of the stem line after 个数为; small 2^5-2 scratch nearby excluded.\"\n      }\n    },\n    {\n      \"qno\": \"6\",\n      \"source_context_ids\": [\"C006\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten D written inside the printed parenthesis after 则; option A label is slashed out on the option line but the retained answer letter in the parenthesis is D, confirmed by the check near option D.\"\n      }\n    },\n    {\n      \"qno\": \"7\",\n      \"source_context_ids\": [\"C007\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten A with apex and crossbar written inside the parenthesis after 人数为; single retained option letter.\"\n      }\n    },\n    {\n      \"qno\": \"8\",\n      \"source_context_ids\": [\"C008\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten D with an attached check stroke written in the parenthesis after 的最大值为; circled 不相等/最大值 and underlines are annotations only; option A and B labels are slashed but the retained answer letter is D.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"1\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"replace_choice\",\n        \"confidence\": \"medium\",\n        \"final_answers\": [\n          {\"label\": \"overall\", \"value\": \"D\", \"status\": \"ok\"}\n        ],\n        \"edits\": [],\n        \"symbol_observations\": [\n          {\n            \"audit_id\": \"\",\n            \"tag\": \"CHOICE_LETTER\",\n            \"location\": \"handwritten letter written just after the printed opening parenthesis at the end of the Q1 stem line\",\n            \"candidates\": [\"B\", \"D\"],\n            \"selected\": \"D\",\n            \"observed_features\": \"one straight left stem plus a single continuous outer bow sweeping from top to bottom with no mid-height waist or second lobe; the same writer's B in C002/C004 shows two stacked lobes with a clear middle junction, while the writer's D in C005/C006 shows exactly this stem-plus-one-bow shape\",\n            \"context_id\": \"C001\",\n            \"reference_context_ids\": [\"C002\", \"C004\", \"C005\", \"C006\"]\n          }\n        ],\n        \"evidence\": \"In C001 context and answer_ink the retained letter has one uninterrupted right-side bow and no two-lobe waist, matching the writer's D (C005, C006) and differing from the writer's two-lobed B (C002, C004); therefore the draft B is revised to D.\"\n      }\n    },\n    {\n      \"qno\": \"2\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"A large handwritten B with two stacked lobes and a middle waist is written in the answer parenthesis; the adjacent handwritten negation formula and the hatched number-line sketch are scratch work and do not affect the retained letter.\"\n      }\n    },\n    {\n      \"qno\": \"3\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"A large handwritten A with a clear apex and crossbar is written at the answer parenthesis after the stem.\"\n      }\n    },\n    {\n      \"qno\": \"4\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"An initial handwritten A is cancelled with diagonal strokes and a retained B with two distinct lobes is written beside it; surrounding |a|>b notes are scratch work.\"\n      }\n    },\n    {\n      \"qno\": \"5\",\n      \"source_context_ids\": [\"C005\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"A handwritten D with a straight left stem and one closed bow is written at the end of the stem line; the small 2^5-2 note is scratch work.\"\n      }\n    },\n    {\n      \"qno\": \"6\",\n      \"source_context_ids\": [\"C006\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"A handwritten D is written inside the printed parentheses; the slash over option A's label is a cancellation of that option, while the parenthesized D is retained, with a check near option D.\"\n      }\n    },\n    {\n      \"qno\": \"7\",\n      \"source_context_ids\": [\"C007\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"A handwritten A with apex and crossbar is written inside the parentheses after 人数为.\"\n      }\n    },\n    {\n      \"qno\": \"8\",\n      \"source_context_ids\": [\"C008\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"A handwritten D is written in the parentheses after 的最大值为 with an accompanying check stroke; option labels A and B are struck through but the parenthesized D is retained.\"\n      }\n    }\n  ]\n}"
+  ]
+}

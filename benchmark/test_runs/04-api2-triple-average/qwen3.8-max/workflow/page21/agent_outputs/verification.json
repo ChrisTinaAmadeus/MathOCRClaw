@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page21/api_markdown/page21.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page21/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 48600,
+    "completion_tokens": 57425,
+    "total_tokens": 106025,
+    "latency_s": 1024.849489,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 198.655307,
+          "prompt_tokens": 3034,
+          "completion_tokens": 14048,
+          "total_tokens": 17082,
+          "request_id": "chatcmpl-337cca92-078e-9406-aedc-568e924c266a"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 277.077826,
+          "prompt_tokens": 15193,
+          "completion_tokens": 14046,
+          "total_tokens": 29239,
+          "request_id": "chatcmpl-4ab62b43-7296-9ba3-8a9d-1f54d0dd6ccd"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 283.668706,
+          "prompt_tokens": 15193,
+          "completion_tokens": 13798,
+          "total_tokens": 28991,
+          "request_id": "chatcmpl-660f0d49-1fe1-91af-8d56-c176023d10ee"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 265.44765,
+          "prompt_tokens": 15180,
+          "completion_tokens": 15533,
+          "total_tokens": 30713,
+          "request_id": "chatcmpl-ceeda9d1-8da1-9cab-8b98-63d282ede9a5"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 277.077826,
+            "prompt_tokens": 15193,
+            "completion_tokens": 14046,
+            "total_tokens": 29239,
+            "request_id": "chatcmpl-4ab62b43-7296-9ba3-8a9d-1f54d0dd6ccd"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 283.668706,
+            "prompt_tokens": 15193,
+            "completion_tokens": 13798,
+            "total_tokens": 28991,
+            "request_id": "chatcmpl-660f0d49-1fe1-91af-8d56-c176023d10ee"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 265.44765,
+            "prompt_tokens": 15180,
+            "completion_tokens": 15533,
+            "total_tokens": 30713,
+            "request_id": "chatcmpl-ceeda9d1-8da1-9cab-8b98-63d282ede9a5"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "C002 answer region retains partial handwritten fragments (two stacked fractions and an inequality chain) around the student-drawn figure that API1 left untranscribed; legibility insufficient for a safe patch. C004 (1) last squared binomial (ad-bc)^2 vs (ad+bc)^2 remains visually ambiguous; draft left unchanged.",
+    "Faint short minuses in retained handwriting (C001 first solution line '2-m', C003 case line 't=-1', C004 '(ad-bc)^2') are not fully resolvable at supplied resolution; draft readings kept unchanged.",
+    "Faint minus strokes retained as drafted where inconclusive: C001 first working line '2-m≥2+m' and C003 middle case 't=-1'."
+  ],
+  "raw_runs": [
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"C002 answer region retains partial handwritten fragments (two stacked fractions and an inequality chain) around the student-drawn figure that API1 left untranscribed; legibility insufficient for a safe patch. C004 (1) last squared binomial (ad-bc)^2 vs (ad+bc)^2 remains visually ambiguous; draft left unchanged.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"The boxed answer area in C001 shows exactly three retained handwriting lines matching the draft (2) derivation (line 1 with a >= relation, then 0>=2m, then m<=0 with period); no handwriting for part (1) is visible in the assigned area, matching the draft placeholder.\"\n      }\n    },\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\n        \"C002\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C002-01\",\n            \"source_type\": \"student_diagram\",\n            \"content_role\": \"retained_solution_diagram\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C002\",\n            \"printed_anchors\": [],\n            \"handwriting_features\": [\n              \"dark pen line work with freehand wobble and pen dots at O and D\",\n              \"handwritten capital labels A, E, C, P, D, F, B\",\n              \"hand-drawn diagonal hatching filling rectangle OCPD\",\n              \"handwritten lengths 40 and 25 and an inequality chain written beside the figure\"\n            ],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"In C002 context and figure_candidate_01 the diagram (vertical ray OA with E and C, horizontal ray OB with D and F, segment EF through P, rectangle OCPD) is drawn in the same dark pen ink as the solution: freehand straight strokes, handwritten point labels, pen point dots and hatching; no typeset labels, caption, grid, or printed skeleton underneath, and no crossing-out, so it is a retained student construction supporting part (1).\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"medium\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Only isolated fragments (two stacked fractions above the figure, an inequality chain, and length annotations 40, 25 on the diagram) are visible in the C002 answer region; no ordered (1)/(2) solution text exists, so the draft placeholder is retained rather than manufacturing a transcription.\"\n      }\n    },\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\n        \"C003\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"medium\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"C003 shows four retained answer lines for (2) matching the draft: {x|-1/t<x<1}, the t<-1 case, the single-case line with {x|x!=1}, and the -1<t<0 case preceded by a struck-out token that the draft correctly omits; part (1) work is only uncircled scratch (circled t!=0, -3t^2+2t+1>0 expansions) with no clean answer, matching the draft placeholder.\"\n      }\n    },\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\n        \"C004\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"medium\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"C004 retains the (1) difference-of-fractions derivation over cd(c+d) ending in a squared binomial over cd(c+d) >= 0 with the ad=bc equality note, and the (2) chain of stacked fractions ending in >= 1/4, matching the draft line by line; part (3) has only the scratch row a 4b 2c under the printed stem, so the draft placeholder stands.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"Faint short minuses in retained handwriting (C001 first solution line '2-m', C003 case line 't=-1', C004 '(ad-bc)^2') are not fully resolvable at supplied resolution; draft readings kept unchanged.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"medium\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Answer area shows three retained handwritten lines for (2) ending in 'm≤0.'; the (1) area is blank; draft transcription matches the visible retained steps.\"\n      }\n    },\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C002-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C002\",\n            \"printed_anchors\": [\"typeset italic point labels A, E, P, D, F, B\", \"uniform thin straight lines forming the perpendicular roads, segment EF through P, and rectangle OCPD\"],\n            \"handwriting_features\": [\"black pen numerals 40, 25 and 40 beside the axes and rectangle\", \"freehand diagonal hatching inside the rectangle\", \"handwritten fractions and inequality chain 50≤20x≤75, 5/2≤x≤75/4 above the figure\"],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"A printed skeleton with typeset italic labels and uniform straight lines remains clearly visible underneath black-pen numerals, hatching and inequality scratch, so the source is mixed; the graphic is the '如图' diagram of the printed stem, so the role is the printed question figure.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"The assigned answer region below the stem is blank; the only handwriting is annotation on and beside the printed figure, with no organized solution steps retained.\"\n      }\n    },\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"medium\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Four retained handwritten lines for (2) are visible (general interval, case t<-1, case t=-1 with {x|x≠1}, case -1<t<0 after a crossed-out lead token); (1) has only margin scratch; draft matches the visible retained lines.\"\n      }\n    },\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"medium\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten (1) four-line fraction derivation ending '≥0, iff ad=bc' and (2) two-line Cauchy derivation ending '≥1/4' are visible; (3) area is blank; draft matches the visible retained steps.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"Faint minus strokes retained as drafted where inconclusive: C001 first working line '2-m≥2+m' and C003 middle case 't=-1'.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"C001 answer area shows three retained black-pen lines matching the draft (2) derivation ('0≥2m', 'm≤0' clearly visible; the dash between 2 and m in the first line is faint but not contradicted); no handwriting for (1); the small number-line sketch above the stem is uncaptured scratch and not part of the draft.\"\n      }\n    },\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C002-01\",\n            \"source_type\": \"student_diagram\",\n            \"content_role\": \"retained_solution_diagram\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C002\",\n            \"printed_anchors\": [],\n            \"handwriting_features\": [\"freehand wavy thick pen strokes for OA, OB, line EF and the rectangle\", \"handwritten capital labels A, E, P, D, F, B\", \"handwritten numerals 40 and 25\", \"freehand diagonal hatching inside rectangle OCPD\"],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"All figure lines are thick black pen with wobble and uneven width, unlike the thin gray typeset of the printed stem; no typeset labels, regular dashes, or printed skeleton visible underneath; the drawing is annotated with the values 25 and 40 and adjacent range notes and is not crossed out, so it is a retained student construction.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Only partial marginal notes beside the student-drawn figure (two fractions and range notes ending at 75, plus '5/2≤x≤75/4'); no ordered (1)/(2) solution transcription exists, so the draft placeholder is retained.\"\n      }\n    },\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Red handwritten lines match the draft: '{x|-1/t<x<1}', '当t<-1时,{x|x>1或x<-1/t}', 't=-1时,{x|x≠1}', '-1<t<0时,{x|x>-1/t或x<1}'; a stray character before '-1<t<0' is visibly struck through and is not restored; the minus in 't=-1' is faint but the three-way case split matches the draft.\"\n      }\n    },\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \"(ad-bc)^2\",\n            \"new\": \"(ad+bc)^2\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C004\",\n            \"evidence\": \"In C004 context and answer_detail_01 the numerator of the last line of (1) shows a vertical stroke crossing the horizontal dash between ad and bc, identical to the writer's plus in 'a²d+b²c' above; the writer's minus in '-2abcd' is a single dash with no crossing stroke.\"\n          }\n        ],\n        \"symbol_observations\": [\n          {\n            \"audit_id\": \"\",\n            \"tag\": \"SIGN_RELATION\",\n            \"location\": \"numerator of the fourth line of (1), between ad and bc inside the squared binomial\",\n            \"candidates\": [\"-\", \"+\"],\n            \"selected\": \"+\",\n            \"observed_features\": \"A distinct vertical stroke crosses the horizontal bar at the same pen pressure as surrounding glyphs; same-writer plus signs in 'a²d²+b²c²' show the identical cross, while the minus in '-2abcd' is a single horizontal dash without a cross\",\n            \"context_id\": \"C004\",\n            \"reference_context_ids\": [\"C004\"]\n          }\n        ],\n        \"evidence\": \"All other lines of (1) and (2) match the draft; only the binomial sign in the final numerator of (1) is corrected to the visibly written '+'; the right-column alternate work for (1) is left uncaptured as in the draft, and (3) remains without handwriting.\"\n      }\n    }\n  ]\n}"
+  ]
+}

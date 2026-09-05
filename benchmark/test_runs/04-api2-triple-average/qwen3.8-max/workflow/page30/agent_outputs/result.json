@@ -1,0 +1,177 @@
+{
+  "page": "page30",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page30/image/page30.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page30.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page30/preprocessed/page30.png",
+  "api_strategy": {
+    "call_count": 4,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "question-conditioned symbol, figure, and atomic patch review",
+    "api2_run_count": 3,
+    "local_merge": "deterministic validation against the first-pass draft"
+  },
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 30804,
+    "completion_tokens": 34511,
+    "total_tokens": 65315,
+    "latency_s": 598.793063,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 57.809601,
+          "prompt_tokens": 3078,
+          "completion_tokens": 4188,
+          "total_tokens": 7266,
+          "request_id": "chatcmpl-34a1434a-799d-9a62-8b71-3cc6e0cef067"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 218.806398,
+          "prompt_tokens": 9242,
+          "completion_tokens": 10551,
+          "total_tokens": 19793,
+          "request_id": "chatcmpl-5540f4d9-cc7c-9dca-be47-acccf035353d"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 150.770819,
+          "prompt_tokens": 9242,
+          "completion_tokens": 9211,
+          "total_tokens": 18453,
+          "request_id": "chatcmpl-04a8eeaa-5e62-9e93-91a8-2638e8d5a401"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 171.406245,
+          "prompt_tokens": 9242,
+          "completion_tokens": 10561,
+          "total_tokens": 19803,
+          "request_id": "chatcmpl-81ba72f5-a1f8-98d6-be7e-e3fbb13b4c01"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 218.806398,
+            "prompt_tokens": 9242,
+            "completion_tokens": 10551,
+            "total_tokens": 19793,
+            "request_id": "chatcmpl-5540f4d9-cc7c-9dca-be47-acccf035353d"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 150.770819,
+            "prompt_tokens": 9242,
+            "completion_tokens": 9211,
+            "total_tokens": 18453,
+            "request_id": "chatcmpl-04a8eeaa-5e62-9e93-91a8-2638e8d5a401"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 171.406245,
+            "prompt_tokens": 9242,
+            "completion_tokens": 10561,
+            "total_tokens": 19803,
+            "request_id": "chatcmpl-81ba72f5-a1f8-98d6-be7e-e3fbb13b4c01"
+          }
+        ]
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 1,
+    "answers_with_transcription": 1,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 19,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "19. 已知圆 $O: x^2 + y^2 = 9$ 与 $x$ 轴的正半轴交于点 $P$，以 $P$ 为圆心，半径为 $r$ 的圆与圆 $O$ 相交于 $M, N$ 两点。\n(1) 过点 $A(3,1)$ 的直线与圆 $O$ 相切，求切线方程；\n(2) $D$ 为圆 $O$ 上的动点（异于点 $P$），若线段 $PD$ 上有一点 $E$，满足 $\\overrightarrow{PE} = 2\\overrightarrow{ED}$，求点 $E$ 的轨迹方程；\n(3) 若 $Q$ 是圆 $O$ 上任意一点（不与 $M, N$ 重合），直线 $QM, QN$ 分别与 $x$ 轴交于点 $K$ 和 $T$，则 $|OK| \\cdot |OT|$ 是否为定值？若是，求出该定值；若不是，请说明理由。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page30/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) _未识别到手写答案。_\n(2) _未识别到手写答案。_\n(3) 设 $M(x_0, y_0)$，$Q(x_1, y_1)$，$(y_1 \\neq \\pm y_0)$。\n$N(x_0, -y_0)$。\n$x_0^2 + y_0^2 = 9$，$x_1^2 + y_1^2 = 9$。\n$l_{QM}: y - y_1 = \\frac{y_0 - y_1}{x_0 - x_1}(x - x_1)$\n$l_{QN}: y - y_1 = \\frac{-y_0 - y_1}{x_0 - x_1}(x - x_1)$\n分别令 $y = 0$，则 $x_K = \\frac{x_1 y_0 - x_0 y_1}{y_0 - y_1}$\n$x_T = \\frac{x_1 y_0 + x_0 y_1}{y_0 + y_1}$\n$\\therefore |OK| \\cdot |OT| = |x_K \\cdot x_T|$\n$= \\left| \\frac{x_1^2 y_0^2 - x_0^2 y_1^2}{y_0^2 - y_1^2} \\right|$\n$= \\left| \\frac{(9 - y_1^2)y_0^2 - (9 - y_0^2)y_1^2}{y_0^2 - y_1^2} \\right|$\n$= 9$。",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "no_answer",
+        "evidence_note": "In C001 and answer_detail_01/02 the handwriting starts directly with '(3).' and closes with '= 9.'; no pen strokes exist anywhere for (1) or (2). The retained (3) derivation matches the draft line by line (setup M(x0,y0), Q(x1,y1), N(x0,-y0); the two line equations with fractions (y0-y1)/(x0-x1) and (-y0-y1)/(x0-x1); x_K and x_T fractions; the three absolute-value lines; final '= 9.'), so no process edits are made. A faint short dash before x_1y_0 in the x_T line is inconclusive (pen stop vs minus) and is left as drafted.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page30/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page30/image/page30.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page30/preprocessed/page30.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page30/api_markdown/page30.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page30/api_markdown/page30.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page30/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page30/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page30/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page30/code_outputs/match/viz/page30_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page30/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page30/agent_outputs/result.json",
+    "api2_results": [
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page30/agent_outputs/api2_runs/run_01/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page30/agent_outputs/api2_runs/run_02/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page30/agent_outputs/api2_runs/run_03/result.json"
+    ],
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page30/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page30/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page30/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page30/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page30/code_outputs/match/viz/page30_handwriting_overlay.png"
+  }
+}

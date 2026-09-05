@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page10/api_markdown/page10.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page10/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 22667,
+    "completion_tokens": 23301,
+    "total_tokens": 45968,
+    "latency_s": 399.173312,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 116.36878,
+          "prompt_tokens": 2933,
+          "completion_tokens": 6842,
+          "total_tokens": 9775,
+          "request_id": "chatcmpl-5ab12eff-49a2-91ae-883b-8e3b45450b96"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 82.029404,
+          "prompt_tokens": 6578,
+          "completion_tokens": 4698,
+          "total_tokens": 11276,
+          "request_id": "chatcmpl-3ca3cc4d-4e0e-9d8d-bbf0-69ccc72548da"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 104.30018,
+          "prompt_tokens": 6578,
+          "completion_tokens": 6101,
+          "total_tokens": 12679,
+          "request_id": "chatcmpl-75ac86d3-f9d3-9560-9bf1-ce5e669c9508"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 96.474948,
+          "prompt_tokens": 6578,
+          "completion_tokens": 5660,
+          "total_tokens": 12238,
+          "request_id": "chatcmpl-dc5d5af3-a3c6-94f9-9722-3f25e4a0e356"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 82.029404,
+            "prompt_tokens": 6578,
+            "completion_tokens": 4698,
+            "total_tokens": 11276,
+            "request_id": "chatcmpl-3ca3cc4d-4e0e-9d8d-bbf0-69ccc72548da"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 104.30018,
+            "prompt_tokens": 6578,
+            "completion_tokens": 6101,
+            "total_tokens": 12679,
+            "request_id": "chatcmpl-75ac86d3-f9d3-9560-9bf1-ce5e669c9508"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 96.474948,
+            "prompt_tokens": 6578,
+            "completion_tokens": 5660,
+            "total_tokens": 12238,
+            "request_id": "chatcmpl-dc5d5af3-a3c6-94f9-9722-3f25e4a0e356"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "",
+    "Printed stems for 16 and 17 are not visible (only printed question numbers; the box above 16 is blank). In 16, the dark scribble between x^2 and ≤0 in the definition of A is illegible cancelled content; the draft reading is retained unchanged.",
+    ""
+  ],
+  "raw_runs": [
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Full page shows the handwritten solution under printed number 16: (1) m=2, B={x|1≤x≤5, m∈R}, ∁RB={x|x<1 or x>5}, A={x|x²…x≤0}={x|0≤x≤1}, ∁RA={x|x<0 or x>1}, (∁RA)∩(∁RB)={x|x<0 or x>5}; (2) 'x∈A 是 x∈B 的充分不必要条件', A⊊B, two case systems {m-1≤2m+1, m-1<0, 2m+1>1} 解得 {m≥-2, m<1, m>0}, 综上所述 0<m<1. All retained steps match the draft; the small ink blot between x² and x≤0 is a crossed-out blob and does not visibly contradict the retained '-x≤0' reading, so no edit is justified.\"\n      }\n    },\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Full page shows the handwritten solution under printed number 17: (1) S=5x+30C+30×6+30 = 5x+30C+210 = 5x+30·k/(5x+5)+210 = 5x+6k/(x+1)+210; (2) S=5x+6k/(x+1)+210 = 5x+5+6k/(x+1)+210-5 = 5(x+1)+6k/(x+1)+205, then 5(x+1)+6k/(x+1) ≥ 2√(5(x+1)·6k/(x+1)) = 2√(30k), S ≥ 2√(30k)+205, 当且仅当 5(x+1)=6k/(x+1), 即 x₁=-(√(30k)+5)/5 (舍), x₂=(√(30k)-5)/5, S 取 '=' 其最小值为 2√(30k)+205. Fraction bars span visible numerators/denominators, radical overlines cover 30k, and the struck mark before the final 'S 取' line is cancelled content only; all retained steps match the draft.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"Printed stems for 16 and 17 are not visible (only printed question numbers; the box above 16 is blank). In 16, the dark scribble between x^2 and ≤0 in the definition of A is illegible cancelled content; the draft reading is retained unchanged.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"medium\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Full page shows handwritten (1) m=2, B={x|1≤x≤5, m∈R}, ∁R B={x|x<1 or x>5}, A={x|x²…≤0}={x|0≤x≤1}, ∁R A={x|x<0 or x>1}, (∁R A)∩(∁R B)={x|x<0 or x>5}; (2) sufficient-not-necessary condition, A⊊B, the two case systems m-1≤2m+1, m-1<0, 2m+1>1 solving to m≥-2, m<1, m>0, and 综上所述 0<m<1; all strokes match the draft line by line. The scribble inside A={x|x²…≤0} is crossed out and unreadable, so no patch is made.\"\n      }\n    },\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"medium\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Full page shows handwritten (1) S=5x+30C+30×6+30, =5x+30C+210, =5x+30·k/(5x+5)+210, =5x+6k/(x+1)+210; (2) rearrangement to 5(x+1)+6k/(x+1)+205, the AM–GM line ≥2√(5(x+1)·6k/(x+1))=2√30k, S≥2√30k+205, equality case x₁=-(√30k+5)/5 (舍), x₂=(√30k-5)/5, and final minimum 2√30k+205; all match the draft. A struck-out glyph before the final 'S 取 =' line is visibly cancelled and correctly not restored.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Full page: handwritten solution under printed '16' matches draft line-by-line: (1) m=2, B={x|1≤x≤5, m∈R}, ∁_R B={x|x<1 or x>5}; A={x|x^2-x≤0}={x|0≤x≤1}, ∁_R A={x|x<0 or x>1}; (∁_R A)∩(∁_R B)={x|x<0 or x>5}; (2) 充分不必要条件, A⊊B, case system m-1≤2m+1, m-1<0, 2m+1>1 with visible lower equality bars on ≤/≥, solved to m≥-2, m<1, m>0, and final 综上所述，0<m<1. Printed stem not visible, so stem stays [无法识别].\"\n      }\n    },\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Full page: handwritten solution under printed '17' matches draft: (1) S=5x+30C+30×6+30, =5x+30C+210, =5x+30·k/(5x+5)+210, =5x+6k/(x+1)+210; (2) =5x+5+6k/(x+1)+210-5, =5(x+1)+6k/(x+1)+205, AM-GM line 5(x+1)+6k/(x+1)≥2√(5(x+1)·6k/(x+1))=2√30k with visible ≥ opening and radical hook plus overline spanning the product, S≥2√30k+205, equality condition with x_1=-(√30k+5)/5 (舍), x_2=(√30k-5)/5, and final 其最小值为 2√30k+205. Fraction bars visibly span numerators and denominators throughout.\"\n      }\n    }\n  ]\n}"
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page12/api_markdown/page12.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page12/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 45701,
+    "completion_tokens": 32831,
+    "total_tokens": 78532,
+    "latency_s": 528.091651,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 182.540734,
+          "prompt_tokens": 3065,
+          "completion_tokens": 11714,
+          "total_tokens": 14779,
+          "request_id": "chatcmpl-94d10076-e435-90bf-8128-3448ea2d1fd9"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 148.894689,
+          "prompt_tokens": 14212,
+          "completion_tokens": 9219,
+          "total_tokens": 23431,
+          "request_id": "chatcmpl-7ccfa9c6-7e81-9934-a71f-725dbd63bb8d"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 88.671685,
+          "prompt_tokens": 14212,
+          "completion_tokens": 5373,
+          "total_tokens": 19585,
+          "request_id": "chatcmpl-9859ef29-ab59-913a-974c-8d2b972b8a99"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 107.984543,
+          "prompt_tokens": 14212,
+          "completion_tokens": 6525,
+          "total_tokens": 20737,
+          "request_id": "chatcmpl-85d0c0bd-ce1f-9301-b0e3-b1312faa2f53"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 148.894689,
+            "prompt_tokens": 14212,
+            "completion_tokens": 9219,
+            "total_tokens": 23431,
+            "request_id": "chatcmpl-7ccfa9c6-7e81-9934-a71f-725dbd63bb8d"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 88.671685,
+            "prompt_tokens": 14212,
+            "completion_tokens": 5373,
+            "total_tokens": 19585,
+            "request_id": "chatcmpl-9859ef29-ab59-913a-974c-8d2b972b8a99"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 107.984543,
+            "prompt_tokens": 14212,
+            "completion_tokens": 6525,
+            "total_tokens": 20737,
+            "request_id": "chatcmpl-85d0c0bd-ce1f-9301-b0e3-b1312faa2f53"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "",
+    "",
+    ""
+  ],
+  "raw_runs": [
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C001-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"printed_anchors\": [\n              \"uniform thin line work forming prism edges\",\n              \"typeset labels A, B, C, A1, B1, C1, D, E\"\n            ],\n            \"handwriting_features\": [\n              \"handwritten coordinates such as (0,0,2), (0,2,2)\",\n              \"handwritten axes x, y, z\"\n            ],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"Printed prism skeleton with serif labels is visible, overlaid with handwritten coordinate system and values by the student.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \"$\\\\therefore BB_1 // CC_1$\",\n            \"new\": \"$\\\\therefore BB_1 \\\\parallel CC_1$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"Handwritten symbol shows two slanted parallel strokes without an underline.\"\n          },\n          {\n            \"old\": \"$\\\\therefore C_1D //$\",\n            \"new\": \"$\\\\therefore C_1D \\\\parallel$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"Handwritten symbol shows two slanted parallel strokes without an underline.\"\n          }\n        ],\n        \"symbol_observations\": [\n          {\n            \"audit_id\": \"G001\",\n            \"tag\": \"GEOMETRY_MARK\",\n            \"location\": \"Answer part (1), third line of derivation\",\n            \"candidates\": [\n              \"\\\\parallel\",\n              \"\\\\mathrel{\\\\underline{\\\\parallel}}\",\n              \"=\"\n            ],\n            \"selected\": \"\\\\parallel\",\n            \"observed_features\": \"Two slanted strokes of similar length and orientation, no horizontal underline visible below them.\",\n            \"context_id\": \"C001\",\n            \"reference_context_ids\": []\n          },\n          {\n            \"audit_id\": \"G002\",\n            \"tag\": \"GEOMETRY_MARK\",\n            \"location\": \"Answer part (1), last line of the proof block\",\n            \"candidates\": [\n              \"\\\\parallel\",\n              \"\\\\mathrel{\\\\underline{\\\\parallel}}\",\n              \"=\"\n            ],\n            \"selected\": \"\\\\parallel\",\n            \"observed_features\": \"Two slanted strokes, clearly parallel, no underline.\",\n            \"context_id\": \"C001\",\n            \"reference_context_ids\": []\n          }\n        ],\n        \"evidence\": \"Visual inspection of handwriting confirms parallel symbol usage as two slanted strokes.\"\n      }\n    }\n  ]\n}\n```",
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C001-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"printed_anchors\": [\n              \"printed serif labels A, B, C, A1, B1, C1, D, E\",\n              \"uniform thin line work for prism edges\"\n            ],\n            \"handwriting_features\": [\n              \"handwritten coordinates (0,0,2), (0,2,2), etc.\",\n              \"handwritten axes x, y, z with arrows\"\n            ],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"Printed prism skeleton with serif labels is visible. Student has overlaid handwritten coordinate values and axis labels in black ink.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \"\\\\therefore BB_1 // CC_1\",\n            \"new\": \"\\\\therefore BB_1 \\\\parallel CC_1\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"Visible two parallel slashes without underline in handwriting.\"\n          },\n          {\n            \"old\": \"\\\\therefore C_1D //$ 平面 $A_1BE\",\n            \"new\": \"\\\\therefore C_1D \\\\parallel$ 平面 $A_1BE\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"Visible two parallel slashes without underline at the end of part (1) proof.\"\n          }\n        ],\n        \"symbol_observations\": [\n          {\n            \"audit_id\": \"G001\",\n            \"tag\": \"GEOMETRY_MARK\",\n            \"location\": \"Part (1) proof, line 3\",\n            \"candidates\": [\n              \"\\\\parallel\",\n              \"\\\\mathrel{\\\\underline{\\\\parallel}}\",\n              \"=\"\n            ],\n            \"selected\": \"\\\\parallel\",\n            \"observed_features\": \"Two distinct parallel diagonal strokes visible. No horizontal underline beneath them.\",\n            \"context_id\": \"C001\",\n            \"reference_context_ids\": []\n          },\n          {\n            \"audit_id\": \"G002\",\n            \"tag\": \"GEOMETRY_MARK\",\n            \"location\": \"Part (1) proof, last line\",\n            \"candidates\": [\n              \"\\\\parallel\",\n              \"\\\\mathrel{\\\\underline{\\\\parallel}}\",\n              \"=\"\n            ],\n            \"selected\": \"\\\\parallel\",\n            \"observed_features\": \"Two distinct parallel diagonal strokes visible. No horizontal underline beneath them.\",\n            \"context_id\": \"C001\",\n            \"reference_context_ids\": []\n          }\n        ],\n        \"evidence\": \"Handwriting matches draft text closely. Symbol // corrected to \\\\parallel based on visual stroke inspection.\"\n      }\n    }\n  ]\n}\n```",
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"edit\",\n        \"edits\": [\n          {\n            \"old\": \"$C_1D //$\",\n            \"new\": \"$C_1D \\\\parallel$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"The stem contains '//' which should be canonical '\\\\parallel'. Visible in stem crop.\"\n          }\n        ],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C001-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"printed_anchors\": [\n              \"uniform thin line work for prism edges\",\n              \"dashed lines for hidden edges\",\n              \"serif labels A, B, C, A1, B1, C1, D, E\"\n            ],\n            \"handwriting_features\": [\n              \"handwritten coordinates (0,0,2) etc.\",\n              \"handwritten axes z, y with arrows\"\n            ],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"Printed prism structure with handwritten coordinate annotations and axes overlaid.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \"$\\\\therefore BB_1 // CC_1$\",\n            \"new\": \"$\\\\therefore BB_1 \\\\parallel CC_1$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"Audit G001. Two parallel slanted strokes visible, no underline.\"\n          },\n          {\n            \"old\": \"$\\\\therefore C_1D //$\",\n            \"new\": \"$\\\\therefore C_1D \\\\parallel$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"Audit G002. Two parallel slanted strokes visible at end of part (1), no underline.\"\n          }\n        ],\n        \"symbol_observations\": [\n          {\n            \"audit_id\": \"G001\",\n            \"tag\": \"GEOMETRY_MARK\",\n            \"location\": \"Line 3 of solution part (1)\",\n            \"candidates\": [\n              \"\\\\parallel\",\n              \"\\\\mathrel{\\\\underline{\\\\parallel}}\",\n              \"=\"\n            ],\n            \"selected\": \"\\\\parallel\",\n            \"observed_features\": \"Two distinct parallel slanted strokes. No horizontal underline visible below them.\",\n            \"context_id\": \"C001\",\n            \"reference_context_ids\": []\n          },\n          {\n            \"audit_id\": \"G002\",\n            \"tag\": \"GEOMETRY_MARK\",\n            \"location\": \"Last line of solution part (1)\",\n            \"candidates\": [\n              \"\\\\parallel\",\n              \"\\\\mathrel{\\\\underline{\\\\parallel}}\",\n              \"=\"\n            ],\n            \"selected\": \"\\\\parallel\",\n            \"observed_features\": \"Two distinct parallel slanted strokes. No horizontal underline visible.\",\n            \"context_id\": \"C001\",\n            \"reference_context_ids\": []\n          }\n        ],\n        \"evidence\": \"Patches applied for non-canonical '//' symbols in geometry relations as per audits G001 and G002.\"\n      }\n    }\n  ]\n}\n```"
+  ]
+}

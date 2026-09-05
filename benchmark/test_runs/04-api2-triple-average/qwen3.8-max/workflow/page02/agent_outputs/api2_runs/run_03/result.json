@@ -1,0 +1,411 @@
+{
+  "schema_version": 1,
+  "page": "page02",
+  "api2_run": 3,
+  "questions": [
+    {
+      "qno": 6,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "6. [无法识别]",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "restored_unreadable_stem_sentinel",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page02/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "_未识别到手写答案。_",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "no_answer",
+        "evidence_note": "Only the printed options of q6 survive at the page top (A crossed, B ticked); these are option marks, not a retained answer letter in parentheses, so no_answer stands.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page02/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 7,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "7. “$m<\\frac{1}{4}$”是“一元二次方程$x^2+x+m=0$有实数解”的( )\n\nA. 充分不必要条件\nB. 充要条件\nC. 必要不充分条件\nD. 既不充分也不必要条件",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page02/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "C",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "C001 shows a single handwritten open curve 'C' inside the printed parentheses after the stem; matches draft C.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page02/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 8,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "8. 下列结论正确的是( )\n\nA. 若$a>b$，则$\\frac{1}{b}>\\frac{1}{a}$\nB. 若$a^2<b^2$，则$a<b$\nC. 若$a>b$，$c>d$则$a-d>b-c$\nD. 若$a>b$，则$ac^2>bc^2$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page02/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "C",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "C002 shows a handwritten 'C' in the answer parentheses; option B and D carry cross marks, C is retained. Matches draft C.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page02/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 9,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "9. 设集合$A=\\{0,3\\}$，$B=\\{m+2,m^2+2\\}$，若$A\\cap B=\\{3\\}$，则集合$A\\cup B$的子集的个数为( )\n\nA. 3\nB. 4\nC. 7\nD. 8",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page02/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "D",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "C003 shows a handwritten 'D' (vertical left stem with one outer bow) inside the parentheses; matches draft D.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page02/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 10,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "10. 设集合$A=\\{x\\mid x^2-4\\leq 0\\}$，$B=\\{x\\mid 2x+a\\leq 0\\}$，且$A\\cap B=\\{x\\mid -2\\leq x\\leq 1\\}$，则$a=$( )\n\nA. $-4$\nB. $-2$\nC. $2$\nD. $4$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C004"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page02/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "C004 shows a handwritten 'B' with two lobes on the left stem inside the parentheses; matches draft B.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page02/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 11,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "11. 若集合$A=\\{x\\mid x^2=1\\}$，$B=\\{x\\mid mx=1\\}$且$B\\subseteq A$，则实数$m$的集合为( )\n\nA. $\\{-1,0,1\\}$\nB. $\\{-1,1\\}$\nC. $\\{-1,0\\}$\nD. $\\{0,1\\}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C005"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page02/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "C005 shows a handwritten 'B' in parentheses at the end of the stem; matches draft B.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C005"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page02/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 12,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "12. 设集合$A=\\{x\\mid -1<x-a<1,x\\in R\\}$，$B=\\{x\\mid 1<x<5,x\\in R\\}$，若$A\\cap B=\\varnothing$，则实数$a$的取值范围是( )\n\nA. $0\\leq a\\leq 6$\nB. $a\\leq 2$或$a\\geq 4$\nC. $a\\leq 0$或$a\\geq 6$\nD. $2\\leq a\\leq 4$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C006"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "accepted_symbol_observation_1",
+          "accepted_replace_choice",
+          "removed_choice_scratch_work"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page02/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "C",
+        "answer_parts": [
+          {
+            "label": "overall",
+            "transcription": "C",
+            "final_answer": "C",
+            "status": "ok"
+          }
+        ],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "C006/full page show cancelled B followed by retained C in the answer parentheses; the following handwritten '{x|x≤1 or x≥5}' is scratch work excluded from the answer. Draft answer string also wrongly absorbed the printed heading '第II卷(非选择题共90分)', removed by replace_choice.",
+        "symbol_observations": [
+          {
+            "audit_id": "",
+            "tag": "CHOICE_LETTER",
+            "location": "handwritten marks inside the parentheses after '则实数a的取值范围是' in q12",
+            "candidates": [
+              "B",
+              "C"
+            ],
+            "selected": "C",
+            "observed_features": "First mark has a vertical stem with two closed lobes and is struck through by a diagonal stroke (cancelled); the retained mark is a single open right-facing curve with no stem or lobes, matching the writer's C in C001 and C002.",
+            "context_id": "C006",
+            "reference_context_ids": [
+              "C001",
+              "C002"
+            ]
+          }
+        ],
+        "source_context_ids": [
+          "C006"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page02/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 13,
+      "question_type": "fill",
+      "choice_mode": "",
+      "section_heading_before": "二、填空题：本题共6小题，每小题5分，共30分。",
+      "question_markdown": "13. 设集合$A=\\{1,2,6\\}$，$B=\\{2,4\\}$，$C=\\{1,2,3,4\\}$则$(A\\cup B)\\cap C=$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C007",
+          "C008"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page02/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$\\{1,2,4\\}$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Full page and C008 show handwritten '{1,2,4}' with visible curly braces after '(A∪B)∩C='; digits 1,2,4 each clearly formed. Matches draft.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C007",
+          "C008"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page02/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 14,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "14. 已知集合$A=\\{-1,3,2m-1\\}$，集合$B=\\{3,m^2\\}$，若$B\\subseteq A$，则实数$m=$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C008",
+          "C009"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page02/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$1$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "C008/C009 show a single slanted stroke '1' written on the printed blank after 'm ='; no crossbar or loop that would indicate 7 or another digit. Matches draft $1$.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C008",
+          "C009"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page02/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 15,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "15. 已知$m\\in R$，则$2m^2+3m-1$与$m^2+4m-2$的大小关系为",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C009"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page02/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$2m^2+3m-1>m^2+4m-2$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Full page right margin shows retained handwritten '2m²+3m-1' then '>' then 'm²+4m-2'; the '>' is a single open angle with no equality bar. Lower derivation lines are scratch work. Matches draft inequality.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C009"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page02/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "Local contexts are offset by one question relative to draft numbering (C001 shows q7, C002 shows q8, etc.); full page used to bind each draft to its printed stem. Q6 stem is cut off at page top (only options A-D visible) and no retained answer letter is visible for it.",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.8-max",
+      "attempt": 1,
+      "elapsed_s": 185.035329,
+      "prompt_tokens": 20318,
+      "completion_tokens": 10757,
+      "total_tokens": 31075,
+      "request_id": "chatcmpl-f949a0c3-7458-9450-8794-6beebcb7193c"
+    }
+  ]
+}

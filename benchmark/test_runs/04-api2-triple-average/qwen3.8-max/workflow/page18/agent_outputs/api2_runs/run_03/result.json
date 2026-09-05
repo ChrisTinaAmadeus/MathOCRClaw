@@ -1,0 +1,367 @@
+{
+  "schema_version": 1,
+  "page": "page18",
+  "api2_run": 3,
+  "questions": [
+    {
+      "qno": 1,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "1. 过 $A(-1,\\sqrt{3})$，$B(2,0)$ 两点的直线倾斜角为\n\nA. $\\frac{\\pi}{3}$\nB. $\\frac{3\\pi}{4}$\nC. $\\frac{2\\pi}{3}$\nD. $\\frac{5\\pi}{6}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "D",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "In C001 context and answer_ink, a single handwritten letter with one straight left stem and one continuous outer bow (D), followed by a closing parenthesis, sits immediately after the printed stem; no other option letter is retained.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 2,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "2. 在空间直角坐标系 $Oxyz$ 中，已知点 $A(1,1,1)$，$B(2,-1,0)$，若点 $P$ 与点 A 关于 $Oyz$ 平面对称，则 $\\overrightarrow{BP}=$\n\nA. $(-3,2,1)$\nB. $(-1,0,1)$\nC. $(-1,0,-1)$\nD. $(3,-2,-1)$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "A",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "In C002 context, the student wrote '=(-3,2,1)' above the option row and a large handwritten A (apex loop with crossbar) after it; no competing option letter is circled or retained.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 3,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "3. 已知 $\\vec{a}=(1,1,0)$，$\\vec{b}=(0,1,1)$，$\\vec{c}=(1,0,1)$，$\\vec{p}=\\vec{a}-\\vec{b}$，$\\vec{q}=\\vec{a}+2\\vec{b}-\\vec{c}$，则 $\\vec{p}\\cdot\\vec{q}=$\n\nA. $-1$\nB. $1$\nC. $0$\nD. $-2$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "A",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "In C003 context, after the printed '= ' a single handwritten A (closed triangular loop with internal crossbar stroke) followed by a closing parenthesis is visible; option letters B, C, D remain unmarked.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 4,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "4. 已知空间向量 $\\vec{a}=(\\sqrt{3},0,1)$，$\\vec{b}=(\\frac{1}{2},0,\\frac{\\sqrt{3}}{2})$，则 $\\vec{a}$ 在 $\\vec{b}$ 上的投影的模为\n\nA. $\\sqrt{3}$\nB. $1$\nC. $2$\nD. $\\frac{1}{2}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C004"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "A",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "In C004 context, a printed opening parenthesis after the stem is filled by one handwritten A (triangular loop with crossbar), matching the draft; no other option mark is present.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 5,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "5. 在平行六面体 $ABCD-A_1B_1C_1D_1$ 中，点 $E$ 为棱 $AA_1$ 的中点，点 $F$ 为棱 $CC_1$ 上靠近 $C$ 的三等分点。若 $\\overrightarrow{EF}=x\\overrightarrow{AB}+y\\overrightarrow{AD}+z\\overrightarrow{AA_1}$，$x,y,z\\in R$，则 $x+y+z$ 的值为\n\nA. $\\frac{1}{6}$\nB. $\\frac{11}{6}$\nC. $\\frac{17}{6}$\nD. $-\\frac{1}{6}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C005"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "In C005 context, after the printed parenthesis following 'the value of x+y+z is', a single handwritten B (vertical stem with two right-side lobes) is written inside closing parenthesis; surrounding vector expansion lines are scratch work, not option marks.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C005"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 6,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "6. 过点 $P(0,-1)$ 作直线 $l$，若直线 $l$ 与连接 $A(-2,1)$，$B(2\\sqrt{3},1)$ 两点的线段总有公共点，则直线 $l$ 的倾斜角范围为\n\nA. $\\left[\\frac{\\pi}{6},\\frac{\\pi}{4}\\right]$\nB. $\\left[\\frac{\\pi}{6},\\frac{3\\pi}{4}\\right]$\nC. $\\left[0,\\frac{\\pi}{6}\\right]\\cup\\left[\\frac{3\\pi}{4},\\pi\\right)$\nD. $\\left[\\frac{\\pi}{6},\\frac{\\pi}{2}\\right]\\cup\\left[\\frac{3\\pi}{4},\\pi\\right)$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C006"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "In C006 context, a single handwritten B (stem with two lobes) fills the printed parenthesis after 'the range of inclination angle is'; the circled printed words 'inclination angle' and the left arrow are emphasis marks, not option selections.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C006"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 7,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "7. 已知直线 $l_1: y=ax-b$，$l_2: y=bx+a$，当 $a,b$ 满足一定条件时，它们的图形可能是图中的\n\nA. <插图>\nB. <插图>\nC. <插图>\nD. <插图>",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C007"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 4,
+        "figure_audit_observed_count": 4,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C007-01",
+            "marker_index": 1,
+            "source_type": "mixed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "high",
+            "context_id": "C007",
+            "printed_anchors": [
+              "typeset italic axis labels y, O, x with printed arrowheads",
+              "typeset line labels l_1 and l_2",
+              "uniform thin straight axes and two straight lines",
+              "typeset option letter A."
+            ],
+            "handwriting_features": [
+              "bold black pen inequality notes b>0 above and a<0, -b>0, b<0 below right of the axes",
+              "diagonal elimination stroke crossing the printed option letter A."
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "Option A panel shows a printed coordinate skeleton (thin uniform axes, serif italic y/O/x and l_1, l_2 labels) with two printed straight lines, overlaid by thick pen sign annotations; the coordinate figure itself is uncrossed, only the option letter carries a slash.",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          },
+          {
+            "audit_id": "FIG-C007-02",
+            "marker_index": 2,
+            "source_type": "mixed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "high",
+            "context_id": "C007",
+            "printed_anchors": [
+              "typeset italic axis labels y, O, x with printed arrowheads",
+              "typeset line labels l_1 and l_2",
+              "uniform thin straight axes and two straight lines",
+              "typeset option letter B."
+            ],
+            "handwriting_features": [
+              "bold black pen notes a>0, -b>0, b<0 under the left line and b<0, a>0 under the right line"
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "Option B panel retains a printed axis framework with two printed intersecting lines and typeset l_1, l_2 labels; heavy pen inequality annotations are written beneath each line, leaving the printed skeleton fully visible.",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          },
+          {
+            "audit_id": "FIG-C007-03",
+            "marker_index": 3,
+            "source_type": "mixed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "high",
+            "context_id": "C007",
+            "printed_anchors": [
+              "typeset italic axis labels y, O, x with printed arrowheads",
+              "typeset line labels l_1 and l_2",
+              "uniform thin straight axes and two straight lines",
+              "typeset option letter C."
+            ],
+            "handwriting_features": [
+              "bold black pen notes b<0, a>0 (struck), a<0, -b>0 at the right of the axes",
+              "diagonal elimination stroke crossing the printed option letter C."
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "Option C panel shows printed thin axes with two printed descending lines and typeset l_1, l_2 labels; thick pen sign conditions are appended at the right, and a slash crosses only the printed letter C., not the figure.",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          },
+          {
+            "audit_id": "FIG-C007-04",
+            "marker_index": 4,
+            "source_type": "mixed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "high",
+            "context_id": "C007",
+            "printed_anchors": [
+              "typeset italic axis labels y, O, x with printed arrowheads",
+              "typeset line labels l_1 and l_2",
+              "uniform thin straight axes and two straight lines",
+              "typeset option letter D."
+            ],
+            "handwriting_features": [
+              "bold black pen notes b>0 above and a>0, -b>, b< at the right edge"
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "Option D panel retains a printed coordinate skeleton with two printed ascending lines and typeset l_1, l_2 labels; heavy pen inequality annotations crowd the right margin while the printed line work remains visible underneath.",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          }
+        ],
+        "lint_actions": [
+          "recorded_figure_observation_FIG-C007-01_mixed_figure",
+          "recorded_figure_observation_FIG-C007-02_mixed_figure",
+          "recorded_figure_observation_FIG-C007-03_mixed_figure",
+          "recorded_figure_observation_FIG-C007-04_mixed_figure",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "In C007 context and stem view, a large handwritten B inside an opening parenthesis with an underline flourish appears at the left of the option figure row; slashes over letters A. and C. are elimination marks, leaving B as the single retained selection.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C007"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.8-max",
+      "attempt": 1,
+      "elapsed_s": 117.912863,
+      "prompt_tokens": 21557,
+      "completion_tokens": 9189,
+      "total_tokens": 30746,
+      "request_id": "chatcmpl-da8fbe0f-8fa8-9d9d-8391-983517d25fbc"
+    }
+  ]
+}

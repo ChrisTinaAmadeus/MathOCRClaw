@@ -1,0 +1,544 @@
+{
+  "schema_version": 1,
+  "page": "page16",
+  "api2_run": 3,
+  "questions": [
+    {
+      "qno": 1,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "一、选择题：本题共8小题，每小题5分，共40分。在每小题给出的四个选项中，只有一项是符合题目要求的。",
+      "question_markdown": "1. 已知命题 $P$：$\\forall x>1$，$x^2+2x-3>0$，则 $\\neg P$ 为（ ）\n\nA. $\\exists x\\leq 1$，$x^2+2x-3\\leq 0$\nB. $\\exists x>1$，$x^2+2x-3\\leq 0$\nC. $\\forall x>1$，$x^2+2x-3<0$\nD. $\\exists x>1$，$x^2+2x-3>0$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "A single handwritten B with one straight left stem and two closed lobes sits in the printed parentheses; no cancellation marks.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 2,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "2. 设集合 $A=\\left\\{x\\mid \\frac{2-x}{x}\\geq 0\\right\\}$，$B=\\{x\\mid x^2-4x+3\\leq 0\\}$，则 $A\\cap(\\complement_R B)=$（ ）\n\nA. $\\{x\\mid -1<x<2\\}$\nB. $\\{x\\mid 0<x<1\\}$\nC. $\\{x\\mid 0<x\\leq 2\\}$\nD. $\\{x\\mid 1\\leq x\\leq 2\\}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "D",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "The retained letter in the parentheses shows one straight left stem plus a single continuous outer bow with no second lobe, matching the writer's D elsewhere (C003, C010); not a two-lobed B.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 3,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "3. 下列两个函数是相同函数的有（ ）\n\nA. $f(x)=x-1$ 与 $g(x)=\\frac{x^2-1}{x+1}$\nB. $f(x)=\\frac{(\\sqrt{x})^2}{x}$ 与 $g(x)=1$\nC. $f(x)=x^0$ 与 $g(x)=1$\nD. $f(x)=|x|$ 与 $g(x)=\\sqrt{x^2}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "D",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "A clean handwritten D (straight left stem extended below baseline, one large bow) is written in the parentheses; uncancelled.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 4,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "4. 已知集合 $A=\\{x\\mid x^2-3x+2=0, x\\in\\mathbb{R}\\}$，$B=\\{1,2,3,4,5\\}$，则满足条件 $A\\subseteq C$ 且 $C\\subsetneq B$ 的集合 $C$ 的个数为（ ）\n\nA. $3$\nB. $4$\nC. $7$\nD. $8$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C004"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "A",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "A handwritten A with apex, crossbar and right descender is retained in the parentheses; the two pen slashes fall on printed B elements in the stem, not on the answer letter.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 5,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "5. 下列不等式中正确的是（ ）\n\nA. $x+\\frac{1}{x}\\geq 2$\nB. $\\frac{x^2+3}{\\sqrt{x^2+2}}\\geq 2$\nC. $\\frac{b}{a}+\\frac{a}{b}\\geq 2$\nD. $x^2+\\frac{1}{x^2+1}\\geq 1$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C005"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "accepted_symbol_observation_1",
+          "rejected_answer_replacement_without_high_visual_evidence",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "BD",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Single-choice section grammar allows one letter; the parentheses contain an overwritten (cancelled) B followed by a clean single-stroke D matching the writer's D in C003/C008/C010, so D is the retained answer.",
+        "symbol_observations": [
+          {
+            "audit_id": "",
+            "tag": "CHOICE_LETTER",
+            "location": "answer parentheses after 正确的是 in C005",
+            "candidates": [
+              "B",
+              "D"
+            ],
+            "selected": "D",
+            "observed_features": "Second letter has one straight left stem and a single continuous open bow with no second lobe (D). The first letter is a B traced with multiple heavy pen passes forming overlapping loops, unlike the writer's single-stroke retained letters in C009, C010, C011, indicating cancellation by overwriting.",
+            "context_id": "C005",
+            "reference_context_ids": [
+              "C003",
+              "C008",
+              "C010"
+            ]
+          }
+        ],
+        "source_context_ids": [
+          "C005"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 6,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "6. 已知集合 $A=\\{x\\mid a+1<x<2a-3\\}$，$B=\\{x\\mid -x^2+5x+14\\leq 0\\}$，则 $A\\cap B=\\varnothing$ 的一个必要不充分条件是（ ）\n\nA. $a\\leq 5$\nB. $a>5$\nC. $a\\geq 7$\nD. $a<7$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C006"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "A",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "A handwritten A with long left slash and horizontal crossbar is retained in the parentheses; uncancelled.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C006"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 7,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "7. 若函数 $f(x)$ 的值域为 $(1,10]$，则函数 $g(x)=f(x)-4\\sqrt{f(x)-1}$ 的值域为（ ）\n\nA. $[-3,1)$\nB. $(-3,1]$\nC. $[-3,-2)$\nD. $(-3,-2)$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C007"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "A handwritten B with a vertical stem and two lobes is written in the parentheses; uncancelled.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C007"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 8,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "8. 已知两个正数 $x,y$，满足 $x+2y=2$，则下列选项错误的是（ ）\n\nA. $xy$ 的最大值为 $\\frac{1}{2}$\nB. $\\frac{2y}{x}+\\frac{1}{y}$ 的最小值 $3$\nC. $x^2+4y^2$ 的最小值为\nD. $\\left(x^2+\\frac{1}{5}\\right)\\left(4y^2+\\frac{1}{5}\\right)$ 的最小值为 $\\frac{21}{25}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C008"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "D",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "A clean single-stroke D is retained at the stem end while the earlier mark is cancelled by a heavy scribble ball; the D matches the writer's D in C003/C010.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C008"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 9,
+      "question_type": "choice",
+      "choice_mode": "multiple",
+      "section_heading_before": "二、选择题：本题共3小题，每小题6分，共18分。在每小题给出的选项中，有多项符合题目要求。全部选对的得6分，部分选对的得部分分，有选错的得0分。",
+      "question_markdown": "9. 下列说法正确的是（ ）\n\nA. 若 $a>b$，则 $\\frac{1}{a}<\\frac{1}{b}$\nB. 若 $a>b>0>c$，则 $\\frac{c}{a}<\\frac{b-c}{a-c}$\nC. 若 $a>b>c>d$，则 $a-c>b-d$\nD. 若 $a<b<0$，则 $\\frac{1}{a}<\\frac{1}{b}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C009"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "ABC",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwritten A, B, C separated by commas are retained after the stem; each letter is a clean single-stroke glyph (A with apex/crossbar, B with two lobes, C open on the right).",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C009"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 10,
+      "question_type": "choice",
+      "choice_mode": "multiple",
+      "section_heading_before": "",
+      "question_markdown": "10. 关于 $x$ 的一元二次不等式 $ax^2+bx+c\\geq 0$ 的解集为 $\\{x\\mid x\\leq -2$ 或 $x\\geq 1\\}$，则（ ）\n\nA. $b>0$ 且 $c<0$\nB. 不等式 $cx^2-bx+a<0$ 的解集为 $\\left\\{x\\mid -1<x<\\frac{1}{2}\\right\\}$\nC. $4a+2b+c=0$\nD. 不等式 $bx+c>0$ 的解集为 $\\{x\\mid x>2\\}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C010"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "AD",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwritten A and D are retained after 则; slashes on options B and C are evaluation marks, not answer letters.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C010"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 11,
+      "question_type": "choice",
+      "choice_mode": "multiple",
+      "section_heading_before": "",
+      "question_markdown": "11. 对 $\\forall x\\in\\mathbb{R}$，$[x]$ 表示不超过 $x$ 的最大整数，如 $[3.14]=3$，$[0.618]=0$，$[-2.71828]=-3$，我们把 $y=[x]$，$x\\in\\mathbb{R}$ 叫做取整函数，也称之为高斯（Gaussian）函数，也有数学爱好者形象的称其为“地板函数”。在现实生活中，这种“截尾取整”的高斯函数有着广泛的应用，如停车收费、EXCEL电子表格，在数学分析中它出现在求导、极限、定积分、级数等等各种问题之中，以下关于“高斯函数”的命题，其中是真命题有（ ）\n\nA. $\\forall x\\in\\mathbb{R}$，$[x]\\leq [2x]$\nB. $\\exists x,y\\in\\mathbb{R}$，$[x-y]<[x]-[y]$\nC. $\\forall x,y\\in\\mathbb{R}$，若 $[x]=[y]$，则 $x-y<1$\nD. $2[x]^2-[x]-3\\geq 0$ 的解集为 $(-\\infty,0)\\cup[2,+\\infty)$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C011"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "BCD",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Large handwritten B, C, D are retained after 真命题有; the slash near option A is an evaluation mark over printed text, not a retained answer letter.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C011"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 12,
+      "question_type": "fill",
+      "choice_mode": "",
+      "section_heading_before": "三、填空题：本题共3小题，每小题5分，共15分。",
+      "question_markdown": "12. 若函数 $f(x)$ 的定义域为 $[1,3]$，则函数 $g(x)=\\frac{f(2x-1)}{\\sqrt{x-3}}$ 的定义域是",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C012"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$\\left[\\frac{1}{2},2\\right]$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "A clean [1/2, 2] with straight closing edges on both brackets is written above a struck-through earlier attempt; the retained interval matches the draft.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C012"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 13,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "13. 已知 $a>0$，$b>0$，且 $2a+b=3$，则 $\\frac{2a^2}{a+1}+\\frac{b^2+1}{b}$ 的最小值为",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C013"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$\\frac{7}{3}$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "The retained fraction at the right shows a numerator with horizontal top stroke and descending tail (7) over a denominator with two open lobes (3); the earlier glyph on the blank is crossed out.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C013"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 14,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "14. 已知集合 $A=\\{x\\mid m<x<3m-1\\}$ 中的元素恰有2个整数，则实数 $m$ 的取值范围是",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C014"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$\\left(\\frac{3}{2},\\frac{7}{4}\\right)$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Rounded parentheses enclose the fractions 3/2 and 7/4; all four digits are clearly formed (3 with two open lobes, 2 with flat base, 7 with top bar and tail, 4 with open top).",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C014"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page16/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "Q8 option C: the printed value after 的最小值为 is obscured by a student scribble ball and cannot be restored; left as in draft. Q5: printed section is single-choice but two letters were written; first letter appears cancelled by overwriting, final retained as D (medium confidence).",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.8-max",
+      "attempt": 1,
+      "elapsed_s": 235.962296,
+      "prompt_tokens": 33394,
+      "completion_tokens": 13685,
+      "total_tokens": 47079,
+      "request_id": "chatcmpl-13638efd-deaf-9934-ab47-8255c3c953b5"
+    }
+  ]
+}

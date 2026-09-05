@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "page": "page12",
+  "api2_run": 2,
+  "questions": [
+    {
+      "qno": 17,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "17. 如图，在三棱柱 $ABC-A_1B_1C_1$ 中，$B_1B \\perp$ 平面 $A_1B_1C_1$，$AC=CB=CC_1=2$，$\\angle ACB=90^\\circ$，\n$D$，$E$ 分别是 $A_1B_1$，$CC_1$ 的中点。\n(1) 求证：$C_1D \\parallel$ 平面 $A_1BE$；\n(2) 求平面 $ABC$ 与平面 $A_1BE$ 所成角的正弦值。\n<插图>",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 1,
+        "figure_audit_observed_count": 1,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C001-01",
+            "marker_index": 1,
+            "source_type": "mixed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "high",
+            "context_id": "C001",
+            "printed_anchors": [
+              "typeset italic vertex labels A, B, C, A1, B1, C1, D, E matching the stem font",
+              "regular dashed dots for hidden prism edges",
+              "uniform thin solid line work forming the prism skeleton"
+            ],
+            "handwriting_features": [
+              "freehand coordinate-axis arrows labeled x, y, z",
+              "handwritten coordinate tuples such as (0,0,2), (0,2,2), (2,0,2), (2,0,0), (0,2,0)",
+              "handwritten tick marks on edges"
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "The prism skeleton and vertex labels are typeset and match the printed stem ('as shown in the figure'), while the coordinate axes, arrows, and coordinate tuples are freehand student overlays added for the coordinate setup; no crossing-out or erasure of the figure is visible.",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          }
+        ],
+        "lint_actions": [
+          "recorded_figure_observation_FIG-C001-01_mixed_figure",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page12/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "证：(1) ∵ 在三棱柱 $ABC-A_1B_1C_1$ 中，\n$B_1B \\perp$ 平面 $A_1B_1C_1$\n∴ 平面 $ABC \\parallel$ 平面 $A_1B_1C_1$，\n$B_1B \\parallel C_1C$\n∴ $C_1C \\perp$ 平面 $ABC$\n如图建立空间直角坐标系\n∴ $C_1(0,0,2)$，$D(1,1,2)$，$A_1(2,0,2)$\n$B(0,2,0)$，$E(0,0,1)$\n∴ $\\overrightarrow{C_1D}=(1,1,0)$，$\\overrightarrow{A_1B}=(-2,2,-2)$\n$\\overrightarrow{A_1E}=(-2,0,-1)$\n设平面 $A_1BE$ 一个法向量为 $\\overrightarrow{n_1}=(x,y,z)$\n则 $\\begin{cases}\\overrightarrow{n_1}\\cdot\\overrightarrow{A_1B}=0\\\\ \\overrightarrow{n_1}\\cdot\\overrightarrow{A_1E}=0\\end{cases}$ $\\Rightarrow$ $\\begin{cases}-2x+2y-2z=0\\\\ -2x-z=0\\end{cases}$\n令 $x=-1$，则 $y=1$，$z=2$\n∴ $\\overrightarrow{n_1}=(-1,1,2)$\n∴ $\\overrightarrow{C_1D}\\cdot\\overrightarrow{n_1}=1\\times(-1)+1\\times1+0\\times2=0$\n∴ $\\overrightarrow{C_1D} \\perp \\overrightarrow{n_1}$\n∴ $C_1D \\parallel$ 平面 $A_1BE$\n(2) 由 (1) 得平面 $A_1BE$ 的法向量 $\\overrightarrow{n_1}=(-1,1,2)$\n$A(2,0,0)$，$B(0,2,0)$，$C(0,0,0)$\n∴ $\\overrightarrow{CA}=(2,0,0)$，$\\overrightarrow{CB}=(0,2,0)$\n设平面 $ABC$ 一个法向量为 $\\overrightarrow{m}=(a,b,c)$\n则 $\\begin{cases}\\overrightarrow{m}\\cdot\\overrightarrow{CA}=0\\\\ \\overrightarrow{m}\\cdot\\overrightarrow{CB}=0\\end{cases}$ $\\Rightarrow$ $\\begin{cases}2a=0\\\\ 2b=0\\end{cases}$\n令 $a=0$，则 $b=0$，$c=1$\n∴ $\\overrightarrow{m}=(0,0,1)$\n∴ $\\overrightarrow{n_1}\\cdot\\overrightarrow{m}=-1\\times0+1\\times0+2\\times1=2$\n$|\\overrightarrow{n_1}|=\\sqrt{(-1)^2+1^2+2^2}=\\sqrt{6}$，$|\\overrightarrow{m}|=\\sqrt{0^2+0^2+1^2}=1$\n∴ $\\cos\\langle\\overrightarrow{n_1},\\overrightarrow{m}\\rangle=\\frac{\\overrightarrow{n_1}\\cdot\\overrightarrow{m}}{|\\overrightarrow{n_1}|\\cdot|\\overrightarrow{m}|}=\\frac{2}{\\sqrt{6}\\times1}=\\frac{\\sqrt{6}}{3}$\n设平面 $ABC$ 与平面 $A_1BE$ 所成角为 $\\theta$\n∴ $\\cos\\theta=|\\cos\\langle\\overrightarrow{n_1},\\overrightarrow{m}\\rangle|=\\frac{\\sqrt{6}}{3}$\n∴ $\\sin\\theta=\\sqrt{1-\\cos^2\\theta}=\\frac{\\sqrt{3}}{3}$\n答：正弦值为 $\\frac{\\sqrt{3}}{3}$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Retained handwriting in the C001 answer area matches the draft line-by-line in the color context and detail crops: coordinates C1(0,0,2), D(1,1,2), A1(2,0,2), B(0,2,0), E(0,0,1); vectors (1,1,0), (-2,2,-2), (-2,0,-1); normal n1=(-1,1,2) from the case -2x+2y-2z=0, -2x-z=0 with x=-1; dot product 1x(-1)+1x1+0x2=0 giving C1D perpendicular to n1 and C1D parallel to plane A1BE; part (2) with A(2,0,0), B(0,2,0), C(0,0,0), m=(0,0,1), n1·m=2, |n1|=sqrt(6), cos value sqrt(6)/3, and final sin value sqrt(3)/3 are all visibly present.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page12/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "Minor surface variants left as drafted (handwritten cos-angle line appears to list m before n1; possible parentheses around 1x1+0x2 in the dot-product expansion); differences are semantically identical and stroke evidence is not conclusive enough to patch.",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.8-max",
+      "attempt": 1,
+      "elapsed_s": 175.286365,
+      "prompt_tokens": 11664,
+      "completion_tokens": 10135,
+      "total_tokens": 21799,
+      "request_id": "chatcmpl-ff04623c-b5c6-9f49-90f5-147452560690"
+    }
+  ]
+}

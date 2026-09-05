@@ -1,0 +1,376 @@
+{
+  "schema_version": 1,
+  "page": "page07",
+  "api2_run": 1,
+  "questions": [
+    {
+      "qno": 7,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "7. 已知集合 $A=\\{x\\mid -1<x<1\\}$，$B=\\{x\\mid x^2-2x<0\\}$，则 $A\\cup B=$\nA. $\\{x\\mid x<0 \\text{ 或 } x>2\\}$\nB. $\\{x\\mid 0<x<1\\}$\nC. $\\{x\\mid -1<x<2\\}$\nD. $\\{x\\mid x<-1 \\text{ 或 } x>0\\}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page07/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "C",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "A large handwritten 'C' stands left of printed number 7; single open bow without left stem, consistent with C; exactly one retained option letter.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page07/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 8,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "8. 三元子集指包含恰好三个元素的子集. 设集合 $A=\\{a_1,a_2,a_3,a_4\\}$，若 $A$ 的所有三元子集的三个元素之和组成的集合为 $B=\\{-1,1,2,10\\}$，则集合 $A=$\nA. $\\{-1,1,2,10\\}$\nB. $\\{-6,2,3,5\\}$\nC. $\\{1,3,4,12\\}$\nD. $\\{2,10,11,13\\}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page07/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwritten 'B' with two lobes on the left stem written before printed number 8; exactly one retained option letter.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page07/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 9,
+      "question_type": "choice",
+      "choice_mode": "multiple",
+      "section_heading_before": "二、选择题：本大题共 3 小题，每小题 6 分，共 18 分. 在每小题给出的选项中，有多项符合题目要求. 全部选对的得 6 分，部分选对的得部分分，有选错的得 0 分.",
+      "question_markdown": "9. 下列“若 $p$，则 $q$”形式的命题中，$p$ 是 $q$ 的充分条件的有\nA. 若 $x,y$ 是偶数，则 $x+y$ 是偶数\nB. 若方程 $x^2-2x+a=0$ 有实根，则 $a<2$\nC. 若一个四边形是矩形，则这个四边形的对角线相等\nD. 若集合 $A\\subseteq B$，则 $A\\subsetneq B$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page07/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "AC",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwritten 'AC' left of number 9: an apex with crossbar (A) and an open bow (C); both letters retained, no cancellation.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page07/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 10,
+      "question_type": "choice",
+      "choice_mode": "multiple",
+      "section_heading_before": "",
+      "question_markdown": "10. 已知集合 $A=\\{x\\mid a-1<x<a+1\\}$，$B=\\{x\\mid 0<x<8\\}$，则下列选项中满足 $A\\cap B=\\varnothing$ 的实数 $a$ 的取值范围有\nA. $\\{a\\mid 0\\leq a\\leq 6\\}$\nB. $\\{a\\mid 9\\leq a\\leq 10\\}$\nC. $\\{a\\mid a\\leq -2\\}$\nD. $\\{a\\mid a\\geq 12\\}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C004"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page07/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "BCD",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwritten 'BCD' before number 10: two-lobed B, open-bow C, and D with straight left stem and closed bow; all three retained.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page07/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 11,
+      "question_type": "choice",
+      "choice_mode": "multiple",
+      "section_heading_before": "",
+      "question_markdown": "11. 设正实数 $m,n$ 满足 $m+n=2$，则\nA. $\\frac{4}{m}+\\frac{9}{n}$ 的最小值为 $\\frac{25}{2}$\nB. $\\frac{4}{m}+\\frac{9}{n}$ 的最大值为 $\\frac{25}{2}$\nC. $\\sqrt{m}+\\sqrt{n}$ 的最大值为 $2$\nD. $\\sqrt{m}+\\sqrt{n}$ 的最小值为 $2$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C005"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page07/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "AC",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwritten 'AC' before number 11: A with crossing crossbar and C as open bow; both letters retained.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C005"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page07/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 12,
+      "question_type": "fill",
+      "choice_mode": "",
+      "section_heading_before": "三、填空题：本题共 3 小题，每小题 5 分，共 15 分.",
+      "question_markdown": "12. 已知集合 $A=\\{1,2,3\\}$，$B=\\{x\\mid -1<x<3 \\text{ 且 } x\\in \\mathbb{N}^*\\}$，则 $A\\cap B$ =",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C006"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "accepted_symbol_observation_1",
+          "accepted_symbol_observation_2",
+          "rejected_answer_replacement_without_high_visual_evidence",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page07/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$\\{1,2,3\\}$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "The underlined handwritten answer reads '{x|1,2}': brace, x, vertical bar, digits 1 and 2 only; the draft '{1,2,3}' contains a 3 that is not visible and omits the visible 'x|' opener.",
+        "symbol_observations": [
+          {
+            "audit_id": "",
+            "tag": "DIGIT",
+            "location": "handwritten answer after the vertical bar, underlined below 'A∩B =' in C006",
+            "candidates": [
+              "2",
+              "3"
+            ],
+            "selected": "2",
+            "observed_features": "only two digits appear between the bar and the closing brace: a single vertical stroke (1) and a digit with one top hook and a diagonal ending in a flat baseline stroke (2); no second cusp or double loop of a 3 and no third digit before the closing brace",
+            "context_id": "C006",
+            "reference_context_ids": [
+              "C007"
+            ]
+          },
+          {
+            "audit_id": "",
+            "tag": "SET_INTERVAL",
+            "location": "opening and closing of the handwritten answer in C006",
+            "candidates": [
+              "\\{",
+              "("
+            ],
+            "selected": "\\{",
+            "observed_features": "tall curved brace with a central cusp pointing left, followed by a handwritten x and a separate vertical bar; closing side mirrors the brace cusp, unlike a round parenthesis",
+            "context_id": "C006",
+            "reference_context_ids": []
+          }
+        ],
+        "source_context_ids": [
+          "C006"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page07/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 13,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "13. 已知 $-2<x-y<2$，$2<x+y<5$，则 $z=3x+y$ 的取值范围为",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C007"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page07/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$2<z<12$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Underlined handwritten '2<z<12' below the printed stem; both inequality signs are open '<' without lower equality bars; digits 2 and 12 clear; right-side arrow scribbles are scratch and excluded.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C007"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page07/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 14,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "14. 若关于 $x$ 的不等式 $ax^2+bx+c<0$ 的解集为 $\\{x\\mid 2<x<3\\}$，则关于 $x$ 的不等式 $cx^2+bx+a>0$ 的解集是",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C008"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page07/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$\\{x\\mid -3<x<-2\\}$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwritten '{x|-3<x<-2}' after '的解集是'; leading minus strokes before 3 and before 2 are visible and separate from the '<' signs; braces show central cusps.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C008"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page07/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 15,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "四、解答题：本题共 5 小题，共 77 分. 解答应写出文字说明、证明过程或演算步骤.",
+      "question_markdown": "15. (本小题满分 13 分)\n设集合 $A=\\{x\\mid x^2-x-6<0\\}$，$B=\\{x\\mid 2-a<x<3a-2\\}$.\n(1) 若 $a=3$，求 $A\\cup \\complement_R B$；\n(2) 若 $a=4$，集合 $C=\\{x\\mid x\\in \\complement_R A \\text{，且 } x\\in B, x\\in \\mathbb{Z}\\}$，求集合 $C$.",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C009"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page07/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$(x-3)(x+2)<0$\n$x<3$\n$x>-2$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Retained handwritten lines '(x-3)(x+2)<0', 'x<3', 'x>-2' match the draft; two adjacent marks are heavily struck through and correctly excluded from the draft.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C009"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page07/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.8-max",
+      "attempt": 1,
+      "elapsed_s": 181.767742,
+      "prompt_tokens": 30016,
+      "completion_tokens": 10309,
+      "total_tokens": 40325,
+      "request_id": "chatcmpl-527cd4e6-4c5d-99ea-a338-a768eabcef61"
+    }
+  ]
+}

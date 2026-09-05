@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "page": "page32",
+  "api2_run": 2,
+  "questions": [
+    {
+      "qno": 19,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "19. (17分) 设函数 $y=ax^2+(1-a)x+a-2$ ($a\\in R$)\n(1) 若关于 $x$ 的不等式的 $y\\leq 0$ 解集为 $\\{x\\mid 0\\leq x\\leq b\\}$，求实数 $a$，$b$ 的值；\n(2) 解关于 $x$ 的不等式：$y<a-1$。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page32/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) $0$ 和 $b$ 是方程 $ax^2+(1-a)x+a-2$ 的根\n且 $a>0$\n$\\therefore 0+b=-\\frac{1-a}{a}$\n$0\\times b=\\frac{a-2}{a}$\n解得 $a=2$，$b=\\frac{1}{2}$。\n(2) 由 $f(x)<a-1$ 则 $ax^2+(1-a)x-1<0$。\n当 $a=0$ 时，不等式可化简为 $x-1<0$，$x<1$，$\\{x\\mid x<1\\}$\n当 $a<0$ 时，不等式可化为 $(x+\\frac{1}{a})(x-1)>0$。\n① 当 $a=-1$ 时，$-\\frac{1}{a}=1$，不等式的解集为 $\\{x\\mid x\\neq 1\\}$。\n② 当 $-1<a<0$ 时，$-\\frac{1}{a}>1$，不等式的解集为 $\\{x\\mid x<1 \\text{ 或 } x>-\\frac{1}{a}\\}$。\n③ 当 $a<-1$ 时，$-\\frac{1}{a}<1$，不等式的解集为 $\\{x\\mid x<-\\frac{1}{a} \\text{ 或 } x>1\\}$。\n综上 当 $a<-1$ 时 $\\Rightarrow \\{x\\mid x<-\\frac{1}{a} \\text{ 或 } x>1\\}$\n当 $a=-1$ 时 $\\Rightarrow \\{x\\mid x\\neq 1\\}$\n当 $-1<a<0$ 时 $\\Rightarrow \\{x\\mid x<1 \\text{ 或 } x>-\\frac{1}{a}\\}$\n当 $a=0$ 时 $\\Rightarrow \\{x\\mid x<1\\}$\n当 $a>0$ 时 $\\Rightarrow \\{x\\mid -\\frac{1}{a}<x<1\\}$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "C001 context and answer_detail_01/02 show the retained dark-ink handwriting matching the draft line by line: right-column block '(1) 0 和 b 是方程 ax²+(1-a)x +a-2 根 / 且 a>0 / ∴ 0+b=-(1-a)/a, 0×b=(a-2)/a / 解得 a=2 b=1/2', then '(2) 由 f(x)<a-1 则 ax²+(1-a)x-1<0', the a=0 line (with a scribbled-out character after 化简 correctly omitted in draft), the a<0 factorization '(x+1/a)(x-1)>0', cases ① a=-1, ② -1<a<0, ③ a<-1 with their solution sets, and the five-line 综上 summary with ⇒ arrows ending in {x|-1/a<x<1}; top-margin notes 'a=2 b=1/2' and 'a=1' are duplicate scratch annotations consistent with the retained work; no visible stroke contradicts the draft transcription.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page32/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.8-max",
+      "attempt": 1,
+      "elapsed_s": 80.091351,
+      "prompt_tokens": 9223,
+      "completion_tokens": 5156,
+      "total_tokens": 14379,
+      "request_id": "chatcmpl-4b47c077-12a4-95a3-a9a6-2a73a091d30c"
+    }
+  ]
+}

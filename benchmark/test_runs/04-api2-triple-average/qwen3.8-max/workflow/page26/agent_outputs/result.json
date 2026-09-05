@@ -1,0 +1,402 @@
+{
+  "page": "page26",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/image/page26.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page26.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/preprocessed/page26.png",
+  "api_strategy": {
+    "call_count": 4,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "question-conditioned symbol, figure, and atomic patch review",
+    "api2_run_count": 3,
+    "local_merge": "deterministic validation against the first-pass draft"
+  },
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 62010,
+    "completion_tokens": 28208,
+    "total_tokens": 90218,
+    "latency_s": 557.566783,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 73.711628,
+          "prompt_tokens": 3078,
+          "completion_tokens": 4308,
+          "total_tokens": 7386,
+          "request_id": "chatcmpl-8d4b61ab-a9d2-9768-9c67-d9a24dd1d4d6"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 223.658764,
+          "prompt_tokens": 19644,
+          "completion_tokens": 11076,
+          "total_tokens": 30720,
+          "request_id": "chatcmpl-6be384d0-4e88-9b96-b51d-11a7e816fdf4"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 141.79313,
+          "prompt_tokens": 19644,
+          "completion_tokens": 7037,
+          "total_tokens": 26681,
+          "request_id": "chatcmpl-a83b4f4c-1e8d-9f5d-984a-9299cc28961f"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 118.403261,
+          "prompt_tokens": 19644,
+          "completion_tokens": 5787,
+          "total_tokens": 25431,
+          "request_id": "chatcmpl-f7a9b59c-ef88-9e9a-950e-17902d1f4ebd"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 223.658764,
+            "prompt_tokens": 19644,
+            "completion_tokens": 11076,
+            "total_tokens": 30720,
+            "request_id": "chatcmpl-6be384d0-4e88-9b96-b51d-11a7e816fdf4"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 141.79313,
+            "prompt_tokens": 19644,
+            "completion_tokens": 7037,
+            "total_tokens": 26681,
+            "request_id": "chatcmpl-a83b4f4c-1e8d-9f5d-984a-9299cc28961f"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 118.403261,
+            "prompt_tokens": 19644,
+            "completion_tokens": 5787,
+            "total_tokens": 25431,
+            "request_id": "chatcmpl-f7a9b59c-ef88-9e9a-950e-17902d1f4ebd"
+          }
+        ]
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 6,
+    "answers_with_transcription": 6,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 1,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "一、单选题：本题共8小题，每小题5分，共40分。只有一项符合题目要求。",
+      "question_markdown": "1. 某工厂生产$A$，$B$，$C$三种不同型号的产品，产量之比为$2:3:5$。现用分层抽样的方法抽取一个容量为$n$的样本，若样本中$A$型号的产品有8件，则样本容量$n=$（ ）\nA. 80\nB. 40\nC. 60\nD. 100",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "In C001 context and answer_ink, the handwritten letter inside the answer parentheses after '样本容量n =' shows a slanted left stem with two right-side lobes (small upper lobe, wider lower lobe), the writer's B pattern; matches draft B.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 2,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "2. 在样本频率分布直方图中共有9个小矩形，若其中1个小矩形的面积等于其他8个小矩形面积和的$\\frac{2}{5}$，且样本容量为210，则该组的频数为（ ）\nA. 60\nB. 56\nC. 40\nD. 28",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "A",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "In C002 context and answer_ink, the handwritten letter in the parentheses after '则该组的频数为' shows two slanting strokes meeting at an apex with a horizontal crossbar, a clear A; matches draft A.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 3,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "3. 已知事件$A$、$B$相互独立，事件$A$发生的概率为$P(A)=\\frac{1}{2}$，事件$B$发生的概率为$P(B)=\\frac{1}{2}$，则“两个事件$A$、$B$至少有一个发生”的概率为（ ）\nA. $\\frac{1}{4}$\nB. $\\frac{1}{2}$\nC. $\\frac{3}{4}$\nD. 1",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "C",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "In C003 context and answer_ink, the handwritten mark in the parentheses after '的概率为' is a single open curve with a gap on the right and no straight left stem, a clear C; matches draft C.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 4,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "4. 如图，空间四边形$OABC$中，$\\overrightarrow{OA}=\\vec{a}$，$\\overrightarrow{OB}=\\vec{b}$，$\\overrightarrow{OC}=\\vec{c}$，点$M$在$OA$上，且$\\overrightarrow{OM}=\\frac{2}{3}\\overrightarrow{OA}$，点$N$为$BC$中点，则$\\overrightarrow{MN}$等于（ ）\nA. $\\frac{1}{2}\\vec{a}+\\frac{1}{2}\\vec{b}-\\frac{1}{2}\\vec{c}$\nB. $-\\frac{2}{3}\\vec{a}+\\frac{1}{2}\\vec{b}+\\frac{1}{2}\\vec{c}$\nC. $\\frac{2}{3}\\vec{a}+\\frac{2}{3}\\vec{b}-\\frac{1}{2}\\vec{c}$\nD. $\\frac{2}{3}\\vec{a}+\\frac{2}{3}\\vec{b}+\\frac{1}{2}\\vec{c}$\n<插图>",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C004"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 1,
+        "figure_audit_observed_count": 1,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C004-01",
+            "marker_index": 1,
+            "source_type": "mixed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "high",
+            "context_id": "C004",
+            "printed_anchors": [
+              "typeset italic vertex labels M, A, B, C, N",
+              "regular dashed segments for hidden edges AC and MN",
+              "uniform thin straight line work of the tetrahedron edges"
+            ],
+            "handwriting_features": [
+              "freehand vector-sum formulas overlapping the top vertex region",
+              "handwritten loop label at vertex O",
+              "handwritten '2' annotation beside edge OA"
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "In C004 figure_candidate_01 the tetrahedron skeleton has uniform thin edges with evenly spaced dashed hidden lines and typeset italic labels M, A, B, C, N, matching the printed '如图' stem; freehand pen formulas and a looped O label overlay the top vertex, so a printed skeleton remains under handwriting.",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          }
+        ],
+        "lint_actions": [
+          "recorded_figure_observation_FIG-C004-01_mixed_figure",
+          "accepted_symbol_observation_1",
+          "rejected_answer_replacement_without_high_visual_evidence",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "D",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "In C004 context, stem, and answer_ink, the letter in the parentheses shows a mid-stem waist with two lobes identical to the writer's B in C001 and C006; the single-bow D of C005 is visibly different, so the retained letter is B, not the draft D.",
+        "symbol_observations": [
+          {
+            "audit_id": "",
+            "tag": "CHOICE_LETTER",
+            "location": "handwritten letter inside the answer parentheses after '则MN等于(' in C004",
+            "candidates": [
+              "B",
+              "D"
+            ],
+            "selected": "B",
+            "observed_features": "The glyph has a slanted left stem with two right-side lobes meeting at a mid-stem junction (small upper lobe, wider lower lobe), not one continuous outer bow; this two-lobe pattern matches the same writer's clear B in C001 and C006, while the clear D in C005 shows a single smooth bow with no mid-stem junction.",
+            "context_id": "C004",
+            "reference_context_ids": [
+              "C001",
+              "C006",
+              "C005"
+            ]
+          }
+        ],
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 5,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "5. 若平面$\\alpha$的法向量为$\\vec{u}=(-1,2,4)$，平面$\\beta$的法向量为$\\vec{v}=(m,-1,-2)$，直线$l$的方向向量为$\\vec{l}=(n,-2,-4)$，则（ ）\nA. 若$\\alpha\\parallel\\beta$，则$m=1$\nB. 若$l\\perp\\alpha$，则$n=2$\nC. 若$n=20$，则$l\\parallel\\alpha$\nD. 若$m=-10$，则$\\alpha\\perp\\beta$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C005"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "D",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "In C005 context and answer_ink, the handwritten letter in the parentheses after '则' is a vertical stem with one continuous outer bow and no mid-stem junction, a clear D; the X marks over options A and B are elimination marks on printed text, which remains legible and is preserved.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C005"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 6,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "6. 不透明的口袋内装有红色、绿色和蓝色卡片各2张，一次性任意取出2张卡片，则下列事件，与事件“2张卡片都为红色”互斥而不对立的个数为（ ）\n①2张卡片都不是红色； ②2张卡片恰有1张是红色；\n③2张卡片至少有1张是红色； ④2张卡片至多一张为红色。\nA. 1\nB. 2\nC. 3\nD. 4",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C006"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "In C006 context and answer_ink, the handwritten letter in the parentheses after '的个数为' shows a left stem with two closed right lobes, the writer's B; checks and a strike on enumerators ①②③ are annotation marks and the printed enumerators remain legible.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C006"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/image/page26.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/preprocessed/page26.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/api_markdown/page26.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/api_markdown/page26.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/code_outputs/match/viz/page26_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/agent_outputs/result.json",
+    "api2_results": [
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/agent_outputs/api2_runs/run_01/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/agent_outputs/api2_runs/run_02/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/agent_outputs/api2_runs/run_03/result.json"
+    ],
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/code_outputs/match/viz/page26_handwriting_overlay.png"
+  }
+}

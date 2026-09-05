@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page31/api_markdown/page31.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page31/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 28493,
+    "completion_tokens": 17975,
+    "total_tokens": 46468,
+    "latency_s": 289.697863,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 67.887961,
+          "prompt_tokens": 3065,
+          "completion_tokens": 4202,
+          "total_tokens": 7267,
+          "request_id": "chatcmpl-70a1f893-e365-99b2-a2ec-001ac2996df6"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 93.842338,
+          "prompt_tokens": 8476,
+          "completion_tokens": 5834,
+          "total_tokens": 14310,
+          "request_id": "chatcmpl-7035fc90-5ef5-954e-bd79-684250337150"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 58.229519,
+          "prompt_tokens": 8476,
+          "completion_tokens": 3615,
+          "total_tokens": 12091,
+          "request_id": "chatcmpl-0eb8983a-8c9d-95a6-b13e-0229ba48eb5f"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 69.738045,
+          "prompt_tokens": 8476,
+          "completion_tokens": 4324,
+          "total_tokens": 12800,
+          "request_id": "chatcmpl-2e34e09c-2f5e-9c04-8c4a-0397faa56fe9"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 93.842338,
+            "prompt_tokens": 8476,
+            "completion_tokens": 5834,
+            "total_tokens": 14310,
+            "request_id": "chatcmpl-7035fc90-5ef5-954e-bd79-684250337150"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 58.229519,
+            "prompt_tokens": 8476,
+            "completion_tokens": 3615,
+            "total_tokens": 12091,
+            "request_id": "chatcmpl-0eb8983a-8c9d-95a6-b13e-0229ba48eb5f"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 69.738045,
+            "prompt_tokens": 8476,
+            "completion_tokens": 4324,
+            "total_tokens": 12800,
+            "request_id": "chatcmpl-2e34e09c-2f5e-9c04-8c4a-0397faa56fe9"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "",
+    "",
+    ""
+  ],
+  "raw_runs": [
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    }\n  ]\n}\n```",
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"The draft transcription matches the visible handwritten solution steps and final answers for parts (1), (2), and (3) accurately.\"\n      }\n    }\n  ]\n}\n```",
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"The handwritten solution text for parts (1), (2), and (3) matches the draft transcription. Mathematical notation including fractions, inequalities, and set notation is accurately captured. The red ink answers '3' and 'M={-2,-1,2,4}' are correctly placed at the start of their respective solution blocks.\"\n      }\n    }\n  ]\n}\n```"
+  ]
+}

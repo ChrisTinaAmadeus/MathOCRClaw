@@ -1,0 +1,309 @@
+{
+  "page": "page21",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/image/page21.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page21.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/preprocessed/page21.png",
+  "api_strategy": {
+    "call_count": 4,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "question-conditioned symbol, figure, and atomic patch review",
+    "api2_run_count": 3,
+    "local_merge": "deterministic validation against the first-pass draft"
+  },
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 49311,
+    "completion_tokens": 44534,
+    "total_tokens": 93845,
+    "latency_s": 721.009931,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 187.974564,
+          "prompt_tokens": 3021,
+          "completion_tokens": 11775,
+          "total_tokens": 14796,
+          "request_id": "chatcmpl-143bfa41-4bd6-9925-9dc9-7cf08abdaa04"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 252.424449,
+          "prompt_tokens": 15430,
+          "completion_tokens": 15751,
+          "total_tokens": 31181,
+          "request_id": "chatcmpl-2b6f3062-4cb8-9f33-819d-a5a4dc4000cf"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 124.167739,
+          "prompt_tokens": 15430,
+          "completion_tokens": 7504,
+          "total_tokens": 22934,
+          "request_id": "chatcmpl-5bf1aa7b-1218-9e9c-ad12-1fa760b5dab8"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 156.443179,
+          "prompt_tokens": 15430,
+          "completion_tokens": 9504,
+          "total_tokens": 24934,
+          "request_id": "chatcmpl-b4ec65c1-a164-9e5f-a409-d1bac01421d8"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 252.424449,
+            "prompt_tokens": 15430,
+            "completion_tokens": 15751,
+            "total_tokens": 31181,
+            "request_id": "chatcmpl-2b6f3062-4cb8-9f33-819d-a5a4dc4000cf"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 124.167739,
+            "prompt_tokens": 15430,
+            "completion_tokens": 7504,
+            "total_tokens": 22934,
+            "request_id": "chatcmpl-5bf1aa7b-1218-9e9c-ad12-1fa760b5dab8"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 156.443179,
+            "prompt_tokens": 15430,
+            "completion_tokens": 9504,
+            "total_tokens": 24934,
+            "request_id": "chatcmpl-b4ec65c1-a164-9e5f-a409-d1bac01421d8"
+          }
+        ]
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 4,
+    "answers_with_transcription": 4,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 16,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "16. (15分) 已知集合 $A=\\{x \\mid 2-m < x < 2+m\\}$，$B=\\{x \\mid x \\leqslant 1 \\text{ 或 } x \\geqslant 6\\}$.\n(1) 当 $m=3$ 时，求 $A \\cap B, A \\cup B$；\n(2) 若 $A \\cap (\\complement_R B) = \\varnothing$，证明：$m \\leqslant 0$.",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) _未识别到手写答案。_\n(2) $2m > 2+m$\n$0 \\ge 2m$\n$m \\le 0$.",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "no_answer",
+        "evidence_note": "Handwriting in C001 answer area shows three lines for part (2): '2m > 2+m', '0 ≥ 2m', 'm ≤ 0.' Part (1) has no visible answer. Draft transcription matches.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 17,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "17. (15分) 如图，$OA, OB$ 是两条长度足够长的互相垂直的笔直小路，矩形 $OCPD$ 的顶点 $C, D$ 分别在 $OA, OB$ 上，且该矩形区域内种满了荷花。为了让观赏者有更好的观赏体验，现计划经过点 $P$ 修一条小路 $EF$，其中点 $E$ 在小路 $OA$ 上，点 $F$ 在小路 $OB$ 上，并在 $\\triangle OEF$ 区域内种满荷花。已知 $50 \\text{ m} \\leqslant OF \\leqslant 75 \\text{ m}, OD=25 \\text{ m}, OC=40 \\text{ m}$，记 $\\triangle OEF$ 的面积为 $S \\text{ m}^2$.\n(1) 设 $EC=x \\text{ m}$，试用 $x$ 表示 $OF$，并求 $x$ 的取值范围.\n(2) 当 $EC$ 的长度为多少时，$S$ 取得最小值？最小值是多少？\n<插图>",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 1,
+        "figure_audit_observed_count": 1,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C002-01",
+            "marker_index": 1,
+            "source_type": "mixed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "medium",
+            "context_id": "C002",
+            "printed_anchors": [
+              "typeset labels A, E, C, P, O, D, F, B",
+              "printed rectangle OCPD outline",
+              "printed axis lines OA and OB"
+            ],
+            "handwriting_features": [
+              "handwritten values 40, 25, 40 overlaid on figure",
+              "handwritten calculations 2S/240x, S/20x, 50≤20x≤75, 5/2≤x≤15/4 above figure"
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "Printed coordinate framework with typeset labels A, E, C, P, O, D, F, B and rectangle OCPD. Handwritten numerical annotations (40, 25, 40) and inequality calculations overlaid. The rectangle hatching appears uniform but ownership is ambiguous.",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          }
+        ],
+        "lint_actions": [
+          "recorded_figure_observation_FIG-C002-01_mixed_figure",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) $50 \\le 20x \\le 75$\n$\\frac{5}{2} \\le x \\le \\frac{15}{4}$.\n(2) _未识别到手写答案。_",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "no_answer",
+        "evidence_note": "C002 answer area shows '50 ≤ 20x ≤ 75' and '5/2 ≤ x ≤ 15/4' for part (1). Part (2) has no visible answer. Draft transcription matches.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 18,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "18. (17分)\n(1) 设关于 $x$ 的方程 $tx^2 + (1-t)x + t - 1 = 0$ 有两个不相等的实数根 $x_1, x_2$.\n① 求 $t$ 的取值集合；\n② 若 $x_1^2 + x_2^2 = 3$，求 $t$ 的值.\n(2) 求关于 $x$ 的不等式 $tx^2 + (1-t)x + t - 1 < 0$ ($t$ 为常数且 $t \\in \\mathbf{R}$) 的解集.",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "applied_solution_edit_1_ocr_correction"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) ① $t \\ne 0$, $-3t^2+2t+1 > 0$, $\\{x \\mid -\\frac{1}{3} < x < 1\\}$.\n② _未识别到手写答案。_\n(2) 当 $t < -1$ 时，$\\{x \\mid x > 1 \\text{ 或 } x < -\\frac{1}{t}\\}$\n$t=1$ 时，$\\{x \\mid 0 < x < 1\\}$\n$-1 < t < 0$ 时，$\\{x \\mid x > -\\frac{1}{t} \\text{ 或 } x < 1\\}$.",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "no_answer",
+        "evidence_note": "Part (1) ① shows circled 't≠0', '-3t²+2t+1>0', and '{x | -1/3 < x < 1}'. Part (2) first case shows 'x < -1/t' not 'x < (t-1)/t'. Other cases match draft.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 19,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "19. (17分) 已知 $a, b, c, d$ 均为正实数.\n(1) 证明：$\\frac{a^2}{c} + \\frac{b^2}{d} \\geqslant \\frac{(a+b)^2}{c+d}$.\n(2) 若 $a+2b=ab$，求 $\\frac{4}{a^2+2a} + \\frac{1}{2b^2+b}$ 的最小值.\n(3) 若 $a+2b+3c=\\sqrt{6}$，求 $a^2+8b^2+6c^2$ 的最小值.",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C004"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "applied_solution_edit_1_ocr_correction"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 证1：$\\frac{a^2}{c} + \\frac{b^2}{d} - \\frac{(a+b)^2}{c+d} = \\frac{a^2d(c+d)+b^2c(c+d)-(a+b)^2cd}{cd(c+d)}$\n$= \\frac{a^2cd+a^2d^2+b^2c^2+b^2cd-(a^2+2ab+b^2)cd}{cd(c+d)}$\n$= \\frac{a^2d^2+b^2c^2-2abcd}{cd(c+d)}$\n$= \\frac{(ad-bc)^2}{cd(c+d)} \\ge 0$. 当且仅当 $ad=bc$ 时.\n② $(c+d)(\\frac{a^2}{c}+\\frac{b^2}{d}) \\ge (a+b)^2$\n$a^2+b^2+\\frac{a^2d}{c}+\\frac{b^2c}{d} \\ge (a+b)^2$\n$\\frac{a^2d}{c}+\\frac{b^2c}{d} \\ge 2ab$.\n$2ab$.\n(2) $\\frac{(a/2)^2}{1+2/a} + \\frac{(1/b)^2}{2+1/b} \\ge \\frac{(a/2+1/b)^2}{1+2/a+2+1/b} \\ge \\frac{1}{4}$.\n(3) _未识别到手写答案。_",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "no_answer",
+        "evidence_note": "Part (1) 证1 and ② match draft. Part (2) shows (1/b)² not b², and includes the intermediate Cauchy-Schwarz step. Part (3) has no visible answer.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/image/page21.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/preprocessed/page21.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/api_markdown/page21.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/api_markdown/page21.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/code_outputs/match/viz/page21_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/agent_outputs/result.json",
+    "api2_results": [
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/agent_outputs/api2_runs/run_01/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/agent_outputs/api2_runs/run_02/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/agent_outputs/api2_runs/run_03/result.json"
+    ],
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/code_outputs/match/viz/page21_handwriting_overlay.png"
+  }
+}

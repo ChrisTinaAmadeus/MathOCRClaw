@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page19/api_markdown/page19.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page19/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 61914,
+    "completion_tokens": 38904,
+    "total_tokens": 100818,
+    "latency_s": 648.379491,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 187.066694,
+          "prompt_tokens": 3461,
+          "completion_tokens": 10955,
+          "total_tokens": 14416,
+          "request_id": "chatcmpl-c82b4345-952f-9426-972d-12c7ce40a5c1"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 133.664872,
+          "prompt_tokens": 19480,
+          "completion_tokens": 7424,
+          "total_tokens": 26904,
+          "request_id": "chatcmpl-987414ee-8dce-9a1b-b80e-26a9dbe7ad4b"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 164.937609,
+          "prompt_tokens": 19493,
+          "completion_tokens": 11326,
+          "total_tokens": 30819,
+          "request_id": "chatcmpl-5d0609da-908c-966f-b88d-234ba2a5d458"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 162.710316,
+          "prompt_tokens": 19480,
+          "completion_tokens": 9199,
+          "total_tokens": 28679,
+          "request_id": "chatcmpl-e969103c-33a2-918c-9574-e10d48a71598"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 133.664872,
+            "prompt_tokens": 19480,
+            "completion_tokens": 7424,
+            "total_tokens": 26904,
+            "request_id": "chatcmpl-987414ee-8dce-9a1b-b80e-26a9dbe7ad4b"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 164.937609,
+            "prompt_tokens": 19493,
+            "completion_tokens": 11326,
+            "total_tokens": 30819,
+            "request_id": "chatcmpl-5d0609da-908c-966f-b88d-234ba2a5d458"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 162.710316,
+            "prompt_tokens": 19480,
+            "completion_tokens": 9199,
+            "total_tokens": 28679,
+            "request_id": "chatcmpl-e969103c-33a2-918c-9574-e10d48a71598"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "",
+    "Handwriting inside the C004 answer region is Q16's solution written above Q16's stem; the stray fraction at the right edge of C004 cannot be confidently attributed to Q15, and Q14's blank holds only a crossed-out scribble, so both remain no_answer.",
+    "A stray black fraction reading like 3/36 sits in the right margin between Q15 and Q16; its ownership is unresolved and it was not attached to Q15. The red handwriting overlapping the Q15 area belongs to Q16's solution."
+  ],
+  "raw_runs": [
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"12\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Color context shows handwritten '0.6' on the printed blank after P(B) with a visible overline bar; digits 0 and 6 are clear with closed loop on 6, matching the draft.\"\n      }\n    },\n    {\n      \"qno\": \"13\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"The attempt immediately after the printed blank is heavily crossed out; the retained answer is written in the top-right margin of the full page as '[0,60]' over '∪[90,180)' with small degree circles, matching the draft interval union including the half-open right endpoint.\"\n      }\n    },\n    {\n      \"qno\": \"14\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C003-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C003\",\n            \"printed_anchors\": [\"typeset italic vertex labels A, B, C, D, A_1, B_1, C_1, D_1\", \"uniform thin solid visible edges with regular dashed hidden edges forming the cube wireframe\", \"solid diagonal line work matching the stem's cut polyhedron\"],\n            \"handwriting_features\": [\"pencil '2' annotation inside the solid\", \"dark scribble near B_1/C_1\", \"arrow-like scribble above the top face\"],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"A printed cube wireframe with typeset labels remains fully visible; faint pencil and pen marks overlay it but do not cancel or replace the printed skeleton, and the stem says '如图所示'.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"The blank after '的最大值为' contains only a crossed-out scribble; no retained handwritten value is visible anywhere in the C003 region, so no_answer stands.\"\n      }\n    },\n    {\n      \"qno\": \"15\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"No handwriting addresses the dice events A, B; all red work in the assigned answer region (vectors BD1, BA, BC, BB1, proof lines about A_1EGF, and the final √22/11) belongs to question 16, so Q15 has no supported student answer.\"\n      }\n    },\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\"C005\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C005-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C005\",\n            \"printed_anchors\": [\"typeset italic labels A_1, B_1, C_1, D_1, E, B, C, D\", \"uniform thin solid edges with dashed hidden edges forming the parallelepiped\", \"figure placed beside the printed stem '如图'\"],\n            \"handwriting_features\": [\"red pen strokes tracing BD, AC and EF-related segments\", \"handwritten 'π/3', '2' annotations near vertex B\", \"handwritten F label with check mark at bottom right\"],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"The printed parallelepiped skeleton with typeset labels is clearly visible underneath red and dark handwritten annotations; the overlays annotate rather than cancel the printed figure.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Red handwritten solution matches the draft line by line: (1) construction of A_1B, BD, A_1E, midpoint G, parallelogram A_1EGF and EF∥plane BDA_1 with parallel-and-equal marks written as parallel strokes over '='; (2) vector expansion of BD1 squared ending '=29'; (3) AC and EF vectors, |AC|=2√2, |EF|=√11, |AC·EF|=4, and final √22/11 visibly retained after a crossed-out token.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"Handwriting inside the C004 answer region is Q16's solution written above Q16's stem; the stray fraction at the right edge of C004 cannot be confidently attributed to Q15, and Q14's blank holds only a crossed-out scribble, so both remain no_answer.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"12\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"C001 context and answer_ink show handwritten '0.6' on the printed blank after P(B-overline)=, with a closed loop on the 6 and a clear decimal point separated from the underline.\"\n      }\n    },\n    {\n      \"qno\": \"13\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Full page top-right shows the retained handwriting '[0,60°] ∪ [90°,180°)' with degree circles and a union stroke; the scribble immediately after the printed stem in C002 is crossed out and not the retained answer.\"\n      }\n    },\n    {\n      \"qno\": \"14\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C003-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"medium\",\n            \"context_id\": \"C003\",\n            \"printed_anchors\": [\"typeset italic vertex labels A, B, C, D, A1, B1, C1, D1\", \"uniform thin solid edges with regular dashed hidden edges forming the cube\"],\n            \"handwriting_features\": [\"faint gray-green pencil arrow above the top edge D1C1\", \"pencil numeral 2 with a loop inside the front face\", \"gray smudge over the B1 label\"],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"The cube skeleton is printed with typeset labels and dashed hidden edges matching the stem; faint gray-green pencil strokes overlay it, so the source is mixed while the role remains the printed question figure.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"C003 context and stem show only an illegible crossed-out scribble on the blank after 'the maximum value is'; no legible retained value exists, so the draft no_answer stands.\"\n      }\n    },\n    {\n      \"qno\": \"15\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"medium\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"No dice-probability working is visible in the assigned region: the left column proof and right column red vector computations belong to Q16, and the isolated fraction at the right edge cannot be tied to parts (1)-(2), so no_answer stands.\"\n      }\n    },\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\"C005\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C005-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C005\",\n            \"printed_anchors\": [\"typeset italic labels A1, B1, C1, D1, E, F, B, C, D\", \"uniform thin solid edges with dashed hidden edges forming the parallelepiped\"],\n            \"handwriting_features\": [\"thick red pen strokes along base edges and diagonals\", \"black handwritten pi/3 and 2 near vertex B\", \"gray-green pencil arrows above A1 and below C\"],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"A printed parallelepiped skeleton with typeset vertex labels remains clearly visible underneath red pen construction lines and handwritten angle/length notes, so it is a mixed figure serving as the printed question figure.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Red pen lines in the left column (proof with midpoint G) and right column (vector expansion, =29, |AC|, |EF|, |AC·EF|=4, final sqrt(22)/11 after a crossed-out attempt) match the draft step for step, including parallel-equal marks written as parallel strokes over an equals sign.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"A stray black fraction reading like 3/36 sits in the right margin between Q15 and Q16; its ownership is unresolved and it was not attached to Q15. The red handwriting overlapping the Q15 area belongs to Q16's solution.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"12\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Color context shows the printed stem with an overline over B in P(B) and the handwritten '0.6' on the printed blank; digits 0 and 6 are clearly formed with closed loop and tail.\"\n      }\n    },\n    {\n      \"qno\": \"13\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Full page top-right shows the retained handwriting '[0,60°] ∪[90°,180°)' with square bracket at 0, round bracket at 180°, and a union sign; the attempt immediately after the printed blank is crossed out with pen strokes.\"\n      }\n    },\n    {\n      \"qno\": \"14\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C003-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C003\",\n            \"printed_anchors\": [\"typeset italic vertex labels A, B, C, D, A_1, B_1, C_1, D_1\", \"uniform thin solid edges with regular dashed hidden edges forming the cube/polyhedron skeleton\"],\n            \"handwriting_features\": [\"faint pencil '2' annotation inside the solid\", \"freehand arrow/squiggle above the top face\", \"dark smudge near C_1/B_1\"],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"The skeleton is a printed typeset cube diagram matching the stem 'as shown', with slight handwritten pencil annotations overlaid; no crossing-out of the figure itself.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"The blank after 'the maximum value of the radius is' contains only an illegible crossed-out scribble in dark ink; no readable retained value anywhere in the C003 region.\"\n      }\n    },\n    {\n      \"qno\": \"15\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"All red handwriting in the assigned answer area is Q16's solution (vectors BD1, BA, BC, BB1, EF parallel-plane proof); no probability work for the dice question is retained. The isolated black '3/36' margin fraction is unassigned and not visibly linked to Q15.\"\n      }\n    },\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\"C005\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C005-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C005\",\n            \"printed_anchors\": [\"typeset italic labels A_1, B_1, C_1, D_1, E, D\", \"uniform solid parallelepiped edge line work with printed dashed hidden edges\"],\n            \"handwriting_features\": [\"red pen overlays tracing BD, AC and other segments\", \"handwritten pi/3 and 2 labels near vertex B\", \"green shading smudges inside the solid\", \"handwritten reinforcement of labels A, B, C, F\"],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"A printed parallelepiped skeleton with typeset top-face labels remains clearly visible beneath heavy red/green student annotations used in the retained proof; the stem says 'as shown', so it is the printed question figure with handwritten overlay.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Red retained handwriting matches the draft line by line: construction of G and A_1G, GF parallel-and-equal 1/2 BC via the double-stroke-over-equals mark, vector expansion of BD1, '=4+4+9+0+2×2×3×1/2×2=29', |EF|=√11, |AC·EF|=4 followed by a crossed-out attempt and the retained final √22/11.\"\n      }\n    }\n  ]\n}"
+  ]
+}

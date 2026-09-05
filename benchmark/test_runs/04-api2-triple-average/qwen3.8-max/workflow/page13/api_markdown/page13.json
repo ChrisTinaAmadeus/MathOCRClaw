@@ -1,0 +1,40 @@
+{
+  "schema_version": 3,
+  "response_format": "benchmark_markdown",
+  "prompt": {
+    "version": "extract_v2",
+    "path": "benchmark/prompts/extract_v2.txt",
+    "sha1": "68e4ba040a859426177b603b9098b3e10a2d2a2e"
+  },
+  "page_markdown": "17. [无法识别]\n<插图>\n\n### 手写答案\n\n(1) 证明：∵ 在 $\\triangle FAD$ 中，\n$G$、$H$ 分别为 $AF$、$FD$ 的中点\n∴ $GH \\parallel = \\frac{1}{2}AD$\n又∵ $BC \\parallel AD$，$BC = \\frac{1}{2}AD$\n∴ $GH \\parallel = BC$\n四边形 $BCHG$ 是平行四边形\n答：是\n∵ $G$ 是 $AF$ 中点，$BE \\parallel AF$\n∴ $BE \\parallel GF$，$GF = \\frac{1}{2}AF = BE$\n∴ 四边形 $BEFG$ 为平行四边形\n∴ $EF \\parallel = BG$\n又∵ 由(1)得 $BG \\parallel = CH$\n∴ $EF \\parallel = CH$\n∴ 四边形 $ECHF$ 为平行四边形\n∴ $EC \\parallel FH$\n∵ $H$ 是 $FD$ 中点\n∴ $EC \\parallel FD$\n∴ $EC$、$FD$ 在同一平面上，\n即 $C$、$D$、$F$、$E$ 共面。\n\n18. [无法识别]\n<插图>\n\n### 手写答案\n\n(1) 证明：∵ 在正方形 $ADEF$ 中，\n∴ $ED \\perp AD$\n又∵ $DE \\perp CD$\n$CD \\cap AD = D$\n$CD, AD \\subset$ 面 $ABCD$\n∴ $DE \\perp$ 面 $ABCD$\n∵ $DE \\subset$ 面 $ADEF$\n∴ 面 $ADEF \\perp$ 面 $ABCD$\n(2) 解：根据题意得 $AD = AF = BF = 4$，\n$CD = 2$\n∵ $AF \\perp AD$，$AD =$ 面 $ADEF \\cap$ 面 $ABCD$\n$AF \\subset$ 面 $ADEF$\n∴ $AF \\perp$ 面 $ADCB$\n∴ $AF \\perp AB$\n∵ $BF$ 与面 $ABCD$ 所成角为 $45^\\circ$\n∴ $AB = \\tan 45^\\circ \\cdot AF = 4$\n∵ $CD \\parallel AB$，$\\angle CDA = 90^\\circ$\n∴ 四边形 $ABCD$ 是直角梯形\n∴ $S_{梯ABCD} = \\frac{1}{2}(CD + AB) \\cdot AD = 12$\n$V_{四棱锥E-ABCD} = \\frac{1}{3} S_{梯ABCD} \\cdot ED = 16$\n(3) 解：∵ $BF$ 与面 $ABCD$ 所成角为 $45^\\circ$\n$CG \\parallel BF$\n∵ $CG$ 与面 $ABCD$ 所成角也为 $45^\\circ$\n∴ $DG = CD = 2$\n$GF^2 = EG^2 + EF^2$\n$CB^2 = AD^2 + \\frac{1}{4}AB^2$\n∵ $EF = AD$，$EG = \\frac{1}{2}AB$\n∴ 四边形 $CBFG$ 为等腰梯形\n作 $GH \\perp BF$\n$FH = \\frac{BF - CG}{2} = 1$\n$GH = \\sqrt{FG^2 - FH^2} = \\sqrt{19}$\n∴ $S_{四边形CBFG} = \\frac{1}{2}(CG + BF) \\cdot GH = 3\\sqrt{38}$\n\n19. [无法识别]\n\n### 手写答案\n\n_未识别到手写答案。_",
+  "questions": [
+    {
+      "qno": "17",
+      "question_text": "17. [无法识别]\n<插图>",
+      "student_answer": "(1) 证明：∵ 在 $\\triangle FAD$ 中，\n$G$、$H$ 分别为 $AF$、$FD$ 的中点\n∴ $GH \\parallel = \\frac{1}{2}AD$\n又∵ $BC \\parallel AD$，$BC = \\frac{1}{2}AD$\n∴ $GH \\parallel = BC$\n四边形 $BCHG$ 是平行四边形\n答：是\n∵ $G$ 是 $AF$ 中点，$BE \\parallel AF$\n∴ $BE \\parallel GF$，$GF = \\frac{1}{2}AF = BE$\n∴ 四边形 $BEFG$ 为平行四边形\n∴ $EF \\parallel = BG$\n又∵ 由(1)得 $BG \\parallel = CH$\n∴ $EF \\parallel = CH$\n∴ 四边形 $ECHF$ 为平行四边形\n∴ $EC \\parallel FH$\n∵ $H$ 是 $FD$ 中点\n∴ $EC \\parallel FD$\n∴ $EC$、$FD$ 在同一平面上，\n即 $C$、$D$、$F$、$E$ 共面。",
+      "answer_status": "ok",
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "18",
+      "question_text": "18. [无法识别]\n<插图>",
+      "student_answer": "(1) 证明：∵ 在正方形 $ADEF$ 中，\n∴ $ED \\perp AD$\n又∵ $DE \\perp CD$\n$CD \\cap AD = D$\n$CD, AD \\subset$ 面 $ABCD$\n∴ $DE \\perp$ 面 $ABCD$\n∵ $DE \\subset$ 面 $ADEF$\n∴ 面 $ADEF \\perp$ 面 $ABCD$\n(2) 解：根据题意得 $AD = AF = BF = 4$，\n$CD = 2$\n∵ $AF \\perp AD$，$AD =$ 面 $ADEF \\cap$ 面 $ABCD$\n$AF \\subset$ 面 $ADEF$\n∴ $AF \\perp$ 面 $ADCB$\n∴ $AF \\perp AB$\n∵ $BF$ 与面 $ABCD$ 所成角为 $45^\\circ$\n∴ $AB = \\tan 45^\\circ \\cdot AF = 4$\n∵ $CD \\parallel AB$，$\\angle CDA = 90^\\circ$\n∴ 四边形 $ABCD$ 是直角梯形\n∴ $S_{梯ABCD} = \\frac{1}{2}(CD + AB) \\cdot AD = 12$\n$V_{四棱锥E-ABCD} = \\frac{1}{3} S_{梯ABCD} \\cdot ED = 16$\n(3) 解：∵ $BF$ 与面 $ABCD$ 所成角为 $45^\\circ$\n$CG \\parallel BF$\n∵ $CG$ 与面 $ABCD$ 所成角也为 $45^\\circ$\n∴ $DG = CD = 2$\n$GF^2 = EG^2 + EF^2$\n$CB^2 = AD^2 + \\frac{1}{4}AB^2$\n∵ $EF = AD$，$EG = \\frac{1}{2}AB$\n∴ 四边形 $CBFG$ 为等腰梯形\n作 $GH \\perp BF$\n$FH = \\frac{BF - CG}{2} = 1$\n$GH = \\sqrt{FG^2 - FH^2} = \\sqrt{19}$\n∴ $S_{四边形CBFG} = \\frac{1}{2}(CG + BF) \\cdot GH = 3\\sqrt{38}$",
+      "answer_status": "ok",
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "19",
+      "question_text": "19. [无法识别]",
+      "student_answer": "_未识别到手写答案。_",
+      "answer_status": "no_answer",
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": ""
+    }
+  ],
+  "page_notes": ""
+}

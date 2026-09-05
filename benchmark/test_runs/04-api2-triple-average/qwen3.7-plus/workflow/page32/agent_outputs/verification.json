@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page32/api_markdown/page32.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page32/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 30596,
+    "completion_tokens": 21875,
+    "total_tokens": 52471,
+    "latency_s": 353.402926,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 107.968769,
+          "prompt_tokens": 3065,
+          "completion_tokens": 6724,
+          "total_tokens": 9789,
+          "request_id": "chatcmpl-fba7ec6c-bbce-97b9-8011-385449b559dd"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 55.265855,
+          "prompt_tokens": 9177,
+          "completion_tokens": 3358,
+          "total_tokens": 12535,
+          "request_id": "chatcmpl-245b9899-93a0-903d-9fba-fd8bd456c549"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 101.094284,
+          "prompt_tokens": 9177,
+          "completion_tokens": 6276,
+          "total_tokens": 15453,
+          "request_id": "chatcmpl-02264e15-e2c6-9713-b97a-b29bbccb6923"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 89.074018,
+          "prompt_tokens": 9177,
+          "completion_tokens": 5517,
+          "total_tokens": 14694,
+          "request_id": "chatcmpl-033443c2-8427-93e9-8f62-684486989529"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 55.265855,
+            "prompt_tokens": 9177,
+            "completion_tokens": 3358,
+            "total_tokens": 12535,
+            "request_id": "chatcmpl-245b9899-93a0-903d-9fba-fd8bd456c549"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 101.094284,
+            "prompt_tokens": 9177,
+            "completion_tokens": 6276,
+            "total_tokens": 15453,
+            "request_id": "chatcmpl-02264e15-e2c6-9713-b97a-b29bbccb6923"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 89.074018,
+            "prompt_tokens": 9177,
+            "completion_tokens": 5517,
+            "total_tokens": 14694,
+            "request_id": "chatcmpl-033443c2-8427-93e9-8f62-684486989529"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "",
+    "",
+    ""
+  ],
+  "raw_runs": [
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"The draft accurately transcribes the printed question and the student's handwritten solution steps, including the case analysis for part (2).\"\n      }\n    }\n  ]\n}\n```",
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"The draft transcription accurately reflects the visible handwritten solution steps, including the system of equations and case analysis. The scribbled character after '化简' is ambiguous but '为' is contextually appropriate and the draft is acceptable.\"\n      }\n    }\n  ]\n}\n```",
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \"不等式可化简为 $x-1<0\",\n            \"new\": \"不等式可化简 $x-1<0\",\n            \"kind\": \"remove_cancelled\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"The character '为' after '化简' is heavily scribbled out in the handwriting.\"\n          }\n        ],\n        \"symbol_observations\": [],\n        \"evidence\": \"Transcription matches handwriting with minor cancellation removal.\"\n      }\n    }\n  ]\n}\n```"
+  ]
+}

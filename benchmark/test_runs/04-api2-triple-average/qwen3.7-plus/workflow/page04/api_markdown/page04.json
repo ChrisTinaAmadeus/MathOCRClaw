@@ -1,0 +1,85 @@
+{
+  "schema_version": 3,
+  "response_format": "benchmark_markdown",
+  "prompt": {
+    "version": "extract_v2",
+    "path": "benchmark/prompts/extract_v2.txt",
+    "sha1": "68e4ba040a859426177b603b9098b3e10a2d2a2e"
+  },
+  "page_markdown": "7. 设 $t$ 为实数，$M=\\{t^2-5t+3, -3\\}$，$N=\\{t^2-3t-1, t-6\\}$。若 $M \\cap N = \\{-3\\}$，则 $t$ 的取值集合为 ( )\nA. $\\{1\\}$\nB. $\\{2\\}$\nC. $\\{3\\}$\nD. $\\{1, 2, 3\\}$\n\n### 手写答案\n\nA\n\n8. 不等式 $x^2-x-2<0$ 成立的一个充分不必要条件是 $a<x<a^2+1$，则 $a$ 的取值范围为 ( )\nA. $-1 \\le a \\le 1$\nB. $-1 \\le a < 1$\nC. $-1 < a < 1$\nD. $-1 < a \\le 1$\n\n### 手写答案\n\nD\n\n二、选择题：本题共 3 小题，每小题 6 分，共 18 分。在每小题给出的选项中，有多项符合题目要求。全部选对的得 6 分，部分选对的得部分分，有选错的得 0 分。\n\n9. 下列表示正确的是 ( )\nA. $0 \\in N$\nB. $\\frac{2}{7} \\in Z$\nC. $-3 \\notin Z$\nD. $\\pi \\notin Q$\n\n### 手写答案\n\nAD\n\n10. 下列函数最小值为 2 的是 ( )\nA. $y=x+\\frac{1}{x}$\nB. $y=\\frac{x^2+2}{\\sqrt{x^2+1}}$\nC. $y=x^2+\\frac{1}{x^2}$\nD. $y=\\sqrt{x(4-x)}$\n\n### 手写答案\n\nBC\n\n11. 给定数集 $M$，若对于任意 $a, b \\in M$，有 $a+b \\in M$，$a-b \\in M$，则称集合 $M$ 为闭集合。则下列说法中不正确的是 ( )\nA. 集合 $M=\\{-6, -3, 0, 3, 6\\}$ 为闭集合\nB. 集合 $M=\\{n|n=3k, k \\in Z\\}$ 为闭集合\nC. 正整数集是闭集合\nD. 若集合 $A_1$、$A_2$ 为闭集合，则 $A_1 \\cup A_2$ 为闭集合\n\n### 手写答案\n\nACD\n\n三、填空题：本题共 3 小题，每小题 5 分，共 15 分\n\n12. 若 $2 \\in \\{x|x^2+mx-3=0\\}$，则 $m$ 的值为 \\_\\_\\_\\_\\_\\_ .\n\n### 手写答案\n\n$-\\frac{1}{2}$\n\n13. 不等式 $\\frac{2x-5}{x+1}<1$ 的解是 \\_\\_\\_\\_\\_\\_\n\n### 手写答案\n\n$(-1, 6)$\n\n14. 已知不等式 $(a-3)x^2+2(a-3)x-6<0$ 对一切 $x \\in R$ 恒成立，则实数 $a$ 的取值范围是 \\_\\_\\_\\_\\_\\_\n\n### 手写答案\n\n$-3 < a \\le 3$",
+  "questions": [
+    {
+      "qno": "7",
+      "question_text": "7. 设 $t$ 为实数，$M=\\{t^2-5t+3, -3\\}$，$N=\\{t^2-3t-1, t-6\\}$。若 $M \\cap N = \\{-3\\}$，则 $t$ 的取值集合为 ( )\nA. $\\{1\\}$\nB. $\\{2\\}$\nC. $\\{3\\}$\nD. $\\{1, 2, 3\\}$",
+      "student_answer": "A",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "8",
+      "question_text": "8. 不等式 $x^2-x-2<0$ 成立的一个充分不必要条件是 $a<x<a^2+1$，则 $a$ 的取值范围为 ( )\nA. $-1 \\le a \\le 1$\nB. $-1 \\le a < 1$\nC. $-1 < a < 1$\nD. $-1 < a \\le 1$",
+      "student_answer": "D",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "9",
+      "question_text": "9. 下列表示正确的是 ( )\nA. $0 \\in N$\nB. $\\frac{2}{7} \\in Z$\nC. $-3 \\notin Z$\nD. $\\pi \\notin Q$",
+      "student_answer": "AD",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "choice_mode": "multiple",
+      "section_heading_before": "二、选择题：本题共 3 小题，每小题 6 分，共 18 分。在每小题给出的选项中，有多项符合题目要求。全部选对的得 6 分，部分选对的得部分分，有选错的得 0 分。"
+    },
+    {
+      "qno": "10",
+      "question_text": "10. 下列函数最小值为 2 的是 ( )\nA. $y=x+\\frac{1}{x}$\nB. $y=\\frac{x^2+2}{\\sqrt{x^2+1}}$\nC. $y=x^2+\\frac{1}{x^2}$\nD. $y=\\sqrt{x(4-x)}$",
+      "student_answer": "BC",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "choice_mode": "multiple",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "11",
+      "question_text": "11. 给定数集 $M$，若对于任意 $a, b \\in M$，有 $a+b \\in M$，$a-b \\in M$，则称集合 $M$ 为闭集合。则下列说法中不正确的是 ( )\nA. 集合 $M=\\{-6, -3, 0, 3, 6\\}$ 为闭集合\nB. 集合 $M=\\{n|n=3k, k \\in Z\\}$ 为闭集合\nC. 正整数集是闭集合\nD. 若集合 $A_1$、$A_2$ 为闭集合，则 $A_1 \\cup A_2$ 为闭集合",
+      "student_answer": "ACD",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "choice_mode": "multiple",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "12",
+      "question_text": "12. 若 $2 \\in \\{x|x^2+mx-3=0\\}$，则 $m$ 的值为 \\_\\_\\_\\_\\_\\_ .",
+      "student_answer": "$-\\frac{1}{2}$",
+      "answer_status": "ok",
+      "question_type": "fill",
+      "choice_mode": "",
+      "section_heading_before": "三、填空题：本题共 3 小题，每小题 5 分，共 15 分"
+    },
+    {
+      "qno": "13",
+      "question_text": "13. 不等式 $\\frac{2x-5}{x+1}<1$ 的解是 \\_\\_\\_\\_\\_\\_",
+      "student_answer": "$(-1, 6)$",
+      "answer_status": "ok",
+      "question_type": "fill",
+      "choice_mode": "",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "14",
+      "question_text": "14. 已知不等式 $(a-3)x^2+2(a-3)x-6<0$ 对一切 $x \\in R$ 恒成立，则实数 $a$ 的取值范围是 \\_\\_\\_\\_\\_\\_",
+      "student_answer": "$-3 < a \\le 3$",
+      "answer_status": "ok",
+      "question_type": "fill",
+      "choice_mode": "",
+      "section_heading_before": ""
+    }
+  ],
+  "page_notes": ""
+}

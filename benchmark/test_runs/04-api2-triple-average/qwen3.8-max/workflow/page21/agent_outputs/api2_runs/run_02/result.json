@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "page": "page21",
+  "api2_run": 2,
+  "questions": [
+    {
+      "qno": 16,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "16. (15分) 已知集合 $A=\\{x\\mid 2-m<x<2+m\\}$，$B=\\{x\\mid x\\leq 1 \\text{ 或 } x\\geq 6\\}$。\n(1) 当 $m=3$ 时，求 $A\\cap B$，$A\\cup B$；\n(2) 若 $A\\cap(\\complement_{\\mathbb{R}}B)=\\varnothing$，证明：$m\\leq 0$。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page21/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) _未识别到手写答案。_\n(2) $2-m\\geq 2+m$\n$0\\geq 2m$\n$m\\leq 0$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "no_answer",
+        "evidence_note": "Answer area shows three retained handwritten lines for (2) ending in 'm≤0.'; the (1) area is blank; draft transcription matches the visible retained steps.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page21/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 17,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "17. (15分) 如图，$OA,OB$ 是两条长度足够长的互相垂直的笔直小路，矩形 $OCPD$ 的顶点 $C,D$ 分别在 $OA,OB$ 上，且该矩形区域内种满了荷花。为了让观赏者有更好的观赏体验，现计划经过点 $P$ 修一条小路 $EF$，其中点 $E$ 在小路 $OA$ 上，点 $F$ 在小路 $OB$ 上，并在 $\\triangle OEF$ 区域内种满荷花。已知 $50\\ \\text{m}\\leq OF\\leq 75\\ \\text{m}$，$OD=25\\ \\text{m}$，$OC=40\\ \\text{m}$，记 $\\triangle OEF$ 的面积为 $S\\ \\text{m}^2$。\n(1) 设 $EC=x\\ \\text{m}$，试用 $x$ 表示 $OF$，并求 $x$ 的取值范围。\n(2) 当 $EC$ 的长度为多少时，$S$ 取得最小值？最小值是多少？\n<插图>",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 1,
+        "figure_audit_observed_count": 1,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C002-01",
+            "marker_index": 1,
+            "source_type": "mixed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "high",
+            "context_id": "C002",
+            "printed_anchors": [
+              "typeset italic point labels A, E, P, D, F, B",
+              "uniform thin straight lines forming the perpendicular roads, segment EF through P, and rectangle OCPD"
+            ],
+            "handwriting_features": [
+              "black pen numerals 40, 25 and 40 beside the axes and rectangle",
+              "freehand diagonal hatching inside the rectangle",
+              "handwritten fractions and inequality chain 50≤20x≤75, 5/2≤x≤75/4 above the figure"
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "A printed skeleton with typeset italic labels and uniform straight lines remains clearly visible underneath black-pen numerals, hatching and inequality scratch, so the source is mixed; the graphic is the '如图' diagram of the printed stem, so the role is the printed question figure.",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          }
+        ],
+        "lint_actions": [
+          "recorded_figure_observation_FIG-C002-01_mixed_figure",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page21/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "_未识别到手写答案。_",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "no_answer",
+        "evidence_note": "The assigned answer region below the stem is blank; the only handwriting is annotation on and beside the printed figure, with no organized solution steps retained.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page21/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 18,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "18. (17分)\n(1) 设关于 $x$ 的方程 $tx^2+(1-t)x+t-1=0$ 有两个不相等的实数根 $x_1,x_2$。\n① 求 $t$ 的取值集合；\n② 若 $x_1^2+x_2^2=3$，求 $t$ 的值。\n(2) 求关于 $x$ 的不等式 $tx^2+(1-t)x+t-1<t$（$t$ 为常数且 $t\\in\\mathbb{R}$）的解集。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page21/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) _未识别到手写答案。_\n(2) $\\{x\\mid -\\frac{1}{t}<x<1\\}$\n当 $t<-1$ 时，$\\{x\\mid x>1 \\text{ 或 } x<-\\frac{1}{t}\\}$\n$t=-1$ 时，$\\{x\\mid x\\neq 1\\}$\n$-1<t<0$ 时，$\\{x\\mid x>-\\frac{1}{t} \\text{ 或 } x<1\\}$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "no_answer",
+        "evidence_note": "Four retained handwritten lines for (2) are visible (general interval, case t<-1, case t=-1 with {x|x≠1}, case -1<t<0 after a crossed-out lead token); (1) has only margin scratch; draft matches the visible retained lines.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page21/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 19,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "19. (17分) 已知 $a,b,c,d$ 均为正实数。\n(1) 证明：$\\dfrac{a^2}{c}+\\dfrac{b^2}{d}\\geq\\dfrac{(a+b)^2}{c+d}$。\n(2) 若 $a+2b=ab$，求 $\\dfrac{4}{a^2+2a}+\\dfrac{1}{2b^2+b}$ 的最小值。\n(3) 若 $a+2b+3c=\\sqrt{6}$，求 $a^2+2b^2+6c^2$ 的最小值。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C004"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page21/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) $\\dfrac{a^2}{c}+\\dfrac{b^2}{d}-\\dfrac{(a+b)^2}{c+d}$\n$=\\dfrac{a^2d(c+d)+b^2c(c+d)-(a+b)^2cd}{cd(c+d)}$\n$=\\dfrac{a^2d^2+b^2c^2-2abcd}{cd(c+d)}$\n$=\\dfrac{(ad-bc)^2}{cd(c+d)}\\geq 0$，当且仅当 $ad=bc$ 时\n(2) $\\dfrac{\\left(\\frac{2}{a}\\right)^2}{1+\\frac{2}{a}}+\\dfrac{\\left(\\frac{1}{b}\\right)^2}{2+\\frac{1}{b}}\\geq\\dfrac{\\left(\\frac{2}{a}+\\frac{1}{b}\\right)^2}{1+2+\\frac{2}{a}+\\frac{1}{b}}$\n$\\geq\\dfrac{1}{4}$\n(3) _未识别到手写答案。_",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "no_answer",
+        "evidence_note": "Handwritten (1) four-line fraction derivation ending '≥0, iff ad=bc' and (2) two-line Cauchy derivation ending '≥1/4' are visible; (3) area is blank; draft matches the visible retained steps.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page21/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "Faint short minuses in retained handwriting (C001 first solution line '2-m', C003 case line 't=-1', C004 '(ad-bc)^2') are not fully resolvable at supplied resolution; draft readings kept unchanged.",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.8-max",
+      "attempt": 1,
+      "elapsed_s": 283.668706,
+      "prompt_tokens": 15193,
+      "completion_tokens": 13798,
+      "total_tokens": 28991,
+      "request_id": "chatcmpl-660f0d49-1fe1-91af-8d56-c176023d10ee"
+    }
+  ]
+}

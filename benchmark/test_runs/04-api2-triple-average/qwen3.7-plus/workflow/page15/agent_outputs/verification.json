@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page15/api_markdown/page15.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page15/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 24672,
+    "completion_tokens": 17087,
+    "total_tokens": 41759,
+    "latency_s": 273.213977,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 89.985148,
+          "prompt_tokens": 2493,
+          "completion_tokens": 5593,
+          "total_tokens": 8086,
+          "request_id": "chatcmpl-11c9d2f3-61dc-914f-a38d-2e898f937cba"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 55.942483,
+          "prompt_tokens": 7393,
+          "completion_tokens": 3514,
+          "total_tokens": 10907,
+          "request_id": "chatcmpl-01b91bd5-e6eb-98df-a8bd-d89b02a7f478"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 60.924989,
+          "prompt_tokens": 7393,
+          "completion_tokens": 3785,
+          "total_tokens": 11178,
+          "request_id": "chatcmpl-493e9ab8-98b3-94eb-a457-38219c88843a"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 66.361357,
+          "prompt_tokens": 7393,
+          "completion_tokens": 4195,
+          "total_tokens": 11588,
+          "request_id": "chatcmpl-67ff5207-eed0-936f-b5dd-32ef119f3f18"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 55.942483,
+            "prompt_tokens": 7393,
+            "completion_tokens": 3514,
+            "total_tokens": 10907,
+            "request_id": "chatcmpl-01b91bd5-e6eb-98df-a8bd-d89b02a7f478"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 60.924989,
+            "prompt_tokens": 7393,
+            "completion_tokens": 3785,
+            "total_tokens": 11178,
+            "request_id": "chatcmpl-493e9ab8-98b3-94eb-a457-38219c88843a"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 66.361357,
+            "prompt_tokens": 7393,
+            "completion_tokens": 4195,
+            "total_tokens": 11588,
+            "request_id": "chatcmpl-67ff5207-eed0-936f-b5dd-32ef119f3f18"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "",
+    "",
+    ""
+  ],
+  "raw_runs": [
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \"① $A=\\\\varnothing \\\\Rightarrow a-2 \\\\ge a+2$ 无解.\\n $\\\\begin{cases} a-2 > -2 \\\\\\\\ a+2 < 3 \\\\end{cases}$ 解得 $0<a<1$\",\n            \"new\": \"① $A=\\\\varnothing \\\\Rightarrow a-2 \\\\ge a+2$ 无解.\\n② $\\\\begin{cases} a-2 > -2 \\\\\\\\ a+2 < 3 \\\\end{cases}$ 解得 $0<a<1$\",\n            \"kind\": \"insert_missing\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"Visible circled '2' enumerator before the second case system in the handwriting for part (2).\"\n          }\n        ],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwriting matches draft except for the missing circled '2' enumerator before the second case in part (2).\"\n      }\n    }\n  ]\n}\n```",
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"The draft transcription accurately reflects the visible handwritten solution, including the set definitions, case analysis for B, and the final range for a. Crossed-out text in the handwriting (e.g., in case 2 for B) is correctly omitted in the draft.\"\n      }\n    }\n  ]\n}\n```",
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"The handwritten solution matches the draft transcription. The crossed-out text in the second case of part (1) (appearing as 'x=3' struck through) is correctly omitted in the draft. Mathematical notation and structure are preserved.\"\n      }\n    }\n  ]\n}\n```"
+  ]
+}

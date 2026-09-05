@@ -1,0 +1,22 @@
+{
+  "schema_version": 3,
+  "response_format": "benchmark_markdown",
+  "prompt": {
+    "version": "extract_v2",
+    "path": "benchmark/prompts/extract_v2.txt",
+    "sha1": "68e4ba040a859426177b603b9098b3e10a2d2a2e"
+  },
+  "page_markdown": "18. (17分) 已知关于 $x$ 的不等式 $(ax-1)(x+1)>0$。\n(1) 若此不等式的解集为 $\\left\\{x\\mid -1<x<-\\frac{1}{2}\\right\\}$，求实数 $a$ 的值；\n(2) 若 $a\\in\\mathbb{R}$，解这个关于 $x$ 的不等式；\n(3) 已知 $y_1=4x_1^2+3$，$y_2=ax_2+5-a$ $(a>0)$，若对任意的 $x_1\\in\\{x\\mid 1\\le x\\le 2\\}$，总存在 $x_2\\in\\{x\\mid -1\\le x\\le 2\\}$，使得 $y_1=y_2$ 成立，求实数 $a$ 的取值范围。\n\n### 手写答案\n\n解 1) 由题意 $-1$，$-\\frac{1}{2}$ 为方程的两根\n可得 $\\frac{1}{a}=-\\frac{1}{2}$，即 $a=-2$。\n2) 当 $a=0$ 时，$-x-1>0$，$x<-1$。\n当 $a>0$ 时，$\\left\\{x\\mid x>\\frac{1}{a}\\text{ 或 }x<-1\\right\\}$。\n当 $a<0$ 时，① $a=-1$，$\\varnothing$\n② $a<-1$，$\\frac{1}{a}>-1$，$\\{x\\mid -1<x<\\frac{1}{a}\\}$\n③ $-1<a<0$，$\\frac{1}{a}<-1$，$\\{x\\mid \\frac{1}{a}<x<-1\\}$。\n3) 当 $x_1\\in\\{x\\mid 1\\le x\\le 2\\}$ 时，则 $y_1\\in[7,19]$。\n$\\because y_1=y_2$\n$\\therefore y_{2\\max}=19$，$y_{2\\min}=7$。\n$\\because x_2\\in\\{x\\mid -1\\le x\\le 2\\}$。\n$\\therefore y_{2\\max}=2a+5-a$\n$=a+5$。\n$y_{2\\min}=-a+5-a$\n$=-2a+5$。\n$\\therefore \\begin{cases} a+5\\geq 19, & a\\geq 14\\\\ -2a+5\\leq 7, & a\\geq -1 \\end{cases}$\n综上，$a$ 的取值范围为 $\\{a\\mid a\\geq 14\\}$。",
+  "questions": [
+    {
+      "qno": "18",
+      "question_text": "18. (17分) 已知关于 $x$ 的不等式 $(ax-1)(x+1)>0$。\n(1) 若此不等式的解集为 $\\left\\{x\\mid -1<x<-\\frac{1}{2}\\right\\}$，求实数 $a$ 的值；\n(2) 若 $a\\in\\mathbb{R}$，解这个关于 $x$ 的不等式；\n(3) 已知 $y_1=4x_1^2+3$，$y_2=ax_2+5-a$ $(a>0)$，若对任意的 $x_1\\in\\{x\\mid 1\\le x\\le 2\\}$，总存在 $x_2\\in\\{x\\mid -1\\le x\\le 2\\}$，使得 $y_1=y_2$ 成立，求实数 $a$ 的取值范围。",
+      "student_answer": "解 1) 由题意 $-1$，$-\\frac{1}{2}$ 为方程的两根\n可得 $\\frac{1}{a}=-\\frac{1}{2}$，即 $a=-2$。\n2) 当 $a=0$ 时，$-x-1>0$，$x<-1$。\n当 $a>0$ 时，$\\left\\{x\\mid x>\\frac{1}{a}\\text{ 或 }x<-1\\right\\}$。\n当 $a<0$ 时，① $a=-1$，$\\varnothing$\n② $a<-1$，$\\frac{1}{a}>-1$，$\\{x\\mid -1<x<\\frac{1}{a}\\}$\n③ $-1<a<0$，$\\frac{1}{a}<-1$，$\\{x\\mid \\frac{1}{a}<x<-1\\}$。\n3) 当 $x_1\\in\\{x\\mid 1\\le x\\le 2\\}$ 时，则 $y_1\\in[7,19]$。\n$\\because y_1=y_2$\n$\\therefore y_{2\\max}=19$，$y_{2\\min}=7$。\n$\\because x_2\\in\\{x\\mid -1\\le x\\le 2\\}$。\n$\\therefore y_{2\\max}=2a+5-a$\n$=a+5$。\n$y_{2\\min}=-a+5-a$\n$=-2a+5$。\n$\\therefore \\begin{cases} a+5\\geq 19, & a\\geq 14\\\\ -2a+5\\leq 7, & a\\geq -1 \\end{cases}$\n综上，$a$ 的取值范围为 $\\{a\\mid a\\geq 14\\}$。",
+      "answer_status": "ok",
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": ""
+    }
+  ],
+  "page_notes": ""
+}

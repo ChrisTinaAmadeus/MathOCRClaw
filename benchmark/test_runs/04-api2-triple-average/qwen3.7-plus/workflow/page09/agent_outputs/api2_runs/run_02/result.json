@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "page": "page09",
+  "api2_run": 2,
+  "questions": [
+    {
+      "qno": 12,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "12. 若命题“$\\exists x \\in \\{x \\mid -1 \\le x \\le 3\\}, x^2-2x-a \\le 0$”为真命题，则实数 $a$ 的取值范围为",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page09/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$a \\ge -1$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwriting clearly shows $a \\ge -1$ as the final range.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page09/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 17,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "17. (15分) 某学校引入种植类劳动教育课程，打算围成如图所示的四块全等的长方形田地种植不同种类的蔬菜，其中一面可以利用原有的墙（足够长），其他各面需要用篱笆围成，设其中一块田地为矩形 $ABCD$。\n<插图>\n(1) 若每块田地的面积为 $24\\text{m}^2$，要使围成四块田地的篱笆总长最小，应该设计田地的长 $AB$ 和宽 $AD$ 各为多少？\n(2) 现用 $40\\text{m}$ 长的篱笆，要使每块田地的面积最大，应该设计田地的长 $AB$ 和宽 $AD$ 各为多少？",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 1,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C002-01",
+            "marker_index": 1,
+            "source_type": "uncertain",
+            "content_role": "uncertain",
+            "confidence": "low",
+            "context_id": "C002",
+            "printed_anchors": [],
+            "handwriting_features": [],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "No valid API2 figure observation was supplied; the local gate preserved the API1 marker.",
+            "local_action": "preserve",
+            "model_observation_valid": false
+          }
+        ],
+        "lint_actions": [
+          "rejected_figure_observation_invalid_context_FIG-C002-01",
+          "preserved_missing_figure_observation_FIG-C002-01",
+          "rejected_solution_edit_1_invalid_context",
+          "rejected_solution_edit_2_invalid_context",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page09/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 设 $AB$ 为 $x$ m，$AD$ 为 $y$ m。则 $xy=24$。\n求 $6y+4x$ 的 min。\n$\\because 6y+4x \\ge 2\\sqrt{6y \\cdot 4x}$\n$\\ge 2\\sqrt{24 \\cdot 24}$\n$\\ge 48$。\n$\\therefore 6y+4x$ 的 min 为 48\n当且仅当 $6y=4x=24$ 时，即 $y=4, x=6$ 时，取最小值。\n$\\therefore AB$ 为 $6\\text{m}$，$AD$ 为 $4\\text{m}$。\n\n(2) 设 $AB$ 为 $a$ m，$AD$ 为 $b$ m。\n$6a+4b=40$。求 $ab$ 的 max 即 $ab$ 的 max。\n$\\because 6a+4b=40 \\therefore 3a+2b=20$。\n$\\therefore b=\\frac{20-3a}{2}$。\n$\\therefore ab=a\\left(\\frac{20-3a}{2}\\right)$\n$=\\frac{-3a^2+20a}{2}$。\n$-\\frac{20}{2(-3)}=\\frac{10}{3}$。\n$\\therefore ab \\max=\\frac{100}{3}$。\n当且仅当 $a=\\frac{10}{3}, b=5$ 时取得最大值。\n$\\therefore AB$ 的长为 $\\frac{10}{3}\\text{m}$，$AD$ 的长为 $5\\text{m}$。",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Student solution steps match draft, subquestion labels adjusted to match handwriting '1).' and '2).'.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page09/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.7-plus",
+      "attempt": 1,
+      "elapsed_s": 146.359674,
+      "prompt_tokens": 10348,
+      "completion_tokens": 8804,
+      "total_tokens": 19152,
+      "request_id": "chatcmpl-8107d619-1b28-9e0c-a7c3-eb265e2c40d8"
+    }
+  ]
+}

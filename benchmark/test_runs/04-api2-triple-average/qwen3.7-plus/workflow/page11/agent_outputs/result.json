@@ -1,0 +1,314 @@
+{
+  "page": "page11",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page11/image/page11.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page11.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page11/preprocessed/page11.png",
+  "api_strategy": {
+    "call_count": 4,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "question-conditioned symbol, figure, and atomic patch review",
+    "api2_run_count": 3,
+    "local_merge": "deterministic validation against the first-pass draft"
+  },
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 51687,
+    "completion_tokens": 34675,
+    "total_tokens": 86362,
+    "latency_s": 546.860061,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 102.795011,
+          "prompt_tokens": 2625,
+          "completion_tokens": 6502,
+          "total_tokens": 9127,
+          "request_id": "chatcmpl-c86608d5-f90b-9391-acaf-00331f961905"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 168.389901,
+          "prompt_tokens": 16354,
+          "completion_tokens": 10700,
+          "total_tokens": 27054,
+          "request_id": "chatcmpl-a8e5c364-6462-9b07-b743-f0d1cfb55d4d"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 169.264276,
+          "prompt_tokens": 16354,
+          "completion_tokens": 10757,
+          "total_tokens": 27111,
+          "request_id": "chatcmpl-80fa9889-430e-967c-806a-6a8c09bfd28f"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 106.410873,
+          "prompt_tokens": 16354,
+          "completion_tokens": 6716,
+          "total_tokens": 23070,
+          "request_id": "chatcmpl-e17c6940-edaf-9eb3-b234-102712a3f269"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 168.389901,
+            "prompt_tokens": 16354,
+            "completion_tokens": 10700,
+            "total_tokens": 27054,
+            "request_id": "chatcmpl-a8e5c364-6462-9b07-b743-f0d1cfb55d4d"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 169.264276,
+            "prompt_tokens": 16354,
+            "completion_tokens": 10757,
+            "total_tokens": 27111,
+            "request_id": "chatcmpl-80fa9889-430e-967c-806a-6a8c09bfd28f"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 106.410873,
+            "prompt_tokens": 16354,
+            "completion_tokens": 6716,
+            "total_tokens": 23070,
+            "request_id": "chatcmpl-e17c6940-edaf-9eb3-b234-102712a3f269"
+          }
+        ]
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 1,
+    "answers_with_transcription": 1,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 18,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "18. (本小题满分 17 分)\n<插图>",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 7,
+        "symbol_audit_observed_count": 7,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 1,
+        "figure_audit_observed_count": 1,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C001-01",
+            "marker_index": 1,
+            "source_type": "mixed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "high",
+            "context_id": "C001",
+            "printed_anchors": [
+              "uniform dashed lines for hidden edges",
+              "serif labels A1, B1, C1",
+              "regular polygon structure"
+            ],
+            "handwriting_features": [
+              "handwritten coordinate axes x, y, z with arrows",
+              "handwritten z label"
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "Printed geometry skeleton of a prism/frustum with handwritten coordinate system annotations overlaid.",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          }
+        ],
+        "lint_actions": [
+          "recorded_figure_observation_FIG-C001-01_mixed_figure",
+          "accepted_symbol_observation_1",
+          "accepted_symbol_observation_2",
+          "accepted_symbol_observation_3",
+          "accepted_symbol_observation_4",
+          "accepted_symbol_observation_5",
+          "accepted_symbol_observation_6",
+          "accepted_symbol_observation_7",
+          "discarded_7_model_authored_symbol_edits",
+          "materialized_7_symbol_audit_edits",
+          "applied_solution_edit_1_ocr_correction",
+          "applied_solution_edit_2_ocr_correction",
+          "applied_solution_edit_3_ocr_correction",
+          "applied_solution_edit_4_ocr_correction",
+          "applied_solution_edit_5_ocr_correction",
+          "applied_solution_edit_6_ocr_correction",
+          "applied_solution_edit_7_ocr_correction"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page11/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 证明：\n$\\because$ 三棱台 $ABC-A_1B_1C_1$\n且 $A_1A \\perp$ 平面 $ABC$.\n$\\therefore A_1C_1 \\parallel AC$.\n$\\because A_1C_1 = \\frac{1}{2} AC$\n$\\therefore A_1C_1 \\underline{\\mathrel{\\underline{\\parallel}}} \\frac{1}{2} AC$.\n$\\because M, N$ 分别为 $BC, AB$ 中点，$\\therefore MN$ 为三角形 $ABC$ 中位线\n$\\therefore MN \\underline{\\mathrel{\\underline{\\parallel}}} \\frac{1}{2} AC$\n$\\therefore MN \\underline{\\mathrel{\\underline{\\parallel}}} A_1C_1$\n$\\therefore$ 四边形 $A_1C_1MN$ 是平行四边形\n$\\therefore A_1N \\parallel C_1M$\n$\\because A_1N \\not\\subset$ 平面 $C_1MA$, $C_1M \\subset$ 平面 $C_1MA$.\n$\\therefore A_1N \\parallel$ 平面 $C_1MA$.\n\n(2) $\\because A_1A \\perp$ 平面 $ABC, AB \\perp AC. AB=AC=AA_1=2, A_1C_1=1$\n$\\therefore$ 以 $A$ 为原点，以 $AB, AC, AA_1$ 所在直线为 $x, y, z$ 轴建系.\n$\\therefore C_1(0, 1, 2)$ $M(1, 1, 0)$ $A(0, 0, 0)$\n$\\therefore \\overrightarrow{AC_1} = (0, 1, 2)$ $\\overrightarrow{AM} = (1, 1, 0)$\n设平面 $C_1MA$ 的一个法向量为 $\\vec{n} = (x, y, z)$，则有 $\\begin{cases} \\vec{n} \\cdot \\overrightarrow{AC_1} = 0 \\\\ \\vec{n} \\cdot \\overrightarrow{AM} = 0 \\end{cases}$\n$\\therefore \\vec{n} = (2, -2, 1)$ 是平面 $C_1MA$ 的一个法向量.\n$\\because AB \\perp$ 平面 $ACC_1A_1$\n$\\therefore \\overrightarrow{AB} = (1, 0, 0)$ 是平面 $ACC_1A_1$ 的一个法向量\n记平面 $C_1MA$ 与平面 $ACC_1A_1$ 所成角为 $\\theta$.\n则：$\\cos \\theta = |\\cos \\langle\\vec{n}, \\overrightarrow{AB}\\rangle| = \\frac{2}{3}$.\n$\\therefore$ 平面 $C_1MA$ 与平面 $ACC_1A_1$ 所成角的余弦值为 $\\frac{2}{3}$.\n\n(3) 由 (2) 知：$\\vec{n} = (2, -2, 1)$ 是平面 $C_1MA$ 的一个法向量.\n$C(0, 2, 0)$ $A(0, 0, 0)$ $\\overrightarrow{AC} = (0, 2, 0)$\n设点 $C$ 到平面 $C_1MA$ 的距离为 $d$. 则：\n$d = \\frac{|\\overrightarrow{AC} \\cdot \\vec{n}|}{|\\vec{n}|} = \\frac{4}{3}$.",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwritten solution text with specific geometry symbols requiring canonical LaTeX formatting.",
+        "symbol_observations": [
+          {
+            "audit_id": "G001",
+            "tag": "GEOMETRY_MARK",
+            "location": "Part (1) line 4",
+            "candidates": [
+              "\\parallel",
+              "\\mathrel{\\underline{\\parallel}}",
+              "="
+            ],
+            "selected": "\\parallel",
+            "observed_features": "Two parallel diagonal strokes visible, no underline beneath.",
+            "context_id": "C001",
+            "reference_context_ids": []
+          },
+          {
+            "audit_id": "G002",
+            "tag": "GEOMETRY_MARK",
+            "location": "Part (1) line 5",
+            "candidates": [
+              "\\parallel",
+              "\\mathrel{\\underline{\\parallel}}",
+              "="
+            ],
+            "selected": "\\mathrel{\\underline{\\parallel}}",
+            "observed_features": "Parallel strokes with horizontal underlines beneath, indicating parallel and equal relation.",
+            "context_id": "C001",
+            "reference_context_ids": []
+          },
+          {
+            "audit_id": "G003",
+            "tag": "GEOMETRY_MARK",
+            "location": "Part (1) line 7",
+            "candidates": [
+              "\\parallel",
+              "\\mathrel{\\underline{\\parallel}}",
+              "="
+            ],
+            "selected": "\\mathrel{\\underline{\\parallel}}",
+            "observed_features": "Parallel strokes with horizontal underlines beneath.",
+            "context_id": "C001",
+            "reference_context_ids": []
+          },
+          {
+            "audit_id": "G004",
+            "tag": "GEOMETRY_MARK",
+            "location": "Part (1) line 8",
+            "candidates": [
+              "\\parallel",
+              "\\mathrel{\\underline{\\parallel}}",
+              "="
+            ],
+            "selected": "\\mathrel{\\underline{\\parallel}}",
+            "observed_features": "Parallel strokes with horizontal underlines beneath.",
+            "context_id": "C001",
+            "reference_context_ids": []
+          },
+          {
+            "audit_id": "G005",
+            "tag": "GEOMETRY_MARK",
+            "location": "Part (1) line 9",
+            "candidates": [
+              "\\parallel",
+              "\\mathrel{\\underline{\\parallel}}",
+              "="
+            ],
+            "selected": "\\parallel",
+            "observed_features": "Two parallel diagonal strokes, no underline.",
+            "context_id": "C001",
+            "reference_context_ids": []
+          },
+          {
+            "audit_id": "G006",
+            "tag": "GEOMETRY_MARK",
+            "location": "Part (1) line 11",
+            "candidates": [
+              "\\parallel",
+              "\\mathrel{\\underline{\\parallel}}",
+              "="
+            ],
+            "selected": "\\parallel",
+            "observed_features": "Two parallel diagonal strokes before text.",
+            "context_id": "C001",
+            "reference_context_ids": []
+          },
+          {
+            "audit_id": "G007",
+            "tag": "GEOMETRY_MARK",
+            "location": "Part (2) near end",
+            "candidates": [
+              "\\langle\\cdot,\\cdot\\rangle",
+              "<\\cdot,\\cdot>"
+            ],
+            "selected": "\\langle\\cdot,\\cdot\\rangle",
+            "observed_features": "Paired angle strokes enclosing the vector pair, distinct from inequality signs.",
+            "context_id": "C001",
+            "reference_context_ids": []
+          }
+        ],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page11/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page11/image/page11.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page11/preprocessed/page11.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page11/api_markdown/page11.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page11/api_markdown/page11.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page11/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page11/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page11/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page11/code_outputs/match/viz/page11_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page11/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page11/agent_outputs/result.json",
+    "api2_results": [
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page11/agent_outputs/api2_runs/run_01/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page11/agent_outputs/api2_runs/run_02/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page11/agent_outputs/api2_runs/run_03/result.json"
+    ],
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page11/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page11/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page11/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page11/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page11/code_outputs/match/viz/page11_handwriting_overlay.png"
+  }
+}

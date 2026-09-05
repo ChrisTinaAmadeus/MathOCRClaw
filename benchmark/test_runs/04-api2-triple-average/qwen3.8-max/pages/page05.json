@@ -1,0 +1,346 @@
+{
+  "page": "page05",
+  "status": "ok",
+  "elapsed_s": 0.054251,
+  "gold": "/home/puppeteer/MathOCRClaw/benchmark/baseline/page05.md",
+  "first_pass": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page05/api_markdown/page05.json",
+  "final_result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page05/agent_outputs/result.json",
+  "final_results": [
+    "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page05/agent_outputs/api2_runs/run_01/result.json",
+    "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page05/agent_outputs/api2_runs/run_02/result.json",
+    "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page05/agent_outputs/api2_runs/run_03/result.json"
+  ],
+  "baseline": {
+    "score": 91.617213,
+    "raw_score": 0.916172,
+    "structure_score": 1.0,
+    "stem_score": 0.842719,
+    "answer_score": 0.928052,
+    "state_macro_f1": 1.0,
+    "answer_by_type": {
+      "choice": null,
+      "fill": null,
+      "solution": 0.928052
+    },
+    "gold_question_count": 2,
+    "candidate_question_count": 2,
+    "matched_question_count": 2,
+    "omission_count": 0,
+    "omission_rate": 0.0,
+    "hallucination_count": 0,
+    "hallucination_rate": 0.0,
+    "format_diagnostics": {
+      "gold_latex_formula_spans": 30,
+      "candidate_latex_formula_spans": 30,
+      "formula_span_count_ratio": 1.0
+    },
+    "missing_gold_indices": [],
+    "extra_candidate_indices": [],
+    "details": [
+      {
+        "qno": "18",
+        "candidate_qno": "18",
+        "alignment": "matched",
+        "stem_score": 0.865,
+        "answer_score": 1.0,
+        "answer_type": "solution"
+      },
+      {
+        "qno": "19",
+        "candidate_qno": "19",
+        "alignment": "matched",
+        "stem_score": 0.820437,
+        "answer_score": 0.856103,
+        "answer_type": "solution"
+      }
+    ]
+  },
+  "workflow": {
+    "score": 91.617213,
+    "raw_score": 0.916172,
+    "structure_score": 1.0,
+    "stem_score": 0.842719,
+    "answer_score": 0.928052,
+    "state_macro_f1": 1.0,
+    "answer_by_type": {
+      "choice": null,
+      "fill": null,
+      "solution": 0.928052
+    },
+    "gold_question_count": 2.0,
+    "candidate_question_count": 2.0,
+    "matched_question_count": 2.0,
+    "omission_count": 0.0,
+    "omission_rate": 0.0,
+    "hallucination_count": 0.0,
+    "hallucination_rate": 0.0,
+    "format_diagnostics": {
+      "candidate_latex_formula_spans": 30.0,
+      "formula_span_count_ratio": 1.0,
+      "gold_latex_formula_spans": 30.0
+    },
+    "aggregation": {
+      "method": "arithmetic_mean",
+      "api2_run_count": 3
+    }
+  },
+  "api2_runs": [
+    {
+      "run": 1,
+      "result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page05/agent_outputs/api2_runs/run_01/result.json",
+      "score": 91.617213,
+      "metrics": {
+        "score": 91.617213,
+        "raw_score": 0.916172,
+        "structure_score": 1.0,
+        "stem_score": 0.842719,
+        "answer_score": 0.928052,
+        "state_macro_f1": 1.0,
+        "answer_by_type": {
+          "choice": null,
+          "fill": null,
+          "solution": 0.928052
+        },
+        "gold_question_count": 2,
+        "candidate_question_count": 2,
+        "matched_question_count": 2,
+        "omission_count": 0,
+        "omission_rate": 0.0,
+        "hallucination_count": 0,
+        "hallucination_rate": 0.0,
+        "format_diagnostics": {
+          "gold_latex_formula_spans": 30,
+          "candidate_latex_formula_spans": 30,
+          "formula_span_count_ratio": 1.0
+        },
+        "missing_gold_indices": [],
+        "extra_candidate_indices": [],
+        "details": [
+          {
+            "qno": "18",
+            "candidate_qno": "18",
+            "alignment": "matched",
+            "stem_score": 0.865,
+            "answer_score": 1.0,
+            "answer_type": "solution"
+          },
+          {
+            "qno": "19",
+            "candidate_qno": "19",
+            "alignment": "matched",
+            "stem_score": 0.820437,
+            "answer_score": 0.856103,
+            "answer_type": "solution"
+          }
+        ]
+      }
+    },
+    {
+      "run": 2,
+      "result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page05/agent_outputs/api2_runs/run_02/result.json",
+      "score": 91.617213,
+      "metrics": {
+        "score": 91.617213,
+        "raw_score": 0.916172,
+        "structure_score": 1.0,
+        "stem_score": 0.842719,
+        "answer_score": 0.928052,
+        "state_macro_f1": 1.0,
+        "answer_by_type": {
+          "choice": null,
+          "fill": null,
+          "solution": 0.928052
+        },
+        "gold_question_count": 2,
+        "candidate_question_count": 2,
+        "matched_question_count": 2,
+        "omission_count": 0,
+        "omission_rate": 0.0,
+        "hallucination_count": 0,
+        "hallucination_rate": 0.0,
+        "format_diagnostics": {
+          "gold_latex_formula_spans": 30,
+          "candidate_latex_formula_spans": 30,
+          "formula_span_count_ratio": 1.0
+        },
+        "missing_gold_indices": [],
+        "extra_candidate_indices": [],
+        "details": [
+          {
+            "qno": "18",
+            "candidate_qno": "18",
+            "alignment": "matched",
+            "stem_score": 0.865,
+            "answer_score": 1.0,
+            "answer_type": "solution"
+          },
+          {
+            "qno": "19",
+            "candidate_qno": "19",
+            "alignment": "matched",
+            "stem_score": 0.820437,
+            "answer_score": 0.856103,
+            "answer_type": "solution"
+          }
+        ]
+      }
+    },
+    {
+      "run": 3,
+      "result": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page05/agent_outputs/api2_runs/run_03/result.json",
+      "score": 91.617213,
+      "metrics": {
+        "score": 91.617213,
+        "raw_score": 0.916172,
+        "structure_score": 1.0,
+        "stem_score": 0.842719,
+        "answer_score": 0.928052,
+        "state_macro_f1": 1.0,
+        "answer_by_type": {
+          "choice": null,
+          "fill": null,
+          "solution": 0.928052
+        },
+        "gold_question_count": 2,
+        "candidate_question_count": 2,
+        "matched_question_count": 2,
+        "omission_count": 0,
+        "omission_rate": 0.0,
+        "hallucination_count": 0,
+        "hallucination_rate": 0.0,
+        "format_diagnostics": {
+          "gold_latex_formula_spans": 30,
+          "candidate_latex_formula_spans": 30,
+          "formula_span_count_ratio": 1.0
+        },
+        "missing_gold_indices": [],
+        "extra_candidate_indices": [],
+        "details": [
+          {
+            "qno": "18",
+            "candidate_qno": "18",
+            "alignment": "matched",
+            "stem_score": 0.865,
+            "answer_score": 1.0,
+            "answer_type": "solution"
+          },
+          {
+            "qno": "19",
+            "candidate_qno": "19",
+            "alignment": "matched",
+            "stem_score": 0.820437,
+            "answer_score": 0.856103,
+            "answer_type": "solution"
+          }
+        ]
+      }
+    }
+  ],
+  "gain": 0.0,
+  "evaluator": {
+    "name": "mathocrclaw_deterministic_v3_local",
+    "spec": "benchmark/EVALUATION.md",
+    "judge_model_calls": 0,
+    "semantic_mode": "local_sequence_similarity",
+    "formula_mode": "normalized_latex_ordered_soft_alignment"
+  },
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 33062,
+    "completion_tokens": 18005,
+    "total_tokens": 51067,
+    "latency_s": 314.608919,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 83.301556,
+          "prompt_tokens": 3065,
+          "completion_tokens": 4790,
+          "total_tokens": 7855,
+          "request_id": "chatcmpl-18b7e6da-2a44-947b-bf24-48d7627187e2"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 72.263866,
+          "prompt_tokens": 9999,
+          "completion_tokens": 4081,
+          "total_tokens": 14080,
+          "request_id": "chatcmpl-38013af9-da05-9d09-aa71-ac72c14c4077"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 75.693017,
+          "prompt_tokens": 9999,
+          "completion_tokens": 4335,
+          "total_tokens": 14334,
+          "request_id": "chatcmpl-c6b62c4e-bd2b-9bc5-9fe3-a79b3d41852b"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 83.35048,
+          "prompt_tokens": 9999,
+          "completion_tokens": 4799,
+          "total_tokens": 14798,
+          "request_id": "chatcmpl-d6632711-9949-9c8b-963a-a5c0b08b64d1"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 72.263866,
+            "prompt_tokens": 9999,
+            "completion_tokens": 4081,
+            "total_tokens": 14080,
+            "request_id": "chatcmpl-38013af9-da05-9d09-aa71-ac72c14c4077"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 75.693017,
+            "prompt_tokens": 9999,
+            "completion_tokens": 4335,
+            "total_tokens": 14334,
+            "request_id": "chatcmpl-c6b62c4e-bd2b-9bc5-9fe3-a79b3d41852b"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 83.35048,
+            "prompt_tokens": 9999,
+            "completion_tokens": 4799,
+            "total_tokens": 14798,
+            "request_id": "chatcmpl-d6632711-9949-9c8b-963a-a5c0b08b64d1"
+          }
+        ]
+      ]
+    }
+  },
+  "api1_latency_s": 83.301556,
+  "api2_latency_s": 77.102454,
+  "api1_timeout": false,
+  "api2_timeout": false
+}

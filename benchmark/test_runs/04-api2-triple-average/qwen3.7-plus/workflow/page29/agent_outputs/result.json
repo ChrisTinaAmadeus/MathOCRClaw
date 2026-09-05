@@ -1,0 +1,177 @@
+{
+  "page": "page29",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page29/image/page29.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page29.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page29/preprocessed/page29.png",
+  "api_strategy": {
+    "call_count": 4,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "question-conditioned symbol, figure, and atomic patch review",
+    "api2_run_count": 3,
+    "local_merge": "deterministic validation against the first-pass draft"
+  },
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 29942,
+    "completion_tokens": 31512,
+    "total_tokens": 61454,
+    "latency_s": 507.426357,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 125.70674,
+          "prompt_tokens": 3065,
+          "completion_tokens": 7857,
+          "total_tokens": 10922,
+          "request_id": "chatcmpl-294090ae-8dae-9b1f-825d-d77e0ec8d0fe"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 145.836502,
+          "prompt_tokens": 8959,
+          "completion_tokens": 9085,
+          "total_tokens": 18044,
+          "request_id": "chatcmpl-9d74e79e-6f3b-9c3a-8976-a09169ea01d3"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 110.307825,
+          "prompt_tokens": 8959,
+          "completion_tokens": 6797,
+          "total_tokens": 15756,
+          "request_id": "chatcmpl-759f3964-bbc4-92be-8a12-cf4053f0c43e"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 125.57529,
+          "prompt_tokens": 8959,
+          "completion_tokens": 7773,
+          "total_tokens": 16732,
+          "request_id": "chatcmpl-ef350b2a-c7f4-9584-b102-15819833610f"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 145.836502,
+            "prompt_tokens": 8959,
+            "completion_tokens": 9085,
+            "total_tokens": 18044,
+            "request_id": "chatcmpl-9d74e79e-6f3b-9c3a-8976-a09169ea01d3"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 110.307825,
+            "prompt_tokens": 8959,
+            "completion_tokens": 6797,
+            "total_tokens": 15756,
+            "request_id": "chatcmpl-759f3964-bbc4-92be-8a12-cf4053f0c43e"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 125.57529,
+            "prompt_tokens": 8959,
+            "completion_tokens": 7773,
+            "total_tokens": 16732,
+            "request_id": "chatcmpl-ef350b2a-c7f4-9584-b102-15819833610f"
+          }
+        ]
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 1,
+    "answers_with_transcription": 1,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 18,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "18. (17分) 已知关于 $x$ 的不等式 $(ax-1)(x+1)>0$.\n(1) 若此不等式的解集为 $\\left\\{x \\mid -1 < x < -\\frac{1}{2}\\right\\}$，求实数 $a$ 的值；\n(2) 若 $a \\in \\mathbf{R}$，解这个关于 $x$ 的不等式；\n(3) 已知 $y_1 = 4x_1^2 + 3$，$y_2 = ax_2 + 5 - a (a>0)$，若对任意的 $x_1 \\in \\{x \\mid 1 \\le x \\le 2\\}$，总存在 $x_2 \\in \\{x \\mid -1 \\le x \\le 2\\}$，使得 $y_1 = y_2$ 成立，求实数 $a$ 的取值范围.",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page29/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 由题可知 $-1, -\\frac{1}{2}$ 为方程的两根.\n可得 $\\frac{1}{a} = -\\frac{1}{2}$，即 $a=-2$.\n\n(2) 当 $a=0$ 时，$-x-1>0$.\n当 $a<0$ 时. ① $a=-1$. $\\varnothing$\n② $a<-1, \\frac{1}{a} > -1$. $\\left\\{x \\mid -1 < x < \\frac{1}{a}\\right\\}$\n③ $-1 < a < 0, \\frac{1}{a} < -1$. $\\left\\{x \\mid \\frac{1}{a} < x < -1\\right\\}$.\n\n(3) 当 $x_1 \\in \\{x \\mid 1 \\le x \\le 2\\}$ 时，则 $\\{y_1\\}$ 使 $y_1 \\in [7, 19]$.\n$\\because y_1 = y_2$.\n$\\therefore y_{2\\max} = 19, y_{2\\min} = 7$.\n$\\because x_2 \\in \\{x \\mid -1 \\le x \\le 2\\}$.\n$\\therefore y_{2\\max} = 2a + 5 - a = a + 5$.\n$y_{1\\min} = -a + 5 - a = -2a + 5$.\n$\\therefore \\begin{cases} a+5 \\ge 19 & a \\ge 14 \\\\ -2a+5 \\le 7 & a \\ge -1 \\end{cases}$\n综上，$a$ 的取值范围为 $\\{a \\mid a \\ge 14\\}$.",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "The draft accurately transcribes the visible black ink student solution, including the mathematical steps and final conclusion for all three sub-questions. Red ink annotations appear to be grading corrections and are appropriately excluded from the student answer transcription.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page29/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page29/image/page29.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page29/preprocessed/page29.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page29/api_markdown/page29.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page29/api_markdown/page29.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page29/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page29/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page29/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page29/code_outputs/match/viz/page29_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page29/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page29/agent_outputs/result.json",
+    "api2_results": [
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page29/agent_outputs/api2_runs/run_01/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page29/agent_outputs/api2_runs/run_02/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page29/agent_outputs/api2_runs/run_03/result.json"
+    ],
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page29/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page29/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page29/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page29/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page29/code_outputs/match/viz/page29_handwriting_overlay.png"
+  }
+}

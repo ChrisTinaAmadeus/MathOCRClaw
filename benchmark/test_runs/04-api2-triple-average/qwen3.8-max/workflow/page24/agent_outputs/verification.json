@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page24/api_markdown/page24.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page24/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 47558,
+    "completion_tokens": 44904,
+    "total_tokens": 92462,
+    "latency_s": 772.812393,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 256.361132,
+          "prompt_tokens": 3122,
+          "completion_tokens": 15953,
+          "total_tokens": 19075,
+          "request_id": "chatcmpl-7d1975db-08e1-9c30-be16-e17c8bacce12"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 167.702245,
+          "prompt_tokens": 14812,
+          "completion_tokens": 9133,
+          "total_tokens": 23945,
+          "request_id": "chatcmpl-03cb743c-9daa-9204-b549-b2389c7362e7"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 160.439475,
+          "prompt_tokens": 14812,
+          "completion_tokens": 8906,
+          "total_tokens": 23718,
+          "request_id": "chatcmpl-ba43f02c-e842-90c6-a4cb-e1e32ff049b6"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 188.309541,
+          "prompt_tokens": 14812,
+          "completion_tokens": 10912,
+          "total_tokens": 25724,
+          "request_id": "chatcmpl-02812ed3-9b50-9c94-849e-4802aa598588"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 167.702245,
+            "prompt_tokens": 14812,
+            "completion_tokens": 9133,
+            "total_tokens": 23945,
+            "request_id": "chatcmpl-03cb743c-9daa-9204-b549-b2389c7362e7"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 160.439475,
+            "prompt_tokens": 14812,
+            "completion_tokens": 8906,
+            "total_tokens": 23718,
+            "request_id": "chatcmpl-ba43f02c-e842-90c6-a4cb-e1e32ff049b6"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 188.309541,
+            "prompt_tokens": 14812,
+            "completion_tokens": 10912,
+            "total_tokens": 25724,
+            "request_id": "chatcmpl-02812ed3-9b50-9c94-849e-4802aa598588"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "Q17: an isolated handwritten note reading C1D // EM sits at the right of the answer region below the figure caption; whether it belongs to part (1) as a retained proof step or is a figure annotation is unresolved, so the draft placeholder for (1) is left unchanged.",
+    "",
+    "Q17(1) area shows only an isolated handwritten note 'C1D // EM' at the right of the answer region, insufficient as a retained proof, so the draft's unrecognized marker stands; Q19 answer region also contains a red-ink [derivative method] alternative proof block with an internal strike-through that API1 did not transcribe; both left unchanged."
+  ],
+  "raw_runs": [
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"Q17: an isolated handwritten note reading C1D // EM sits at the right of the answer region below the figure caption; whether it belongs to part (1) as a retained proof step or is a figure annotation is unresolved, so the draft placeholder for (1) is left unchanged.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C001-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"printed_anchors\": [\n              \"typeset italic vertex labels A, B, C, A1, B1, C1, D, E, M\",\n              \"printed caption (第 17 题图) below the prism\",\n              \"uniform thin line work with regular dashed hidden edges\"\n            ],\n            \"handwriting_features\": [\n              \"pen-drawn coordinate axis arrows labeled z at top, y at right, x at lower left overlaid on the printed prism\",\n              \"freehand arrowheads extending beyond the printed vertices\"\n            ],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"The figure_candidate_01 crop shows a printed triangular-prism skeleton with typeset labels and a printed caption; dark pen axis arrows and letters are added on top of the printed edges, so the source is mixed while the role remains the printed question figure; no crossing-out, erasure, or overwriting of the printed skeleton is visible.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Blue-ink lines in the C001 answer region match the draft line for line: coordinate setup with C as origin, points A(2,0,0), B(0,2,0), C(0,0,0), A1(2,0,2), E(0,0,1), the four vectors with arrowheads, the two-equation normal system, n1=(0,0,-4), n2=(-1,1,2), and the cosine chain 8/(sqrt16*sqrt6) = 8/(4sqrt6) = 2/sqrt6 = 2sqrt6/6 = sqrt6/3; no retained part (1) proof beyond the isolated side note, so the draft transcription stands.\"\n      }\n    },\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Red-ink handwriting in the C002 answer region matches the draft: (1) f(x)=log2 x; (2) f(m^2+m)<f(2), monotone increase on (0,+inf), m^2+m<2 and m^2+m>0 with case bracket -2<m<1 and m>0 or m<-1, concluding (-2,-1) union (0,1); (3) log2 a = -log2 b, ab=1, a+b>2sqrt(ab)=2, f(a+b)>1, range (1,+inf). The underline under 0<a<b and margin notes are student marks, not stem text.\"\n      }\n    },\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Red-ink handwriting in the C003 answer region and both detail crops matches the draft line for line: f(0)=0 giving a=1, the definition-method difference expansion with fractions over 2^{x1+x2}, the sign conclusion f(x1)<f(x2), part (2) reduction to 3x^2-4x-4>0 with x<-2/3 or x>2, and part (3) substitution t=2^x-2^{-x}, t>=-3/2, axis t=m, cases m<-3/2 giving m=-25/12 and m>=-3/2 giving m=2 with m=-2 discarded.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C001-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"printed_anchors\": [\n              \"typeset italic vertex labels A, B, C, A_1, B_1, C_1, D, E, M on the prism\",\n              \"printed caption '(第 17 题图)' below the prism\",\n              \"uniform thin solid and dashed edge lines forming the triangular prism\"\n            ],\n            \"handwriting_features\": [\n              \"freehand coordinate-axis arrows with handwritten letters z (top), y (right) and x (lower left) drawn over the printed prism\",\n              \"pen stroke weight of the axis arrows differs from the uniform printed line work\"\n            ],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"The prism skeleton, vertex labels and caption are typeset and uniform; separate pen strokes add arrowheads and axis letters z, y, x on top of it, so a printed question figure retains a handwritten coordinate overlay rather than being scratch work.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Answer area shows only the (2) coordinate derivation: origin C, points A(2,0,0), B(0,2,0), C(0,0,0), A_1(2,0,2), E(0,0,1), vectors AB=(-2,2,0), CB=(0,2,0), EA_1=(2,0,1), A_1B=(-2,2,-2), normal n_1=(0,0,-4), n_2=(-1,1,2), and the cosine chain ending at sqrt(6)/3, matching the draft line for line; the (1) region contains only the isolated note 'C1D // EM' with no proof, consistent with the draft placeholder.\"\n      }\n    },\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten red ink matches the draft: (1) f(x)=log_2 x; (2) f(m^2+m)<f(2), monotone increase on (0,+∞), brace with -2<m<1 and m>0 or m<-1, range (-2,-1)∪(0,1); (3) log_2 a=-log_2 b, ab=1, a+b>2√ab=2, f(a+b)>log_2 2=1, range (1,+∞); interval parentheses and union stroke are visibly open curves and a cup-shaped join.\"\n      }\n    },\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Red handwriting matches the draft step by step: f(0)=0 giving a=1, the definition-method difference expansion with fractions over 2^{x_1}, 2^{x_2} and 2^{x_1+x_2}, the (2) reduction to 3x^2-4x-4>0 with x<-2/3 or x>2, and the (3) substitution t=2^x-2^{-x}, t≥-3/2, axis t=m, cases m<-3/2 giving m=-25/12 and m≥-3/2 giving m=2 (m=-2 rejected); fraction bars visibly span numerator and denominator in each stacked fraction.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"Q17(1) area shows only an isolated handwritten note 'C1D // EM' at the right of the answer region, insufficient as a retained proof, so the draft's unrecognized marker stands; Q19 answer region also contains a red-ink [derivative method] alternative proof block with an internal strike-through that API1 did not transcribe; both left unchanged.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C001-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"printed_anchors\": [\n              \"typeset italic vertex labels A, B, C, A1, B1, C1, D, E, M on the prism\",\n              \"printed caption '(第 17 题图)' below the prism\",\n              \"uniform thin solid and regularly dashed prism edges\"\n            ],\n            \"handwriting_features\": [\n              \"handwritten axis letter z with freehand arrowhead added above C1\",\n              \"handwritten axis letter y with freehand arrowhead added at right of B\",\n              \"curved freehand arrow stroke near vertex A\"\n            ],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"The printed prism skeleton with typeset labels and printed caption remains fully visible in figure_candidate_01; student pen only overlaid coordinate-axis arrows (z up, y right, curved arrow at A), so the source is mixed while the role remains the printed question figure.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"medium\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten (2) block in the C001 answer area matches the draft line by line: coordinates A(2,0,0), B(0,2,0), C(0,0,0), A1(2,0,2), E(0,0,1); vectors AB=(-2,2,0), CB=(0,2,0), EA1=(2,0,1), A1B=(-2,2,-2); normals n1=(0,0,-4), n2=(-1,1,2); final chain 8/(sqrt(16)*sqrt(6)) = 8/(4 sqrt(6)) = 2/sqrt(6) = 2 sqrt(6)/6 = sqrt(6)/3 all visible in answer_ink; (1) shows only the isolated note 'C1D // EM' at the right edge, which is not a retained proof, so the draft's (1) unrecognized marker is preserved.\"\n      }\n    },\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\n        \"C002\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Red handwritten solution in C002 matches the draft: (1) f(x)=log_2 x; (2) f(m^2+m)<f(2), monotone increase on (0,+inf), brace with -2<m<1 and m>0 or m<-1, final m range (-2,-1) cup (0,1); (3) log_2 a = -log_2 b, ab=1, a+b>2 sqrt(ab)=2, f(a+b)=log_2(a+b)>log_2 2=1, range (1,+inf); all strokes visible with matching parentheses and union symbol.\"\n      }\n    },\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\n        \"C003\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Red handwritten solution in C003 and its answer_detail crops matches the draft across all parts: (1) f(0)=0, a=1, definition-method chain ending f(x1)-f(x2)<0 and f(x) increasing on R; (2) f(3x^2-5x)>f(4-x), 3x^2-4x-4>0, x<-2/3 or x>2; (3) t=2^x-2^{-x}, t>=-3/2, y=t^2-2mt+2, case split m<-3/2 giving m=-25/12 and m>=-3/2 giving m=2 (m=-2 rejected), final m=-25/12 or m=2; fractions, signs and interval brackets are visibly consistent with the draft.\"\n      }\n    }\n  ]\n}"
+  ]
+}

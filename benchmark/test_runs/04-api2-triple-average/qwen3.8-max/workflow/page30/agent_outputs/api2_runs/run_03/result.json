@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "page": "page30",
+  "api2_run": 3,
+  "questions": [
+    {
+      "qno": 19,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "19. 已知圆 $O: x^2 + y^2 = 9$ 与 $x$ 轴的正半轴交于点 $P$，以 $P$ 为圆心，半径为 $r$ 的圆与圆 $O$ 相交于 $M, N$ 两点。\n(1) 过点 $A(3,1)$ 的直线与圆 $O$ 相切，求切线方程；\n(2) $D$ 为圆 $O$ 上的动点（异于点 $P$），若线段 $PD$ 上有一点 $E$，满足 $\\overrightarrow{PE} = 2\\overrightarrow{ED}$，求点 $E$ 的轨迹方程；\n(3) 若 $Q$ 是圆 $O$ 上任意一点（不与 $M, N$ 重合），直线 $QM, QN$ 分别与 $x$ 轴交于点 $K$ 和 $T$，则 $|OK| \\cdot |OT|$ 是否为定值？若是，求出该定值；若不是，请说明理由。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page30/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) _未识别到手写答案。_\n(2) _未识别到手写答案。_\n(3) 设 $M(x_0, y_0)$，$Q(x_1, y_1)$，$(y_1 \\neq \\pm y_0)$。\n$N(x_0, -y_0)$。\n$x_0^2 + y_0^2 = 9$，$x_1^2 + y_1^2 = 9$。\n$l_{QM}: y - y_1 = \\frac{y_0 - y_1}{x_0 - x_1}(x - x_1)$\n$l_{QN}: y - y_1 = \\frac{-y_0 - y_1}{x_0 - x_1}(x - x_1)$\n分别令 $y = 0$，则 $x_K = \\frac{x_1 y_0 - x_0 y_1}{y_0 - y_1}$\n$x_T = \\frac{x_1 y_0 + x_0 y_1}{y_0 + y_1}$\n$\\therefore |OK| \\cdot |OT| = |x_K \\cdot x_T|$\n$= \\left| \\frac{x_1^2 y_0^2 - x_0^2 y_1^2}{y_0^2 - y_1^2} \\right|$\n$= \\left| \\frac{(9 - y_1^2)y_0^2 - (9 - y_0^2)y_1^2}{y_0^2 - y_1^2} \\right|$\n$= 9$。",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "no_answer",
+        "evidence_note": "C001 context and answer_detail_01 show red-pen handwriting only for (3), matching the draft line by line: setup M(x_0,y_0), Q(x_1,y_1), (y_1 ≠ ±y_0); N(x_0,-y_0); x_0^2+y_0^2=9 and x_1^2+y_1^2=9; l_QM: y-y_1=(y_0-y_1)/(x_0-x_1)(x-x_1); l_QN: y-y_1=(-y_0-y_1)/(x_0-x_1)(x-x_1); setting y=0 gives x_K=(x_1y_0-x_0y_1)/(y_0-y_1) and x_T=(x_1y_0+x_0y_1)/(y_0+y_1); then |OK|·|OT|=|x_K·x_T| expanded through two absolute-value fractions to '= 9'. The (1) and (2) areas contain no handwriting, consistent with the draft's unrecognized-answer markers.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page30/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "In the (3) working, a short horizontal dash before x_1 y_0 on the x_T line and a P-like opening glyph before (x_1, y_1) on the setup line are ink-level ambiguities; neither is conclusive enough to patch, so draft readings are kept.",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.8-max",
+      "attempt": 1,
+      "elapsed_s": 171.406245,
+      "prompt_tokens": 9242,
+      "completion_tokens": 10561,
+      "total_tokens": 19803,
+      "request_id": "chatcmpl-81ba72f5-a1f8-98d6-be7e-e3fbb13b4c01"
+    }
+  ]
+}

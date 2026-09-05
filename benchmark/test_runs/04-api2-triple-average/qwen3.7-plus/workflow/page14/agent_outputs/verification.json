@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/api_markdown/page14.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 48048,
+    "completion_tokens": 22748,
+    "total_tokens": 70796,
+    "latency_s": 372.191419,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 75.005154,
+          "prompt_tokens": 3549,
+          "completion_tokens": 4667,
+          "total_tokens": 8216,
+          "request_id": "chatcmpl-1247d138-e8eb-9f17-abd4-fee00b3e9e9f"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 84.70912,
+          "prompt_tokens": 14833,
+          "completion_tokens": 5194,
+          "total_tokens": 20027,
+          "request_id": "chatcmpl-5b38c0fb-9eae-9cfe-ba13-580133ff4237"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 94.64032,
+          "prompt_tokens": 14833,
+          "completion_tokens": 5849,
+          "total_tokens": 20682,
+          "request_id": "chatcmpl-da865e1d-2c6b-9f75-af41-4bf305aaa1c1"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 117.836825,
+          "prompt_tokens": 14833,
+          "completion_tokens": 7038,
+          "total_tokens": 21871,
+          "request_id": "chatcmpl-0d06cce6-fccd-993e-912e-8a7cbc84b952"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 84.70912,
+            "prompt_tokens": 14833,
+            "completion_tokens": 5194,
+            "total_tokens": 20027,
+            "request_id": "chatcmpl-5b38c0fb-9eae-9cfe-ba13-580133ff4237"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 94.64032,
+            "prompt_tokens": 14833,
+            "completion_tokens": 5849,
+            "total_tokens": 20682,
+            "request_id": "chatcmpl-da865e1d-2c6b-9f75-af41-4bf305aaa1c1"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 117.836825,
+            "prompt_tokens": 14833,
+            "completion_tokens": 7038,
+            "total_tokens": 21871,
+            "request_id": "chatcmpl-0d06cce6-fccd-993e-912e-8a7cbc84b952"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "",
+    "",
+    ""
+  ],
+  "raw_runs": [
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"15\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \"$a=2$ $A\\\\cap B=\\\\{1,4\\\\}$\",\n            \"new\": \"② $a=2$ $A\\\\cap B=\\\\{1,4\\\\}$\",\n            \"kind\": \"insert_missing\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"Visible circled number 2 before a=2 in answer_detail_01\"\n          }\n        ],\n        \"symbol_observations\": [],\n        \"evidence\": \"Visible circled enumerators ① and ② in handwriting\"\n      }\n    },\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \"$A=\\\\varnothing$ 即 $a-1>3-2a$\",\n            \"new\": \" $A=\\\\varnothing$ 即 $a-1>3-2a$\",\n            \"kind\": \"insert_missing\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C002\",\n            \"evidence\": \"Visible circled number 1 before A=\\\\varnothing in answer_detail_01\"\n          }\n        ],\n        \"symbol_observations\": [],\n        \"evidence\": \"Visible circled enumerators ① and ② in handwriting\"\n      }\n    },\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Draft matches visible handwriting accurately\"\n      }\n    }\n  ]\n}\n```",
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"15\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \" $a=2$ $A\\\\cap B=\\\\{1,4\\\\}$\",\n            \"new\": \" ② $a=2$ $A\\\\cap B=\\\\{1,4\\\\}$\",\n            \"kind\": \"insert_missing\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"Visible circled number ② before $a=2$ in the handwriting.\"\n          }\n        ],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwriting matches draft except for missing circled enumerator.\"\n      }\n    },\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\n        \"C002\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \" $A=\\\\varnothing$ 即 $a-1>3-2a$\",\n            \"new\": \"① $A=\\\\varnothing$ 即 $a-1>3-2a$\",\n            \"kind\": \"insert_missing\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C002\",\n            \"evidence\": \"Visible circled number  before $A=\\\\varnothing$ in the handwriting.\"\n          }\n        ],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwriting matches draft except for missing circled enumerator.\"\n      }\n    },\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\n        \"C003\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Draft matches visible handwriting.\"\n      }\n    }\n  ]\n}\n```",
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"15\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \" $a=2$ $A\\\\cap B=\\\\{1,4\\\\}$\",\n            \"new\": \"② $a=2$ $A\\\\cap B=\\\\{1,4\\\\}$\",\n            \"kind\": \"insert_missing\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"Visible circled number ② before a=2 in the handwritten solution for part (1).\"\n          }\n        ],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten solution matches draft with minor missing enumerator.\"\n      }\n    },\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\n        \"C002\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \" $A=\\\\varnothing$ 即\",\n            \"new\": \"① $A=\\\\varnothing$ 即\",\n            \"kind\": \"insert_missing\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C002\",\n            \"evidence\": \"Visible circled number  before A=∅ in the handwritten solution for part (1).\"\n          }\n        ],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten solution matches draft with minor missing enumerator.\"\n      }\n    },\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\n        \"C003\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten solution matches draft completely.\"\n      }\n    }\n  ]\n}\n```"
+  ]
+}

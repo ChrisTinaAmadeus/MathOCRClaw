@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page22/api_markdown/page22.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page22/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 71769,
+    "completion_tokens": 32145,
+    "total_tokens": 103914,
+    "latency_s": 524.847628,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 134.805239,
+          "prompt_tokens": 3065,
+          "completion_tokens": 7883,
+          "total_tokens": 10948,
+          "request_id": "chatcmpl-bc1a6c6d-9c45-954a-b2e4-1b547cc2da2f"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 117.788296,
+          "prompt_tokens": 22897,
+          "completion_tokens": 6737,
+          "total_tokens": 29634,
+          "request_id": "chatcmpl-749acd72-a2c5-9f0a-bea2-61edf47fa072"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 134.623084,
+          "prompt_tokens": 22897,
+          "completion_tokens": 7833,
+          "total_tokens": 30730,
+          "request_id": "chatcmpl-0bb1f13a-e4b8-91be-9689-d68d18fedec5"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 137.631009,
+          "prompt_tokens": 22910,
+          "completion_tokens": 9692,
+          "total_tokens": 32602,
+          "request_id": "chatcmpl-39616afd-9edf-9fea-89e8-14003d998597"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 117.788296,
+            "prompt_tokens": 22897,
+            "completion_tokens": 6737,
+            "total_tokens": 29634,
+            "request_id": "chatcmpl-749acd72-a2c5-9f0a-bea2-61edf47fa072"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 134.623084,
+            "prompt_tokens": 22897,
+            "completion_tokens": 7833,
+            "total_tokens": 30730,
+            "request_id": "chatcmpl-0bb1f13a-e4b8-91be-9689-d68d18fedec5"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 137.631009,
+            "prompt_tokens": 22910,
+            "completion_tokens": 9692,
+            "total_tokens": 32602,
+            "request_id": "chatcmpl-39616afd-9edf-9fea-89e8-14003d998597"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "",
+    "",
+    ""
+  ],
+  "raw_runs": [
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"6\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Red handwritten B written left of the circled printed number 6 in C001; the small black tick near option C is a scratch mark, and the retained red letter shows one left stem with two lobes (B, not D). Matches draft B.\"\n      }\n    },\n    {\n      \"qno\": \"7\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Red handwritten D left of the circled printed 7 in C002: single continuous outer bow attached to a straight left stem, no two-lobe structure. Matches draft D.\"\n      }\n    },\n    {\n      \"qno\": \"8\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Red handwritten B at upper left of question 8 in C003 with two closed lobes on a left stem; option A is struck through in black as scratch. Matches draft B.\"\n      }\n    },\n    {\n      \"qno\": \"9\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Red handwritten AD left of question 9 in C004; A shows apex with crossbar, D shows one continuous outer bow; checks on printed A and D, strikes on B and C are scratch marks. Matches draft AD.\"\n      }\n    },\n    {\n      \"qno\": \"10\",\n      \"source_context_ids\": [\"C005\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Red handwritten ACD left of question 10 in C005: A with apex/crossbar, C open on the right with no straight left stem, D with single outer bow; check on printed A is scratch. Matches draft ACD.\"\n      }\n    },\n    {\n      \"qno\": \"11\",\n      \"source_context_ids\": [\"C006\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Red handwritten BCD left of question 11 in C006: B with two lobes, C open bow, D single outer bow; printed A is struck through as scratch. Matches draft BCD.\"\n      }\n    },\n    {\n      \"qno\": \"12\",\n      \"source_context_ids\": [\"C007\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"On the full page and C007, a red 4 (open-top diagonal plus crossing vertical) is written after f(2)= as the retained value; the preceding black attempt is crossed out with a red strike. Matches draft 4.\"\n      }\n    },\n    {\n      \"qno\": \"13\",\n      \"source_context_ids\": [\"C008\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Printed blank after 的最小值为 in C008/full page carries a red handwritten 3 (two open right-facing lobes, no top bar so not 5); surrounding fraction work is scratch. Matches draft 3.\"\n      }\n    },\n    {\n      \"qno\": \"14\",\n      \"source_context_ids\": [\"C009\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Printed blank after 根的个数为 in C009/full page carries a single red vertical stroke read as 1; no top crossbar or loop that would suggest 7 or another digit. Matches draft 1.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"6\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Red handwritten B with two lobes on a left stem beside the circled number 6 in the left margin; printed stem and options A-D match the draft; black slash over option C is an elimination mark, margin letter B retained.\"\n      }\n    },\n    {\n      \"qno\": \"7\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Red handwritten D (single continuous outer bow on a left stem) left of the circled 7; printed options sqrt(2), 2, sqrt(5), 2 sqrt(2) match the draft; black slash under option A does not alter the retained margin letter D.\"\n      }\n    },\n    {\n      \"qno\": \"8\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Red handwritten B at upper left of the question; printed fractions 2024/1011, 2025/1013, 1013/2025, 2026/2025 match the draft; option A is struck through in black while the margin letter B is retained.\"\n      }\n    },\n    {\n      \"qno\": \"9\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Red handwritten A and D in the left margin beside the circled 9; multiple-choice section heading visible above; printed options match the draft; black slashes on options A and C are elimination marks, margin letters A and D retained.\"\n      }\n    },\n    {\n      \"qno\": \"10\",\n      \"source_context_ids\": [\"C005\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Red handwritten A, C, D at upper left of the circled 10; printed definition and options A-D match the draft; black slash on option A is an elimination mark, margin letters A, C, D retained.\"\n      }\n    },\n    {\n      \"qno\": \"11\",\n      \"source_context_ids\": [\"C006\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Red handwritten B, C, D left of the circled 11; printed options match the draft; black slash on option A is an elimination mark, margin letters B, C, D retained.\"\n      }\n    },\n    {\n      \"qno\": \"12\",\n      \"source_context_ids\": [\"C007\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Printed stem matches the draft; on the answer blank after f(2)= an earlier pencil attempt is crossed out and a red 4 is written as the final retained value, visible in the full page and at the right edge of C007.\"\n      }\n    },\n    {\n      \"qno\": \"13\",\n      \"source_context_ids\": [\"C008\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Printed answer underline visible after 的最小值为; a red 3 is written on the blank in the full page; printed fraction (m^2+m+4)/(m+1) matches the draft.\"\n      }\n    },\n    {\n      \"qno\": \"14\",\n      \"source_context_ids\": [\"C009\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Printed answer underline visible after 根的个数为; a red 1 is written on the blank in the full page; printed equation (x ln x)^2 = 1 + 2x^2 ln x matches the draft.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"6\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Red pen margin letter B beside circled 6 in C001; printed options A-D match the draft exactly; margin letter uncrossed\"\n      }\n    },\n    {\n      \"qno\": \"7\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Red pen margin letter D beside circled 7 in C002; red retained work at right ends with boxed |AP| = 2√2, matching option D\"\n      }\n    },\n    {\n      \"qno\": \"8\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Red pen margin letter B before printed 8 in C003; option A and D carry strike slashes but the margin letter B is retained and uncrossed\"\n      }\n    },\n    {\n      \"qno\": \"9\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Red pen margin letters A and D beside circled 9 in C004, two distinct retained letters consistent with multiple-choice grammar\"\n      }\n    },\n    {\n      \"qno\": \"10\",\n      \"source_context_ids\": [\"C005\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Red pen margin letters A, C, D written together beside circled 10 in C005; three distinct retained letters consistent with multiple-choice grammar\"\n      }\n    },\n    {\n      \"qno\": \"11\",\n      \"source_context_ids\": [\"C006\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Red pen margin letters B, C, D beside circled 11 in C006; three distinct retained letters consistent with multiple-choice grammar\"\n      }\n    },\n    {\n      \"qno\": \"12\",\n      \"source_context_ids\": [\"C007\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"On the blank after f(2)= in the full page, an earlier pencil entry is struck through with red slashes and a red pen 4 is retained as the final value; section heading marks this as fill-in section\"\n      }\n    },\n    {\n      \"qno\": \"13\",\n      \"source_context_ids\": [\"C008\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Printed blank underline after 的最小值为 in C008 bears a red pen 3 (two stacked lobes, open left); full page confirms the red 3 on the blank\"\n      }\n    },\n    {\n      \"qno\": \"14\",\n      \"source_context_ids\": [\"C009\"],\n      \"question_type\": \"fill\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Printed blank underline after 根的个数为 in C009/full page bears a single red vertical stroke, a retained 1\"\n      }\n    }\n  ]\n}"
+  ]
+}

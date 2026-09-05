@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "page": "page25",
+  "api2_run": 2,
+  "questions": [
+    {
+      "qno": 15,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "15. （本小题满分13分）已知集合 $A=\\left\\{x\\mid\\frac{2-x}{x+2}>0\\right\\}$，$B=\\{x\\mid|x-1|>2\\}$，$C=\\{x\\mid m-1<x<2m+1\\}$。\n(1) 求 $A\\cap B$，$(\\complement_R B)\\cup A$；\n(2) 若 $A\\cap C=C$，求实数 $m$ 的取值范围。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "解：$\\because A=\\left\\{x\\mid\\frac{2-x}{x+2}>0\\right\\}$\n$\\therefore A=\\{x\\mid-2<x<2\\}$\n$B=\\{x\\mid|x-1|>2\\}$\n$\\therefore B=\\{x\\mid x<-1\\text{ 或 }x>3\\}$\n$\\therefore A\\cap B=\\{x\\mid-2<x<-1\\}$\n$\\therefore \\complement_R B=\\{x\\mid-1\\leq x\\leq 3\\}$\n$(\\complement_R B)\\cup A=\\{x\\mid-2<x\\leq 3\\}$\n(2) $\\because A\\cap C=C$\n$\\therefore C\\subseteq A$\n当 $C$ 为空集时\n$m-1\\geq 2m+1$\n$-2\\geq m$\n若 $C$ 不为空时\n$\\begin{cases} m-1\\geq-2 \\\\ 2m+1\\leq 2 \\end{cases}\\Rightarrow\\begin{cases} m\\geq-1 \\\\ m\\leq\\frac{1}{2} \\end{cases}$\n即 $-1\\leq m\\leq\\frac{1}{2}$\n综上，$m$ 的取值范围为 $m\\leq-2$ 或 $-1\\leq m\\leq\\frac{1}{2}$。",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "C001 context and answer_detail_01 show every drafted line retained: A={x|-2<x<2}, B={x|x<-1 or x>3}, A∩B={x|-2<x<-1}, (∁RB)∪A={x|-2<x≤3} with a visible lower bar on the ≤ before 3, and the (2) case split ending with m≤-2 or -1≤m≤1/2; the red '10' is a teacher score mark, not student content.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 16,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "16. （本小题满分15分）已知 $a\\in\\mathbb{R}$，$p:\\forall x\\in\\{x\\mid 0\\leq x\\leq 1\\}$，$a\\leq x^2+1$；$q:\\exists x_0\\in\\mathbb{R}$，$x_0^2+2ax_0-(2a-3)=0$。\n(1) 若 $p$ 是真命题，求 $a$ 的最大值；\n(2) 若 $p$ 为假命题且 $q$ 为真命题，求 $a$ 的取值范围。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "rejected_solution_edit_1_newline_inside_inline_latex",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "解：$\\because p$ 为真命题\n$\\therefore$ 当 $x=1$ 时\n$x^2+1$ 最大，\n此时 $x^2+1=2$\n$\\therefore$ 有 $a\\leq 2$\n则 $a_{\\max}=2$\n(2) $\\because p$ 为假命题\n$\\therefore \\exists x\\in\\{x\\mid 0\\leq x\\leq 1\\}, a>x^2+1$\n$\\therefore a>(x^2+1)_{\\max}$\n$\\therefore a>2$\n$\\because q$ 为真命题\n$\\therefore$ 在方程 $x_0^2+2ax_0-(2a-3)=0$ 时，\n$\\Delta=4a^2+4(2a-3)\\geq 0$\n即 $4a^2+8a-12\\geq 0$\n解得 $a\\leq-3$ 或 $a\\geq 1$\n综上 $a$ 的取值范围为 $a\\leq-3$ 或 $a>2$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "All other drafted lines match the retained handwriting in C002 context: left column a≤2 and a_max=2, middle column a>2, q true, Δ=4a^2+4(2a-3)≥0, and right column 'solving a≤-3 or a≥1' and 'range of a is a≤-3 or a>2'; the red bracket at right is a teacher mark.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 17,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "17. （本小题满分15分）(1) 已知 $0<x<2$，$0<y<3$，求 $2x-y$ 的取值范围；\n(2) 已知 $x>3$，求 $y=2x+\\frac{4}{2x-6}$ 的最小值；\n(3) 若 $0<x<4$，求 $y=x(8-2x)$ 的最大值。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "解：(1) $\\because 0<x<2$\n$\\therefore 0<2x<4$\n$\\because 0<y<3$\n$\\therefore -3<-y<0$\n$\\therefore -3<2x-y<4$\n(2) $\\because x>3$\n$\\therefore x-3>0$\n$\\therefore 2x-6>0$\n$\\therefore 2x+\\frac{4}{2x-6}$\n$=2x-6+\\frac{4}{2x-6}+6$\n$\\therefore 2x-6+\\frac{4}{2x-6}+6\\geq 2\\sqrt{(2x-6)\\cdot\\frac{4}{2x-6}}+6$\n即 $2x-6+\\frac{4}{2x-6}+6\\geq 10$\n当且仅当 $2x-6=\\frac{4}{2x-6}$ 时，等号可取\n$\\therefore \\left(2x+\\frac{4}{2x-6}\\right)_{\\min}=10$\n(3) $\\because 0<x<4$\n$\\therefore 4-x>0$\n$8-2x>0$\n$x(8-2x)=\\frac{1}{2}\\cdot 2x(8-2x)$\n$\\frac{1}{2}\\cdot 2x(8-2x)\\leq \\left(\\frac{2x+(8-2x)}{2}\\right)^2\\cdot\\frac{1}{2}=8$\n$x(8-2x)\\leq 8$\n$x(8-2x)_{\\max}=8$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "C003 context and answer_detail_01 show all drafted steps retained: -3<-y<0 and -3<2x-y<4 in part (1); the AM-GM chain with a visible radical hook and overline spanning (2x-6)·4/(2x-6) and min=10 in part (2); and ½·2x(8-2x)≤((2x+(8-2x))/2)^2·½=8 with max=8 in part (3); the long red vertical stroke and red curve are marker pen, not cancellation of the black steps.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.8-max",
+      "attempt": 1,
+      "elapsed_s": 283.658323,
+      "prompt_tokens": 12187,
+      "completion_tokens": 13369,
+      "total_tokens": 25556,
+      "request_id": "chatcmpl-adb3dcb0-2788-99a7-bbaf-b99bfa9a2856"
+    }
+  ]
+}

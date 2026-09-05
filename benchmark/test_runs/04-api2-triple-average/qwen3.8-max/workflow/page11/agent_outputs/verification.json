@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page11/api_markdown/page11.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page11/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 36426,
+    "completion_tokens": 39474,
+    "total_tokens": 75900,
+    "latency_s": 674.264541,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 197.97584,
+          "prompt_tokens": 2625,
+          "completion_tokens": 11646,
+          "total_tokens": 14271,
+          "request_id": "chatcmpl-18ba4e9d-d51e-92ae-b037-b3d45d00f85d"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 205.171977,
+          "prompt_tokens": 11267,
+          "completion_tokens": 11988,
+          "total_tokens": 23255,
+          "request_id": "chatcmpl-ce2a7826-7f46-9c73-a988-08f4c19fbffd"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 117.41815,
+          "prompt_tokens": 11267,
+          "completion_tokens": 6865,
+          "total_tokens": 18132,
+          "request_id": "chatcmpl-157959f7-78d3-9cb5-987d-489536f1b762"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 153.698574,
+          "prompt_tokens": 11267,
+          "completion_tokens": 8975,
+          "total_tokens": 20242,
+          "request_id": "chatcmpl-b68b74d6-8d13-9928-b56f-623632b6d64b"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 205.171977,
+            "prompt_tokens": 11267,
+            "completion_tokens": 11988,
+            "total_tokens": 23255,
+            "request_id": "chatcmpl-ce2a7826-7f46-9c73-a988-08f4c19fbffd"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 117.41815,
+            "prompt_tokens": 11267,
+            "completion_tokens": 6865,
+            "total_tokens": 18132,
+            "request_id": "chatcmpl-157959f7-78d3-9cb5-987d-489536f1b762"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 153.698574,
+            "prompt_tokens": 11267,
+            "completion_tokens": 8975,
+            "total_tokens": 20242,
+            "request_id": "chatcmpl-b68b74d6-8d13-9928-b56f-623632b6d64b"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "Red-pen slashes and underlines are grader marks, not cancellations; the over-inked blotted digit in AB=(2,0,0) is not fully resolvable and is retained as drafted.",
+    "",
+    ""
+  ],
+  "raw_runs": [
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"Red-pen slashes and underlines are grader marks, not cancellations; the over-inked blotted digit in AB=(2,0,0) is not fully resolvable and is retained as drafted.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C001-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"medium\",\n            \"context_id\": \"C001\",\n            \"printed_anchors\": [\n              \"typeset italic vertex labels A, B1, C1, M, N, C with serifs, distinct from the student's rounded handwriting\",\n              \"uniform thin solid edges and short-dash hidden lines forming the frustum skeleton\"\n            ],\n            \"handwriting_features\": [\n              \"thick freehand x, y, z coordinate axes with hand-drawn arrowheads and cursive axis letters overlaid on the skeleton\"\n            ],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"A printed frustum skeleton with typeset labels remains visible while the student added hand-drawn coordinate axes for part (2); the figure is uncrossed and functions as the question figure, so the marker is preserved.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"All retained handwritten steps are visible and match the draft: (1) midline/parallelogram proof ending A1N parallel to plane C1MA, (2) coordinate setup, C1(0,1,2), M(1,1,0), n=(2,-2,1), cos theta = 2/3, (3) distance d = 4/3; the inked-out blob before 'AB perp plane ACC1A1' and the struck 'AB=' fragment are cancelled and already excluded; no symbol audit targets exist and no visually justified correction was found.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C001-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"printed_anchors\": [\n              \"typeset serif-italic vertex labels B1, C1, A1, A, C, M, N with uniform subscripts\",\n              \"uniform thin solid edges and regular dashed hidden lines forming the frustum skeleton\"\n            ],\n            \"handwriting_features\": [\n              \"freehand thick pen strokes for coordinate axes with hand-drawn arrowheads\",\n              \"handwritten cursive axis letters z, y, x overlaid at the axis ends\"\n            ],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"The frustum skeleton and its vertex labels are typeset (serif italic letters, uniform line weight, regular dashes), while the x/y/z axes (z up through A1, y toward C, x toward B) are pen-drawn overlays added by the student; the printed figure remains fully visible beneath the annotations, so it is a printed question figure with handwritten overlay, not scratch work.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwriting matches the draft line-by-line: (1) midline/parallelogram proof ending in A1N parallel to plane C1MA, with parallel-and-equal symbols written as a parallel sign over '='; (2) coordinates C1(0,1,2), M(1,1,0), A(0,0,0), normal n=(2,-2,1), cos theta = 2/3; (3) distance d = 4/3. The long red slashes and red underlines are grader marks, not student cancellations; the blacked-out word before 'AB perpendicular plane ACC1A1' and the struck-through fragment before 'therefore vector AB=(2,0,0)' are cancelled and already excluded from the draft. No required symbol audit targets exist, so no patches are justified.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C001-01\",\n            \"source_type\": \"student_diagram\",\n            \"content_role\": \"retained_solution_diagram\",\n            \"confidence\": \"medium\",\n            \"context_id\": \"C001\",\n            \"printed_anchors\": [],\n            \"handwriting_features\": [\n              \"freehand coordinate axes with cursive x, y, z letters, trailing pen dots, and thick freehand arrowheads\",\n              \"irregular hand-drawn dashed strokes for hidden edges; solid edges show wobble and overshooting corner joints\",\n              \"labels A1, B1, C1, M, N in the same slanted italic hand as the Latin letters used in the solution lines\"\n            ],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"Only the printed number/score line '18. （本小题满分 17 分）' is typeset near the marker; the frustum sketch with x,y,z axes is drawn in the writer's black ink, is uncrossed, and directly supports the part-(2) coordinate setup ('以 A 为原点…建系'). No printed caption, uniform thin printed linework, or separate printed skeleton is visible beneath the ink, though the careful label style leaves slight residual doubt versus mixed_figure, hence medium confidence.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten solution in the C001 answer area matches the draft line-for-line: (1) proof steps with parallel-and-equal symbols (// over =) and A1N∥plane C1MA conclusion; (2) coordinates C1(0,1,2), M(1,1,0), A(0,0,0), vectors (0,1,2) and (1,1,0), normal vector (2,-2,1), cosθ=2/3; (3) C(0,2,0), AC=(0,2,0), d=4/3. Student-cancelled material (scribbled blob before 'AB⊥平面 ACC1A1' and the struck-through duplicate '∴AB=' fragment) is already excluded by API1; red pen strokes are grader underlines/checks, not student cancellation. No mandatory symbol audit targets exist, so no patches are justified.\"\n      }\n    }\n  ]\n}"
+  ]
+}

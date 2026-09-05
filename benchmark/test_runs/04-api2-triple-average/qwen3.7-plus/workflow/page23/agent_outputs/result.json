@@ -1,0 +1,378 @@
+{
+  "page": "page23",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/image/page23.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page23.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/preprocessed/page23.png",
+  "api_strategy": {
+    "call_count": 4,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "question-conditioned symbol, figure, and atomic patch review",
+    "api2_run_count": 3,
+    "local_merge": "deterministic validation against the first-pass draft"
+  },
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 63263,
+    "completion_tokens": 21332,
+    "total_tokens": 84595,
+    "latency_s": 346.052143,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 151.763363,
+          "prompt_tokens": 2933,
+          "completion_tokens": 9532,
+          "total_tokens": 12465,
+          "request_id": "chatcmpl-d2292699-adec-9761-bb16-96f09d0108d5"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 52.58876,
+          "prompt_tokens": 20110,
+          "completion_tokens": 3134,
+          "total_tokens": 23244,
+          "request_id": "chatcmpl-f28af748-da94-9eea-806f-55ed69a37534"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 69.078792,
+          "prompt_tokens": 20110,
+          "completion_tokens": 4201,
+          "total_tokens": 24311,
+          "request_id": "chatcmpl-9eca6c84-0217-9966-9d94-8e9d2b9840f4"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 72.621228,
+          "prompt_tokens": 20110,
+          "completion_tokens": 4465,
+          "total_tokens": 24575,
+          "request_id": "chatcmpl-6bfce888-4b31-9d3f-bbdd-244cbadae0c0"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 52.58876,
+            "prompt_tokens": 20110,
+            "completion_tokens": 3134,
+            "total_tokens": 23244,
+            "request_id": "chatcmpl-f28af748-da94-9eea-806f-55ed69a37534"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 69.078792,
+            "prompt_tokens": 20110,
+            "completion_tokens": 4201,
+            "total_tokens": 24311,
+            "request_id": "chatcmpl-9eca6c84-0217-9966-9d94-8e9d2b9840f4"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 72.621228,
+            "prompt_tokens": 20110,
+            "completion_tokens": 4465,
+            "total_tokens": 24575,
+            "request_id": "chatcmpl-6bfce888-4b31-9d3f-bbdd-244cbadae0c0"
+          }
+        ]
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 6,
+    "answers_with_transcription": 6,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 6,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "6. 已知 $E,F$ 分别为正方体 $ABCD-A'B'C'D'$ 的上底面 $A'B'C'D'$ 和侧面 $CC'D'D$ 的中心，若 $\\overrightarrow{AE} + \\overrightarrow{AF} = x\\overrightarrow{AB} + y\\overrightarrow{AD} + z\\overrightarrow{AA'}$，则\nA. $x+y=z$\nB. $x-y=z$\nC. $x+y+z=3$\nD. $x+y+z=4$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "D",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 7,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "7. 如图，在正三棱柱 $ABC-A_1B_1C_1$ 中 $AB=2$，若 $AB_1 \\perp BC_1$，则直线 $AB_1$ 与平面 $BCC_1B_1$ 所成角的正弦值为\n<插图>\nA. $\\frac{\\sqrt{3}}{3}$\nB. $\\frac{\\sqrt{2}}{2}$\nC. $\\frac{\\sqrt{21}}{7}$\nD. $\\frac{\\sqrt{6}}{3}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 1,
+        "figure_audit_observed_count": 1,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C002-01",
+            "marker_index": 1,
+            "source_type": "mixed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "high",
+            "context_id": "C002",
+            "printed_anchors": [
+              "printed triangular prism with uniform thin line work, printed vertex labels A, B, C, A1, B1, C1, dashed hidden edge AC"
+            ],
+            "handwriting_features": [
+              "handwritten coordinate axes x, y, z with arrows, handwritten coordinate values and vector notations overlaid"
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "Printed prism skeleton with uniform line work and typeset vertex labels is clearly visible; student has overlaid handwritten coordinate system axes and coordinate computations on top of the printed figure.",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          }
+        ],
+        "lint_actions": [
+          "recorded_figure_observation_FIG-C002-01_mixed_figure",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 8,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "8. 已知直线 $Ax+By+C=0$ 与 $x+\\sqrt{3}y-3=0$ 平行，则 $A^2+B^2+C^2$ 的最小值为\nA. $-\\frac{3}{4}$\nB. $-\\frac{1}{2}$\nC. 0\nD. 1",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "A",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 9,
+      "question_type": "choice",
+      "choice_mode": "multiple",
+      "section_heading_before": "二、多项选择题：本题共 3 小题，每小题 6 分，共 18 分。在每小题给出的选项中，有多项符合题目要求，全部选对的得 6 分，部分选对的得部分分，有选错的得 0 分。",
+      "question_markdown": "9. 已知直线 $l_1: ax+y+2a=0, l_2: x-ay-2=0, a \\in \\mathbf{R}, O$ 为坐标原点，则下列说法正确的是\nA. $l_1 \\perp l_2$\nB. $l_1$ 与 $l_2$ 过同一个定点\nC. 若 $a=1$，则 $l_1$ 与 $l_2$ 关于 $y$ 轴对称\nD. 若 $l_1$ 与 $l_2$ 交于点 $M$，则 $|OM|$ 为定值",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C004"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "ACD",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 10,
+      "question_type": "choice",
+      "choice_mode": "multiple",
+      "section_heading_before": "",
+      "question_markdown": "10. 在 $\\triangle ABC$ 中，内角 $A,B,C$ 的对边分别为 $a,b,c$，已知 $\\cos C = \\frac{13}{14}$，且 $7\\sin C + 3\\sqrt{3}\\cos A = 0, a+c=10$，则\nA. $\\sin C = \\frac{3\\sqrt{3}}{14}$\nB. $A = \\frac{5\\pi}{6}$\nC. $b=6$\nD. $\\triangle ABC$ 的面积为 $\\frac{15\\sqrt{3}}{4}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C005"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "AD",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C005"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 11,
+      "question_type": "choice",
+      "choice_mode": "multiple",
+      "section_heading_before": "",
+      "question_markdown": "11. 对于两个向量 $\\boldsymbol{a}=(x_1,y_1,z_1), \\boldsymbol{b}=(x_2,y_2,z_2)$，定义 $\\boldsymbol{a} \\times \\boldsymbol{b}$ 为 $\\boldsymbol{a}, \\boldsymbol{b}$ 的“向向量积”，该运算的结果是一个向量：$\\boldsymbol{a} \\times \\boldsymbol{b} = (y_1z_2-y_2z_1, z_1x_2-z_2x_1, x_1y_2-x_2y_1)$，则下列说法正确的是\nA. 若 $\\boldsymbol{a}=(1,2,-4), \\boldsymbol{b}=(3,1,1)$，则 $\\boldsymbol{a} \\times \\boldsymbol{b} = (6,-13,-5)$\nB. 若 $\\boldsymbol{a}, \\boldsymbol{b}$ 是非零向量，且 $\\boldsymbol{a} \\times \\boldsymbol{b}$ 为零向量，则一定有 $\\boldsymbol{a} // \\boldsymbol{b}$\nC. 若 $\\boldsymbol{a}, \\boldsymbol{b}$ 是平面 $\\alpha$ 内的两个不共线的向量，则平面 $\\alpha$ 的法向量可以是 $\\boldsymbol{a} \\times \\boldsymbol{b}$\nD. 若 $\\boldsymbol{a}, \\boldsymbol{b}$ 是非零向量，且 $|\\boldsymbol{a} \\times \\boldsymbol{b}| = |\\boldsymbol{a} \\cdot \\boldsymbol{b}|$，则 $\\boldsymbol{a}, \\boldsymbol{b}$ 的夹角为 $\\frac{\\pi}{4}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C006"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "ACD",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C006"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/image/page23.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/preprocessed/page23.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/api_markdown/page23.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/api_markdown/page23.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/code_outputs/match/viz/page23_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/agent_outputs/result.json",
+    "api2_results": [
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/agent_outputs/api2_runs/run_01/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/agent_outputs/api2_runs/run_02/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/agent_outputs/api2_runs/run_03/result.json"
+    ],
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page23/code_outputs/match/viz/page23_handwriting_overlay.png"
+  }
+}

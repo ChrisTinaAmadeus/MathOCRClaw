@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "page": "page19",
+  "api2_run": 1,
+  "questions": [
+    {
+      "qno": 12,
+      "question_type": "fill",
+      "choice_mode": "",
+      "section_heading_before": "三、填空题",
+      "question_markdown": "12. 若事件 $A$ 与事件 $B$ 互斥，$P(A)=0.3$，$P(A\\cup B)=0.7$，则 $P(\\overline{B})=$ ______。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page19/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$0.6$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Color context shows handwritten '0.6' on the printed blank after P(B) with a visible overline bar; digits 0 and 6 are clear with closed loop on 6, matching the draft.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page19/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 13,
+      "question_type": "fill",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "13. 过 $P(-1,-\\sqrt{3})$ 的直线 $l$ 与 $y$ 轴的正半轴没有公共点，则直线 $l$ 的倾斜角范围是 ______。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page19/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$[0^\\circ,60^\\circ]\\cup[90^\\circ,180^\\circ)$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "The attempt immediately after the printed blank is heavily crossed out; the retained answer is written in the top-right margin of the full page as '[0,60]' over '∪[90,180)' with small degree circles, matching the draft interval union including the half-open right endpoint.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page19/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 14,
+      "question_type": "fill",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "14. 如图所示，将棱长为 $2$ 的正方体 $ABCD-A_1B_1C_1D_1$ 截去一个三棱锥得到多面体 $ABCD-B_1C_1D_1$，在该多面体内放入一个球，则球的半径的最大值为 ______。\n<插图>",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 1,
+        "figure_audit_observed_count": 1,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C003-01",
+            "marker_index": 1,
+            "source_type": "mixed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "high",
+            "context_id": "C003",
+            "printed_anchors": [
+              "typeset italic vertex labels A, B, C, D, A_1, B_1, C_1, D_1",
+              "uniform thin solid visible edges with regular dashed hidden edges forming the cube wireframe",
+              "solid diagonal line work matching the stem's cut polyhedron"
+            ],
+            "handwriting_features": [
+              "pencil '2' annotation inside the solid",
+              "dark scribble near B_1/C_1",
+              "arrow-like scribble above the top face"
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "A printed cube wireframe with typeset labels remains fully visible; faint pencil and pen marks overlay it but do not cancel or replace the printed skeleton, and the stem says '如图所示'.",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          }
+        ],
+        "lint_actions": [
+          "recorded_figure_observation_FIG-C003-01_mixed_figure",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page19/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "_未识别到手写答案。_",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "no_answer",
+        "evidence_note": "The blank after '的最大值为' contains only a crossed-out scribble; no retained handwritten value is visible anywhere in the C003 region, so no_answer stands.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page19/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 15,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "四、解答题",
+      "question_markdown": "15. （13分）抛掷一红一绿两颗质地均匀的六面体骰子，记下骰子朝上面的点数，若用 $x$ 表示红色骰子的点数，用 $y$ 表示绿色骰子的点数，设 $A=$“两个点数之和等于8”，$B=$“至少有一颗骰子的点数为5”；\n(1) 分别求事件 $A$，$B$ 的概率；\n(2) 求 $A\\cap B$ 事件的概率。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C004"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page19/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "_未识别到手写答案。_",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "no_answer",
+        "evidence_note": "No handwriting addresses the dice events A, B; all red work in the assigned answer region (vectors BD1, BA, BC, BB1, proof lines about A_1EGF, and the final √22/11) belongs to question 16, so Q15 has no supported student answer.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page19/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 16,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "16. （15分）如图，在平行六面体 $ABCD-A_1B_1C_1D_1$ 中，$E$，$F$ 分别为棱 $A_1D_1$，$CD$ 的中点，满足 $\\angle B_1BC=\\angle B_1BA=\\frac{\\pi}{3}$，$\\angle CBA=\\frac{\\pi}{2}$，$|AB|=|BC|=2$，$|BB_1|=3$。\n<插图>\n(1) 求证：$EF\\parallel$ 平面 $BDA_1$；\n(2) 求 $BD_1$ 的长度；\n(3) 求 $AC$ 与 $EF$ 夹角的余弦值。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C005"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 1,
+        "figure_audit_observed_count": 1,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C005-01",
+            "marker_index": 1,
+            "source_type": "mixed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "high",
+            "context_id": "C005",
+            "printed_anchors": [
+              "typeset italic labels A_1, B_1, C_1, D_1, E, B, C, D",
+              "uniform thin solid edges with dashed hidden edges forming the parallelepiped",
+              "figure placed beside the printed stem '如图'"
+            ],
+            "handwriting_features": [
+              "red pen strokes tracing BD, AC and EF-related segments",
+              "handwritten 'π/3', '2' annotations near vertex B",
+              "handwritten F label with check mark at bottom right"
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "The printed parallelepiped skeleton with typeset labels is clearly visible underneath red and dark handwritten annotations; the overlays annotate rather than cancel the printed figure.",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          }
+        ],
+        "lint_actions": [
+          "recorded_figure_observation_FIG-C005-01_mixed_figure",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page19/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 如图连接 $A_1B$，$BD$，$A_1E$，设 $BD$ 的中点为 $G$，连接 $A_1G$，$GF$\n$\\because$ 这是一个平行六面体\n$\\because A_1D_1\\parallel BC$，$G$，$F$ 分别是 $BD$，$CD$ 的中点\n$\\therefore GF\\overset{\\parallel}{=}\\frac{1}{2}BC$\n$\\because E$ 是 $A_1D_1$ 的中点，$\\therefore A_1E\\overset{\\parallel}{=}\\frac{1}{2}BC$，$\\therefore A_1E\\overset{\\parallel}{=}GF$\n$\\therefore$ 四边形 $A_1EGF$ 为平行四边形，$\\therefore A_1G\\parallel EF$\n$\\because EF\\not\\subset$ 平面 $BDA_1$，$A_1G\\subset$ 平面 $BDA_1$，$\\therefore EF\\parallel$ 平面 $BDA_1$\n(2) $\\overrightarrow{BD_1}=\\overrightarrow{BA}+\\overrightarrow{BC}+\\overrightarrow{BB_1}$\n$\\overrightarrow{BD_1}^2=\\overrightarrow{BA}^2+\\overrightarrow{BC}^2+\\overrightarrow{BB_1}^2+2\\overrightarrow{BA}\\cdot\\overrightarrow{BC}+2\\overrightarrow{BA}\\cdot\\overrightarrow{BB_1}+2\\overrightarrow{BC}\\cdot\\overrightarrow{BB_1}$\n$=4+4+9+0+2\\times2\\times3\\times\\frac{1}{2}\\times2=29$\n(3) $\\overrightarrow{AC}=\\overrightarrow{BC}-\\overrightarrow{BA}$，$\\overrightarrow{EF}=\\frac{1}{2}\\overrightarrow{BA}+\\frac{\\overrightarrow{BC}}{2}-\\overrightarrow{BB_1}$\n$|\\overrightarrow{AC}|=2\\sqrt{2}$，$|\\overrightarrow{EF}|=\\sqrt{11}$\n$|\\overrightarrow{AC}\\cdot\\overrightarrow{EF}|=4$\n$\\frac{\\sqrt{22}}{11}$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Red handwritten solution matches the draft line by line: (1) construction of A_1B, BD, A_1E, midpoint G, parallelogram A_1EGF and EF∥plane BDA_1 with parallel-and-equal marks written as parallel strokes over '='; (2) vector expansion of BD1 squared ending '=29'; (3) AC and EF vectors, |AC|=2√2, |EF|=√11, |AC·EF|=4, and final √22/11 visibly retained after a crossed-out token.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C005"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page19/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.8-max",
+      "attempt": 1,
+      "elapsed_s": 133.664872,
+      "prompt_tokens": 19480,
+      "completion_tokens": 7424,
+      "total_tokens": 26904,
+      "request_id": "chatcmpl-987414ee-8dce-9a1b-b80e-26a9dbe7ad4b"
+    }
+  ]
+}

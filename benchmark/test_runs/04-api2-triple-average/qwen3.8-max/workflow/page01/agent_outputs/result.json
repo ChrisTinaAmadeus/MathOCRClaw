@@ -1,0 +1,204 @@
+{
+  "page": "page01",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page01/image/page01.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page01.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page01/preprocessed/page01.png",
+  "api_strategy": {
+    "call_count": 4,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "question-conditioned symbol, figure, and atomic patch review",
+    "api2_run_count": 3,
+    "local_merge": "deterministic validation against the first-pass draft"
+  },
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 37573,
+    "completion_tokens": 35698,
+    "total_tokens": 73271,
+    "latency_s": 618.164224,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 142.628055,
+          "prompt_tokens": 3373,
+          "completion_tokens": 8199,
+          "total_tokens": 11572,
+          "request_id": "chatcmpl-f72bf2ba-5e08-96ba-a903-b4d62aff21b6"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 216.44299,
+          "prompt_tokens": 11400,
+          "completion_tokens": 12527,
+          "total_tokens": 23927,
+          "request_id": "chatcmpl-30320bb2-23a6-9867-aed6-c9b7aee54123"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 119.721656,
+          "prompt_tokens": 11400,
+          "completion_tokens": 6902,
+          "total_tokens": 18302,
+          "request_id": "chatcmpl-cdbdb0a1-db96-97ce-9a9e-686cceba9094"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 139.371523,
+          "prompt_tokens": 11400,
+          "completion_tokens": 8070,
+          "total_tokens": 19470,
+          "request_id": "chatcmpl-a6d23b89-ab8f-9132-b589-0b6e3ac8948d"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 216.44299,
+            "prompt_tokens": 11400,
+            "completion_tokens": 12527,
+            "total_tokens": 23927,
+            "request_id": "chatcmpl-30320bb2-23a6-9867-aed6-c9b7aee54123"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 119.721656,
+            "prompt_tokens": 11400,
+            "completion_tokens": 6902,
+            "total_tokens": 18302,
+            "request_id": "chatcmpl-cdbdb0a1-db96-97ce-9a9e-686cceba9094"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 139.371523,
+            "prompt_tokens": 11400,
+            "completion_tokens": 8070,
+            "total_tokens": 19470,
+            "request_id": "chatcmpl-a6d23b89-ab8f-9132-b589-0b6e3ac8948d"
+          }
+        ]
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 1,
+    "answers_with_transcription": 1,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 19,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "四、解答题（19题12分，20题14分，共26分）",
+      "question_markdown": "19. （12分）\n如图，$PA\\perp$ 平面 $ABCD$，四边形 $ABCD$ 为矩形，$PA=AB=2$，$AD=4$，点 $F$ 是 $PB$ 的中点，点 $E$ 在边 $BC$ 上移动。\n<插图>\n(1) 求三棱锥 $E-PAD$ 的体积；\n(2) 证明：$AF\\perp PE$。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 1,
+        "figure_audit_observed_count": 1,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C001-01",
+            "marker_index": 1,
+            "source_type": "mixed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "high",
+            "context_id": "C001",
+            "printed_anchors": [
+              "typeset italic vertex labels P, A, B, C, D, E, F in the same serif math font as the stem",
+              "uniform short-dashed hidden-edge segments (e.g., A to E, D to E diagonals)",
+              "figure placed directly after printed 如图 between stem lines"
+            ],
+            "handwriting_features": [
+              "cursive black-ink axis letters x, y, z added at lower left, right, and top",
+              "handwritten numerals 2 and 4 on edges",
+              "thick freehand overtracing of the vertical PA edge and freehand axis arrows"
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "A printed pyramid skeleton with typeset labels and regular dashes remains visible underneath the student's coordinate-axis annotations and edge-length numerals; the drawing is the question figure referenced by 如图 and is retained, not crossed out.",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          }
+        ],
+        "lint_actions": [
+          "recorded_figure_observation_FIG-C001-01_mixed_figure",
+          "rejected_symbol_observation_1_outside_profile_symbols",
+          "rejected_symbol_guided_solution_edit_without_independent_reference",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page01/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 解：$\\because PA=AB=2$，$AD=4$\n$\\therefore S_{\\triangle PAD}=2\\times4\\div2=4$\n$\\therefore h=2$\n$\\therefore V_{E-PAD}=\\frac{1}{3}Sh=\\frac{1}{3}\\times4\\times2=\\frac{8}{3}$\n(2) 证明：$\\because PA\\perp$ 平面 $ABCD$\n又 $\\because AB$，$CB\\subset$ 平面 $ABCD$\n$\\therefore PA\\perp BC$\n$\\because PA=AB$\n$\\therefore \\triangle PAB$ 为等腰三角形\n$\\because F$ 为 $PB$ 中点\n$\\therefore AF\\perp BP$\n如图所示建立空间直角坐标系，$A$ 为原点\n$\\because PA=AB=2$，$AD=4$\n$\\therefore P(0,0,2)$，$C(4,2,0)$，$A(0,0,0)$，$F(0,1,1)$\n$\\therefore \\overrightarrow{PC}=(4,2,-2)$，$\\overrightarrow{AF}=(0,1,1)$\n$\\therefore \\cos\\theta=\\frac{\\overrightarrow{PC}\\cdot\\overrightarrow{AF}}{|\\overrightarrow{PC}||\\overrightarrow{AF}|}=0$\n$\\therefore PC\\perp AF$\n$\\because PB$，$PC\\subset$ 平面 $PBC$，$PB\\cap PC=P$\n$\\therefore AF\\perp$ 平面 $PBC$\n$\\because PE\\subset$ 平面 $PBC$ $\\therefore PE\\perp AF$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "All other retained lines match the draft: (1) keeps '∵ PA=AB=2, AD=4', '∴ h=2', '∴ V_{E-PAD}=1/3 Sh=1/3×4×2=8/3' with the earlier wrong area line crossed out and correctly excluded; (2) keeps the full chain through '∴ AF⊥BP', coordinate setup 'P(0,0,2), C(4,2,0), A(0,0,0), F(0,1,1)', vector computation 'cosθ=0', and final '∵ PE⊂平面 PBC ∴ PE⊥AF'; the struck-out '=2' after 'PA=AB' in (2) is cancelled and correctly absent.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page01/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page01/image/page01.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page01/preprocessed/page01.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page01/api_markdown/page01.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page01/api_markdown/page01.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page01/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page01/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page01/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page01/code_outputs/match/viz/page01_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page01/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page01/agent_outputs/result.json",
+    "api2_results": [
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page01/agent_outputs/api2_runs/run_01/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page01/agent_outputs/api2_runs/run_02/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page01/agent_outputs/api2_runs/run_03/result.json"
+    ],
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page01/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page01/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page01/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page01/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page01/code_outputs/match/viz/page01_handwriting_overlay.png"
+  }
+}

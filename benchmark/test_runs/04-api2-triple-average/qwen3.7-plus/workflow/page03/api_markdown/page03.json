@@ -1,0 +1,67 @@
+{
+  "schema_version": 3,
+  "response_format": "benchmark_markdown",
+  "prompt": {
+    "version": "extract_v2",
+    "path": "benchmark/prompts/extract_v2.txt",
+    "sha1": "68e4ba040a859426177b603b9098b3e10a2d2a2e"
+  },
+  "page_markdown": "5. 已知函数 $f(x)=\\begin{cases}x-3,x\\ge 10\\\\ f[f(x+5)],x<10\\end{cases}$，其中 $x\\in \\mathbf{N}$，则 $f(9)=(\\quad)$。\nA. 5\nB. 6\nC. 7\nD. 8\n\n### 手写答案\n\nD\n\n6. 已知命题 $P:\\forall x>0,x+\\frac{4}{x}\\ge a$，命题 $Q:\\exists x\\in \\mathbf{R},x^2+2ax+a+2=0$，若命题 $P,Q$ 都是真命题，实数 $a$ 的取值范围是 $(\\quad)$。\nA. $(-\\infty,-1]$\nB. $[-1,2]$\nC. $[2,4]$\nD. $(-\\infty,-1]\\cup[2,4]$\n\n### 手写答案\n\nB\n\n7. 定义：称 $|b-a|$ 为区间 $[a,b]$ 的长度，若函数 $f(x)=\\sqrt{ax^2+bx+c}(a<0)$ 的定义域与值域区间长度相等，则 $a$ 的值为 $(\\quad)$。\nA. $-4$\nB. $-2$\nC. 4 或 $-2$\nD. 与 $b,c$ 的取值有关\n\n### 手写答案\n\nB\n\n8. 设 $y=(x-a)\\cdot \\frac{a}{x-b-1}$，若 $y>0$ 恒成立，则 $a^2+b^2$ 的最小值是 $(\\quad)$。\nA. 0\nB. $\\frac{1}{2}$\nC. 1\nD. 2\n\n### 手写答案\n\nA\n\n二、多项选择题：本题共3小题，每小题6分，共18分。在每小题给出的选项中，有多项符合题目要求，全部选对的得6分，部分选对的得部分分，有选错的得0分。\n\n9. 下列说法中错误的有 $(\\quad)$。\nA. 命题 $P:\\exists x\\in \\mathbf{R},x^2+3x+4<0$，则命题 $P$ 的否定是 $\\forall x\\in \\mathbf{R},x^2+3x+4>0$\nB. “$m<0$”是“关于 $x$ 的方程 $x^2-2x+m=0$ 有一正一负根”的充要条件\nC. 命题“$\\forall x\\in \\mathbf{Z},x^2>0$”是真命题\nD. “$|x|>|y|$”是“$x>y$”的必要不充分条件\n\n### 手写答案\n\nABC\n\n10. 下列说法正确的是 $(\\quad)$。\nA. $y=\\sqrt{1+x}\\cdot \\sqrt{1-x}$ 与 $y=\\sqrt{1-x^2}$ 表示同一个函数\nB. 函数 $f(2x-1)$ 的定义域为 $(-1,2)$，则函数 $f(x)$ 的定义域为 $(-2,4)$\nC. 关于 $x$ 的不等式 $2kx^2+kx-\\frac{3}{8}<0$，使该不等式恒成立的实数 $k$ 的取值范围是 $(-3,0)$\nD. 满足条件 $\\{1,2\\}\\subseteq C\\subsetneq \\{1,2,3,4\\}$ 的集合 $C$ 的个数为 2\n\n### 手写答案\n\nACD",
+  "questions": [
+    {
+      "qno": "5",
+      "question_text": "5. 已知函数 $f(x)=\\begin{cases}x-3,x\\ge 10\\\\ f[f(x+5)],x<10\\end{cases}$，其中 $x\\in \\mathbf{N}$，则 $f(9)=(\\quad)$。\nA. 5\nB. 6\nC. 7\nD. 8",
+      "student_answer": "D",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "6",
+      "question_text": "6. 已知命题 $P:\\forall x>0,x+\\frac{4}{x}\\ge a$，命题 $Q:\\exists x\\in \\mathbf{R},x^2+2ax+a+2=0$，若命题 $P,Q$ 都是真命题，实数 $a$ 的取值范围是 $(\\quad)$。\nA. $(-\\infty,-1]$\nB. $[-1,2]$\nC. $[2,4]$\nD. $(-\\infty,-1]\\cup[2,4]$",
+      "student_answer": "B",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "7",
+      "question_text": "7. 定义：称 $|b-a|$ 为区间 $[a,b]$ 的长度，若函数 $f(x)=\\sqrt{ax^2+bx+c}(a<0)$ 的定义域与值域区间长度相等，则 $a$ 的值为 $(\\quad)$。\nA. $-4$\nB. $-2$\nC. 4 或 $-2$\nD. 与 $b,c$ 的取值有关",
+      "student_answer": "B",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "8",
+      "question_text": "8. 设 $y=(x-a)\\cdot \\frac{a}{x-b-1}$，若 $y>0$ 恒成立，则 $a^2+b^2$ 的最小值是 $(\\quad)$。\nA. 0\nB. $\\frac{1}{2}$\nC. 1\nD. 2",
+      "student_answer": "A",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": ""
+    },
+    {
+      "qno": "9",
+      "question_text": "9. 下列说法中错误的有 $(\\quad)$。\nA. 命题 $P:\\exists x\\in \\mathbf{R},x^2+3x+4<0$，则命题 $P$ 的否定是 $\\forall x\\in \\mathbf{R},x^2+3x+4>0$\nB. “$m<0$”是“关于 $x$ 的方程 $x^2-2x+m=0$ 有一正一负根”的充要条件\nC. 命题“$\\forall x\\in \\mathbf{Z},x^2>0$”是真命题\nD. “$|x|>|y|$”是“$x>y$”的必要不充分条件",
+      "student_answer": "ABC",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "choice_mode": "multiple",
+      "section_heading_before": "二、多项选择题：本题共3小题，每小题6分，共18分。在每小题给出的选项中，有多项符合题目要求，全部选对的得6分，部分选对的得部分分，有选错的得0分。"
+    },
+    {
+      "qno": "10",
+      "question_text": "10. 下列说法正确的是 $(\\quad)$。\nA. $y=\\sqrt{1+x}\\cdot \\sqrt{1-x}$ 与 $y=\\sqrt{1-x^2}$ 表示同一个函数\nB. 函数 $f(2x-1)$ 的定义域为 $(-1,2)$，则函数 $f(x)$ 的定义域为 $(-2,4)$\nC. 关于 $x$ 的不等式 $2kx^2+kx-\\frac{3}{8}<0$，使该不等式恒成立的实数 $k$ 的取值范围是 $(-3,0)$\nD. 满足条件 $\\{1,2\\}\\subseteq C\\subsetneq \\{1,2,3,4\\}$ 的集合 $C$ 的个数为 2",
+      "student_answer": "ACD",
+      "answer_status": "ok",
+      "question_type": "choice",
+      "choice_mode": "multiple",
+      "section_heading_before": ""
+    }
+  ],
+  "page_notes": ""
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": 3,
+  "response_format": "benchmark_markdown",
+  "prompt": {
+    "version": "extract_v2",
+    "path": "benchmark/prompts/extract_v2.txt",
+    "sha1": "68e4ba040a859426177b603b9098b3e10a2d2a2e"
+  },
+  "page_markdown": "19. 已知圆 $O: x^2 + y^2 = 9$ 与 $x$ 轴的正半轴交于点 $P$，以 $P$ 为圆心，半径为 $r$ 的圆与圆 $O$ 相交于 $M, N$ 两点。\n(1) 过点 $A(3,1)$ 的直线与圆 $O$ 相切，求切线方程；\n(2) $D$ 为圆 $O$ 上的动点（异于点 $P$），若线段 $PD$ 上有一点 $E$，满足 $\\overrightarrow{PE} = 2\\overrightarrow{ED}$，求点 $E$ 的轨迹方程；\n(3) 若 $Q$ 是圆 $O$ 上任意一点（不与 $M, N$ 重合），直线 $QM, QN$ 分别与 $x$ 轴交于点 $K$ 和 $T$，则 $|OK| \\cdot |OT|$ 是否为定值？若是，求出该定值；若不是，请说明理由。\n\n### 手写答案\n\n(1) _未识别到手写答案。_\n(2) _未识别到手写答案。_\n(3) 设 $M(x_0, y_0)$，$Q(x_1, y_1)$，$(y_1 \\neq \\pm y_0)$。\n$N(x_0, -y_0)$。\n$x_0^2 + y_0^2 = 9$，$x_1^2 + y_1^2 = 9$。\n$l_{QM}: y - y_1 = \\frac{y_0 - y_1}{x_0 - x_1}(x - x_1)$\n$l_{QN}: y - y_1 = \\frac{-y_0 - y_1}{x_0 - x_1}(x - x_1)$\n分别令 $y = 0$，则 $x_K = \\frac{x_1 y_0 - x_0 y_1}{y_0 - y_1}$\n$x_T = \\frac{x_1 y_0 + x_0 y_1}{y_0 + y_1}$\n$\\therefore |OK| \\cdot |OT| = |x_K \\cdot x_T|$\n$= \\left| \\frac{x_1^2 y_0^2 - x_0^2 y_1^2}{y_0^2 - y_1^2} \\right|$\n$= \\left| \\frac{(9 - y_1^2)y_0^2 - (9 - y_0^2)y_1^2}{y_0^2 - y_1^2} \\right|$\n$= 9$。",
+  "questions": [
+    {
+      "qno": "19",
+      "question_text": "19. 已知圆 $O: x^2 + y^2 = 9$ 与 $x$ 轴的正半轴交于点 $P$，以 $P$ 为圆心，半径为 $r$ 的圆与圆 $O$ 相交于 $M, N$ 两点。\n(1) 过点 $A(3,1)$ 的直线与圆 $O$ 相切，求切线方程；\n(2) $D$ 为圆 $O$ 上的动点（异于点 $P$），若线段 $PD$ 上有一点 $E$，满足 $\\overrightarrow{PE} = 2\\overrightarrow{ED}$，求点 $E$ 的轨迹方程；\n(3) 若 $Q$ 是圆 $O$ 上任意一点（不与 $M, N$ 重合），直线 $QM, QN$ 分别与 $x$ 轴交于点 $K$ 和 $T$，则 $|OK| \\cdot |OT|$ 是否为定值？若是，求出该定值；若不是，请说明理由。",
+      "student_answer": "(1) _未识别到手写答案。_\n(2) _未识别到手写答案。_\n(3) 设 $M(x_0, y_0)$，$Q(x_1, y_1)$，$(y_1 \\neq \\pm y_0)$。\n$N(x_0, -y_0)$。\n$x_0^2 + y_0^2 = 9$，$x_1^2 + y_1^2 = 9$。\n$l_{QM}: y - y_1 = \\frac{y_0 - y_1}{x_0 - x_1}(x - x_1)$\n$l_{QN}: y - y_1 = \\frac{-y_0 - y_1}{x_0 - x_1}(x - x_1)$\n分别令 $y = 0$，则 $x_K = \\frac{x_1 y_0 - x_0 y_1}{y_0 - y_1}$\n$x_T = \\frac{x_1 y_0 + x_0 y_1}{y_0 + y_1}$\n$\\therefore |OK| \\cdot |OT| = |x_K \\cdot x_T|$\n$= \\left| \\frac{x_1^2 y_0^2 - x_0^2 y_1^2}{y_0^2 - y_1^2} \\right|$\n$= \\left| \\frac{(9 - y_1^2)y_0^2 - (9 - y_0^2)y_1^2}{y_0^2 - y_1^2} \\right|$\n$= 9$。",
+      "answer_status": "no_answer",
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": ""
+    }
+  ],
+  "page_notes": ""
+}

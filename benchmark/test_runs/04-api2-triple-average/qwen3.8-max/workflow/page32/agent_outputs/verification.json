@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page32/api_markdown/page32.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page32/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 30747,
+    "completion_tokens": 33329,
+    "total_tokens": 64076,
+    "latency_s": 533.12392,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 145.531389,
+          "prompt_tokens": 3078,
+          "completion_tokens": 9137,
+          "total_tokens": 12215,
+          "request_id": "chatcmpl-5ff278d2-a2a0-99f5-b950-a2ecf5aca26f"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 156.003357,
+          "prompt_tokens": 9223,
+          "completion_tokens": 9650,
+          "total_tokens": 18873,
+          "request_id": "chatcmpl-9f603a51-53ef-9d0a-9684-bebe0a4ed838"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 80.091351,
+          "prompt_tokens": 9223,
+          "completion_tokens": 5156,
+          "total_tokens": 14379,
+          "request_id": "chatcmpl-4b47c077-12a4-95a3-a9a6-2a73a091d30c"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 151.497823,
+          "prompt_tokens": 9223,
+          "completion_tokens": 9386,
+          "total_tokens": 18609,
+          "request_id": "chatcmpl-8beb4f48-90b6-9c88-9098-3b28cd8e8205"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 156.003357,
+            "prompt_tokens": 9223,
+            "completion_tokens": 9650,
+            "total_tokens": 18873,
+            "request_id": "chatcmpl-9f603a51-53ef-9d0a-9684-bebe0a4ed838"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 80.091351,
+            "prompt_tokens": 9223,
+            "completion_tokens": 5156,
+            "total_tokens": 14379,
+            "request_id": "chatcmpl-4b47c077-12a4-95a3-a9a6-2a73a091d30c"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 151.497823,
+            "prompt_tokens": 9223,
+            "completion_tokens": 9386,
+            "total_tokens": 18609,
+            "request_id": "chatcmpl-8beb4f48-90b6-9c88-9098-3b28cd8e8205"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "Right-margin (1) block ends with a trailing glyph after '+a-2' (possibly a redundant repeat of 根) and stray marginal notes 'a=1' and 'a=2 b=1/2' are visible; treated as redundant scratch and left unresolved rather than patched.",
+    "",
+    ""
+  ],
+  "raw_runs": [
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"Right-margin (1) block ends with a trailing glyph after '+a-2' (possibly a redundant repeat of 根) and stray marginal notes 'a=1' and 'a=2 b=1/2' are visible; treated as redundant scratch and left unresolved rather than patched.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Full page and C001 context show the printed stem 19.(17分) with (1)/(2) subquestions matching the draft, and the retained handwriting matches line by line: right-column (1) block (0 和 b 是方程 ax²+(1-a)x+a-2, 且 a>0, 0+b=-(1-a)/a, 0×b=(a-2)/a, 解得 a=2 b=1/2) and left-column (2) case analysis with ①②③, the 综上 arrow lines, and set notations {x|...}; the only extra marks are a blotted cancelled character after 可化简 and a scribbled extra a before -1<a<0, correctly excluded as cancelled, so no patch is justified.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"C001 context and answer_detail_01/02 show the retained dark-ink handwriting matching the draft line by line: right-column block '(1) 0 和 b 是方程 ax²+(1-a)x +a-2 根 / 且 a>0 / ∴ 0+b=-(1-a)/a, 0×b=(a-2)/a / 解得 a=2 b=1/2', then '(2) 由 f(x)<a-1 则 ax²+(1-a)x-1<0', the a=0 line (with a scribbled-out character after 化简 correctly omitted in draft), the a<0 factorization '(x+1/a)(x-1)>0', cases ① a=-1, ② -1<a<0, ③ a<-1 with their solution sets, and the five-line 综上 summary with ⇒ arrows ending in {x|-1/a<x<1}; top-margin notes 'a=2 b=1/2' and 'a=1' are duplicate scratch annotations consistent with the retained work; no visible stroke contradicts the draft transcription.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"C001 context and answer_detail_01/02 show the retained handwriting matching the draft line by line: top-right block '(1) 0 和 b 是方程 ax²+(1-a)x+a-2 根 / 且 a>0 / ∴ 0+b=-(1-a)/a, 0×b=(a-2)/a / 解得 a=2 b=1/2', then '(2) 由 f(x)<a-1 则 ax²+(1-a)x-1<0', the a=0 and a<0 cases with ①②③ sub-cases and the five-line 综上 summary, all with visible minus dashes before 1/a fractions and visible ≠ in {x|x≠1}; the dark filled glyph after 可化简 in the a=0 line is crossed out and is correctly absent from the draft; no required symbol or figure audit targets exist, so no patch is justified.\"\n      }\n    }\n  ]\n}"
+  ]
+}

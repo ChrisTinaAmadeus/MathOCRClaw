@@ -1,0 +1,531 @@
+{
+  "schema_version": 1,
+  "page": "page27",
+  "api2_run": 3,
+  "questions": [
+    {
+      "qno": 1,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "一、单选题",
+      "question_markdown": "1. 命题“$\\exists x \\in \\mathbf{R}, x^2+1>0$”的否定是（ ）\nA. $\\forall x \\in \\mathbf{R}, x^2+1>0$\nB. $\\exists x \\in \\mathbf{R}, x^2+1 \\le 0$\nC. $\\forall x \\in \\mathbf{R}, x^2+1 \\le 0$\nD. $\\exists x \\in \\mathbf{R}, x^2+1<0$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "C",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 2,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "2. 已知 $x<0, 0<y<1$，则（ ）\nA. $\\frac{1}{xy} < \\frac{1}{y} < x$\nB. $\\frac{1}{y} < x < \\frac{1}{xy}$\nC. $x < \\frac{1}{xy} < \\frac{1}{y}$\nD. $xy^2 < x < xy$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "C",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 3,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "3. 已知函数 $f(x)=\\begin{cases} x+1, x \\le 2 \\\\ 2f(x-1), x>2 \\end{cases}$，则 $f(3)=（ ）$\nA. 3\nB. 4\nC. 6\nD. 8",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "C",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 4,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "4. 函数 $f(x)=\\ln(x^2-2ax+16)$ 在区间 $(-\\infty, 2)$ 单调递减，则 $a$ 的取值范围（ ）\nA. $(-\\infty, 2)$\nB. $[2, +\\infty)$\nC. $[2, 5)$\nD. $[2, 5]$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C004"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "rejected_answer_replacement_without_symbol_observation",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "CD",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "D is visibly crossed out with red X in C004 context image, leaving C as the final retained answer",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 5,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "5. 在数学上称函数 $y=[x]$ 为高斯函数，其中 $[x]$ 表示不大于 $x$ 的最大整数，如 $[1.5]=1, [-2.3]=-3, [3]=3$。那么使不等式 $4[x]^2-12[x]+5 \\le 0$ 成立的充分不必要条件是（ ）\nA. $x \\in \\{x \\mid \\frac{5}{2} \\le x \\le \\frac{5}{2}\\}$\nB. $x \\in \\{x \\mid 1 \\le x \\le 2\\}$\nC. $x \\in \\{x \\mid 1 \\le x < 3\\}$\nD. $x \\in \\{x \\mid 1 \\le x \\le 3\\}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C005"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "rejected_answer_replacement_without_symbol_observation",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "BD",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "D is visibly crossed out with red X in C005 context image, leaving B as the final retained answer",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C005"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 6,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "6. 若 $x>y>1$，且满足 $x+y=4$，则 $\\frac{1}{x-y} + \\frac{1}{y-1}$ 的最小值是（ ）\nA. $\\frac{6}{5}$\nB. $\\frac{18}{5}$\nC. $\\frac{9}{2}$\nD. 9",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C006"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "C",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C006"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 7,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "7. 实数 $x, y, z$ 满足 $\\begin{cases} x+y+z=0 \\\\ x^2+y^2+z^2=1 \\end{cases}$，则 $x^2+y^2+2z^2$ 的最小值为（ ）\nA. 1\nB. 0\nC. 3\nD. -3",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C007"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "A",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C007"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 8,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "8. 已知函数 $f(x)=\\begin{cases} \\frac{1}{2}x - \\ln(e^x+1), x \\le 0 \\\\ |e^{x+2}-1|, x>0 \\end{cases}$，若方程 $3-m^2+2mf(x)=[f(x)]^2$ 有且仅有 5 个不同实数根，则实数 $m$ 的取值范围是（ ）\nA. $(-\\sqrt{3}, 1-\\sqrt{3})$\nB. $(1-\\sqrt{3}, \\sqrt{3})$\nC. $(1-\\sqrt{3}, 1+\\sqrt{3})$\nD. $(\\sqrt{3}, 1+\\sqrt{3})$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C008"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "applied_stem_edit_1_ocr_correction",
+          "rejected_answer_replacement_without_symbol_observation",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "CD",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "D is visibly crossed out with red X in C008 context image, leaving C as the final retained answer",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C008"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 9,
+      "question_type": "choice",
+      "choice_mode": "multiple",
+      "section_heading_before": "二、多选题",
+      "question_markdown": "9. 在生产生活中，人们常用十进制计数，而本福特定律说明在 $b$ 进制中，以数字 $n (n \\le b-1)$ 起头的数出现的概率为 $\\log_b \\frac{n+1}{n}$，此定律可用于检查数据造假等问题。现定义 10-本福特函数 $B(x)=\\lg \\frac{x+1}{x}$，则（ ）\nA. $B(2)$ 表示十进制中以数字 2 起头的数出现的概率\nB. 曲线 $y=B(x)$ 关于点 $(\\frac{1}{2}, 0)$ 对称\nC. $B(n) < \\frac{1}{2} (n=1, 2, \\cdots, 9)$\nD. $B(2) > 2B(4)$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C009"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "AC",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C009"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 10,
+      "question_type": "choice",
+      "choice_mode": "multiple",
+      "section_heading_before": "",
+      "question_markdown": "10. 已知 $f(x), g(x)$ 分别是定义在 $\\mathbf{R}$ 上的偶函数和奇函数，且 $f(x)-g(x)=e^x$，则下列说法正确的是（ ）\nA. $[g(x)]^2 - [f(x)]^2 = 1$\nB. $g(2x) = 2f(x)g(x)$\nC. 若 $g(t-2)+g(2t)>0$，则 $t>1$\nD. 方程 $f(x)=m$ 有两个不相等的实数根，则 $m>1$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C010"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "AB",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C010"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 11,
+      "question_type": "choice",
+      "choice_mode": "multiple",
+      "section_heading_before": "",
+      "question_markdown": "11. 已知函数 $F(x)=\\frac{9(x+2)}{x-1} - 2^x$ 的零点为 $x_1, x_2 (x_1 < x_2)$，函数 $G(x)=\\frac{x}{x-1} - \\log_2 x$ 的零点为 $x_3, x_4 (x_3 < x_4)$，则（ ）\nA. $x_1 < x_3 < x_2 < x_4$\nB. $x_1 x_4 = x_2 x_3$\nC. $\\frac{1}{x_1} + \\frac{1}{x_2} = 1$\nD. $x_1 x_2 x_3 x_4 = x_1 x_2 + x_2 x_3 + x_3 x_4 + x_1 x_4$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C011"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "BD",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C011"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 12,
+      "question_type": "fill",
+      "choice_mode": "",
+      "section_heading_before": "三、填空题",
+      "question_markdown": "12. $\\log_3 \\sqrt{27} - \\log_3 2 \\log_2 3 - 6^{\\log_6 3} - \\lg \\sqrt{2} - \\lg \\sqrt{5} =$ \\_\\_\\_\\_\\_\\_",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C012"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "applied_stem_edit_1_ocr_correction",
+          "applied_stem_edit_2_ocr_correction",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$-7/2$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C012"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 13,
+      "question_type": "fill",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "13. 已知函数 $f(x)=\\log_2(kx^2+kx+1)$，若 $f(x)$ 的值域为 $\\mathbf{R}$，则实数 $k$ 的取值范围是 \\_\\_\\_\\_\\_\\_",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C013"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$[0, 4]$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C013"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 14,
+      "question_type": "fill",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "14. 直角坐标平面内两点 $P, Q$ 满足条件：\n(1) $P, Q$ 都在函数 $f(x)$ 的图象上；\n(2) $P, Q$ 关于原点对称，则称点对 $(P, Q)$ 是函数 $f(x)$ 的一个“友好点对”（点对 $(P, Q)$ 与点对 $(Q, P)$ 看作同一个“友好点对”）。\n已知函数 $f(x)=\\begin{cases} \\frac{1}{2}x - \\ln(e^x+1), x \\le 0 \\\\ -ax^2 + (2a-\\frac{1}{2})x + e - a, x > 0 \\end{cases} (a>0)$ 存在两个“友好点对”，则 $a$ 的取值范围为 \\_\\_\\_\\_\\_\\_",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C014"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "rejected_answer_replacement_without_high_visual_evidence",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$(-e, -\\frac{1}{2}]$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Image shows (e - ln2, +∞) written in red in C014 context image, working steps confirm a > e - ln2",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C014"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page27/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "Q14 answer expression partially visible; patched to (e - ln2, +∞) based on working steps, medium confidence.",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.7-plus",
+      "attempt": 1,
+      "elapsed_s": 394.442444,
+      "prompt_tokens": 34180,
+      "completion_tokens": 24622,
+      "total_tokens": 58802,
+      "request_id": "chatcmpl-1406a30c-bc0e-96ab-abb7-3ff3e8e0a5a3"
+    }
+  ]
+}

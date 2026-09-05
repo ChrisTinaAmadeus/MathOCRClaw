@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page01/api_markdown/page01.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page01/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 37555,
+    "completion_tokens": 18017,
+    "total_tokens": 55572,
+    "latency_s": 288.929752,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 106.938174,
+          "prompt_tokens": 3373,
+          "completion_tokens": 6736,
+          "total_tokens": 10109,
+          "request_id": "chatcmpl-9302ac3f-fd09-9dc4-b343-b28abdeabd9b"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 49.257213,
+          "prompt_tokens": 11394,
+          "completion_tokens": 3014,
+          "total_tokens": 14408,
+          "request_id": "chatcmpl-957991b3-b1ea-9a21-9245-80cf15d988db"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 70.915777,
+          "prompt_tokens": 11394,
+          "completion_tokens": 4464,
+          "total_tokens": 15858,
+          "request_id": "chatcmpl-fa651556-b1a7-9a86-8a7f-25a50f2ad79e"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 61.818588,
+          "prompt_tokens": 11394,
+          "completion_tokens": 3803,
+          "total_tokens": 15197,
+          "request_id": "chatcmpl-6a60428a-9725-93b3-a9ba-6aa4e7d5a119"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 49.257213,
+            "prompt_tokens": 11394,
+            "completion_tokens": 3014,
+            "total_tokens": 14408,
+            "request_id": "chatcmpl-957991b3-b1ea-9a21-9245-80cf15d988db"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 70.915777,
+            "prompt_tokens": 11394,
+            "completion_tokens": 4464,
+            "total_tokens": 15858,
+            "request_id": "chatcmpl-fa651556-b1a7-9a86-8a7f-25a50f2ad79e"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 61.818588,
+            "prompt_tokens": 11394,
+            "completion_tokens": 3803,
+            "total_tokens": 15197,
+            "request_id": "chatcmpl-6a60428a-9725-93b3-a9ba-6aa4e7d5a119"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "",
+    "",
+    ""
+  ],
+  "raw_runs": [
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C001-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"printed_anchors\": [\n              \"printed pyramid structure with rectangular base\",\n              \"printed labels P, A, B, C, D, E, F\",\n              \"uniform thin line work for solid and dashed edges\"\n            ],\n            \"handwriting_features\": [\n              \"handwritten coordinate axes x, y, z\",\n              \"handwritten numbers near vertices\"\n            ],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"Printed skeleton of pyramid P-ABCD is clearly visible with typeset labels. Handwritten coordinate axes and numbers are overlaid on the printed figure.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwriting matches draft transcription. Crossed-out lines in part (1) are correctly excluded. Part (2) proof steps match visible retained handwriting.\"\n      }\n    }\n  ]\n}\n```",
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C001-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"printed_anchors\": [\n              \"printed pyramid structure with rectangular base\",\n              \"typeset labels P, A, B, C, D, E, F\",\n              \"dashed lines indicating hidden edges\"\n            ],\n            \"handwriting_features\": [\n              \"handwritten coordinate axes x, y, z\",\n              \"handwritten number 2 on edge\"\n            ],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"Printed geometric figure referenced by '如图' in the stem, annotated with handwritten coordinate axes for the solution.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwriting matches draft transcription. Crossed-out calculations in part (1) are correctly excluded. Vector notation and coordinate values in part (2) are accurately transcribed.\"\n      }\n    }\n  ]\n}\n```",
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C001-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"printed_anchors\": [\n              \"printed pyramid structure with vertices P, A, B, C, D, E, F\",\n              \"dashed lines for hidden edges\",\n              \"printed labels\"\n            ],\n            \"handwriting_features\": [\n              \"handwritten coordinate axes x, y, z\",\n              \"handwritten numbers 2 on edges\"\n            ],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"Printed geometric figure of a pyramid with rectangular base, overlaid with handwritten coordinate axes and labels.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"The draft accurately transcribes the retained handwritten solution steps, correctly omitting crossed-out calculations.\"\n      }\n    }\n  ]\n}\n```"
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/api_markdown/page21.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page21/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 49311,
+    "completion_tokens": 44534,
+    "total_tokens": 93845,
+    "latency_s": 721.009931,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 187.974564,
+          "prompt_tokens": 3021,
+          "completion_tokens": 11775,
+          "total_tokens": 14796,
+          "request_id": "chatcmpl-143bfa41-4bd6-9925-9dc9-7cf08abdaa04"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 252.424449,
+          "prompt_tokens": 15430,
+          "completion_tokens": 15751,
+          "total_tokens": 31181,
+          "request_id": "chatcmpl-2b6f3062-4cb8-9f33-819d-a5a4dc4000cf"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 124.167739,
+          "prompt_tokens": 15430,
+          "completion_tokens": 7504,
+          "total_tokens": 22934,
+          "request_id": "chatcmpl-5bf1aa7b-1218-9e9c-ad12-1fa760b5dab8"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 156.443179,
+          "prompt_tokens": 15430,
+          "completion_tokens": 9504,
+          "total_tokens": 24934,
+          "request_id": "chatcmpl-b4ec65c1-a164-9e5f-a409-d1bac01421d8"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 252.424449,
+            "prompt_tokens": 15430,
+            "completion_tokens": 15751,
+            "total_tokens": 31181,
+            "request_id": "chatcmpl-2b6f3062-4cb8-9f33-819d-a5a4dc4000cf"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 124.167739,
+            "prompt_tokens": 15430,
+            "completion_tokens": 7504,
+            "total_tokens": 22934,
+            "request_id": "chatcmpl-5bf1aa7b-1218-9e9c-ad12-1fa760b5dab8"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 156.443179,
+            "prompt_tokens": 15430,
+            "completion_tokens": 9504,
+            "total_tokens": 24934,
+            "request_id": "chatcmpl-b4ec65c1-a164-9e5f-a409-d1bac01421d8"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "",
+    "",
+    ""
+  ],
+  "raw_runs": [
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwriting in C001 answer area shows three lines for part (2): '2m > 2+m', '0 ≥ 2m', 'm ≤ 0.' Part (1) has no visible answer. Draft transcription matches.\"\n      }\n    },\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C002-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"medium\",\n            \"context_id\": \"C002\",\n            \"printed_anchors\": [\"typeset labels A, E, C, P, O, D, F, B\", \"printed rectangle OCPD outline\", \"printed axis lines OA and OB\"],\n            \"handwriting_features\": [\"handwritten values 40, 25, 40 overlaid on figure\", \"handwritten calculations 2S/240x, S/20x, 50≤20x≤75, 5/2≤x≤15/4 above figure\"],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"Printed coordinate framework with typeset labels A, E, C, P, O, D, F, B and rectangle OCPD. Handwritten numerical annotations (40, 25, 40) and inequality calculations overlaid. The rectangle hatching appears uniform but ownership is ambiguous.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"C002 answer area shows '50 ≤ 20x ≤ 75' and '5/2 ≤ x ≤ 15/4' for part (1). Part (2) has no visible answer. Draft transcription matches.\"\n      }\n    },\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \"$\\\\{x \\\\mid x > 1 \\\\text{ 或 } x < \\\\frac{t-1}{t}\\\\}$\",\n            \"new\": \"$\\\\{x \\\\mid x > 1 \\\\text{ 或 } x < -\\\\frac{1}{t}\\\\}$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C003\",\n            \"evidence\": \"C003 answer_detail_01 clearly shows 'x < -1/t' with a visible negative sign before the fraction, not '(t-1)/t'.\"\n          }\n        ],\n        \"symbol_observations\": [],\n        \"evidence\": \"Part (1) ① shows circled 't≠0', '-3t²+2t+1>0', and '{x | -1/3 < x < 1}'. Part (2) first case shows 'x < -1/t' not 'x < (t-1)/t'. Other cases match draft.\"\n      }\n    },\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \"$\\\\frac{(a/2)^2}{1+2/a} + \\\\frac{b^2}{2+1/b} \\\\ge \\\\frac{1}{4}$.\",\n            \"new\": \"$\\\\frac{(a/2)^2}{1+2/a} + \\\\frac{(1/b)^2}{2+1/b} \\\\ge \\\\frac{(a/2+1/b)^2}{1+2/a+2+1/b} \\\\ge \\\\frac{1}{4}$.\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C004\",\n            \"evidence\": \"C004 answer_detail_01 shows '(1/b)²' not 'b²' in the second term, and the full Cauchy-Schwarz chain with intermediate step '(a/2+1/b)²/(1+2/a+2+1/b)' is visible before '≥ 1/4'.\"\n          }\n        ],\n        \"symbol_observations\": [],\n        \"evidence\": \"Part (1) 证1 and ② match draft. Part (2) shows (1/b)² not b², and includes the intermediate Cauchy-Schwarz step. Part (3) has no visible answer.\"\n      }\n    }\n  ]\n}\n```",
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Student work for (2) visible: '2m>2+m', '0≥2m', 'm≤0.' matches draft. No visible answer for (1).\"\n      }\n    },\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C002-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C002\",\n            \"printed_anchors\": [\"printed rectangle OCPD framework\", \"printed triangle OEF\", \"printed axis labels OA, OB\", \"printed point labels O, C, P, D, E, F, A, B\"],\n            \"handwriting_features\": [\"handwritten measurements 40, 25\", \"handwritten hatching/shading of rectangle\", \"handwritten calculations 2S/240x, S/20x, 50≤20x≤75, 5/2≤x≤15/4 near figure\"],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"Printed geometry diagram showing rectangle OCPD and triangle OEF with labeled points on perpendicular axes OA, OB; student added handwritten measurements (40, 25), diagonal hatching of the rectangle, and inequality calculations adjacent to the figure\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Student work for (1) visible near figure: '50≤20x≤75' and '5/2≤x≤15/4' matches draft. No visible answer for (2).\"\n      }\n    },\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Student work visible: circled 't≠0', '-3t²+2t+1>0', '{x|-1/3<x<1}' for (1)①; case analysis for (2) with '{x|x>1或x<-1/t}' (t<-1), '{x|0<x<1}' (t=1), '{x|x>-1/t或x<1}' (-1<t<0) matches draft structure.\"\n      }\n    },\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \"$\\\\frac{b^2}{2+1/b}$\",\n            \"new\": \"$\\\\frac{(1/b)^2}{2+1/b}$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C004\",\n            \"evidence\": \"Image clearly shows (1/b)² in the numerator of the second fraction in part (2), with '1/b' enclosed in parentheses and a visible superscript 2; draft incorrectly transcribed as b²\"\n          }\n        ],\n        \"symbol_observations\": [],\n        \"evidence\": \"Part (1) 证1 and ② match draft. Part (2) numerator of second fraction is (1/b)² not b². Part (3) no visible answer.\"\n      }\n    }\n  ]\n}\n```",
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwriting in C001 answer area shows '2m > 2+m', '0 ≥ 2m', 'm ≤ 0' for part (2); part (1) has no visible answer. Draft transcription matches.\"\n      }\n    },\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C002-01\",\n            \"source_type\": \"student_diagram\",\n            \"content_role\": \"retained_solution_diagram\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C002\",\n            \"printed_anchors\": [],\n            \"handwriting_features\": [\"freehand line quality\", \"handwritten labels A, E, C, P, O, D, F, B\", \"handwritten numbers 40, 25\"],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"Hand-drawn coordinate geometry diagram in answer area showing rectangle OCPD and triangle OEF with labeled points A, E, C, P, O, D, F, B and dimensions 40, 25. Used in student's solution for part (1) with annotations 2S/240x, S/20x, 50≤20x≤75, 5/2≤x≤15/4. No visible printed figure skeleton underneath; lines show freehand quality.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwriting in C002 answer area shows '50 ≤ 20x ≤ 75' and '5/2 ≤ x ≤ 15/4' for part (1); part (2) has no visible answer. Draft transcription matches.\"\n      }\n    },\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwriting in C003 answer area shows circled 't0', '-3t²+2t+1>0', '{x|-1/3<x<1}' for part (1)①; part (1)② has no visible answer; part (2) shows case analysis for t<-1, t=1, -1<t<0. Draft transcription matches.\"\n      }\n    },\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \"$\\\\frac{(a/2)^2}{1+2/a} + \\\\frac{b^2}{2+1/b} \\\\ge \\\\frac{1}{4}$\",\n            \"new\": \"$\\\\frac{(a/2)^2}{1+2/a} + \\\\frac{(1/b)^2}{2+1/b} \\\\ge \\\\frac{(a/2+1/b)^2}{1+2/a+1/b} \\\\ge \\\\frac{1}{4}$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C004\",\n            \"evidence\": \"C004 answer_detail_01 clearly shows numerator of second fraction as (1/b)² not b², and includes intermediate step (a/2+1/b)²/(1+2/a+1/b) before ≥1/4.\"\n          }\n        ],\n        \"symbol_observations\": [],\n        \"evidence\": \"Part (1) 证1 and ② transcriptions match visible handwriting. Part (2) had OCR error: b² should be (1/b)² and missing intermediate Cauchy-Schwarz step. Part (3) has no visible answer.\"\n      }\n    }\n  ]\n}\n```"
+  ]
+}

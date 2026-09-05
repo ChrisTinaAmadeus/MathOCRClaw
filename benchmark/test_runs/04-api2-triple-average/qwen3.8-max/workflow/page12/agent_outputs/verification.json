@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page12/api_markdown/page12.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page12/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 38057,
+    "completion_tokens": 35659,
+    "total_tokens": 73716,
+    "latency_s": 617.571149,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 205.51608,
+          "prompt_tokens": 3065,
+          "completion_tokens": 11940,
+          "total_tokens": 15005,
+          "request_id": "chatcmpl-83408c4d-fc5b-93a7-b837-8b761455efc4"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 129.216634,
+          "prompt_tokens": 11664,
+          "completion_tokens": 7328,
+          "total_tokens": 18992,
+          "request_id": "chatcmpl-3c4c9b7d-6fc0-9c49-89d6-aa3fbbc14472"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 175.286365,
+          "prompt_tokens": 11664,
+          "completion_tokens": 10135,
+          "total_tokens": 21799,
+          "request_id": "chatcmpl-ff04623c-b5c6-9f49-90f5-147452560690"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 107.55207,
+          "prompt_tokens": 11664,
+          "completion_tokens": 6256,
+          "total_tokens": 17920,
+          "request_id": "chatcmpl-f6f49d6e-9108-9570-93f4-f04d77418c46"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 129.216634,
+            "prompt_tokens": 11664,
+            "completion_tokens": 7328,
+            "total_tokens": 18992,
+            "request_id": "chatcmpl-3c4c9b7d-6fc0-9c49-89d6-aa3fbbc14472"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 175.286365,
+            "prompt_tokens": 11664,
+            "completion_tokens": 10135,
+            "total_tokens": 21799,
+            "request_id": "chatcmpl-ff04623c-b5c6-9f49-90f5-147452560690"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 107.55207,
+            "prompt_tokens": 11664,
+            "completion_tokens": 6256,
+            "total_tokens": 17920,
+            "request_id": "chatcmpl-f6f49d6e-9108-9570-93f4-f04d77418c46"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "",
+    "Minor surface variants left as drafted (handwritten cos-angle line appears to list m before n1; possible parentheses around 1x1+0x2 in the dot-product expansion); differences are semantically identical and stroke evidence is not conclusive enough to patch.",
+    ""
+  ],
+  "raw_runs": [
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C001-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"printed_anchors\": [\n              \"typeset serif italic vertex labels A, B, C, A₁, B₁, C₁, D, E matching the printed stem math font\",\n              \"regular dashed hidden edges of the prism\",\n              \"uniform thin solid line work forming the prism skeleton\"\n            ],\n            \"handwriting_features\": [\n              \"freehand x/y/z coordinate axes with hand-drawn arrowheads\",\n              \"handwritten coordinate tuples such as (0,0,2), (0,2,2), (2,0,2), (2,0,0), (0,2,0), (0,0,0)\",\n              \"handwritten tick marks on several edges\"\n            ],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"A printed prism skeleton with typeset labels and regular dashes remains visible underneath the student's overlaid hand-drawn axes and coordinate annotations; the stem opens with 如图, linking the figure to the printed question; no crossing-out or erasure on the figure.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten solution in the C001 answer area matches the draft line by line: coordinates C₁(0,0,2), D(1,1,2), A₁(2,0,2), B(0,2,0), E(0,0,1); vectors (1,1,0), (-2,2,-2), (-2,0,-1); normal n₁=(-1,1,2); second part A(2,0,0), B(0,2,0), C(0,0,0), m=(0,0,1); cos⟨n₁,m⟩=2/(√6×1)=√6/3 and final 答：正弦值为 √3/3 all visibly retained. Red pen strokes are grader checks, not student content; no mandatory symbol audit targets remain.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"Minor surface variants left as drafted (handwritten cos-angle line appears to list m before n1; possible parentheses around 1x1+0x2 in the dot-product expansion); differences are semantically identical and stroke evidence is not conclusive enough to patch.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C001-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"printed_anchors\": [\n              \"typeset italic vertex labels A, B, C, A1, B1, C1, D, E matching the stem font\",\n              \"regular dashed dots for hidden prism edges\",\n              \"uniform thin solid line work forming the prism skeleton\"\n            ],\n            \"handwriting_features\": [\n              \"freehand coordinate-axis arrows labeled x, y, z\",\n              \"handwritten coordinate tuples such as (0,0,2), (0,2,2), (2,0,2), (2,0,0), (0,2,0)\",\n              \"handwritten tick marks on edges\"\n            ],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"The prism skeleton and vertex labels are typeset and match the printed stem ('as shown in the figure'), while the coordinate axes, arrows, and coordinate tuples are freehand student overlays added for the coordinate setup; no crossing-out or erasure of the figure is visible.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Retained handwriting in the C001 answer area matches the draft line-by-line in the color context and detail crops: coordinates C1(0,0,2), D(1,1,2), A1(2,0,2), B(0,2,0), E(0,0,1); vectors (1,1,0), (-2,2,-2), (-2,0,-1); normal n1=(-1,1,2) from the case -2x+2y-2z=0, -2x-z=0 with x=-1; dot product 1x(-1)+1x1+0x2=0 giving C1D perpendicular to n1 and C1D parallel to plane A1BE; part (2) with A(2,0,0), B(0,2,0), C(0,0,0), m=(0,0,1), n1·m=2, |n1|=sqrt(6), cos value sqrt(6)/3, and final sin value sqrt(3)/3 are all visibly present.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C001-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"printed_anchors\": [\n              \"typeset italic vertex labels A, B, C, A1, B1, C1, D, E in the same serif math font as the printed stem\",\n              \"uniform thin solid edges with regular dashed hidden-edge lines forming the prism skeleton\",\n              \"figure placed immediately after the printed stem opening with 如图\"\n            ],\n            \"handwriting_features\": [\n              \"handwritten coordinate tuples beside vertices, e.g. (0,0,2), (2,0,0), (0,2,0), (0,2,2)\",\n              \"freehand axis arrows labeled x, y, z in pen\",\n              \"handwritten tick marks on prism edges\"\n            ],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"A printed prism line-drawing with typeset vertex labels remains clearly visible underneath the student's handwritten coordinates, axis arrows, and tick marks; the overlay does not cancel the printed skeleton, and the figure is the question figure referenced by 如图, later annotated for the coordinate setup.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"The black-ink handwriting in the C001 answer region matches the API1 transcription line by line: coordinates C1(0,0,2), D(1,1,2), A1(2,0,2), B(0,2,0), E(0,0,1); vectors C1D=(1,1,0), A1B=(-2,2,-2), A1E=(-2,0,-1); normal n1=(-1,1,2); part (2) m=(0,0,1), cos=2/(sqrt6*1)=sqrt6/3, sin=sqrt3/3 with final 答：正弦值为 sqrt3/3. Red pen marks (checks, scores, and the inserted red step C1D ⊄ plane A1BE) are grader ink and are excluded from the student transcription. No required symbol audit targets exist.\"\n      }\n    }\n  ]\n}"
+  ]
+}

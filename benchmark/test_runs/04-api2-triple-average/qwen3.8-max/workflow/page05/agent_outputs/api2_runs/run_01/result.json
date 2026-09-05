@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "page": "page05",
+  "api2_run": 1,
+  "questions": [
+    {
+      "qno": 18,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "18. 已知 $a>0$，$b>0$。\n(1) 若 $a-b=2$，求证：$a+\\frac{4}{b+1}\\geq 5$；\n(2) 若 $a+b=2$，不等式 $\\frac{4}{a+2}+\\frac{m}{b}\\geq 4$（$m>0$）恒成立，求 $m$ 的取值范围；\n(3) 若 $c>0$，求 $\\frac{\\sqrt{ab}+2\\sqrt{ac}-2a}{4a+b+2c}$ 的最大值。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page05/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) _未识别到手写答案。_\n(2) $0<m\\leq 4$\n(3) _未识别到手写答案。_",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "no_answer",
+        "evidence_note": "Color context and full page show handwritten '0<m≤4' (open loop 0, '<' with distinct lower bar, closed-top 4) at the end of the (2) stem line; (1) bears only a grader's checkmark and (3) has no student handwriting, matching the draft placeholders.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page05/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 19,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "19. 已知二次函数 $y=ax^2-bx+3$。\n(1) 若不等式 $y>0$ 的解集为 $\\left\\{x\\mid-\\frac{1}{3}<x<1\\right\\}$，求 $a$ 和 $b$ 的值；\n(2) 若 $a>0$，$b=3a+1$。\n(i) 解关于 $x$ 的不等式 $y\\leq 0$；\n(ii) 若对任意的 $a\\in[1,2]$，$y>0$ 恒成立，求 $x$ 的取值范围。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page05/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) $-9$，$-6$\n(2) (i) $0<a\\leq\\frac{1}{3}$，$3\\leq x\\leq\\frac{1}{a}$\n$a>\\frac{1}{3}$，$\\frac{1}{a}\\leq x\\leq 3$\n(ii) $(-\\infty,\\frac{1}{2})\\cup(3,+\\infty)$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwriting visible: (1) '-9, -6' (closed-loop 9 and 6 with leading minuses); (2)(i) '0<a≤1/3, 3≤x≤1/a' then 'a>1/3, 1/a≤x≤3' with lower equality bars under the '<' signs; (ii) '(-∞,1/2)∪(3,+∞)' with upward-opening cup. The struck-through scratch mark after the (2) line is cancelled and correctly excluded from the draft.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page05/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.8-max",
+      "attempt": 1,
+      "elapsed_s": 72.263866,
+      "prompt_tokens": 9999,
+      "completion_tokens": 4081,
+      "total_tokens": 14080,
+      "request_id": "chatcmpl-38013af9-da05-9d09-aa71-ac72c14c4077"
+    }
+  ]
+}

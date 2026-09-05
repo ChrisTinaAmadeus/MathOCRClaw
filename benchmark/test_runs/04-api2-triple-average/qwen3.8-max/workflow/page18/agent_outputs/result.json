@@ -1,0 +1,484 @@
+{
+  "page": "page18",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/image/page18.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page18.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/preprocessed/page18.png",
+  "api_strategy": {
+    "call_count": 4,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "question-conditioned symbol, figure, and atomic patch review",
+    "api2_run_count": 3,
+    "local_merge": "deterministic validation against the first-pass draft"
+  },
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 67754,
+    "completion_tokens": 33370,
+    "total_tokens": 101124,
+    "latency_s": 535.828441,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 99.181689,
+          "prompt_tokens": 3109,
+          "completion_tokens": 5787,
+          "total_tokens": 8896,
+          "request_id": "chatcmpl-d17699de-2034-9a50-a61e-525b6c21f4d7"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 167.893248,
+          "prompt_tokens": 21544,
+          "completion_tokens": 9636,
+          "total_tokens": 31180,
+          "request_id": "chatcmpl-c8684a16-d8ca-92d3-8601-d2bfe69b2c8a"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 150.840641,
+          "prompt_tokens": 21544,
+          "completion_tokens": 8758,
+          "total_tokens": 30302,
+          "request_id": "chatcmpl-c6a3689d-6b27-9e72-b880-f1efc9890278"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 117.912863,
+          "prompt_tokens": 21557,
+          "completion_tokens": 9189,
+          "total_tokens": 30746,
+          "request_id": "chatcmpl-da8fbe0f-8fa8-9d9d-8391-983517d25fbc"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 167.893248,
+            "prompt_tokens": 21544,
+            "completion_tokens": 9636,
+            "total_tokens": 31180,
+            "request_id": "chatcmpl-c8684a16-d8ca-92d3-8601-d2bfe69b2c8a"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 150.840641,
+            "prompt_tokens": 21544,
+            "completion_tokens": 8758,
+            "total_tokens": 30302,
+            "request_id": "chatcmpl-c6a3689d-6b27-9e72-b880-f1efc9890278"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 117.912863,
+            "prompt_tokens": 21557,
+            "completion_tokens": 9189,
+            "total_tokens": 30746,
+            "request_id": "chatcmpl-da8fbe0f-8fa8-9d9d-8391-983517d25fbc"
+          }
+        ]
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 7,
+    "answers_with_transcription": 7,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 1,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "1. 过 $A(-1,\\sqrt{3})$，$B(2,0)$ 两点的直线倾斜角为\n\nA. $\\frac{\\pi}{3}$\nB. $\\frac{3\\pi}{4}$\nC. $\\frac{2\\pi}{3}$\nD. $\\frac{5\\pi}{6}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "D",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "After 两点的直线倾斜角为 a handwritten letter shows a straight left stem with one continuous outer bow (D) followed by a closing parenthesis; the small triangle sketch with √3 and 1 at right is separate scratch work, not the answer token.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 2,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "2. 在空间直角坐标系 $Oxyz$ 中，已知点 $A(1,1,1)$，$B(2,-1,0)$，若点 $P$ 与点 A 关于 $Oyz$ 平面对称，则 $\\overrightarrow{BP}=$\n\nA. $(-3,2,1)$\nB. $(-1,0,1)$\nC. $(-1,0,-1)$\nD. $(3,-2,-1)$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "A",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "After 则 BP = the retained handwritten letter shows an apex with two slanting legs and a crossbar (A); the scratch =(-3,2,1) above is separate work, and the same apex glyph matches the writer's A in Q3/Q4.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 3,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "3. 已知 $\\vec{a}=(1,1,0)$，$\\vec{b}=(0,1,1)$，$\\vec{c}=(1,0,1)$，$\\vec{p}=\\vec{a}-\\vec{b}$，$\\vec{q}=\\vec{a}+2\\vec{b}-\\vec{c}$，则 $\\vec{p}\\cdot\\vec{q}=$\n\nA. $-1$\nB. $1$\nC. $0$\nD. $-2$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "A",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "After 则 p·q = a large handwritten A (closed triangular apex with crossing crossbar) is retained before the printed closing parenthesis; no competing letter is visible.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 4,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "4. 已知空间向量 $\\vec{a}=(\\sqrt{3},0,1)$，$\\vec{b}=(\\frac{1}{2},0,\\frac{\\sqrt{3}}{2})$，则 $\\vec{a}$ 在 $\\vec{b}$ 上的投影的模为\n\nA. $\\sqrt{3}$\nB. $1$\nC. $2$\nD. $\\frac{1}{2}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C004"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "A",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "After 的模为 ( a handwritten A with looped apex and visible crossbar is retained; stroke form matches the writer's A in Q2/Q3.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 5,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "5. 在平行六面体 $ABCD-A_1B_1C_1D_1$ 中，点 $E$ 为棱 $AA_1$ 的中点，点 $F$ 为棱 $CC_1$ 上靠近 $C$ 的三等分点。若 $\\overrightarrow{EF}=x\\overrightarrow{AB}+y\\overrightarrow{AD}+z\\overrightarrow{AA_1}$，$x,y,z\\in R$，则 $x+y+z$ 的值为\n\nA. $\\frac{1}{6}$\nB. $\\frac{11}{6}$\nC. $\\frac{17}{6}$\nD. $-\\frac{1}{6}$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C005"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "After 则 x+y+z 的值为 ( a handwritten B with a left stem and two right lobes is retained before the closing parenthesis; matches the writer's B in Q6.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C005"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 6,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "6. 过点 $P(0,-1)$ 作直线 $l$，若直线 $l$ 与连接 $A(-2,1)$，$B(2\\sqrt{3},1)$ 两点的线段总有公共点，则直线 $l$ 的倾斜角范围为\n\nA. $\\left[\\frac{\\pi}{6},\\frac{\\pi}{4}\\right]$\nB. $\\left[\\frac{\\pi}{6},\\frac{3\\pi}{4}\\right]$\nC. $\\left[0,\\frac{\\pi}{6}\\right]\\cup\\left[\\frac{3\\pi}{4},\\pi\\right)$\nD. $\\left[\\frac{\\pi}{6},\\frac{\\pi}{2}\\right]\\cup\\left[\\frac{3\\pi}{4},\\pi\\right)$",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C006"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "After 范围为 ( a handwritten B with two stacked right lobes is retained; the circled 倾斜角 and the left arrow are annotations only, not cancellation of the answer.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C006"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 7,
+      "question_type": "choice",
+      "choice_mode": "single",
+      "section_heading_before": "",
+      "question_markdown": "7. 已知直线 $l_1: y=ax-b$，$l_2: y=bx+a$，当 $a,b$ 满足一定条件时，它们的图形可能是图中的\n\nA. <插图>\nB. <插图>\nC. <插图>\nD. <插图>",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C007"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 4,
+        "figure_audit_observed_count": 4,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C007-01",
+            "marker_index": 1,
+            "source_type": "mixed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "medium",
+            "context_id": "C007",
+            "printed_anchors": [
+              "typeset option letter A.",
+              "uniform thin axis and line strokes",
+              "italic typeset labels y, O, x, l1, l2"
+            ],
+            "handwriting_features": [
+              "thick pen sign annotations b>0, a<0, -b>0, b<0",
+              "freehand diagonal slash across the printed A. label"
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "A thin uniform coordinate skeleton with two straight lines labeled l1 and l2 remains visible under bold handwritten sign annotations; a handwritten slash crosses the option letter A but the figure itself is not struck out, so the printed option figure is retained with handwritten overlay.",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          },
+          {
+            "audit_id": "FIG-C007-02",
+            "marker_index": 2,
+            "source_type": "mixed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "medium",
+            "context_id": "C007",
+            "printed_anchors": [
+              "typeset option letter B.",
+              "uniform thin axis and line strokes",
+              "italic typeset labels y, O, x, l1, l2"
+            ],
+            "handwriting_features": [
+              "thick pen sign annotations a>0, -b>0, b<0, a>0"
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "Printed coordinate skeleton with an ascending line l1 and a steep descending line l2 in uniform thin strokes; bold handwritten inequality notes are overlaid beside it and the printed B. label is untouched, so the option figure is retained with handwritten overlay.",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          },
+          {
+            "audit_id": "FIG-C007-03",
+            "marker_index": 3,
+            "source_type": "mixed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "medium",
+            "context_id": "C007",
+            "printed_anchors": [
+              "typeset option letter C.",
+              "uniform thin axis and line strokes",
+              "italic typeset labels y, O, l1, l2"
+            ],
+            "handwriting_features": [
+              "thick pen sign annotations b<0, a>0 (partly struck), a<0, -b>0",
+              "freehand diagonal slash across the printed C. label"
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "Two descending lines l1 and l2 on a thin uniform axis skeleton remain visible under bold handwritten annotations; a slash crosses the option letter C only, leaving the figure itself retained as the printed option figure.",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          },
+          {
+            "audit_id": "FIG-C007-04",
+            "marker_index": 4,
+            "source_type": "mixed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "medium",
+            "context_id": "C007",
+            "printed_anchors": [
+              "typeset option letter D.",
+              "uniform thin axis and line strokes",
+              "italic typeset labels y, O, x, l1, l2"
+            ],
+            "handwriting_features": [
+              "thick pen sign annotations b>0, a>0, -b>, b<"
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "Two ascending lines l1 and l2 on a thin uniform axis skeleton with printed D. label intact; bold handwritten sign notes overlay the right side, so this is a printed option figure with handwritten annotation overlay.",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          }
+        ],
+        "lint_actions": [
+          "recorded_figure_observation_FIG-C007-01_mixed_figure",
+          "recorded_figure_observation_FIG-C007-02_mixed_figure",
+          "recorded_figure_observation_FIG-C007-03_mixed_figure",
+          "recorded_figure_observation_FIG-C007-04_mixed_figure",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "B",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "At the upper left of the option figures a handwritten (B) with a check stroke is retained; the glyph shows a left stem with two right lobes, matching the writer's B in Q5/Q6.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C007"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/image/page18.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/preprocessed/page18.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/api_markdown/page18.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/api_markdown/page18.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/viz/page18_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/agent_outputs/result.json",
+    "api2_results": [
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/agent_outputs/api2_runs/run_01/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/agent_outputs/api2_runs/run_02/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/agent_outputs/api2_runs/run_03/result.json"
+    ],
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page18/code_outputs/match/viz/page18_handwriting_overlay.png"
+  }
+}

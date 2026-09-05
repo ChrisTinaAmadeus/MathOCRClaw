@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page29/api_markdown/page29.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page29/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 30042,
+    "completion_tokens": 45999,
+    "total_tokens": 76041,
+    "latency_s": 738.323383,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 130.981316,
+          "prompt_tokens": 3078,
+          "completion_tokens": 8592,
+          "total_tokens": 11670,
+          "request_id": "chatcmpl-c519b755-f695-9154-a570-37e60d4fc4f5"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 184.523306,
+          "prompt_tokens": 8988,
+          "completion_tokens": 10219,
+          "total_tokens": 19207,
+          "request_id": "chatcmpl-4b8138f4-2192-9e8d-bada-a6e2812a8159"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 177.105268,
+          "prompt_tokens": 8988,
+          "completion_tokens": 11667,
+          "total_tokens": 20655,
+          "request_id": "chatcmpl-f8c5ab1c-7483-9cdb-8b4b-2e1afec6f5ea"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 245.713493,
+          "prompt_tokens": 8988,
+          "completion_tokens": 15521,
+          "total_tokens": 24509,
+          "request_id": "chatcmpl-cf19f823-39dd-9fb6-bf0b-62e00122ba8c"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 184.523306,
+            "prompt_tokens": 8988,
+            "completion_tokens": 10219,
+            "total_tokens": 19207,
+            "request_id": "chatcmpl-4b8138f4-2192-9e8d-bada-a6e2812a8159"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 177.105268,
+            "prompt_tokens": 8988,
+            "completion_tokens": 11667,
+            "total_tokens": 20655,
+            "request_id": "chatcmpl-f8c5ab1c-7483-9cdb-8b4b-2e1afec6f5ea"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 245.713493,
+            "prompt_tokens": 8988,
+            "completion_tokens": 15521,
+            "total_tokens": 24509,
+            "request_id": "chatcmpl-cf19f823-39dd-9fb6-bf0b-62e00122ba8c"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "Red-ink right column re-derives part (3) ending in [14,+∞) and a red bottom note 'REASON: 马虎算错数 4×4≠6!!!' are not in the draft; ink ownership (student vs grader) unresolved. Subscript in black line 'y_{2min}=-a+5-a' appears as a plain vertical stroke (1 vs 2) at full-page resolution; draft kept.",
+    "Black-ink line between '=a+5.' and '=-2a+5.': the subscript on y_?min is a single short vertical stroke at available resolution and cannot be conclusively separated from the writer's subscript 1 vs subscript 2; draft reading y_{2\\min} retained unresolved.",
+    "A red-ink right-hand column restates part (3) (y_2 in [5-2a,5+a], [7,19] subset of [5-2a,5+a], a>=14, range [14,+infty)); ownership (student revision vs marker) is unresolved from ink alone, so the draft's black-ink solution is retained unchanged."
+  ],
+  "raw_runs": [
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"Red-ink right column re-derives part (3) ending in [14,+∞) and a red bottom note 'REASON: 马虎算错数 4×4≠6!!!' are not in the draft; ink ownership (student vs grader) unresolved. Subscript in black line 'y_{2min}=-a+5-a' appears as a plain vertical stroke (1 vs 2) at full-page resolution; draft kept.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Black retained solution in C001 matches the draft line by line: '解 1) 由题意 -1, -1/2 为方程的两根', '可得 1/a=-1/2, 即 a=-2', 2) cases a=0, a>0, a<0 with ① ∅ ② ③ set lines, and part 3 lines through '∴ {a+5≥19, a≥14; -2a+5≤7, a≥-1}' and '综上, a 的取值范围为 {a|a≥14}'; the struck-out token before 'x<-1' is cancelled and correctly omitted; red duplicate column, red '答案⇒' margin mark, circled 19, and top-right scratch strokes are annotations, not retained black solution text.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"Black-ink line between '=a+5.' and '=-2a+5.': the subscript on y_?min is a single short vertical stroke at available resolution and cannot be conclusively separated from the writer's subscript 1 vs subscript 2; draft reading y_{2\\\\min} retained unresolved.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"medium\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"C001 context and answer_detail_01 show the black-ink solution matching the draft line for line: '解 1) 由题意 -1, -1/2 为方程的两根 / 可得 1/a=-1/2, 即 a=-2'; '2)' with a=0, a>0, a<0 cases ①②③ including the set notation; the struck-out token after '-x-1>0' is visibly cancelled and correctly omitted by the draft; part 3 lines '∵ y_1=y_2', '∴ y_2max=19, y_2min=7', '∴ y_2max=2a+5-a = a+5', '= -2a+5', the cases block 'a+5≥19, a≥14 / -2a+5≤7, a≥-1' and '综上, a的取值范围为 {a|a≥14}' all appear as transcribed. The red-ink right-column re-derivation, the red circle around 19, the red '答案⇒' margin mark and the red 'REASON' note are separate annotator ink, not retained black-ink solution steps, so they are correctly excluded.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"A red-ink right-hand column restates part (3) (y_2 in [5-2a,5+a], [7,19] subset of [5-2a,5+a], a>=14, range [14,+infty)); ownership (student revision vs marker) is unresolved from ink alone, so the draft's black-ink solution is retained unchanged.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"medium\",\n        \"final_answers\": [\n          {\n            \"label\": \"(1)\",\n            \"value\": \"a=-2\",\n            \"status\": \"ok\"\n          },\n          {\n            \"label\": \"(2)\",\n            \"value\": \"a=0: x<-1; a>0: {x|x>1/a or x<-1}; a=-1: varnothing; a<-1: {x|-1<x<1/a}; -1<a<0: {x|1/a<x<-1}\",\n            \"status\": \"ok\"\n          },\n          {\n            \"label\": \"(3)\",\n            \"value\": \"{a|a>=14}\",\n            \"status\": \"ok\"\n          }\n        ],\n        \"edits\": [\n          {\n            \"old\": \"y_{2min}=-a+5-a\",\n            \"new\": \"y_{1min}=-a+5-a\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"medium\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"In C001 and answer_detail_01 the black-ink line reads y_<sub>min = -a + 5 - a with a single vertical subscript stroke; the same writer's 2 in y_2max, x_2, and -2a+5 on the same lines always carries a horizontal base bar, which is absent here, matching the plain vertical 1 in y_1 = y_2 two lines above.\"\n          }\n        ],\n        \"symbol_observations\": [\n          {\n            \"audit_id\": \"\",\n            \"tag\": \"SCRIPT_POSITION\",\n            \"location\": \"subscript of y in the black-ink line 'y_?min = -a + 5 - a', left column of the answer area\",\n            \"candidates\": [\n              \"1\",\n              \"2\"\n            ],\n            \"selected\": \"1\",\n            \"observed_features\": \"short single vertical subscript stroke with a small entry hook at top left and no closing base bar; the writer's 2 elsewhere (y_2max=19, x_2, a=-2, -2a+5) shows a distinct curved top plus horizontal base, while the 1 in y_1=y_2 above is a bare vertical stroke of the same shape\",\n            \"context_id\": \"C001\",\n            \"reference_context_ids\": [\n              \"C001\"\n            ]\n          }\n        ],\n        \"evidence\": \"All other retained black-ink lines match the draft byte-for-byte in structure: roots -1, -1/2 giving 1/a=-1/2, a=-2; cases a=0, a>0, a<0 with circled 1/2/3; part 3 chain y_1 in [7,19], y_2max=2a+5-a=a+5, y_2min=-a+5-a=-2a+5, cases system a+5>=19, -2a+5<=7, and final {a|a>=14}; the struck-out token after -x-1>0 and the red margin column are cancelled/secondary ink correctly excluded.\"\n      }\n    }\n  ]\n}"
+  ]
+}

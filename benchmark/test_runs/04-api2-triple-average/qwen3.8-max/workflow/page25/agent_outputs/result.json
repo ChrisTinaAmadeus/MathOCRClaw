@@ -1,0 +1,249 @@
+{
+  "page": "page25",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/image/page25.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page25.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/preprocessed/page25.png",
+  "api_strategy": {
+    "call_count": 4,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "question-conditioned symbol, figure, and atomic patch review",
+    "api2_run_count": 3,
+    "local_merge": "deterministic validation against the first-pass draft"
+  },
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 39287,
+    "completion_tokens": 41615,
+    "total_tokens": 80902,
+    "latency_s": 747.576748,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 280.787438,
+          "prompt_tokens": 2726,
+          "completion_tokens": 17273,
+          "total_tokens": 19999,
+          "request_id": "chatcmpl-68e2b24c-67f7-9490-b146-28cb172e5676"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 88.378063,
+          "prompt_tokens": 12187,
+          "completion_tokens": 5562,
+          "total_tokens": 17749,
+          "request_id": "chatcmpl-75dcff6e-85c3-9f89-843b-c0dc4f7d1582"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 283.658323,
+          "prompt_tokens": 12187,
+          "completion_tokens": 13369,
+          "total_tokens": 25556,
+          "request_id": "chatcmpl-adb3dcb0-2788-99a7-bbaf-b99bfa9a2856"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 94.752924,
+          "prompt_tokens": 12187,
+          "completion_tokens": 5411,
+          "total_tokens": 17598,
+          "request_id": "chatcmpl-214c1ef5-797f-9132-9188-53559719259a"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 88.378063,
+            "prompt_tokens": 12187,
+            "completion_tokens": 5562,
+            "total_tokens": 17749,
+            "request_id": "chatcmpl-75dcff6e-85c3-9f89-843b-c0dc4f7d1582"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 283.658323,
+            "prompt_tokens": 12187,
+            "completion_tokens": 13369,
+            "total_tokens": 25556,
+            "request_id": "chatcmpl-adb3dcb0-2788-99a7-bbaf-b99bfa9a2856"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 94.752924,
+            "prompt_tokens": 12187,
+            "completion_tokens": 5411,
+            "total_tokens": 17598,
+            "request_id": "chatcmpl-214c1ef5-797f-9132-9188-53559719259a"
+          }
+        ]
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 3,
+    "answers_with_transcription": 3,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 15,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "15. （本小题满分13分）已知集合 $A=\\left\\{x\\mid\\frac{2-x}{x+2}>0\\right\\}$，$B=\\{x\\mid|x-1|>2\\}$，$C=\\{x\\mid m-1<x<2m+1\\}$。\n(1) 求 $A\\cap B$，$(\\complement_R B)\\cup A$；\n(2) 若 $A\\cap C=C$，求实数 $m$ 的取值范围。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "解：$\\because A=\\left\\{x\\mid\\frac{2-x}{x+2}>0\\right\\}$\n$\\therefore A=\\{x\\mid-2<x<2\\}$\n$B=\\{x\\mid|x-1|>2\\}$\n$\\therefore B=\\{x\\mid x<-1\\text{ 或 }x>3\\}$\n$\\therefore A\\cap B=\\{x\\mid-2<x<-1\\}$\n$\\therefore \\complement_R B=\\{x\\mid-1\\leq x\\leq 3\\}$\n$(\\complement_R B)\\cup A=\\{x\\mid-2<x\\leq 3\\}$\n(2) $\\because A\\cap C=C$\n$\\therefore C\\subseteq A$\n当 $C$ 为空集时\n$m-1\\geq 2m+1$\n$-2\\geq m$\n若 $C$ 不为空时\n$\\begin{cases} m-1\\geq-2 \\\\ 2m+1\\leq 2 \\end{cases}\\Rightarrow\\begin{cases} m\\geq-1 \\\\ m\\leq\\frac{1}{2} \\end{cases}$\n即 $-1\\leq m\\leq\\frac{1}{2}$\n综上，$m$ 的取值范围为 $m\\leq-2$ 或 $-1\\leq m\\leq\\frac{1}{2}$。",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "C001 context and answer_detail_01 show the retained handwritten steps in the draft order: A={x|-2<x<2}, B={x|x<-1 or x>3}, A∩B={x|-2<x<-1}, (complement_R B)∪A={x|-2<x≤3}, then (2) C⊆A with empty-set case m-1≥2m+1 and non-empty case system m≥-1, m≤1/2, ending with the summary line m≤-2 or -1≤m≤1/2; the scribbled-out token before C⊆A is cancelled and correctly absent from the draft; red underline and red '10' are marker ink, not student content.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 16,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "16. （本小题满分15分）已知 $a\\in\\mathbb{R}$，$p:\\forall x\\in\\{x\\mid 0\\leq x\\leq 1\\}$，$a\\leq x^2+1$；$q:\\exists x_0\\in\\mathbb{R}$，$x_0^2+2ax_0-(2a-3)=0$。\n(1) 若 $p$ 是真命题，求 $a$ 的最大值；\n(2) 若 $p$ 为假命题且 $q$ 为真命题，求 $a$ 的取值范围。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "解：$\\because p$ 为真命题\n$\\therefore$ 当 $x=1$ 时\n$x^2+1$ 最大，\n此时 $x^2+1=2$\n$\\therefore$ 有 $a\\leq 2$\n则 $a_{\\max}=2$\n(2) $\\because p$ 为假命题\n$\\therefore \\exists x\\in\\{x\\mid 0\\leq x\\leq 1\\}, a>x^2+1$\n$\\therefore a>(x^2+1)_{\\max}$\n$\\therefore a>2$\n$\\because q$ 为真命题\n$\\therefore$ 在方程 $x_0^2+2ax_0-(2a-3)=0$ 时，\n$\\Delta=4a^2+4(2a-3)\\geq 0$\n即 $4a^2+8a-12\\geq 0$\n解得 $a\\leq-3$ 或 $a\\geq 1$\n综上 $a$ 的取值范围为 $a\\leq-3$ 或 $a>2$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "C002 context and answer_detail_01 show both columns matching the draft: (1) p true ⇒ x=1, x²+1 max =2, a≤2, a_max=2; (2) p false ⇒ ∃x∈{x|0≤x≤1}, a>x²+1, a>(x²+1)max, a>2; q true ⇒ Δ=4a²+4(2a-3)≥0, i.e. 4a²+8a-12≥0 (top of C003), solved a≤-3 or a≥1, summary a≤-3 or a>2; red circling stroke is marker ink only.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 17,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "17. （本小题满分15分）(1) 已知 $0<x<2$，$0<y<3$，求 $2x-y$ 的取值范围；\n(2) 已知 $x>3$，求 $y=2x+\\frac{4}{2x-6}$ 的最小值；\n(3) 若 $0<x<4$，求 $y=x(8-2x)$ 的最大值。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "解：(1) $\\because 0<x<2$\n$\\therefore 0<2x<4$\n$\\because 0<y<3$\n$\\therefore -3<-y<0$\n$\\therefore -3<2x-y<4$\n(2) $\\because x>3$\n$\\therefore x-3>0$\n$\\therefore 2x-6>0$\n$\\therefore 2x+\\frac{4}{2x-6}$\n$=2x-6+\\frac{4}{2x-6}+6$\n$\\therefore 2x-6+\\frac{4}{2x-6}+6\\geq 2\\sqrt{(2x-6)\\cdot\\frac{4}{2x-6}}+6$\n即 $2x-6+\\frac{4}{2x-6}+6\\geq 10$\n当且仅当 $2x-6=\\frac{4}{2x-6}$ 时，等号可取\n$\\therefore \\left(2x+\\frac{4}{2x-6}\\right)_{\\min}=10$\n(3) $\\because 0<x<4$\n$\\therefore 4-x>0$\n$8-2x>0$\n$x(8-2x)=\\frac{1}{2}\\cdot 2x(8-2x)$\n$\\frac{1}{2}\\cdot 2x(8-2x)\\leq \\left(\\frac{2x+(8-2x)}{2}\\right)^2\\cdot\\frac{1}{2}=8$\n$x(8-2x)\\leq 8$\n$x(8-2x)_{\\max}=8$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "C003 context and answer_detail_01 show three retained columns matching the draft: (1) 0<2x<4, -3<-y<0, -3<2x-y<4; (2) x-3>0, 2x-6>0, rewrite =2x-6+4/(2x-6)+6, AM–GM line with visible radical hook and overline, ≥10, equality case, min=10; (3) 4-x>0, 8-2x>0, x(8-2x)=1/2·2x(8-2x), ≤((2x+(8-2x))/2)²·1/2=8, max=8; red vertical stroke and loop are marker ink, not student writing.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/image/page25.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/preprocessed/page25.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/api_markdown/page25.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/api_markdown/page25.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/code_outputs/match/viz/page25_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/agent_outputs/result.json",
+    "api2_results": [
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/agent_outputs/api2_runs/run_01/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/agent_outputs/api2_runs/run_02/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/agent_outputs/api2_runs/run_03/result.json"
+    ],
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page25/code_outputs/match/viz/page25_handwriting_overlay.png"
+  }
+}

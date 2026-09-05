@@ -1,0 +1,270 @@
+{
+  "page": "page17",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page17/image/page17.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page17.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page17/preprocessed/page17.png",
+  "api_strategy": {
+    "call_count": 4,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "question-conditioned symbol, figure, and atomic patch review",
+    "api2_run_count": 3,
+    "local_merge": "deterministic validation against the first-pass draft"
+  },
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 45114,
+    "completion_tokens": 40262,
+    "total_tokens": 85376,
+    "latency_s": 637.516068,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 186.421098,
+          "prompt_tokens": 3065,
+          "completion_tokens": 10831,
+          "total_tokens": 13896,
+          "request_id": "chatcmpl-e46f8213-408a-9400-9333-40c34865884b"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 179.598431,
+          "prompt_tokens": 14012,
+          "completion_tokens": 10232,
+          "total_tokens": 24244,
+          "request_id": "chatcmpl-d7d4030a-eb45-96ed-9236-9d4df32dadf7"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 144.623072,
+          "prompt_tokens": 14012,
+          "completion_tokens": 8348,
+          "total_tokens": 22360,
+          "request_id": "chatcmpl-2c24d164-4259-9746-84a7-118ebd0d6eea"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 126.873467,
+          "prompt_tokens": 14025,
+          "completion_tokens": 10851,
+          "total_tokens": 24876,
+          "request_id": "chatcmpl-20926acd-0e25-92d2-b90c-1dd5f5eacd1d"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 179.598431,
+            "prompt_tokens": 14012,
+            "completion_tokens": 10232,
+            "total_tokens": 24244,
+            "request_id": "chatcmpl-d7d4030a-eb45-96ed-9236-9d4df32dadf7"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 144.623072,
+            "prompt_tokens": 14012,
+            "completion_tokens": 8348,
+            "total_tokens": 22360,
+            "request_id": "chatcmpl-2c24d164-4259-9746-84a7-118ebd0d6eea"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 126.873467,
+            "prompt_tokens": 14025,
+            "completion_tokens": 10851,
+            "total_tokens": 24876,
+            "request_id": "chatcmpl-20926acd-0e25-92d2-b90c-1dd5f5eacd1d"
+          }
+        ]
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 3,
+    "answers_with_transcription": 3,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 15,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "四、解答题：本题共 5 小题，共 77 分. 解答应写出文字说明、证明过程或演算步骤.",
+      "question_markdown": "15. (本小题满分 13 分)\n已知命题 $p$：实数 $x$ 满足 $(x+3)(x-4)<0$；命题 $q$：实数 $x$ 满足 $(x-a)(x+2a)<0$ $(a>0)$。\n(1) 若 $a=1$，且 $p$ 和 $q$ 都是真命题，求实数 $x$ 的取值范围；\n(2) 若 $p$ 是 $q$ 的充分不必要条件，求实数 $a$ 的取值范围。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page17/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 解：若 $p$ 为真命题，实数 $x$ 满足的集合 $A=\\{x\\mid -3<x<4\\}$\n若 $q$ 为真命题且 $a=1$，实数 $x$ 满足集合 $B=\\{x\\mid -2<x<1\\}$\n若 $p$ 真 $q$ 为真命题，则 $x$ 满足的集合 $A\\cap B=\\{x\\mid -2<x<1\\}$\n(2) 若 $q$ 为真命题且 $a>0$ 时，满足条件 $x$ 的集合 $C=\\{x\\mid -2a<x<a,\\ a>0\\}$\n$p$ 是 $q$ 的充分不必要条件\n$\\therefore A\\subsetneq C$，$\\begin{cases}-2a\\leq -3\\\\ a\\geq 4\\end{cases}$，$-2a=-3$ 与 $a=4$ 不同时成立\n$\\therefore$ $p$ 是 $q$ 的充分不必要条件时 $a$ 的取值范围为 $\\{a\\mid a\\geq 4\\}$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "C001 context and answer_ink show the blue handwriting matching the draft line by line: A={x|-3<x<4}, B={x|-2<x<1}, A∩B={x|-2<x<1}, C={x|-2a<x<a, a>0}, A⊊C with cases -2a≤-3 and a≥4 (lower equality bars visible), '-2a=-3 与 a=4 不同时成立', and final {a|a≥4} continued at top of C002 context. No audit targets listed; no visible cancellation.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page17/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 16,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "16. (本小题满分 15 分)\n已知全集 $U=\\mathbb{R}$，集合 $A=\\{x\\mid x^2-4x-5\\leq 0\\}$，$B=\\{x\\mid 2m\\leq x\\leq 3m+1\\}$。\n(1) 若 $m=2$，求 $(\\complement_U A)\\cap B$；\n(2) 若 $A\\cup B=A$，求实数 $m$ 的取值范围。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page17/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "解 (1) $A=\\{x\\mid x^2-4x-5\\leq 0\\}$\n$=\\{x\\mid (x-5)(x+1)\\leq 0\\}$\n$=\\{x\\mid -1\\leq x\\leq 5\\}$\n$\\complement_U A=\\{x\\mid x<-1 \\text{ 或 } x>5\\}$\n$\\because m=2$ $\\therefore B=\\{x\\mid 4\\leq x\\leq 7\\}$\n$\\therefore (\\complement_U A)\\cap B=\\{5<x\\leq 7\\}$\n(2) $\\because A\\cup B=A$ 即 $B\\subseteq A$\n① 若 $B=\\varnothing$ 时，$2m>3m+1$ 即 $m<-1$\n$\\therefore A\\cup B=A$ 成立\n② 若 $B\\neq\\varnothing$ 时，$B=\\{x\\mid 2m\\leq x\\leq 3m+1\\}$\n$\\begin{cases}3m+1\\geq 2m\\\\ -1\\leq 2m\\\\ 5\\geq 3m+1\\end{cases}$ 即 $\\begin{cases}m\\geq -1\\\\ m\\geq -\\frac{1}{2}\\\\ m\\leq \\frac{4}{3}\\end{cases}$ $\\therefore -\\frac{1}{2}\\leq m\\leq \\frac{4}{3}$\n$\\therefore$ 当 $-\\frac{1}{2}\\leq m\\leq \\frac{4}{3}$ 时，$A\\cup B=A$ 成立\n$\\therefore$ $A\\cup B=A$ 时，$m$ 的取值范围为 $\\{m\\mid m<-1 \\text{ 或 } -\\frac{1}{2}\\leq m\\leq \\frac{4}{3}\\}$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "C002 context/answer_ink show all drafted steps: factorization (x-5)(x+1)≤0, -1≤x≤5, complement {x|x<-1 或 x>5}, B={x|4≤x≤7}, (∁U A)∩B={5<x≤7}, and (2) cases ① B=∅ giving m<-1, ② cases 3m+1≥2m, -1≤2m, 5≥3m+1 yielding m≥-1, m≥-1/2, m≤4/3, final {m|m<-1 或 -1/2≤m≤4/3} visible at top of C003 context. Inequality bars for ≤ are visible; no audit targets; no cancellation.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page17/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 17,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "17. (本小题满分 15 分)\n如图，某农场紧急围建一个面积为 $100\\ \\text{m}^2$ 的矩形场地，要求矩形场地的一面利用现有旧墙（利用旧墙需要先进行维修），其余三面修建新墙，与旧墙平行的那面新墙上，需预留 $2\\ \\text{m}$ 宽的入口（入口不需建墙）。已知旧墙的维修费用为 $28$ 元/m，新墙的造价为 $100$ 元/m，旧墙的使用长度为 $x\\ \\text{m}$ $(x>2)$，修建此矩形场地的总费用为 $y$（单位：元）。\n(1) 写出 $y$ 关于 $x$ 的表达式；\n(2) 当 $x$ 为何值时，修建此围墙所需费用最少？并求出最少费用。\n<插图>",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 1,
+        "figure_audit_observed_count": 1,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C003-01",
+            "marker_index": 1,
+            "source_type": "printed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "medium",
+            "context_id": "C003",
+            "printed_anchors": [
+              "uniform thin straight rectangle edges with right-angle corners",
+              "regular dimension arrowheads with extension ticks above the top edge",
+              "typeset labels 'x m' and '2 m' matching the stem font"
+            ],
+            "handwriting_features": [],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "Rectangle schematic sits at the right end of the question block, immediately after (2), matching the stem's '如图'. Line work is black, thin, perfectly straight and uniform, unlike the student's blue freehand ink elsewhere; dimension line with symmetric arrowheads labeled 'x m' and a bottom gap labeled '2 m' correspond to the printed old-wall length and entrance width. No handwriting overlay or crossing-out on the figure; role is the retained question figure. Confidence medium because label typeset is small in the scan.",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          }
+        ],
+        "lint_actions": [
+          "recorded_figure_observation_FIG-C003-01_printed_figure",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page17/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "解：(1) 旧墙长度为 $x\\ \\text{m}$，宽为 $\\frac{100}{x}\\ \\text{m}$\n修旧墙为 $28x$ 元，修新墙 $100(\\frac{100}{x}\\cdot 2+x-2)$ 元\n设总费用为 $y$ 元\n$y=28x+100(\\frac{100}{x}\\cdot 2+x-2)$ $(x>2)$\n$=128x+\\frac{20000}{x}-200$ $(x>2)$\n(2) 当 $x>2$ 时，\n$y=128x+\\frac{20000}{x}-200\\geq 2\\sqrt{128\\cdot 20000}-200=3000$ 元\n（当且仅当 $128x=\\frac{20000}{x}$ 即 $x=\\frac{25}{2}$ 取“$=$”）\n答：当 $x=\\frac{25}{2}$ 时，修建此围墙所需费用最少，最少费用为 $3000$ 元。",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "C003 context and answer_detail views show the blue handwriting matching the draft: 旧墙长度为 x m, 宽为 100/x m; 28x and 100(100/x·2+x-2); y=28x+100(100/x·2+x-2) (x>2); =128x+20000/x-200 (x>2); (2) y≥2√(128·20000)-200=3000 with the radical overline visibly spanning 128·20000; equality line 128x=20000/x 即 x=25/2; final 答 line with x=25/2 and 3000 元. Fractions 100/x, 20000/x, 25/2 all show numerator-over-denominator bars. No audit targets; no cancellation.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page17/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page17/image/page17.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page17/preprocessed/page17.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page17/api_markdown/page17.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page17/api_markdown/page17.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page17/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page17/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page17/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page17/code_outputs/match/viz/page17_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page17/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page17/agent_outputs/result.json",
+    "api2_results": [
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page17/agent_outputs/api2_runs/run_01/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page17/agent_outputs/api2_runs/run_02/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page17/agent_outputs/api2_runs/run_03/result.json"
+    ],
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page17/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page17/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page17/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page17/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page17/code_outputs/match/viz/page17_handwriting_overlay.png"
+  }
+}

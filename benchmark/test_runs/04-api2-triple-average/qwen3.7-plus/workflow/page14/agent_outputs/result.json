@@ -1,0 +1,249 @@
+{
+  "page": "page14",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/image/page14.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page14.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/preprocessed/page14.png",
+  "api_strategy": {
+    "call_count": 4,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "question-conditioned symbol, figure, and atomic patch review",
+    "api2_run_count": 3,
+    "local_merge": "deterministic validation against the first-pass draft"
+  },
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 48048,
+    "completion_tokens": 22748,
+    "total_tokens": 70796,
+    "latency_s": 372.191419,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 75.005154,
+          "prompt_tokens": 3549,
+          "completion_tokens": 4667,
+          "total_tokens": 8216,
+          "request_id": "chatcmpl-1247d138-e8eb-9f17-abd4-fee00b3e9e9f"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 84.70912,
+          "prompt_tokens": 14833,
+          "completion_tokens": 5194,
+          "total_tokens": 20027,
+          "request_id": "chatcmpl-5b38c0fb-9eae-9cfe-ba13-580133ff4237"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 94.64032,
+          "prompt_tokens": 14833,
+          "completion_tokens": 5849,
+          "total_tokens": 20682,
+          "request_id": "chatcmpl-da865e1d-2c6b-9f75-af41-4bf305aaa1c1"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 117.836825,
+          "prompt_tokens": 14833,
+          "completion_tokens": 7038,
+          "total_tokens": 21871,
+          "request_id": "chatcmpl-0d06cce6-fccd-993e-912e-8a7cbc84b952"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 84.70912,
+            "prompt_tokens": 14833,
+            "completion_tokens": 5194,
+            "total_tokens": 20027,
+            "request_id": "chatcmpl-5b38c0fb-9eae-9cfe-ba13-580133ff4237"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 94.64032,
+            "prompt_tokens": 14833,
+            "completion_tokens": 5849,
+            "total_tokens": 20682,
+            "request_id": "chatcmpl-da865e1d-2c6b-9f75-af41-4bf305aaa1c1"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 117.836825,
+            "prompt_tokens": 14833,
+            "completion_tokens": 7038,
+            "total_tokens": 21871,
+            "request_id": "chatcmpl-0d06cce6-fccd-993e-912e-8a7cbc84b952"
+          }
+        ]
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 3,
+    "answers_with_transcription": 3,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 15,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "四、解答题：本题共 5 小题，共 77 分.解答应写出文字说明、证明过程或演算步骤.",
+      "question_markdown": "15. （本小题满分 13 分）已知集合 $A=\\{1,3,a^2\\}$，$B=\\{1,a+2\\}$.\n(1) 若 $A\\cap B=\\{1,4\\}$，求集合 $A\\cup B$；\n(2) 设 $U=A$，若 $\\complement_U B=\\{3\\}$，求实数 $a$ 的值.",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "applied_solution_edit_1_insert_missing"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "解：\n(1) 由题意得：\n$a^2=4$ ① $a=-2$ 不成立\n ② $a=2$ $A\\cap B=\\{1,4\\}$\n$\\therefore A\\cup B=\\{1,3,4\\}$\n(2) 由题意得：\n$a^2=a+2$\n解得：$a_1=2,a_2=-1$\n当 $a=-1,a^2=1$\n$\\therefore a_2=-1$ 舍去.\n综上，$a=2$.",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Visible circled enumerators ① and ② in handwriting",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 16,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "16. （本小题满分 15 分）已知集合 $A=\\{x\\mid a-1\\le x\\le 3-2a\\}$，$B=\\{x\\mid -2<x<4\\}$\n(1) 若 $A\\cap B=A$，求实数 $a$ 的取值范围；\n(2) 设命题 $p:x\\in A$，命题 $q:x\\in B$，若 $p$ 是 $q$ 成立的必要不充分条件，求实数 $a$ 的取值范围.",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "applied_solution_edit_1_insert_missing"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "解：\n(1) $A\\cap B=A \\Rightarrow A\\subseteq B$\n  $A=\\varnothing$ 即 $a-1>3-2a$\n此时 $a>\\frac{4}{3}$\n② $A\\neq\\varnothing$ $a\\le\\frac{4}{3}$\n令 $\\begin{cases} a-1>-2 \\\\ 3-2a<4 \\end{cases}$ 得：$-\\frac{1}{2}<a\\le\\frac{4}{3}$\n综上，$a\\in(-\\frac{1}{2},+\\infty)$\n(2) 由题意得：$B\\subsetneq A$\n令 $\\begin{cases} a-1\\le-2 \\\\ 3-2a\\ge 4 \\end{cases}$ 得：$a\\le-1$\n$\\therefore a\\in(-\\infty,-1]$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Visible circled enumerators ① and ② in handwriting",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 17,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "17. （本小题满分 15 分）已知 $a>0$，$b>0$，且 $2a+b=1$.\n(1) 求 $ab$ 的最大值；\n(2) 求 $\\frac{1}{a}+\\frac{2}{b}$ 的最小值；\n(3) 求 $\\frac{b^2+2a+1}{2ab}$ 的最小值.",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "解：\n(1) $ab=\\frac{1}{2}\\cdot 2ab\\le\\frac{1}{2}\\cdot(\\frac{2a+b}{2})^2$\n$\\because 2a+b=1$\n$\\therefore \\frac{1}{2}\\cdot(\\frac{2a+b}{2})^2=\\frac{1}{8}$\n$\\therefore ab\\le\\frac{1}{8}$，当且仅当 $2a=b$\n即 $\\begin{cases} a=\\frac{1}{4} \\\\ b=\\frac{1}{2} \\end{cases}$ 时，等号成立.\n(2) $\\frac{1}{a}+\\frac{2}{b}=(\\frac{1}{a}+\\frac{2}{b})(2a+b)=4+\\frac{b}{a}+\\frac{4a}{b}$\n$\\frac{b}{a}+\\frac{4a}{b}\\ge 2\\sqrt{\\frac{b}{a}\\cdot\\frac{4a}{b}}=4$\n$\\therefore \\frac{1}{a}+\\frac{2}{b}=4+\\frac{b}{a}+\\frac{4a}{b}\\ge 8$，当且仅当 $\\frac{b}{a}=\\frac{4a}{b}$，即 $\\begin{cases} a=\\frac{1}{4} \\\\ b=\\frac{1}{2} \\end{cases}$\n时，等号成立.\n(3) $\\because 2a+b=1$\n$\\therefore a=\\frac{1-b}{2}$\n$\\therefore \\frac{b^2+2a+1}{2ab}=\\frac{b^2+1-b+1}{(1-b)b}=-\\frac{b^2-b+2}{b^2-b}=-1-\\frac{2}{b^2-b}$\n$\\because b^2-b\\ge-\\frac{1}{4}$\n$\\therefore \\frac{1}{b^2-b}\\le-4$\n$\\therefore -\\frac{2}{b^2-b}\\ge 8$ 当且仅当 $\\begin{cases} b=\\frac{1}{2} \\\\ a=\\frac{1}{4} \\end{cases}$ 时，\n$\\therefore \\frac{b^2+2a+1}{2ab}=-1-\\frac{2}{b^2-b}\\ge 7$ 等号成立.",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Draft matches visible handwriting accurately",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/image/page14.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/preprocessed/page14.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/api_markdown/page14.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/api_markdown/page14.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/code_outputs/match/viz/page14_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/agent_outputs/result.json",
+    "api2_results": [
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/agent_outputs/api2_runs/run_01/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/agent_outputs/api2_runs/run_02/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/agent_outputs/api2_runs/run_03/result.json"
+    ],
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page14/code_outputs/match/viz/page14_handwriting_overlay.png"
+  }
+}

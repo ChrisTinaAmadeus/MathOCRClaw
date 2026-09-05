@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "page": "page24",
+  "api2_run": 1,
+  "questions": [
+    {
+      "qno": 17,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "17. (本小题满分 15 分)\n如图，在三棱柱 $ABC-A_1B_1C_1$ 中，$CC_1 \\perp$ 平面 $ABC$，$AC=BC=CC_1=2$，$\\angle ACB=90^\\circ$，$D, E, M$ 分别是 $A_1B_1, CC_1, A_1B$ 的中点。\n(1) 求证：$C_1D // $ 平面 $A_1BE$；\n(2) 求平面 $ABC$ 与平面 $A_1BE$ 所成角的余弦值。\n<插图>",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 1,
+        "symbol_audit_observed_count": 1,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 1,
+        "figure_audit_observed_count": 1,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C001-01",
+            "marker_index": 1,
+            "source_type": "mixed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "high",
+            "context_id": "C001",
+            "printed_anchors": [
+              "typeset labels A, B, C, A₁, B₁, C₁, D, E, M",
+              "printed caption (第 17 题图)",
+              "uniform thin line work for prism edges and dashed hidden edges"
+            ],
+            "handwriting_features": [
+              "handwritten axis labels z, y, x near vertices",
+              "handwritten x mark near lower-left"
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "Printed triangular prism skeleton with typeset vertex labels and printed caption; student added handwritten coordinate axis labels (z, y, x) and an x mark as annotations on the printed figure.",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          }
+        ],
+        "lint_actions": [
+          "recorded_figure_observation_FIG-C001-01_mixed_figure",
+          "accepted_symbol_observation_1",
+          "discarded_1_model_authored_symbol_edits",
+          "materialized_1_symbol_audit_edits",
+          "applied_solution_edit_1_ocr_correction"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page24/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) $C_1D \\parallel EM$\n(2) 以 $C$ 为原点，$CA, CB, CC_1$ 分别为 $x, y, z$ 轴建立空间直角坐标系\n$A(2,0,0) \\quad B(0,2,0) \\quad C(0,0,0) \\quad A_1(2,0,2) \\quad E(0,0,1)$\n$\\overrightarrow{AB}=(-2,2,0) \\quad \\overrightarrow{CB}=(0,2,0) \\quad \\overrightarrow{EM}=(1,2,1) \\quad \\overrightarrow{A_1B}=(-2,2,-2)$\n设平面 $ABC$ 的一个法向量为 $\\vec{n_1}$\n$\\begin{cases} \\overrightarrow{AB} \\cdot \\vec{n} = 0 \\\\ \\overrightarrow{CB} \\cdot \\vec{n} = 0 \\end{cases}$\n取 $x=0, z=0, y=-4 \\implies \\vec{n_1}=(0,0,-4)$\n同理得 $\\vec{n_2}=(-1,1,2)$\n$\\cos \\langle \\vec{n_1}, \\vec{n_2} \\rangle = \\frac{|\\vec{n_1} \\cdot \\vec{n_2}|}{|\\vec{n_1}| |\\vec{n_2}|} = \\frac{8}{\\sqrt{16} \\cdot \\sqrt{6}} = \\frac{8}{4\\sqrt{6}} = \\frac{2}{\\sqrt{6}} = \\frac{2\\sqrt{6}}{6} = \\frac{\\sqrt{6}}{3}$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "answer_ink crop clearly shows the handwritten relation mark as two parallel diagonal strokes without an underline, confirming \\parallel rather than \\mathrel{\\underline{\\parallel}} or =.",
+        "symbol_observations": [
+          {
+            "audit_id": "G001",
+            "tag": "GEOMETRY_MARK",
+            "location": "right side of C001 answer region, handwritten relation between C₁D and EM",
+            "candidates": [
+              "\\parallel",
+              "\\mathrel{\\underline{\\parallel}}",
+              "="
+            ],
+            "selected": "\\parallel",
+            "observed_features": "Two parallel diagonal strokes visible in handwriting; no independent underline stroke beneath the parallel pair; strokes are oriented diagonally (not horizontal like =); matches \\parallel candidate.",
+            "context_id": "C001",
+            "reference_context_ids": []
+          }
+        ],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page24/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 18,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "18. (本小题满分 17 分)\n已知函数 $g(x)=2^x$，且函数 $f(x)$ 与 $g(x)$ 的图象关于直线 $y=x$ 对称。\n(1) 求函数 $f(x)$ 的解析式；\n(2) 若 $f(m^2+m)<1$ 成立，求实数 $m$ 的取值范围；\n(3) 若 $0<a<b$ 且 $f(a)=-f(b)$，求 $f(a+b)$ 的取值范围。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page24/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) $f(x)=\\log_2 x$\n(2) $f(m^2+m) < f(2)$ (注：此处学生笔迹似写 $f(1)$ 或 $f(2)$，根据 $1=2^0$ 应为 $f(1)=0$，根据 $2^1=2$ 应为 $f(2)=1$，学生后续写 $m^2+m<2$，故应为 $f(2)$)\n$\\because f(x)$ 在 $(0, +\\infty)$ 上 $\\uparrow$\n$\\therefore m^2+m < 2$ 且 $m^2+m > 0 \\implies \\begin{cases} -2 < m < 1 \\\\ m > 0 \\text{ 或 } m < -1 \\end{cases}$\n$\\therefore m$ 范围 $(-2, -1) \\cup (0, 1)$\n(3) $\\because f(a)=-f(b) \\implies \\log_2 a = -\\log_2 b$\n$\\therefore \\log_2 a = \\log_2 \\frac{1}{b} \\implies ab=1 \\quad a=\\frac{1}{b} \\implies ab=1$\n$\\because 0 < a < b$\n$\\therefore a+b > 2\\sqrt{ab} = 2$\n$\\therefore f(a+b) = \\log_2(a+b) > \\log_2 2 = 1$\n$\\therefore f(a+b)$ 范围为 $(1, +\\infty)$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "No symbol audit targets; student answer transcription matches visible handwriting in C002 context and answer_ink crops.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page24/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 19,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "19. (本小题满分 17 分)\n已知函数 $f(x)=a \\cdot 2^x - 2^{-x}$ 是定义在 $\\mathbf{R}$ 上的奇函数。\n(1) 求实数 $a$ 的值，并证明 $f(x)$ 在 $\\mathbf{R}$ 上单调递增；\n(2) 求不等式 $f(3x^2-5x)+f(x-4)>0$ 的解集；\n(3) 若 $g(x)=4^x+4^{-x}-2mf(x)$ 在区间 $[-1, +\\infty)$ 上的最小值为 -2，求实数 $m$ 的值。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page24/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) $\\because f(x)=a \\cdot 2^x - 2^{-x}$ 是定义在 $\\mathbf{R}$ 上的奇函数 $\\therefore f(0)=0$\n即 $a \\cdot 2^0 - 2^0 = 0 \\implies a=1$\n$\\therefore f(x)=2^x - 2^{-x}$\n[定义法] 任取 $x_1 < x_2 \\in \\mathbf{R}$，\n$f(x_1) - f(x_2) = (2^{x_1} - \\frac{1}{2^{x_1}}) - (2^{x_2} - \\frac{1}{2^{x_2}})$\n$= (2^{x_1} - 2^{x_2}) + (\\frac{1}{2^{x_2}} - \\frac{1}{2^{x_1}})$\n$= (2^{x_1} - 2^{x_2}) + \\frac{2^{x_1} - 2^{x_2}}{2^{x_1} 2^{x_2}}$\n$= (2^{x_1} - 2^{x_2})(1 + \\frac{1}{2^{x_1+x_2}})$\n$\\because x_1 < x_2 \\implies 2^{x_1} < 2^{x_2} \\implies 2^{x_1} - 2^{x_2} < 0, 1 + \\frac{1}{2^{x_1+x_2}} > 0$\n$\\therefore f(x_1) - f(x_2) < 0 \\implies f(x_1) < f(x_2)$\n$\\therefore f(x)$ 在 $\\mathbf{R}$ 上 $\\uparrow$\n(2) $\\because f(x)$ 为奇函数 $\\therefore f(x-4) = -f(4-x)$\n$\\therefore f(3x^2-5x) + f(x-4) > 0$ 可化为 $f(3x^2-5x) > f(4-x)$\n$f(x)$ 在 $\\mathbf{R}$ 上 $\\uparrow$\n$\\therefore 3x^2-5x > 4-x \\implies 3x^2-4x-4 > 0$\n$x < -\\frac{2}{3}$ 或 $x > 2$\n(3) $g(x) = 4^x + 4^{-x} - 2m(2^x - 2^{-x})$\n$g(x) = (2^x)^2 + (2^{-x})^2 - 2m(2^x - 2^{-x}) + 2$\n即 $g(x) = (2^x - 2^{-x})^2 - 2m(2^x - 2^{-x}) + 2$\n设 $t = 2^x - 2^{-x}$，由 $x \\ge -1$ 则 $t \\ge -\\frac{3}{2}$\n$\\therefore y = t^2 - 2mt + 2$ 在 $[-\\frac{3}{2}, +\\infty)$ 上最小值为 -2\n对称轴 $t=m$\n① $m < -\\frac{3}{2}$ 时，$(-\\frac{3}{2})^2 - 2m(-\\frac{3}{2}) + 2 = -2 \\implies m = -\\frac{25}{12}$\n② $m \\ge -\\frac{3}{2}$ 时，$m^2 - 2m^2 + 2 = -2 \\implies m=2, m=-2$ (舍)\n$\\therefore m = -\\frac{25}{12}$ 或 $m=2$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "No symbol audit targets; student answer transcription matches visible handwriting in C003 context and answer_detail crops.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page24/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.7-plus",
+      "attempt": 1,
+      "elapsed_s": 62.184688,
+      "prompt_tokens": 15474,
+      "completion_tokens": 3795,
+      "total_tokens": 19269,
+      "request_id": "chatcmpl-e60894d3-a2e4-9d92-83de-fdb8ef8dbea5"
+    }
+  ]
+}

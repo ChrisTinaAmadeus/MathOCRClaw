@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "page": "page29",
+  "api2_run": 1,
+  "questions": [
+    {
+      "qno": 18,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "18. (17分) 已知关于 $x$ 的不等式 $(ax-1)(x+1)>0$。\n(1) 若此不等式的解集为 $\\left\\{x\\mid -1<x<-\\frac{1}{2}\\right\\}$，求实数 $a$ 的值；\n(2) 若 $a\\in\\mathbb{R}$，解这个关于 $x$ 的不等式；\n(3) 已知 $y_1=4x_1^2+3$，$y_2=ax_2+5-a$ $(a>0)$，若对任意的 $x_1\\in\\{x\\mid 1\\le x\\le 2\\}$，总存在 $x_2\\in\\{x\\mid -1\\le x\\le 2\\}$，使得 $y_1=y_2$ 成立，求实数 $a$ 的取值范围。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page29/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "解 1) 由题意 $-1$，$-\\frac{1}{2}$ 为方程的两根\n可得 $\\frac{1}{a}=-\\frac{1}{2}$，即 $a=-2$。\n2) 当 $a=0$ 时，$-x-1>0$，$x<-1$。\n当 $a>0$ 时，$\\left\\{x\\mid x>\\frac{1}{a}\\text{ 或 }x<-1\\right\\}$。\n当 $a<0$ 时，① $a=-1$，$\\varnothing$\n② $a<-1$，$\\frac{1}{a}>-1$，$\\{x\\mid -1<x<\\frac{1}{a}\\}$\n③ $-1<a<0$，$\\frac{1}{a}<-1$，$\\{x\\mid \\frac{1}{a}<x<-1\\}$。\n3) 当 $x_1\\in\\{x\\mid 1\\le x\\le 2\\}$ 时，则 $y_1\\in[7,19]$。\n$\\because y_1=y_2$\n$\\therefore y_{2\\max}=19$，$y_{2\\min}=7$。\n$\\because x_2\\in\\{x\\mid -1\\le x\\le 2\\}$。\n$\\therefore y_{2\\max}=2a+5-a$\n$=a+5$。\n$y_{2\\min}=-a+5-a$\n$=-2a+5$。\n$\\therefore \\begin{cases} a+5\\geq 19, & a\\geq 14\\\\ -2a+5\\leq 7, & a\\geq -1 \\end{cases}$\n综上，$a$ 的取值范围为 $\\{a\\mid a\\geq 14\\}$。",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Black retained solution in C001 matches the draft line by line: '解 1) 由题意 -1, -1/2 为方程的两根', '可得 1/a=-1/2, 即 a=-2', 2) cases a=0, a>0, a<0 with ① ∅ ② ③ set lines, and part 3 lines through '∴ {a+5≥19, a≥14; -2a+5≤7, a≥-1}' and '综上, a 的取值范围为 {a|a≥14}'; the struck-out token before 'x<-1' is cancelled and correctly omitted; red duplicate column, red '答案⇒' margin mark, circled 19, and top-right scratch strokes are annotations, not retained black solution text.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page29/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "Red-ink right column re-derives part (3) ending in [14,+∞) and a red bottom note 'REASON: 马虎算错数 4×4≠6!!!' are not in the draft; ink ownership (student vs grader) unresolved. Subscript in black line 'y_{2min}=-a+5-a' appears as a plain vertical stroke (1 vs 2) at full-page resolution; draft kept.",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.8-max",
+      "attempt": 1,
+      "elapsed_s": 184.523306,
+      "prompt_tokens": 8988,
+      "completion_tokens": 10219,
+      "total_tokens": 19207,
+      "request_id": "chatcmpl-4b8138f4-2192-9e8d-bada-a6e2812a8159"
+    }
+  ]
+}

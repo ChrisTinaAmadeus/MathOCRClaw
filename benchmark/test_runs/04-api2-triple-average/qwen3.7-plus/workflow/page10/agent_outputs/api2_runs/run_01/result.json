@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "page": "page10",
+  "api2_run": 1,
+  "questions": [
+    {
+      "qno": 16,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "16. [无法识别]",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "restored_unreadable_stem_sentinel",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page10/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) $m=2, B=\\{x|1\\le x\\le 5, m\\in \\mathbb{R}\\}$ $C_R B=\\{x|x<1 \\text{或} x>5\\}$\n$A=\\{x|x^2-x\\le 0\\} = \\{x|0\\le x\\le 1\\}$ $C_R A=\\{x|x<0 \\text{或} x>1\\}$\n$(C_R A)\\cap (C_R B)=\\{x|x<0 \\text{或} x>5\\}$\n\n(2) $x\\in A$ 是 $x\\in B$ 的充分不必要条件\n$A \\subsetneq B$\n$\\begin{cases} m-1 \\le 2m+1 \\\\ m-1 < 0 \\\\ 2m+1 > 1 \\end{cases}$ 解得 $\\begin{cases} m \\ge -2 \\\\ m < 1 \\\\ m > 0 \\end{cases}$\n综上所述，$0<m<1$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page10/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 17,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "17. [无法识别]",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "restored_unreadable_stem_sentinel",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page10/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) $S=5X+30C+30\\times 6+30$\n$=5X+30C+210$\n$=5X+30\\frac{k}{5X+5}+210$\n$=5X+\\frac{6k}{X+1}+210$\n\n(2) $S=5X+\\frac{6k}{x+1}+210$\n$=5X+5+\\frac{6k}{x+1}+210-5$\n$=5(x+1)+\\frac{6k}{x+1}+205$\n$5(x+1)+\\frac{6k}{x+1} \\ge 2\\sqrt{5(x+1)\\cdot \\frac{6k}{x+1}} = 2\\sqrt{30k}$\n$S \\ge 2\\sqrt{30}k+205$\n当且仅当 $5(x+1)=\\frac{6k}{x+1}$，即 $x_1=\\frac{\\sqrt{30k}+5}{5}$ (舍), $x_2=\\frac{\\sqrt{30k}-5}{5}$。\n$S$ 取“=” 其最小值为 $2\\sqrt{30}k+205$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page10/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.7-plus",
+      "attempt": 1,
+      "elapsed_s": 58.204334,
+      "prompt_tokens": 6553,
+      "completion_tokens": 3298,
+      "total_tokens": 9851,
+      "request_id": "chatcmpl-ebcaa529-8814-9c00-b595-d283c5e97d17"
+    }
+  ]
+}

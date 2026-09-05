@@ -1,0 +1,215 @@
+{
+  "page": "page10",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page10/image/page10.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page10.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page10/preprocessed/page10.png",
+  "api_strategy": {
+    "call_count": 4,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "question-conditioned symbol, figure, and atomic patch review",
+    "api2_run_count": 3,
+    "local_merge": "deterministic validation against the first-pass draft"
+  },
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 22667,
+    "completion_tokens": 23301,
+    "total_tokens": 45968,
+    "latency_s": 399.173312,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 116.36878,
+          "prompt_tokens": 2933,
+          "completion_tokens": 6842,
+          "total_tokens": 9775,
+          "request_id": "chatcmpl-5ab12eff-49a2-91ae-883b-8e3b45450b96"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 82.029404,
+          "prompt_tokens": 6578,
+          "completion_tokens": 4698,
+          "total_tokens": 11276,
+          "request_id": "chatcmpl-3ca3cc4d-4e0e-9d8d-bbf0-69ccc72548da"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 104.30018,
+          "prompt_tokens": 6578,
+          "completion_tokens": 6101,
+          "total_tokens": 12679,
+          "request_id": "chatcmpl-75ac86d3-f9d3-9560-9bf1-ce5e669c9508"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 96.474948,
+          "prompt_tokens": 6578,
+          "completion_tokens": 5660,
+          "total_tokens": 12238,
+          "request_id": "chatcmpl-dc5d5af3-a3c6-94f9-9722-3f25e4a0e356"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 82.029404,
+            "prompt_tokens": 6578,
+            "completion_tokens": 4698,
+            "total_tokens": 11276,
+            "request_id": "chatcmpl-3ca3cc4d-4e0e-9d8d-bbf0-69ccc72548da"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 104.30018,
+            "prompt_tokens": 6578,
+            "completion_tokens": 6101,
+            "total_tokens": 12679,
+            "request_id": "chatcmpl-75ac86d3-f9d3-9560-9bf1-ce5e669c9508"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 96.474948,
+            "prompt_tokens": 6578,
+            "completion_tokens": 5660,
+            "total_tokens": 12238,
+            "request_id": "chatcmpl-dc5d5af3-a3c6-94f9-9722-3f25e4a0e356"
+          }
+        ]
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 2,
+    "answers_with_transcription": 2,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 16,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "16. [无法识别]",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "restored_unreadable_stem_sentinel",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page10/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) $m=2$，$B=\\{x\\mid 1\\le x\\le 5,\\ m\\in \\mathbb{R}\\}$，$\\complement_R B=\\{x\\mid x<1\\ \\text{或}\\ x>5\\}$\n$A=\\{x\\mid x^2-x\\le 0\\}=\\{x\\mid 0\\le x\\le 1\\}$，$\\complement_R A=\\{x\\mid x<0\\ \\text{或}\\ x>1\\}$\n$(\\complement_R A)\\cap(\\complement_R B)=\\{x\\mid x<0\\ \\text{或}\\ x>5\\}$\n\n(2) $x\\in A$ 是 $x\\in B$ 的充分不必要条件\n$A\\subsetneq B$\n$\\begin{cases} m-1\\le 2m+1 \\\\ m-1<0 \\\\ 2m+1>1 \\end{cases}$ 解得 $\\begin{cases} m\\ge -2 \\\\ m<1 \\\\ m>0 \\end{cases}$\n综上所述，$0<m<1$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Full page shows the handwritten solution under printed number 16: (1) m=2, B={x|1≤x≤5, m∈R}, ∁RB={x|x<1 or x>5}, A={x|x²…x≤0}={x|0≤x≤1}, ∁RA={x|x<0 or x>1}, (∁RA)∩(∁RB)={x|x<0 or x>5}; (2) 'x∈A 是 x∈B 的充分不必要条件', A⊊B, two case systems {m-1≤2m+1, m-1<0, 2m+1>1} 解得 {m≥-2, m<1, m>0}, 综上所述 0<m<1. All retained steps match the draft; the small ink blot between x² and x≤0 is a crossed-out blob and does not visibly contradict the retained '-x≤0' reading, so no edit is justified.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page10/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 17,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "17. [无法识别]",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "restored_unreadable_stem_sentinel",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page10/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) $S=5x+30C+30\\times 6+30$\n$=5x+30C+210$\n$=5x+30\\cdot\\frac{k}{5x+5}+210$\n$=5x+\\frac{6k}{x+1}+210$\n\n(2) $S=5x+\\frac{6k}{x+1}+210$\n$=5x+5+\\frac{6k}{x+1}+210-5$\n$=5(x+1)+\\frac{6k}{x+1}+205$\n$5(x+1)+\\frac{6k}{x+1}\\ge 2\\sqrt{5(x+1)\\cdot\\frac{6k}{x+1}}=2\\sqrt{30k}$\n$S\\ge 2\\sqrt{30k}+205$\n当且仅当 $5(x+1)=\\frac{6k}{x+1}$，即 $x_1=-\\frac{\\sqrt{30k}+5}{5}$（舍），$x_2=\\frac{\\sqrt{30k}-5}{5}$，\n$S$ 取“$=$”，其最小值为 $2\\sqrt{30k}+205$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Full page shows the handwritten solution under printed number 17: (1) S=5x+30C+30×6+30 = 5x+30C+210 = 5x+30·k/(5x+5)+210 = 5x+6k/(x+1)+210; (2) S=5x+6k/(x+1)+210 = 5x+5+6k/(x+1)+210-5 = 5(x+1)+6k/(x+1)+205, then 5(x+1)+6k/(x+1) ≥ 2√(5(x+1)·6k/(x+1)) = 2√(30k), S ≥ 2√(30k)+205, 当且仅当 5(x+1)=6k/(x+1), 即 x₁=-(√(30k)+5)/5 (舍), x₂=(√(30k)-5)/5, S 取 '=' 其最小值为 2√(30k)+205. Fraction bars span visible numerators/denominators, radical overlines cover 30k, and the struck mark before the final 'S 取' line is cancelled content only; all retained steps match the draft.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page10/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page10/image/page10.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page10/preprocessed/page10.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page10/api_markdown/page10.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page10/api_markdown/page10.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page10/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page10/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page10/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page10/code_outputs/match/viz/page10_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page10/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page10/agent_outputs/result.json",
+    "api2_results": [
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page10/agent_outputs/api2_runs/run_01/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page10/agent_outputs/api2_runs/run_02/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page10/agent_outputs/api2_runs/run_03/result.json"
+    ],
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page10/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page10/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page10/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page10/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page10/code_outputs/match/viz/page10_handwriting_overlay.png"
+  }
+}

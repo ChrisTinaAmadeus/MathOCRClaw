@@ -1,0 +1,409 @@
+{
+  "page": "page13",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page13/image/page13.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page13.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page13/preprocessed/page13.png",
+  "api_strategy": {
+    "call_count": 4,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "question-conditioned symbol, figure, and atomic patch review",
+    "api2_run_count": 3,
+    "local_merge": "deterministic validation against the first-pass draft"
+  },
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 63637,
+    "completion_tokens": 49704,
+    "total_tokens": 113341,
+    "latency_s": 798.849841,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 136.417185,
+          "prompt_tokens": 3373,
+          "completion_tokens": 8243,
+          "total_tokens": 11616,
+          "request_id": "chatcmpl-5f4a8291-0491-9e72-b470-0e06966bba26"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 220.687145,
+          "prompt_tokens": 20088,
+          "completion_tokens": 13727,
+          "total_tokens": 33815,
+          "request_id": "chatcmpl-b292ac40-43ae-9aea-88e0-cd2679d2c26f"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 215.563741,
+          "prompt_tokens": 20088,
+          "completion_tokens": 13563,
+          "total_tokens": 33651,
+          "request_id": "chatcmpl-f490d779-147e-9eb3-8f1c-6c7676aa636d"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 226.18177,
+          "prompt_tokens": 20088,
+          "completion_tokens": 14171,
+          "total_tokens": 34259,
+          "request_id": "chatcmpl-ce134bb7-bce3-9891-ad42-6c27b7892d15"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 220.687145,
+            "prompt_tokens": 20088,
+            "completion_tokens": 13727,
+            "total_tokens": 33815,
+            "request_id": "chatcmpl-b292ac40-43ae-9aea-88e0-cd2679d2c26f"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 215.563741,
+            "prompt_tokens": 20088,
+            "completion_tokens": 13563,
+            "total_tokens": 33651,
+            "request_id": "chatcmpl-f490d779-147e-9eb3-8f1c-6c7676aa636d"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 226.18177,
+            "prompt_tokens": 20088,
+            "completion_tokens": 14171,
+            "total_tokens": 34259,
+            "request_id": "chatcmpl-ce134bb7-bce3-9891-ad42-6c27b7892d15"
+          }
+        ]
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 2,
+    "answers_with_transcription": 2,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 17,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "17. (15分)",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 10,
+        "symbol_audit_observed_count": 10,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "accepted_symbol_observation_1",
+          "accepted_symbol_observation_2",
+          "accepted_symbol_observation_3",
+          "accepted_symbol_observation_4",
+          "accepted_symbol_observation_5",
+          "accepted_symbol_observation_6",
+          "accepted_symbol_observation_7",
+          "accepted_symbol_observation_8",
+          "accepted_symbol_observation_9",
+          "accepted_symbol_observation_10",
+          "discarded_10_model_authored_symbol_edits",
+          "materialized_10_symbol_audit_edits",
+          "applied_solution_edit_1_ocr_correction",
+          "applied_solution_edit_2_ocr_correction",
+          "applied_solution_edit_3_ocr_correction",
+          "applied_solution_edit_4_ocr_correction",
+          "applied_solution_edit_5_ocr_correction",
+          "applied_solution_edit_6_ocr_correction",
+          "applied_solution_edit_7_ocr_correction",
+          "applied_solution_edit_8_ocr_correction",
+          "applied_solution_edit_9_ocr_correction",
+          "applied_solution_edit_10_ocr_correction"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page13/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 证明：$\\because$ 在 $\\triangle FAD$ 中，$G, H$ 分别为 $AF, FD$ 的中点。\n$\\therefore GH \\underline{\\mathrel{\\underline{\\parallel}}} \\frac{1}{2} AD$\n$\\because BC \\parallel AD, BC = \\frac{1}{2} AD$\n$\\therefore GH \\underline{\\mathrel{\\underline{\\parallel}}} BC$\n四边形 $BCHG$ 是平行四边形。\n答：是\n$\\because G$ 是 $AF$ 中点，$BE \\parallel AF$\n$\\therefore BE \\parallel GF, GF = \\frac{1}{2} AF = BE$\n$\\therefore$ 四边形 $BEFG$ 为平行四边形\n$\\therefore EF \\underline{\\mathrel{\\underline{\\parallel}}} BG$\n又 $\\because$ 由 (1) 得 $BG \\underline{\\mathrel{\\underline{\\parallel}}} CH$\n$\\therefore EF \\underline{\\mathrel{\\underline{\\parallel}}} CH$\n$\\therefore$ 四边形 $ECHF$ 为平行四边形\n$\\therefore EC \\parallel FH$\n$\\because H$ 为 $FD$ 中点\n$\\therefore EC \\parallel FD$\n$\\therefore EC, FD$ 在同一平面上，即 $C, D, F, E$ 共面。",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Visual inspection of handwriting in C001 confirms parallel symbols and parallel-and-equal symbols.",
+        "symbol_observations": [
+          {
+            "audit_id": "G001",
+            "tag": "GEOMETRY_MARK",
+            "location": "Line 2 of proof in C001",
+            "candidates": [
+              "\\parallel",
+              "\\mathrel{\\underline{\\parallel}}",
+              "="
+            ],
+            "selected": "\\mathrel{\\underline{\\parallel}}",
+            "observed_features": "Parallel strokes with visible underlines indicating parallel and equal relationship.",
+            "context_id": "C001",
+            "reference_context_ids": []
+          },
+          {
+            "audit_id": "G002",
+            "tag": "GEOMETRY_MARK",
+            "location": "Line 3 of proof in C001",
+            "candidates": [
+              "\\parallel",
+              "\\mathrel{\\underline{\\parallel}}",
+              "="
+            ],
+            "selected": "\\parallel",
+            "observed_features": "Two diagonal parallel strokes written as //, standardizing to \\parallel.",
+            "context_id": "C001",
+            "reference_context_ids": []
+          },
+          {
+            "audit_id": "G003",
+            "tag": "GEOMETRY_MARK",
+            "location": "Line 4 of proof in C001",
+            "candidates": [
+              "\\parallel",
+              "\\mathrel{\\underline{\\parallel}}",
+              "="
+            ],
+            "selected": "\\mathrel{\\underline{\\parallel}}",
+            "observed_features": "Parallel strokes with underlines.",
+            "context_id": "C001",
+            "reference_context_ids": []
+          },
+          {
+            "audit_id": "G004",
+            "tag": "GEOMETRY_MARK",
+            "location": "Line 6 of proof in C001",
+            "candidates": [
+              "\\parallel",
+              "\\mathrel{\\underline{\\parallel}}",
+              "="
+            ],
+            "selected": "\\parallel",
+            "observed_features": "Two diagonal parallel strokes written as //.",
+            "context_id": "C001",
+            "reference_context_ids": []
+          },
+          {
+            "audit_id": "G005",
+            "tag": "GEOMETRY_MARK",
+            "location": "Line 7 of proof in C001",
+            "candidates": [
+              "\\parallel",
+              "\\mathrel{\\underline{\\parallel}}",
+              "="
+            ],
+            "selected": "\\parallel",
+            "observed_features": "Two diagonal parallel strokes written as //.",
+            "context_id": "C001",
+            "reference_context_ids": []
+          },
+          {
+            "audit_id": "G006",
+            "tag": "GEOMETRY_MARK",
+            "location": "Line 9 of proof in C001",
+            "candidates": [
+              "\\parallel",
+              "\\mathrel{\\underline{\\parallel}}",
+              "="
+            ],
+            "selected": "\\mathrel{\\underline{\\parallel}}",
+            "observed_features": "Parallel strokes with underlines.",
+            "context_id": "C001",
+            "reference_context_ids": []
+          },
+          {
+            "audit_id": "G007",
+            "tag": "GEOMETRY_MARK",
+            "location": "Line 10 of proof in C001",
+            "candidates": [
+              "\\parallel",
+              "\\mathrel{\\underline{\\parallel}}",
+              "="
+            ],
+            "selected": "\\mathrel{\\underline{\\parallel}}",
+            "observed_features": "Parallel strokes with underlines.",
+            "context_id": "C001",
+            "reference_context_ids": []
+          },
+          {
+            "audit_id": "G008",
+            "tag": "GEOMETRY_MARK",
+            "location": "Line 11 of proof in C001",
+            "candidates": [
+              "\\parallel",
+              "\\mathrel{\\underline{\\parallel}}",
+              "="
+            ],
+            "selected": "\\mathrel{\\underline{\\parallel}}",
+            "observed_features": "Parallel strokes with underlines.",
+            "context_id": "C001",
+            "reference_context_ids": []
+          },
+          {
+            "audit_id": "G009",
+            "tag": "GEOMETRY_MARK",
+            "location": "Line 13 of proof in C001",
+            "candidates": [
+              "\\parallel",
+              "\\mathrel{\\underline{\\parallel}}",
+              "="
+            ],
+            "selected": "\\parallel",
+            "observed_features": "Two diagonal parallel strokes written as //.",
+            "context_id": "C001",
+            "reference_context_ids": []
+          },
+          {
+            "audit_id": "G010",
+            "tag": "GEOMETRY_MARK",
+            "location": "Line 15 of proof in C001",
+            "candidates": [
+              "\\parallel",
+              "\\mathrel{\\underline{\\parallel}}",
+              "="
+            ],
+            "selected": "\\parallel",
+            "observed_features": "Two diagonal parallel strokes written as //.",
+            "context_id": "C001",
+            "reference_context_ids": []
+          }
+        ],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page13/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 18,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "18. (17分)",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 2,
+        "symbol_audit_observed_count": 2,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "accepted_symbol_observation_1",
+          "accepted_symbol_observation_2",
+          "discarded_2_model_authored_symbol_edits",
+          "materialized_2_symbol_audit_edits",
+          "applied_solution_edit_1_ocr_correction",
+          "applied_solution_edit_2_ocr_correction"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page13/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 证明：$\\because$ 在正方形 $ADEF$ 中，\n$\\therefore ED \\perp AD$\n又 $\\because DE \\perp CD$\n$CD \\cap AD = D$\n$CD, AD \\subset$ 面 $ABCD$\n$\\therefore DE \\perp$ 面 $ABCD$\n$\\because DE \\subset$ 面 $ADEF$\n$\\therefore$ 面 $ADEF \\perp$ 面 $ABCD$\n\n(2) 解：根据题意得 $AD=AF=EF=4, CD=2$。\n$\\because AF \\perp AD, AD =$ 面 $ADEF \\cap$ 面 $ABCD$\n$AF \\subset$ 面 $ADEF$\n$\\therefore AF \\perp$ 面 $ADCB$\n$\\therefore AF \\perp AB$\n\n(3) 解：$\\because BF$ 与面 $ABCD$ 所成角为 $45^\\circ$\n$CG \\parallel BF$ 与面 $ABCD$ 所成角也为 $45^\\circ$\n$\\therefore DG = CD = 2$\n$GF^2 = EG^2 + EF^2$\n$CB^2 = AB^2 + \\frac{1}{4} AB^2$\n$\\because EF = AD, EG = \\frac{1}{2} AB$\n$\\therefore$ 四边形 $CBFG$ 为等腰梯形\n作 $GH \\perp BF$\n$FH = \\frac{BF-CG}{2} = 1$\n$\\because BF$ 与面 $ABCD$ 所成角为 $45^\\circ$\n$\\therefore AB = \\tan 45^\\circ \\cdot AF = 4$\n$\\because CD \\parallel AB, \\angle CDA = 90^\\circ$\n$\\therefore$ 四边形 $ABCD$ 是直角梯形\n$S_{\\text{梯}ABCD} = \\frac{1}{2}(CD+AB) \\cdot AD = 12$\n$V_{\\text{四棱锥}E-ABCD} = \\frac{1}{3} S_{\\text{梯}ABCD} \\cdot ED = 16$\n$GH = \\sqrt{FG^2 - FH^2} = \\sqrt{19}$\n$\\therefore S_{\\text{四边形}CBFG} = \\frac{1}{2}(CG+BF) \\cdot GH = 3\\sqrt{38}$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Visual inspection of handwriting in C002 confirms parallel symbols.",
+        "symbol_observations": [
+          {
+            "audit_id": "G001",
+            "tag": "GEOMETRY_MARK",
+            "location": "Line 3 of part (3) in C002",
+            "candidates": [
+              "\\parallel",
+              "\\mathrel{\\underline{\\parallel}}",
+              "="
+            ],
+            "selected": "\\parallel",
+            "observed_features": "Two diagonal parallel strokes written as //.",
+            "context_id": "C002",
+            "reference_context_ids": []
+          },
+          {
+            "audit_id": "G002",
+            "tag": "GEOMETRY_MARK",
+            "location": "Line 12 of part (3) in C002",
+            "candidates": [
+              "\\parallel",
+              "\\mathrel{\\underline{\\parallel}}",
+              "="
+            ],
+            "selected": "\\parallel",
+            "observed_features": "Two diagonal parallel strokes written as //.",
+            "context_id": "C002",
+            "reference_context_ids": []
+          }
+        ],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page13/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page13/image/page13.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page13/preprocessed/page13.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page13/api_markdown/page13.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page13/api_markdown/page13.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page13/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page13/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page13/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page13/code_outputs/match/viz/page13_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page13/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page13/agent_outputs/result.json",
+    "api2_results": [
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page13/agent_outputs/api2_runs/run_01/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page13/agent_outputs/api2_runs/run_02/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page13/agent_outputs/api2_runs/run_03/result.json"
+    ],
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page13/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page13/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page13/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page13/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page13/code_outputs/match/viz/page13_handwriting_overlay.png"
+  }
+}

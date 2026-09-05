@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page26/api_markdown/page26.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page26/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 62372,
+    "completion_tokens": 23077,
+    "total_tokens": 85449,
+    "latency_s": 375.701658,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 149.178306,
+          "prompt_tokens": 3065,
+          "completion_tokens": 9263,
+          "total_tokens": 12328,
+          "request_id": "chatcmpl-58248da6-17e3-97cb-983c-f91f59f5cfe9"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 72.669148,
+          "prompt_tokens": 19769,
+          "completion_tokens": 4327,
+          "total_tokens": 24096,
+          "request_id": "chatcmpl-3a51efb4-ec12-99d4-8ee0-6a1c729b731f"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 77.852306,
+          "prompt_tokens": 19769,
+          "completion_tokens": 4821,
+          "total_tokens": 24590,
+          "request_id": "chatcmpl-4a0bd89a-f735-9351-865c-65a1cb79d335"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 76.001898,
+          "prompt_tokens": 19769,
+          "completion_tokens": 4666,
+          "total_tokens": 24435,
+          "request_id": "chatcmpl-8e5c5ab6-807e-9019-8704-72868084c7ab"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 72.669148,
+            "prompt_tokens": 19769,
+            "completion_tokens": 4327,
+            "total_tokens": 24096,
+            "request_id": "chatcmpl-3a51efb4-ec12-99d4-8ee0-6a1c729b731f"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 77.852306,
+            "prompt_tokens": 19769,
+            "completion_tokens": 4821,
+            "total_tokens": 24590,
+            "request_id": "chatcmpl-4a0bd89a-f735-9351-865c-65a1cb79d335"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 76.001898,
+            "prompt_tokens": 19769,
+            "completion_tokens": 4666,
+            "total_tokens": 24435,
+            "request_id": "chatcmpl-8e5c5ab6-807e-9019-8704-72868084c7ab"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "",
+    "",
+    ""
+  ],
+  "raw_runs": [
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"1\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"2\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"3\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"4\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"edit\",\n        \"edits\": [\n          {\n            \"old\": \"D. $-\\\\frac{2}{3}\\\\vec{a}+\\\\frac{1}{2}\\\\vec{b}+\\\\frac{1}{2}\\\\vec{c}$\",\n            \"new\": \"D. $\\\\frac{2}{3}\\\\vec{a}+\\\\frac{2}{3}\\\\vec{b}+\\\\frac{1}{2}\\\\vec{c}$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C004\",\n            \"evidence\": \"C004 stem image shows option D with positive 2/3 coefficient on vec{a} and positive 2/3 coefficient on vec{b}, not negative 2/3 and 1/2 as in draft\"\n          }\n        ],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C004-01\",\n            \"source_type\": \"printed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C004\",\n            \"printed_anchors\": [\"typeset vertex labels O, A, B, C, M, N\", \"uniform thin line work\", \"dashed lines for hidden edges AC and MN\", \"printed caption referenced by 如图\"],\n            \"handwriting_features\": [],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"Printed tetrahedron diagram with uniform thin strokes, regular dashed lines for hidden edges, and typeset vertex labels O, A, B, C, M, N matching the question text. No handwriting overlays on the figure itself.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"5\",\n      \"source_context_ids\": [\"C005\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"edit\",\n        \"edits\": [\n          {\n            \"old\": \"A. 若 $\\\\alpha // \\\\beta$，则 $m=1$\",\n            \"new\": \"A. 若 $\\\\alpha \\\\parallel \\\\beta$，则 $m=1$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C005\",\n            \"evidence\": \"C005 stem image shows two parallel strokes as the parallel symbol in option A, not two forward slashes\"\n          },\n          {\n            \"old\": \"C. 若 $n=20$，则 $l // \\\\alpha$\",\n            \"new\": \"C. 若 $n=20$，则 $l \\\\parallel \\\\alpha$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C005\",\n            \"evidence\": \"C005 stem image shows two parallel strokes as the parallel symbol in option C, not two forward slashes\"\n          }\n        ],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"6\",\n      \"source_context_ids\": [\"C006\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    }\n  ]\n}\n```",
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"1\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"2\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"3\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"4\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"edit\",\n        \"edits\": [\n          {\n            \"old\": \"D. $-\\\\frac{2}{3}\\\\vec{a}+\\\\frac{1}{2}\\\\vec{b}+\\\\frac{1}{2}\\\\vec{c}$\",\n            \"new\": \"D. $\\\\frac{2}{3}\\\\vec{a}+\\\\frac{2}{3}\\\\vec{b}+\\\\frac{1}{2}\\\\vec{c}$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C004\",\n            \"evidence\": \"Printed option D in the stem image clearly shows positive 2/3 coefficient for vec{a} and positive 2/3 coefficient for vec{b}, with +1/2 vec{c}; the draft incorrectly duplicated option B's negative leading coefficient.\"\n          }\n        ],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C004-01\",\n            \"source_type\": \"printed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C004\",\n            \"printed_anchors\": [\"typeset labels O, A, B, C, M, N\", \"uniform thin line work for edges\", \"dashed lines for hidden edges AC and MN\", \"printed caption reference in stem\"],\n            \"handwriting_features\": [],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"The figure shows a space quadrilateral (tetrahedron) OABC with printed typeset vertex labels O, A, B, C and points M on OA and N on BC. Edges use uniform thin printed lines with dashed lines for hidden edges. No handwriting overlays the figure skeleton.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"5\",\n      \"source_context_ids\": [\"C005\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"edit\",\n        \"edits\": [\n          {\n            \"old\": \"A. 若 $\\\\alpha // \\\\beta$，则 $m=1$\",\n            \"new\": \"A. 若 $\\\\alpha \\\\parallel \\\\beta$，则 $m=1$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C005\",\n            \"evidence\": \"The printed stem shows two parallel strokes as the parallel relation symbol between α and β; canonical LaTeX is \\\\parallel, not //.\"\n          },\n          {\n            \"old\": \"C. 若 $n=20$，则 $l // \\\\alpha$\",\n            \"new\": \"C. 若 $n=20$，则 $l \\\\parallel \\\\alpha$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C005\",\n            \"evidence\": \"The printed stem shows two parallel strokes as the parallel relation symbol between l and α; canonical LaTeX is \\\\parallel, not //.\"\n          }\n        ],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"6\",\n      \"source_context_ids\": [\"C006\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    }\n  ]\n}\n```",
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"1\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"2\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"3\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"4\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"edit\",\n        \"edits\": [\n          {\n            \"old\": \"D. $-\\\\frac{2}{3}\\\\vec{a}+\\\\frac{1}{2}\\\\vec{b}+\\\\frac{1}{2}\\\\vec{c}$\",\n            \"new\": \"D. $\\\\frac{2}{3}\\\\vec{a}+\\\\frac{2}{3}\\\\vec{b}+\\\\frac{1}{2}\\\\vec{c}$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C004\",\n            \"evidence\": \"In the C004 stem image, option D clearly shows positive 2/3 coefficients for both a⃗ and b, not negative 2/3 for a and 1/2 for b⃗ as in the draft\"\n          }\n        ],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C004-01\",\n            \"source_type\": \"printed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C004\",\n            \"printed_anchors\": [\"typeset labels O, A, B, C, M, N\", \"regular dashed lines for hidden edges\", \"uniform thin line work matching printed question\"],\n            \"handwriting_features\": [],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"The figure shows a tetrahedron OABC with uniform thin printed lines, dashed lines for hidden edges AC and MN, and printed vertex labels O, A, B, C, M, N. No handwriting overlays the figure itself.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"5\",\n      \"source_context_ids\": [\"C005\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"edit\",\n        \"edits\": [\n          {\n            \"old\": \"A. 若 $\\\\alpha // \\\\beta$，则 $m=1$\",\n            \"new\": \"A. 若 $\\\\alpha \\\\parallel \\\\beta$，则 $m=1$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C005\",\n            \"evidence\": \"The image shows two parallel strokes (//) as the parallel symbol, which should be rendered as \\\\parallel in LaTeX\"\n          },\n          {\n            \"old\": \"C. 若 $n=20$，则 $l // \\\\alpha$\",\n            \"new\": \"C. 若 $n=20$，则 $l \\\\parallel \\\\alpha$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C005\",\n            \"evidence\": \"The image shows two parallel strokes (//) as the parallel symbol, which should be rendered as \\\\parallel in LaTeX\"\n          }\n        ],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"6\",\n      \"source_context_ids\": [\"C006\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    }\n  ]\n}\n```"
+  ]
+}

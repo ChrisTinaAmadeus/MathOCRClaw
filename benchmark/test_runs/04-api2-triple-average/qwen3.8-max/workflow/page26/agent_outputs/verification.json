@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/api_markdown/page26.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page26/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 62010,
+    "completion_tokens": 28208,
+    "total_tokens": 90218,
+    "latency_s": 557.566783,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 73.711628,
+          "prompt_tokens": 3078,
+          "completion_tokens": 4308,
+          "total_tokens": 7386,
+          "request_id": "chatcmpl-8d4b61ab-a9d2-9768-9c67-d9a24dd1d4d6"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 223.658764,
+          "prompt_tokens": 19644,
+          "completion_tokens": 11076,
+          "total_tokens": 30720,
+          "request_id": "chatcmpl-6be384d0-4e88-9b96-b51d-11a7e816fdf4"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 141.79313,
+          "prompt_tokens": 19644,
+          "completion_tokens": 7037,
+          "total_tokens": 26681,
+          "request_id": "chatcmpl-a83b4f4c-1e8d-9f5d-984a-9299cc28961f"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 118.403261,
+          "prompt_tokens": 19644,
+          "completion_tokens": 5787,
+          "total_tokens": 25431,
+          "request_id": "chatcmpl-f7a9b59c-ef88-9e9a-950e-17902d1f4ebd"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 223.658764,
+            "prompt_tokens": 19644,
+            "completion_tokens": 11076,
+            "total_tokens": 30720,
+            "request_id": "chatcmpl-6be384d0-4e88-9b96-b51d-11a7e816fdf4"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 141.79313,
+            "prompt_tokens": 19644,
+            "completion_tokens": 7037,
+            "total_tokens": 26681,
+            "request_id": "chatcmpl-a83b4f4c-1e8d-9f5d-984a-9299cc28961f"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 118.403261,
+            "prompt_tokens": 19644,
+            "completion_tokens": 5787,
+            "total_tokens": 25431,
+            "request_id": "chatcmpl-f7a9b59c-ef88-9e9a-950e-17902d1f4ebd"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "",
+    "",
+    ""
+  ],
+  "raw_runs": [
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"1\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"In C001 context and answer_ink, the handwritten letter inside the answer parentheses after '样本容量n =' shows a slanted left stem with two right-side lobes (small upper lobe, wider lower lobe), the writer's B pattern; matches draft B.\"\n      }\n    },\n    {\n      \"qno\": \"2\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"In C002 context and answer_ink, the handwritten letter in the parentheses after '则该组的频数为' shows two slanting strokes meeting at an apex with a horizontal crossbar, a clear A; matches draft A.\"\n      }\n    },\n    {\n      \"qno\": \"3\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"In C003 context and answer_ink, the handwritten mark in the parentheses after '的概率为' is a single open curve with a gap on the right and no straight left stem, a clear C; matches draft C.\"\n      }\n    },\n    {\n      \"qno\": \"4\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C004-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C004\",\n            \"printed_anchors\": [\"typeset italic vertex labels M, A, B, C, N\", \"regular dashed segments for hidden edges AC and MN\", \"uniform thin straight line work of the tetrahedron edges\"],\n            \"handwriting_features\": [\"freehand vector-sum formulas overlapping the top vertex region\", \"handwritten loop label at vertex O\", \"handwritten '2' annotation beside edge OA\"],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"In C004 figure_candidate_01 the tetrahedron skeleton has uniform thin edges with evenly spaced dashed hidden lines and typeset italic labels M, A, B, C, N, matching the printed '如图' stem; freehand pen formulas and a looped O label overlay the top vertex, so a printed skeleton remains under handwriting.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"replace_choice\",\n        \"confidence\": \"medium\",\n        \"final_answers\": [\n          {\"label\": \"overall\", \"value\": \"B\", \"status\": \"ok\"}\n        ],\n        \"edits\": [],\n        \"symbol_observations\": [\n          {\n            \"audit_id\": \"\",\n            \"tag\": \"CHOICE_LETTER\",\n            \"location\": \"handwritten letter inside the answer parentheses after '则MN等于(' in C004\",\n            \"candidates\": [\"B\", \"D\"],\n            \"selected\": \"B\",\n            \"observed_features\": \"The glyph has a slanted left stem with two right-side lobes meeting at a mid-stem junction (small upper lobe, wider lower lobe), not one continuous outer bow; this two-lobe pattern matches the same writer's clear B in C001 and C006, while the clear D in C005 shows a single smooth bow with no mid-stem junction.\",\n            \"context_id\": \"C004\",\n            \"reference_context_ids\": [\"C001\", \"C006\", \"C005\"]\n          }\n        ],\n        \"evidence\": \"In C004 context, stem, and answer_ink, the letter in the parentheses shows a mid-stem waist with two lobes identical to the writer's B in C001 and C006; the single-bow D of C005 is visibly different, so the retained letter is B, not the draft D.\"\n      }\n    },\n    {\n      \"qno\": \"5\",\n      \"source_context_ids\": [\"C005\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"In C005 context and answer_ink, the handwritten letter in the parentheses after '则' is a vertical stem with one continuous outer bow and no mid-stem junction, a clear D; the X marks over options A and B are elimination marks on printed text, which remains legible and is preserved.\"\n      }\n    },\n    {\n      \"qno\": \"6\",\n      \"source_context_ids\": [\"C006\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"In C006 context and answer_ink, the handwritten letter in the parentheses after '的个数为' shows a left stem with two closed right lobes, the writer's B; checks and a strike on enumerators ①②③ are annotation marks and the printed enumerators remain legible.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"1\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"In C001 context and answer_ink, a single handwritten letter inside the answer parentheses after 'n =(' shows a straight left stem with two closed lobes (upper smaller, lower larger), matching B; no other option letter is retained.\"\n      }\n    },\n    {\n      \"qno\": \"2\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"In C002 context and answer_ink, the handwritten mark inside the parentheses has two slanted strokes meeting at an apex with a horizontal crossbar and no vertical right stem continuing downward, matching A.\"\n      }\n    },\n    {\n      \"qno\": \"3\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"In C003 context and answer_ink, the handwritten mark in the answer parentheses is a single curved bow open at the right with no straight left stem and no closure at top/bottom, matching C.\"\n      }\n    },\n    {\n      \"qno\": \"4\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C004-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C004\",\n            \"printed_anchors\": [\n              \"italic serif vertex labels M, A, B, N, C\",\n              \"regular dashed hidden edges AC and MN\",\n              \"uniform thin solid tetrahedron edges\"\n            ],\n            \"handwriting_features\": [\n              \"black pen vector-chain notes (MA+AB+BN and 1/2 OA+(OB-OA)+1/2 BC) crowding and crossing the apex region\",\n              \"handwritten digit 2 beside edge OA\",\n              \"apex label O rendered in pen stroke weight\"\n            ],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"In C004 figure_candidate_01 a printed tetrahedron skeleton remains fully visible (serif italic labels M, A, B, N, C, evenly spaced dashed hidden edges, uniform thin line work) while pen annotations overlay its apex area, so the source is mixed and the role is the printed question figure referenced by 'as shown'.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"In C004 context and answer_ink, the handwritten mark in the parentheses after 'MN equals' shows a straight left stem with one continuous outer bow closing at top and bottom, matching D; surrounding vector notes are scratch work, not option marks.\"\n      }\n    },\n    {\n      \"qno\": \"5\",\n      \"source_context_ids\": [\"C005\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"In C005 context and answer_ink, the handwritten mark in the parentheses after 'then' is a vertical stem with a single right-side bow, matching D; the X strikes over option letters A and B are cancellations of options, while D remains the retained answer letter.\"\n      }\n    },\n    {\n      \"qno\": \"6\",\n      \"source_context_ids\": [\"C006\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"In C006 context and answer_ink, the handwritten letter in the answer parentheses after 'the count is' shows a left stem with two lobes, matching B; the ticks on items 1 and 2, the strike on item 3, and the stray letters A B C at right are item marks and scratch, not the option answer.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"1\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"In C001 context and answer_ink, the handwritten mark inside the parentheses after 样本容量n= shows a straight left stem with two right-side lobes (small upper lobe, closed lower loop), matching B; no crossing-out or overwrite is present.\"\n      }\n    },\n    {\n      \"qno\": \"2\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"In C002 context and answer_ink, the handwritten letter inside the parentheses after 频数为 shows two slanted strokes meeting at an apex with a horizontal crossbar, matching A; no competing stroke (no descending right stem of a 4) is visible.\"\n      }\n    },\n    {\n      \"qno\": \"3\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"In C003 context and answer_ink, the handwritten mark inside the parentheses is an open curve with a gap at the upper right and no straight left stem or closure, matching C rather than an open D or O.\"\n      }\n    },\n    {\n      \"qno\": \"4\",\n      \"source_context_ids\": [\"C004\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C004-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C004\",\n            \"printed_anchors\": [\n              \"typeset italic serif vertex labels M, A, B, C, N\",\n              \"regular evenly spaced dashed lines for hidden edges AC and MN\",\n              \"uniform thin straight line work forming tetrahedron OABC matching the printed stem 如图\"\n            ],\n            \"handwriting_features\": [\n              \"black pen vector decomposition lines (MA+AB+BN, 1/2 OA+(OB-OA)+1/2 BC) overlapping the upper region of the figure\",\n              \"freehand circle with arrowhead at the apex O\",\n              \"handwritten digit 2 beside edge OM\"\n            ],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"In C004 figure_candidate_01 the tetrahedron skeleton is drawn with uniform thin straight edges and regular dashed hidden lines, and labels M, A, B, C, N are typeset italic serif, proving a printed base; black pen formula strokes and an arrow to the apex overlay its top region, so the source is mixed; the figure is uncrossed and corresponds to the printed stem 如图, 空间四边形OABC, so its role is the printed question figure.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"In C004 context and answer_ink, the handwritten mark inside the parentheses after 则MN等于 shows a straight left vertical stem with one continuous outer bow closing at top and bottom, matching D; surrounding handwritten computation is scratch work and not part of the answer mark.\"\n      }\n    },\n    {\n      \"qno\": \"5\",\n      \"source_context_ids\": [\"C005\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"In C005 context and answer_ink, the handwritten mark inside the parentheses after 则 shows a straight left stem with a single right bow, matching D; the pen X marks over printed option labels A and B are eliminations of non-chosen options and do not cancel the retained answer D.\"\n      }\n    },\n    {\n      \"qno\": \"6\",\n      \"source_context_ids\": [\"C006\"],\n      \"question_type\": \"choice\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"In C006 context and answer_ink, the handwritten mark inside the parentheses after 个数为 shows a left stem with two right lobes, matching B; the ellipse around 互斥而不对立 is emphasis only, and the ticks/strikes on enumerators ①②③ are item markings, not answer cancellation.\"\n      }\n    }\n  ]\n}"
+  ]
+}

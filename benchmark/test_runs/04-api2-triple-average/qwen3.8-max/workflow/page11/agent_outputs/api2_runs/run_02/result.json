@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "page": "page11",
+  "api2_run": 2,
+  "questions": [
+    {
+      "qno": 18,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "18. （本小题满分 17 分）\n<插图>",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 1,
+        "figure_audit_observed_count": 1,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C001-01",
+            "marker_index": 1,
+            "source_type": "mixed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "high",
+            "context_id": "C001",
+            "printed_anchors": [
+              "typeset serif-italic vertex labels B1, C1, A1, A, C, M, N with uniform subscripts",
+              "uniform thin solid edges and regular dashed hidden lines forming the frustum skeleton"
+            ],
+            "handwriting_features": [
+              "freehand thick pen strokes for coordinate axes with hand-drawn arrowheads",
+              "handwritten cursive axis letters z, y, x overlaid at the axis ends"
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "The frustum skeleton and its vertex labels are typeset (serif italic letters, uniform line weight, regular dashes), while the x/y/z axes (z up through A1, y toward C, x toward B) are pen-drawn overlays added by the student; the printed figure remains fully visible beneath the annotations, so it is a printed question figure with handwritten overlay, not scratch work.",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          }
+        ],
+        "lint_actions": [
+          "recorded_figure_observation_FIG-C001-01_mixed_figure",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page11/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 证明：\n$\\because$ 三棱台 $ABC$-$A_1B_1C_1$\n且 $A_1A\\perp$ 平面 $ABC$.\n$\\therefore A_1C_1\\parallel AC$.\n$\\because A_1C_1=\\frac{1}{2}AC$\n$\\therefore A_1C_1\\overset{\\parallel}{=}\\frac{1}{2}AC$.\n$\\because M,N$ 分别为 $BC,AB$ 中点，$\\therefore MN$ 为三角形 $ABC$ 中位线\n$\\therefore MN\\overset{\\parallel}{=}\\frac{1}{2}AC$ $\\therefore MN\\overset{\\parallel}{=}A_1C_1$ $\\therefore$ 四边形 $A_1C_1MN$ 是平行四边形\n$\\therefore A_1N\\parallel C_1M$ $\\because A_1N\\not\\subset$ 平面 $C_1MA$，$C_1M\\subset$ 平面 $C_1MA$.\n$\\therefore A_1N\\parallel$ 平面 $C_1MA$.\n(2) $\\because A_1A\\perp$ 平面 $ABC$，$AB\\perp AC$. $AB=AC=AA_1=2$，$A_1C_1=1$\n$\\therefore$ 以 $A$ 为原点，以 $AB$，$AC$，$AA_1$ 所在直线为 $x,y,z$ 轴建系。\n$\\therefore C_1(0,1,2)$ $M(1,1,0)$ $A(0,0,0)$\n$\\therefore \\overrightarrow{AC_1}=(0,1,2)$ $\\overrightarrow{AM}=(1,1,0)$\n设平面 $C_1MA$ 的一个法向量为 $\\vec{n}=(x,y,z)$，则有 $\\begin{cases}\\vec{n}\\cdot\\overrightarrow{AC_1}=0\\\\ \\vec{n}\\cdot\\overrightarrow{AM}=0\\end{cases}$\n$\\therefore \\vec{n}=(2,-2,1)$ 是平面 $C_1MA$ 的一个法向量。\n$\\because AB\\perp$ 平面 $ACC_1A_1$，$\\therefore \\overrightarrow{AB}=(2,0,0)$ 是平面 $ACC_1A_1$\n的一个法向量。记平面 $C_1MA$ 与平面 $ACC_1A_1$ 所成角为 $\\theta$.\n则：$\\cos\\theta=|\\cos\\langle\\vec{n},\\overrightarrow{AB}\\rangle|=\\frac{2}{3}$\n$\\therefore$ 平面 $C_1MA$ 与平面 $ACC_1A_1$ 所成角的余弦值为 $\\frac{2}{3}$.\n(3) 由 (2) 知：$\\vec{n}=(2,-2,1)$ 是平面 $C_1MA$ 的一个法向量。\n$C(0,2,0)$ $A(0,0,0)$ $\\overrightarrow{AC}=(0,2,0)$\n记点 $C$ 到平面 $C_1MA$ 的距离为 $d$. 则：\n$$d=\\left|\\frac{\\overrightarrow{AC}\\cdot\\vec{n}}{|\\vec{n}|}\\right|=\\frac{4}{3}$$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwriting matches the draft line-by-line: (1) midline/parallelogram proof ending in A1N parallel to plane C1MA, with parallel-and-equal symbols written as a parallel sign over '='; (2) coordinates C1(0,1,2), M(1,1,0), A(0,0,0), normal n=(2,-2,1), cos theta = 2/3; (3) distance d = 4/3. The long red slashes and red underlines are grader marks, not student cancellations; the blacked-out word before 'AB perpendicular plane ACC1A1' and the struck-through fragment before 'therefore vector AB=(2,0,0)' are cancelled and already excluded from the draft. No required symbol audit targets exist, so no patches are justified.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page11/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.8-max",
+      "attempt": 1,
+      "elapsed_s": 117.41815,
+      "prompt_tokens": 11267,
+      "completion_tokens": 6865,
+      "total_tokens": 18132,
+      "request_id": "chatcmpl-157959f7-78d3-9cb5-987d-489536f1b762"
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page01/api_markdown/page01.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page01/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 37573,
+    "completion_tokens": 35698,
+    "total_tokens": 73271,
+    "latency_s": 618.164224,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 142.628055,
+          "prompt_tokens": 3373,
+          "completion_tokens": 8199,
+          "total_tokens": 11572,
+          "request_id": "chatcmpl-f72bf2ba-5e08-96ba-a903-b4d62aff21b6"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 216.44299,
+          "prompt_tokens": 11400,
+          "completion_tokens": 12527,
+          "total_tokens": 23927,
+          "request_id": "chatcmpl-30320bb2-23a6-9867-aed6-c9b7aee54123"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 119.721656,
+          "prompt_tokens": 11400,
+          "completion_tokens": 6902,
+          "total_tokens": 18302,
+          "request_id": "chatcmpl-cdbdb0a1-db96-97ce-9a9e-686cceba9094"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 139.371523,
+          "prompt_tokens": 11400,
+          "completion_tokens": 8070,
+          "total_tokens": 19470,
+          "request_id": "chatcmpl-a6d23b89-ab8f-9132-b589-0b6e3ac8948d"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 216.44299,
+            "prompt_tokens": 11400,
+            "completion_tokens": 12527,
+            "total_tokens": 23927,
+            "request_id": "chatcmpl-30320bb2-23a6-9867-aed6-c9b7aee54123"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 119.721656,
+            "prompt_tokens": 11400,
+            "completion_tokens": 6902,
+            "total_tokens": 18302,
+            "request_id": "chatcmpl-cdbdb0a1-db96-97ce-9a9e-686cceba9094"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 139.371523,
+            "prompt_tokens": 11400,
+            "completion_tokens": 8070,
+            "total_tokens": 19470,
+            "request_id": "chatcmpl-a6d23b89-ab8f-9132-b589-0b6e3ac8948d"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "",
+    "",
+    ""
+  ],
+  "raw_runs": [
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C001-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"printed_anchors\": [\n              \"typeset italic vertex labels P, A, B, C, D, E, F in the same serif math font as the stem\",\n              \"uniform short-dashed hidden-edge segments (e.g., A to E, D to E diagonals)\",\n              \"figure placed directly after printed 如图 between stem lines\"\n            ],\n            \"handwriting_features\": [\n              \"cursive black-ink axis letters x, y, z added at lower left, right, and top\",\n              \"handwritten numerals 2 and 4 on edges\",\n              \"thick freehand overtracing of the vertical PA edge and freehand axis arrows\"\n            ],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"A printed pyramid skeleton with typeset labels and regular dashes remains visible underneath the student's coordinate-axis annotations and edge-length numerals; the drawing is the question figure referenced by 如图 and is retained, not crossed out.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"medium\",\n        \"final_answers\": [\n          {\"label\": \"(1)\", \"value\": \"\\\\frac{8}{3}\", \"status\": \"ok\"},\n          {\"label\": \"(2)\", \"value\": \"PE\\\\perp AF\", \"status\": \"ok\"}\n        ],\n        \"edits\": [\n          {\n            \"old\": \"S_{\\\\triangle PAD}\",\n            \"new\": \"S_{\\\\triangle ADD}\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"medium\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"In the retained area line '= S△... = 2×4÷2=4' the subscript contains exactly three letters whose first letter has a pointed apex and horizontal crossbar (A-shape), not the closed upper loop the same writer uses for P in 'PA=AB=2', 'P(0,0,2)', and 'PE⊥AF'; the visible retained strokes read ADD.\"\n          }\n        ],\n        \"symbol_observations\": [\n          {\n            \"audit_id\": \"\",\n            \"tag\": \"SCRIPT_POSITION\",\n            \"location\": \"subscript of S in the retained area line of (1), before '= 2×4÷2=4'\",\n            \"candidates\": [\"PAD\", \"ADD\"],\n            \"selected\": \"ADD\",\n            \"observed_features\": \"three-letter subscript group; first letter shows two diagonal strokes meeting at a point with a crossbar and no looped bowl, while the writer's independent P glyphs elsewhere on the page show a distinct closed bowl on the vertical stem\",\n            \"context_id\": \"C001\",\n            \"reference_context_ids\": []\n          }\n        ],\n        \"evidence\": \"All other retained lines match the draft: (1) keeps '∵ PA=AB=2, AD=4', '∴ h=2', '∴ V_{E-PAD}=1/3 Sh=1/3×4×2=8/3' with the earlier wrong area line crossed out and correctly excluded; (2) keeps the full chain through '∴ AF⊥BP', coordinate setup 'P(0,0,2), C(4,2,0), A(0,0,0), F(0,1,1)', vector computation 'cosθ=0', and final '∵ PE⊂平面 PBC ∴ PE⊥AF'; the struck-out '=2' after 'PA=AB' in (2) is cancelled and correctly absent.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C001-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"printed_anchors\": [\n              \"typeset italic vertex labels P, A, B, C, D, E, F in the same math font as the printed stem\",\n              \"regular uniform dashed segments for hidden edges\",\n              \"uniform thin solid edges forming pyramid P-ABCD with E on BC and F on PB, matching the question text\"\n            ],\n            \"handwriting_features\": [\n              \"freehand coordinate-axis arrows with handwritten x, y, z labels\",\n              \"handwritten numerals 2 and 4 added beside edges\",\n              \"wavy freehand retracing over some printed edges\"\n            ],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"A printed pyramid skeleton with typeset labels and regular dashes remains visible underneath the student's freehand x/y/z axis arrows and numeric annotations; the graphic is the question figure referenced by 如图, so source is mixed and role is printed_question_figure.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Retained handwriting matches the draft line by line: (1) ∵PA=AB=2, AD=4; S△PAD=2×4÷2=4; h=2; V=1/3×4×2=8/3; (2) proof through PA⊥BC, isosceles △PAB, AF⊥BP, coordinate setup with P(0,0,2), C(4,2,0), A(0,0,0), F(0,1,1), vectors PC=(4,2,-2) and AF=(0,1,1) with visible arrowheads, cosθ=0, PC⊥AF, AF⊥plane PBC, ending PE⊥AF. Crossed-out lines (S=2×2÷2=2, ∠PAB=90°, stray PA⊥AB repetition, and the trailing =2 after PA=AB) are visibly struck through and are correctly excluded from the draft.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C001-01\",\n            \"source_type\": \"student_diagram\",\n            \"content_role\": \"retained_solution_diagram\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"printed_anchors\": [],\n            \"handwriting_features\": [\n              \"freehand wobbly solid and dashed lines with double-stroked segments\",\n              \"handwritten capital labels P, A, B, C, D, E, F matching the solution handwriting\",\n              \"handwritten x, y, z coordinate axes with freehand arrowheads\",\n              \"handwritten numeric annotations 2 and 4 on edges\"\n            ],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"The drawing is entirely freehand pen work in the same black ink as the solution; no typeset labels, uniform thin printed lines, regular printed dashes, or printed caption are visible underneath. It is uncrossed and is explicitly referenced by the retained proof line 如图所示建立空间直角坐标系, so it serves as the student's retained coordinate/setup diagram.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Both handwriting columns match the draft line-for-line: (1) ends with V_{E-PAD}=1/3×4×2=8/3 after h=2; (2) proceeds PA⊥BC, isosceles △PAB, AF⊥BP, coordinates P(0,0,2), C(4,2,0), A(0,0,0), F(0,1,1), vectors PC=(4,2,-2), AF=(0,1,1), cosθ=0, PC⊥AF, AF⊥plane PBC, and ends PE⊥AF. Struck-through strokes visible in the answer area are already excluded from the draft, and no retained step conflicts with the draft transcription.\"\n      }\n    }\n  ]\n}"
+  ]
+}

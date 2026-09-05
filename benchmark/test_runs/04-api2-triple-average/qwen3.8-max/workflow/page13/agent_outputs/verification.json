@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/api_markdown/page13.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 50382,
+    "completion_tokens": 43206,
+    "total_tokens": 93588,
+    "latency_s": 652.160699,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 160.4574,
+          "prompt_tokens": 3386,
+          "completion_tokens": 12863,
+          "total_tokens": 16249,
+          "request_id": "chatcmpl-5fcc3344-500f-9237-90a0-dbcdb954580c"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 171.488612,
+          "prompt_tokens": 15674,
+          "completion_tokens": 11978,
+          "total_tokens": 27652,
+          "request_id": "chatcmpl-0f175b3c-f6d9-9eb2-95fb-d4376f6bef96"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 173.260955,
+          "prompt_tokens": 15661,
+          "completion_tokens": 9785,
+          "total_tokens": 25446,
+          "request_id": "chatcmpl-9052da5d-c0fd-9de7-8940-b1e43d21a85f"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 146.953732,
+          "prompt_tokens": 15661,
+          "completion_tokens": 8580,
+          "total_tokens": 24241,
+          "request_id": "chatcmpl-dc76b284-836c-98a1-a331-02207b098914"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 171.488612,
+            "prompt_tokens": 15674,
+            "completion_tokens": 11978,
+            "total_tokens": 27652,
+            "request_id": "chatcmpl-0f175b3c-f6d9-9eb2-95fb-d4376f6bef96"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 173.260955,
+            "prompt_tokens": 15661,
+            "completion_tokens": 9785,
+            "total_tokens": 25446,
+            "request_id": "chatcmpl-9052da5d-c0fd-9de7-8940-b1e43d21a85f"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 146.953732,
+            "prompt_tokens": 15661,
+            "completion_tokens": 8580,
+            "total_tokens": 24241,
+            "request_id": "chatcmpl-dc76b284-836c-98a1-a331-02207b098914"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "C002 answer area shows a stray retained handwritten line ('ABC 面 ADCB') between '∴ $AF \\perp$ 面 $ADCB$' and '∴ $AF \\perp AB$' that the draft omits; reading is uncertain so it is left unpatched. Q19 has no paired detection and no visible stem or answer on the page.",
+    "Printed stems of 17 and 18 are not legible beyond the question numbers and scores; both figures retained via audit. C003 supplies no image view, so 19 stays unresolved.",
+    "Q17 and Q18 printed stems are not readable beyond the number/score labels, so minimal draft stems are preserved; Q19 appears only as a cut-off number at the right page edge with no readable stem or answer."
+  ],
+  "raw_runs": [
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"C002 answer area shows a stray retained handwritten line ('ABC 面 ADCB') between '∴ $AF \\\\perp$ 面 $ADCB$' and '∴ $AF \\\\perp AB$' that the draft omits; reading is uncertain so it is left unpatched. Q19 has no paired detection and no visible stem or answer on the page.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C001-01\",\n            \"source_type\": \"printed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"printed_anchors\": [\"typeset italic serif vertex labels F, G, H, E, A, B, C, D\", \"machine-regular fine dotted hidden lines (G-H, E-C, B-D, A-F)\", \"uniform thin solid edges of the solid\"],\n            \"handwriting_features\": [],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"figure_candidate_01 shows clean serif italic typeset labels and perfectly regular dotted dash patterns with uniform thin solid line work; no pen strokes, pen dots, or freehand lines inside the figure; the nearby handwriting ('的中点') stops outside the figure boundary\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Left-column handwriting matches the draft line by line: stacked parallel-and-equal marks at GH/BC/EF/BG/CH, plain double-slash parallel at 'EC // FH' and 'EC // FD', fractions 1/2 with visible bars; the crossed-out character before '是 FD 中点' and the inserted '形' are correctly excluded or absorbed by the draft\"\n      }\n    },\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C002-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"medium\",\n            \"context_id\": \"C002\",\n            \"printed_anchors\": [\"typeset italic serif vertex labels E, F, A, B, C, D\", \"uniform thin solid edges (E-F, F-A, A-B, E-B, F-B)\", \"regular dashed segments E-D and D-C\"],\n            \"handwriting_features\": [\"pen-thick G and H labels with a filled pen dot at G\", \"wavy hand-drawn dashed arc from F toward C over the printed skeleton\"],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"A printed serif-italic labeled skeleton with uniform thin line work sits beside the printed '18、(17分)' number; pen-drawn G/H markers and an irregular dashed arc overlay it, so the printed exam figure is retained with student annotations\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Middle-column handwriting matches the draft order and content: perpendicular strokes with crossing bar at ED⊥AD, DE⊥CD, AF⊥AD; cap-shaped ∩ at 'CD ∩ AD = D'; subset cups at 'DE ⊂ 面ADEF'; the line '∴ AF ⊥ 面' is visibly struck through and correctly absent from the draft; radicals in 'GH = √(FG²-FH²) = √19' and '3√38' show check hook plus overline\"\n      }\n    },\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"low\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"No handwritten answer for 19 is visible anywhere on the full page (only the printed '19、' number at the right edge); the draft no-answer status is retained\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"Printed stems of 17 and 18 are not legible beyond the question numbers and scores; both figures retained via audit. C003 supplies no image view, so 19 stays unresolved.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C001-01\",\n            \"source_type\": \"printed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"printed_anchors\": [\"typeset italic vertex labels F, G, H, E, A, B, C, D\", \"regular dotted hidden-edge lines\", \"uniform thin solid linework\"],\n            \"handwriting_features\": [],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"Figure crop shows serif italic typeset labels and uniform thin lines with regular dotted dashes; no pen overlay or cancellation on the figure itself, matching a printed solid-geometry question figure.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Left-column handwriting matches the draft line by line: midpoint claims in triangle FAD, GH parallel-and-equal 1/2 AD chain, parallelogram conclusions BCHG, BEFG, ECHF, and final 'C, D, F, E coplanar.'; the crossed letter after BEF and the struck character before 'is FD midpoint' are already excluded in the draft.\"\n      }\n    },\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C002-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C002\",\n            \"printed_anchors\": [\"typeset italic labels E, F, A, B, C, D, H\", \"regular dashed hidden edges (E to D, A to D)\", \"uniform thin solid outline strokes\"],\n            \"handwriting_features\": [\"handwritten G label at the interior point\", \"freehand irregular dashed arcs from F through G toward C\"],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"Printed skeleton with typeset serif labels and regular dashes remains visible underneath a handwritten G label and sketchy dashed arcs; the figure is retained, uncanceled, and serves as the question figure with student annotations.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Right-column handwriting matches the draft across (1)-(3), including the struck 'AF perp plane' line already omitted by the draft, values AD=AF=BF=4 and CD=2, trapezoid area 12, volume 16, FH=1, GH=sqrt(19), and final 3*sqrt(38).\"\n      }\n    },\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"low\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"low\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"No image view is supplied for C003; the draft's unrecognized stem and no-answer status can neither be verified nor refuted, so they are preserved.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"Q17 and Q18 printed stems are not readable beyond the number/score labels, so minimal draft stems are preserved; Q19 appears only as a cut-off number at the right page edge with no readable stem or answer.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C001-01\",\n            \"source_type\": \"printed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"printed_anchors\": [\n              \"typeset italic vertex labels F, G, H, E, A, B, C, D\",\n              \"regular uniform dashed lines for hidden edges\",\n              \"consistent thin solid line work of a solid-geometry figure\"\n            ],\n            \"handwriting_features\": [],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"figure_candidate_01 crop shows clean typeset italic labels and straight regular dashes with uniform line weight; no pen overlay, color annotation, or cancellation inside the figure, and the adjacent handwritten '的中点' text lies outside the figure boundary.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"C001 answer details match the draft line-by-line: the parallel-and-equal glyphs (GH to 1/2 AD and BC, EF to BG, EF to CH) are written as parallel strokes with an equality mark beneath as drafted; inserted G below 'BEF', the scribbled character inside '平行四边形', and the corrected '是FD中点' are already resolved in the draft; no symbol audit targets are listed.\"\n      }\n    },\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C002-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C002\",\n            \"printed_anchors\": [\n              \"typeset italic labels E, F, A, B, C, D, H\",\n              \"uniform thin solid outline strokes E-F, F-A, A-B, B-C, E-C\",\n              \"regular printed dashes for E-D, A-D, D-C\"\n            ],\n            \"handwriting_features\": [\n              \"freehand dashed arcs curving through the interior\",\n              \"handwritten G label with an ink dot overlay\"\n            ],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"A printed skeleton with typeset italic vertex labels remains visible underneath a student-added dashed arc and G annotation; the figure sits in the printed stem area beside '18、(17分)', so it is a retained printed question figure with handwritten overlay, not scratch work.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"C002 context handwriting matches the draft: AD=AF=BF=4, CD=2, AF⊥AD, retained 'AF⊥面ADCB', AB=tan45°·AF=4, right trapezoid, S=12, V=16, DG=CD=2, FH=(BF-CG)/2=1, GH=√(FG²-FH²)=√19, S=3√38; the crossed-out 'AF⊥面' fragment is correctly excluded and the interleaved (3)解 lines are preserved in draft order; no symbol audit targets are listed.\"\n      }\n    },\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"low\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Only the printed '19、' and an opening parenthesis are visible at the right page edge of the full page; no stem text and no handwritten answer are present in the visible region, supporting the draft no_answer status.\"\n      }\n    }\n  ]\n}"
+  ]
+}

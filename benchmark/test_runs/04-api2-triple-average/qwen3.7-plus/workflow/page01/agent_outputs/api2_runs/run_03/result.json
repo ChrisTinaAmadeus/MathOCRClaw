@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "page": "page01",
+  "api2_run": 3,
+  "questions": [
+    {
+      "qno": 19,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "四、解答题（19题12分，20题14分，共26分）",
+      "question_markdown": "19. (12分)\n如图，$PA \\perp$ 平面 $ABCD$，四边形 $ABCD$ 为矩形，$PA=AB=2$，$AD=4$，点 $F$ 是 $PB$ 的中点，点 $E$ 在边 $BC$ 上移动。\n<插图>\n(1) 求三棱锥 $E-PAD$ 的体积；\n(2) 证明：$AF \\perp PE$。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 1,
+        "figure_audit_observed_count": 1,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C001-01",
+            "marker_index": 1,
+            "source_type": "mixed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "high",
+            "context_id": "C001",
+            "printed_anchors": [
+              "printed pyramid structure with vertices P, A, B, C, D, E, F",
+              "dashed lines for hidden edges",
+              "printed labels"
+            ],
+            "handwriting_features": [
+              "handwritten coordinate axes x, y, z",
+              "handwritten numbers 2 on edges"
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "Printed geometric figure of a pyramid with rectangular base, overlaid with handwritten coordinate axes and labels.",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          }
+        ],
+        "lint_actions": [
+          "recorded_figure_observation_FIG-C001-01_mixed_figure",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page01/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 解：$\\because PA=AB=2, AD=4$\n$\\therefore S_{\\triangle PAD} = 2 \\times 4 \\div 2 = 4$\n$\\therefore h=2$\n$\\therefore V_{E-PAD} = \\frac{1}{3}Sh = \\frac{1}{3} \\times 4 \\times 2 = \\frac{8}{3}$\n\n(2) 证明：$\\because PA \\perp$ 平面 $ABCD$\n又 $\\because AB, CB \\subset$ 平面 $ABCD$\n$\\therefore PA \\perp BC$\n$\\because PA=AB=2$\n$\\therefore \\triangle PAB$ 为等腰三角形\n$\\because F$ 为 $PB$ 中点\n$\\therefore AF \\perp BP$\n如图所示建空间直角坐标系，$A$ 为原点\n$\\because PA=AB=2, AD=4$\n$\\therefore P(0,0,2), C(4,2,0), A(0,0,0), F(0,1,1)$\n$\\therefore \\overrightarrow{PC}=(4,2,-2), \\overrightarrow{AF}=(0,1,1)$\n$\\therefore \\cos\\theta = \\frac{\\overrightarrow{PC}\\cdot\\overrightarrow{AF}}{|\\overrightarrow{PC}||\\overrightarrow{AF}|} = 0$\n$\\therefore PC \\perp AF$\n$\\because PB, PC \\subset$ 平面 $PBC, PB \\cap PC = P$\n$\\therefore AF \\perp$ 平面 $PBC$\n$\\because PE \\subset$ 平面 $PBC \\quad \\therefore PE \\perp AF$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "The draft accurately transcribes the retained handwritten solution steps, correctly omitting crossed-out calculations.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page01/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.7-plus",
+      "attempt": 1,
+      "elapsed_s": 61.818588,
+      "prompt_tokens": 11394,
+      "completion_tokens": 3803,
+      "total_tokens": 15197,
+      "request_id": "chatcmpl-6a60428a-9725-93b3-a9ba-6aa4e7d5a119"
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "page": "page13",
+  "api2_run": 3,
+  "questions": [
+    {
+      "qno": 17,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "17. [无法识别]\n<插图>",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 1,
+        "figure_audit_observed_count": 1,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C001-01",
+            "marker_index": 1,
+            "source_type": "printed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "high",
+            "context_id": "C001",
+            "printed_anchors": [
+              "typeset italic vertex labels F, G, H, E, A, B, C, D",
+              "regular uniform dashed lines for hidden edges",
+              "consistent thin solid line work of a solid-geometry figure"
+            ],
+            "handwriting_features": [],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "figure_candidate_01 crop shows clean typeset italic labels and straight regular dashes with uniform line weight; no pen overlay, color annotation, or cancellation inside the figure, and the adjacent handwritten '的中点' text lies outside the figure boundary.",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          }
+        ],
+        "lint_actions": [
+          "recorded_figure_observation_FIG-C001-01_printed_figure",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 证明：∵ 在 $\\triangle FAD$ 中，\n$G$、$H$ 分别为 $AF$、$FD$ 的中点\n∴ $GH \\parallel = \\frac{1}{2}AD$\n又∵ $BC \\parallel AD$，$BC = \\frac{1}{2}AD$\n∴ $GH \\parallel = BC$\n四边形 $BCHG$ 是平行四边形\n答：是\n∵ $G$ 是 $AF$ 中点，$BE \\parallel AF$\n∴ $BE \\parallel GF$，$GF = \\frac{1}{2}AF = BE$\n∴ 四边形 $BEFG$ 为平行四边形\n∴ $EF \\parallel = BG$\n又∵ 由(1)得 $BG \\parallel = CH$\n∴ $EF \\parallel = CH$\n∴ 四边形 $ECHF$ 为平行四边形\n∴ $EC \\parallel FH$\n∵ $H$ 是 $FD$ 中点\n∴ $EC \\parallel FD$\n∴ $EC$、$FD$ 在同一平面上，\n即 $C$、$D$、$F$、$E$ 共面。",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "C001 answer details match the draft line-by-line: the parallel-and-equal glyphs (GH to 1/2 AD and BC, EF to BG, EF to CH) are written as parallel strokes with an equality mark beneath as drafted; inserted G below 'BEF', the scribbled character inside '平行四边形', and the corrected '是FD中点' are already resolved in the draft; no symbol audit targets are listed.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 18,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "18. [无法识别]\n<插图>",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 1,
+        "figure_audit_observed_count": 1,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C002-01",
+            "marker_index": 1,
+            "source_type": "mixed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "high",
+            "context_id": "C002",
+            "printed_anchors": [
+              "typeset italic labels E, F, A, B, C, D, H",
+              "uniform thin solid outline strokes E-F, F-A, A-B, B-C, E-C",
+              "regular printed dashes for E-D, A-D, D-C"
+            ],
+            "handwriting_features": [
+              "freehand dashed arcs curving through the interior",
+              "handwritten G label with an ink dot overlay"
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "A printed skeleton with typeset italic vertex labels remains visible underneath a student-added dashed arc and G annotation; the figure sits in the printed stem area beside '18、(17分)', so it is a retained printed question figure with handwritten overlay, not scratch work.",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          }
+        ],
+        "lint_actions": [
+          "recorded_figure_observation_FIG-C002-01_mixed_figure",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 证明：∵ 在正方形 $ADEF$ 中，\n∴ $ED \\perp AD$\n又∵ $DE \\perp CD$\n$CD \\cap AD = D$\n$CD, AD \\subset$ 面 $ABCD$\n∴ $DE \\perp$ 面 $ABCD$\n∵ $DE \\subset$ 面 $ADEF$\n∴ 面 $ADEF \\perp$ 面 $ABCD$\n(2) 解：根据题意得 $AD = AF = BF = 4$，\n$CD = 2$\n∵ $AF \\perp AD$，$AD =$ 面 $ADEF \\cap$ 面 $ABCD$\n$AF \\subset$ 面 $ADEF$\n∴ $AF \\perp$ 面 $ADCB$\n∴ $AF \\perp AB$\n∵ $BF$ 与面 $ABCD$ 所成角为 $45^\\circ$\n∴ $AB = \\tan 45^\\circ \\cdot AF = 4$\n∵ $CD \\parallel AB$，$\\angle CDA = 90^\\circ$\n∴ 四边形 $ABCD$ 是直角梯形\n∴ $S_{梯ABCD} = \\frac{1}{2}(CD + AB) \\cdot AD = 12$\n$V_{四棱锥E-ABCD} = \\frac{1}{3} S_{梯ABCD} \\cdot ED = 16$\n(3) 解：∵ $BF$ 与面 $ABCD$ 所成角为 $45^\\circ$\n$CG \\parallel BF$\n∵ $CG$ 与面 $ABCD$ 所成角也为 $45^\\circ$\n∴ $DG = CD = 2$\n$GF^2 = EG^2 + EF^2$\n$CB^2 = AD^2 + \\frac{1}{4}AB^2$\n∵ $EF = AD$，$EG = \\frac{1}{2}AB$\n∴ 四边形 $CBFG$ 为等腰梯形\n作 $GH \\perp BF$\n$FH = \\frac{BF - CG}{2} = 1$\n$GH = \\sqrt{FG^2 - FH^2} = \\sqrt{19}$\n∴ $S_{四边形CBFG} = \\frac{1}{2}(CG + BF) \\cdot GH = 3\\sqrt{38}$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "C002 context handwriting matches the draft: AD=AF=BF=4, CD=2, AF⊥AD, retained 'AF⊥面ADCB', AB=tan45°·AF=4, right trapezoid, S=12, V=16, DG=CD=2, FH=(BF-CG)/2=1, GH=√(FG²-FH²)=√19, S=3√38; the crossed-out 'AF⊥面' fragment is correctly excluded and the interleaved (3)解 lines are preserved in draft order; no symbol audit targets are listed.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 19,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "19. [无法识别]",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "restored_unreadable_stem_sentinel",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "_未识别到手写答案。_",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "no_answer",
+        "evidence_note": "Only the printed '19、' and an opening parenthesis are visible at the right page edge of the full page; no stem text and no handwritten answer are present in the visible region, supporting the draft no_answer status.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "Q17 and Q18 printed stems are not readable beyond the number/score labels, so minimal draft stems are preserved; Q19 appears only as a cut-off number at the right page edge with no readable stem or answer.",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.8-max",
+      "attempt": 1,
+      "elapsed_s": 146.953732,
+      "prompt_tokens": 15661,
+      "completion_tokens": 8580,
+      "total_tokens": 24241,
+      "request_id": "chatcmpl-dc76b284-836c-98a1-a331-02207b098914"
+    }
+  ]
+}

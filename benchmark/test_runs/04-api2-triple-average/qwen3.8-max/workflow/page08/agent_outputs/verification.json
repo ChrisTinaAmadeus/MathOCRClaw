@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page08/api_markdown/page08.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page08/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 41858,
+    "completion_tokens": 46352,
+    "total_tokens": 88210,
+    "latency_s": 800.763448,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 240.397027,
+          "prompt_tokens": 2915,
+          "completion_tokens": 13890,
+          "total_tokens": 16805,
+          "request_id": "chatcmpl-56dccd50-b244-9f61-adce-c61679d32fc4"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 206.603707,
+          "prompt_tokens": 12981,
+          "completion_tokens": 11967,
+          "total_tokens": 24948,
+          "request_id": "chatcmpl-0da24218-2372-9745-9837-6955612b867b"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 169.11686,
+          "prompt_tokens": 12981,
+          "completion_tokens": 9784,
+          "total_tokens": 22765,
+          "request_id": "chatcmpl-eb42582a-0df0-9d70-8b64-9260f53400f4"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 184.645854,
+          "prompt_tokens": 12981,
+          "completion_tokens": 10711,
+          "total_tokens": 23692,
+          "request_id": "chatcmpl-5afb8f9d-6ffb-9a72-9b3f-7ba51b7e1752"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 206.603707,
+            "prompt_tokens": 12981,
+            "completion_tokens": 11967,
+            "total_tokens": 24948,
+            "request_id": "chatcmpl-0da24218-2372-9745-9837-6955612b867b"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 169.11686,
+            "prompt_tokens": 12981,
+            "completion_tokens": 9784,
+            "total_tokens": 22765,
+            "request_id": "chatcmpl-eb42582a-0df0-9d70-8b64-9260f53400f4"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 184.645854,
+            "prompt_tokens": 12981,
+            "completion_tokens": 10711,
+            "total_tokens": 23692,
+            "request_id": "chatcmpl-5afb8f9d-6ffb-9a72-9b3f-7ba51b7e1752"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "C002 working is truncated at the left page margin; leading glyphs of the first equation lines are only partially visible and the draft's visible portions are retained.",
+    "Q19 first handwritten line is cut at the left page margin (only 'y+cz+d=0' visible); Q18(3) and Q19(2),(3) have no visible handwritten answers.",
+    "Left edge of the Q19 handwriting area is cut by the scan margin; leading glyphs of several lines are not visible and the draft's visible-portion transcription is retained."
+  ],
+  "raw_runs": [
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"C002 working is truncated at the left page margin; leading glyphs of the first equation lines are only partially visible and the draft's visible portions are retained.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \"$\\\\because EF//BC$\",\n            \"new\": \"$\\\\because EF\\\\parallel BC$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"In the C001 context the relation between EF and BC is written as two right-slanting parallel strokes with no underline beneath them.\"\n          },\n          {\n            \"old\": \"$\\\\therefore BC//$\",\n            \"new\": \"$\\\\therefore BC\\\\parallel$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"Left column fourth line shows two slanted parallel strokes after BC and before 面 A₁EF, with no separate horizontal underline.\"\n          },\n          {\n            \"old\": \"$\\\\therefore BC//l$\",\n            \"new\": \"$\\\\therefore BC\\\\parallel l$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"Left column last line shows two slanted parallel strokes between BC and l, with no underline.\"\n          },\n          {\n            \"old\": \"$\\\\therefore l//$\",\n            \"new\": \"$\\\\therefore l\\\\parallel$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"Middle column third line shows two slanted parallel strokes after l and before 面 BCFE, with no underline.\"\n          }\n        ],\n        \"symbol_observations\": [\n          {\n            \"audit_id\": \"G001\",\n            \"tag\": \"GEOMETRY_MARK\",\n            \"location\": \"C001 answer left column, line 1, between EF and BC in '∵ EF//BC'\",\n            \"candidates\": [\"\\\\parallel\", \"\\\\mathrel{\\\\underline{\\\\parallel}}\", \"=\"],\n            \"selected\": \"\\\\parallel\",\n            \"observed_features\": \"Exactly two right-slanting strokes of similar length and spacing; no horizontal bar below the pair and strokes are oblique, not the two horizontal bars of =.\",\n            \"context_id\": \"C001\",\n            \"reference_context_ids\": []\n          },\n          {\n            \"audit_id\": \"G002\",\n            \"tag\": \"GEOMETRY_MARK\",\n            \"location\": \"C001 answer left column, line 4, between BC and 面 A₁EF in '∴ BC// 面 A₁EF'\",\n            \"candidates\": [\"\\\\parallel\", \"\\\\mathrel{\\\\underline{\\\\parallel}}\", \"=\"],\n            \"selected\": \"\\\\parallel\",\n            \"observed_features\": \"Two oblique parallel strokes with constant spacing; no independent underline visible beneath the pair; not horizontal bars.\",\n            \"context_id\": \"C001\",\n            \"reference_context_ids\": []\n          },\n          {\n            \"audit_id\": \"G003\",\n            \"tag\": \"GEOMETRY_MARK\",\n            \"location\": \"C001 answer left column, last line, between BC and l in '∴ BC//l'\",\n            \"candidates\": [\"\\\\parallel\", \"\\\\mathrel{\\\\underline{\\\\parallel}}\", \"=\"],\n            \"selected\": \"\\\\parallel\",\n            \"observed_features\": \"Two right-slanting strokes written as one relation mark; no extra lower stroke beneath them; orientation slanted rather than horizontal.\",\n            \"context_id\": \"C001\",\n            \"reference_context_ids\": []\n          },\n          {\n            \"audit_id\": \"G004\",\n            \"tag\": \"GEOMETRY_MARK\",\n            \"location\": \"C001 answer middle column, line 3, between l and 面 BCFE in '∴ l// 面 BCFE'\",\n            \"candidates\": [\"\\\\parallel\", \"\\\\mathrel{\\\\underline{\\\\parallel}}\", \"=\"],\n            \"selected\": \"\\\\parallel\",\n            \"observed_features\": \"Two slanted parallel strokes, same writer style as the other three relation marks; no underline and no horizontal equality bars.\",\n            \"context_id\": \"C001\",\n            \"reference_context_ids\": []\n          }\n        ],\n        \"evidence\": \"All four retained relation marks in the (1) proof are handwritten as two slanted parallel strokes (//) with no independent underline, so canonical \\\\parallel is applied locally; remaining lines (coordinates, vectors, normal vector, sinθ fraction 4√15/5) match the draft and are preserved.\"\n      }\n    },\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Bottom handwriting matches the draft line for line: 'a+d=0', '2a+b+c+d=0', '2b+d=0', '⇒' with a large left brace containing 'a=-d', 'b=-½d', 'c=3/2d', then 'dx-½dy+3/2dz+d=0.' and '除以 -d'; left-edge glyphs are cut by the page margin as in the draft; no retained handwriting for (2) and (3).\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"Q19 first handwritten line is cut at the left page margin (only 'y+cz+d=0' visible); Q18(3) and Q19(2),(3) have no visible handwritten answers.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [\n          {\"label\": \"(1)\", \"value\": \"l\\\\parallel 平面 BCFE\", \"status\": \"ok\"},\n          {\"label\": \"(2)\", \"value\": \"\\\\frac{4\\\\sqrt{15}}{5}\", \"status\": \"ok\"},\n          {\"label\": \"(3)\", \"value\": \"\", \"status\": \"no_answer\"}\n        ],\n        \"edits\": [\n          {\n            \"old\": \"$\\\\because EF//BC$\",\n            \"new\": \"$\\\\because EF\\\\parallel BC$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"First line of (1): the relation between EF and BC is two short right-slanted strokes; no underline beneath and strokes are oblique, not horizontal bars.\"\n          },\n          {\n            \"old\": \"$\\\\therefore BC//$\",\n            \"new\": \"$\\\\therefore BC\\\\parallel$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"Line concluding BC parallel to plane A_1EF: two slanted strokes after BC; no separate underline and not two horizontal equal bars.\"\n          },\n          {\n            \"old\": \"$\\\\therefore BC//l$\",\n            \"new\": \"$\\\\therefore BC\\\\parallel l$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"Lower-left line '∴ BC//l': two right-slanted strokes between BC and l; no underline visible beneath the pair.\"\n          },\n          {\n            \"old\": \"$\\\\therefore l//$\",\n            \"new\": \"$\\\\therefore l\\\\parallel$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"Middle column '∴ l//面 BCFE': two slanted strokes after l, same form as the writer's other parallel marks; no underline.\"\n          }\n        ],\n        \"symbol_observations\": [\n          {\n            \"audit_id\": \"G001\",\n            \"tag\": \"GEOMETRY_MARK\",\n            \"location\": \"first line of (1) answer, between EF and BC\",\n            \"candidates\": [\"\\\\parallel\", \"\\\\mathrel{\\\\underline{\\\\parallel}}\", \"=\"],\n            \"selected\": \"\\\\parallel\",\n            \"observed_features\": \"two side-by-side right-slanted strokes; no independent horizontal underline below the pair; strokes oblique rather than two horizontal bars, excluding underlined parallel and =\",\n            \"context_id\": \"C001\",\n            \"reference_context_ids\": []\n          },\n          {\n            \"audit_id\": \"G002\",\n            \"tag\": \"GEOMETRY_MARK\",\n            \"location\": \"left column line '∴ BC// 面 A_1EF', after BC\",\n            \"candidates\": [\"\\\\parallel\", \"\\\\mathrel{\\\\underline{\\\\parallel}}\", \"=\"],\n            \"selected\": \"\\\\parallel\",\n            \"observed_features\": \"two slanted strokes of similar length and tilt; nothing drawn beneath them; not horizontal equal bars\",\n            \"context_id\": \"C001\",\n            \"reference_context_ids\": []\n          },\n          {\n            \"audit_id\": \"G003\",\n            \"tag\": \"GEOMETRY_MARK\",\n            \"location\": \"lower-left line '∴ BC//l', between BC and l\",\n            \"candidates\": [\"\\\\parallel\", \"\\\\mathrel{\\\\underline{\\\\parallel}}\", \"=\"],\n            \"selected\": \"\\\\parallel\",\n            \"observed_features\": \"two right-slanted strokes preceding l; no underline stroke beneath; slant excludes =\",\n            \"context_id\": \"C001\",\n            \"reference_context_ids\": []\n          },\n          {\n            \"audit_id\": \"G004\",\n            \"tag\": \"GEOMETRY_MARK\",\n            \"location\": \"middle column line '∴ l//面 BCFE', after l\",\n            \"candidates\": [\"\\\\parallel\", \"\\\\mathrel{\\\\underline{\\\\parallel}}\", \"=\"],\n            \"selected\": \"\\\\parallel\",\n            \"observed_features\": \"two slanted strokes after l matching the same writer's parallel marks in G001–G003; no separate underline visible\",\n            \"context_id\": \"C001\",\n            \"reference_context_ids\": []\n          }\n        ],\n        \"evidence\": \"All four relation marks in the retained proof are handwritten as two slanted parallel strokes with no underline; (1) and (2) retained, (3) blank.\"\n      }\n    },\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"medium\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Handwritten lines a+d=0, 2a+b+c+d=0, 2b+d=0, brace system a=-d, b=-1/2 d, c=3/2 d, then dx-1/2 dy+3/2 dz+d=0 and 除以 -d are all visible in the C002 answer area; first line is cut at the left margin so the draft's visible-portion reading is retained.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"Left edge of the Q19 handwriting area is cut by the scan margin; leading glyphs of several lines are not visible and the draft's visible-portion transcription is retained.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \"$\\\\because EF//BC$\",\n            \"new\": \"$\\\\because EF\\\\parallel BC$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"Color context C001 shows the relation between EF and BC as two slanted parallel pen strokes with no underline and no horizontal bars.\"\n          },\n          {\n            \"old\": \"$\\\\therefore BC//$\",\n            \"new\": \"$\\\\therefore BC\\\\parallel$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"In the left column line concluding BC parallel to plane A_1EF, the mark after BC is two slanted strokes; no separate underline beneath the pair.\"\n          },\n          {\n            \"old\": \"$\\\\therefore BC//l$\",\n            \"new\": \"$\\\\therefore BC\\\\parallel l$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"Bottom-left line shows two slanted parallel strokes between BC and l; no underline and no equality bars.\"\n          },\n          {\n            \"old\": \"$\\\\therefore l//$\",\n            \"new\": \"$\\\\therefore l\\\\parallel$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"Middle column line concluding l parallel to plane BCFE shows two slanted strokes after l with no underline beneath.\"\n          }\n        ],\n        \"symbol_observations\": [\n          {\n            \"audit_id\": \"G001\",\n            \"tag\": \"GEOMETRY_MARK\",\n            \"location\": \"left column, first line of (1), between EF and BC\",\n            \"candidates\": [\"\\\\parallel\", \"\\\\mathrel{\\\\underline{\\\\parallel}}\", \"=\"],\n            \"selected\": \"\\\\parallel\",\n            \"observed_features\": \"Two separate right-slanting strokes of similar length and spacing; no horizontal underline below the pair and strokes are slanted, not the two horizontal bars of '='.\",\n            \"context_id\": \"C001\",\n            \"reference_context_ids\": []\n          },\n          {\n            \"audit_id\": \"G002\",\n            \"tag\": \"GEOMETRY_MARK\",\n            \"location\": \"left column, fourth line, relation mark after BC before '面 A_1EF'\",\n            \"candidates\": [\"\\\\parallel\", \"\\\\mathrel{\\\\underline{\\\\parallel}}\", \"=\"],\n            \"selected\": \"\\\\parallel\",\n            \"observed_features\": \"Pair of slanted parallel strokes after BC; the pair carries no additional underline stroke and is not horizontal like '='.\",\n            \"context_id\": \"C001\",\n            \"reference_context_ids\": []\n          },\n          {\n            \"audit_id\": \"G003\",\n            \"tag\": \"GEOMETRY_MARK\",\n            \"location\": \"left column, last line, between BC and l\",\n            \"candidates\": [\"\\\\parallel\", \"\\\\mathrel{\\\\underline{\\\\parallel}}\", \"=\"],\n            \"selected\": \"\\\\parallel\",\n            \"observed_features\": \"Two slanted strokes visible between BC and l; no independent underline beneath the pair.\",\n            \"context_id\": \"C001\",\n            \"reference_context_ids\": []\n          },\n          {\n            \"audit_id\": \"G004\",\n            \"tag\": \"GEOMETRY_MARK\",\n            \"location\": \"middle column, third line, after l in the conclusion l parallel to plane BCFE\",\n            \"candidates\": [\"\\\\parallel\", \"\\\\mathrel{\\\\underline{\\\\parallel}}\", \"=\"],\n            \"selected\": \"\\\\parallel\",\n            \"observed_features\": \"Two slanted strokes after l with no underline below and no double horizontal bar.\",\n            \"context_id\": \"C001\",\n            \"reference_context_ids\": []\n          }\n        ],\n        \"evidence\": \"All four relation marks in the retained proof are written as a pair of slanted parallel pen strokes; color context C001 and the answer_ink companion show no independent underline (parallel-and-equal) and no horizontal equality bars.\"\n      }\n    },\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Retained handwritten lines (a+d=0, 2a+b+c+d=0, 2b+d=0, the case system a=-d, b=-1/2 d, c=3/2 d, and dx-1/2 dy+3/2 dz+d=0, divide by -d) match the draft; left-margin cropping hides leading glyphs but visible portions agree with the draft transcription.\"\n      }\n    }\n  ]\n}"
+  ]
+}

@@ -1,0 +1,340 @@
+{
+  "schema_version": 1,
+  "page": "page19",
+  "api2_run": 2,
+  "questions": [
+    {
+      "qno": 12,
+      "question_type": "fill",
+      "choice_mode": "",
+      "section_heading_before": "三、填空题",
+      "question_markdown": "12. 若事件 $A$ 与事件 $B$ 互斥，$P(A)=0.3, P(A \\cup B)=0.7$，则 $P(B)=$ \\_\\_\\_\\_\\_\\_。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page19/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$0.6$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page19/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 13,
+      "question_type": "fill",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "13. 过 $P(-1,-\\sqrt{3})$ 的直线 $l$ 与 $y$ 轴的正半轴没有公共点，则直线 $l$ 的倾斜角范围是 \\_\\_\\_\\_\\_\\_。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page19/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "_未识别到手写答案。_",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "no_answer",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page19/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 14,
+      "question_type": "fill",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "14. 如图所示，将棱长为 2 的正方体 $ABCD-A_1B_1C_1D_1$ 截去一个三棱锥得到多面体 $ABCD-B_1C_1D_1$，在该多面体内放入一个球，则球的半径的最大值为 \\_\\_\\_\\_\\_\\_。\n<插图>",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 1,
+        "figure_audit_observed_count": 1,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C003-01",
+            "marker_index": 1,
+            "source_type": "mixed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "high",
+            "context_id": "C003",
+            "printed_anchors": [
+              "typeset vertex labels A, B, C, D, A1, B1, C1, D1",
+              "printed dashed lines for hidden edges",
+              "printed solid lines for visible edges"
+            ],
+            "handwriting_features": [
+              "faint handwritten scribbles overlaid on cube faces"
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "Printed cube skeleton with uniform thin line work and typeset vertex labels; faint handwriting scribbles visible on faces but printed framework remains dominant",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          }
+        ],
+        "lint_actions": [
+          "recorded_figure_observation_FIG-C003-01_mixed_figure",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page19/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "_未识别到手写答案。_",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "no_answer",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page19/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 15,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "四、解答题",
+      "question_markdown": "15. (13分) 抛掷一红一绿两颗质地均匀的六面体骰子，记下骰子朝上面的点数，若用 $x$ 表示红色骰子的点数，用 $y$ 表示绿色骰子的点数，设 $A=$“两个点数之和等于 8”，$B=$“至少有一颗骰子的点数为 5”。\n(1) 分别求事件 $A, B$ 的概率；\n(2) 求 $A \\cap B$ 事件的概率。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C004"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page19/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "_未识别到手写答案。_",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "no_answer",
+        "evidence_note": "",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C004"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page19/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 16,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "16. (15分) 如图，在平行六面体 $ABCD-A_1B_1C_1D_1$ 中，$E, F$ 分别为棱 $A_1D_1, CD$ 的中点，满足 $\\angle B_1BC = \\angle B_1BA = \\frac{\\pi}{3}, \\angle CBA = \\frac{\\pi}{2}, |AB|=|BC|=2, |BB_1|=3$。\n<插图>\n(1) 求证：$EF // \\text{平面} BDA_1$；\n(2) 求 $BD_1$ 的长度；\n(3) 求 $AC$ 与 $EF$ 夹角的余弦值。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C005"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 5,
+        "symbol_audit_observed_count": 5,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 1,
+        "figure_audit_observed_count": 1,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C005-01",
+            "marker_index": 1,
+            "source_type": "mixed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "high",
+            "context_id": "C005",
+            "printed_anchors": [
+              "typeset vertex labels A, B, C, D, A1, B1, C1, D1, E, F",
+              "printed dashed lines for hidden edges",
+              "printed solid lines for visible edges"
+            ],
+            "handwriting_features": [
+              "red ink annotations",
+              "handwritten angle labels π/3",
+              "handwritten length labels 2"
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "Printed parallelepiped skeleton with uniform line work and typeset vertex labels; significant red ink handwriting annotations overlaid including angle and length labels, but printed framework remains clearly visible",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          }
+        ],
+        "lint_actions": [
+          "recorded_figure_observation_FIG-C005-01_mixed_figure",
+          "accepted_symbol_observation_1",
+          "accepted_symbol_observation_2",
+          "accepted_symbol_observation_3",
+          "accepted_symbol_observation_4",
+          "accepted_symbol_observation_5",
+          "discarded_5_model_authored_symbol_edits",
+          "materialized_5_symbol_audit_edits",
+          "applied_solution_edit_1_ocr_correction",
+          "applied_solution_edit_2_ocr_correction",
+          "applied_solution_edit_3_ocr_correction",
+          "applied_solution_edit_4_ocr_correction",
+          "applied_solution_edit_5_ocr_correction"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page19/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 如图连接 $A_1B, A_1D$，取 $BD$ 中点为 $G$，连接 $A_1G, GF$。\n$G, F$ 分别是 $BD, CD$ 的中点，$GF \\parallel \\frac{1}{2} BC$。\n$E$ 是 $A_1D_1$ 的中点，$A_1E \\parallel \\frac{1}{2} BC$，$A_1E \\parallel GF$。\n四边形 $A_1EFG$ 为平行四边形，$A_1G \\parallel EF$。\n$EF \\not\\subset \\text{平面} BDA_1, A_1G \\subset \\text{平面} BDA_1 \\therefore EF \\parallel \\text{平面} BDA_1$。\n(2) $\\overrightarrow{BD_1} = \\overrightarrow{BA} + \\overrightarrow{BC} + \\overrightarrow{BB_1}$\n$\\overrightarrow{BD_1}^2 = \\overrightarrow{BA}^2 + \\overrightarrow{BC}^2 + \\overrightarrow{BB_1}^2 + 2\\overrightarrow{BA}\\cdot\\overrightarrow{BC} + 2\\overrightarrow{BA}\\cdot\\overrightarrow{BB_1} + 2\\overrightarrow{BC}\\cdot\\overrightarrow{BB_1}$\n$= 4 + 4 + 9 + 0 + 2 \\times 2 \\times 3 \\times \\frac{1}{2} \\times 2 = 29$\n$|\\overrightarrow{BD_1}| = \\sqrt{29}$\n(3) $\\overrightarrow{AC} = \\overrightarrow{BC} - \\overrightarrow{BA}$\n$|\\overrightarrow{AC}| = \\sqrt{8}, |\\overrightarrow{EF}| = \\sqrt{11}$\n$|\\overrightarrow{AC} \\cdot \\overrightarrow{EF}| = 4$\n$\\frac{2}{11}$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "All five // symbols in the student's handwriting show two parallel diagonal strokes without an underline; replaced with \\parallel per visual evidence",
+        "symbol_observations": [
+          {
+            "audit_id": "G001",
+            "tag": "GEOMETRY_MARK",
+            "location": "In line 'G, F 分别是 BD, CD 的中点，GF // ½BC'",
+            "candidates": [
+              "\\parallel",
+              "\\mathrel{\\underline{\\parallel}}",
+              "="
+            ],
+            "selected": "\\parallel",
+            "observed_features": "Two parallel diagonal strokes visible; no independent underline stroke beneath the pair",
+            "context_id": "C005",
+            "reference_context_ids": [
+              "C004"
+            ]
+          },
+          {
+            "audit_id": "G002",
+            "tag": "GEOMETRY_MARK",
+            "location": "In line 'E 是 A1D1 的中点，A1E // ½BC'",
+            "candidates": [
+              "\\parallel",
+              "\\mathrel{\\underline{\\parallel}}",
+              "="
+            ],
+            "selected": "\\parallel",
+            "observed_features": "Two parallel diagonal strokes visible; no independent underline stroke beneath the pair",
+            "context_id": "C005",
+            "reference_context_ids": [
+              "C004"
+            ]
+          },
+          {
+            "audit_id": "G003",
+            "tag": "GEOMETRY_MARK",
+            "location": "In line 'A1E // GF'",
+            "candidates": [
+              "\\parallel",
+              "\\mathrel{\\underline{\\parallel}}",
+              "="
+            ],
+            "selected": "\\parallel",
+            "observed_features": "Two parallel diagonal strokes visible; no independent underline stroke beneath the pair",
+            "context_id": "C005",
+            "reference_context_ids": [
+              "C004"
+            ]
+          },
+          {
+            "audit_id": "G004",
+            "tag": "GEOMETRY_MARK",
+            "location": "In line '四边形 A1EFG 为平行四边形，A1G // EF'",
+            "candidates": [
+              "\\parallel",
+              "\\mathrel{\\underline{\\parallel}}",
+              "="
+            ],
+            "selected": "\\parallel",
+            "observed_features": "Two parallel diagonal strokes visible; no independent underline stroke beneath the pair",
+            "context_id": "C005",
+            "reference_context_ids": [
+              "C004"
+            ]
+          },
+          {
+            "audit_id": "G005",
+            "tag": "GEOMETRY_MARK",
+            "location": "In line 'EF ⊄ 平面 BDA1, A1G ⊂ 平面 BDA1  EF // 平面 BDA1'",
+            "candidates": [
+              "\\parallel",
+              "\\mathrel{\\underline{\\parallel}}",
+              "="
+            ],
+            "selected": "\\parallel",
+            "observed_features": "Two parallel diagonal strokes visible; no independent underline stroke beneath the pair",
+            "context_id": "C005",
+            "reference_context_ids": [
+              "C004"
+            ]
+          }
+        ],
+        "source_context_ids": [
+          "C005"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page19/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.7-plus",
+      "attempt": 1,
+      "elapsed_s": 146.133059,
+      "prompt_tokens": 21728,
+      "completion_tokens": 8707,
+      "total_tokens": 30435,
+      "request_id": "chatcmpl-d2c99676-9ffa-9609-a8d4-af2118001ea9"
+    }
+  ]
+}

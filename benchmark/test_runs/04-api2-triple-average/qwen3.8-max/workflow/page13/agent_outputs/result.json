@@ -1,0 +1,295 @@
+{
+  "page": "page13",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/image/page13.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page13.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/preprocessed/page13.png",
+  "api_strategy": {
+    "call_count": 4,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "question-conditioned symbol, figure, and atomic patch review",
+    "api2_run_count": 3,
+    "local_merge": "deterministic validation against the first-pass draft"
+  },
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 50382,
+    "completion_tokens": 43206,
+    "total_tokens": 93588,
+    "latency_s": 652.160699,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 160.4574,
+          "prompt_tokens": 3386,
+          "completion_tokens": 12863,
+          "total_tokens": 16249,
+          "request_id": "chatcmpl-5fcc3344-500f-9237-90a0-dbcdb954580c"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 171.488612,
+          "prompt_tokens": 15674,
+          "completion_tokens": 11978,
+          "total_tokens": 27652,
+          "request_id": "chatcmpl-0f175b3c-f6d9-9eb2-95fb-d4376f6bef96"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 173.260955,
+          "prompt_tokens": 15661,
+          "completion_tokens": 9785,
+          "total_tokens": 25446,
+          "request_id": "chatcmpl-9052da5d-c0fd-9de7-8940-b1e43d21a85f"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 146.953732,
+          "prompt_tokens": 15661,
+          "completion_tokens": 8580,
+          "total_tokens": 24241,
+          "request_id": "chatcmpl-dc76b284-836c-98a1-a331-02207b098914"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 171.488612,
+            "prompt_tokens": 15674,
+            "completion_tokens": 11978,
+            "total_tokens": 27652,
+            "request_id": "chatcmpl-0f175b3c-f6d9-9eb2-95fb-d4376f6bef96"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 173.260955,
+            "prompt_tokens": 15661,
+            "completion_tokens": 9785,
+            "total_tokens": 25446,
+            "request_id": "chatcmpl-9052da5d-c0fd-9de7-8940-b1e43d21a85f"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 146.953732,
+            "prompt_tokens": 15661,
+            "completion_tokens": 8580,
+            "total_tokens": 24241,
+            "request_id": "chatcmpl-dc76b284-836c-98a1-a331-02207b098914"
+          }
+        ]
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 3,
+    "answers_with_transcription": 3,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 17,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "17. [无法识别]\n<插图>",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 1,
+        "figure_audit_observed_count": 1,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C001-01",
+            "marker_index": 1,
+            "source_type": "printed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "high",
+            "context_id": "C001",
+            "printed_anchors": [
+              "typeset italic serif vertex labels F, G, H, E, A, B, C, D",
+              "machine-regular fine dotted hidden lines (G-H, E-C, B-D, A-F)",
+              "uniform thin solid edges of the solid"
+            ],
+            "handwriting_features": [],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "figure_candidate_01 shows clean serif italic typeset labels and perfectly regular dotted dash patterns with uniform thin solid line work; no pen strokes, pen dots, or freehand lines inside the figure; the nearby handwriting ('的中点') stops outside the figure boundary",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          }
+        ],
+        "lint_actions": [
+          "recorded_figure_observation_FIG-C001-01_printed_figure",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 证明：∵ 在 $\\triangle FAD$ 中，\n$G$、$H$ 分别为 $AF$、$FD$ 的中点\n∴ $GH \\parallel = \\frac{1}{2}AD$\n又∵ $BC \\parallel AD$，$BC = \\frac{1}{2}AD$\n∴ $GH \\parallel = BC$\n四边形 $BCHG$ 是平行四边形\n答：是\n∵ $G$ 是 $AF$ 中点，$BE \\parallel AF$\n∴ $BE \\parallel GF$，$GF = \\frac{1}{2}AF = BE$\n∴ 四边形 $BEFG$ 为平行四边形\n∴ $EF \\parallel = BG$\n又∵ 由(1)得 $BG \\parallel = CH$\n∴ $EF \\parallel = CH$\n∴ 四边形 $ECHF$ 为平行四边形\n∴ $EC \\parallel FH$\n∵ $H$ 是 $FD$ 中点\n∴ $EC \\parallel FD$\n∴ $EC$、$FD$ 在同一平面上，\n即 $C$、$D$、$F$、$E$ 共面。",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Left-column handwriting matches the draft line by line: stacked parallel-and-equal marks at GH/BC/EF/BG/CH, plain double-slash parallel at 'EC // FH' and 'EC // FD', fractions 1/2 with visible bars; the crossed-out character before '是 FD 中点' and the inserted '形' are correctly excluded or absorbed by the draft",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 18,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "18. [无法识别]\n<插图>",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 1,
+        "figure_audit_observed_count": 1,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C002-01",
+            "marker_index": 1,
+            "source_type": "mixed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "medium",
+            "context_id": "C002",
+            "printed_anchors": [
+              "typeset italic serif vertex labels E, F, A, B, C, D",
+              "uniform thin solid edges (E-F, F-A, A-B, E-B, F-B)",
+              "regular dashed segments E-D and D-C"
+            ],
+            "handwriting_features": [
+              "pen-thick G and H labels with a filled pen dot at G",
+              "wavy hand-drawn dashed arc from F toward C over the printed skeleton"
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "A printed serif-italic labeled skeleton with uniform thin line work sits beside the printed '18、(17分)' number; pen-drawn G/H markers and an irregular dashed arc overlay it, so the printed exam figure is retained with student annotations",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          }
+        ],
+        "lint_actions": [
+          "recorded_figure_observation_FIG-C002-01_mixed_figure",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 证明：∵ 在正方形 $ADEF$ 中，\n∴ $ED \\perp AD$\n又∵ $DE \\perp CD$\n$CD \\cap AD = D$\n$CD, AD \\subset$ 面 $ABCD$\n∴ $DE \\perp$ 面 $ABCD$\n∵ $DE \\subset$ 面 $ADEF$\n∴ 面 $ADEF \\perp$ 面 $ABCD$\n(2) 解：根据题意得 $AD = AF = BF = 4$，\n$CD = 2$\n∵ $AF \\perp AD$，$AD =$ 面 $ADEF \\cap$ 面 $ABCD$\n$AF \\subset$ 面 $ADEF$\n∴ $AF \\perp$ 面 $ADCB$\n∴ $AF \\perp AB$\n∵ $BF$ 与面 $ABCD$ 所成角为 $45^\\circ$\n∴ $AB = \\tan 45^\\circ \\cdot AF = 4$\n∵ $CD \\parallel AB$，$\\angle CDA = 90^\\circ$\n∴ 四边形 $ABCD$ 是直角梯形\n∴ $S_{梯ABCD} = \\frac{1}{2}(CD + AB) \\cdot AD = 12$\n$V_{四棱锥E-ABCD} = \\frac{1}{3} S_{梯ABCD} \\cdot ED = 16$\n(3) 解：∵ $BF$ 与面 $ABCD$ 所成角为 $45^\\circ$\n$CG \\parallel BF$\n∵ $CG$ 与面 $ABCD$ 所成角也为 $45^\\circ$\n∴ $DG = CD = 2$\n$GF^2 = EG^2 + EF^2$\n$CB^2 = AD^2 + \\frac{1}{4}AB^2$\n∵ $EF = AD$，$EG = \\frac{1}{2}AB$\n∴ 四边形 $CBFG$ 为等腰梯形\n作 $GH \\perp BF$\n$FH = \\frac{BF - CG}{2} = 1$\n$GH = \\sqrt{FG^2 - FH^2} = \\sqrt{19}$\n∴ $S_{四边形CBFG} = \\frac{1}{2}(CG + BF) \\cdot GH = 3\\sqrt{38}$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Middle-column handwriting matches the draft order and content: perpendicular strokes with crossing bar at ED⊥AD, DE⊥CD, AF⊥AD; cap-shaped ∩ at 'CD ∩ AD = D'; subset cups at 'DE ⊂ 面ADEF'; the line '∴ AF ⊥ 面' is visibly struck through and correctly absent from the draft; radicals in 'GH = √(FG²-FH²) = √19' and '3√38' show check hook plus overline",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 19,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "19. [无法识别]",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C003"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "restored_unreadable_stem_sentinel",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "_未识别到手写答案。_",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "no_answer",
+        "evidence_note": "No handwritten answer for 19 is visible anywhere on the full page (only the printed '19、' number at the right edge); the draft no-answer status is retained",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C003"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "C002 answer area shows a stray retained handwritten line ('ABC 面 ADCB') between '∴ $AF \\perp$ 面 $ADCB$' and '∴ $AF \\perp AB$' that the draft omits; reading is uncertain so it is left unpatched. Q19 has no paired detection and no visible stem or answer on the page.",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/image/page13.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/preprocessed/page13.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/api_markdown/page13.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/api_markdown/page13.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/code_outputs/match/viz/page13_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/agent_outputs/result.json",
+    "api2_results": [
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/agent_outputs/api2_runs/run_01/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/agent_outputs/api2_runs/run_02/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/agent_outputs/api2_runs/run_03/result.json"
+    ],
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page13/code_outputs/match/viz/page13_handwriting_overlay.png"
+  }
+}

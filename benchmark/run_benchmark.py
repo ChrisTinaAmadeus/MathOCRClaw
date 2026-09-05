@@ -204,6 +204,87 @@ def _api2_result_paths(final_payload: Dict[str, Any], fallback: Path) -> List[Pa
     return paths or [fallback]
 
 
+def _request_timed_out(request: Dict[str, Any]) -> bool:
+    if request.get("success"):
+        return False
+    text = str(request.get("error") or "").casefold()
+    return "timed out" in text or "timeout" in text
+
+
+def _sum_request_elapsed_s(requests: Sequence[Dict[str, Any]]) -> Optional[float]:
+    if not requests:
+        return None
+    return round(sum(float(request.get("elapsed_s") or 0.0) for request in requests), 6)
+
+
+def _api_latency_fields(api_metrics: Optional[Dict[str, Any]]) -> Dict[str, Any]:
+    """Extract API1 elapsed and API2 mean-run elapsed from workflow api_metrics."""
+    passes = ((api_metrics or {}).get("passes") or {}) if isinstance(api_metrics, dict) else {}
+    call_1 = passes.get("call_1") if isinstance(passes.get("call_1"), list) else []
+    call_2 = passes.get("call_2") if isinstance(passes.get("call_2"), list) else []
+    call_2_runs = (
+        passes.get("call_2_runs") if isinstance(passes.get("call_2_runs"), list) else []
+    )
+
+    api1_timeout = any(_request_timed_out(request) for request in call_1)
+    api2_timeout = any(_request_timed_out(request) for request in call_2)
+    if not api2_timeout:
+        api2_timeout = any(
+            _request_timed_out(request)
+            for run in call_2_runs
+            for request in (run if isinstance(run, list) else [])
+        )
+
+    api1_s = None if api1_timeout else _sum_request_elapsed_s(call_1)
+    api2_s: Optional[float] = None
+    if not api2_timeout:
+        if call_2_runs:
+            per_run = [
+                _sum_request_elapsed_s(run if isinstance(run, list) else [])
+                for run in call_2_runs
+            ]
+            values = [value for value in per_run if value is not None]
+            api2_s = round(sum(values) / len(values), 6) if values else None
+        else:
+            api2_s = _sum_request_elapsed_s(call_2)
+
+    return {
+        "api1_latency_s": api1_s,
+        "api2_latency_s": api2_s,
+        "api1_timeout": api1_timeout,
+        "api2_timeout": api2_timeout,
+    }
+
+
+def _format_latency_cell(
+    latency_s: Optional[float],
+    *,
+    timed_out: bool = False,
+) -> str:
+    if timed_out:
+        return "timeout"
+    if latency_s is None:
+        return "—"
+    return f"{latency_s:.1f}s"
+
+
+def _error_latency_cells(page: Dict[str, Any]) -> tuple[str, str]:
+    fields = _api_latency_fields(page.get("api_metrics"))
+    err = str(page.get("error") or "").casefold()
+    error_timeout = "timed out" in err or "timeout" in err
+    api1 = _format_latency_cell(
+        fields["api1_latency_s"],
+        timed_out=bool(fields["api1_timeout"]),
+    )
+    api2 = _format_latency_cell(
+        fields["api2_latency_s"],
+        timed_out=bool(fields["api2_timeout"]) or (error_timeout and not fields["api1_timeout"]),
+    )
+    if error_timeout and api1 == "—" and api2 == "—":
+        api2 = "timeout"
+    return api1, api2
+
+
 def _render_report(report: Dict[str, Any]) -> str:
     summary = report["summary"]
     lines = [
@@ -219,18 +300,31 @@ def _render_report(report: Dict[str, Any]) -> str:
         f"- Workflow (API2 mean): **{summary['workflow']['score'] or 0:.2f}**",
         f"- Gain: **{summary['gain'] or 0:+.2f}**",
         "",
-        "| Page | API1 baseline | API2 mean | Gain | Omission Δ | Hallucination Δ |",
-        "|---|---:|---:|---:|---:|---:|",
+        "| Page | API1 baseline | API2 mean | Gain | API1 time | API2 time | Omission Δ | Hallucination Δ |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for page in report["pages"]:
         if page.get("status") != "ok":
-            lines.append(f"| {page['page']} | ERROR | ERROR | — | — | — |")
+            api1_time, api2_time = _error_latency_cells(page)
+            lines.append(
+                f"| {page['page']} | ERROR | ERROR | — | {api1_time} | {api2_time} | — | — |"
+            )
             continue
         baseline = page["baseline"]
         workflow = page["workflow"]
+        fields = _api_latency_fields(page.get("api_metrics"))
+        api1_time = _format_latency_cell(
+            page.get("api1_latency_s", fields["api1_latency_s"]),
+            timed_out=bool(page.get("api1_timeout", fields["api1_timeout"])),
+        )
+        api2_time = _format_latency_cell(
+            page.get("api2_latency_s", fields["api2_latency_s"]),
+            timed_out=bool(page.get("api2_timeout", fields["api2_timeout"])),
+        )
         lines.append(
             f"| {page['page']} | {baseline['score']:.2f} | {workflow['score']:.2f} | "
-            f"{page['gain']:+.2f} | {workflow['omission_rate'] - baseline['omission_rate']:+.3f} | "
+            f"{page['gain']:+.2f} | {api1_time} | {api2_time} | "
+            f"{workflow['omission_rate'] - baseline['omission_rate']:+.3f} | "
             f"{workflow['hallucination_rate'] - baseline['hallucination_rate']:+.3f} |"
         )
     lines.extend(
@@ -369,12 +463,34 @@ def run(cli: argparse.Namespace) -> Dict[str, Any]:
                 "evaluator": scored_runs[0]["evaluator"],
                 "api_metrics": final_payload.get("api_metrics") or {},
             }
+            page_report.update(_api_latency_fields(page_report.get("api_metrics")))
         except Exception as exc:
+            prior_path = output_dir / "pages" / f"{page}.json"
+            prior_error = ""
+            if prior_path.exists():
+                try:
+                    prior_payload = json.loads(prior_path.read_text(encoding="utf-8"))
+                    if prior_payload.get("status") == "error":
+                        prior_error = str(prior_payload.get("error") or "")
+                except Exception:
+                    prior_error = ""
+            error_text = f"{type(exc).__name__}: {exc}"
+            # Keep a prior timeout/error message when score-only cannot load missing outputs.
+            if (
+                cli.score_only
+                and prior_error
+                and (
+                    "timed out" in prior_error.casefold()
+                    or "timeout" in prior_error.casefold()
+                    or isinstance(exc, FileNotFoundError)
+                )
+            ):
+                error_text = prior_error
             page_report = {
                 "page": page,
                 "status": "error",
                 "elapsed_s": round(time.perf_counter() - page_started, 6),
-                "error": f"{type(exc).__name__}: {exc}",
+                "error": error_text,
             }
             if cli.fail_fast:
                 page_reports.append(page_report)

@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "page": "page09",
+  "api2_run": 2,
+  "questions": [
+    {
+      "qno": 12,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "12. 若命题“$\\exists x\\in\\{x\\mid -1\\le x\\le 3\\}$，$x^2-2x-a\\le 0$”为真命题，则实数 $a$ 的取值范围为",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page09/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "$a\\geq -1$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Underlined handwritten 'a≥-1' in black ink immediately after 范围为 in the copied stem, and the teal working below ends with '∴ -1≤a', both matching the draft answer $a\\geq -1$.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page09/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 17,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "17. (15分) 某学校引入种植类劳动教育课程，打算围成如图所示的四块全等的长方形田地种植不同种类的蔬菜，其中一面可以利用原有的墙（足够长），其他各面需要用篱笆围成，设其中一块田地为矩形 $ABCD$。\n\n<插图>\n\n(1) 若每块田地的面积为 $24\\,\\mathrm{m}^2$，要使围成四块田地的篱笆总长最小，应该设计田地的长 $AB$ 和宽 $AD$ 各为多少？\n(2) 现用 $40\\,\\mathrm{m}$ 长的篱笆，要使每块田地的面积最大，应该设计田地的长 $AB$ 和宽 $AD$ 各为多少？",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002",
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 1,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C002-01",
+            "marker_index": 1,
+            "source_type": "uncertain",
+            "content_role": "uncertain",
+            "confidence": "low",
+            "context_id": "C002",
+            "printed_anchors": [],
+            "handwriting_features": [],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "No valid API2 figure observation was supplied; the local gate preserved the API1 marker.",
+            "local_action": "preserve",
+            "model_observation_valid": false
+          }
+        ],
+        "lint_actions": [
+          "rejected_figure_observation_invalid_context_FIG-C002-01",
+          "preserved_missing_figure_observation_FIG-C002-01",
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page09/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 设 $AB$ 为 $x\\,\\mathrm{m}$，$AD$ 为 $y\\,\\mathrm{m}$，则 $xy=24$。\n∴ 求 $6y+4x$ 的 min。\n$\\because 6y+4x\\geq 2\\sqrt{6y\\cdot 4x}$\n$\\geq 2\\sqrt{24\\cdot 24}$\n$\\geq 48$，\n∴ $6y+4x$ 的 min 为 $48$\n当且仅当 $6y=4x=24$ 时，即 $y=4$，$x=6$ 时，取最小值。\n∴ $AB$ 为 $6\\,\\mathrm{m}$，$AD$ 为 $4\\,\\mathrm{m}$\n\n(2) 设 $AB$ 为 $a\\,\\mathrm{m}$，$AD$ 为 $b\\,\\mathrm{m}$。\n∴ $6a+4b=40$。求 $ab$ 的 max，即 $ab$ 的 max。\n$\\because 6a+4b=40$，∴ $3a+2b=20$。\n∴ $b=\\frac{20-3a}{2}$。\n∴ $ab=a\\left(\\frac{20-3a}{2}\\right)$\n$=\\frac{-3a^2+20a}{2}$。\n$\\because -\\frac{b}{2a}=-\\frac{20}{2\\times(-3)}=\\frac{10}{3}$。\n∴ $ab$ max $=\\frac{100}{3}$。\n当且仅当 $a=\\frac{10}{3}$，$b=5$ 时取得最大值\n∴ $AB$ 的长为 $\\frac{10}{3}\\,\\mathrm{m}$，$AD$ 的长为 $5\\,\\mathrm{m}$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Teal part-(1) working ends '∴ AB为6m AD为4m' and black part-(2) working ends '∴ AB的长为10/3 m, AD的长为5m', matching the draft; visibly crossed-out tokens (e.g., the struck text before 3a+2b=20 and the cancelled fraction in the -b/2a line) are already excluded from the draft transcription.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002",
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page09/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "Q12 stem appears student-copied in handwriting with no printed material visible, so question_type follows the draft; stray '18.' after the 取最小值 line in (1) and faint show-through marks inside the figure cells are treated as non-content and left untranscribed.",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.8-max",
+      "attempt": 1,
+      "elapsed_s": 152.574894,
+      "prompt_tokens": 10401,
+      "completion_tokens": 8698,
+      "total_tokens": 19099,
+      "request_id": "chatcmpl-a8d25d71-3bae-9b5f-ad7c-12091cb56ece"
+    }
+  ]
+}

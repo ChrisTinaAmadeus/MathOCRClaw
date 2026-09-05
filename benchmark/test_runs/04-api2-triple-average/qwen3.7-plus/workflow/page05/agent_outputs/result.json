@@ -1,0 +1,213 @@
+{
+  "page": "page05",
+  "source_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page05/image/page05.jpg",
+  "input_image": "/home/puppeteer/MathOCRClaw/benchmark/images/page05.jpg",
+  "preprocessed_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page05/preprocessed/page05.png",
+  "api_strategy": {
+    "call_count": 4,
+    "call_1": "whole-page draft Markdown",
+    "call_2": "question-conditioned symbol, figure, and atomic patch review",
+    "api2_run_count": 3,
+    "local_merge": "deterministic validation against the first-pass draft"
+  },
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 33017,
+    "completion_tokens": 12495,
+    "total_tokens": 45512,
+    "latency_s": 205.049613,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 110.297166,
+          "prompt_tokens": 3065,
+          "completion_tokens": 6842,
+          "total_tokens": 9907,
+          "request_id": "chatcmpl-46d4273e-48a8-973b-8afc-7bc3c4d40bbd"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 26.16877,
+          "prompt_tokens": 9984,
+          "completion_tokens": 1538,
+          "total_tokens": 11522,
+          "request_id": "chatcmpl-b4c1837c-1249-947a-9e3c-82326c8a2228"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 42.914353,
+          "prompt_tokens": 9984,
+          "completion_tokens": 2588,
+          "total_tokens": 12572,
+          "request_id": "chatcmpl-dbc5aaea-2460-911d-a126-fef0951d1571"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 25.669324,
+          "prompt_tokens": 9984,
+          "completion_tokens": 1527,
+          "total_tokens": 11511,
+          "request_id": "chatcmpl-60b473d4-f034-979b-8365-cef8369a0292"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 26.16877,
+            "prompt_tokens": 9984,
+            "completion_tokens": 1538,
+            "total_tokens": 11522,
+            "request_id": "chatcmpl-b4c1837c-1249-947a-9e3c-82326c8a2228"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 42.914353,
+            "prompt_tokens": 9984,
+            "completion_tokens": 2588,
+            "total_tokens": 12572,
+            "request_id": "chatcmpl-dbc5aaea-2460-911d-a126-fef0951d1571"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 25.669324,
+            "prompt_tokens": 9984,
+            "completion_tokens": 1527,
+            "total_tokens": 11511,
+            "request_id": "chatcmpl-60b473d4-f034-979b-8365-cef8369a0292"
+          }
+        ]
+      ]
+    }
+  },
+  "summary": {
+    "question_count": 2,
+    "answers_with_transcription": 2,
+    "answers_partial_or_uncertain": 0,
+    "answers_empty": 0
+  },
+  "questions": [
+    {
+      "qno": 18,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "18. 已知 $a>0, b>0$.\n(1) 若 $a-b=2$，求证：$a+\\frac{4}{b+1} \\ge 5$；\n(2) 若 $a+b=2$，不等式 $\\frac{4}{a+2}+\\frac{m}{b} \\ge 4(m>0)$ 恒成立，求 $m$ 的取值范围；\n(3) 若 $c>0$，求 $\\frac{\\sqrt{ab}+2\\sqrt{ac}-2a}{4a+b+2c}$ 的最大值.",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page05/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) _未识别到手写答案。_\n(2) $0 < m \\le 4$\n(3) _未识别到手写答案。_",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "no_answer",
+        "evidence_note": "Visible handwritten answer for (2): '0 < m ≤ 4' matches draft. (1) has checkmark indicating proof completed but no visible work. (3) has circled label but no answer.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page05/code_outputs/match/question_contexts.json"
+      }
+    },
+    {
+      "qno": 19,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "19. 已知二次函数 $y=ax^2-bx+3$.\n(1) 若不等式 $y>0$ 的解集为 $\\left\\{x\\mid -\\frac{1}{3}<x<1\\right\\}$，求 $a$ 和 $b$ 的值；\n(2) 若 $a>0, b=3a+1$.\n(i) 解关于 $x$ 的不等式 $y \\le 0$；\n(ii) 若对任意的 $a \\in [1, 2]$，$y>0$ 恒成立，求 $x$ 的取值范围.",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C002"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page05/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) $-9, -6$\n(2)\n(i) $0 < a \\le \\frac{1}{3}, 3 \\le x \\le \\frac{1}{a}$；$a \\ge \\frac{1}{3}, \\frac{1}{a} \\le x \\le 3$\n(ii) $(-\\infty, \\frac{1}{6}) \\cup (3, +\\infty)$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "All answers visible: (1) '-9, -6'; (2)(i) '0<a≤1/3, 3≤x≤1/a' and 'a≥1/3, 1/a≤x≤3'; (2)(ii) '(-∞, 1/6) ∪ (3, +∞)'. Crossed-out '9, t' above (2) is discarded work.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C002"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page05/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "artifacts": {
+    "original_image": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page05/image/page05.jpg",
+    "preprocessing_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page05/preprocessed/page05.json",
+    "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page05/api_markdown/page05.md",
+    "first_pass_response": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page05/api_markdown/page05.json",
+    "code_outputs": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page05/code_outputs",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page05/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page05/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page05/code_outputs/match/viz/page05_handwriting_overlay.png",
+    "second_pass_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page05/agent_outputs/verification.json"
+  },
+  "outputs": {
+    "result_json": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page05/agent_outputs/result.json",
+    "api2_results": [
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page05/agent_outputs/api2_runs/run_01/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page05/agent_outputs/api2_runs/run_02/result.json",
+      "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page05/agent_outputs/api2_runs/run_03/result.json"
+    ],
+    "result_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page05/agent_outputs/result.md",
+    "verification_report": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page05/agent_outputs/verification.json",
+    "question_contexts": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page05/code_outputs/match/question_contexts.json",
+    "handwriting_regions": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page05/code_outputs/match/handwriting_regions.json",
+    "handwriting_overlay": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page05/code_outputs/match/viz/page05_handwriting_overlay.png"
+  }
+}

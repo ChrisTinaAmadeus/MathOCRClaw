@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "page": "page32",
+  "api2_run": 1,
+  "questions": [
+    {
+      "qno": 19,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "19. (17分) 设函数 $y=ax^2+(1-a)x+a-2(a\\in \\mathbf{R})$\n(1)若关于$x$的不等式$y \\le 0$解集为$\\{x|0 \\le x \\le b\\}$，求实数$a,b$的值；\n(2)解关于$x$的不等式：$y < a-1$.",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page32/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) $0$ 和 $b$ 是方程 $ax^2+(1-a)x+a-2=0$ 根且 $a>0$。\n$\\therefore \\begin{cases} 0+b=-\\frac{1-a}{a} \\\\ 0\\times b=\\frac{a-2}{a} \\end{cases}$\n解得 $a=2, b=\\frac{1}{2}$。\n\n(2) 由 $f(x)<a-1$ 则 $ax^2+(1-a)x-1<0$。\n当 $a=0$ 时，不等式可化简为 $x-1<0 \\ x<1 \\ \\{x|x<1\\}$。\n当 $a<0$ 时，不等式化为 $(x+\\frac{1}{a})(x-1)>0$。\n①当 $a=-1$ 时，$-\\frac{1}{a}=1$，不等式的解集为 $\\{x|x \\ne 1\\}$。\n②当 $-1<a<0$ 时 $-\\frac{1}{a}>1$，不等式的解集为 $\\{x|x<1 \\text{ 或 } x>-\\frac{1}{a}\\}$。\n③当 $a<-1$ 时，$-\\frac{1}{a}<1$ 不等式的解集为 $\\{x|x<-\\frac{1}{a} \\text{ 或 } x>1\\}$。\n综上 当 $a<-1$ 时 $\\Rightarrow \\{x|x<-\\frac{1}{a} \\text{ 或 } x>1\\}$。\n当 $a=-1$ 时 $\\Rightarrow \\{x|x \\ne 1\\}$。\n当 $-1<a<0$ 时 $\\Rightarrow \\{x|x<1 \\text{ 或 } x>-\\frac{1}{a}\\}$。\n当 $a=0$ 时 $\\Rightarrow \\{x|x<1\\}$。\n当 $a>0$ 时 $\\Rightarrow \\{x|-\\frac{1}{a}<x<1\\}$。",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "The draft accurately transcribes the printed question and the student's handwritten solution steps, including the case analysis for part (2).",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page32/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.7-plus",
+      "attempt": 1,
+      "elapsed_s": 55.265855,
+      "prompt_tokens": 9177,
+      "completion_tokens": 3358,
+      "total_tokens": 12535,
+      "request_id": "chatcmpl-245b9899-93a0-903d-9fba-fd8bd456c549"
+    }
+  ]
+}

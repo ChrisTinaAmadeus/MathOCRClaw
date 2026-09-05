@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "page": "page15",
+  "api2_run": 3,
+  "questions": [
+    {
+      "qno": 16,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "16. (15分) 设集合 $A=\\{x\\mid(x-a+2)(x-a-2)<0\\}$，$B=\\left\\{x\\mid\\frac{2x-1}{x+2}<1\\right\\}$。\n(1) 求集合 $A$, $B$；\n(2) 若 $A\\cap(\\complement_R B)=\\varnothing$，求实数 $a$ 的取值范围。",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 0,
+        "symbol_audit_observed_count": 0,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 0,
+        "figure_audit_observed_count": 0,
+        "figure_observations": [],
+        "lint_actions": [
+          "kept_first_pass_answer_byte_exact"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page15/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 由题意得 $a-2$、$a+2$ 是方程 $(x-a+2)(x-a-2)=0$ 的两根，且 $a-2$ 一定小于 $a+2$。\n$\\therefore A=\\{x\\mid a-2<x<a+2\\}$。\n$B$：① $\\begin{cases} x+2>0\\\\ 2x-1<x+2\\end{cases}$ 解得 $-2<x<3$\n② $\\begin{cases} 2x-1>x+2\\\\ x+2<0\\end{cases}$ 无解。\n$\\therefore B=\\{x\\mid -2<x<3\\}$\n(2) $\\complement_R B=\\{x\\mid x\\leq -2 \\text{ 或 } x\\geq 3\\}$。\n$\\because A\\cap(\\complement_R B)=\\varnothing$\n$\\therefore$ ① $A=\\varnothing \\Rightarrow a-2\\geq a+2$ 无解。\n② $\\begin{cases} a-2>-2\\\\ a+2<3\\end{cases}$ 解得 $0<a<1$\n综上所述，$a$ 取值 $\\{a\\mid 0<a<1\\}$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "In C001 color context the printed stem matches the draft exactly (fraction (2x-1)/(x+2)<1 and A∩(_R B)= visible in typeset), and the retained black-ink handwriting matches the draft line by line: roots statement for (x-a+2)(x-a-2)=0, A={x|a-2<x<a+2}, case ① x+2>0, 2x-1<x+2 giving -2<x<3, case ② 2x-1>x+2, x+2<0 with no solution, B={x|-2<x<3}, ∁_R B={x|x≤-2 or x≥3}, A∩(∁_R B)=∅, case ② a-2>-2, a+2<3 giving 0<a<1, and final {a|0<a<1}; inequality bars and set braces show the discriminating strokes (lower equality bars visible on ≤ and ≥ in the complement line), so no patch is justified.",
+        "symbol_observations": [],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page15/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.8-max",
+      "attempt": 1,
+      "elapsed_s": 63.486675,
+      "prompt_tokens": 7424,
+      "completion_tokens": 4577,
+      "total_tokens": 12001,
+      "request_id": "chatcmpl-e72727bf-70fb-9a6c-b72c-6cea03ed5629"
+    }
+  ]
+}

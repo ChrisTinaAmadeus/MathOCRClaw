@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page24/api_markdown/page24.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page24/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 49531,
+    "completion_tokens": 13522,
+    "total_tokens": 63053,
+    "latency_s": 220.260306,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 99.730326,
+          "prompt_tokens": 3109,
+          "completion_tokens": 6216,
+          "total_tokens": 9325,
+          "request_id": "chatcmpl-9752775e-5031-9bc8-88f5-7f4cf53b02e2"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 62.184688,
+          "prompt_tokens": 15474,
+          "completion_tokens": 3795,
+          "total_tokens": 19269,
+          "request_id": "chatcmpl-e60894d3-a2e4-9d92-83de-fdb8ef8dbea5"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 32.036503,
+          "prompt_tokens": 15474,
+          "completion_tokens": 1939,
+          "total_tokens": 17413,
+          "request_id": "chatcmpl-52aedc25-4f26-9a49-9b24-645475c35d45"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 26.308789,
+          "prompt_tokens": 15474,
+          "completion_tokens": 1572,
+          "total_tokens": 17046,
+          "request_id": "chatcmpl-4ecf22a1-fdf3-99b0-ae02-09f06e71476d"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 62.184688,
+            "prompt_tokens": 15474,
+            "completion_tokens": 3795,
+            "total_tokens": 19269,
+            "request_id": "chatcmpl-e60894d3-a2e4-9d92-83de-fdb8ef8dbea5"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 32.036503,
+            "prompt_tokens": 15474,
+            "completion_tokens": 1939,
+            "total_tokens": 17413,
+            "request_id": "chatcmpl-52aedc25-4f26-9a49-9b24-645475c35d45"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 26.308789,
+            "prompt_tokens": 15474,
+            "completion_tokens": 1572,
+            "total_tokens": 17046,
+            "request_id": "chatcmpl-4ecf22a1-fdf3-99b0-ae02-09f06e71476d"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "",
+    "",
+    ""
+  ],
+  "raw_runs": [
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C001-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"printed_anchors\": [\n              \"typeset labels A, B, C, A₁, B₁, C₁, D, E, M\",\n              \"printed caption (第 17 题图)\",\n              \"uniform thin line work for prism edges and dashed hidden edges\"\n            ],\n            \"handwriting_features\": [\n              \"handwritten axis labels z, y, x near vertices\",\n              \"handwritten x mark near lower-left\"\n            ],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"Printed triangular prism skeleton with typeset vertex labels and printed caption; student added handwritten coordinate axis labels (z, y, x) and an x mark as annotations on the printed figure.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [\n          {\"label\": \"(1)\", \"value\": \"C₁D ∥ EM (proved via EM in plane A₁BE)\", \"status\": \"ok\"},\n          {\"label\": \"(2)\", \"value\": \"\\\\frac{\\\\sqrt{6}}{3}\", \"status\": \"ok\"}\n        ],\n        \"edits\": [\n          {\n            \"old\": \"$C_1D // EM$\",\n            \"new\": \"$C_1D \\\\parallel EM$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"answer_ink crop shows two parallel diagonal strokes for the relation between C₁D and EM, with no visible underline beneath the strokes; distinguishes from \\\\mathrel{\\\\underline{\\\\parallel}} which requires a separate underline.\"\n          }\n        ],\n        \"symbol_observations\": [\n          {\n            \"audit_id\": \"G001\",\n            \"tag\": \"GEOMETRY_MARK\",\n            \"location\": \"right side of C001 answer region, handwritten relation between C₁D and EM\",\n            \"candidates\": [\n              \"\\\\parallel\",\n              \"\\\\mathrel{\\\\underline{\\\\parallel}}\",\n              \"=\"\n            ],\n            \"selected\": \"\\\\parallel\",\n            \"observed_features\": \"Two parallel diagonal strokes visible in handwriting; no independent underline stroke beneath the parallel pair; strokes are oriented diagonally (not horizontal like =); matches \\\\parallel candidate.\",\n            \"context_id\": \"C001\",\n            \"reference_context_ids\": []\n          }\n        ],\n        \"evidence\": \"answer_ink crop clearly shows the handwritten relation mark as two parallel diagonal strokes without an underline, confirming \\\\parallel rather than \\\\mathrel{\\\\underline{\\\\parallel}} or =.\"\n      }\n    },\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"No symbol audit targets; student answer transcription matches visible handwriting in C002 context and answer_ink crops.\"\n      }\n    },\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"No symbol audit targets; student answer transcription matches visible handwriting in C003 context and answer_detail crops.\"\n      }\n    }\n  ]\n}\n```",
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C001-01\",\n            \"source_type\": \"printed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"printed_anchors\": [\"typeset vertex labels A, B, C, A₁, B₁, C₁, D, E, M\", \"uniform thin line work forming prism edges\", \"printed caption '第17题图'\"],\n            \"handwriting_features\": [],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"Printed triangular prism diagram with uniform line weight, typeset vertex labels, and a printed caption below. No handwriting overlays on the figure itself.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \"$C_1D // EM$\",\n            \"new\": \"$C_1D \\\\parallel EM$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"The answer_ink view shows the student wrote two parallel diagonal strokes between C₁D and EM with no visible underline beneath them, matching \\\\parallel rather than \\\\mathrel{\\\\underline{\\\\parallel}} or =.\"\n          }\n        ],\n        \"symbol_observations\": [\n          {\n            \"audit_id\": \"G001\",\n            \"tag\": \"GEOMETRY_MARK\",\n            \"location\": \"right side of answer area, after the coordinate setup, showing 'C₁D // E-M'\",\n            \"candidates\": [\"\\\\parallel\", \"\\\\mathrel{\\\\underline{\\\\parallel}}\", \"=\"],\n            \"selected\": \"\\\\parallel\",\n            \"observed_features\": \"Two parallel diagonal strokes visible in the answer_ink companion; no independent underline stroke beneath the parallel pair. The strokes are oriented diagonally (not horizontal), ruling out =.\",\n            \"context_id\": \"C001\",\n            \"reference_context_ids\": []\n          }\n        ],\n        \"evidence\": \"Student handwriting in answer area shows coordinate setup, normal vector computation, and cosine calculation. The relation symbol between C₁D and EM is two parallel diagonal strokes without an underline.\"\n      }\n    },\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"No symbol audit targets. Student handwriting for all three parts is visibly retained and matches the draft transcription.\"\n      }\n    },\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"No symbol audit targets. Student handwriting for all three parts is visibly retained and matches the draft transcription.\"\n      }\n    }\n  ]\n}\n```",
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": [\n          {\n            \"audit_id\": \"FIG-C001-01\",\n            \"source_type\": \"mixed_figure\",\n            \"content_role\": \"printed_question_figure\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"printed_anchors\": [\"typeset vertex labels A, B, C, A₁, B₁, C₁, D, E, M\", \"uniform thin line work forming prism edges\", \"printed caption \\\"(第 17 题图)\\\"\"],\n            \"handwriting_features\": [\"handwritten axis labels z, y, x with arrows in blue ink\"],\n            \"visible_cancellation\": false,\n            \"transcribed_content\": \"\",\n            \"observed_features\": \"Printed triangular prism skeleton with uniform line work and typeset vertex labels; handwritten axis annotations overlaid in blue ink. Caption printed below figure.\"\n          }\n        ]\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \"$C_1D // EM$\",\n            \"new\": \"$C_1D \\\\parallel EM$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"Handwriting in answer_ink shows two parallel diagonal strokes for the relation between C₁D and EM, with no visible underline beneath them. Matches \\\\parallel candidate.\"\n          }\n        ],\n        \"symbol_observations\": [\n          {\n            \"audit_id\": \"G001\",\n            \"tag\": \"GEOMETRY_MARK\",\n            \"location\": \"right side of answer area, after coordinate setup, handwritten relation C₁D // EM\",\n            \"candidates\": [\"\\\\parallel\", \"\\\\mathrel{\\\\underline{\\\\parallel}}\", \"=\"],\n            \"selected\": \"\\\\parallel\",\n            \"observed_features\": \"Two parallel diagonal strokes visible in handwriting; no independent underline stroke beneath the parallel pair. Stroke orientation is diagonal (not horizontal), ruling out =.\",\n            \"context_id\": \"C001\",\n            \"reference_context_ids\": []\n          }\n        ],\n        \"evidence\": \"Student solution retained with one symbol correction: // replaced by \\\\parallel based on visible stroke structure in answer_ink.\"\n      }\n    },\n    {\n      \"qno\": \"18\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"No symbol audit targets; student solution steps are visibly retained and consistent.\"\n      }\n    },\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"No symbol audit targets; student solution steps are visibly retained and consistent.\"\n      }\n    }\n  ]\n}\n```"
+  ]
+}

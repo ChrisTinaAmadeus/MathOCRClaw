@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page25/api_markdown/page25.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page25/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 43183,
+    "completion_tokens": 37377,
+    "total_tokens": 80560,
+    "latency_s": 600.10823,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 105.198368,
+          "prompt_tokens": 2713,
+          "completion_tokens": 6535,
+          "total_tokens": 9248,
+          "request_id": "chatcmpl-5d137e5a-113c-9afd-a9d7-ff3ee4c11411"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 160.178286,
+          "prompt_tokens": 13490,
+          "completion_tokens": 9949,
+          "total_tokens": 23439,
+          "request_id": "chatcmpl-63648acf-4e9a-962d-a40c-e2905b280d7e"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 150.46376,
+          "prompt_tokens": 13490,
+          "completion_tokens": 9366,
+          "total_tokens": 22856,
+          "request_id": "chatcmpl-c925322c-b9c0-9492-aa5f-c8e7513ba7f3"
+        },
+        {
+          "success": true,
+          "model": "qwen3.7-plus",
+          "attempt": 1,
+          "elapsed_s": 184.267816,
+          "prompt_tokens": 13490,
+          "completion_tokens": 11527,
+          "total_tokens": 25017,
+          "request_id": "chatcmpl-340960dd-50e2-9bcc-8465-6f7734a451b9"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 160.178286,
+            "prompt_tokens": 13490,
+            "completion_tokens": 9949,
+            "total_tokens": 23439,
+            "request_id": "chatcmpl-63648acf-4e9a-962d-a40c-e2905b280d7e"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 150.46376,
+            "prompt_tokens": 13490,
+            "completion_tokens": 9366,
+            "total_tokens": 22856,
+            "request_id": "chatcmpl-c925322c-b9c0-9492-aa5f-c8e7513ba7f3"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.7-plus",
+            "attempt": 1,
+            "elapsed_s": 184.267816,
+            "prompt_tokens": 13490,
+            "completion_tokens": 11527,
+            "total_tokens": 25017,
+            "request_id": "chatcmpl-340960dd-50e2-9bcc-8465-6f7734a451b9"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "Q1 and Q2 are fragments of Q15 solution misclassified as separate questions; preserved as draft per protocol.",
+    "API1 split the solution of Q15 into separate pseudo-questions (qno 1, 2) in C002 and C003. These are kept as-is to avoid merging. C001 student_answer is incomplete but covers the left column; the right column solution steps are captured in C002/C003 drafts.",
+    "C002 and C003 contain handwriting continuations of Q15 solution misclassified as separate questions; stems replaced with N. [无法识别] per protocol."
+  ],
+  "raw_runs": [
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"Q1 and Q2 are fragments of Q15 solution misclassified as separate questions; preserved as draft per protocol.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"15\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \"解：$A=\\\\{x \\\\mid -2<x<2\\\\}$\",\n            \"new\": \"解：$A=\\\\{x \\\\mid \\\\frac{2-x}{x+2}>0\\\\}$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"First line of handwriting shows set builder notation for A, not the interval.\"\n          }\n        ],\n        \"symbol_observations\": [],\n        \"evidence\": \"Corrected the first line of the solution to match the visible set definition.\"\n      }\n    },\n    {\n      \"qno\": \"1\",\n      \"source_context_ids\": [\n        \"C002\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"medium\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"medium\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Fragment of Q15 solution; keeping draft structure.\"\n      }\n    },\n    {\n      \"qno\": \"2\",\n      \"source_context_ids\": [\n        \"C003\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"medium\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"medium\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Fragment of Q15 solution; keeping draft structure.\"\n      }\n    },\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\n        \"C004\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Transcription matches visible handwriting steps.\"\n      }\n    },\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\n        \"C005\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \"$y: 0<x<4$\",\n            \"new\": \"(3) $0<x<4$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C003\",\n            \"evidence\": \"The label is (3), not y:.\"\n          }\n        ],\n        \"symbol_observations\": [],\n        \"evidence\": \"Fixed subquestion label for part (3).\"\n      }\n    }\n  ]\n}\n```",
+    "```json\n{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"API1 split the solution of Q15 into separate pseudo-questions (qno 1, 2) in C002 and C003. These are kept as-is to avoid merging. C001 student_answer is incomplete but covers the left column; the right column solution steps are captured in C002/C003 drafts.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"15\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \"解：$A=\\\\{x \\\\mid -2<x<2\\\\}$\\n$\\\\therefore A=\\\\{x \\\\mid -2<x<2\\\\}$\",\n            \"new\": \"解：$A=\\\\{x \\\\mid \\\\frac{2-x}{x+2}>0\\\\}$\\n$\\\\therefore A=\\\\{x \\\\mid -2<x<2\\\\}$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"Handwriting shows the student first rewrote the set definition for A before simplifying it. The draft duplicated the simplified line.\"\n          }\n        ],\n        \"symbol_observations\": [],\n        \"evidence\": \"Visible handwriting in C001 context.\"\n      }\n    },\n    {\n      \"qno\": \"1\",\n      \"source_context_ids\": [\"C002\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"medium\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Misclassified solution step from Q15, kept as per protocol to avoid merging.\"\n      }\n    },\n    {\n      \"qno\": \"2\",\n      \"source_context_ids\": [\"C003\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"medium\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Misclassified solution step from Q15, kept as per protocol to avoid merging.\"\n      }\n    },\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\"C002\", \"C004\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"medium\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \"$\\\\therefore a>1$\",\n            \"new\": \"$\\\\therefore a>(x^2+1)_{\\\\max}$\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"medium\",\n            \"context_id\": \"C002\",\n            \"evidence\": \"Handwriting shows $a > (x^2+1)_{max}$ (student error), not $a>1$. The student incorrectly used max instead of min for the existential condition.\"\n          }\n        ],\n        \"symbol_observations\": [],\n        \"evidence\": \"Visible handwriting in C002 answer_detail_01.\"\n      }\n    },\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\"C003\", \"C005\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Draft matches visible handwriting.\"\n      }\n    }\n  ]\n}\n```",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"C002 and C003 contain handwriting continuations of Q15 solution misclassified as separate questions; stems replaced with N. [无法识别] per protocol.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"15\",\n      \"source_context_ids\": [\n        \"C001\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [\n          {\n            \"old\": \"解：$A=\\\\{x \\\\mid -2<x<2\\\\}$\",\n            \"new\": \"解：$A=\\\\{x \\\\mid \\\\frac{2-x}{x+2}>0\\\\}$\\n$\\\\therefore A=\\\\{x \\\\mid -2<x<2\\\\}$\",\n            \"kind\": \"insert_missing\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C001\",\n            \"evidence\": \"Handwriting shows the setup equation with fraction before the simplification step.\"\n          }\n        ],\n        \"symbol_observations\": [],\n        \"evidence\": \"First line of solution includes the fraction inequality.\"\n      }\n    },\n    {\n      \"qno\": \"1\",\n      \"source_context_ids\": [\n        \"C002\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"low\",\n      \"stem\": {\n        \"action\": \"edit\",\n        \"edits\": [\n          {\n            \"old\": \"1. 当 $C$ 为空集时 $m-1 \\\\ge 2m+1 \\\\Rightarrow m \\\\le -2$\",\n            \"new\": \"N. [无法识别]\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C002\",\n            \"evidence\": \"Text is handwriting, not a printed stem.\"\n          }\n        ],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"set_no_answer\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"No printed question; text is student work.\"\n      }\n    },\n    {\n      \"qno\": \"2\",\n      \"source_context_ids\": [\n        \"C003\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"low\",\n      \"stem\": {\n        \"action\": \"edit\",\n        \"edits\": [\n          {\n            \"old\": \"2. 若 $C$ 不为空集时 $\\\\begin{cases} m>-2 \\\\\\\\ m-1 \\\\ge -2 \\\\Rightarrow m \\\\ge -1 \\\\\\\\ 2m+1 \\\\le 2 \\\\Rightarrow m \\\\le \\\\frac{1}{2} \\\\end{cases}$\\n即 $-1<m<\\\\frac{1}{2}$\\n综上，$m$ 的取值范围为 $m \\\\le -2$ 或 $-1<m<\\\\frac{1}{2}$。\",\n            \"new\": \"N. [无法识别]\",\n            \"kind\": \"ocr_correction\",\n            \"confidence\": \"high\",\n            \"context_id\": \"C003\",\n            \"evidence\": \"Text is handwriting, not a printed stem.\"\n          }\n        ],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"set_no_answer\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"No printed question; text is student work.\"\n      }\n    },\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\n        \"C004\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    },\n    {\n      \"qno\": \"17\",\n      \"source_context_ids\": [\n        \"C005\"\n      ],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"\"\n      }\n    }\n  ]\n}"
+  ]
+}

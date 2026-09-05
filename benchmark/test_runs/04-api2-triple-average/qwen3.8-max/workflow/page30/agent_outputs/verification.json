@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page30/api_markdown/page30.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page30/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 30804,
+    "completion_tokens": 34511,
+    "total_tokens": 65315,
+    "latency_s": 598.793063,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 57.809601,
+          "prompt_tokens": 3078,
+          "completion_tokens": 4188,
+          "total_tokens": 7266,
+          "request_id": "chatcmpl-34a1434a-799d-9a62-8b71-3cc6e0cef067"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 218.806398,
+          "prompt_tokens": 9242,
+          "completion_tokens": 10551,
+          "total_tokens": 19793,
+          "request_id": "chatcmpl-5540f4d9-cc7c-9dca-be47-acccf035353d"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 150.770819,
+          "prompt_tokens": 9242,
+          "completion_tokens": 9211,
+          "total_tokens": 18453,
+          "request_id": "chatcmpl-04a8eeaa-5e62-9e93-91a8-2638e8d5a401"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 171.406245,
+          "prompt_tokens": 9242,
+          "completion_tokens": 10561,
+          "total_tokens": 19803,
+          "request_id": "chatcmpl-81ba72f5-a1f8-98d6-be7e-e3fbb13b4c01"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 218.806398,
+            "prompt_tokens": 9242,
+            "completion_tokens": 10551,
+            "total_tokens": 19793,
+            "request_id": "chatcmpl-5540f4d9-cc7c-9dca-be47-acccf035353d"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 150.770819,
+            "prompt_tokens": 9242,
+            "completion_tokens": 9211,
+            "total_tokens": 18453,
+            "request_id": "chatcmpl-04a8eeaa-5e62-9e93-91a8-2638e8d5a401"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 171.406245,
+            "prompt_tokens": 9242,
+            "completion_tokens": 10561,
+            "total_tokens": 19803,
+            "request_id": "chatcmpl-81ba72f5-a1f8-98d6-be7e-e3fbb13b4c01"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "",
+    "",
+    "In the (3) working, a short horizontal dash before x_1 y_0 on the x_T line and a P-like opening glyph before (x_1, y_1) on the setup line are ink-level ambiguities; neither is conclusive enough to patch, so draft readings are kept."
+  ],
+  "raw_runs": [
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"edit_solution\",\n        \"confidence\": \"high\",\n        \"final_answers\": [\n          {\"label\": \"(1)\", \"value\": \"\", \"status\": \"no_answer\"},\n          {\"label\": \"(2)\", \"value\": \"\", \"status\": \"no_answer\"},\n          {\"label\": \"(3)\", \"value\": \"9\", \"status\": \"ok\"}\n        ],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"In C001 and answer_detail_01/02 the handwriting starts directly with '(3).' and closes with '= 9.'; no pen strokes exist anywhere for (1) or (2). The retained (3) derivation matches the draft line by line (setup M(x0,y0), Q(x1,y1), N(x0,-y0); the two line equations with fractions (y0-y1)/(x0-x1) and (-y0-y1)/(x0-x1); x_K and x_T fractions; the three absolute-value lines; final '= 9.'), so no process edits are made. A faint short dash before x_1y_0 in the x_T line is inconclusive (pen stop vs minus) and is left as drafted.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Color context C001 and answer_detail_01 show dark-red retained handwriting only for part (3), matching the draft line by line: setup M(x0,y0), Q(x1,y1), (y1 != +/-y0), N(x0,-y0), x0^2+y0^2=9 and x1^2+y1^2=9, lines l_QM and l_QN with fractions (y0-y1)/(x0-x1) and (-y0-y1)/(x0-x1), then x_K=(x1y0-x0y1)/(y0-y1) and x_T=(x1y0+x0y1)/(y0+y1), then |OK|.|OT|=|x_K.x_T| = |(x1^2 y0^2 - x0^2 y1^2)/(y0^2 - y1^2)| = |((9-y1^2)y0^2-(9-y0^2)y1^2)/(y0^2-y1^2)| = 9; parts (1) and (2) have no handwriting, consistent with the draft's unrecognized markers. A faint short dash before the x_T numerator is inconclusive (pen stop vs minus) and the following product step uses the plus form, so no patch is made.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"In the (3) working, a short horizontal dash before x_1 y_0 on the x_T line and a P-like opening glyph before (x_1, y_1) on the setup line are ink-level ambiguities; neither is conclusive enough to patch, so draft readings are kept.\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"19\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"C001 context and answer_detail_01 show red-pen handwriting only for (3), matching the draft line by line: setup M(x_0,y_0), Q(x_1,y_1), (y_1 ≠ ±y_0); N(x_0,-y_0); x_0^2+y_0^2=9 and x_1^2+y_1^2=9; l_QM: y-y_1=(y_0-y_1)/(x_0-x_1)(x-x_1); l_QN: y-y_1=(-y_0-y_1)/(x_0-x_1)(x-x_1); setting y=0 gives x_K=(x_1y_0-x_0y_1)/(y_0-y_1) and x_T=(x_1y_0+x_0y_1)/(y_0+y_1); then |OK|·|OT|=|x_K·x_T| expanded through two absolute-value fractions to '= 9'. The (1) and (2) areas contain no handwriting, consistent with the draft's unrecognized-answer markers.\"\n      }\n    }\n  ]\n}"
+  ]
+}

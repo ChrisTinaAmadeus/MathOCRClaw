@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "page": "page12",
+  "api2_run": 2,
+  "questions": [
+    {
+      "qno": 17,
+      "question_type": "solution",
+      "choice_mode": "",
+      "section_heading_before": "",
+      "question_markdown": "17. 如图，在三棱柱 $ABC-A_1B_1C_1$ 中，$B_1B \\perp$ 平面 $A_1B_1C_1$，$AC=CB=CC_1=2$，$\\angle ACB=90^\\circ$，$D$，$E$ 分别是 $A_1B_1$，$CC_1$ 的中点。\n(1) 求证：$C_1D //$ 平面 $A_1BE$；\n(2) 求平面 $ABC$ 与平面 $A_1BE$ 所成角的正弦值。\n<插图>",
+      "question_review": {
+        "status": "reviewed_via_api2_atomic_patch",
+        "source_context_ids": [
+          "C001"
+        ],
+        "recognition_profile_version": "symbol_profile_v3",
+        "symbol_audit_target_count": 2,
+        "symbol_audit_observed_count": 2,
+        "figure_audit_version": "figure_audit_v1",
+        "figure_audit_target_count": 1,
+        "figure_audit_observed_count": 1,
+        "figure_observations": [
+          {
+            "audit_id": "FIG-C001-01",
+            "marker_index": 1,
+            "source_type": "mixed_figure",
+            "content_role": "printed_question_figure",
+            "confidence": "high",
+            "context_id": "C001",
+            "printed_anchors": [
+              "printed serif labels A, B, C, A1, B1, C1, D, E",
+              "uniform thin line work for prism edges"
+            ],
+            "handwriting_features": [
+              "handwritten coordinates (0,0,2), (0,2,2), etc.",
+              "handwritten axes x, y, z with arrows"
+            ],
+            "visible_cancellation": false,
+            "transcribed_content": "",
+            "observed_features": "Printed prism skeleton with serif labels is visible. Student has overlaid handwritten coordinate values and axis labels in black ink.",
+            "local_action": "preserve",
+            "model_observation_valid": true
+          }
+        ],
+        "lint_actions": [
+          "recorded_figure_observation_FIG-C001-01_mixed_figure",
+          "accepted_symbol_observation_1",
+          "accepted_symbol_observation_2",
+          "discarded_2_model_authored_symbol_edits",
+          "materialized_2_symbol_audit_edits",
+          "applied_solution_edit_1_ocr_correction",
+          "applied_solution_edit_2_ocr_correction"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page12/code_outputs/match/question_contexts.json"
+      },
+      "handwritten_answer": {
+        "text": "(1) 证：在三棱柱 $ABC-A_1B_1C_1$ 中，\n$B_1B \\perp$ 平面 $A_1B_1C_1$\n$\\therefore BB_1 \\parallel CC_1$\n$\\therefore C_1C \\perp$ 平面 $ABC$\n如图，建立空间直角坐标系\n$\\therefore C_1(0,0,2), D(1,1,2), A_1(2,0,2)$\n$B(0,2,0), E(0,0,1)$\n$\\therefore \\overrightarrow{C_1D}=(1,1,0), \\overrightarrow{A_1B}=(-2,2,-2)$\n$\\overrightarrow{BE}=(-2,0,-1)$\n设平面 $A_1BE$ 一个法向量 $\\vec{n}=(x,y,z)$\n则 $\\begin{cases} \\vec{n}\\cdot\\overrightarrow{A_1B}=0 \\\\ \\vec{n}\\cdot\\overrightarrow{BE}=0 \\end{cases} \\Rightarrow \\begin{cases} -2x+2y-2z=0 \\\\ -2x-z=0 \\end{cases}$\n令 $x=-1$，则 $y=1, z=2$\n$\\therefore \\vec{n}=(-1,1,2)$\n$\\therefore \\overrightarrow{C_1D}\\cdot\\vec{n} = 1\\times(-1)+1\\times 1+0\\times 2=0$\n$\\therefore C_1D \\perp \\vec{n}$\n$\\therefore C_1D \\parallel$ 平面 $A_1BE$\n\n(2) 由(1)得平面 $A_1BE$ 的法向量 $\\vec{n}=(-1,1,2)$\n$B(2,0,0), A(0,2,0), C(0,0,0)$\n$\\therefore \\overrightarrow{CB}=(2,0,0), \\overrightarrow{CA}=(0,2,0)$\n设平面 $ABC$ 一个法向量 $\\vec{m}=(a,b,c)$\n$\\begin{cases} \\vec{m}\\cdot\\overrightarrow{CB}=0 \\\\ \\vec{m}\\cdot\\overrightarrow{CA}=0 \\end{cases} \\Rightarrow \\begin{cases} 2a=0 \\\\ 2b=0 \\end{cases}$\n令 $c=1$，则 $a=0, b=0$\n$\\therefore \\vec{m}=(0,0,1)$\n$\\vec{n}\\cdot\\vec{m} = -1\\times 0 + 1\\times 0 + 2\\times 1 = 2$\n$|\\vec{n}|=\\sqrt{(-1)^2+1^2+2^2}=\\sqrt{6}, |\\vec{m}|=\\sqrt{0^2+0^2+1^2}=1$\n$\\therefore \\cos\\langle \\vec{m}, \\vec{n} \\rangle = \\frac{\\vec{m}\\cdot\\vec{n}}{|\\vec{m}||\\vec{n}|} = \\frac{2}{\\sqrt{6}\\times 1} = \\frac{\\sqrt{6}}{3}$\n设平面 $ABC$ 与平面 $A_1BE$ 所成角为 $\\theta$\n$\\therefore \\cos\\theta = |\\cos\\langle \\vec{m}, \\vec{n} \\rangle| = \\frac{\\sqrt{6}}{3}$\n$\\therefore \\sin\\theta = \\sqrt{1-\\cos^2\\theta} = \\frac{\\sqrt{3}}{3}$\n答：正弦值为 $\\frac{\\sqrt{3}}{3}$",
+        "answer_parts": [],
+        "uncertain_fragments": [],
+        "status": "ok",
+        "evidence_note": "Handwriting matches draft text closely. Symbol // corrected to \\parallel based on visual stroke inspection.",
+        "symbol_observations": [
+          {
+            "audit_id": "G001",
+            "tag": "GEOMETRY_MARK",
+            "location": "Part (1) proof, line 3",
+            "candidates": [
+              "\\parallel",
+              "\\mathrel{\\underline{\\parallel}}",
+              "="
+            ],
+            "selected": "\\parallel",
+            "observed_features": "Two distinct parallel diagonal strokes visible. No horizontal underline beneath them.",
+            "context_id": "C001",
+            "reference_context_ids": []
+          },
+          {
+            "audit_id": "G002",
+            "tag": "GEOMETRY_MARK",
+            "location": "Part (1) proof, last line",
+            "candidates": [
+              "\\parallel",
+              "\\mathrel{\\underline{\\parallel}}",
+              "="
+            ],
+            "selected": "\\parallel",
+            "observed_features": "Two distinct parallel diagonal strokes visible. No horizontal underline beneath them.",
+            "context_id": "C001",
+            "reference_context_ids": []
+          }
+        ],
+        "source_context_ids": [
+          "C001"
+        ],
+        "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.7-plus/workflow/page12/code_outputs/match/question_contexts.json"
+      }
+    }
+  ],
+  "page_notes": "",
+  "api_requests": [
+    {
+      "success": true,
+      "model": "qwen3.7-plus",
+      "attempt": 1,
+      "elapsed_s": 88.671685,
+      "prompt_tokens": 14212,
+      "completion_tokens": 5373,
+      "total_tokens": 19585,
+      "request_id": "chatcmpl-9859ef29-ab59-913a-974c-8d2b972b8a99"
+    }
+  ]
+}

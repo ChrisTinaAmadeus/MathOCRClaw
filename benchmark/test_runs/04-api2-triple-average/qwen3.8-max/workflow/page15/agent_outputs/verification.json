@@ -1,0 +1,111 @@
+{
+  "mode": "repeated_global_api2_symbol_figure_audited_atomic_patch_v4",
+  "first_pass_markdown": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page15/api_markdown/page15.md",
+  "context_manifest": "/home/puppeteer/MathOCRClaw/benchmark/test_runs/04-api2-triple-average/qwen3.8-max/workflow/page15/code_outputs/match/question_contexts.json",
+  "api2_run_count": 3,
+  "api_metrics": {
+    "logical_call_count": 4,
+    "api2_run_count": 3,
+    "network_request_count": 4,
+    "successful_request_count": 4,
+    "failed_request_count": 0,
+    "prompt_tokens": 24752,
+    "completion_tokens": 29255,
+    "total_tokens": 54007,
+    "latency_s": 456.298943,
+    "passes": {
+      "call_1": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 158.295093,
+          "prompt_tokens": 2506,
+          "completion_tokens": 11196,
+          "total_tokens": 13702,
+          "request_id": "chatcmpl-f179cf8f-2480-9a2a-862b-e06ec723cae0"
+        }
+      ],
+      "call_2": [
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 80.295633,
+          "prompt_tokens": 7411,
+          "completion_tokens": 4697,
+          "total_tokens": 12108,
+          "request_id": "chatcmpl-04fed393-5f47-9163-8724-ce0aa3daf8a3"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 154.221542,
+          "prompt_tokens": 7411,
+          "completion_tokens": 8785,
+          "total_tokens": 16196,
+          "request_id": "chatcmpl-13b185a6-e7cd-944b-b875-a25d0ec9cd18"
+        },
+        {
+          "success": true,
+          "model": "qwen3.8-max",
+          "attempt": 1,
+          "elapsed_s": 63.486675,
+          "prompt_tokens": 7424,
+          "completion_tokens": 4577,
+          "total_tokens": 12001,
+          "request_id": "chatcmpl-e72727bf-70fb-9a6c-b72c-6cea03ed5629"
+        }
+      ],
+      "call_2_runs": [
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 80.295633,
+            "prompt_tokens": 7411,
+            "completion_tokens": 4697,
+            "total_tokens": 12108,
+            "request_id": "chatcmpl-04fed393-5f47-9163-8724-ce0aa3daf8a3"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 154.221542,
+            "prompt_tokens": 7411,
+            "completion_tokens": 8785,
+            "total_tokens": 16196,
+            "request_id": "chatcmpl-13b185a6-e7cd-944b-b875-a25d0ec9cd18"
+          }
+        ],
+        [
+          {
+            "success": true,
+            "model": "qwen3.8-max",
+            "attempt": 1,
+            "elapsed_s": 63.486675,
+            "prompt_tokens": 7424,
+            "completion_tokens": 4577,
+            "total_tokens": 12001,
+            "request_id": "chatcmpl-e72727bf-70fb-9a6c-b72c-6cea03ed5629"
+          }
+        ]
+      ]
+    }
+  },
+  "page_notes": [
+    "",
+    "",
+    ""
+  ],
+  "raw_runs": [
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"C001 printed stem matches draft (A={x|(x-a+2)(x-a-2)<0}, B with fraction (2x-1)/(x+2)<1, parts (1)(2), A∩(∁_R B)=∅). Retained handwriting reproduces every drafted step: roots a-2, a+2 with a-2<a+2; A={x|a-2<x<a+2}; B case ① {x+2>0, 2x-1<x+2} giving -2<x<3 and case ② {2x-1>x+2, x+2<0} no solution; B={x|-2<x<3}; ∁_R B={x|x≤-2 or x≥3}; A=∅ branch no solution; {a-2>-2, a+2<3} giving 0<a<1; final {a|0<a<1}. Crossed-out tokens before 且 and before x+2<0 are visibly struck through and correctly excluded; no mandatory symbol or figure targets remain.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"Color context C001 and full page show the retained handwriting matching the draft line by line: (1) roots statement ending '(x-a+2)(x-a-2)=0', 'A={x|a-2<x<a+2}', B case ① '{x+2>0, 2x-1<x+2} 解得 -2<x<3' and case ② '{2x-1>x+2, x+2<0} 无解', 'B={x|-2<x<3}'; (2) 'C_R B={x|x≤-2 或 x≥3}' with visible lower equality bars on ≤ and ≥, '∵A∩(C_R B)=∅' with slashed empty-set circle, case ② '{a-2>-2, a+2<3} 解得 0<a<1', and final '综上所述, a取值 {a|0<a<1}'. Crossed-out blobs before '且' and before 'x+2<0' are visibly struck through and correctly omitted by the draft. No figure markers present.\"\n      }\n    }\n  ]\n}",
+    "{\n  \"schema_version\": \"api2_patch_v4\",\n  \"page_notes\": \"\",\n  \"question_reviews\": [\n    {\n      \"qno\": \"16\",\n      \"source_context_ids\": [\"C001\"],\n      \"question_type\": \"solution\",\n      \"question_type_confidence\": \"high\",\n      \"stem\": {\n        \"action\": \"keep\",\n        \"edits\": [],\n        \"figure_observations\": []\n      },\n      \"answer\": {\n        \"action\": \"keep\",\n        \"confidence\": \"high\",\n        \"final_answers\": [],\n        \"edits\": [],\n        \"symbol_observations\": [],\n        \"evidence\": \"In C001 color context the printed stem matches the draft exactly (fraction (2x-1)/(x+2)<1 and A∩(_R B)= visible in typeset), and the retained black-ink handwriting matches the draft line by line: roots statement for (x-a+2)(x-a-2)=0, A={x|a-2<x<a+2}, case ① x+2>0, 2x-1<x+2 giving -2<x<3, case ② 2x-1>x+2, x+2<0 with no solution, B={x|-2<x<3}, ∁_R B={x|x≤-2 or x≥3}, A∩(∁_R B)=∅, case ② a-2>-2, a+2<3 giving 0<a<1, and final {a|0<a<1}; inequality bars and set braces show the discriminating strokes (lower equality bars visible on ≤ and ≥ in the complement line), so no patch is justified.\"\n      }\n    }\n  ]\n}"
+  ]
+}
